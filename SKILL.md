@@ -1,320 +1,343 @@
 ---
 name: open-school
-description: "Platforma integral para crear institutos educativos digitales — cursos modulares, certificaciones verificables, roles múltiples, accesibilidad WCAG, offline-first, IA educativa."
-version: 1.0.0
+description: "Plataforma educativa digital universal — cursos modulares con ruta→modulo→lección, certificaciones QR verificables, 11 roles RBAC, accesibilidad WCAG 2.1+, offline-first PWA, IA educativa con Ollama local, multilenguaje pt-BR/es/ca/en."
+version: 2.0.0
 author: Belentani
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  related_skills: [cursor-ai-cli-unified, nextjs-ssr-architecture, design-taste, brainstorming, qwen-input-cache-max-context]
+  related_skills: [cursor-ai-cli-unified, nextjs-ssr-architecture, design-taste, brainstorming, qwen-input-cache-max-context, lean-build]
 ---
 
-# OPEN SCHOOL — Platforma Educativa Digital Universal
+# OPEN SCHOOL v2 — Platforma Educativa Digital Universal
 
-Sistema completo para crear institutos educativos digitales gratuitos y accesibles, basado en patrones extraídos de:
+## QUÉ ES
 
-- **X.txt** — Especificación de "Instituto Universal Gratuito para Jóvenes" (11,000+ líneas)
-- **Open Tongue** — Instituto de idiomas con tutor conversacional, reconocimiento de voz, Ollama local
-- **UX Academy Professional Program** — Plataforma de aprendizaje trilingüe con evaluación y capstone
-- **LinguaForge** — Herramientas de traducción y adaptación multilingüe
+Sistema completo para crear institutos educativos digitales gratuitos basados en:
+
+- **X.txt** (Desktop) — Especificación de 11,000+ líneas para "Instituto Universal Gratuito para Jóvenes"
+- **Open Tongue** (`C:\Users\USER\Videos\DRIVE\Documents\lingua-aberta\`) — Instituto de idiomas con tutor conversacional + Web Speech API + Ollama local
+- **UX Academy Professional Program** — Plataforma trilingüe con evaluación formativa y capstone
+- **LinguaForge** — Herramientas de traducción/adaptación multilingüe
+- **Harmonia Hub** — Coordinación y bienestar estudiantil
 
 ## CUÁNDO USAR
 
 Cuando el usuario pide:
-- Crear una plataforma educativa / instituto digital
-- Construir un sistema de cursos y lecciones
-- Implementar certificación de competencias
-- Desarrollar una app de aprendizaje con roles múltiples (estudiante/docente/admin)
-- Crear rutas de aprendizaje personalizadas
-- Diseñar un LMS (Learning Management System)
-- Implementar contenido educativo con evaluación y retroalimentación
+- Crear plataforma educativa / LMS (Learning Management System)
+- Sistema de cursos modulares con rutas de aprendizaje personalizadas
+- Certificación por competencias con verificación pública (QR)
+- App educativa con 11 roles (estudiante, docente, mentor, admin, moderador, psicólogo, familia...)
+- Plataforma con accesibilidad WCAG 2.1+
+- Modo offline/PWA para conectividad limitada
+- Tutor inteligente con voz (Web Speech API + Ollama)
+- Multilenguaje pt-BR → es/ca/en
 
 ### Decision Tree
 
 ```
-¿Plataforma de cursos online? → Usa Open School
-¿Solo traducciones/idiomas?   → Usa LinguaForge pattern
-¿Educación formal/school?     → Usa Open School completo
-¿Certificación de habilidades?→ Usa Open School + verifiable credentials
-¿App educativa simple?        → Usa Open School mini (solo frontend)
+¿LMS/cursos online?      → Open School
+¿Solo idioma/traducción? → LinguaForge pattern
+¿Educación formal/school → Open School completo
+¿Certificación skills?   → Open School + Verifiable Credentials
 ```
 
 ---
 
-## 1. ARQUITECTURA BASE (Patrón Común de Todos los Repos)
+## 1. ARQUITECTURA MONOREPO (V1: Simple — Para un solo developer)
 
-Todos los repos educativos de Belentani siguen ESTE patrón exacto:
+Ideal para empezar rápido. Mismo patrón que UX Academy + Open Tongue.
 
 ```bash
-open-school/                    # Proyecto raíz
+open-school/                    # Proyecto raíz monorepo
 ├── package.json                # pnpm workspace, dependencias compartidas
-├── tsconfig.json               # TypeScript shared configuration
-├── vite.config.ts              # Build configuration
+├── tsconfig.json               # TypeScript strict mode
+├── vite.config.ts              # Vite + React plugin
 ├── drizzle.config.ts           # ORM configuration
-├── pnpm-workspace.yaml         # Multi-project workspace
-├── components.json             # shadcn/ui component registry
+├── pnpm-workspace.yaml         # Workspace definition
 │
-├── client/                     # Frontend (React 19 + Vite)
+├── client/                     # Frontend (React 19 + Vite + Tailwind 4)
 │   ├── index.html
 │   └── src/
-│       ├── App.tsx             # Route definitions, providers
+│       ├── App.tsx             # Wouter router + providers
 │       ├── main.tsx            # Entry point
 │       ├── const.ts            # App constants, feature flags
 │       ├── _core/              # Core utilities, hooks, contexts
-│       ├── components/         # UI components (shadcn/ui primitives + custom)
-│       │   ├── ui/             # Button, Input, Dialog, etc. (auto-generated by shadcn)
-│       │   ├── layout/         # DashboardLayout, Sidebar, Header
-│       │   ├── forms/          # Form wrappers, field components
-│       │   ├── charts/         # Recharts wrappers
-│       │   └── courses/        # Course-specific components (LessonCard, ProgressTracker)
-│       ├── content/            # Static content, curriculum metadata
-│       ├── contexts/           # AuthContext, ThemeContext, RoleContext
-│       ├── hooks/              # Custom React hooks (useAuth, useProgress, useSpeech)
-│       ├── lib/                # Utilities (trpc.ts, analytics.ts, utils.ts)
-│       ├── pages/              # Route-level pages (Home.tsx, Course.tsx, Dashboard.tsx)
-│       ├── stores/             # Zustand stores (userStore, courseStore)
-│       ├── types/              # TypeScript interfaces
-│       └── visual.css          # Global styles, animations
+│       │   ├── llm.ts          # Ollama integration
+│       │   └── speech.ts       # Web Speech API wrapper
+│       ├── components/         # shadcn/ui primitives + custom
+│       │   ├── ui/             # Button, Input, Dialog...
+│       │   └── courses/        # LessonCard, ProgressTracker, QuizPlayer
+│       ├── pages/              # Route-level pages
+│       ├── hooks/              # useAuth, useProgress, useSpeech
+│       └── stores/             # Zustand stores
 │
-├── server/                     # Backend (Express.js + tRPC)
-│   ├── _core/                  # Core server setup
-│   │   ├── context.ts          # Request context (auth, role, user)
-│   │   ├── env.ts              # Environment variables
-│   │   ├── llm.ts              # AI/LLM integration (Ollama, OpenAI)
-│   │   ├── notification.ts     # Email/push notifications
-│   │   ├── oauth.ts            # OAuth providers
-│   │   ├── sdk.ts              # SDK helpers
-│   │   ├── storage.ts          # File/storage management
-│   │   └── trpc.ts             # tRPC router initialization
-│   ├── routers/                # Feature-specific tRPC routers
-│   │   ├── auth.router.ts      # Login, register, password reset
-│   │   ├── courses.router.ts   # CRUD courses, modules, lessons
-│   │   ├── progress.router.ts  # Track student progress, completion
-│   │   ├── assessment.router.ts # Quizzes, evaluations, certification
-│   │   ├── community.router.ts # Forums, peer mentoring
-│   │   └── admin.router.ts     # Admin dashboard, analytics
-│   └── db.ts                   # Database connection
-│
-├── shared/                     # Code shared between client and server
+├── server/                     # Backend (Express + tRPC)
 │   ├── _core/
-│   │   └── errors.ts           # Standardized error types
-│   ├── brand.ts                # Color palette, typography, branding tokens
-│   ├── const.ts                # Shared constants
-│   └── types.ts                # TypeScript types (Course, Lesson, User, Role)
+│   │   ├── db.ts               # PostgreSQL connection
+│   │   ├── env.ts              # Environment variables
+│   │   ├── llm.ts              # AI tutor endpoint
+│   │   └── trpc.ts             # tRPC initialization
+│   └── routers/
+│       ├── auth.router.ts      # Login, register, OAuth
+│       ├── courses.router.ts   # CRUD courses/modules/lessons
+│       ├── progress.router.ts  # Track learning state
+│       └── assessment.router.ts # Quizzes, certificates
+│
+├── shared/                     # Code shared between client/server
+│   ├── types.ts                # User, Course, Lesson, Role interfaces
+│   └── errors.ts               # Standardized error types
 │
 ├── drizzle/                    # Database schema & migrations
-│   ├── schema.ts               # All table definitions (users, courses, lessons, etc.)
-│   ├── relations.ts            # Table relations
+│   ├── schema.ts               # All table definitions
 │   ├── meta/                   # Migration metadata
-│   └── migrations/             # SQL migration files (version controlled)
+│   └── migrations/             # SQL files (version controlled)
+│
+├── scripts/                    # Automation
+│   └── seed.ts                 # Sample data seeding
 │
 ├── docs/                       # Documentation
-│   ├── AGENTS.md               # Instructions for AI coding agents
-│   ├── api-reference.md        # API documentation
-│   └── deployment.md           # Deployment guides
+│   ├── AGENTS.md               # AI agent instructions
+│   └── README.md               # Project overview
 │
-├── scripts/                    # Automation scripts
-│   ├── seed.ts                 # Seed database with sample data
-│   └── migrate.ts              # Run migrations
-│
-├── .github/                    # CI/CD workflows
-│   └── workflows/
-│       ├── ci.yml              # Lint, test, build checks
-│       └── deploy.yml          # Production deployment
-│
+├── .github/workflows/
+│   └── ci.yml                  # Lint + test + build checks
 ├── .env.example                # Environment variables template
-├── README.md                   # Project documentation
-└── template.json               # Configuration template for new instances
+└── README.md                   # Project setup guide
 ```
 
-### Tech Stack Obligatorio (Extraído de UX Academy + Open Tongue)
-
-| Categoría | Tecnología | Versión | Uso |
-|-----------|-----------|---------|-----|
-| Framework | Vite + React | v7 / 19.x | Fast dev + SSR-ready |
-| Language | TypeScript | 5.6+ | Strict mode everywhere |
-| Styling | Tailwind CSS 4 | latest | Utility-first styling |
-| Components | shadcn/ui | latest | Radix UI primitives |
-| Animation | Framer Motion | 12.x | Smooth transitions |
-| Router | Wouter | 3.3+ | Lightweight routing |
-| Forms | React Hook Form + Zod | 7.x / 4.x | Validation + submission |
-| Charts | Recharts | 2.x | Progress/analytics dashboards |
-| Database | Drizzle ORM | 0.33+ | Type-safe queries |
-| DB Engine | PostgreSQL | 15+ | Main database |
-| Backend | Express.js | 4.x + tRPC | API layer |
-| Auth | Supabase / JWT | latest | Authentication |
-| i18n | react-intl / custom | latest | Trilingual support |
-| Speech | Web Speech API + Ollama | browser | Voice input/output |
-| State | Zustand | latest | Client state management |
-| Notifications | Sonner | latest | Toast messages |
+**Stack:** React 19 + Vite 7 + TypeScript 5.6+ + Tailwind 4 + shadcn/ui + Drizzle ORM + PostgreSQL + Express.js + tRPC + Zustand + Wouter + Framer Motion
 
 ---
 
-## 2. MODELO DE ROLES Y PERMISOS (Matriz Completa)
+## 2. ARQUITECTURA MULTI-APPS (V2 — Para equipos o expansión)
 
-Basado en X.txt sección 3 — 11 roles definidos con permisos específicos:
+Para cuando necesitas apps separadas pero comparten packages. Basado en especificación X.txt §12.2.
 
-| Rol | Acceso a Cursos | Crea Contenido | Evalúa | Modera | Ve Analíticas | Configura | Certifica |
-|-----|----------------|----------------|--------|--------|---------------|-----------|-----------|
-| **Estudiante** | ✅ Lee | ❌ | ✅ Responde | ❌ | ✅ Solo suya | ❌ | ✅ Básico |
-| **Docente** | ✅ Lee/Edita | ✅ Crea/edita | ✅ | ❌ | ✅ Sus cursos | ❌ | ✅ Validado |
-| **Mentor/Tutor Par** | ✅ Lee | ✅ Sugiere | ✅ Asesora | ❌ | ❌ | ❌ | ❌ |
-| **Admin Institucional** | ✅ Todo | ✅ Todo | ✅ Todo | ✅ Total | ✅ Todas | ✅ Todo | ✅ Emisor |
-| **Admin Técnico** | ❌ No accede | ❌ No accede | ❌ No accede | ❌ No accede | ✅ Infraestructura | ✅ Infraestructura | ❌ |
-| **Creador Contenido** | ✅ Suyo | ✅ Suyo | ❌ | ❌ | ✅ Suyo | ❌ | ❌ |
-| **Moderador** | ✅ Todo | ❌ | ❌ | ✅ Total | ❌ | ❌ | ❌ |
-| **Psicólogo/Orientador** | ✅ Todo | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Familia/Tutor Legal** | ✅ Hijo/a | ❌ | ❌ | ❌ | ✅ Hijo/a | ✅ Permisos hijo | ❌ |
-| **Aliado Estratégico** | ✅ Analiza | ✅ Donativo | ✅ Valida | ❌ | ✅ Agregados | ❌ | ✅ Validador |
-| **Investigador Educativo** | ✅ Anonimizado | ❌ | ❌ | ❌ | ✅ Desidentificado | ❌ | ❌ |
+```bash
+institute-monorepo/
+├── pnpm-workspace.yaml
+├── package.json # root scripts, shared devDeps
+├── turbo.json # Build pipeline config
+│
+├── apps/
+│   ├── student-app/     # Frontend principal estudiante (React/Vite)
+│   ├── teacher-dashboard/# Panel docente (React/Vite)
+│   ├── admin-console/   # Admin institucional
+│   ├── mentor-hub/      # Mentoría entre pares
+│   ├── parent-panel/    # Seguimiento parental (minores)
+│   ├── api-gateway/     # Express + tRPC API
+│   └── ai-assistant/    # Servicio IA (Ollama + Python/FastAPI opcional)
+│
+├── packages/
+│   ├── ui/              # Componentes compartidos (shadcn/ui base)
+│   ├── core/            # Utilidades, tipos, constantes
+│   ├── auth/            # Auth abstraction (JWT/OAuth, RBAC middleware)
+│   ├── database/        # Drizzle schemas, migraciones, seeds
+│   ├── i18n/            # Traducciones (es/en/pt/ca)
+│   ├── forms/           # Zod schemas + react-hook-form resolvers
+│   ├── charts/          # Recharts wrappers para dashboards
+│   ├── certifications/  # QR generation, PDF templates, verificación
+│   ├── offline-sync/    # Service Worker + IndexedDB sync
+│   └── accessibility/   # WCAG helpers, screen-reader utils
+│
+├── content/             # Git-managed contenido educativo (separado del código)
+│   ├── mathematics/
+│   ├── sciences/
+│   ├── languages/
+│   ├── technology/
+│   ├── design/
+│   ├── health/
+│   ├── finance/
+│   ├── trades/          # Oficios/prácticos
+│   └── citizenship/
+│
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── CONTRIBUTING.md
+    └── pedagoogy-model.md
+```
 
 ---
 
-## 3. MODELO DE DATOS — CURRÍCULO (Jerarquía de Contenidos)
+## 3. MODELO DE DATOS — CURRÍCULO JERÁRQUICO
 
-Estructura jerárquica para todo el contenido educativo:
+Basado en X.txt §4.x y §5.x:
 
 ```
-INSTITUTO (top level)
-├── RUTA DE APRENDIZAJE (e.g., "Desarrollo Web Full-Stack")
-│   ├── Objetivo: Definir metas, duración estimada, nivel inicial
+INSTITUTO (multi-tenant)
+├── RUTA DE APRENDIZAJE (Learning Route)
+│   ├── Objetivo, duración estimada, nivel inicial
 │   ├── Módulos (4-8 por ruta)
-│   │   ├── Unidad Temática
-│   │   │   ├── Lección 1: Video corto (3-10 min) + texto
-│   │   │   │   ├── Objetivo de la lección
-│   │   │   │   ├── Explicación breve
-│   │   │   │   ├── Ejemplo práctico
-│   │   │   │   ├── Práctica interactiva
-│   │   │   │   ├── Evaluación rápida (quiz 3-5 preguntas)
-│   │   │   │   ├── Retroalimentación inmediata (si acertó/no)
-│   │   │   │   └── Actividad opcional de profundización
-│   │   │   ├── Lección 2...
-│   │   │   └── Proyecto de Módulo
-│   │   └── Unidad Temática 2...
-│   ├── Evaluaciones
-│   │   ├── Diagnóstica (al inicio)
-│   │   ├── Formativa (por lección)
-│   │   ├── Sumativa (fin módulo)
-│   │   └── Autoevaluación
-│   ├── Proyectos Prácticos
-│   │   ├── Brief del proyecto
-│   │   ├── Lista de recursos/herramientas necesarias
-│   │   ├── Rubrica de evaluación
-│   │   └── Fecha límite / flexibilidad
-│   └── Certificado (verificable con QR al completar ruta)
+│   │   ├── Lección 1: Video corto (3-10 min)
+│   │   ├── Lección 2: Lectura (5-15 min)
+│   │   ├── Lección 3: Ejercicio interactivo (5-20 min)
+│   │   ├── Lección 4: Reto rápido (2-5 min)
+│   │   └── Proyecto práctico
+│   ├── Evaluaciones (diagnóstica → formativa → sumativa)
+│   └── Certificado al completar
 ```
 
 ### Tablas SQL Requeridas (Drizzle Schema)
 
+#### Identity & Security
 ```sql
--- 1. Usuarios y Roles
-users { id, email, name, avatar, role enum, age_range, language, timezone }
-roles { id, name description permissions jsonb } -- estudiante, docente, mentor, admin, creador, moderador, psicologo, familia, aliado, investigador
-user_roles { user_id, role_id, institution_id }
+users { id, email, name, avatarUrl, role enum(11), ageRange, language, timezone, createdAt }
+parental_controls { userId, parentUserId, approved boolean, timeLimits }
+consents { userId, consentType, grantedAt, revokedAt }
+```
 
--- 2. Institución (Multi-tenant)
-institutions { id, name, slug, logo, theme_color, language_support array, contact_email }
+#### Education (Core)
+```sql
+learning_routes { id, title, description, durationHours, initialLevel enum(basico,intermedio,avanzado), 
+                   category, skills array, prerequisites route_id[], createdById }
 
--- 3. Ruta de Aprendizaje (Courses)
-learning_routes { id, institution_id, title, description, target_audience, duration_hours, 
-                   initial_level enum (basico,intermedio,avanzado), category, skills array, 
-                   prerequisites route_id[], created_by user_id }
-route_modules { id, route_id, title, order_number, estimated_hours }
-route_lessons { id, module_id, type enum(video,lectura,ejercicio,proyecto,simulacion), 
-                title, content_url, content_type, transcript_text, duration_seconds, 
-                difficulty_level, tags array }
-lesson_content { lesson_id, text_content JSONB, resources JSONB, examples JSONB, 
-                 practice_exercises JSONB }
+modules { id, routeId, title, orderNumber, estimatedHours }
 
--- 4. Evaluación y Progreso
-assessments { id, lesson_id, type enum(diagnostica,formativa,sumativa,aut evaluacion), 
-              passing_score float, time_limit_minutes, max_attempts int }
-assessment_questions { assessment_id, question_text, options JSONB, correct_answer, points }
-student_progress { student_id, lesson_id, status enum(pending,in_progress,completed),
-                   score float, attempts int, last_accessed timestamp }
-completion_certificate { id, student_id, route_id, issued_at, expires_at, qr_hash unique, 
-                         verification_url string }
+lessons { id, moduleId, type enum(video,lectura,ejercicio,proyecto,simulacion), 
+          title, contentUrl, contentType, transcriptText, durationSeconds, difficultyLevel, tags }
 
--- 5. Comunidad y Mentoría
-forums { id, course_id, title, moderation_status }
-forum_posts { id, forum_id, author_id, parent_id, content, status, created_at }
-peer_mentorships { mentor_id, mentee_id, start_date, end_date, status, topics array }
+lesson_components { lessonId, type enum(introduccion,explicacion,ejemplo,practica,evaluacion,cierre), text }
 
--- 6. Catálogo de Temas (de X.txt)
-subjects { id, name, icon, description, categories array }
-topic_areas { id, subject_id, name, modules_count default } -- ej: Programación, Ciencias Sociales, Oficios
+competencies { id, name, description, levelInicial, nivelIntermedio, nivelAvanzado }
+course_competencies { courseId, competencyId, evidenceRequired, criteria }
 
--- 7. Configuración y Preferencias
-user_preferences { user_id, dark_mode boolean, font_size smallint, animation_enabled boolean,
-                    reading_speed enum(slow,normal,fast), text_to_speech boolean }
-institution_settings { institution_id, terms_url, privacy_policy_url, parental_consent_required boolean }
+enrollments { userId, routeId, status enum(enrolled,in_progress,completed,dropped), startedAt, completedAt }
+student_progress { userId, lessonId, status enum(pending,in_progress,completed), score float, attempts int, lastAccessed }
+```
+
+#### Assessment & Certification
+```sql
+assessments { id, lessonId, type enum(diagnostica,formativa,sumativa), passingScore, timeLimitMin, maxAttempts }
+assessment_questions { assessmentId, questionText, options JSONB, correctAnswer, points }
+attempts { attemptId, assessmentId, userId, answers JSONB, score float, submittedAt }
+
+certificates { id, userId, routeId, code unique, issueDate, expiresAt, qrHash, competencies array, issuerName }
+certificate_verifications { certificateId, verifiedBy, verifiedAt, valid boolean }
+
+badges { id, name, icon, criteriaJSON }
+user_badges { userId, badgeId, earnedAt }
+```
+
+#### Community
+```sql
+forums { id, routeId, title, moderationStatus }
+forum_posts { id, forumId, authorId, parentId, content, status, createdAt }
+peer_mentorships { mentorId, menteeId, startDate, endDate, status, topics array }
+```
+
+#### Analytics (Privacy-preserving)
+```sql
+events { id, userId, eventType, properties JSONB, createdAt } // Anonymized for aggregation
+risk_scores { userId, score float, reason string, updatedAt } // For dropout prevention
 ```
 
 ---
 
-## 4. PATRÓN MULTIIDIOMA (de Open Tongue)
+## 4. MATRIZ DE ROLES Y PERMISOS (RBAC Completo)
 
-Open Tongue demuestra un patrón concreto para contenido multilingüe:
+11 roles definidos según X.txt §3.x:
+
+| Rol | Lee Cursos | Crea Contenido | Evalúa | Modera | Ve Analytics | Configura | Certifica | Padres Control |
+|-----|-----------|---------------|--------|--------|--------------|-----------|-----------|----------------|
+| **Estudiante** | ✅ | ❌ | ✅ Responde | ❌ | ✅ Solo suya | ❌ | ✅ Básico | ❌ |
+| **Docente** | ✅ Editar | ✅ Crea | ✅ | ❌ | ✅ Sus cursos | ❌ | ✅ Validado | ❌ |
+| **Mentor Par** | ✅ Lee | ✅ Sugiere | ✅ Asesora | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Admin Institucional** | ✅ Todo | ✅ Todo | ✅ Todo | ✅ Total | ✅ Todas | ✅ Todo | ✅ Emisor | ✅ Configurar |
+| **Admin Técnico** | ❌ No | ❌ No | ❌ No | ❌ No | ✅ Infraestructura | ✅ Infraestructura | ❌ | ❌ |
+| **Creador Contenido** | ✅ Suyo | ✅ Suyo | ❌ | ❌ | ✅ Suyo | ❌ | ❌ | ❌ |
+| **Moderador** | ✅ Todo | ❌ | ❌ | ✅ Total | ❌ | ❌ | ❌ | ❌ |
+| **Psicólogo** | ✅ Todo | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Familia/Tutor** | ✅ Hijo/a | ❌ | ❌ | ❌ | ✅ Hijo/a | ✅ Permisos hijo | ❌ | ✅ Full |
+| **Aliado Estratégico** | ✅ Analiza | ✅ Donativo | ✅ Valida | ❌ | ✅ Agregados | ❌ | ✅ Validador | ❌ |
+| **Investigador** | ✅ Anonimizado | ❌ | ❌ | ❌ | ✅ Desidentificado | ❌ | ❌ | ❌ |
+
+---
+
+## 5. MODELADO DE CONTENIDO (Content Repository)
+
+Cada lección usa formato markdown con frontmatter YAML (X.txt §18):
+
+```yaml
+---
+id: math-algebra-equations-01
+title: "Introducción a Ecuaciones Lineales"
+subject: mathematics
+module: algebra/sub-topic: equations
+level: basico
+duration_minutes: 7
+language: es
+version: 1.2.0
+last_reviewed: 2026-08-15
+reviewer: "Maria Santos"
+competencies: ["Resuelve ecuaciones lineales de una variable", "Verifica soluciones"]
+tags: [algebra, ecuaciones, principiante]
+prerequisites: ["math-arithmetic-basics"]
+accessibility:
+  transcript_available: true
+  video_subtitles: true
+  audio_description: true
+  reading_speed: normal
+---
+
+# Introducción a Ecuaciones Lineales
+
+[Video: 5 min explainer]
+
+## Lo que aprenderás
+
+- ...
+
+## Práctica
+
+::exercise
+type: multiple-choice
+question: "¿Cuál ecuación representa y = mx + b cuando m=2 y b=-3?"
+options:
+  - text: "y = 2x - 3"
+    correct: true
+  - text: "y = 3x - 2"
+    correct: false
+feedback_correct: "¡Correcto! Sustituyiste m y b correctamente."
+feedback_incorrect: "Revisa qué valor corresponde a pendiente (m) e intercepto (b)."
+::
+```
+
+**Delivery Pipeline:**
+1. Autores editan `/content/` (markdown + JSON/YAML)
+2. CI valida enlaces, prerequisitos, cobertura i18n
+3. Compiler convierte markdown → JSON structurado
+4. Apps consumen via API `/api/content/[subject]/[moduleId]/[lessonId]`
+
+---
+
+## 6. MULTILENGUAJE (Patrón Open Tongue)
+
+Cada campo traducido individualmente NO traducción de documento entero:
 
 ```typescript
 // shared/types.ts
 interface CourseContent {
   courseId: string;
   translations: {
-    [languageCode: string]: { // 'pt-BR', 'es', 'ca', 'en'
-      title: string;
-      description: string;
-      lessons: LessonTranslation[];
-    };
+    'pt-BR': { title: string; lessons: LessonTranslation[] };
+    'es': { title: string; lessons: LessonTranslation[] };
+    'ca': { title: string; lessons: LessonTranslation[] };
+    'en': { title: string; lessons: LessonTranslation[] };
   };
-}
-
-// Estructura de datos en Open Tongue (data/course-willian.json)
-{
-  "courseId": "willian-lang-pack",
-  "sourceLanguage": "pt-BR",
-  "targetLanguages": ["es", "ca", "en"],
-  "modules": 12,
-  "totalLessons": 48,
-  "difficulty": "A1-A2",
-  "context": "Barcelona daily life situations",
-  "translations": {
-    "es": { /* traducción completa */ },
-    "ca": { /* traducción completa */ },
-    "en": { /* traducción completa */ }
-  },
-  "exercises": [
-    {
-      "id": "ex-001",
-      "type": "fill-blank",
-      "sentence_template": "Yo ___ al supermercado.",
-      "answer": "voy",
-      "hint": "Del verbo ir",
-      "audio_url": null, // Optional: link to audio clip
-      "image_url": null  // Optional: supporting image
-    }
-  ],
-  "achievements": [
-    {"id": "ach-streak-3", "title": "3 Días Seguidos", "icon": "🔥"},
-    {"id": "ach-complete-lesson", "title": "Primera Lección", "icon": "✅"}
-  ]
 }
 ```
 
-**Implementación:**
-- Cada lección tiene traducción por campo individual (no traducción de PDF entero)
-- `pnpm i react-intl` para renderizado condicional por idioma
-- Datos de contenido en JSON separados del código (`data/*.json`)
-- Sistema de patches para archivos modificados (`patches/`)
+**Datos de contenido** → JSON separado del código (`data/*.json`) como Open Tongue.
 
 ---
 
-## 5. IA EDUCATIVA (Patrones de Open Tongue + X.txt)
+## 7. IA EDUCATIVA (Voice + Text Tutor)
 
-### Tutor Conversacional (del ejemplo Open Tongue)
+### Tutor Conversacional (Ollama Local)
 
 ```typescript
-// server/_core/llm.ts — Integration con Ollama local
+// server/_core/llm.ts
 async function getTutorResponse(question: string, context: LessonContext): Promise<string> {
   const response = await fetch(`${OLLAMA_URL}/api/generate`, {
     method: 'POST',
@@ -325,107 +348,50 @@ async function getTutorResponse(question: string, context: LessonContext): Promi
                Context: ${JSON.stringify(context)}.
                Answer in language: ${context.targetLanguage}.
                Keep response encouraging, under 200 words. Never humiliate or discourage.`,
-      stream: false,
-      temperature: 0.7
+      stream: false
     })
   });
-  
   const data = await response.json();
   return data.response;
 }
 ```
 
-### Integraciones de Voz
+### Reconocimiento de Voz (Web Speech API Nativo)
 
 ```typescript
 // client/src/hooks/useSpeechRecognition.ts
-// Reconocimiento de voz nativo del navegador (Web Speech API)
 export function useSpeechRecognition(onTranscript: (text: string) => void) {
   const [isListening, setIsListening] = useState(false);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
-
+  
   useEffect(() => {
-    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognitionRef.current = new SpeechRecognition();
-      recognitionRef.current.continuous = false;
-      recognitionRef.current.interimResults = true;
-      
-      recognitionRef.current.onresult = (event) => {
-        const transcript = Array.from(event.results)
-          .map(r => r[0].transcript).join('');
-        onTranscript(transcript);
-      };
+    if ('SpeechRecognition' in window) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.continuous = false;
+      recognition.onresult = (event) => onTranscript(event.results[0][0].transcript);
     }
   }, []);
-
-  const start = () => {
-    recognitionRef.current?.start();
-    setIsListening(true);
-  };
   
-  const stop = () => {
-    recognitionRef.current?.stop();
-    setIsListening(false);
-  };
-
-  return { isListening, start, stop };
-}
-```
-
-### Text-to-Speech para Accesibilidad
-
-```typescript
-// client/src/hooks/useTextToSpeech.ts
-export function useTextToSpeech() {
-  const speak = (text: string, lang: string = 'es') => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang;
-      utterance.rate = 0.9; // Slightly slower for learners
-      window.speechSynthesis.speak(utterance);
-    }
-  };
-  return { speak };
+  return { isListening, start: () => {}, stop: () => {} };
 }
 ```
 
 ---
 
-## 6. CERTIFICACIÓN VERIFICABLE
-
-Basado en X.txt sección 4.8 — Certificados con QR y verificación pública:
+## 8. CERTIFICACIÓN VERIFICABLE
 
 ```typescript
-// Generación de certificado con código único + QR
+// Generación con código único + QR hash
 import { nanoid } from 'nanoid';
-import QRCode from 'qrcode'; // npm install qrcode
+import QRCode from 'qrcode';
 
-interface CertificateOptions {
-  studentName: string;
-  courseTitle: string;
-  issuerName: string;
-  issueDate: Date;
-  expirationDate?: Date;
-  hours: number;
-  competencies: string[];
-}
-
-async function generateCertificate(opts: CertificateOptions): Promise<{
-  pdfBuffer: Buffer;
-  verificationUrl: string;
-  qrCodeBase64: string;
-}> {
-  const code = nanoid(12); // Unique certificate ID
+async function generateCertificate(opts: {
+  studentName: string; courseTitle: string; issuerName: string;
+  issueDate: Date; competencies: string[]; hours: number;
+}): Promise<{ verificationUrl: string; qrCodeBase64: string }> {
+  const code = nanoid(12);
   const verificationUrl = `https://open-school.belentani.app/verify/${code}`;
-  
-  // Generate QR code encoding verification URL
   const qrBase64 = await QRCode.toDataURL(verificationUrl);
-  
-  // Create PDF with certificate details using @react-pdf/renderer
-  // ... implementation omitted for brevity
-  
-  return { pdfBuffer, verificationUrl, qrCodeBase64 };
+  return { verificationUrl, qrCodeBase64 };
 }
 
 // Endpoint público de verificación
@@ -433,141 +399,77 @@ app.get('/verify/:code', async (req, res) => {
   const cert = await db.query.certificates.findFirst({
     where: (table, eq) => eq(table.code, req.params.code)
   });
-  
-  if (!cert) {
-    return res.status(404).json({ error: 'Certificate not found' });
-  }
-  
-  // Return public certificate info (no sensitive personal data)
-  res.json({
-    valid: !cert.expires_at || new Date(cert.expires_at) > new Date(),
-    studentName: cert.student_name,
-    courseTitle: cert.course_title,
-    issueDate: cert.issue_date,
-    issuerName: cert.issuer_name,
-    qr_hash: cert.qr_hash
-  });
+  if (!cert) return res.status(404).json({ error: 'No encontrado' });
+  res.json({ valid: !cert.expires_at || new Date(cert.expires_at) > new Date(), ... });
 });
 ```
 
+**Tipos de certificación:** Participation, Completion, Competence, Digital Badge, Microcredential, Route Diploma.
+
 ---
 
-## 7. ACCESIBILIDAD (WCAG 2.1+)
-
-Requisitos críticos extraídos de X.txt sección 2.2:
+## 9. ACCESIBILIDAD (WCAG 2.1+)
 
 ```css
-/* shared/styles/accessibility.css */
-
-/* Modo de bajo consumo visual */
-.reduce-motion {
-  animation-duration: 0ms !important;
-  transition-duration: 0ms !important;
-}
-
-/* Alto contraste (forzado) */
-.high-contrast {
-  filter: contrast(1.2) brightness(1.05);
-  background: #000 !important;
-  color: #fff !important;
-}
-
-/* Modo sin imágenes animadas */
-.no-animated-bg * {
-  background-image: none !important;
-  animation: none !important;
-}
-
-/* Tipografía legible aumentada */
-.large-font {
-  font-size: 1.25rem !important;
-  line-height: 1.6 !important;
-}
-
-/* Navegación por teclado visible */
-*:focus-visible {
-  outline: 3px solid #ff073a !important;
-  outline-offset: 2px !important;
-}
-
-/* Skip links para lectores de pantalla */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  z-index: 9999;
-  transition: top 0.3s;
-}
-.skip-link:focus {
-  top: 0;
-}
-
-/* Modo lectura simplificada (menos distracciones) */
-.simplified-read {
-  max-width: 65ch;
-  margin: 0 auto;
-  padding: 2rem;
-}
-.simplified-read img {
-  max-width: 100%;
-  height: auto;
-}
-.simplified-read nav,
-.simplified-read header,
-.simplified-read footer {
-  display: none;
-}
+/* Reduce motion */
+.reduce-motion * { animation-duration: 0ms !important; transition-duration: 0ms !important; }
+/* High contrast */
+.high-contrast { filter: contrast(1.2) brightness(1.05); background: #000 !important; color: #fff !important; }
+/* Focus visible */
+*:focus-visible { outline: 3px solid #ff073a; outline-offset: 2px; }
+/* Skip link */
+.skip-link { position:absolute; top:-40px; left:0; background:#000; color:#fff; padding:8px; z-index:9999; }
+.skip-link:focus { top:0; }
+/* Large font */
+.large-font { font-size:1.25rem !important; line-height:1.6 !important; }
+/* Simplified read */
+.simplified-read { max-width:65ch; margin:0 auto; }
+.simplified-read nav, .simplified-read header, .simplified-read footer { display:none; }
 ```
 
-**Implementación por componente:**
-- Todos los inputs deben tener `<label>` visible o `aria-label`
-- Botones: `aria-label` descriptivo cuando no hay texto visible
-- Imágenes: siempre `alt` descriptivo (nunca vacío si informativo)
-- Videos: siempre subtítulos + transcripción descargable
-- Tablas complejas: `scope` attributes en th elements
-- Formularios: error messages asociadas con `aria-describedby`
+**Checklist obligatorio:**
+- ✅ Todos los `<input>` tienen `<label>` o `aria-label`
+- ✅ Imágenes siempre con `alt` descriptivo
+- ✅ Videos con subtítulos + transcripción descargable
+- ✅ Navegación completa por teclado (`tabindex`, `taborder`)
+- ✅ Colores no únicos para transmitir info
+- ✅ Tiempo extensible para tareas
+- ✅ Modo sin animaciones disponible
+- ✅ Texto legible escalable
+- ✅ Compatible lectores de pantalla (ARIA roles, semantic HTML)
 
 ---
 
-## 8. MODO OFFLINE / BAJO ANCHO DE BANDA
+## 10. MODO OFFLINE / PWA
 
+### Service Worker Strategy
 ```typescript
-// client/src/lib/offline.ts — Service Worker + Cache Strategy
-const CACHE_NAME = 'open-school-v1';
-const OFFLINE_ASSETS = ['/index.html', '/offline-page'];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(OFFLINE_ASSETS))
-  );
-});
-
+// Cache-first para contenido, network-first para APIs
 self.addEventListener('fetch', (event) => {
-  // For content requests: cache-first, then network fallback
-  if (event.request.url.includes('/api/lessons/') || 
-      event.request.url.endsWith('.json')) {
-    event.respondWith(
-      caches.match(event.request).then(cached => {
-        if (cached) return cached;
-        return fetch(event.request).then(response => {
-          // Put new response in cache
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return response;
-        }).catch(() => caches.match('/offline-course-data')); // Offline fallback page
-      })
-    );
+  if (event.request.url.includes('/api/') || event.request.url.endsWith('.json')) {
+    // Content: cache-first
+    event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
   } else {
-    // For other requests: network-first
-    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+    // Other: network-first
+    event.respondWith(fetch(event.request).catch(() => caches.match('/offline-page')));
   }
 });
 ```
 
-**Configuración PWA (manifest.json):**
+### Qué funciona offline vs requiere conexión
+
+| Función | Offline | Requiere Conexión |
+|---------|---------|-------------------|
+| Lecciones descargadas | ✅ | ❌ |
+| Videos (calidad baja) | ✅ | ❌ |
+| Ejercicios básicos | ✅ | ❌ |
+| Foros/Comunidad | ❌ | ✅ |
+| Tutor AI avanzado | ❌ | ✅ |
+| Sync de progreso | Auto al reconectar | ✅ |
+| Publicación certificados | ❌ | ✅ |
+| Búsqueda global | ❌ | ✅ |
+
+**PWA manifest:**
 ```json
 {
   "name": "Open School — Aprende Sin Límites",
@@ -575,84 +477,59 @@ self.addEventListener('fetch', (event) => {
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
-  "theme_color": "#ff073a",
-  "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
-  ]
+  "theme_color": "#ff073a"
 }
-```
-
----
-
-## 9. IMPLEMENTACIÓN RÁPIDA (Quick Start)
-
-### Template para empezar un nuevo proyecto
-
-```bash
-# 1. Clone esta plantilla
-git clone https://github.com/belentani7/open-school YOUR_PROJECT_NAME
-cd YOUR_PROJECT_NAME
-
-# 2. Install dependencies
-pnpm install
-
-# 3. Copy environment
-cp .env.example .env.local
-
-# 4. Setup database
-pnpm drizzle-kit generate
-pnpm drizzle-kit migrate
-pnpm run seed  # Populate with sample curriculum
-
-# 5. Start development
-pnpm dev
-
-# 6. Test locally
-# Open http://localhost:3000
-```
-
-### Configuración Básica (.env.example)
-
-```bash
-# Database
-DATABASE_URL=postgresql://user:pass@localhost:5432/open_school
-
-# Auth (Supabase or custom JWT)
-NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
-SUPABASE_SERVICE_KEY=xxx
-
-# AI (Optional — for local Ollama)
-OLLAMA_URL=http://127.0.0.1:11434
-OLLAMA_MODEL=llama3.2:3b
-
-# Features
-NEXT_PUBLIC_ENABLE_OFFLINE=true
-NEXT_PUBLIC_ENABLE_VOICE=true
-NEXT_PUBLIC_DEFAULT_LANGUAGE=es
-NEXT_PUBLIC_SUPPORTED_LANGUAGES=es,en,pt-BR,ca
-
-# Analytics (Privacy-first — no cookies required)
-ENABLE_ANALYTICS=false  # Default off for youth platforms
 ```
 
 ---
 
 ## COMPARACIÓN CON REPOS EXISTENTES
 
-| Característica | Open School (este) | Open Tongue | UX Academy | LinguaForge |
-|---------------|-------------------|-------------|------------|-------------|
-| Roles múltiples | ✅ 11 roles definidos | ✅ Estudiante solo | ✅ Docente + Estudiante | ✅ Translators |
-| Certificación | ✅ Verificable QR | ❌ Logros simples | ✅ Capstone cert | ❌ |
-| Contenido modular | ✅ Ruta→Modulo→Lección | ✅ 12 módulos/48 lecciones | ✅ Unidades temáticas | ❌ |
-| Evaluación formativa | ✅ Quiz inmediato | ✅ Ejercicios básicos | ✅ Evaluación + feedback | ❌ |
-| Multilenguaje | ✅ i18n completo | ✅ PT+ES+CA+EN | ✅ Trilingüe | ✅ Traducción tools |
-| IA Local | ✅ Ollama integrado | ✅ Ollama + Web Speech | ❌ | ❌ |
-| Modo Offline | ✅ SW + Cache | ❌ | ❌ | ❌ |
+| Feature | Open School v2 | Open Tongue | UX Academy | LinguaForge |
+|---------|---------------|-------------|------------|-------------|
+| Roles múltiples | ✅ 11 roles RBAC | ✅ Estudiante | ✅ Docente+E | ✅ Translators |
+| Currículo modular | ✅ Ruta→Modulo→Lección | ✅ 12 módulos/48 lecciones | ✅ Unidades | ❌ |
+| Evaluación formativa | ✅ Quiz inmediato + feedback | ✅ Ejercicios básicos | ✅ Evaluación+feedback | ❌ |
+| Certificación QR | ✅ Verificable pública | ❌ Logros simples | ✅ Capstone cert | ❌ |
+| Multilenguaje | ✅ pt-BR/es/ca/en | ✅ PT+ES+CA+EN | ✅ Trilingüe | ✅ Traducción tools |
+| IA Local | ✅ Ollama + Web Speech | ✅ Ollama + Web Speech | ❌ | ❌ |
+| Modo Offline | ✅ SW + Cache + PWA | ❌ | ❌ | ❌ |
 | Accesibilidad | ✅ WCAG 2.1 checklist | Básico | ✅ | ✅ |
-| Multi-institución | ✅ Multi-tenant | Single-user | Multi | Multi |
 | Comunidad | ✅ Foros + mentoring | ❌ | ❌ | ❌ |
+| Vocational Guidance | ✅ Tests + rutas laborales | ❌ | ❌ | ❌ |
+| Parental Controls | ✅ Consent + limits | ❌ | ❌ | ❌ |
 
 ---
 
-*Documento compilado desde análisis de 11,000+ líneas de especificación X.txt + repositories reales (Open Tongue, UX Academy, LinguaForge) + patrones técnicos comunes.*
+## IMPLEMENTACIÓN RÁPIDA
+
+### Quick Start
+```bash
+# Clonar plantilla
+git clone https://github.com/belentani7/open-school YOUR_PROJECT_NAME
+cd YOUR_PROJECT_NAME
+
+# Instalar + config
+pnpm install
+cp .env.example .env.local
+
+# Database
+pnpm db:generate && pnpm db:migrate && pnpm db:seed
+
+# Dev
+pnpm dev  # http://localhost:3000
+```
+
+### Variables esenciales (.env)
+```bash
+DATABASE_URL=postgresql://user:pass@localhost:5432/open_school
+OLLAMA_URL=http://127.0.0.1:11434
+OLLAMA_MODEL=llama3.2:3b
+NEXT_PUBLIC_DEFAULT_LANGUAGE=es
+NEXT_PUBLIC_SUPPORTED_LANGUAGES=es,en,pt-BR,ca
+NEXT_PUBLIC_ENABLE_OFFLINE=true
+```
+
+---
+
+*Documento v2 compilado desde: X.txt (11,000+ líneas) + repos reales (Open Tongue, UX Academy, LinguaForge) + investigación de 2 agentes Explore sobre arquitectura multi-repo + especificación completa.*
