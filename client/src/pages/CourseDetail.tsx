@@ -1,7 +1,9 @@
 // Open School — Course Detail Page (Generic)
-import { Link, useParams } from 'wouter';
+import { Link, useParams } from "wouter";
+import { NotFound } from "./NotFound";
 
-const courses = {
+type Course = { name: string; desc: string; modules: string[] };
+const courses: Record<string, Course> = {
   '1': { name: 'Lingua Aberta', desc: 'Aprende idiomas con IA educativa local', modules: ['Fonética y pronunciación', 'Gramática interactiva', 'Conversación con Ollama', 'Traducción adaptativa', 'Speaking con Web Speech API'] },
   '2': { name: 'UX Academy', desc: 'Evaluación formativa + Capstone trilingüe', modules: ['Diseño UX básico', 'Prototipado Figma', 'Testing usuarios', 'Capstone proyecto real'] },
   '3': { name: 'Cybersecurity Foundations', desc: 'Fundamentos de ciberdefensa y privacidad', modules: ['Principios de seguridad', 'OWASP Top 10', 'Privacidad digital', 'Ética hacker'] },

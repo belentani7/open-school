@@ -1,0 +1,62 @@
+BELENTANI — ASSETS NECESARIOS (definición oficial)
+Fecha: 2026-09-03 | Licencia: AGPLv3 | Fuente verdad: BELENTANI-DESIGN-SYSTEM.md
+Teoría aplicada: 60-30-10, WCAG 2.1 AA (contraste ≥4.5:1 texto), psicología color (navy=confianza, lime=acción, cyan=tecnología), glassmorfismo (profundidad sin peso).
+
+============================================================
+TIPO 01 — LOGOS (SVG, fondo transparente)
+============================================================
+01a. logo-madre.svg — escudo T + palabra SECURE-T / UX / LINGUA / MANOS. Versión horizontal + stacked.
+  Debe hacer: legible a 16px favicon y a 2m banner. Trazo mínimo 1.5px. Versión mono blanco y mono negro incluidas.
+01b. favicon.svg + favicon-32.png — solo escudo T simplificado.
+01c. logo-mono-blanco.svg / logo-mono-negro.svg — para merch y PDFs.
+
+============================================================
+TIPO 02 — PALETA + TOKENS (código fuente, no imagen)
+============================================================
+02a. belentani-theme.css — variables :root (ya existe en shared/). Debe exponer: --bel-bg/cyan/lime/coral/saffron/mint/paper/ink, --radius, fonts.
+02b. tailwind.preset.js — mismo token en formato tailwind para los 5 repos. Debe hacer: `extend.colors.bel.*` + `fontFamily.display/sans/mono`.
+02c. Figma-variables.json (opcional) — export tokens para diseñador.
+
+============================================================
+TIPO 03 — FONDOS (SVG/PNG, ligeros)
+============================================================
+03a. bg-circuit-dark.svg — circuitos cyan 8% opacidad sobre navy, tileable 512px. Debe hacer: textura sin matar contraste texto.
+03b. bg-grid-light.svg — rejilla papel para modo claro.
+03c. glow-lime.png — radial lima 20% para hero CTA (una sola imagen, reutilizable).
+
+============================================================
+TIPO 04 — COMPONENTES GLASS (código fuente HTML/CSS)
+============================================================
+04a. glass-card.html/css — card dark: background rgba(13,22,38,.55), backdrop-filter blur(18px) saturate(140%), borde 1px rgba(56,225,255,.18), sombra 0 8px 32px rgba(0,0,0,.35). Debe hacer: texto encima legible, blur real sobre fondo circuitos.
+04b. glass-nav.html — navbar fija glass + blur al scroll.
+04c. btn-primary/btn-ghost — lima sólido vs cyan outline, estados hover/active/disabled/focus-visible (anillo cyan 2px).
+04d. badge-chip — 100% ONLINE / APRENDE HACIENDO, outline cyan, radius 99px.
+
+============================================================
+TIPO 05 — ICONOS (SVG stroke, 24px, set único)
+============================================================
+home, cursos, labs(flask), perfil, escudo, candado, cerebro/IA, nube, terminal, trofeo, racha(fuego), XP(estrella), check, alerta. Trazo 1.8px, round caps. Deben hacer: mismos a 16/24/32px sin redibujar.
+
+============================================================
+TIPO 06 — HERO MEDIA (PNG/WebP exportable)
+============================================================
+06a. hero-secure-dark.png 1600x900 — escudo T 3D sobre circuitos + glow (como corporate reference, pero regenerado propio).
+06b. hoodie-mockup.png — solo si merch. No prioritario.
+
+============================================================
+TIPO 07 — DOCUMENTOS (PDF)
+============================================================
+certificado-base.svg — marco + claim + QR verificable. Debe hacer: imprimible B/N legible.
+
+============================================================
+ORDEN DE GENERACIÓN (código primero, imagen después)
+============================================================
+1. 02 tokens (css+preset) — hoy, código.
+2. 04 glass components (html/css) — hoy, código. Demo: theme-demo-glass.html
+3. 05 iconos SVG — siguiente, código.
+4. 01 logos SVG — siguiente, vector.
+5. 03 fondos — siguiente, livianos.
+6. 06 hero PNG — último, pesado, con IA local.
+7. 07 certificado — cuando Fase certs.
+
+REGLA: ningún asset sale de HTML puro suelto. Todo vive en `open-school/assets/{logos,tokens,fondos,components,iconos,hero,docs}/` con README por carpeta.

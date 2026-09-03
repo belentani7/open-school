@@ -1,0 +1,23 @@
+/* 04a glass-card · dark */
+.glass-card{
+  background:rgba(13,22,38,.55);
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid rgba(56,225,255,.18);
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+  border-radius:18px;
+}
+/* 04b glass-nav fija + blur al scroll */
+.glass-nav{position:fixed;inset:0 0 auto 0;transition:.35s}
+.glass-nav.scrolled{background:rgba(13,22,38,.55);backdrop-filter:blur(18px) saturate(150%);border-bottom:1px solid rgba(56,225,255,.18)}
+/* 04c botones */
+.btn-primary{background:#b6ff2e;color:#0d1626;border-radius:99px}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-primary:active{filter:brightness(.96)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-ghost{border:1px solid rgba(56,225,255,.45);color:#7de9ff;background:transparent;border-radius:99px}
+.btn-ghost:hover{background:rgba(56,225,255,.1)}
+:focus-visible{outline:2px solid #38e1ff;outline-offset:2px}
+/* 04d badge-chip */
+.badge-chip{border:1px solid rgba(56,225,255,.45);color:#7de9ff;border-radius:99px;
+  padding:6px 14px;font:500 10.5px/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase}

@@ -1,0 +1,40 @@
+/* BELENTANI DESIGN SYSTEM — THEME v1.1 CHROMA · AGPLv3 · 2026-09-03
+   Fuente verdad: galería oficial CHROMA (open-school/galeria-chroma).
+   Teoria: 60-30-10 · WCAG 2.1 AA (>=4.5:1 texto) · glassmorfismo */
+:root{
+  /* 60% superficie */
+  --bel-bg:#0b1322;          /* navy = confianza */
+  --bel-paper:#f4f7fb;
+  --bel-ink:#0d1626;
+  --bel-text:#e8f1ff;
+  --bel-muted:#9fb3c8;
+  /* 30% tecnologia */
+  --bel-cyan:#38e1ff;
+  --bel-mint:#4ef0b0;
+  /* 10% accion */
+  --bel-lime:#b6ff2e;
+  --bel-lime-ink:#0d1626;
+  /* apoyo cromatico */
+  --bel-coral:#ff6b5e;
+  --bel-saffron:#ffb52e;
+  --bel-violet:#a78bfa;
+  /* glass */
+  --bel-glass-bg:rgba(13,22,38,.55);
+  --bel-glass-border:rgba(56,225,255,.18);
+  --bel-glass-blur:18px;
+  --bel-shadow:0 8px 32px rgba(0,0,0,.35);
+  /* forma */
+  --radius-sm:10px; --radius:18px; --radius-lg:28px; --radius-pill:99px;
+  /* tipografia */
+  --font-display:"Sora",system-ui,sans-serif;
+  --font-sans:"Inter",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  /* foco accesible */
+  --focus-ring:0 0 0 2px #38e1ff;
+}
+[data-theme="light"]{
+  --bel-bg:#f4f7fb; --bel-text:#0d1626; --bel-muted:#41566d;
+  --bel-glass-bg:rgba(255,255,255,.66);
+  --bel-glass-border:rgba(13,22,38,.14);
+  --bel-shadow:0 8px 32px rgba(13,22,38,.10);
+}
