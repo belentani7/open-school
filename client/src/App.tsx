@@ -7,6 +7,7 @@ import { Dashboard } from './pages/Dashboard';
 import { CourseDetail } from './pages/CourseDetail';
 import { NotFound } from './pages/NotFound';
 import { Chat } from './pages/Chat';
+import { Catalog } from './pages/Catalog';
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
 
 const ROUTES = [
   ['/', Home],
+  ['/catalog', Catalog],
   ['/dashboard', Dashboard],
   ['/chat', Chat],
   ['/courses/:id', CourseDetail],
