@@ -2,7 +2,7 @@
   "name": "open-school",
   "version": "1.0.0",
   "type": "module",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "description": "Platforma educativa digital universal — cursos modulares, certificaciones verificables, roles múltiples, accesibilidad WCAG, offline-first",
   "scripts": {
     "dev": "vite --host",
