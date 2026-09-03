@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
+  root: './client',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -16,5 +17,9 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3001'
     }
+  },
+  build: {
+    outDir: '../dist/client',
+    emptyOutDir: true
   }
 });
