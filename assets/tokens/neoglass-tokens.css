@@ -1,0 +1,23 @@
+/* BELENTANI//WEB — NEOGLASS RED TOKENS · AGPLv3 · 2026-09-03
+   Capa roja compatible con CHROMA general (no lo sustituye).
+   Uso: @import "../tokens/neoglass-tokens.css"; prefijo --ng-* */
+:root{
+  --ng-bg:#050508;
+  --ng-panel:#0d0d14;
+  --ng-red:#ff0032;
+  --ng-red-hi:#ff2244;
+  --ng-red-deep:#8b0000;
+  --ng-red-glow:rgba(255,0,35,.32);
+  --ng-white-16:rgba(255,255,255,.16);
+  --ng-white-08:rgba(255,255,255,.085);
+  --ng-white-02:rgba(255,255,255,.018);
+  --ng-line:rgba(255,255,255,.115);
+  --ng-text:#f4f4f6;
+  --ng-muted:rgba(255,255,255,.55);
+  --ng-glass:blur(24px) saturate(155%);
+  --ng-radius:18px;
+  --ng-pill:99px;
+  --ng-font-d:"Sora",system-ui,sans-serif;
+  --ng-font-b:"Inter",system-ui,sans-serif;
+  --ng-font-m:"JetBrains Mono",monospace;
+}

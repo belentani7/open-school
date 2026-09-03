@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- BELENTANI//WEB — NEOGLASS demo · AGPLv3 · zero deps salvo fonts -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BELENTANI//WEB · NEOGLASS RED</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="neoglass.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050508;color:#f4f4f6;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:0}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:1;
+background:radial-gradient(circle,rgba(255,0,50,.14),transparent 65%);transform:translate(-50%,-50%)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+nav{position:sticky;top:12px;z-index:10;display:flex;gap:10px;align-items:center;padding:12px 18px;border-radius:18px;
+background:rgba(13,13,20,.55);backdrop-filter:blur(24px) saturate(155%);border:1px solid rgba(255,255,255,.115)}
+nav b{font-family:Sora;letter-spacing:.14em}nav b i{color:#ff2244;font-style:normal}
+nav .sp{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(255,255,255,.55)}
+.hero{padding:70px 0 30px;text-align:center}
+.hero h1{font-family:Sora;font-size:clamp(30px,5vw,54px)}.hero h1 span{color:#ff2244}
+.hero p{color:rgba(255,255,255,.6);margin:12px auto;max-width:560px}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:26px 0}
+.term{background:rgba(0,0,0,.6);border:1px solid rgba(255,0,50,.3);border-radius:14px;padding:14px;font-family:"JetBrains Mono",monospace;font-size:11.5px;height:170px;overflow-y:auto}
+.term div{padding:2px 0;color:rgba(255,255,255,.75)}.term .ok{color:#4ef0b0}.term .warn{color:#ff2244}
+.modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.6);z-index:30}
+.modal.open{display:grid}.sheet{max-width:420px;width:90%;padding:26px;border-radius:18px;background:rgba(13,13,20,.8);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.15)}
+.alert{border-color:rgba(255,0,50,.7)!important;box-shadow:0 0 30px rgba(255,0,50,.35)}
+.ic{width:16px;height:16px;vertical-align:-3px}
+@media(max-width:640px){.row{flex-direction:column;align-items:stretch;text-align:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div id="glow"></div>
+<nav class="wrap" style="max-width:1060px"><b>BELENTANI<i>//</i>WEB</b>
+<span class="sp" id="clock">--:--:--</span><span class="sp">NEOGLASS RED · v1</span></nav>
+<div class="wrap">
+<header class="hero" id="heroZone">
+<h1>NEOGLASS <span>RED CORE</span></h1>
+<p>Vidrio multicapa, plasma rojo, reflejo especular siguiendo el cursor. Botones invisibles que despiertan con tu presencia.</p>
+<div class="row">
+<button class="bel-btn ng-btn ng-primary" data-belentani id="bGo">Entrar al sistema</button>
+<button class="bel-btn ng-btn ng-ghost" data-belentani id="bGhost">Ver terminal</button>
+</div>
+<div class="row ng-reveal" id="secretRow">
+<button class="bel-btn ng-btn ng-ghost ng-invisible" data-belentani>◈ protocolo oculto α</button>
+<button class="bel-btn ng-btn ng-ghost ng-invisible" data-belentani>◈ protocolo oculto β</button>
+</div>
+</header>
+<div class="grid">
+<div class="bel-reactive ng-card"><h3 style="font-family:Sora">Card reactiva</h3>
+<p style="font-size:13px;color:rgba(255,255,255,.6);margin:8px 0 14px">Tilt 3D, highlight y specular siguen el cursor.</p>
+<div class="row" style="justify-content:flex-start"><span class="ng-chip">100% ONLINE</span><span class="ng-chip">WCAG AA</span></div></div>
+<div class="bel-reactive ng-card"><h3 style="font-family:Sora">Estados</h3>
+<div class="row" style="justify-content:flex-start;margin-top:12px">
+<button class="bel-btn ng-btn ng-primary" data-belentani disabled>Disabled</button>
+<button class="bel-btn ng-btn ng-ghost" data-belentani id="bLoad">Loading 2s</button>
+</div><div class="row" style="justify-content:flex-start">
+<button class="bel-btn ng-btn ng-ghost" data-belentani id="bGlitch">Glitch</button>
+<button class="bel-btn ng-btn ng-ghost" data-belentani id="bPulse">Pulse ♥</button>
+<button class="bel-btn ng-btn ng-ghost" data-belentani id="bModal">Modal</button>
+</div></div>
+</div>
+<div class="grid">
+<div class="bel-reactive ng-card"><h3 style="font-family:Sora">Input + iconos SVG</h3>
+<div style="display:flex;gap:8px;margin-top:12px;align-items:center">
+<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#ff2244" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+<input class="ng-input bel-reactive" id="cmdInput" placeholder="escribe un comando… (Enter)">
+</div></div>
+<div class="term" id="term"><div class="ok">[boot] neoglass engine OK · zero deps</div><div>[sys] plasma procedural activo</div></div>
+</div>
+</div>
+<div class="modal" id="modal"><div class="sheet bel-reactive">
+<h3 style="font-family:Sora">Modal NEOGLASS</h3>
+<p style="font-size:13px;color:rgba(255,255,255,.6);margin:10px 0 16px">Misma materia visual: un token, un motor, todo el ecosistema.</p>
+<button class="bel-btn ng-btn ng-primary" data-belentani id="bClose">Cerrar</button>
+</div></div>
+<script src="neoglass.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const term=$("term");
+function log(m,c){const d=document.createElement("div");if(c)d.className=c;d.textContent="["+new Date().toLocaleTimeString()+"] "+m;term.appendChild(d);term.scrollTop=term.scrollHeight;}
+setInterval(()=>{$("clock").textContent=new Date().toLocaleTimeString();},1000);
+/* invisibles: aparecen al entrar en la hero */
+$("heroZone").addEventListener("pointerenter",()=>{document.querySelectorAll(".ng-invisible").forEach(b=>b.classList.add("revealed"));log("protocolos ocultos revelados","ok");},{once:true});
+/* canvas plasma procedural */
+const cv=$("bg"),cx=cv.getContext("2d");let W,H,t=0;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;}size();addEventListener("resize",size);
+const dots=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,s:Math.random()*.0006+.0002}));
+(function loop(){
+ t+=.008;cx.fillStyle="#050508";cx.fillRect(0,0,W,H);
+ for(const d of dots){d.y-=d.s;if(d.y<0)d.y=1;
+  const a=.25+.35*Math.abs(Math.sin(t*2+d.x*9));
+  cx.beginPath();cx.arc(d.x*W,d.y*H,d.r,0,7);cx.fillStyle=`rgba(255,0,50,${a.toFixed(3)})`;cx.fill();}
+ requestAnimationFrame(loop);
+})();
+/* glow sigue cursor */
+addEventListener("pointermove",e=>{const g=$("glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";},{passive:true});
+/* acciones demo */
+$("bGo").onclick=e=>{BelentaniGlass.pulse(e.currentTarget);log("acceso concedido → terminal","ok");};
+$("bGhost").onclick=()=>{term.scrollIntoView({behavior:"smooth"});log("scroll a terminal");};
+$("bLoad").onclick=e=>{const b=e.currentTarget;BelentaniGlass.loading(b,true);log("loading…");setTimeout(()=>{BelentaniGlass.loading(b,false);log("carga completa","ok");},2000);};
+$("bGlitch").onclick=e=>{BelentaniGlass.glitch(e.currentTarget);log("glitch inyectado","warn");};
+$("bPulse").onclick=e=>{BelentaniGlass.pulse(e.currentTarget);log("heartbeat ♥");};
+$("bModal").onclick=()=>$("modal").classList.add("open");
+$("bClose").onclick=()=>$("modal").classList.remove("open");
+$("modal").addEventListener("click",e=>{if(e.target.id==="modal")$("modal").classList.remove("open");});
+$("cmdInput").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.value.trim()){log("$ "+e.target.value);e.target.value="";}});
+log("demo lista: hover, click, focus(Tab), estados","ok");
+</script>
+</body>
+</html>
