@@ -1,0 +1,114 @@
+/* ================================================
+   OPEN SCHOOL — NEO-NEOGLASS INTEGRATION
+   
+   Este archivo inyecta el sistema de diseño
+   Neo-Neoglass en Open School como capa sobre
+   Tailwind. Úsalo como entry point CSS.
+   
+   Project: C:\Users\USER\Documents\01_PROYECTOS\open-school
+   Entry: client/src/main.tsx → import './index.css'
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ---------- NOIACORE THEME TOKENS (inline) ---------- */
+:root {
+  --nclr-bg:         #0a0a0f;
+  --nclr-bg-deep:    #050508;
+  --nclr-surface:    rgba(255,255,255,0.03);
+  --nclr-surface-mid:rgba(255,255,255,0.06);
+  --nclr-border:     rgba(255,255,255,0.07);
+  --nclr-red:        #ff073a;
+  --nclr-red-dim:    #ff4466;
+  --nclr-red-deep:   rgba(255,7,58,0.08);
+  --nclr-red-glow:   rgba(255,7,58,0.35);
+  --nclr-text:       #e0e0e0;
+  --nclr-muted:      #8b949e;
+  --nclr-muted-low:  #5a5e65;
+}
+
+/* ---------- BASE OVERRIDES ---------- */
+body {
+  background: var(--nclr-bg) !important;
+  color: var(--nclr-text) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* Wireframe grid overlay */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+body > * { position: relative; z-index: 1; }
+
+/* Scrollbar rojo neón */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,7,58,0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,7,58,0.4); }
+
+/* ---------- GLASS PANEL HELPER ---------- */
+.ncl-glass {
+  background: var(--nclr-surface);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--nclr-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.ncl-glass:hover {
+  border-color: rgba(255,7,58,0.25);
+  box-shadow: 0 0 16px rgba(255,7,58,0.1), 0 4px 16px rgba(0,0,0,0.4), inset 0 0 10px rgba(255,7,58,0.04);
+}
+
+/* ---------- BUTTON OVERRIDES ---------- */
+button, .btn-primary, [role="button"] {
+  transition: all 0.25s ease !important;
+}
+
+/* Override shadcn/Tailwind primary buttons to red neon */
+[data-theme*="default"] button.bg-primary,
+button[style*="background"],
+.bg-primary {
+  background: linear-gradient(135deg, rgba(255,7,58,0.2), rgba(255,7,58,0.08)) !important;
+  border: 1px solid rgba(255,7,58,0.4) !important;
+  color: #fff !important;
+}
+[data-theme*="default"] button.bg-primary:hover,
+button[style*="background"]:hover,
+.bg-primary:hover {
+  background: rgba(255,7,58,0.25) !important;
+  border-color: #ff073a !important;
+  box-shadow: 0 0 16px rgba(255,7,58,0.35) !important;
+}
+
+/* ---------- INPUT OVERRIDES ---------- */
+input:not([type="checkbox"]):not([type="radio"]), textarea, select {
+  background: rgba(0,0,0,0.3) !important;
+  border-color: rgba(255,255,255,0.07) !important;
+  color: #e0e0e0 !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #ff073a !important;
+  box-shadow: 0 0 12px rgba(255,7,58,0.15) !important;
+}
+
+/* ---------- TABLE OVERRIDES ---------- */
+table th { background: rgba(255,255,255,0.03) !important; }
+table tr { border-bottom: 1px solid rgba(255,255,255,0.04) !important; }
+
+/* ---------- MODAL / DIALOG ---------- */
+[role="dialog"], .modal-content {
+  background: rgba(10,10,15,0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255,7,58,0.15) !important;
+}
