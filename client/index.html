@@ -1,16 +1,192 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open School — Aprende Sin Límites</title>
-    <meta name="description" content="Plataforma educativa digital universal gratuita para jóvenes." />
-    <link rel="manifest" href="/manifest.json" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <noscript>Necesitas JavaScript para usar Open School.</noscript>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open School</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#030306;--violet:#8b5cf6;--pink:#ec4899;--cyan:#06b6d4;--text:#e2e8f0;--muted:#64748b;--glass:rgba(255,255,255,.02)}
+body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
+::selection{background:var(--violet);color:#fff}
+.cursor{position:fixed;width:20px;height:20px;border:1px solid var(--violet);border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:transform .15s}
+.cursor.active{transform:scale(3)}
+.grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.loader{position:fixed;inset:0;background:var(--bg);z-index:10000;display:flex;align-items:center;justify-content:center}
+.loader-text{font-size:clamp(3rem,10vw,8rem);font-weight:700;background:linear-gradient(135deg,var(--violet),var(--pink),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-4px}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+.nav-logo{font-size:1.2rem;font-weight:700;letter-spacing:-1px}
+.nav-menu{display:flex;gap:40px}
+.nav-menu a{color:var(--text);font-size:.8rem;text-transform:uppercase;letter-spacing:3px;text-decoration:none}
+.nav-menu a:hover{color:var(--violet)}
+
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.mesh{position:absolute;width:800px;height:800px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);background:conic-gradient(from 0deg,rgba(139,92,246,.15),rgba(236,72,153,.1),rgba(6,182,212,.15),rgba(139,92,246,.15));filter:blur(100px);animation:meshSpin 30s linear infinite}
+@keyframes meshSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px}
+.hero-tag{font-size:.75rem;text-transform:uppercase;letter-spacing:6px;color:var(--muted);margin-bottom:32px}
+.hero-title{font-size:clamp(3rem,9vw,9rem);font-weight:700;line-height:.9;letter-spacing:-6px;margin-bottom:32px}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;transform:translateY(120%)}
+.hero-sub{font-size:1.2rem;color:var(--muted);max-width:500px;margin:0 auto 48px;font-weight:300;line-height:1.7}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;padding:16px 40px;border:1px solid rgba(139,92,246,.3);color:var(--text);text-decoration:none;font-size:.85rem;text-transform:uppercase;letter-spacing:3px;position:relative;overflow:hidden;transition:.6s}
+.hero-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--violet),var(--pink));transform:translateX(-101%);transition:.6s cubic-bezier(.23,1,.32,1)}
+.hero-cta:hover::before{transform:translateX(0)}
+.hero-cta span{position:relative;z-index:1}
+
+.marquee{padding:60px 0;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03);overflow:hidden}
+.marquee-inner{display:flex;gap:80px;animation:scroll 35s linear infinite;white-space:nowrap}
+.marquee-item{font-size:clamp(2rem,5vw,4rem);font-weight:700;color:rgba(255,255,255,.03);letter-spacing:-2px;flex-shrink:0}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+.section{padding:160px 48px}
+.section-num{font-size:.7rem;color:var(--violet);text-transform:uppercase;letter-spacing:4px;margin-bottom:16px}
+.section-heading{font-size:clamp(2.5rem,5vw,5rem);font-weight:700;letter-spacing:-3px;line-height:1;margin-bottom:24px;max-width:700px}
+.section-body{font-size:1.1rem;color:var(--muted);max-width:500px;line-height:1.8;font-weight:300}
+
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:80px}
+.gcard{background:var(--glass);border:1px solid rgba(255,255,255,.03);padding:48px;position:relative;overflow:hidden;transition:.4s}
+.gcard:hover{border-color:rgba(139,92,246,.2);background:rgba(139,92,246,.02)}
+.gcard-icon{font-size:3rem;margin-bottom:20px;filter:grayscale(1);transition:.4s}
+.gcard:hover .gcard-icon{filter:grayscale(0)}
+.gcard h3{font-size:1.3rem;font-weight:600;letter-spacing:-1px;margin-bottom:12px}
+.gcard p{color:var(--muted);font-size:.85rem;line-height:1.7}
+
+.disciplines{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:48px;padding:0 48px}
+.disc{padding:12px 24px;border:1px solid rgba(139,92,246,.1);font-size:.8rem;letter-spacing:1px;color:var(--muted);transition:.3s}
+.disc:hover{border-color:var(--violet);color:var(--text);background:rgba(139,92,246,.05)}
+
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;padding:0 48px;margin:120px 0}
+.stat-block{padding:60px 40px;text-align:center;border:1px solid rgba(139,92,246,.05)}
+.stat-val{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-2px;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-lbl{color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:3px;margin-top:12px}
+
+.final-cta{min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px}
+.final-cta h2{font-size:clamp(3rem,8vw,8rem);font-weight:700;letter-spacing:-5px;line-height:.85;margin-bottom:48px}
+.final-cta h2 em{font-style:italic;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+footer{padding:48px;border-top:1px solid rgba(255,255,255,.03);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+.magnetic{display:inline-block;transition:transform .3s cubic-bezier(.23,1,.32,1)}
+@media(max-width:768px){nav{padding:16px 24px}.nav-menu{display:none}.section{padding:80px 24px}.cards-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:repeat(2,1fr);padding:0 24px}footer{flex-direction:column;gap:12px}}
+</style>
+</head>
+<body>
+
+<div class="loader"><div class="loader-text">OPEN SCHOOL</div></div>
+<div class="cursor"></div>
+<div class="grain"></div>
+
+<nav>
+  <div class="nav-logo magnetic">Open School</div>
+  <div class="nav-menu">
+    <a href="#platform" class="magnetic">Platform</a>
+    <a href="#courses" class="magnetic">Courses</a>
+    <a href="#enroll" class="magnetic">Enroll</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"><div class="mesh"></div></div>
+  <div class="hero-content">
+    <div class="hero-tag">Universal Education</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">Education</span></span>
+      <span class="line"><span class="word">without</span></span>
+      <span class="line"><span class="word">borders</span></span>
+    </h1>
+    <p class="hero-sub">AI tutoring. Gamified paths. Micro-credentials. University partnerships. Free tier forever. The future of learning is open.</p>
+    <a href="#" class="hero-cta magnetic"><span>Start learning →</span></a>
+  </div>
+</section>
+
+<div class="marquee"><div class="marquee-inner">
+<span class="marquee-item">COMPUTER SCIENCE</span><span class="marquee-item">DATA SCIENCE</span><span class="marquee-item">DESIGN</span><span class="marquee-item">BUSINESS</span><span class="marquee-item">CYBERSECURITY</span><span class="marquee-item">AI & ML</span><span class="marquee-item">CREATIVE WRITING</span><span class="marquee-item">MARKETING</span>
+<span class="marquee-item">COMPUTER SCIENCE</span><span class="marquee-item">DATA SCIENCE</span><span class="marquee-item">DESIGN</span><span class="marquee-item">BUSINESS</span><span class="marquee-item">CYBERSECURITY</span><span class="marquee-item">AI & ML</span><span class="marquee-item">CREATIVE WRITING</span><span class="marquee-item">MARKETING</span>
+</div></div>
+
+<section class="section" id="platform">
+  <div class="section-num">01 — Platform</div>
+  <h2 class="section-heading">Learning reimagined from first principles</h2>
+  <p class="section-body">Not another MOOC. A living ecosystem where AI adapts to you, mentors guide you, and credentials open doors. From first-gen students to career changers.</p>
+
+  <div class="cards-grid">
+    <div class="gcard"><div class="gcard-icon">🧠</div><h3>AI Teaching Assistant</h3><p>Personal AI tutor that explains, generates problems, and tracks understanding gaps in real-time.</p></div>
+    <div class="gcard"><div class="gcard-icon">🎮</div><h3>Gamified Learning</h3><p>XP systems, skill trees, daily streaks, leaderboards. Learning that feels like playing with real outcomes.</p></div>
+    <div class="gcard"><div class="gcard-icon">🏅</div><h3>Micro-Credentials</h3><p>Stackable certificates recognized by 200+ employers. Build a portfolio of verified skills.</p></div>
+    <div class="gcard"><div class="gcard-icon">👨‍🏫</div><h3>Live Mentorship</h3><p>Weekly group sessions and 1:1 office hours with industry professionals. Real humans, real guidance.</p></div>
+    <div class="gcard"><div class="gcard-icon">🔬</div><h3>Virtual Labs</h3><p>Cloud-based coding environments, science simulations, design studios. Zero setup, instant practice.</p></div>
+    <div class="gcard"><div class="gcard-icon">🌍</div><h3>Accessibility First</h3><p>Multi-language, screen-reader compatible, low-bandwidth mode. Every device, every connection.</p></div>
+  </div>
+</section>
+
+<section id="courses" style="padding:80px 0">
+  <div class="disciplines">
+    <div class="disc">Full-Stack Dev</div><div class="disc">Data Science</div><div class="disc">UX/UI Design</div>
+    <div class="disc">Cybersecurity</div><div class="disc">Digital Marketing</div><div class="disc">Business Analytics</div>
+    <div class="disc">Creative Writing</div><div class="disc">Machine Learning</div><div class="disc">Product Management</div>
+    <div class="disc">Cloud Architecture</div><div class="disc">Blockchain</div><div class="disc">Game Development</div>
+    <div class="disc">+ 1,200 courses</div>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="stat-block"><div class="stat-val">1,200+</div><div class="stat-lbl">Courses</div></div>
+  <div class="stat-block"><div class="stat-val">340K</div><div class="stat-lbl">Students</div></div>
+  <div class="stat-block"><div class="stat-val">45</div><div class="stat-lbl">University partners</div></div>
+  <div class="stat-block"><div class="stat-val">98%</div><div class="stat-lbl">Job placement</div></div>
+</div>
+
+<section class="final-cta" id="enroll">
+  <div>
+    <h2>Your future<br>starts with<br>one <em>course</em></h2>
+    <a href="#" class="hero-cta magnetic"><span>Enroll free →</span></a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Open School — Belentani</span>
+  <span>Education for everyone, everywhere</span>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const tl = gsap.timeline();
+tl.to('.loader', { opacity: 0, duration: .6, delay: 1.2, ease: 'power2.inOut', onComplete: () => document.querySelector('.loader').style.display = 'none' })
+  .to('.hero-title .word', { y: 0, duration: 1, stagger: .15, ease: 'power4.out' }, '-=.3')
+  .from('.hero-tag', { opacity: 0, duration: .5 }, '-=.8')
+  .from('.hero-sub', { opacity: 0, y: 30, duration: .6 }, '-=.3')
+  .from('.hero-cta', { opacity: 0, y: 20, duration: .5 }, '-=.1');
+
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX - 10, y: e.clientY - 10, duration: .3 }));
+document.querySelectorAll('a, .magnetic').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+});
+document.querySelectorAll('.magnetic').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const r = el.getBoundingClientRect();
+    gsap.to(el, { x: (e.clientX - r.left - r.width/2)*.3, y: (e.clientY - r.top - r.height/2)*.3, duration: .3 });
+  });
+  el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: .5, ease: 'elastic.out(1,.3)' }));
+});
+
+gsap.utils.toArray('.section-heading, .section-body, .section-num').forEach(el => {
+  gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 80%' }, y: 60, opacity: 0, duration: 1, ease: 'power3.out' });
+});
+gsap.utils.toArray('.gcard').forEach((el, i) => {
+  gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, y: 40, opacity: 0, duration: .8, delay: i * .08 });
+});
+gsap.utils.toArray('.disc').forEach((el, i) => {
+  gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 90%' }, scale: .8, opacity: 0, duration: .4, delay: i * .03 });
+});
+</script>
+</body>
 </html>

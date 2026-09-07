@@ -5,3 +5,12 @@ dist/
 *.zip
 .env
 .env.local
+
+# BELENTANI legacy — seguridad
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+build/
+.next/
+.vercel/
