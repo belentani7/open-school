@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .vercel
 
 node_modules/
@@ -5,12 +6,51 @@ dist/
 *.zip
 .env
 .env.local
+=======
+# dependencias
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# build
+dist/
+build/
+.next/
+out/
+target/
+*.egg-info/
+
+# entorno y secretos
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+>>>>>>> 2565405f900e212db426dd5cdeed74107173b532
 
 # BELENTANI legacy — seguridad
 .env.*
 !.env.example
+<<<<<<< HEAD
 __pycache__/
 *.pyc
 build/
 .next/
+=======
+*.pyc
+>>>>>>> 2565405f900e212db426dd5cdeed74107173b532
 .vercel/

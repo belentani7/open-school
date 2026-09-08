@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏫 Open School — Plataforma Educativa Digital Universal
 
 **Instituto digital gratuito para jóvenes** — basado en especificación de 11,000+ líneas del documento X.txt.
@@ -150,3 +151,49 @@ Cada lección traduce individualmente título, descripción, ejercicios.
 ## 📄 Licencia
 
 MIT — Usalo libremente en proyectos personales o institucionales.
+=======
+# open-school-2
+
+Proyecto open-school-2 del ecosistema Belentani.
+
+## Estado
+
+| Campo | Valor |
+|---|---|
+| Stack | `unknown` |
+| Creado | 2026-09-07 |
+| Autor | Pedro Belentani |
+| Licencia | MIT |
+
+## Instalacion
+
+```bash
+# ver documentacion
+```
+
+## Uso
+
+```bash
+# ver scripts
+```
+
+## Tests
+
+```bash
+# pendiente
+```
+
+## Estructura
+
+```
+.vercel, assets, client, drizzle, shared
+```
+
+## Variables de entorno
+
+Copia `.env.example` a `.env` y rellena los valores. Nunca comitees `.env`.
+
+## Licencia
+
+MIT - ver [LICENSE](LICENSE).
+>>>>>>> 2565405f900e212db426dd5cdeed74107173b532

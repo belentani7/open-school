@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "buildCommand": "cd client && npm run build",
   "devCommand": "cd client && npm run dev",
   "installCommand": "npm install",
@@ -8,3 +9,8 @@
     { "src": "/(.*)", "dest": "/client/$1" }
   ]
 }
+=======
+  "outputDirectory": "campus"
+}
+
+>>>>>>> 2565405f900e212db426dd5cdeed74107173b532

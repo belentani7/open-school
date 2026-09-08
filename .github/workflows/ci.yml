@@ -4,6 +4,7 @@ on:
     branches: [ main, master ]
   pull_request:
 jobs:
+<<<<<<< HEAD
   build:
     runs-on: ubuntu-latest
     steps:
@@ -14,3 +15,13 @@ jobs:
       - run: npm install
       - run: npm run build --if-present
       - run: npm test --if-present
+=======
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificacion basica
+        run: |
+          test -f README.md && echo "README ok"
+          test -f LICENSE && echo "LICENSE ok"
+>>>>>>> 2565405f900e212db426dd5cdeed74107173b532
