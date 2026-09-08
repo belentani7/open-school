@@ -1,6 +1,4 @@
 {
-  "framework": "other",
-  "outputDirectory": "campus",
-  "buildCommand": null
+  "outputDirectory": "campus"
 }
 
