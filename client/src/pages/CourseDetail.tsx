@@ -1,68 +1,156 @@
-// Open School — Course Detail Page (Generic)
-import { Link, useParams } from "wouter";
-import { NotFound } from "./NotFound";
+/* ===================================================================
+   COURSE DETAIL — la ficha de una ruta.
+   =================================================================== */
 
-type Course = { name: string; desc: string; modules: string[] };
-const courses: Record<string, Course> = {
-  '1': { name: 'Lingua Aberta', desc: 'Aprende idiomas con IA educativa local', modules: ['Fonética y pronunciación', 'Gramática interactiva', 'Conversación con Ollama', 'Traducción adaptativa', 'Speaking con Web Speech API'] },
-  '2': { name: 'UX Academy', desc: 'Evaluación formativa + Capstone trilingüe', modules: ['Diseño UX básico', 'Prototipado Figma', 'Testing usuarios', 'Capstone proyecto real'] },
-  '3': { name: 'Cybersecurity Foundations', desc: 'Fundamentos de ciberdefensa y privacidad', modules: ['Principios de seguridad', 'OWASP Top 10', 'Privacidad digital', 'Ética hacker'] },
-  '4': { name: 'Creative Tech', desc: 'Tecnología creativa y arte generativo', modules: ['Canvas API', 'WebGL intro', 'Audio-reactive visuals', 'Generative art'] },
-  '5': { name: 'AI & Agent Systems', desc: 'Construye tus propios agentes de IA', modules: ['Agent patterns', 'MCP protocol', 'Tool-use', 'Multi-agent orchestration'] },
-  '6': { name: 'Data Science Basic', desc: 'Análisis de datos desde cero', modules: ['Estadística aplicada', 'Visualización D3.js', 'Machine learning intro', 'Proyecto final'] },
-};
+import { Link, useParams } from 'wouter';
+import { useEffect, useState } from 'react';
+import { Glass } from '../components/Glass';
+import { PlasmaField } from '../components/PlasmaField';
+import { getRoute, STATUS_LABEL } from '../lib/catalog';
+import { readProgress, setProgress } from '../lib/progress';
 
 export function CourseDetail() {
-  const params = useParams();
-  const course = courses[params.id as string] || null;
-  
-  if (!course) return <NotFound />;
+  const { id = '' } = useParams<{ id: string }>();
+  const route = getRoute(id);
+  const [done, setDone] = useState(0);
+
+  useEffect(() => {
+    setDone(readProgress()[id] ?? 0);
+  }, [id]);
+
+  if (!route) {
+    return (
+      <div className="bay shell" style={{ paddingTop: 'clamp(8rem, 18vh, 12rem)' }}>
+        <Glass style={{ padding: 'clamp(2rem, 6vw, 4rem)', textAlign: 'center' }}>
+          <div className="stack" style={{ justifyItems: 'center' }}>
+            <p className="t-label">404</p>
+            <h1 className="t-display">Esa ruta no existe</h1>
+            <Link href="/catalog" className="btn btn--light">Ver el catálogo</Link>
+          </div>
+        </Glass>
+      </div>
+    );
+  }
+
+  const start = () => {
+    // Sin backend todavia: se marca el primer modulo para que la promesa
+    // de "tu progreso se guarda en tu dispositivo" sea cierta desde ya.
+    const next = Math.min(1, (done || 0) + 1 / route.modules);
+    setProgress(route.id, next);
+    setDone(next);
+  };
+
+  const pct = Math.round(done * 100);
 
   return (
-    <div className="min-h-screen py-8 px-6">
-      <div className="ncl-container">
-        {/* Back button */}
-        <Link href="/">
-          <button className="ncl-btn ncl-btn--glass mb-6">← Volver al campus</button>
-        </Link>
+    <>
+      <section
+        className="bay"
+        style={{ position: 'relative', paddingTop: 'clamp(8rem, 18vh, 12rem)', overflow: 'hidden' }}
+      >
+        <PlasmaField intensity={0.6} />
 
-        {/* Course Header */}
-        <div className="ncl-glass p-8 mb-8">
-          <h1 className="ncl-heading-1 mb-2">{course.name}</h1>
-          <p className="ncl-text-body max-w-lg">{course.desc}</p>
-          <div className="flex gap-3 mt-4">
-            <button className="ncl-btn ncl-btn--primary">COMENZAR CURSO →</button>
-            <button className="ncl-btn ncl-btn--glass">GUARDAR EN FAVORITOS</button>
-          </div>
+        <div className="shell stack stack--lg" style={{ position: 'relative', zIndex: 2 }}>
+          <Link href="/catalog" className="btn btn--quiet" style={{ justifySelf: 'start' }}>
+            ← Catálogo
+          </Link>
+
+          <header className="stack">
+            <p className="case__word">{route.word}</p>
+            <h1 className="t-display" style={{ maxWidth: '16ch' }}>{route.title}</h1>
+            <p className="t-lede">{route.claim}</p>
+
+            <div className="row" style={{ gap: '0.45rem', marginTop: '0.6rem' }}>
+              <span className="chip chip--edge">Nivel {route.level}</span>
+              {route.offline && <span className="chip">Sin conexión</span>}
+              {route.certified && <span className="chip">Certificado verificable</span>}
+              <span className="chip">
+                <i className={`dot dot--${route.status}`} aria-hidden="true" style={{ marginRight: 6 }} />
+                {STATUS_LABEL[route.status]}
+              </span>
+            </div>
+          </header>
         </div>
+      </section>
 
-        {/* Modules List */}
-        <div className="ncl-glass p-8">
-          <div className="ncl-section-title">◆ MÓDULOS DEL CURSO</div>
-          <div className="space-y-3">
-            {course.modules.map((mod, i) => (
-              <div key={i} className="bg-black/20 rounded-lg p-4 flex items-center gap-4 hover:bg-white/[0.02] transition-colors cursor-pointer group">
-                <span className="text-nclr-red font-mono text-sm font-bold w-8">0{i + 1}</span>
-                <span className="flex-1 font-mono text-sm group-hover:text-white transition-colors">{mod}</span>
-                <span className="ncl-tag">LECCIÓN {i + 1}/{course.modules.length}</span>
+      <section className="shell stack stack--lg" style={{ paddingBottom: 'var(--bay)' }}>
+        <div className="detail__grid">
+          {/* ── Cuerpo ── */}
+          <div className="stack stack--lg">
+            <Glass refract style={{ padding: 'clamp(1.5rem, 3.5vw, 2.6rem)' }}>
+              <div className="stack">
+                <h2 className="t-title">De qué va</h2>
+                <p className="t-body" style={{ maxWidth: '62ch' }}>{route.desc}</p>
               </div>
-            ))}
-          </div>
-        </div>
+            </Glass>
 
-        {/* Resources */}
-        <div className="mt-8 ncl-glass p-8">
-          <div className="ncl-section-title">◆ RECURSOS ADICIONALES</div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {['📄 PDF Guía de estudio', '🎥 Video tutorial', '💻 Ejercicio práctico', '🔗 Links externos', '👥 Foro comunidad', '📊 Quiz'].map((r, i) => (
-              <button key={i} className="ncl-btn ncl-btn--glass justify-start">
-                <span>{r.split(' ')[0]}</span>
-                <span>{r.split(' ').slice(1).join(' ')}</span>
-              </button>
-            ))}
+            <Glass style={{ padding: 'clamp(1.5rem, 3.5vw, 2.6rem)' }}>
+              <div className="stack">
+                <h2 className="t-title">Con qué se trabaja</h2>
+                <ul className="stack stack--sm" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                  {route.stack.map((s) => (
+                    <li key={s} className="row" style={{ gap: '0.7rem' }}>
+                      <i className="dot dot--produccion" aria-hidden="true" />
+                      <span className="t-body" style={{ maxWidth: 'none' }}>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Glass>
           </div>
+
+          {/* ── Panel lateral, pegajoso en desktop ── */}
+          <aside className="detail__aside">
+            <Glass refract style={{ padding: 'clamp(1.4rem, 3vw, 2rem)' }}>
+              <div className="stack">
+                <div className="stack stack--sm">
+                  <p className="t-label">Tu progreso</p>
+                  <p className="t-num">{pct}%</p>
+                  <div
+                    className="meter"
+                    role="progressbar"
+                    aria-valuenow={pct}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label={`Progreso en ${route.title}`}
+                  >
+                    <span className="meter__fill" style={{ transform: `scaleX(${done})` }} />
+                  </div>
+                  <p className="t-label" style={{ color: 'var(--color-ink-3)' }}>
+                    Guardado en este dispositivo
+                  </p>
+                </div>
+
+                <hr className="horizon" />
+
+                <dl className="stack stack--sm" style={{ margin: 0 }}>
+                  {[
+                    ['Módulos', String(route.modules)],
+                    ['Duración', `${route.hours} h`],
+                    ['Idiomas', route.langs.join(' · ')],
+                    ['Precio', 'Gratuito'],
+                  ].map(([k, v]) => (
+                    <div key={k} className="row" style={{ justifyContent: 'space-between' }}>
+                      <dt className="t-label">{k}</dt>
+                      <dd className="t-body" style={{ margin: 0, color: 'var(--color-ink)', fontSize: '0.9rem' }}>
+                        {v}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <button type="button" className="btn btn--light" onClick={start}>
+                  {done > 0 ? 'Continuar' : 'Empezar ahora'}
+                </button>
+
+                <p className="t-label" style={{ textAlign: 'center', color: 'var(--color-ink-3)' }}>
+                  Sin registro
+                </p>
+              </div>
+            </Glass>
+          </aside>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

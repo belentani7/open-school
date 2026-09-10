@@ -1,140 +1,160 @@
-// Open School — Landing Page (Home)
-// Neo-Neoglass styled landing page
+/* ===================================================================
+   HOME — escaparate cinematografico (P1 · P6)
+
+   Estructura: una sola experiencia dominante arriba (la palabra), y
+   despues capitulos que se leen en orden. Nada de rejilla de tarjetas
+   generica en la primera pantalla.
+   =================================================================== */
+
 import { Link } from 'wouter';
-import { useEffect, useState } from 'react';
+import { PlasmaField } from '../components/PlasmaField';
+import { ZeroText } from '../components/ZeroText';
+import { Glass } from '../components/Glass';
+import { RouteCase } from '../components/RouteCase';
+import { ROUTES, TOTALS } from '../lib/catalog';
+
+const PILLARS = [
+  {
+    k: 'Anónimo por diseño',
+    v: 'No hay registro. Un identificador local de 365 días guarda tu progreso en tu propio dispositivo. Sin correo, sin teléfono, sin rastreo.',
+  },
+  {
+    k: 'Funciona sin datos',
+    v: `La aplicación se instala en el móvil y abre sin conexión. ${TOTALS.offline} de las ${TOTALS.routes} rutas están diseñadas para completarse sin gastar plan de datos.`,
+  },
+  {
+    k: 'El certificado se verifica',
+    v: 'Cada certificado lleva un código comprobable por terceros. No depende de que esta plataforma siga existiendo.',
+  },
+];
 
 export function Home() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  
-  useEffect(() => {
-    // Animate counters on mount
-    let frame = 0;
-    const dur = 1500;
-    const tick = () => {
-      const t = Math.min(frame / dur * 1000, 1);
-      const e = 1 - Math.pow(1 - t, 3);
-      setCount1(Math.round(10000 * e));
-      setCount2(Math.round(850 * e));
-      if (frame < dur + 1000) requestAnimationFrame(() => frame++);
-    };
-    const id = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(id);
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="py-24 px-6 text-center">
-        <div className="ncl-glass inline-block px-8 py-4 mb-8">
-          <span className="text-xs font-mono tracking-[0.2em] text-nclr-red-dim">
-            ◆ INSTITUTO UNIVERSAL GRATUITO PARA JÓVENES
-          </span>
-        </div>
-        <h1 className="ncl-heading-1 mb-4">OPEN SCHOOL</h1>
-        <p className="ncl-text-body max-w-xl mx-auto mb-2">
-          Aprende sin límites. Cursos modulares, certificaciones verificables, IA educativa local.
-        </p>
-        <p className="ncl-text-muted text-sm">Multilingual · WCAG 2.1+ · Offline-first PWA · Ollama-powered AI</p>
-        
-        <div className="mt-10 flex gap-4 justify-center">
-          <Link href="/dashboard">
-            <button className="ncl-btn ncl-btn--primary">
-              ACCEDER AL CAMPUS →
-            </button>
-          </Link>
-          <a href="#courses">
-            <button className="ncl-btn ncl-btn--glass">
-              EXPLORAR CURSOS
-            </button>
-          </a>
-        </div>
-      </section>
+    <>
+      {/* ───────────── Capitulo 0: la palabra ───────────── */}
+      <section className="hero" id="top">
+        <PlasmaField />
 
-      {/* Telemetry Counters */}
-      <section className="py-12 px-6">
-        <div className="ncl-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="ncl-glass p-6 text-center ncl-anim-beat">
-              <div className="text-3xl font-mono font-bold text-nclr-red" style={{textShadow: '0 0 12px rgba(255,7,58,0.5)'}}>
-                {count1.toLocaleString()}
-              </div>
-              <div className="text-xs text-nclr-muted tracking-[0.15em] mt-1">RECURSOS DISPONIBLES</div>
-            </div>
-            <div className="ncl-glass p-6 text-center">
-              <div className="text-3xl font-mono font-bold text-nclr-red" style={{textShadow: '0 0 12px rgba(255,7,58,0.5)'}}>
-                {count2.toLocaleString()}
-              </div>
-              <div className="text-xs text-nclr-muted tracking-[0.15em] mt-1">ESTUDIANTES ACTIVOS</div>
-            </div>
-            <div className="ncl-glass p-6 text-center">
-              <div className="text-3xl font-mono font-bold text-white">11</div>
-              <div className="text-xs text-nclr-muted tracking-[0.15em] mt-1">ROLES RBAC</div>
-            </div>
-            <div className="ncl-glass p-6 text-center">
-              <div className="text-3xl font-mono font-bold text-white">4</div>
-              <div className="text-xs text-nclr-muted tracking-[0.15em] mt-1">IDIOMAS</div>
-            </div>
+        <div className="hero__content">
+          <span className="chip chip--edge m-rise">Instituto abierto · Gratuito</span>
+
+          <ZeroText
+            word="APRENDER"
+            sub="Formación seria para quien empieza de cero en un país nuevo. Sin matrícula, sin datos personales, sin letra pequeña."
+          />
+
+          <div className="row m-rise" style={{ '--d': '340ms', justifyContent: 'center' } as React.CSSProperties}>
+            <Link href="/catalog" className="btn btn--light">
+              Ver las {TOTALS.routes} rutas
+            </Link>
+            <a href="#sistema" className="btn btn--glass">
+              Cómo funciona
+            </a>
           </div>
         </div>
+
+        <div className="hero__hint m-breathe" aria-hidden="true">
+          <span className="hero__hint-line" />
+          <span className="t-label">Desliza</span>
+        </div>
       </section>
 
-      {/* Courses Grid */}
-      <section id="courses" className="py-16 px-6">
-        <div className="ncl-container">
-          <div className="ncl-section-title">◆ CURSOS PRINCIPALES</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courseCards.map((card, i) => (
-              <Link key={i} href={`/courses/${card.id}`} className="block">
-                <div className="ncl-glass p-6 h-full hover:-translate-y-1 transition-all duration-300 cursor-pointer group">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-2xl">{card.icon}</span>
-                    <span className="ncl-tag">{card.level}</span>
-                  </div>
-                  <h3 className="ncl-heading-3 mb-2">{card.title}</h3>
-                  <p className="ncl-text-muted text-sm leading-relaxed">{card.desc}</p>
-                  <div className="mt-4 flex gap-2">
-                    {card.tags.slice(0,3).map(t => <span key={t} className="ncl-chip">{t}</span>)}
-                  </div>
+      {/* ───────────── Capitulo 1: el sistema ───────────── */}
+      <section className="bay" id="sistema">
+        <div className="shell stack stack--lg">
+          <div className="stack stack--sm">
+            <p className="t-label">01 — El sistema</p>
+            <h2 className="t-display" style={{ maxWidth: '18ch' }}>
+              Tres decisiones que lo cambian todo
+            </h2>
+          </div>
+
+          <div className="bento">
+            {PILLARS.map((p, i) => (
+              <Glass
+                key={p.k}
+                className="m-rise"
+                refract
+                style={{ padding: 'clamp(1.4rem, 3vw, 2.2rem)', '--d': `${i * 90}ms` } as React.CSSProperties}
+              >
+                <div className="stack stack--sm">
+                  <p className="t-num t-helio">{String(i + 1).padStart(2, '0')}</p>
+                  <h3 className="t-title">{p.k}</h3>
+                  <p className="t-body" style={{ fontSize: '0.94rem' }}>{p.v}</p>
                 </div>
-              </Link>
+              </Glass>
+            ))}
+          </div>
+
+          <hr className="horizon" />
+
+          {/* Cifras estructurales: se calculan del catalogo, no se inventan. */}
+          <dl className="bento" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(9rem,1fr))', gap: '1.6rem' }}>
+            {[
+              ['Rutas', TOTALS.routes],
+              ['Módulos', TOTALS.modules],
+              ['Horas de contenido', `${TOTALS.hours}`],
+              ['Idiomas', TOTALS.langs],
+            ].map(([label, value]) => (
+              <div key={String(label)} className="stack stack--sm">
+                <dd className="t-num" style={{ margin: 0 }}>{value}</dd>
+                <dt className="t-label">{label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ───────────── Capitulo 2: el escaparate ───────────── */}
+      <section className="bay" id="rutas" style={{ paddingTop: 0 }}>
+        <div className="shell stack stack--lg">
+          <div className="row" style={{ justifyContent: 'space-between', alignItems: 'end' }}>
+            <div className="stack stack--sm">
+              <p className="t-label">02 — Las rutas</p>
+              <h2 className="t-display" style={{ maxWidth: '16ch' }}>
+                Cada una resuelve algo concreto
+              </h2>
+            </div>
+            <Link href="/catalog" className="btn btn--quiet">
+              Ver todas →
+            </Link>
+          </div>
+
+          <div className="bento">
+            {ROUTES.map((r, i) => (
+              <RouteCase key={r.id} route={r} index={i} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 text-center">
-        <div className="ncl-glass max-w-2xl mx-auto p-10 ncl-anim-float">
-          <div className="ncl-section-title">¿LISTO PARA EMPEZAR?</div>
-          <p className="ncl-text-body mb-6">Plataforma gratuita, abierta y accesible. Sin barreras. Sin costos.</p>
-          <button className="ncl-btn ncl-btn--primary ncl-btn--lg">
-            CREAR CUENTA GRATIS →
-          </button>
+      {/* ───────────── Capitulo 3: cierre ───────────── */}
+      <section className="bay" style={{ paddingTop: 0 }}>
+        <div className="shell">
+          <Glass
+            refract
+            className="m-breathe"
+            style={{
+              padding: 'clamp(2.2rem, 6vw, 4.5rem)',
+              textAlign: 'center',
+              display: 'grid',
+              gap: '1.6rem',
+              justifyItems: 'center',
+            }}
+          >
+            <h2 className="t-display" style={{ maxWidth: '17ch' }}>
+              Empieza sin dar un solo dato
+            </h2>
+            <p className="t-lede" style={{ textAlign: 'center' }}>
+              No hay formulario de registro. Eliges una ruta y empiezas;
+              el progreso se guarda en tu dispositivo.
+            </p>
+            <Link href="/catalog" className="btn btn--light">
+              Elegir mi ruta
+            </Link>
+          </Glass>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-10 px-6 border-t border-nclr-border/30">
-        <div className="ncl-container flex flex-col md:flex-row items-center justify-between text-nclr-muted text-xs gap-4">
-          <span>NOIACORE LAB · 2026 · INSTITUTO UNIVERSAL GRATUITO</span>
-          <div className="flex gap-6">
-            <span className="hover:text-nclr-red cursor-pointer transition-colors">DOC</span>
-            <span className="hover:text-nclr-red cursor-pointer transition-colors">API</span>
-            <span className="hover:text-nclr-red cursor-pointer transition-colors">GITHUB</span>
-            <span className="hover:text-nclr-red cursor-pointer transition-colors">CONTACTO</span>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
-
-const courseCards = [
-  { id: 1, icon: '🌐', title: 'Lingua Aberta', level: 'A1-B2', desc: 'Aprende idiomas con IA educativa local. Traducción adaptativa, speaking con Web Speech API, gramática interactiva.', tags: ['PT·ES·EN·CA', 'Ollama', 'Web Speech'] },
-  { id: 2, icon: '⚡', title: 'UX Academy', level: 'B1-C1', desc: 'Evaluación formativa con capstone trilingüe. Portafolio digital, feedback por pares, certificaciones QR.', tags: ['Capstone', 'QR Verify', 'Portfolio'] },
-  { id: 3, icon: '🔒', title: 'Cybersecurity Foundations', level: 'A2-B1', desc: 'Fundamentos de seguridad informática para jóvenes. Ciberdefensa, privacidad digital, ética hacker.', tags: ['Ethics', 'OWASP', 'Privacy'] },
-  { id: 4, icon: '🎨', title: 'Creative Tech', level: 'A1-B2', desc: 'Tecnología creativa para expresarte. Generación procedimental, audio-reactive visuals, arte generativo.', tags: ['Canvas', 'WebGL', 'Audio'] },
-  { id: 5, icon: '🤖', title: 'AI & Agent Systems', level: 'B1-C1', desc: 'Construye tus propios agentes de IA. Multi-agent orchestration, MCP, tool-use patterns.', tags: ['Agents', 'MCP', 'Python'] },
-  { id: 6, icon: '📊', title: 'Data Science Basic', level: 'A2-B1', desc: 'Análisis de datos desde cero. Visualización, estadística aplicada, machine learning introductorio.', tags: ['JS', 'D3.js', 'ML Intro'] },
-];

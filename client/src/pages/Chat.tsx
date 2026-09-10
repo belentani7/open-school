@@ -1,161 +1,194 @@
-// Open School — AI Chat Page (Ollama powered)
-import { useState, useRef, useEffect } from 'react';
-import { Send, Bot, Mic, X, Sparkles, Brain } from 'lucide-react';
+/* ===================================================================
+   TUTOR — el mentor de la plataforma.
 
-interface Message {
-  role: 'student' | 'ai';
-  text: string;
-  timestamp: Date;
+   HONESTIDAD DE PRODUCTO: no hay modelo conectado en este despliegue.
+   En lugar de simular respuestas de IA (que es lo que hacia el mock
+   anterior), el tutor responde con guia real del catalogo y dice
+   explicitamente cuando no hay modelo detras. Fingir inteligencia en
+   una plataforma educativa es exactamente el fallo que no se perdona.
+
+   Cuando haya endpoint, se sustituye `answer()` por la llamada y el
+   aviso desaparece solo.
+   =================================================================== */
+
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'wouter';
+import { Glass } from '../components/Glass';
+import { ROUTES, TOTALS } from '../lib/catalog';
+
+type Msg = { id: number; from: 'tutor' | 'tu'; text: string; routes?: string[] };
+
+const SUGGESTIONS = [
+  '¿Por dónde empiezo si no sé nada?',
+  'Quiero algo que funcione sin internet',
+  '¿Qué ruta da certificado?',
+  '¿Guardáis mis datos?',
+];
+
+/** Enrutador de intencion por palabras clave. Determinista y auditable. */
+function answer(input: string): { text: string; routes?: string[] } {
+  const q = input.toLowerCase();
+
+  if (/dato|privacidad|registr|rastre|cookie/.test(q)) {
+    return {
+      text:
+        'No se guarda ningún dato personal. Se genera un identificador aleatorio en tu dispositivo, con caducidad de 365 días, y el progreso vive solo ahí. Puedes borrarlo entero desde el panel de progreso, y no queda copia en ningún servidor.',
+    };
+  }
+
+  if (/offline|sin internet|sin conexi|sin datos|descarg/.test(q)) {
+    const offline = ROUTES.filter((r) => r.offline);
+    return {
+      text: `${offline.length} de las ${TOTALS.routes} rutas se descargan y siguen funcionando sin conexión: ${offline
+        .map((r) => r.title)
+        .join(', ')}.`,
+      routes: offline.map((r) => r.id),
+    };
+  }
+
+  if (/certific|titul|diploma|acredit/.test(q)) {
+    const cert = ROUTES.filter((r) => r.certified);
+    return {
+      text: `Estas ${cert.length} emiten certificado con código verificable por terceros: ${cert
+        .map((r) => r.title)
+        .join(', ')}.`,
+      routes: cert.map((r) => r.id),
+    };
+  }
+
+  if (/empez|principiante|cero|nuevo|basic|no s[eé]/.test(q)) {
+    const easy = ROUTES.filter((r) => r.level === 'A1');
+    return {
+      text: `Para empezar de cero, las rutas de nivel A1 no dan nada por sabido: ${easy
+        .map((r) => r.title)
+        .join(' y ')}. Si acabas de llegar a España, Manos Abiertas es la más urgente; Lingua Aberta es la más útil a medio plazo.`,
+      routes: easy.map((r) => r.id),
+    };
+  }
+
+  if (/segur|privac|hack|ciber|proteg/.test(q)) {
+    return {
+      text:
+        'Secure-T cubre seguridad digital aplicada a situaciones reales: dispositivos compartidos, documentación, banca y fronteras. Son 69 módulos y funciona sin conexión.',
+      routes: ['secure-t'],
+    };
+  }
+
+  if (/idioma|lengua|hablar|español|catal|portug/.test(q)) {
+    return {
+      text:
+        'Lingua Aberta trabaja la fonética contrastiva entre portugués, español y catalán. El reconocimiento de voz corre en tu navegador: el audio no se sube a ningún sitio.',
+      routes: ['lingua-aberta'],
+    };
+  }
+
+  // Fallback: decir la verdad en lugar de improvisar.
+  return {
+    text:
+      'No tengo un modelo de lenguaje conectado en este despliegue, así que no puedo improvisar una respuesta. Lo que sí puedo hacer es orientarte por el catálogo: pregúntame por nivel, idioma, certificados o funcionamiento sin conexión.',
+  };
 }
 
 export function Chat() {
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'ai', text: 'Hola. ¿Qué quieres aprender hoy?', timestamp: new Date() },
+  const [msgs, setMsgs] = useState<Msg[]>([
+    {
+      id: 0,
+      from: 'tutor',
+      text: 'Te oriento por el catálogo. Puedo decirte qué ruta encaja con tu nivel, cuáles funcionan sin conexión y qué se hace con tus datos (spoiler: nada).',
+    },
   ]);
-  const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [tutorVisible, setTutorVisible] = useState(true);
-  const messagesEnd = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    messagesEnd.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  const [draft, setDraft] = useState('');
+  const endRef = useRef<HTMLDivElement>(null);
+  const nextId = useRef(1);
 
-  const send = async () => {
-    const text = input.trim();
-    if (!text || loading) return;
-    
-    setMessages(prev => [...prev, { role: 'student', text, timestamp: new Date() }]);
-    setInput('');
-    setLoading(true);
-    
-    try {
-      // In production: call Ollama API endpoint
-      // const res = await fetch('http://localhost:11434/api/generate', { ... });
-      
-      // Simulated response for now
-      setTimeout(() => {
-        setMessages(prev => [...prev, { 
-          role: 'ai', 
-          text: `Buena pregunta. Vamos a desglosarla en partes más pequeñas para encontrar la respuesta paso a paso. ¿Qué parte quieres explorar primero?`, 
-          timestamp: new Date() 
-        }]);
-        setLoading(false);
-      }, 1200);
-    } catch (e) {
-      setMessages(prev => [...prev, { 
-        role: 'ai', 
-        text: 'El asistente IA no está disponible. Verifica que Ollama esté corriendo en localhost:11434.', 
-        timestamp: new Date() 
-      }]);
-      setLoading(false);
-    }
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [msgs]);
+
+  const send = (text: string) => {
+    const clean = text.trim();
+    if (!clean) return;
+
+    const mine: Msg = { id: nextId.current++, from: 'tu', text: clean };
+    const reply = answer(clean);
+    const theirs: Msg = { id: nextId.current++, from: 'tutor', ...reply };
+
+    setMsgs((m) => [...m, mine, theirs]);
+    setDraft('');
   };
 
-  const quickPrompts = [
-    'Explícame un concepto nuevo',
-    'Ponme a prueba con un quiz',
-    'Dame un ejercicio práctico',
-    'Resume lo que aprendí hoy',
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <div className="border-b border-white/5 bg-black/30 backdrop-blur-xl px-6 py-4 flex items-center justify-between sticky top-0 z-10">
-        <div className="flex items-center gap-3">
-          <div className="grid size-9 place-items-center rounded-lg bg-nclr-red/20 text-nclr-red">
-            <Brain className="w-4 h-4" />
-          </div>
-          <div>
-            <h1 className="font-mono font-bold text-sm">Astra · AI Mentor</h1>
-            <p className="text-[10px] text-green-400">● governed · ollama-local</p>
-          </div>
-        </div>
-        <button onClick={() => setTutorVisible(false)} className="ncl-btn ncl-btn--glass text-xs">
-          <X className="w-3 h-3" /> CERRAR
-        </button>
-      </div>
+    <div className="bay shell stack stack--lg" style={{ paddingTop: 'clamp(7rem, 16vh, 11rem)' }}>
+      <header className="stack stack--sm">
+        <p className="t-label">Tutor</p>
+        <h1 className="t-display" style={{ maxWidth: '13ch' }}>Pregunta lo que sea</h1>
+        <p className="t-lede">
+          Orientación sobre el catálogo. Sin modelo de lenguaje conectado —
+          responde con datos reales de las rutas, no con texto generado.
+        </p>
+      </header>
 
-      {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
-        {messages.map((msg, i) => (
-          <div key={i} className={`flex ${msg.role === 'student' ? 'justify-end' : ''}`}>
-            <div className={`max-w-[80%] ${msg.role === 'student' ? 'order-2' : ''}`}>
-              <div className="flex items-start gap-3">
-                {msg.role === 'ai' && (
-                  <div className="grid size-7 shrink-0 place-items-center rounded-md bg-nclr-red/15 text-nclr-red mt-0.5">
-                    <Bot className="w-3.5 h-3.5" />
-                  </div>
-                )}
-                <div className={`${msg.role === 'student' ? 'ncl-glass' : 'bg-white/[0.02]'}`}>
-                  <div className="p-4">
-                    <p className="text-sm leading-relaxed">{msg.text}</p>
-                  </div>
-                  <div className="px-4 pb-3">
-                    <span className="text-[10px] text-muted font-mono">
-                      {msg.timestamp.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}
-                    </span>
-                  </div>
+      <Glass refract style={{ padding: 'clamp(1.2rem, 3vw, 2rem)' }}>
+        <div className="stack">
+          <div className="chat__log" role="log" aria-live="polite" aria-label="Conversación con el tutor">
+            {msgs.map((m) => (
+              <div key={m.id} className={`chat__row chat__row--${m.from}`}>
+                <div className={`chat__bubble chat__bubble--${m.from}`}>
+                  <p className="t-label" style={{ marginBottom: '0.4rem' }}>
+                    {m.from === 'tutor' ? 'Tutor' : 'Tú'}
+                  </p>
+                  <p style={{ margin: 0, lineHeight: 1.6 }}>{m.text}</p>
+
+                  {m.routes && m.routes.length > 0 && (
+                    <div className="row" style={{ gap: '0.4rem', marginTop: '0.85rem' }}>
+                      {m.routes.map((rid) => {
+                        const r = ROUTES.find((x) => x.id === rid);
+                        return r ? (
+                          <Link key={rid} href={`/courses/${rid}`} className="chip chip--edge">
+                            {r.title} →
+                          </Link>
+                        ) : null;
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
+            ))}
+            <div ref={endRef} />
           </div>
-        ))}
-        {loading && (
-          <div className="flex gap-3">
-            <div className="grid size-7 shrink-0 place-items-center rounded-md bg-nclr-red/15 text-nclr-red">
-              <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-            </div>
-            <div className="bg-white/[0.02] rounded-xl p-4">
-              <div className="flex gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-nclr-red animate-pulse"></div>
-                <div className="w-2 h-2 rounded-full bg-nclr-red animate-pulse" style={{animationDelay: '0.15s'}}></div>
-                <div className="w-2 h-2 rounded-full bg-nclr-red animate-pulse" style={{animationDelay: '0.3s'}}></div>
-              </div>
-            </div>
-          </div>
-        )}
-        <div ref={messagesEnd} />
-      </div>
 
-      {/* Quick Prompts */}
-      {messages.length <= 1 && (
-        <div className="px-6 pb-4">
-          <div className="text-xs text-muted mb-3 font-mono tracking-wider">PREGUNTAS RÁPIDAS</div>
-          <div className="flex gap-2 flex-wrap">
-            {quickPrompts.map(q => (
-              <button key={q} onClick={() => { setInput(q); }} className="ncl-chip hover:!text-white hover:!border-nclr-red/30 cursor-pointer">
-                {q}
+          <div className="row" style={{ gap: '0.4rem' }}>
+            {SUGGESTIONS.map((s) => (
+              <button key={s} type="button" className="chip" onClick={() => send(s)}
+                style={{ cursor: 'pointer' }}>
+                {s}
               </button>
             ))}
           </div>
-        </div>
-      )}
 
-      {/* Input Bar */}
-      <div className="border-t border-white/5 bg-black/30 backdrop-blur-xl p-4">
-        <div className="max-w-3xl mx-auto flex gap-3 items-center">
-          <button className="grid size-10 shrink-0 place-items-center rounded-lg bg-white/5 text-nclr-red hover:bg-white/10 transition-colors">
-            <Mic className="w-4 h-4" />
-          </button>
-          <input 
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && !e.shiftKey && send()}
-            placeholder="Pregúntale a Astra..." 
-            className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-white/25"
-            autoFocus
-          />
-          <button 
-            onClick={send} 
-            disabled={loading || !input.trim()}
-            className="grid size-10 shrink-0 place-items-center rounded-lg bg-nclr-red text-white hover:bg-red-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          <form
+            className="row"
+            style={{ gap: '0.6rem', flexWrap: 'nowrap' }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              send(draft);
+            }}
           >
-            <Send className="w-4 h-4" />
-          </button>
+            <label htmlFor="draft" className="sr-only">Escribe tu pregunta</label>
+            <input
+              id="draft"
+              className="field"
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder="Escribe tu pregunta…"
+              autoComplete="off"
+            />
+            <button type="submit" className="btn btn--light" disabled={!draft.trim()}>
+              Enviar
+            </button>
+          </form>
         </div>
-      </div>
+      </Glass>
     </div>
   );
 }

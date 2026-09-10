@@ -1,118 +1,156 @@
-// Open School — Dashboard Page
+/* ===================================================================
+   DASHBOARD — el panel de la persona, sin persona identificada.
+
+   Muestra exactamente lo que la plataforma sabe: un UUID local, su
+   caducidad y el progreso guardado en el dispositivo. Nada mas, porque
+   no hay nada mas. El boton "Borrar todo" cumple lo que dice.
+   =================================================================== */
+
+import { useEffect, useState } from 'react';
 import { Link } from 'wouter';
+import { Glass } from '../components/Glass';
+import { ROUTES, TOTALS } from '../lib/catalog';
+import { anonId, daysLeft, forgetMe, readProgress, type Progress } from '../lib/progress';
 
 export function Dashboard() {
+  const [id, setId] = useState('');
+  const [days, setDays] = useState(0);
+  const [progress, setProgressState] = useState<Progress>({});
+  const [confirming, setConfirming] = useState(false);
+
+  useEffect(() => {
+    setId(anonId());
+    setDays(daysLeft());
+    setProgressState(readProgress());
+  }, []);
+
+  const started = ROUTES.filter((r) => (progress[r.id] ?? 0) > 0);
+  const completed = started.filter((r) => (progress[r.id] ?? 0) >= 1).length;
+  const modulesDone = started.reduce(
+    (n, r) => n + Math.round((progress[r.id] ?? 0) * r.modules),
+    0
+  );
+
+  const wipe = () => {
+    forgetMe();
+    setProgressState({});
+    setId(anonId());
+    setDays(daysLeft());
+    setConfirming(false);
+  };
+
   return (
-    <div className="min-h-screen py-8 px-6">
-      <div className="ncl-container">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="ncl-heading-2 mb-1">DASHBOARD</h1>
-            <p className="ncl-text-muted text-sm">Tu espacio de aprendizaje · NOIACORE LAB</p>
-          </div>
-          <Link href="/">
-            <button className="ncl-btn ncl-btn--glass">← Volver</button>
-          </Link>
-        </div>
+    <div className="bay shell stack stack--lg" style={{ paddingTop: 'clamp(7rem, 16vh, 11rem)' }}>
+      <header className="stack stack--sm">
+        <p className="t-label">Panel</p>
+        <h1 className="t-display" style={{ maxWidth: '14ch' }}>Tu progreso</h1>
+      </header>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {[
-            { label: 'CURSOS ACTIVOS', val: '3/6' },
-            { label: 'CERTIFICADOS', val: '07' },
-            { label: 'HORAS APRENDIDAS', val: '142' },
-            { label: 'XP TOTAL', val: '4,850' },
-          ].map((s, i) => (
-            <div key={i} className={`ncl-glass p-4 text-center ${i === 0 ? 'ncl-anim-beat' : ''}`}>
-              <div className="text-2xl font-mono font-bold text-nclr-red">{s.val}</div>
-              <div className="text-[10px] text-nclr-muted tracking-wider mt-1">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Main Grid: Progress + Courses */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Progress Panel */}
-          <div className="lg:col-span-2 ncl-glass p-6">
-            <div className="ncl-section-title">◆ MI PROGRESO</div>
-            <div className="space-y-4">
-              {[
-                { name: 'Lingua Aberta — Nivel B1', pct: 72, total: 24, done: 17 },
-                { name: 'UX Academy — Capstone', pct: 45, total: 12, done: 5 },
-                { name: 'Creative Tech — Visuals', pct: 90, total: 16, done: 14 },
-              ].map((item, i) => (
-                <div key={i} className="bg-black/20 rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono text-sm">{item.name}</span>
-                    <span className="ncl-tag">{item.pct}%</span>
-                  </div>
-                  <div className="w-full bg-white/5 rounded h-2 overflow-hidden">
-                    <div 
-                      className="h-full rounded transition-all"
-                      style={{
-                        width: `${item.pct}%`,
-                        background: 'linear-gradient(90deg, #3d0012, #ff073a, #ff4466)',
-                        boxShadow: '0 0 8px rgba(255,7,58,0.4)'
-                      }}
-                    />
-                  </div>
-                  <div className="text-xs text-nclr-muted mt-1">{item.done}/{item.total} lecciones</div>
-                </div>
-              ))}
-            </div>
+      {/* ── Identidad anonima ── */}
+      <Glass refract style={{ padding: 'clamp(1.4rem, 3vw, 2.2rem)' }}>
+        <div className="dash__id">
+          <div className="stack stack--sm">
+            <p className="t-label">Identificador anónimo</p>
+            <code
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.82rem',
+                color: 'var(--color-helio)',
+                wordBreak: 'break-all',
+              }}
+            >
+              {id || '···'}
+            </code>
+            <p className="t-body" style={{ fontSize: '0.86rem' }}>
+              Generado en tu dispositivo. Caduca en {days} días. No está
+              asociado a ningún correo, teléfono ni dirección IP.
+            </p>
           </div>
 
-          {/* Quick Actions */}
-          <div className="ncl-glass p-6">
-            <div className="ncl-section-title">◆ ACCIONES RÁPIDAS</div>
-            <div className="space-y-3">
-              {[
-                { label: '▶ Continuar curso', icon: '▶', href: '/courses/1' },
-                { label: '📝 Examen pendiente', icon: '📝', href: '/courses/2' },
-                { label: '🎯 Nuevo desafío diario', icon: '🎯', href: '#challenge' },
-                { label: '👥 Unirse comunidad', icon: '👥', href: '#community' },
-                { label: '📊 Ver reportes', icon: '📊', href: '#reports' },
-              ].map((action, i) => (
-                <Link key={i} href={action.href as string}>
-                  <button className="ncl-btn ncl-btn--glass w-full justify-start">
-                    <span>{action.icon}</span>
-                    <span>{action.label}</span>
+          <div className="stack stack--sm" style={{ justifyItems: 'start' }}>
+            {confirming ? (
+              <>
+                <p className="t-body" style={{ fontSize: '0.86rem' }}>
+                  Se borrará tu identificador y todo el progreso. No se puede deshacer.
+                </p>
+                <div className="row">
+                  <button type="button" className="btn btn--light" onClick={wipe}>
+                    Sí, borrar todo
                   </button>
-                </Link>
-              ))}
-            </div>
-
-            {/* Achievement badges */}
-            <div className="mt-6 pt-6 border-t border-nclr-border">
-              <div className="text-xs text-nclr-muted tracking-wider mb-3">LOGROS RECIENTES</div>
-              <div className="flex gap-3">
-                {['🔥','⚡','🎯','💎'].map((e, i) => (
-                  <div key={i} className="ncl-gem" style={{width:48,height:48}}>
-                    <span style={{fontSize:18}}>{e}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+                  <button type="button" className="btn btn--quiet" onClick={() => setConfirming(false)}>
+                    Cancelar
+                  </button>
+                </div>
+              </>
+            ) : (
+              <button type="button" className="btn btn--glass" onClick={() => setConfirming(true)}>
+                Borrar todo
+              </button>
+            )}
           </div>
         </div>
+      </Glass>
 
-        {/* AI Assistant Section */}
-        <div className="mt-8 ncl-glass p-6">
-          <div className="ncl-section-title">◆ ASISTENTE IA EDUCATIVA</div>
-          <div className="flex gap-4 items-center bg-black/20 rounded-lg p-4">
-            <div className="pulse-dot"></div>
-            <div className="flex-1">
-              <p className="font-mono text-sm text-nclr-muted">Ollama local activo · ¿Qué necesitas aprender hoy?</p>
-              <input 
-                placeholder="Escribe tu pregunta..." 
-                className="ncl-input mt-3 bg-transparent"
-              />
+      {/* ── Cifras ── */}
+      <dl className="bento" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(10rem,1fr))' }}>
+        {[
+          ['Rutas empezadas', `${started.length}`],
+          ['Rutas completadas', `${completed}`],
+          ['Módulos superados', `${modulesDone}`],
+          ['Disponibles', `${TOTALS.modules}`],
+        ].map(([k, v]) => (
+          <Glass key={k} style={{ padding: '1.4rem' }}>
+            <div className="stack stack--sm">
+              <dd className="t-num" style={{ margin: 0 }}>{v}</dd>
+              <dt className="t-label">{k}</dt>
             </div>
+          </Glass>
+        ))}
+      </dl>
+
+      {/* ── Rutas en curso ── */}
+      <section className="stack stack--lg">
+        <h2 className="t-title">En curso</h2>
+
+        {started.length === 0 ? (
+          <Glass style={{ padding: 'clamp(2rem, 6vw, 3.5rem)', textAlign: 'center' }}>
+            <div className="stack" style={{ justifyItems: 'center' }}>
+              <p className="t-body" style={{ textAlign: 'center' }}>
+                Todavía no has empezado ninguna ruta.
+              </p>
+              <Link href="/catalog" className="btn btn--light">Elegir una ruta</Link>
+            </div>
+          </Glass>
+        ) : (
+          <div className="stack">
+            {started.map((r) => {
+              const pct = Math.round((progress[r.id] ?? 0) * 100);
+              return (
+                <Glass key={r.id} lift style={{ padding: '1.3rem 1.6rem' }}>
+                  <Link href={`/courses/${r.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="stack stack--sm">
+                      <div className="row" style={{ justifyContent: 'space-between' }}>
+                        <span className="t-title" style={{ fontSize: '1.05rem' }}>{r.title}</span>
+                        <span className="t-label" style={{ color: 'var(--color-helio)' }}>{pct}%</span>
+                      </div>
+                      <div
+                        className="meter"
+                        role="progressbar"
+                        aria-valuenow={pct}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-label={`Progreso en ${r.title}`}
+                      >
+                        <span className="meter__fill" style={{ transform: `scaleX(${progress[r.id] ?? 0})` }} />
+                      </div>
+                    </div>
+                  </Link>
+                </Glass>
+              );
+            })}
           </div>
-        </div>
-      </div>
+        )}
+      </section>
     </div>
   );
 }

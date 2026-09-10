@@ -1,19 +1,21 @@
-// Open School — 404 Page
 import { Link } from 'wouter';
+import { Glass } from '../components/Glass';
+import { PlasmaField } from '../components/PlasmaField';
+import { ZeroText } from '../components/ZeroText';
 
 export function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <div className="text-center max-w-lg">
-        <div className="ncl-glass ncl-anim-beat inline-block p-8 mb-6">
-          <div className="text-6xl font-mono font-bold text-nclr-red" style={{textShadow: '0 0 30px rgba(255,7,58,0.6)'}}>404</div>
-        </div>
-        <h1 className="ncl-heading-2 mb-2">NODE NOT FOUND</h1>
-        <p className="ncl-text-muted mb-6">El recurso que buscas no existe en esta dimensión del campus.</p>
-        <Link href="/">
-          <button className="ncl-btn ncl-btn--primary">← VOLVER AL CAMPUS</button>
-        </Link>
+    <section className="hero">
+      <PlasmaField intensity={0.5} />
+      <div className="hero__content">
+        <ZeroText word="404" sub="Esta página no existe. Lo demás sí." />
+        <Glass style={{ padding: '1rem 1.4rem' }}>
+          <div className="row">
+            <Link href="/" className="btn btn--light">Inicio</Link>
+            <Link href="/catalog" className="btn btn--glass">Ver rutas</Link>
+          </div>
+        </Glass>
       </div>
-    </div>
+    </section>
   );
 }

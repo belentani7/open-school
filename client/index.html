@@ -2,15 +2,47 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Open School — Aprender sin dar un solo dato</title>
+    <meta
+      name="description"
+      content="Instituto abierto y gratuito. Formación para quien empieza de cero en un país nuevo: sin matrícula, sin datos personales, sin publicidad."
+    />
+
+    <!-- El sustrato es negro. Declararlo evita el destello blanco entre
+         que el navegador pinta el fondo y carga el CSS. -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Open School — Aprende Sin Límites</title>
-    <meta name="description" content="Plataforma educativa digital universal gratuita para jóvenes." />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Las fuentes vienen de otro origen: abrir la conexion antes ahorra
+         el coste de DNS + TLS del camino critico. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Open School — Aprender sin dar un solo dato" />
+    <meta
+      property="og:description"
+      content="Instituto abierto y gratuito. Sin matrícula, sin datos personales, sin publicidad."
+    />
+    <meta property="og:locale" content="es_ES" />
+
+    <style>
+      /* Fondo antes de que llegue la hoja de estilos. */
+      html { background: #000; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <noscript>Necesitas JavaScript para usar Open School.</noscript>
+    <noscript>
+      Open School necesita JavaScript activado. El catálogo completo está
+      también en el repositorio: github.com/belentani7/open-school
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

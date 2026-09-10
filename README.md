@@ -1,152 +1,161 @@
-# 🏫 Open School — Plataforma Educativa Digital Universal
+# Open School
 
-**Instituto digital gratuito para jóvenes** — basado en especificación de 11,000+ líneas del documento X.txt.
+Instituto digital abierto y gratuito. Formación para quien empieza de cero
+en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-## 🔗 Documentación completa de arquitectura y patrones
+> **Estado:** frontend completo y con build verde · backend sin implementar.
+> Este README describe lo que hay en el repositorio hoy. Lo que está
+> planificado va aparte, en [Hoja de ruta](#hoja-de-ruta), para que nadie
+> clone esperando un servidor que todavía no existe.
+> La especificación completa del producto está en [`SKILL.md`](SKILL.md).
 
-📄 **SKILL.md** — Documento maestro con todo el modelo de datos, roles, patrones técnicos, implementación de IA, certificaciones verificables, accesibilidad WCAG, modo offline.
+---
 
-## 🎯 Visión
+## Qué funciona hoy
 
-Crear un **Instituto Universal Gratuito para Jóvenes** en formato digital que combine:
-- Campus virtual multi-rol (estudiante, docente, mentor, admin, moderador, familia)
-- Biblioteca universal con 15+ áreas temáticas
-- Tutor inteligente por voz y texto (Ollama local + Web Speech API)
-- Laboratorio virtual con simuladores interactivos
-- Comunidad educativa segura (foros, mentoring entre pares)
-- Plataforma de certificación verificable (QR codes)
-- Sistema de orientación vocacional
-- Panel institucional con analíticas
+Una SPA de React que sirve el catálogo de rutas, el detalle de cada una,
+un panel de progreso y un tutor de orientación. Todo el estado vive en el
+navegador; no hay servidor propio ni base de datos conectada.
 
-## 📁 Estructura del Proyecto
+| Área | Estado |
+|---|---|
+| Catálogo, buscador y filtros | funcionando |
+| Ficha de ruta con progreso | funcionando, progreso local |
+| Panel anónimo (UUID + borrado real) | funcionando |
+| Tutor orientador | funcionando, **sin modelo de lenguaje** |
+| Instalable / funciona sin conexión | funcionando (service worker) |
+| Contenido de las lecciones | no implementado |
+| API, base de datos, autenticación | no implementado |
+| Certificados verificables por QR | no implementado |
 
-```bash
-open-school/                    # Proyecto raíz monorepo
-├── client/                     # Frontend (React 19 + Vite)
+### Anónimo de verdad
+
+No hay pantalla de registro porque no hay cuentas. Al entrar se genera un
+UUID aleatorio en el propio dispositivo, con caducidad de 365 días, y el
+progreso se guarda junto a él en `localStorage`. Sin correo, sin teléfono,
+sin IP, sin cookies de terceros. El botón **Borrar todo** del panel elimina
+identificador y progreso; no queda copia en ninguna parte porque nunca
+salió del dispositivo.
+
+Implementación: [`client/src/lib/progress.ts`](client/src/lib/progress.ts).
+
+### El tutor no finge
+
+No hay ningún LLM detrás. El tutor enruta la pregunta por palabras clave y
+responde con datos reales del catálogo; cuando no sabe, lo dice en vez de
+improvisar. Simular inteligencia en una plataforma educativa es
+precisamente el fallo que no se perdona. Cuando haya endpoint, se sustituye
+la función `answer()` y el aviso desaparece solo.
+
+---
+
+## Sistema de diseño
+
+Identidad **BELENTANI / NOIACORE**: contención de Apple, noir de HBO Max,
+liquid glass, plasma y cine. Sustrato negro al 97 %, presupuesto de luz
+global del 3 %, y una jerarquía que no se negocia:
+
+> **negro › material › luz › información** — la luz nunca por encima de la información.
+
+| Capa | Fichero | Contenido |
+|---|---|---|
+| 1 · Tokens | [`styles/tokens.css`](client/src/styles/tokens.css) | color, luz, tipografía, forma, física del movimiento |
+| 2 · Material | [`styles/material.css`](client/src/styles/material.css) | liquid glass de 4 capas, escala tipográfica, controles |
+| 3 · Chrome | [`styles/chrome.css`](client/src/styles/chrome.css) | navegación, pie, escaparate, medidores |
+
+**Material de 4 capas** (no es un `background: rgba()`): efecto
+(`backdrop-filter` + refracción SVG) → tinte sólido → *shine* de 4
+`inset-shadow` que dibuja el bisel → contenido.
+
+**Refracción real** en [`components/Refraction.tsx`](client/src/components/Refraction.tsx):
+`feTurbulence` genera el mapa de espesor y tres `feDisplacementMap` con
+escalas distintas separan los canales RGB — la franja cromática del vidrio.
+Solo Chromium aplica filtros SVG en `backdrop-filter`; el resto degrada al
+blur, que ya es correcto por sí solo.
+
+**Rendimiento:** el plasma pre-renderiza los degradados a sprites una vez y
+cada frame solo hace `drawImage` — crear gradientes dentro del bucle es lo
+que hunde el framerate en móviles. El bucle se detiene fuera de pantalla,
+con la pestaña oculta o si el usuario pidió menos movimiento.
+
+**Accesibilidad:** contraste AAA en texto (blanco 21:1, gris 8.9:1,
+heliotropo 7.3:1 sobre negro), objetivos táctiles de 44 px, foco siempre
+visible, salto al contenido, filtros como `button aria-pressed`, recuento
+de resultados en *live region*, y el estado nunca se comunica solo por
+color. Respeta `prefers-reduced-motion` y `prefers-contrast`.
+
+---
+
+## Estructura real
+
+```
+open-school/
+├── client/
+│   ├── public/            favicon, manifest, service worker
+│   ├── index.html
 │   └── src/
-│       ├── App.tsx             # Router principal
-│       ├── main.tsx            # Entry point
-│       ├── pages/              # Home, Dashboard, CourseDetail...
-│       ├── components/         # UI components (shadcn/ui + custom)
-│       ├── hooks/              # useSpeechRecognition, useTextToSpeech...
-│       └── contexts/           # AuthContext, ThemeContext, RoleContext
-│
-├── server/                     # Backend (Express.js + tRPC)
-│   └── _core/
-│       ├── llm.ts              # Ollama / LLM integration
-│       ├── trpc.ts             # tRPC router initialization
-│       └── notification.ts     # Email/push notifications
-│
-├── shared/                     # Code compartido cliente/servidor
-│   └── types.ts                # User, Course, Lesson, Certificate types
-│
-├── drizzle/                    # Database schema & migrations
-│   └── schema.ts               # Tables: users, routes, modules, lessons, certificates...
-│
-├── .env.example                # Environment variables template
-├── AGENTS.md                   # Instructions for AI coding agents
-└── SKILL.md                    # Comprehensive skill documentation
+│       ├── main.tsx       entry — monta React e instala el SW
+│       ├── App.tsx        chrome + rutas
+│       ├── components/    PlasmaField, Refraction, Glass, ZeroText,
+│       │                  RouteCase, Nav, Footer
+│       ├── lib/           motion.ts · catalog.ts · progress.ts
+│       ├── pages/         Home, Catalog, CourseDetail, Dashboard,
+│       │                  Chat, NotFound
+│       └── styles/        tokens · material · chrome
+├── shared/                types.ts + design system heredado
+├── drizzle/               esquema de BD (definido, sin conectar)
+├── SKILL.md               especificación completa del producto
+└── AGENTS.md              instrucciones para agentes
 ```
 
-## ⚡ Stack Técnico
+## Stack
 
-| Categoría | Tecnología | Uso |
-|-----------|-----------|-----|
-| Framework | React 19 + Vite 7 | Build tool + SSR-ready |
-| Language | TypeScript 5.6+ | Strict mode everywhere |
-| Styling | Tailwind CSS 4 + shadcn/ui | Utility-first + Radix primitives |
-| Animation | Framer Motion 12.x | Smooth transitions |
-| Router | Wouter 3.x | Lightweight routing |
-| Forms | React Hook Form + Zod 4.x | Validation + submission |
-| Charts | Recharts 2.x | Progress dashboards |
-| Database | Drizzle ORM + PostgreSQL 15+ | Type-safe queries |
-| Backend | Express.js + tRPC | API layer type-safe |
-| AI | Ollama local + Web Speech API | Voice input/output |
-| State | Zustand 5.x | Client state management |
+| Capa | Tecnología |
+|---|---|
+| UI | React 19 · Vite 7 · TypeScript 5.6 (strict) |
+| Estilos | Tailwind 4 + CSS propio en 3 capas |
+| Router | Wouter 3 |
+| Persistencia | `localStorage` (anónima) |
+| Offline | Service worker propio, sin dependencias |
 
-## 🚀 Quick Start
+`package.json` incluye además el stack previsto en `SKILL.md` (Radix,
+Drizzle, Zod, Recharts…) que **todavía no usa ningún componente**. Están
+declaradas a propósito, como contrato con la especificación.
+
+## Puesta en marcha
+
+Requiere Node 20+ y pnpm. **No mezclar con npm**: el proyecto tiene
+`pnpm-lock.yaml` y Vercel instala con pnpm.
 
 ```bash
-# 1. Clonar el proyecto
-git clone https://github.com/belentani7/open-school YOUR_PROJECT_NAME
-cd YOUR_PROJECT_NAME
-
-# 2. Instalar dependencias
 pnpm install
-
-# 3. Configurar entorno
-cp .env.example .env.local
-# Editar .env.local con valores reales
-
-# 4. Setup base de datos
-pnpm db:generate  # Generar archivos de migración
-pnpm db:migrate   # Aplicar migraciones
-pnpm db:seed      # Poblar con datos iniciales
-
-# 5. Iniciar desarrollo
-pnpm dev          # Frontend en http://localhost:3000
+pnpm dev        # desarrollo — http://localhost:5173
+pnpm check      # tsc --noEmit
+pnpm build      # produccion → dist/client
+pnpm start      # sirve el build en http://localhost:8000
 ```
 
-## 👥 Roles del Sistema
+No hace falta `.env` para arrancar: no hay servicios externos conectados.
 
-| Rol | Acceso | Descripción |
-|-----|--------|-------------|
-| **Estudiante** | Lee curso, responde evaluaciones, obtiene certificados | Usuario principal |
-| **Docente** | Crea/edita cursos, evalúa, revisa proyectos | Facilita aprendizaje |
-| **Mentor** | Acompaña estudiantes, resuelve dudas | Mentoría entre pares |
-| **Admin Institucional** | Gestiona usuarios, roles, cursos, reportes | Control total |
-| **Moderador** | Modera comunidad, foros, comentarios | Seguridad comunitaria |
-| **Psicólogo/Orientador** | Apoyo emocional y vocacional | Bienestar estudiantil |
-| **Familia/Tutor Legal** | Ve progreso del hijo/a | Supervisión parental |
+## Despliegue
 
-## ✅ Características Principales
+Vercel, configurado en [`vercel.json`](vercel.json): build con pnpm, salida
+en `dist/client`, *rewrite* de SPA y cabeceras de seguridad (CSP,
+`X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`, caché inmutable
+para los assets con hash).
 
-### Pedagogía
-- ✅ Rutas de aprendizaje personalizadas
-- ✅ Microaprendizaje (lecciones 3-10 min)
-- ✅ Evaluación formativa inmediata
-- ✅ Aprendizaje basado en proyectos
-- ✅ Retroalimentación adaptativa
+## Hoja de ruta
 
-### Tecnología
-- ✅ IA local con Ollama (sin claves externas)
-- ✅ Reconocimiento de voz nativo (Web Speech API)
-- ✅ Text-to-Speech accesible
-- ✅ Modo offline completo (Service Worker)
-- ✅ Certificados verificables con QR
+Por orden de dependencia:
 
-### Accesibilidad
-- ✅ WCAG 2.1 AA compliance
-- ✅ Modo alto contraste
-- ✅ Navegación por teclado
-- ✅ Lectores de pantalla
-- ✅ Texto a voz
-- ✅ Subtítulos y transcripciones
+1. Contenido real de las lecciones (hoy el catálogo es metadatos).
+2. API y base de datos — el esquema Drizzle ya está definido.
+3. Conectar el tutor a un modelo local (Ollama), sin claves externas.
+4. Certificados verificables por QR.
+5. Voz: Web Speech API para la ruta de fonética.
+6. Multilenguaje PT · ES · CA · EN (hoy la interfaz es solo español).
 
-### Seguridad
-- ✅ Protección de datos juveniles
-- ✅ Control parental opcional
-- ✅ Moderación de comunidad
-- ✅ Privacidad by design
-- ✅ Consentimiento verificable
+## Licencia
 
-## 🌐 Multilenguaje
-
-Soporte para múltiples idiomas desde diseño:
-- `pt-BR` — Portugués brasileño (base)
-- `es` — Español
-- `ca` — Catalán
-- `en` — Inglés
-
-Cada lección traduce individualmente título, descripción, ejercicios.
-
-## 🏗️ Inspirado en
-
-- **X.txt** — Especificación "Instituto Universal Gratuito para Jóvenes"
-- **Open Tongue** — Instituto de idiomas con tutor conversacional local
-- **UX Academy Professional Program** — Plataforma de evaluación y capstone
-- **LinguaForge** — Herramientas de traducción multilingüe
-
-## 📄 Licencia
-
-MIT — Usalo libremente en proyectos personales o institucionales.
+MIT — © 2026 Pedro Belentani. Úsalo libremente, también en proyectos
+institucionales.
