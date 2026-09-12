@@ -1,0 +1,33 @@
+{
+  "tema": "ciencia-y-actualidad",
+  "portal": "open-school",
+  "registros": [
+    {
+      "fuente": "arXiv",
+      "spec": "arxiv:climate education",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Twelve Years of Education and Public Outreach with the Fermi Gamma-ray Space Telescope",
+          "url": "http://arxiv.org/abs/1303.0042v1"
+        },
+        {
+          "titulo": "Invasive species, extreme fire risk, and toxin release under a changing climate",
+          "url": "http://arxiv.org/abs/2008.01035v1"
+        },
+        {
+          "titulo": "Cinema, Fermi Problems, &amp; General Education",
+          "url": "http://arxiv.org/abs/physics/0608058v2"
+        },
+        {
+          "titulo": "Creating Experience value to build student satisfaction in higher education",
+          "url": "http://arxiv.org/abs/2006.09846v1"
+        },
+        {
+          "titulo": "Precipitation extremes under climate change",
+          "url": "http://arxiv.org/abs/1503.07557v1"
+        }
+      ]
+    }
+  ]
+}
