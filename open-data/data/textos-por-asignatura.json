@@ -1,0 +1,56 @@
+{
+  "tema": "textos-por-asignatura",
+  "portal": "open-school",
+  "registros": [
+    {
+      "fuente": "OpenStax",
+      "spec": "openstax:physics",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "The AP Physics Collection",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "College Physics",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "College Physics 2e",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "College Physics For AP® Courses 2e",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "College Physics with Courseware",
+          "url": "https://openstax.org/details/books/None"
+        }
+      ]
+    },
+    {
+      "fuente": "OpenStax",
+      "spec": "openstax:biology",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Biology",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "Biology 2e",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "Biology for AP® Courses",
+          "url": "https://openstax.org/details/books/None"
+        },
+        {
+          "titulo": "Concepts of Biology",
+          "url": "https://openstax.org/details/books/None"
+        }
+      ]
+    }
+  ]
+}
