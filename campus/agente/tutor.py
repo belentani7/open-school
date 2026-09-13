@@ -23,8 +23,16 @@ import sys
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+# Solo se permite llamar a estos hosts, por nombre exacto y via https.
+# Cualquier otra URL (redirecciones incluidas) se rechaza antes de abrir
+# socket: sin esto, un cuerpo de issue malicioso podria dirigir la
+# peticion hacia servicios internos (SSRF).
+TUTOR_IA_URL = "https://text.pollinations.ai/openai"
+ALLOWED_HOSTS = {"text.pollinations.ai"}
 
 CAPSULAS = {
     "es": "Cápsula del día: un prompt útil es ROL + TAREA + CONTEXTO + FORMATO. "
@@ -41,9 +49,12 @@ CAPSULAS = {
 
 def pollinations(prompt: str) -> str | None:
     """IA gratuita sin API key (fallback a banco local si falla)."""
+    dest = urlparse(TUTOR_IA_URL)
+    if dest.scheme != "https" or dest.hostname not in ALLOWED_HOSTS:
+        return None
     try:
         req = urllib.request.Request(
-            "https://text.pollinations.ai/openai",
+            TUTOR_IA_URL,
             data=json.dumps({
                 "model": "openai",
                 "messages": [

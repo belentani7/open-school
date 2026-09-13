@@ -11,6 +11,7 @@ import { RefractionDefs } from './components/Refraction';
 
 import { Home } from './pages/Home';
 import { Catalog } from './pages/Catalog';
+import { Escuelas } from './pages/Escuelas';
 import { CourseDetail } from './pages/CourseDetail';
 import { Dashboard } from './pages/Dashboard';
 import { Chat } from './pages/Chat';
@@ -59,6 +60,7 @@ export function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/catalog" component={Catalog} />
+          <Route path="/escuelas" component={Escuelas} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/chat" component={Chat} />
           <Route path="/courses/:id" component={CourseDetail} />
