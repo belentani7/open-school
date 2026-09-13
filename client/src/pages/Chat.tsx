@@ -1,14 +1,10 @@
 /* ===================================================================
    TUTOR — el mentor de la plataforma.
 
-   HONESTIDAD DE PRODUCTO: no hay modelo conectado en este despliegue.
-   En lugar de simular respuestas de IA (que es lo que hacia el mock
-   anterior), el tutor responde con guia real del catalogo y dice
-   explicitamente cuando no hay modelo detras. Fingir inteligencia en
-   una plataforma educativa es exactamente el fallo que no se perdona.
-
-   Cuando haya endpoint, se sustituye `answer()` por la llamada y el
-   aviso desaparece solo.
+   Conectado al endpoint POST /api/tutor (proxy servidor a NVIDIA,
+   la clave nunca llega al cliente). Si el endpoint falla o no hay
+   modelo disponible, cae al enrutador determinista del catalogo:
+   sin simular respuestas de IA.
    =================================================================== */
 
 import { useEffect, useRef, useState } from 'react';
@@ -89,6 +85,27 @@ function answer(input: string): { text: string; routes?: string[] } {
   };
 }
 
+/** Llama al tutor IA del backend; null si no está disponible. */
+async function askTutor(history: Msg[]): Promise<string | null> {
+  try {
+    const res = await fetch('/api/tutor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: history
+          .filter((m) => m.id > 0)
+          .slice(-20)
+          .map((m) => ({ role: m.from === 'tu' ? 'user' : 'assistant', content: m.text })),
+      }),
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { reply?: string };
+    return typeof data.reply === 'string' && data.reply.trim() ? data.reply : null;
+  } catch {
+    return null;
+  }
+}
+
 export function Chat() {
   const [msgs, setMsgs] = useState<Msg[]>([
     {
@@ -98,6 +115,7 @@ export function Chat() {
     },
   ]);
   const [draft, setDraft] = useState('');
+  const [busy, setBusy] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const nextId = useRef(1);
 
@@ -105,16 +123,22 @@ export function Chat() {
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [msgs]);
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     const clean = text.trim();
-    if (!clean) return;
+    if (!clean || busy) return;
 
     const mine: Msg = { id: nextId.current++, from: 'tu', text: clean };
-    const reply = answer(clean);
-    const theirs: Msg = { id: nextId.current++, from: 'tutor', ...reply };
-
-    setMsgs((m) => [...m, mine, theirs]);
+    const history = [...msgs, mine];
+    setMsgs(history);
     setDraft('');
+    setBusy(true);
+
+    let reply: { text: string; routes?: string[] };
+    const ai = await askTutor(history);
+    reply = ai !== null ? { text: ai } : answer(clean);
+
+    setMsgs((m) => [...m, { id: nextId.current++, from: 'tutor', ...reply }]);
+    setBusy(false);
   };
 
   return (
@@ -123,8 +147,8 @@ export function Chat() {
         <p className="t-label">Tutor</p>
         <h1 className="t-display" style={{ maxWidth: '13ch' }}>Pregunta lo que sea</h1>
         <p className="t-lede">
-          Orientación sobre el catálogo. Sin modelo de lenguaje conectado —
-          responde con datos reales de las rutas, no con texto generado.
+          Tutor IA conectado al catálogo; si el modelo no está disponible,
+          responde con datos reales de las rutas, no con texto inventado.
         </p>
       </header>
 
@@ -183,8 +207,8 @@ export function Chat() {
               placeholder="Escribe tu pregunta…"
               autoComplete="off"
             />
-            <button type="submit" className="btn btn--light" disabled={!draft.trim()}>
-              Enviar
+            <button type="submit" className="btn btn--light" disabled={busy || !draft.trim()}>
+              {busy ? '…' : 'Enviar'}
             </button>
           </form>
         </div>
