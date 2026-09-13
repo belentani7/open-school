@@ -93,7 +93,7 @@ def tutor_issue() -> None:
 def capsula_diaria() -> None:
     hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     d = datetime.now(timezone.utc)
-    langs = ["es", "ca", "pt", "en"]
+    langs = ["pt", "es", "en", "ca"]
     lang = langs[d.day % len(langs)]
     carpeta = Path("campus/capsulas")
     carpeta.mkdir(parents=True, exist_ok=True)
