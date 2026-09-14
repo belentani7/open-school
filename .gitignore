@@ -40,3 +40,16 @@ coverage/
 *.pyc
 .vercel/
 !.env.example
+.aider*
+
+# IA agent states and histories (no versionar: JSONs densos/binarios locales)
+.cline/
+.opencode/
+.mcp/
+.zen/
+.mimosa/
+.history/
+*agent_state*
+.mimocode/
+.zcode/
+audit_tool.py
