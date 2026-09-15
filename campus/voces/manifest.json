@@ -12,10 +12,10 @@
   "idiomas": {
     "pt": {
       "voz": "pt-BR-FranciscaNeural",
-      "guion": "Bem-vindo ao portal de referência open-school. Domínio: Instituto digital (ESO y bachillerato). Reúne 4 temas construídos a partir de 4 fontes de dados abertos verificadas: textos por asignatura, lecturas obligatorias, ciencia y actualidad, datos educativos. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
+      "guion": "Bem-vindo ao portal de referência open-school. Domínio: Instituto digital (ESO e secundário). Reúne 4 temas construídos a partir de 4 fontes de dados abertos verificadas: textos por disciplina, leituras obrigatórias, ciência e atualidade, dados educativos. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
       "archivo": "voces/pt/bienvenida.mp3",
-      "bytes": 143280,
-      "sha256": "b7a971de88f30b2276da7d2e82155e35fb0855f96b9cd04836aab86b624b70eb"
+      "bytes": 136800,
+      "sha256": "9b15e2792b7ecbdfce1db59de76900fb63828cba1ae5d63dd1caf2721e56a25a"
     },
     "es": {
       "voz": "es-ES-ElviraNeural",
@@ -26,17 +26,18 @@
     },
     "en": {
       "voz": "en-US-AriaNeural",
-      "guion": "Welcome to the open-school reference portal. Domain: Instituto digital (ESO y bachillerato). It brings together 4 topics built from 4 verified open data sources: textos por asignatura, lecturas obligatorias, ciencia y actualidad, datos educativos. All free, no credentials, and it works offline.",
+      "guion": "Welcome to the open-school reference portal. Domain: Digital high school (secondary education). It brings together 4 topics built from 4 verified open data sources: subject texts, required readings, science and current affairs, education data. All free, no credentials, and it works offline.",
       "archivo": "voces/en/bienvenida.mp3",
-      "bytes": 143280,
-      "sha256": "63265cc27789029c44cecc79d3b73e8c5b06e9f8a355235231ac7768c4e343d9"
+      "bytes": 131184,
+      "sha256": "91cf606d108748e82f72c2d3675ed14b95a1231c383e85637715ee1b4c8ecba7"
     },
     "ca": {
       "voz": "ca-ES-JoanaNeural",
-      "guion": "Benvingut al portal de referència open-school. Domini: Instituto digital (ESO y bachillerato). Aplega 4 temes construïts a partir de 4 fonts de dades obertes verificades: textos por asignatura, lecturas obligatorias, ciencia y actualidad, datos educativos. Tot gratuït, sense credencials, i funciona sense connexió.",
+      "guion": "Benvingut al portal de referència open-school. Domini: Institut digital (ESO i batxillerat). Aplega 4 temes construïts a partir de 4 fonts de dades obertes verificades: textos per assignatura, lectures obligatòries, ciència i actualitat, dades educatives. Tot gratuït, sense credencials, i funciona sense connexió.",
       "archivo": "voces/ca/bienvenida.mp3",
-      "bytes": 170784,
-      "sha256": "e5013156f118517f6d748cfa37b6387e32512c03cf00596324541fb517b20e4c"
+      "bytes": 166896,
+      "sha256": "e59bf1a10ecdd581eb604e9755c813ae8f5aff77e3281c36fcfc3098e2a59672"
     }
-  }
+  },
+  "nota_correccion": "2026-09-15: guiones PT/EN/CA contenian dominio y temas en espanol; traducidos a cada idioma (con tildes) y audio regenerado."
 }
