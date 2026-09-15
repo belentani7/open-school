@@ -159,3 +159,19 @@ Por orden de dependencia:
 
 MIT — © 2026 Pedro Belentani. Úsalo libremente, también en proyectos
 institucionales.
+
+## Datos abiertos
+
+El directorio [open-data/](open-data/) ya trae un portal de datos abiertos
+(temas, fuentes y licencias en open-data/topics.json). Se regenera con
+`python enrich_portals.py <portal>` en el proyecto `edu-open-data`.
+
+Ver [open-data/README.md](open-data/README.md).
+
+## Proyectos open similares
+
+- [Open edX](https://github.com/openedx/openedx-platform)
+- [Moodle](https://github.com/moodle/moodle)
+- [Kolibri](https://github.com/learningequality/kolibri)
+- [Oppia](https://github.com/oppia/oppia)
+- [Sugar Labs](https://github.com/sugarlabs)
