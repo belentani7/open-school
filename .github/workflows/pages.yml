@@ -1,0 +1,49 @@
+name: Build & Deploy Pages (Vite)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Build app React (base relativa)
+        run: npx vite build --base=./
+        env:
+          NODE_ENV: production
+      - name: Ensamblar sitio (app React + campus PWA + redirect raiz)
+        run: |
+          mkdir -p _pages
+          cp -r dist/client _pages/app
+          cp -r campus _pages/campus
+          cp index.html _pages/index.html
+          cp index.html _pages/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _pages
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
