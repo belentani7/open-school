@@ -139,8 +139,16 @@ def create_app(
                 if not isinstance(data, dict) or "messages" not in data:
                     return _json_response(start_response, "400 Bad Request", {"error": "missing_messages"})
                 messages = data["messages"]
-                tutor = tutor_factory()
+                # Validar ANTES de construir el tutor. Si no, una peticion
+                # malformada construye el cliente de NVIDIA (y en un entorno
+                # sin NVIDIA_API_KEY revienta con 500) en vez deresponder
+                # 400 — que es lo que el cuerpo de la peticion ya decide.
                 try:
+                    TutorService.validate_messages(messages)
+                except (ValueError, TypeError) as e:
+                    return _json_response(start_response, "400 Bad Request", {"error": str(e)})
+                try:
+                    tutor = tutor_factory()
                     reply = tutor.generate_reply(messages)
                 except (ValueError, TypeError) as e:
                     return _json_response(start_response, "400 Bad Request", {"error": str(e)})

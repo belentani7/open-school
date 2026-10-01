@@ -18,20 +18,24 @@ class TutorService:
         self.client = client
 
     def generate_reply(self, messages: list[dict[str, str]]) -> str:
-        self._validate_messages(messages)
+        self.validate_messages(messages)
         return self.client.chat_completion(messages, max_tokens=500)
 
-    def _validate_messages(self, messages: list[dict[str, str]]) -> None:
+    # De clase y publico a proposito: la capa HTTP lo llama ANTES de
+    # construir el cliente, para que un payload malformado se rechace con
+    # 400 sin necesidad de NVIDIA_API_KEY y sin gastar un solo credito.
+    @classmethod
+    def validate_messages(cls, messages: list[dict[str, str]]) -> None:
         if not isinstance(messages, list):
             raise TypeError("messages must be a list")
-        if len(messages) > self.MAX_MESSAGES:
-            raise ValueError(f"Too many messages: max {self.MAX_MESSAGES}")
+        if len(messages) > cls.MAX_MESSAGES:
+            raise ValueError(f"Too many messages: max {cls.MAX_MESSAGES}")
         for msg in messages:
             if not isinstance(msg, dict):
                 raise TypeError("Each message must be an object")
             role = msg.get("role")
             content = msg.get("content")
-            if role not in self.ALLOWED_ROLES:
+            if role not in cls.ALLOWED_ROLES:
                 raise ValueError(f"Invalid role: {role}")
-            if not isinstance(content, str) or len(content) > self.MAX_MESSAGE_LENGTH:
+            if not isinstance(content, str) or len(content) > cls.MAX_MESSAGE_LENGTH:
                 raise ValueError("Message content must be a string with max 2000 chars")
