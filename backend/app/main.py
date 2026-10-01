@@ -7,7 +7,6 @@ from app.adapters.memory_catalog import InMemoryCourseRepository
 from app.application.catalog_service import CatalogService
 from app.interfaces.wsgi import create_app
 
-
 repository = InMemoryCourseRepository()
 service = CatalogService(repository)
 app = create_app(service)

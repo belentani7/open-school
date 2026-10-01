@@ -3,7 +3,6 @@ from __future__ import annotations
 import http.client
 import json
 import os
-from typing import Any
 
 
 class NvidiaClient:

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import ClassVar
 
 from app.adapters.nvidia_client import NvidiaClient
 
@@ -8,7 +8,11 @@ from app.adapters.nvidia_client import NvidiaClient
 class TutorService:
     MAX_MESSAGES = 20
     MAX_MESSAGE_LENGTH = 2000
-    ALLOWED_ROLES = {"system", "user", "assistant"}
+    # Solo roles conversacionales. "system" queda fuera a proposito: el
+    # cliente es usuario anonimo y un system prompt suyo seria inyeccion
+    # de instrucciones sobre el tutor ( OWASP A03/A05 ) — la instruccion
+    # de sistema, si la hubiera, la fija el servidor, nunca el navegador.
+    ALLOWED_ROLES: ClassVar[set[str]] = {"user", "assistant"}
 
     def __init__(self, client: NvidiaClient) -> None:
         self.client = client
@@ -19,12 +23,12 @@ class TutorService:
 
     def _validate_messages(self, messages: list[dict[str, str]]) -> None:
         if not isinstance(messages, list):
-            raise ValueError("messages must be a list")
+            raise TypeError("messages must be a list")
         if len(messages) > self.MAX_MESSAGES:
             raise ValueError(f"Too many messages: max {self.MAX_MESSAGES}")
         for msg in messages:
             if not isinstance(msg, dict):
-                raise ValueError("Each message must be an object")
+                raise TypeError("Each message must be an object")
             role = msg.get("role")
             content = msg.get("content")
             if role not in self.ALLOWED_ROLES:

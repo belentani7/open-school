@@ -2,6 +2,8 @@
    FOOTER — cierre. Claim del design system + hechos verificables.
    =================================================================== */
 
+import { Link } from 'wouter';
+
 import { TOTALS } from '../lib/catalog';
 
 export function Footer() {
@@ -44,6 +46,15 @@ export function Footer() {
                 </a>
               </li>
               <li><a href="/catalog" className="footer__link">Rutas</a></li>
+              <li>
+                {/* Sin el numero de terminos a proposito: importar
+                    BIBLIA_TOTAL arrastraria las 219 entradas al bundle
+                    principal para pintar un contador en el pie. El total
+                    vive en la propia pagina, que es donde se busca. */}
+                <Link href="/biblia" className="footer__link">
+                  Biblia del desarrollo
+                </Link>
+              </li>
               <li><a href="#top" className="footer__link">Volver arriba</a></li>
             </ul>
           </div>

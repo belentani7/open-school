@@ -11,7 +11,8 @@
    las paginas se renderizaban sin estilos. Unificado sobre el manual.
    =================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+/* Fuentes auto-alojadas: cero llamadas a terceros (ver fonts/fonts.css). */
+@import "./fonts/fonts.css";
 
 @import "tailwindcss";
 

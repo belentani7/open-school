@@ -2,7 +2,7 @@
    APP — raiz. Monta el chrome, los filtros SVG y el enrutado.
    =================================================================== */
 
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'wouter';
 
 import { Nav } from './components/Nav';
@@ -16,6 +16,13 @@ import { CourseDetail } from './pages/CourseDetail';
 import { Dashboard } from './pages/Dashboard';
 import { Chat } from './pages/Chat';
 import { NotFound } from './pages/NotFound';
+
+/**
+ * La Biblia son 219 terminos de datos: pesa mas que cualquier pagina y casi
+ * nadie la abre desde la portada. Cargarla en diferido la saca del camino
+ * critico — quien no entre en /biblia no descarga ni un byte de ella.
+ */
+const Biblia = lazy(() => import('./pages/Biblia').then((m) => ({ default: m.Biblia })));
 
 /**
  * Al navegar, el scroll se queda donde estaba y el foco sigue en el
@@ -42,6 +49,23 @@ function useRouteReset() {
   }, [loc]);
 }
 
+/**
+ * Lo que se ve mientras llega el chunk de la Biblia. Un hueco con la
+ * palabra "cargando" y ya: si el chunk tarda, un esqueleto con la forma
+ * del glosario prometeria una rejilla que aun no existe.
+ */
+function Cargando() {
+  return (
+    <section className="bay" style={{ paddingTop: 'clamp(8rem, 18vh, 12rem)' }}>
+      <div className="shell stack stack--sm">
+        <p className="t-label" aria-live="polite">
+          Cargando la Biblia…
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export function App() {
   useRouteReset();
 
@@ -60,6 +84,14 @@ export function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/catalog" component={Catalog} />
+          {/* Ruta fija antes que /courses/:id. En wouter la primera que
+              coincide gana, y asi un termino no puede ser tomado por
+              un slug de curso. */}
+          <Route path="/biblia">
+            <Suspense fallback={<Cargando />}>
+              <Biblia />
+            </Suspense>
+          </Route>
           <Route path="/escuelas" component={Escuelas} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/chat" component={Chat} />

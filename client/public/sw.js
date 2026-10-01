@@ -56,8 +56,13 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(request)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(SHELL).then((c) => c.put('/index.html', copy));
+          // Solo se cachea si la respuesta es valida. Guardar un 404 o un
+          // 500 como shell dejaria la app rota para siempre en offline:
+          // esa respuesta se serviria como si fuera la aplicacion.
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(SHELL).then((c) => c.put('/index.html', copy));
+          }
           return res;
         })
         // SPA: cualquier ruta se resuelve contra el mismo shell.
