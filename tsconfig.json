@@ -17,11 +17,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./client/src/*"],
-      "@/server/*": ["./server/*"],
-      "@/shared/*": ["./shared/*"]
+      "@/*": ["./client/src/*"]
     }
   },
-  "include": ["client/src/**/*.ts", "client/src/**/*.tsx", "server/**/*.ts", "shared/**/*.ts"],
+  "include": ["client/src/**/*.ts", "client/src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

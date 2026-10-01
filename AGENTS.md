@@ -141,25 +141,23 @@ survive a restart). Endpoints: `GET /api/v1/catalog`, `POST /api/tutor`
 ## Known gaps (not fixed yet)
 
 1. **Tutor endpoint wiring.** `Chat.tsx` POSTs `/api/tutor`. In dev, Vite
-   proxies `/api` to `localhost:3000` but the Python backend defaults to
-   `8001` (workaround: `PORT=3000 python -m app.main`); in production,
-   `vercel.json` serves the SPA statically and rewrites everything to
-   `index.html`, so there is no `/api` function. The endpoint exists in the
-   backend but is not reachable out of the box from either environment.
-2. **Dead aliases.** `@/server` and `@/shared` in `tsconfig.json` /
-   `vite.config.ts` resolve to missing directories.
-3. **Course detail progress** is still partially simulated; real persistence
+   proxies `/api` to the Python backend on `8001` (its default). In
+   production, `vercel.json` serves the SPA statically and rewrites
+   everything to `index.html`, so there is no `/api` function: the endpoint
+   exists in the backend but is not reachable on Vercel until a serverless
+   function is added.
+2. **Course detail progress** is still partially simulated; real persistence
    lives in `lib/progress.ts`.
-4. **Missing registry data.** `Escuelas.tsx` fetches
+3. **Missing registry data.** `Escuelas.tsx` fetches
    `/open-data/unified-campus-registry.json`, which is not in the repo
    (only `topics.json` and `data/*.json` are). The page renders an error
    state instead of crashing, so `/escuelas` is effectively empty until that
    file is generated or the fetch is repointed at what exists.
-5. **Rate limiting is per process.** `RateLimiter` (`interfaces/wsgi.py`)
+4. **Rate limiting is per process.** `RateLimiter` (`interfaces/wsgi.py`)
    keeps its counters in memory: two instances behind a load balancer each
    allow their own 30 req/min. That still stops sustained abuse from one
    client; an exact global limit would need a shared store (Redis).
-6. **No SAST / secret scanning in CI.** CI gates on `tsc`, `npm audit
+5. **No SAST / secret scanning in CI.** CI gates on `tsc`, `npm audit
    --audit-level=high`, build and tests, but there is no CodeQL or
    secret-scanning workflow yet.
 

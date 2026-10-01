@@ -1,6 +1,4 @@
 packages:
-  - 'client'
-  - 'server'
-  - 'shared'
-allowBuilds:
-  esbuild: true
+  - '.'
+onlyBuiltDependencies:
+  - esbuild

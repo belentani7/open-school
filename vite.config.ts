@@ -8,14 +8,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client/src'),
-      '@/server': path.resolve(__dirname, './server'),
-      '@/shared': path.resolve(__dirname, './shared')
+      '@': path.resolve(__dirname, './client/src')
     }
   },
   server: {
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:8001'
     }
   },
   build: {
