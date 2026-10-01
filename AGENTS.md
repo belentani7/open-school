@@ -43,9 +43,9 @@ If you need a new library, declare it deliberately and import it in the
 same change — do not re-add "for later".
 
 Likewise there is **no** Express/tRPC server, **no** Drizzle/PostgreSQL
-schema, **no** `server/` or `shared/` directory (the aliases `@/server` and
-`@/shared` in `tsconfig.json` and `vite.config.ts` point at folders that do
-not exist), and **no** shadcn/ui components.
+schema, **no** `server/` or `shared/` directory (the dead `@/server` and
+`@/shared` aliases were removed from `tsconfig.json` and `vite.config.ts`
+on 2026-10-01), and **no** shadcn/ui components.
 
 Tailwind 4 is installed and imported (`@import "tailwindcss"`), so its
 preflight/reset is active, but **no utility classes are used anywhere in the
@@ -148,11 +148,17 @@ survive a restart). Endpoints: `GET /api/v1/catalog`, `POST /api/tutor`
    function is added.
 2. **Course detail progress** is still partially simulated; real persistence
    lives in `lib/progress.ts`.
-3. **Missing registry data.** `Escuelas.tsx` fetches
-   `/open-data/unified-campus-registry.json`, which is not in the repo
-   (only `topics.json` and `data/*.json` are). The page renders an error
-   state instead of crashing, so `/escuelas` is effectively empty until that
-   file is generated or the fetch is repointed at what exists.
+3. **Federated registry abandoned (2026-10-01).** `Escuelas.tsx` used to fetch
+   `/open-data/unified-campus-registry.json`, an inventory of resources in the
+   sibling repos. That file never existed, and generating it would have meant
+   publishing the file tree of personal repositories inside a **public** repo.
+   The page now renders the open data that really is published and verified:
+   `open-data/topics.json` plus `open-data/data/<tema>.json`, flattened by
+   `lib/openData.ts` (each source has its own keys — `url`, `autor`, `doi`,
+   `indicador`, `valor` — and `ciencia-y-actualidad` arrives with no `datos`
+   because arXiv returned 429, which the page states instead of hiding).
+   If the federated view is ever wanted again, it needs a generator that emits
+   only public metadata, and a decision on where that inventory is hosted.
 4. **Rate limiting is per process.** `RateLimiter` (`interfaces/wsgi.py`)
    keeps its counters in memory: two instances behind a load balancer each
    allow their own 30 req/min. That still stops sustained abuse from one
@@ -206,6 +212,7 @@ Dependencies: `npm audit` reports **0 vulnerabilities** (express and its
 | `client/src/lib/highlight.test.ts` | Highlighting invariant: `unir(tramos(x)) === x` (never drops or invents text) |
 | `client/src/lib/sw.test.ts` | Service worker never caches a non-ok navigation as the shell |
 | `client/src/lib/security-headers.test.ts` | CSP + security headers in `vercel.json`, zero third-party origins |
+| `client/src/lib/openData.test.ts` | Published open data is intact: every manifest theme has its file, ids unique, no item without title or source, links are https, failed sources reported, and the 5 heterogeneous source shapes flatten correctly (loads the real JSON) |
 | `client/src/lib/xss-surface.test.ts` | No `innerHTML` / `eval` / `dangerouslySetInnerHTML` in `client/src` |
 | `backend/tests/` | WSGI status codes, `nosniff`, body cap, tutor validation and prompt-injection role, per-IP rate limiting |
 
