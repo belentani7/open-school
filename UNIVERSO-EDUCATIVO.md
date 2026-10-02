@@ -1,7 +1,24 @@
 # UNIVERSO EDUCATIVO — mapa verificado
 
-Fecha: **2026-09-30**. Cada cifra de este documento se comprobo contra la API de
-GitHub en esa fecha. Lo que no se pudo verificar aparece marcado como tal.
+Fecha: **2026-09-30** (mapa técnico). Prioridad de trabajo actualizada **2026-10-02**.
+Cada cifra técnica se comprobo contra la API de GitHub el 2026-09-30. Lo que no se
+pudo verificar aparece marcado como tal.
+
+## Biblia operativa (prioridad de agentes) — 2026-10-02
+
+Fuente de glosario (única): `open-school/docs/BIBLIA_TERMINOS_DESARROLLO.md` →
+`npm run build:biblia` → `/biblia`. WILLIAMSCHOOL la publica en el campus con
+`WILLIAMSCHOOL/scripts/export-biblia.mts` (no hay segunda fuente). Secure T se
+trata en otro chat; no tocar desde aquí.
+
+| Orden | Repo | Notas |
+|---|---|---|
+| **Ahora** | `open-school` | De William. Nodo canónico + Biblia. |
+| **Ahora** | `belentani-school-unificado` | Misma línea William. |
+| Luego | `ManosAbiertas` | No ahora. |
+| Luego | `ux-academy-professional-program` | No ahora. |
+| Fuera | `nataliamarinho` | **No es educacional.** No tocar. |
+| Fuera | `secure-t` (+ kits/backups) | Otro chat. |
 
 ## El hallazgo
 

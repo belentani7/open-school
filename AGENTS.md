@@ -7,6 +7,20 @@ changes.
 Everything below was verified against the code on 2026-10-01. If you find a
 mismatch, fix this file rather than trusting it blindly.
 
+## Scope for agents (2026-10-02)
+
+This chat / this line of work covers **William**: `open-school` and
+`belentani-school-unificado`. Do **not** touch `secure-t` (other chat),
+`nataliamarinho` (not educational), or prioritize `ManosAbiertas` /
+`ux-academy-professional-program` until later.
+
+The **Biblia** (glossary) is owned here:
+
+1. Edit `docs/BIBLIA_TERMINOS_DESARROLLO.md` only.
+2. Run `npm run build:biblia` → `client/src/lib/biblia.ts`.
+3. From `../WILLIAMSCHOOL`, run `npx tsx scripts/export-biblia.mts` so the
+   campus JSON mirrors this source. Never invent a second glossary.
+
 ## What this project is
 
 A curriculum platform: a catalogue of educational routes with searchable
