@@ -1,0 +1,806 @@
+{
+  "meta": {
+    "source": "https://api.openalex.org/works?per-page=100&select=id,title,publication_year,cited_by_count,doi,type",
+    "license": "ver open-data/README.md",
+    "generated_at": "2026-09-15T15:52:14Z",
+    "count": 100
+  },
+  "records": [
+    {
+      "id": "https://openalex.org/W3038568908",
+      "title": "Radiation Resistant Camera System for Monitoring Deuterium Plasma Discharges in the Large Helical Device",
+      "publication_year": 2020,
+      "cited_by_count": 801217,
+      "doi": "https://doi.org/10.1585/pfr.15.2402039",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1775749144",
+      "title": "PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT",
+      "publication_year": 1951,
+      "cited_by_count": 318974,
+      "doi": "https://doi.org/10.1016/s0021-9258(19)52451-6",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2100837269",
+      "title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+      "publication_year": 1970,
+      "cited_by_count": 252001,
+      "doi": "https://doi.org/10.1038/227680a0",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2194775991",
+      "title": "Deep Residual Learning for Image Recognition",
+      "publication_year": 2016,
+      "cited_by_count": 228750,
+      "doi": "https://doi.org/10.1109/cvpr.2016.90",
+      "type": "conference-paper"
+    },
+    {
+      "id": "https://openalex.org/W2128635872",
+      "title": "A Rapid and Sensitive Method for the Quantitation of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding",
+      "publication_year": 1976,
+      "cited_by_count": 225376,
+      "doi": "https://doi.org/10.1006/abio.1976.9999",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1981368803",
+      "title": "Generalized Gradient Approximation Made Simple",
+      "publication_year": 1996,
+      "cited_by_count": 216442,
+      "doi": "https://doi.org/10.1103/physrevlett.77.3865",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4293247451",
+      "title": "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding",
+      "publication_year": 1976,
+      "cited_by_count": 212606,
+      "doi": "https://doi.org/10.1016/0003-2697(76)90527-3",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1979290264",
+      "title": "Using thematic analysis in psychology",
+      "publication_year": 2006,
+      "cited_by_count": 192943,
+      "doi": "https://doi.org/10.1191/1478088706qp063oa",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2107277218",
+      "title": "Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method",
+      "publication_year": 2001,
+      "cited_by_count": 184477,
+      "doi": "https://doi.org/10.1006/meth.2001.1262",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2911964244",
+      "title": "Random Forests",
+      "publication_year": 2001,
+      "cited_by_count": 131918,
+      "doi": "https://doi.org/10.1023/a:1010933404324",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2144634347",
+      "title": "Molecular Cloning: A Laboratory Manual",
+      "publication_year": 1989,
+      "cited_by_count": 129950,
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2083222334",
+      "title": "Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set",
+      "publication_year": 1996,
+      "cited_by_count": 123535,
+      "doi": "https://doi.org/10.1103/physrevb.54.11169",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4247665917",
+      "title": "Diagnostic and Statistical Manual of Mental Disorders",
+      "publication_year": 2013,
+      "cited_by_count": 116254,
+      "doi": "https://doi.org/10.1176/appi.books.9780890425596",
+      "type": "book"
+    },
+    {
+      "id": "https://openalex.org/W3128646645",
+      "title": "Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries",
+      "publication_year": 2021,
+      "cited_by_count": 114173,
+      "doi": "https://doi.org/10.3322/caac.21660",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2110065044",
+      "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "publication_year": 1995,
+      "cited_by_count": 111754,
+      "doi": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2071666535",
+      "title": "Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives",
+      "publication_year": 1999,
+      "cited_by_count": 108428,
+      "doi": "https://doi.org/10.1080/10705519909540118",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W3118615836",
+      "title": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews",
+      "publication_year": 2021,
+      "cited_by_count": 104831,
+      "doi": "https://doi.org/10.1136/bmj.n71",
+      "type": "review"
+    },
+    {
+      "id": "https://openalex.org/W2143981217",
+      "title": "Density-functional thermochemistry. III. The role of exact exchange",
+      "publication_year": 1993,
+      "cited_by_count": 103947,
+      "doi": "https://doi.org/10.1063/1.464913",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2179438025",
+      "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+      "publication_year": 2014,
+      "cited_by_count": 103480,
+      "doi": "https://doi.org/10.1186/s13059-014-0550-8",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2064675550",
+      "title": "Long Short-Term Memory",
+      "publication_year": 1997,
+      "cited_by_count": 101761,
+      "doi": "https://doi.org/10.1162/neco.1997.9.8.1735",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2023271753",
+      "title": "Development of the Colle-Salvetti correlation-energy formula into a functional of the electron density",
+      "publication_year": 1988,
+      "cited_by_count": 101123,
+      "doi": "https://doi.org/10.1103/physrevb.37.785",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2055043387",
+      "title": "Basic local alignment search tool",
+      "publication_year": 1990,
+      "cited_by_count": 95495,
+      "doi": "https://doi.org/10.1016/s0022-2836(05)80360-2",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1970127494",
+      "title": "Projector augmented-wave method",
+      "publication_year": 1994,
+      "cited_by_count": 93062,
+      "doi": "https://doi.org/10.1103/physrevb.50.17953",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1901129140",
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "publication_year": 2015,
+      "cited_by_count": 92328,
+      "doi": "https://doi.org/10.1007/978-3-319-24574-4_28",
+      "type": "conference-paper"
+    },
+    {
+      "id": "https://openalex.org/W1951724000",
+      "title": "Fitting Linear Mixed-Effects Models Using lme4",
+      "publication_year": 2015,
+      "cited_by_count": 88688,
+      "doi": "https://doi.org/10.18637/jss.v067.i01",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2889646458",
+      "title": "Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries",
+      "publication_year": 2018,
+      "cited_by_count": 88122,
+      "doi": "https://doi.org/10.3322/caac.21492",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2131350133",
+      "title": "A short history of SHELX",
+      "publication_year": 2007,
+      "cited_by_count": 87825,
+      "doi": "https://doi.org/10.1107/s0108767307043930",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2099697766",
+      "title": "The theory of planned behavior",
+      "publication_year": 1991,
+      "cited_by_count": 87492,
+      "doi": "https://doi.org/10.1016/0749-5978(91)90020-t",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1847168837",
+      "title": "“Mini-mental state”",
+      "publication_year": 1975,
+      "cited_by_count": 87444,
+      "doi": "https://doi.org/10.1016/0022-3956(75)90026-6",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2314225431",
+      "title": "Molecular cloning: A laboratory manual",
+      "publication_year": 1990,
+      "cited_by_count": 86239,
+      "doi": "https://doi.org/10.1016/0003-2697(90)90595-z",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1979544533",
+      "title": "From ultrasoft pseudopotentials to the projector augmented-wave method",
+      "publication_year": 1999,
+      "cited_by_count": 85651,
+      "doi": "https://doi.org/10.1103/physrevb.59.1758",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2919115771",
+      "title": "Deep learning",
+      "publication_year": 2015,
+      "cited_by_count": 84503,
+      "doi": "https://doi.org/10.1038/nature14539",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2156098321",
+      "title": "Preferred reporting items for systematic reviews and meta-analyses: the PRISMA statement",
+      "publication_year": 2009,
+      "cited_by_count": 83667,
+      "doi": "https://doi.org/10.1136/bmj.b2535",
+      "type": "review"
+    },
+    {
+      "id": "https://openalex.org/W1995875735",
+      "title": "A Mathematical Theory of Communication",
+      "publication_year": 1948,
+      "cited_by_count": 82340,
+      "doi": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2164777277",
+      "title": "The Measurement of Observer Agreement for Categorical Data",
+      "publication_year": 1977,
+      "cited_by_count": 81076,
+      "doi": "https://doi.org/10.2307/2529310",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2106096361",
+      "title": "Common method biases in behavioral research: A critical review of the literature and recommended remedies.",
+      "publication_year": 2003,
+      "cited_by_count": 80223,
+      "doi": "https://doi.org/10.1037/0021-9010.88.5.879",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4385245566",
+      "title": "Exploiting Generative AI to Scale up Intelligent Tutoring Systems",
+      "publication_year": 2023,
+      "cited_by_count": 79058,
+      "doi": "https://doi.org/10.4230/lipics.itp.2023.19",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1484864026",
+      "title": "Using multivariate statistics",
+      "publication_year": 1983,
+      "cited_by_count": 77448,
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2007395042",
+      "title": "Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set",
+      "publication_year": 1996,
+      "cited_by_count": 76384,
+      "doi": "https://doi.org/10.1016/0927-0256(96)00008-0",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2163605009",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "publication_year": 2017,
+      "cited_by_count": 75616,
+      "doi": "https://doi.org/10.1145/3065386",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2158714788",
+      "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+      "publication_year": 1997,
+      "cited_by_count": 74903,
+      "doi": "https://doi.org/10.1093/nar/25.17.3389",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1527311855",
+      "title": "Case Study Research: Design and Methods",
+      "publication_year": 1984,
+      "cited_by_count": 74827,
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2167279371",
+      "title": "Fiji: an open-source platform for biological-image analysis",
+      "publication_year": 2012,
+      "cited_by_count": 72770,
+      "doi": "https://doi.org/10.1038/nmeth.2019",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1856219842",
+      "title": "Standard methods: For the examination of water and waste water",
+      "publication_year": 1990,
+      "cited_by_count": 72444,
+      "doi": "https://doi.org/10.1016/0003-2697(90)90598-4",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1971440513",
+      "title": "The moderator-mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations.",
+      "publication_year": 1986,
+      "cited_by_count": 72217,
+      "doi": "https://doi.org/10.1037//0022-3514.51.6.1173",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2752617332",
+      "title": "Theory of the firm: Managerial behavior, agency costs and ownership structure",
+      "publication_year": 1976,
+      "cited_by_count": 71809,
+      "doi": "https://doi.org/10.1016/0304-405x(76)90026-x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2036113194",
+      "title": "Special points for Brillouin-zone integrations",
+      "publication_year": 1976,
+      "cited_by_count": 71737,
+      "doi": "https://doi.org/10.1103/physrevb.13.5188",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4292811746",
+      "title": "The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations.",
+      "publication_year": 1986,
+      "cited_by_count": 71533,
+      "doi": "https://doi.org/10.1037/0022-3514.51.6.1173",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2131271579",
+      "title": "Trimmomatic: a flexible trimmer for Illumina sequence data",
+      "publication_year": 2014,
+      "cited_by_count": 71487,
+      "doi": "https://doi.org/10.1093/bioinformatics/btu170",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4235678817",
+      "title": "Evaluating Structural Equation Models with Unobservable Variables and Measurement Error",
+      "publication_year": 1981,
+      "cited_by_count": 71204,
+      "doi": "https://doi.org/10.1177/002224378101800104",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2138270253",
+      "title": "DNA sequencing with chain-terminating inhibitors",
+      "publication_year": 1977,
+      "cited_by_count": 69411,
+      "doi": "https://doi.org/10.1073/pnas.74.12.5463",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2108234281",
+      "title": "The Sequence Alignment/Map format and SAMtools",
+      "publication_year": 2009,
+      "cited_by_count": 68783,
+      "doi": "https://doi.org/10.1093/bioinformatics/btp352",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2029667189",
+      "title": "VMD: Visual molecular dynamics",
+      "publication_year": 1996,
+      "cited_by_count": 68256,
+      "doi": "https://doi.org/10.1016/0263-7855(96)00018-5",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2024556021",
+      "title": "A Revised Medium for Rapid Growth and Bio Assays with Tobacco Tissue Cultures",
+      "publication_year": 1962,
+      "cited_by_count": 67879,
+      "doi": "https://doi.org/10.1111/j.1399-3054.1962.tb08052.x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2117692326",
+      "title": "Hallmarks of Cancer: The Next Generation",
+      "publication_year": 2011,
+      "cited_by_count": 67419,
+      "doi": "https://doi.org/10.1016/j.cell.2011.02.013",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1791587663",
+      "title": "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",
+      "publication_year": 1989,
+      "cited_by_count": 67377,
+      "doi": "https://doi.org/10.2307/249008",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4211007335",
+      "title": "Fuzzy sets",
+      "publication_year": 1965,
+      "cited_by_count": 67216,
+      "doi": "https://doi.org/10.1016/s0019-9958(65)90241-x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2058122340",
+      "title": "Electric Field Effect in Atomically Thin Carbon Films",
+      "publication_year": 2004,
+      "cited_by_count": 66809,
+      "doi": "https://doi.org/10.1126/science.1102896",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2099540110",
+      "title": "NIH Image to ImageJ: 25 years of image analysis",
+      "publication_year": 2012,
+      "cited_by_count": 66714,
+      "doi": "https://doi.org/10.1038/nmeth.2089",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1964184380",
+      "title": "Mutation of the mouse klotho gene leads to a syndrome resembling ageing.",
+      "publication_year": 1997,
+      "cited_by_count": 66570,
+      "doi": "https://doi.org/10.1038/36285",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2087484885",
+      "title": "G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences",
+      "publication_year": 2007,
+      "cited_by_count": 65950,
+      "doi": "https://doi.org/10.3758/bf03193146",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2167590372",
+      "title": "Revised effective ionic radii and systematic studies of interatomic distances in halides and chalcogenides",
+      "publication_year": 1976,
+      "cited_by_count": 65838,
+      "doi": "https://doi.org/10.1107/s0567739476001551",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2107031757",
+      "title": "Statistical power analysis for the behavioral sciences",
+      "publication_year": 1990,
+      "cited_by_count": 65632,
+      "doi": "https://doi.org/10.1016/0198-9715(90)90050-4",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2168526937",
+      "title": "A SIMPLE METHOD FOR THE ISOLATION AND PURIFICATION OF TOTAL LIPIDES FROM ANIMAL TISSUES",
+      "publication_year": 1957,
+      "cited_by_count": 65269,
+      "doi": "https://doi.org/10.1016/s0021-9258(18)64849-5",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2106882534",
+      "title": "CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+      "publication_year": 1994,
+      "cited_by_count": 65264,
+      "doi": "https://doi.org/10.1093/nar/22.22.4673",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W4294215472",
+      "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
+      "publication_year": 2009,
+      "cited_by_count": 65076,
+      "doi": "https://doi.org/10.1371/journal.pmed.1000097",
+      "type": "review"
+    },
+    {
+      "id": "https://openalex.org/W2230728100",
+      "title": "Self-Consistent Equations Including Exchange and Correlation Effects",
+      "publication_year": 1965,
+      "cited_by_count": 64130,
+      "doi": "https://doi.org/10.1103/physrev.140.a1133",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2125435699",
+      "title": "Measuring inconsistency in meta-analyses",
+      "publication_year": 2003,
+      "cited_by_count": 64049,
+      "doi": "https://doi.org/10.1136/bmj.327.7414.557",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2101234009",
+      "title": "Scikit-learn: Machine Learning in Python",
+      "publication_year": 2012,
+      "cited_by_count": 63985,
+      "doi": "https://doi.org/10.48550/arxiv.1201.0490",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2103441770",
+      "title": "Fast and accurate short read alignment with Burrows–Wheeler transform",
+      "publication_year": 2009,
+      "cited_by_count": 63766,
+      "doi": "https://doi.org/10.1093/bioinformatics/btp324",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2108598243",
+      "title": "ImageNet: A large-scale hierarchical image database",
+      "publication_year": 2009,
+      "cited_by_count": 63284,
+      "doi": "https://doi.org/10.1109/cvpr.2009.5206848",
+      "type": "conference-paper"
+    },
+    {
+      "id": "https://openalex.org/W2134812217",
+      "title": "Single-Step Method of RNA Isolation by Acid Guanidinium Thiocyanate–Phenol–Chloroform Extraction",
+      "publication_year": 1987,
+      "cited_by_count": 63256,
+      "doi": "https://doi.org/10.1006/abio.1987.9999",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2170551349",
+      "title": "Fast gapped-read alignment with Bowtie 2",
+      "publication_year": 2012,
+      "cited_by_count": 62435,
+      "doi": "https://doi.org/10.1038/nmeth.1923",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1987258130",
+      "title": "Evaluating Structural Equation Models with Unobservable Variables and Measurement Error",
+      "publication_year": 1981,
+      "cited_by_count": 61283,
+      "doi": "https://doi.org/10.2307/3151312",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2097706568",
+      "title": "The neighbor-joining method: a new method for reconstructing phylogenetic trees.",
+      "publication_year": 1987,
+      "cited_by_count": 60624,
+      "doi": "https://doi.org/10.1093/oxfordjournals.molbev.a040454",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2112796928",
+      "title": "Gradient-based learning applied to document recognition",
+      "publication_year": 1998,
+      "cited_by_count": 59590,
+      "doi": "https://doi.org/10.1109/5.726791",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2298230951",
+      "title": "Official Methods of Analysis of",
+      "publication_year": 1980,
+      "cited_by_count": 59462,
+      "doi": "https://doi.org/10.1021/ac50052a726",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2092157292",
+      "title": "A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D) for the 94 elements H-Pu",
+      "publication_year": 2010,
+      "cited_by_count": 59171,
+      "doi": "https://doi.org/10.1063/1.3382344",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2133665775",
+      "title": "Image quality assessment: from error visibility to structural similarity",
+      "publication_year": 2004,
+      "cited_by_count": 58103,
+      "doi": "https://doi.org/10.1109/tip.2003.819861",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2132905138",
+      "title": "CRC Handbook of Chemistry and Physics",
+      "publication_year": 2014,
+      "cited_by_count": 57911,
+      "doi": "https://doi.org/10.1201/b17118",
+      "type": "book"
+    },
+    {
+      "id": "https://openalex.org/W2130410032",
+      "title": "Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles",
+      "publication_year": 2005,
+      "cited_by_count": 57845,
+      "doi": "https://doi.org/10.1073/pnas.0506580102",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2169456326",
+      "title": "STAR: ultrafast universal RNA-seq aligner",
+      "publication_year": 2012,
+      "cited_by_count": 57746,
+      "doi": "https://doi.org/10.1093/bioinformatics/bts635",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2157823046",
+      "title": "Bias in meta-analysis detected by a simple, graphical test",
+      "publication_year": 1997,
+      "cited_by_count": 57639,
+      "doi": "https://doi.org/10.1136/bmj.315.7109.629",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2114918609",
+      "title": "Rapid colorimetric assay for cellular growth and survival: Application to proliferation and cytotoxicity assays",
+      "publication_year": 1983,
+      "cited_by_count": 56116,
+      "doi": "https://doi.org/10.1016/0022-1759(83)90303-4",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W639708223",
+      "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+      "publication_year": 2016,
+      "cited_by_count": 55861,
+      "doi": "https://doi.org/10.1109/tpami.2016.2577031",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2151103935",
+      "title": "Distinctive Image Features from Scale-Invariant Keypoints",
+      "publication_year": 2004,
+      "cited_by_count": 55815,
+      "doi": "https://doi.org/10.1023/b:visi.0000029664.99615.94",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2106787323",
+      "title": "Global cancer statistics",
+      "publication_year": 2011,
+      "cited_by_count": 55079,
+      "doi": "https://doi.org/10.3322/caac.20107",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2086957099",
+      "title": "Density-functional exchange-energy approximation with correct asymptotic behavior",
+      "publication_year": 1988,
+      "cited_by_count": 53965,
+      "doi": "https://doi.org/10.1103/physreva.38.3098",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2101108802",
+      "title": "Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets: procedure and some applications.",
+      "publication_year": 1979,
+      "cited_by_count": 53886,
+      "doi": "https://doi.org/10.1073/pnas.76.9.4350",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2135943618",
+      "title": "Mind in Society: The Development of Higher Psychological Processes",
+      "publication_year": 1978,
+      "cited_by_count": 53810,
+      "type": "book"
+    },
+    {
+      "id": "https://openalex.org/W2112778345",
+      "title": "The CES-D Scale",
+      "publication_year": 1977,
+      "cited_by_count": 53766,
+      "doi": "https://doi.org/10.1177/014662167700100306",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2093274439",
+      "title": "Research electronic data capture (REDCap)—A metadata-driven methodology and workflow process for providing translational research informatics support",
+      "publication_year": 2008,
+      "cited_by_count": 53212,
+      "doi": "https://doi.org/10.1016/j.jbi.2008.08.010",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2295598076",
+      "title": "XGBoost",
+      "publication_year": 2016,
+      "cited_by_count": 52862,
+      "doi": "https://doi.org/10.1145/2939672.2939785",
+      "type": "conference-paper"
+    },
+    {
+      "id": "https://openalex.org/W2135046866",
+      "title": "Regression Shrinkage and Selection Via the Lasso",
+      "publication_year": 1996,
+      "cited_by_count": 52804,
+      "doi": "https://doi.org/10.1111/j.2517-6161.1996.tb02080.x",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W1968834637",
+      "title": "Colorimetric Method for Determination of Sugars and Related Substances",
+      "publication_year": 1956,
+      "cited_by_count": 52305,
+      "doi": "https://doi.org/10.1021/ac60111a017",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2163815564",
+      "title": "The Rat Brain in Stereotaxic Coordinates",
+      "publication_year": 1982,
+      "cited_by_count": 52287,
+      "doi": "https://doi.org/10.1016/c2009-0-63235-9",
+      "type": "book"
+    },
+    {
+      "id": "https://openalex.org/W3001118548",
+      "title": "Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China",
+      "publication_year": 2020,
+      "cited_by_count": 51991,
+      "doi": "https://doi.org/10.1016/s0140-6736(20)30183-5",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2142635246",
+      "title": "A new look at the statistical model identification",
+      "publication_year": 1974,
+      "cited_by_count": 51488,
+      "doi": "https://doi.org/10.1109/tac.1974.1100705",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2000445173",
+      "title": "A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation",
+      "publication_year": 1987,
+      "cited_by_count": 50593,
+      "doi": "https://doi.org/10.1016/0021-9681(87)90171-8",
+      "type": "article"
+    },
+    {
+      "id": "https://openalex.org/W2964121744",
+      "title": "Adam: A Method for Stochastic Optimization",
+      "publication_year": 2015,
+      "cited_by_count": 50293,
+      "doi": "https://doi.org/10.4230/lipics.cp.2021.42",
+      "type": "article"
+    }
+  ]
+}

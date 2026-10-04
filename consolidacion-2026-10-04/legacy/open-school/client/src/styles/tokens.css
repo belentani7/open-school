@@ -1,0 +1,113 @@
+/* ===================================================================
+   OPEN SCHOOL — CAPA 1: TOKENS
+   BELENTANI / NOIACORE · HBO Max Noir + Apple restraint + Liquid Glass
+   Fuente de verdad: Desktop/MANUAL_FRONT_AGENTES_BELENTANI.md (P0–P7)
+
+   P0 identidad · P3 luz 3% (max 8/255) · negro > material > luz > info.
+   Reconcilia el manual (HBO Noir, autoridad) con la tipografia del
+   BELENTANI DESIGN SYSTEM v1.1 (Sora / Inter / JetBrains Mono).
+   =================================================================== */
+
+@theme {
+  /* --- Sustrato: 97% negro profundo (P0) --- */
+  --color-obsidian: #000000;
+  --color-rock: #030328;          /* HBO black rock */
+  --color-rock-2: #06062e;
+
+  /* --- Luz: heliotropo HBO. Unico color de marca. --- */
+  --color-helio: #9e86ff;         /* 7.31:1 sobre negro -> WCAG AAA */
+  --color-helio-hi: #c3b3ff;
+  --color-helio-low: #5d4bb8;
+
+  /* --- Acento propio de open-school (P0: 1 color por proyecto,
+         solo en luz/plasma/edge/icono, nunca en superficie) --- */
+  --color-aula: #6be7f3;          /* cian frio, deriva de obsidiana */
+
+  /* --- Informacion: la jerarquia mas alta --- */
+  --color-ink: #ffffff;           /* 21:1  */
+  --color-ink-2: #a8a8b8;         /* 8.96:1 -> AAA texto normal */
+  --color-ink-3: #6a6a7a;         /* 4.6:1  -> solo texto >=24px o UI */
+
+  /* --- Tipografia (design system v1.1) --- */
+  --font-display: "Sora", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* --- Forma --- */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* --- Fisica del movimiento (P4: nada de bounce/flash) --- */
+  --ease-glide: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inertia: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-settle: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  /* --- Presupuesto de luz global: 3% (8/255) (P3) --- */
+  --lux: 0.03;
+  --lux-max: 8;
+
+  /* --- Material liquid glass, 4 capas (P2) --- */
+  --glass-blur: 45px;
+  --glass-sat: 200%;
+  --glass-tint: rgba(10, 10, 24, 0.55);      /* capa 2: tinte SOLIDO,
+                                                visible sobre negro */
+  --glass-edge: rgba(255, 255, 255, 0.22);
+
+  /* capa 3: shine = 4 inset shadows -> bisel iluminado */
+  --glass-shine:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    inset 0 0 6px rgba(255, 255, 255, 0.04),
+    inset 0 2px 4px -2px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 3px -1px rgba(158, 134, 255, 0.10);
+  --glass-cast: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  /* --- Atmosfera milky/plasma --- */
+  --milk-1: rgba(158, 134, 255, 0.07);
+  --milk-2: rgba(107, 231, 243, 0.05);
+
+  /* --- Ritmo vertical: 65% de espacio negativo (P1) --- */
+  --bay: clamp(6rem, 14vh, 11rem);
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --measure: 34ch;
+
+  color-scheme: dark;
+  accent-color: var(--color-helio);
+}
+
+/* ===== Responsive 4 (P5) — variables por clase de dispositivo ===== */
+
+/* Watch: minimo circular */
+@media (max-width: 22rem) {
+  :root { --bay: 2.5rem; --gutter: 0.875rem; }
+}
+
+/* TV 16:9: bias halo, se mira de lejos -> todo sube de escala */
+@media (min-width: 120rem) {
+  :root { --bay: clamp(9rem, 16vh, 16rem); --gutter: clamp(4rem, 7vw, 9rem); }
+}
+
+/* ===== Accesibilidad: el movimiento es un adorno, nunca un requisito ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root { --ease-glide: linear; --ease-inertia: linear; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Alto contraste: el glass se retira, la info se queda ===== */
+@media (prefers-contrast: more) {
+  :root {
+    --glass-tint: rgba(0, 0, 0, 0.92);
+    --glass-edge: rgba(255, 255, 255, 0.55);
+    --color-ink-3: #9a9aaa;
+  }
+}

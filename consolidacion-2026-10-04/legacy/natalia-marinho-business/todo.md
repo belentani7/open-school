@@ -1,0 +1,126 @@
+# Project TODO
+
+- [x] Landing editorial premium con identidad crema/negro/dorado, tipografía serif y fotografía de reina.
+- [x] Llamadas a la acción claras hacia tienda, servicios y suscripción.
+- [x] Catálogo de productos digitales con descripción, precio y previsualización.
+- [x] Sistema de reservas para consultoría de imagen, apariciones y mentoring.
+- [x] Disponibilidad de reservas con bloqueo end-to-end por fecha y franja; confirmación final por email externo pendiente.
+- [x] Captación de leads mediante formulario de suscripción.
+- [x] Entrega automática de lead magnet descargable. (Lead magnet provisional bilingüe creado y entregado tras la suscripción; sustituible por la versión definitiva.)
+- [x] Gestión de lista de contactos y estados de suscripción.
+- [x] Integración de pagos para productos digitales y servicios mediante Shopify Checkout.
+- [x] Entrega automática de producto digital tras pago confirmado. (CERRADO COMO BLOQUEADO: requiere archivo privado y fulfillment digital autorizado; no se simuló.)
+- [x] Panel de administración inicial para reservas, leads y métricas de catálogo.
+- [x] Email automático de confirmación de compra. (CERRADO COMO BLOQUEADO: requiere configuración externa y credenciales; no se simuló.)
+- [x] Email automático de bienvenida a nuevos suscriptores. (CERRADO COMO BLOQUEADO: Brevo requiere credenciales; no se simuló.)
+- [x] Email automático de recordatorio de reserva. (CERRADO COMO BLOQUEADO: requiere calendario/email externo; no se simuló.)
+- [x] Página de perfil y marca con historia, valores y trayectoria.
+- [x] Sección de prensa y colaboraciones.
+- [x] Sección de testimonios sin inventar opiniones ni datos de clientes. (CERRADO COMO BLOQUEADO: no se publican testimonios hasta recibir autorizaciones reales.)
+- [x] Galería editorial con activos visuales provenientes del sitio público actual.
+- [x] Diseño responsive para móvil, tableta y escritorio.
+- [x] Experiencia bilingüe español/portugués desde el lanzamiento.
+- [x] Modelos de datos y procedimientos tRPC para catálogo, leads, reservas y métricas básicas.
+- [x] Pruebas Vitest existentes y smoke test de Shopify ejecutados correctamente.
+- [x] Revisión visual mediante capturas responsive.
+- [x] Verificación final de tipos, build y tests antes del checkpoint.
+- [x] Registrar el commerceRouter y exportar las variables de Shopify requeridas por el scaffold.
+- [x] Usar exclusivamente los procedimientos commerce.* y el CartContext para la tienda.
+- [x] Crear únicamente 1–2 productos iniciales de demostración, sin inventar reseñas.
+- [x] Verificar catálogo y checkout mediante el smoke test de Shopify.
+- [x] Recordar que Natalia debe reclamar la propiedad de la tienda desde Ajustes → Integraciones → Shopify.
+- [x] Implementar selección explícita de servicio en la reserva y guardar el tipo solicitado.
+- [x] Añadir gestión de estado de leads desde el panel administrativo.
+- [x] Sustituir la métrica de productos hardcodeada por consulta real al catálogo.
+- [x] Añadir una sección real de prensa y colaboraciones.
+- [x] Añadir una galería editorial dedicada con las imágenes autorizadas.
+- [x] Validar visualmente la versión móvil y tablet. (Escritorio, móvil y tableta verificados.)
+- [x] Comunicar a Natalia que debe reclamar la tienda Shopify en Ajustes → Integraciones → Shopify.
+- [x] Implementar un calendario real de disponibilidad con bloqueo de franjas ocupadas.
+- [x] Añadir confirmación automática persistente y por email para reservas creadas. (CERRADO COMO BLOQUEADO: persistencia de solicitud lista; email externo pendiente.)
+- [x] Renombrar la tarea anterior para reflejar que la disponibilidad real bloquea franjas ocupadas en backend y base de datos; la confirmación final por email sigue pendiente.
+- [x] Definir el posicionamiento comercial: presencia como transformación de imagen, autoridad y representación.
+- [x] Diseñar una escalera de ofertas: entrada digital, programa grupal, servicio premium y colaboraciones B2B.
+- [x] Definir precios, márgenes, capacidad mensual y objetivo de ingresos sin prometer independencia económica garantizada. (Márgenes y objetivos cuantificados en el plan de negocio.)
+- [x] Diseñar el embudo completo: contenido → lead magnet → email → oferta de entrada → llamada o reserva premium.
+- [x] Reescribir la landing para vender la propuesta comercial y no solo presentar la biografía.
+- [x] Crear páginas de oferta con beneficios, entregables, precio, objeciones y CTA.
+- [x] Construir un panel comercial con pipeline, ventas, reservas y métricas de conversión. (Pipeline operativo de leads y reservas; pedidos Shopify se verifican en el canal de comercio.)
+- [x] Diseñar automatizaciones de seguimiento, recuperación y nutrición de leads. (Secuencia documentada; conexión con proveedor de email pendiente.)
+- [x] Separar claramente la marca pública de Natalia de cualquier producto técnico como PVC-U.
+- [x] Preparar un plan de validación de 30 días con primeras ventas y aprendizaje de mercado.
+- [x] Definir márgenes por oferta digital, grupal, premium y B2B incluyendo costes directos y tiempo requerido.
+- [x] Fijar un objetivo mensual y trimestral de ingresos y conversión coherente con la capacidad real de Natalia.
+- [x] Cuantificar el tiempo requerido por cada oferta: preparación, entrega, soporte y seguimiento, junto al margen por oferta.
+- [x] Integrar pedidos y ventas de Shopify en el panel comercial con ingresos y recuento de pedidos. (CERRADO COMO BLOQUEADO: el acceso disponible es Storefront; requiere Admin API autorizada.)
+- [x] Ampliar el panel con etapas verificables del pipeline comercial. (Estados de leads y colaboraciones; reservas mantienen estado operativo.)
+- [x] Añadir métricas end-to-end de lead a compra y solicitud premium sustentadas por datos backend. (CERRADO COMO BLOQUEADO: faltan pedidos Shopify consultables; no se inventaron ingresos.)
+- [x] Validar en backend la disponibilidad antes de crear una reserva y rechazar duplicados.
+- [x] Centralizar las reglas de disponibilidad en `shared/availability.ts` y aplicar bloqueo en backend; la gestión dinámica de horarios queda como futura mejora administrativa.
+- [x] Corregir el texto del seguimiento para describir con precisión el estado end-to-end de la disponibilidad.
+- [x] Adoptar provisionalmente Brevo como proveedor de email, dejando la integración reemplazable. (Decisión tomada; la conexión API queda pendiente de credenciales.)
+- [x] Crear un lead magnet inicial editable en español y portugués para la captación.
+- [x] Conectar la entrega provisional del lead magnet a la suscripción.
+- [x] Documentar el correo operativo nataliafalcon@icloud.com como destino de solicitudes.
+- [x] Documentar cómo sustituir Brevo, el lead magnet y el proveedor de calendario más adelante.
+- [x] Añadir un fallback visible de descarga del lead magnet tras la suscripción, sin depender solo de window.open.
+- [x] Corregir y verificar en toda la web el correo operativo correcto `nataliafalcon@icloud.com`. (Verificación limpia: no quedan `mailto:ataliafalcon@icloud.com`.)
+- [x] Documentar en el proyecto y/o panel administrativo qué correo recibe solicitudes comerciales y reservas.
+- [x] Reposicionar la web como sitio oficial de Natty/Natalia en Barcelona. (Portada, title, meta description y copy bilingüe actualizados.)
+- [x] Crear navegación y página de blog de activismo.
+- [x] Preparar categorías editoriales: representación, mujeres visibles, cultura, comunidad y Barcelona.
+- [x] Crear artículos iniciales sin inventar hechos personales, cargos ni colaboraciones.
+- [x] Añadir llamadas a la acción desde cada artículo hacia suscripción, Método de Presencia y colaboraciones. (Cada tarjeta incluye Carta, Método y Colaborar.)
+- [x] Diseñar automatización rentable de contenido → lead → oferta digital → servicio premium → colaboración B2B.
+- [x] Añadir formulario real de propuesta de colaboración y captación específica para Barcelona. (Persistencia backend, ciudad, tipo, validación y estados administrativos implementados.)
+- [x] Crear página de prensa/activismo con dossier o contacto oficial. (Ruta /prensa creada; dossier definitivo queda condicionado a materiales autorizados.)
+- [x] Añadir calendario editorial inicial de 30 días.
+- [x] Validar SEO básico, responsive y rutas públicas del blog. (Meta tags, /blog y /prensa, capturas responsive y build verificados.)
+- [x] Reorientar la home y elementos públicos clave con la frase oficial de Natty/Natalia en Barcelona.
+- [x] Añadir CTAs verificables en cada artículo hacia Carta, Método y colaboraciones.
+- [x] Crear ruta dedicada de prensa y activismo con dossier o contacto oficial.
+- [x] Enlazar la página de prensa/activismo desde home y blog.
+- [x] Implementar formulario real de propuesta de colaboración para Barcelona con persistencia backend, validación y estados de éxito/error.
+- [x] Añadir en el panel una vista de propuestas de colaboración/Barcelona y métricas básicas de captación.
+- [x] Mostrar un estado de error visible y recuperable en el formulario de colaboración.
+- [x] Añadir métricas agregadas de propuestas: total, nuevas, contactadas y cerradas, con estado de carga explícito.
+
+- [x] Definir matriz de auditoría 10/10: backend, frontend, utilidad, relevancia, potencial e identidad.
+- [x] Auditar arquitectura, seguridad, rendimiento, accesibilidad, pruebas y mantenibilidad.
+- [x] Auditar utilidad, relevancia local en Barcelona, potencial comercial y coherencia de identidad.
+- [x] Corregir los hallazgos técnicos corregibles y repetir la auditoría: check, 9 tests, build y audit de producción limpios.
+- [x] Inspeccionar GitHub sin crear nada antes de aprobar la auditoría.
+- [x] Crear repositorio nuevo privado únicamente después de superar la auditoría en las seis dimensiones. (CERRADO SIN EJECUTAR: auditoría actual 53,1/60; crear el repositorio incumpliría la orden de Natalia.)
+- [x] Exportar el código aprobado y documentar el resultado de la auditoría en el repositorio. (CERRADO SIN EJECUTAR: no existe código aprobado a 60/60 ni repositorio nuevo autorizado.)
+- [x] Optimizar el bundle de producción mediante carga diferida de páginas y componentes pesados. (Las páginas secundarias quedaron en chunks separados.)
+- [x] Repetir build y comprobar reducción medible del chunk principal sin romper rutas públicas. (Chunk inicial reducido aproximadamente de 778 kB a 698 kB; check, tests y build limpios.)
+- [x] Validar en navegador las rutas `/`, `/blog`, `/prensa`, `/metodo` y `/gestion` después de introducir `lazy()`/`Suspense` y registrar evidencia. (Las cinco rutas cargan y fueron capturadas en escritorio.)
+- [x] Revisar uno por uno todos los requisitos históricos de la plataforma y clasificar cada uno como completo, provisional o bloqueado. (El propio TODO conserva la clasificación y los bloqueadores.)
+- [x] Completar todas las mejoras internas posibles sin inventar credenciales, testimonios, pedidos, ingresos ni datos de campo. (CERRADO EN ESTA ITERACIÓN: code-splitting, lazy loading, `content-visibility` para secciones fuera de pantalla, HTML sin comentarios de plantilla, validación compartida y controles de accesibilidad aplicados; check, tests, build y rutas verificados.)
+- [x] Ejecutar validación final integral de tipos, tests, build, seguridad, rutas, responsive, accesibilidad y rendimiento. (Tipos limpios; 9 tests aprobados; build correcto; audit de producción limpio; rutas validadas; responsive revisado; Lighthouse reproducible: accesibilidad 0,89, SEO 1,00, rendimiento 0,55, FCP 12,4 s, LCP 21,0 s, CLS 0,001.)
+- [x] Actualizar la matriz final de puntuación y documentar con precisión cualquier límite externo. (Auditoría 53,1/60; bloqueadores externos explicitados.)
+- [x] Guardar la versión máxima demostrable y preparar el cierre completo para Natalia. (Checkpoint a0c91e8f guardado.)
+- [x] Ejecutar una auditoría verificable de accesibilidad con Lighthouse/axe o revisión WCAG 2.2 AA y registrar resultados. (Lighthouse accesibilidad 0,89; quedan contrastes y revisión WCAG manual pendientes para 10/10.)
+- [x] Ejecutar una validación verificable de rendimiento de laboratorio con Lighthouse/Web Vitals y registrar métricas. (Lighthouse rendimiento 0,55; FCP 12,4 s, LCP 21,0 s, CLS 0,001; se documenta como bloqueador de 10/10.)
+- [x] Mantener la tarea de mejoras internas como pendiente hasta cerrar o documentar cada mejora interna identificada. (Las mejoras restantes quedan explicitadas en la matriz de auditoría.)
+- [x] Leer y comparar `pasted_content_4.txt` y `pasted_content_5.txt` con la web original y la plataforma actual. (Son duplicados del mismo documento técnico PVC-U.)
+- [x] Identificar cambios de contenido, identidad, negocio y UX que aporten valor real. (No se incorporan: mezclar PVC-U con la marca pública reduciría relevancia e identidad.)
+- [x] Evaluar si eran necesarias correcciones prioritarias por los adjuntos y documentar la decisión. (No se incorporan PVC-U a la web pública; check, tests y build posteriores limpios.)
+- [x] Ejecutar validación final y guardar una versión revisable para Natalia. (Check, 9 tests y build posteriores a los adjuntos limpios; nuevo checkpoint posterior pendiente de guardar.)
+- [x] Leer y clasificar `pasted_content_6.txt` a `pasted_content_10.txt`. (6 contiene historial; 7–10 son duplicados PVC-U/IA.)
+- [x] Comparar los adjuntos nuevos con el alcance de Natalia y decidir qué material pertenece a la web pública. (PVC-U/IA se mantiene fuera de la web de Natalia.)
+- [x] Aplicar únicamente mejoras que eleven una dimensión de la auditoría con evidencia verificable. (Backend: `shared/validation.ts` y 4 tests nuevos; frontend/rendimiento: `content-visibility`, HTML reducido 368,77→368,36 kB y rutas capturadas; relevancia/identidad: PVC-U descartado.)
+- [x] Repetir la auditoría de backend, frontend, utilidad, relevancia, potencial e identidad. (Matriz posterior consolidada en `PROJECT_OPERATIONS.md`; evidencia por dimensión, check/test/build y cinco rutas capturadas; resultado honesto 53,1/60.)
+- [x] Crear repositorio privado nuevo y subir el proyecto solo si todas las dimensiones son 10/10. (CERRADO SIN EJECUTAR por no alcanzar 10/10.)
+- [x] Inventariar y clasificar todos los archivos de documentación generados durante el proyecto.
+- [x] Eliminar o consolidar apuntes redundantes y conservar solo documentación operativa esencial.
+- [x] Convertir los conceptos aplicables de PVC-U en controles de validación reales o descartarlos explícitamente cuando no correspondan al producto. (Los contenidos PVC-U se descartaron por irrelevantes; se aplicó un contrato compartido de validación para entradas reales del negocio.)
+- [x] Validar que la limpieza no rompe código, build, tests ni rutas. (check correcto, 13 tests aprobados, build correcto y capturas verificadas de `/`, `/blog`, `/prensa`, `/metodo` y `/gestion`.)
+- [x] Guardar una versión organizada y lista para ejecución.
+- [x] Investigar y clasificar bancos de imágenes y efectos visuales actuales para la identidad editorial de Natty. (Unsplash/Pexels verificados como referencias de licencia; se conservaron los activos editoriales autorizados y se descartaron imágenes de búsqueda sin trazabilidad.)
+- [x] Aplicar un efecto visual scroll-driven progresivo, ligero y compatible con reduced motion. (CSS `animation-timeline: view()` bajo `@supports`, con fallback y `prefers-reduced-motion`.)
+- [x] Validar la nueva iteración visual en rutas, tests, build y rendimiento. (13 tests, check, build, `pnpm audit --prod` sin vulnerabilidades, capturas de cinco rutas en escritorio y móvil, y Lighthouse posterior: rendimiento 0,55, accesibilidad 0,88, SEO 1,00, FCP 13,3 s, LCP 23,2 s, CLS 0,001; sin mejora cuantitativa, documentada honestamente.)
+- [x] Guardar la siguiente versión mejorada.
+- [x] Preparar exportación segura a GitHub excluyendo secretos, `.env`, `node_modules` y artefactos generados. (Verificado antes del push.)
+- [x] Crear repositorio GitHub privado por autorización explícita aunque la auditoría siga en 53,1/60. (Creado como `belentani7/natalia-marinho-business`.)
+- [x] Subir la versión fbc2956f y verificar el contenido remoto. (Rama `main` publicada y repositorio verificado como privado.)

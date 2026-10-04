@@ -1,0 +1,135 @@
+{
+  "portal": "lingua-aberta-empresa",
+  "repo": "belentani7/lingua-aberta-empresa",
+  "dominio": "Idiomas para empresa y empleo (PT > ES > EN > CA)",
+  "generado_utc": "2026-09-15T14:48:19+00:00",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "fuentes": [
+    {
+      "tema": "lexico-profesional",
+      "fuente": "Wiktionary ES",
+      "spec": "wikt_es:empresa",
+      "ok": true
+    },
+    {
+      "tema": "lexico-profesional",
+      "fuente": "Wiktionary EN",
+      "spec": "wikt_en:business",
+      "ok": true
+    },
+    {
+      "tema": "lexico-profesional",
+      "fuente": "Tatoeba ES",
+      "spec": "tatoeba:spa:empresa",
+      "ok": true
+    },
+    {
+      "tema": "frases-de-reunion",
+      "fuente": "Tatoeba ES",
+      "spec": "tatoeba:spa:trabajo",
+      "ok": true
+    },
+    {
+      "tema": "frases-de-reunion",
+      "fuente": "Tatoeba EN",
+      "spec": "tatoeba:eng:work",
+      "ok": true
+    },
+    {
+      "tema": "documentos-y-modelos",
+      "fuente": "Wikisource ES",
+      "spec": "mediawiki:es.wikisource.org:contrato",
+      "ok": true
+    },
+    {
+      "tema": "documentos-y-modelos",
+      "fuente": "Open Library",
+      "spec": "openlibrary:business writing",
+      "ok": true
+    },
+    {
+      "tema": "datos-de-mercado",
+      "fuente": "World Bank",
+      "spec": "worldbank:SL.UEM.TOTL.ZS:Desempleo (% poblacion activa)",
+      "ok": true
+    },
+    {
+      "tema": "datos-de-mercado",
+      "fuente": "REST Countries",
+      "spec": "restcountries",
+      "ok": true
+    },
+    {
+      "tema": "investigacion-gestion",
+      "fuente": "OpenAlex",
+      "spec": "openalex:business management",
+      "ok": true
+    },
+    {
+      "tema": "investigacion-gestion",
+      "fuente": "Crossref",
+      "spec": "crossref:human resources",
+      "ok": true
+    },
+    {
+      "tema": "cultura-empresarial",
+      "fuente": "Wikipedia ES",
+      "spec": "wiki:es:Cultura empresarial",
+      "ok": true
+    },
+    {
+      "tema": "cultura-empresarial",
+      "fuente": "Viccionari CA",
+      "spec": "mediawiki:ca.wiktionary.org:empresa",
+      "ok": true
+    },
+    {
+      "tema": "tipografia-de-marca",
+      "fuente": "Google Fonts",
+      "spec": "google_fonts:inter",
+      "ok": true
+    }
+  ],
+  "temas": [
+    {
+      "tema": "lexico-profesional",
+      "fuentes_ok": 3,
+      "fuentes_total": 3
+    },
+    {
+      "tema": "frases-de-reunion",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "documentos-y-modelos",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "datos-de-mercado",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "investigacion-gestion",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "cultura-empresarial",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "tipografia-de-marca",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    }
+  ]
+}

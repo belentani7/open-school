@@ -1,0 +1,73 @@
+{
+  "tema": "formacion-abierta",
+  "portal": "manos-abiertas-2026",
+  "registros": [
+    {
+      "fuente": "OpenStax",
+      "spec": "openstax:business",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Business Ethics",
+          "url": "https://openstax.org/details/books/business-ethics"
+        },
+        {
+          "titulo": "Business Law I Essentials",
+          "url": "https://openstax.org/details/books/business-law-i-essentials"
+        },
+        {
+          "titulo": "Business Law I Essentials 2e",
+          "url": "https://openstax.org/details/books/business-law-i-essentials-2e"
+        },
+        {
+          "titulo": "Introduction to Business",
+          "url": "https://openstax.org/details/books/introduction-business"
+        },
+        {
+          "titulo": "Introduction to Business 2e",
+          "url": "https://openstax.org/details/books/introduction-business-2e"
+        },
+        {
+          "titulo": "Introductory Business Statistics",
+          "url": "https://openstax.org/details/books/introductory-business-statistics"
+        },
+        {
+          "titulo": "Introductory Business Statistics 2e",
+          "url": "https://openstax.org/details/books/introductory-business-statistics-2e"
+        }
+      ]
+    },
+    {
+      "fuente": "Open Library",
+      "spec": "openlibrary:adult education",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "The meaning of adult education",
+          "autor": "Eduard Christian Lindeman",
+          "anio": 1926
+        },
+        {
+          "titulo": "The modern practice of adult education",
+          "autor": "Malcolm Shepherd Knowles",
+          "anio": 1970
+        },
+        {
+          "titulo": "Philosophical foundations of adult education",
+          "autor": "John L. Elias",
+          "anio": 1980
+        },
+        {
+          "titulo": "Learning in adulthood",
+          "autor": "Sharan B. Merriam",
+          "anio": 1991
+        },
+        {
+          "titulo": "The adult learner",
+          "autor": "Malcolm Shepherd Knowles",
+          "anio": 1973
+        }
+      ]
+    }
+  ]
+}

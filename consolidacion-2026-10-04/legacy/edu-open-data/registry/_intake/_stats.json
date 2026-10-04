@@ -1,0 +1,37 @@
+{
+ "candidatas_total": 765,
+ "dedupe": {
+  "dedupe_host_path": 10
+ },
+ "reclasificadas_por_palabras_clave": 383,
+ "por_area": {
+  "academico": 102,
+  "idiomas": 55,
+  "civico_derechos": 114,
+  "ciencia_salud": 108,
+  "datos_pais": 94,
+  "ciberseguridad": 44,
+  "ux_diseno": 46,
+  "patrimonio_arte": 36,
+  "sin_clasificar": 166
+ },
+ "por_quality": {
+  "A": 196,
+  "B": 325,
+  "C": 244
+ },
+ "maquina_legibles": 521,
+ "solo_html": 244,
+ "sin_clasificar": 166,
+ "ya_en_registry": 6,
+ "prioridad": [
+  "academico",
+  "idiomas",
+  "civico_derechos",
+  "ciencia_salud",
+  "datos_pais",
+  "ciberseguridad",
+  "ux_diseno",
+  "patrimonio_arte"
+ ]
+}

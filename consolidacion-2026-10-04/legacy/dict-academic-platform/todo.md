@@ -1,0 +1,29 @@
+# Project TODO
+
+- [x] Mantener en todas las vistas públicas y autenticadas un aviso visible de que D.I.C.T. es formación académica independiente, no una titulación oficial ni una equivalencia universitaria.
+- [x] Usar exclusivamente la denominación «Créditos Académicos Internos (CA)» y no presentar créditos como ECTS.
+- [x] Investigar y documentar fuentes académicas, estándares de seguridad, recursos abiertos y competencias técnicas vigentes.
+- [x] Auditar lagunas, redundancias y dependencias del currículo antes de fijar el diseño de diez semestres.
+- [x] Definir el currículo modular de diez semestres con progresión, niveles de dominio, CA, horas y requisitos bloqueantes.
+- [x] Implementar un mapa de prerrequisitos navegable y validar sus identificadores, dependencias huérfanas y ciclos frente al catálogo.
+- [x] Crear catálogo trilingüe ES/PT/EN con contenido académico real de muestra: objetivos, competencias, temario, bibliografía, recursos, ejercicios, laboratorio, proyecto, rúbrica y evaluación.
+- [x] Diseñar experiencias públicas para landing, plan de estudios, catálogo, biblioteca y detalle de asignatura.
+- [x] Conectar el expediente y vistas autenticadas restantes a registros protegidos reales de progreso, competencias, calificaciones, certificados y portfolio.
+- [x] Definir el esquema de datos para asignaturas, traducciones, prerrequisitos, inscripciones, progreso, evaluaciones, competencias, proyectos, certificados, recursos y referencias de archivos.
+- [x] Completar procedimientos tRPC seguros para progreso, evaluaciones, calificaciones, créditos, competencias, certificados, transcript y contenidos multilingües, con autorización por recurso.
+- [x] Localizar los literales visibles de componentes base y extender la auditoría automática a toda la interfaz activa.
+- [x] Incluir laboratorios guiados de IA, LLM/agentes, visión, cloud y ciberseguridad con límites éticos y entornos legales y aislados.
+- [x] Mostrar requisitos de hardware por laboratorio y alternativas de bajo coste o CPU cuando sean viables.
+- [x] Permitir pesos de evaluación configurables por asignatura para quizzes, prácticas, proyectos, investigación y defensa.
+- [x] Implementar certificados internos verificables y transcript claramente etiquetado como documentación académica interna no oficial.
+- [x] Implementar portfolio público profesional basado en proyectos y referencias seguras de archivos, sin binarios en la base de datos.
+- [x] Integrar tutor académico que enseñe mediante explicación, preguntas socráticas, pistas, recomendaciones y simulaciones sin resolver íntegramente evaluaciones.
+- [x] Incorporar un flujo de actualización curricular que solo proponga cambios versionados y nunca modifique materias automáticamente.
+- [x] Implementar descarga y referencias seguras a materiales permitidos y entregables usando almacenamiento de archivos externo.
+- [x] Aplicar diseño sobrio, accesible y adaptable a escritorio, tableta, móvil y conexiones de bajo ancho de banda.
+- [x] Crear datos de demostración claramente ficticios que permitan recorrer los flujos sin simular reseñas ni testimonios.
+- [x] Redactar documentación de arquitectura, instalación, modelo de datos, API, seguridad, currículo, profesorado y alumnado.
+- [x] Añadir escenarios funcionales negativos para progreso, entregas, calificaciones y emisión de certificados.
+- [x] Verificar visualmente las vistas prioritarias, resolver incidencias y preparar la entrega del proyecto.
+- [x] Añadir y verificar rechazos específicos para entregas sin matrícula y carga de evidencias en proyectos ajenos.
+- [x] Añadir verificación automatizada de localización para landing, catálogo, detalle de asignatura, biblioteca, dashboard y navegación autenticada.

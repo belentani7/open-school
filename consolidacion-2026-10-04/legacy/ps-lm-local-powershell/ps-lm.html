@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="carbon">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PS-LM · modelo de lenguaje local para PowerShell (sin API)</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0c12'/%3E%3Ctext x='6' y='22' font-family='monospace' font-size='15' fill='%2359a6ff'%3E%3E_%3C/text%3E%3C/svg%3E">
+
+<style>
+/* ================= temas ================= */
+:root[data-theme="carbon"]{
+  --bg:#06070c; --win:#0b0c13; --panel:#0d0f17; --term:#0a0b10;
+  --line:#1d2030; --line2:#262a3d;
+  --txt:#d7dae4; --dim:#7a7f95; --faint:#454a60;
+  --accent:#59a6ff; --accent-dim:#2d5c99;
+  --cmd:#e8e85a; --param:#aab3cf; --varc:#ffab70; --str:#5ad7d7; --num:#f78c6c; --com:#5a6072;
+  --ok:#7ee787; --warn:#ffb454; --err:#ff6b6b;
+  --codebg:#0e1019;
+}
+:root[data-theme="blueprint"]{
+  --bg:#01182f; --win:#012456; --panel:#012a5e; --term:#012050;
+  --line:#1a4a85; --line2:#27609e;
+  --txt:#d9dee8; --dim:#8ea6c8; --faint:#4d6f9c;
+  --accent:#8fc6ff; --accent-dim:#3a6db0;
+  --cmd:#f0ea7a; --param:#b9c8e2; --varc:#ffb88c; --str:#7fe0da; --num:#ffa08a; --com:#6f89ad;
+  --ok:#9fe8a5; --warn:#ffcf8a; --err:#ff9a8a;
+  --codebg:#011a42;
+}
+/* ================= base ================= */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Cascadia Code',Consolas,'Courier New',monospace;
+  background:var(--bg); color:var(--txt);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 47px, rgba(120,140,190,.045) 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(120,140,190,.045) 47px 48px);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; font-size:14px;
+}
+::selection{background:rgba(89,166,255,.3)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px;border:2px solid var(--term)}
+::-webkit-scrollbar-thumb:hover{background:var(--accent-dim)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+
+/* ================= ventana ================= */
+.win{
+  width:min(1180px,96vw); height:min(840px,94vh);
+  background:var(--win); border:1px solid var(--line); border-radius:8px;
+  display:flex; flex-direction:column; overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.02);
+  transition:width .3s ease,height .3s ease;
+  animation:winIn .5s ease both;
+}
+@keyframes winIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.win.wide{width:100vw;height:100vh;border-radius:0}
+
+/* barra de título */
+.titlebar{
+  height:40px; flex:0 0 40px; display:flex; align-items:stretch;
+  background:var(--panel); border-bottom:1px solid var(--line); user-select:none;
+}
+.tab{
+  display:flex; align-items:center; gap:9px; padding:0 16px;
+  background:var(--term); border-right:1px solid var(--line);
+  border-top:2px solid var(--accent); font-size:12.5px; color:var(--txt);
+  min-width:0;
+}
+.tabdot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 8px;
+  box-shadow:0 0 0 3px rgba(89,166,255,.15);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.tabname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabsub{color:var(--faint);font-size:11px;white-space:nowrap}
+.winbtns{margin-left:auto;display:flex;align-items:stretch}
+.winbtns button{
+  width:44px;color:var(--dim);display:flex;align-items:center;justify-content:center;
+  border-left:1px solid var(--line);transition:background .15s,color .15s;
+}
+.winbtns button:hover{background:var(--line);color:var(--txt)}
+.winbtns button.close:hover{background:#c42b1c;color:#fff}
+.winbtns svg{width:14px;height:14px}
+
+/* cuerpo */
+.body{flex:1;display:flex;min-height:0}
+
+/* panel lateral */
+.side{
+  width:292px;flex:0 0 292px;background:var(--panel);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;min-height:0;transition:margin-left .28s ease;
+}
+.side.hidden{margin-left:-292px}
+.sidetabs{display:flex;border-bottom:1px solid var(--line);flex:0 0 auto}
+.sidetabs button{
+  flex:1;padding:10px 4px;font-size:11px;letter-spacing:.12em;color:var(--dim);
+  border-bottom:2px solid transparent;text-transform:uppercase;
+}
+.sidetabs button.on{color:var(--accent);border-bottom-color:var(--accent)}
+.sidepane{flex:1;overflow-y:auto;padding:16px;display:none;min-height:0}
+.sidepane.on{display:block}
+
+.kv{display:flex;justify-content:space-between;gap:10px;padding:6px 0;font-size:12.5px;border-bottom:1px dashed var(--line)}
+.kv b{color:var(--txt);font-weight:500}
+.kv span{color:var(--dim)}
+.sec{font-size:10.5px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;margin:18px 0 8px}
+.sec:first-child{margin-top:0}
+.bar{height:6px;background:var(--codebg);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:8px 0 4px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:2px;min-width:2px;transition:width .6s ease}
+.small{font-size:11.5px;color:var(--dim);line-height:1.6}
+.note-side{margin-top:14px;padding:10px 12px;border-left:2px solid var(--accent-dim);color:var(--dim);font-size:11.5px;line-height:1.6;background:var(--codebg)}
+
+.searchrow{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--codebg);
+  border-radius:5px;padding:7px 10px;margin-bottom:12px}
+.searchrow svg{width:13px;height:13px;color:var(--dim);flex:0 0 13px}
+.searchrow input{background:none;border:none;outline:none;color:var(--txt);width:100%;font-size:12.5px}
+.vocitem{padding:8px 2px;border-bottom:1px dashed var(--line);cursor:pointer}
+.vocitem:hover .vocname{color:var(--accent)}
+.vocname{color:var(--cmd);font-size:12.5px}
+.vocdesc{color:var(--dim);font-size:11.5px;margin-top:2px;line-height:1.5}
+
+.memitem{border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:10px;background:var(--codebg)}
+.memq{font-size:12px;color:var(--accent);margin-bottom:4px;word-break:break-word}
+.mema{font-size:11.5px;color:var(--dim);white-space:pre-wrap;word-break:break-word;
+  max-height:70px;overflow:hidden;position:relative}
+.memdel{margin-top:8px;font-size:11px;color:var(--err);display:inline-flex;align-items:center;gap:5px}
+.memdel svg{width:11px;height:11px}
+.memdel:hover{text-decoration:underline}
+
+/* terminal */
+.main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--term)}
+.term{flex:1;overflow-y:auto;padding:20px 24px 12px;scroll-behavior:smooth}
+
+.uline{margin:14px 0 4px;line-height:1.7;word-break:break-word;animation:msgIn .25s ease}
+.ups{color:var(--accent);margin-right:10px;white-space:nowrap}
+.uline .utxt{color:var(--txt)}
+@keyframes msgIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.msg{margin:6px 0 22px;animation:msgIn .25s ease}
+.ahead{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.badge{font-size:10.5px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent-dim);
+  padding:2px 8px;border-radius:3px;text-transform:uppercase}
+.badge.mem{color:var(--warn);border-color:var(--warn)}
+.ameta{font-size:11px;color:var(--faint)}
+.abody{line-height:1.7;font-size:13.5px}
+.abody strong{color:var(--txt);font-weight:600}
+.abody code{background:var(--codebg);border:1px solid var(--line);border-radius:3px;
+  padding:1px 5px;font-size:12.5px;color:var(--str)}
+
+.codeblk{border:1px solid var(--line);border-radius:6px;margin:12px 0;overflow:hidden;background:var(--codebg)}
+.codehead{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 12px;
+  border-bottom:1px solid var(--line);background:var(--panel)}
+.codehead .lang{font-size:10.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.copybtn{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--dim);
+  padding:3px 8px;border-radius:4px;border:1px solid transparent}
+.copybtn:hover{color:var(--accent);border-color:var(--line2)}
+.copybtn svg{width:12px;height:12px}
+.codeblk pre{padding:13px 15px;overflow-x:auto;font-size:13px;line-height:1.65}
+.tok-cmd{color:var(--cmd)} .tok-par{color:var(--param)} .tok-var{color:var(--varc)}
+.tok-str{color:var(--str)} .tok-num{color:var(--num)} .tok-com{color:var(--com);font-style:italic}
+
+.steps{list-style:none;margin:10px 0}
+.steps li{padding:3px 0 3px 20px;position:relative;color:var(--txt);line-height:1.65;font-size:13px}
+.steps li::before{content:'▸';position:absolute;left:2px;color:var(--accent)}
+.note{margin:12px 0 0;padding:9px 14px;border-left:2px solid var(--warn);
+  background:var(--codebg);color:var(--dim);font-size:12.5px;line-height:1.65;border-radius:0 5px 5px 0}
+.refs{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.refs .rlabel{font-size:11px;color:var(--faint);margin-right:3px}
+.ref{font-size:11.5px;color:var(--cmd);border:1px solid var(--line);border-radius:4px;
+  padding:2px 9px;transition:border-color .15s,color .15s}
+.ref:hover{border-color:var(--accent);color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:15px;
+  padding:4px 13px;transition:all .15s}
+.chip:hover{color:var(--accent);border-color:var(--accent)}
+.sugg{font-size:11.5px;color:var(--faint)}
+.sugg b{color:var(--dim);font-weight:500}
+
+/* zona de entrada */
+.askbox{flex:0 0 auto;border-top:1px solid var(--line);background:var(--panel);padding:10px 24px 12px}
+.sugrow{display:flex;gap:8px;flex-wrap:wrap;min-height:0;margin-bottom:8px}
+.sugrow .chip{font-size:11.5px;padding:3px 11px}
+.promptline{display:flex;align-items:center;gap:10px;position:relative}
+.ps{color:var(--accent);white-space:nowrap;font-size:13.5px}
+.chev{color:var(--accent);font-size:14px}
+#q{flex:1;background:none;border:none;outline:none;color:var(--txt);font-size:14px;
+  caret-color:var(--accent);padding:6px 0;z-index:1}
+#q::placeholder{color:var(--faint)}
+.gcursor{position:absolute;left:242px;top:50%;transform:translateY(-50%);
+  width:8px;height:18px;background:var(--accent);animation:blink 1.05s steps(1) infinite;pointer-events:none}
+@keyframes blink{50%{opacity:0}}
+.hintline{display:flex;gap:16px;font-size:10.5px;color:var(--faint);margin-top:7px;flex-wrap:wrap}
+.hintline kbd{border:1px solid var(--line);border-radius:3px;padding:0 5px;font-size:10px;color:var(--dim)}
+
+/* barra de estado */
+.statusbar{flex:0 0 26px;display:flex;align-items:center;gap:18px;padding:0 14px;
+  border-top:1px solid var(--line);background:var(--panel);font-size:11px;color:var(--dim);
+  overflow:hidden;white-space:nowrap}
+.st{display:inline-flex;align-items:center;gap:6px}
+.stdot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+.spacer{flex:1}
+
+/* toast */
+#toast{position:fixed;bottom:26px;right:26px;z-index:200;display:flex;flex-direction:column;gap:8px}
+.toastmsg{background:var(--panel);border:1px solid var(--line2);border-left:3px solid var(--accent);
+  color:var(--txt);font-size:12.5px;padding:10px 16px;border-radius:5px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);animation:toastIn .25s ease}
+@keyframes toastIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+
+/* boot */
+#boot{position:fixed;inset:0;z-index:100;background:#050508;display:flex;
+  align-items:center;justify-content:center;transition:opacity .45s ease}
+#boot.off{opacity:0;pointer-events:none}
+.bootbox{width:min(640px,92vw);font-size:13px;line-height:2;color:#9aa0b4}
+.bootbox .bl{opacity:0;animation:bline .18s ease forwards}
+@keyframes bline{to{opacity:1}}
+.bootbox .ok{color:var(--ok,#7ee787)} .bootbox .hl{color:#59a6ff} .bootbox .b{color:#d7dae4}
+.bootbox .bar2{color:#59a6ff}
+.bootskip{margin-top:26px;font-size:11px;color:#3d4358}
+
+/* modal */
+#modal{position:fixed;inset:0;z-index:150;background:rgba(3,4,8,.72);display:none;
+  align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+#modal.on{display:flex}
+.mbox{background:var(--win);border:1px solid var(--line2);border-radius:8px;padding:26px 28px;
+  width:min(430px,90vw);box-shadow:0 30px 80px rgba(0,0,0,.6);animation:msgIn .2s ease}
+.mbox h3{font-size:14px;font-weight:600;color:var(--txt);margin-bottom:10px}
+.mbox p{font-size:12.5px;color:var(--dim);line-height:1.7;margin-bottom:20px}
+.mrow{display:flex;gap:10px;justify-content:flex-end}
+.mbtn{font-size:12px;padding:8px 16px;border-radius:5px;border:1px solid var(--line2);color:var(--dim)}
+.mbtn:hover{color:var(--txt);border-color:var(--accent-dim)}
+.mbtn.pri{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:600}
+.mbtn.pri:hover{filter:brightness(1.1);color:#04121f}
+
+/* responsive */
+@media (max-width:880px){
+  .side{position:absolute;left:0;top:0;bottom:0;z-index:50;box-shadow:20px 0 60px rgba(0,0,0,.5)}
+  .side.hidden{margin-left:-292px}
+  .tabsub{display:none}
+  .term{padding:14px}
+  .askbox{padding:10px 14px}
+  .gcursor{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- secuencia de arranque -->
+<div id="boot"><div class="bootbox" id="bootbox"></div></div>
+
+<div class="win" id="win">
+  <div class="titlebar">
+    <div class="tab">
+      <span class="tabdot"></span>
+      <span class="tabname">PS-LM</span>
+      <span class="tabsub">— modelo local para PowerShell · sin API</span>
+    </div>
+    <div class="winbtns">
+      <button id="btnPanel" title="Panel lateral (Ctrl+B)" aria-label="Panel lateral">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><line x1="6" y1="2.5" x2="6" y2="13.5"/></svg>
+      </button>
+      <button id="btnWide" title="Pantalla completa de la ventana" aria-label="Ampliar">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><line x1="1.5" y1="5.5" x2="14.5" y2="5.5"/></svg>
+      </button>
+      <button id="btnClose" class="close" title="Reiniciar modelo" aria-label="Cerrar">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3.5" y1="3.5" x2="12.5" y2="12.5"/><line x1="12.5" y1="3.5" x2="3.5" y2="12.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="body">
+    <aside class="side" id="side">
+      <div class="sidetabs">
+        <button data-pane="pState" class="on">Estado</button>
+        <button data-pane="pVocab">Vocabulario</button>
+        <button data-pane="pMem">Memoria</button>
+      </div>
+      <div class="sidepane on" id="pState"></div>
+      <div class="sidepane" id="pVocab">
+        <div class="searchrow">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+          <input id="vocabSearch" placeholder="filtrar cmdlets…">
+        </div>
+        <div id="vocabList"></div>
+      </div>
+      <div class="sidepane" id="pMem"></div>
+    </aside>
+
+    <main class="main" id="mainArea">
+      <div class="term" id="term"></div>
+      <div class="askbox">
+        <div class="sugrow" id="sugRow"></div>
+        <div class="promptline">
+          <span class="ps">PS C:\you</span><span class="chev">❯</span>
+          <input id="q" autocomplete="off" spellcheck="false"
+                 placeholder="pregunta en español o inglés… pega un comando y lo desgloso">
+          <span class="gcursor" id="gcursor"></span>
+        </div>
+        <div class="hintline">
+          <span><kbd>Tab</kbd> autocompletar</span>
+          <span><kbd>↑</kbd><kbd>↓</kbd> historial</span>
+          <span><kbd>Ctrl</kbd>+<kbd>L</kbd> limpiar</span>
+          <span><kbd>Ctrl</kbd>+<kbd>B</kbd> panel</span>
+          <span class="spacer" style="flex:1"></span>
+          <span>/help para comandos</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="statusbar">
+    <span class="st"><span class="stdot"></span> motor local · 0 llamadas de red</span>
+    <span class="st" id="stLat">inferencia —</span>
+    <span class="st" id="stTok">0 tokens</span>
+    <span class="st" id="stMem">mem —</span>
+    <span class="spacer"></span>
+    <span class="st" id="stTheme">tema: carbon</span>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="modal">
+  <div class="mbox">
+    <h3>Reiniciar PS-LM</h3>
+    <p>Esto es una página, así que no puedo cerrarla de verdad — pero puedo detener el motor,
+       limpiar la conversación y arrancar de cero. Tu memoria entrenada se conserva.</p>
+    <div class="mrow">
+      <button class="mbtn" id="mCancel">Quedarme</button>
+      <button class="mbtn pri" id="mConfirm">Detener y reiniciar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ================================================================
+   PS-LM 1.0 "Cascadia" — modelo de lenguaje local para PowerShell
+   Motor simbólico: intenciones + patrones ponderados + entidades.
+   Sin API, sin red, sin dependencias. Todo vive en este archivo.
+================================================================ */
+
+/* ---------- utilidades ---------- */
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const store = {
+  get(k,d){ try{ const v=JSON.parse(localStorage.getItem(k)); return v===null||v===undefined?d:v }catch(e){ return d } },
+  set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)) }catch(e){} }
+};
+function toast(msg){
+  const t=document.createElement('div'); t.className='toastmsg'; t.textContent=msg;
+  $('#toast').appendChild(t);
+  setTimeout(()=>{ t.style.transition='opacity .3s'; t.style.opacity='0';
+    setTimeout(()=>t.remove(),320) },1900);
+}
+
+/* ---------- vocabulario: cmdlets documentados ---------- */
+const CMDLETS = {
+'Get-Process':{d:'Enumera los procesos en ejecución, con CPU, memoria (WS) e PID.',ex:'Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 Name,Id,CPU'},
+'Stop-Process':{d:'Detiene uno o más procesos, por nombre (-Name) o por objeto del pipeline.'},
+'Start-Process':{d:'Lanza un programa o archivo, opcionalmente como administrador (-Verb RunAs).',ex:'Start-Process notepad; Start-Process pwsh -Verb RunAs'},
+'Wait-Process':{d:'Espera a que un proceso termine antes de continuar.'},
+'Get-Service':{d:'Enumera servicios del sistema con estado (Running/Stopped).'},
+'Set-Service':{d:'Cambia el estado, nombre o modo de inicio de un servicio.'},
+'Restart-Service':{d:'Detiene y vuelve a iniciar un servicio.',ex:'Restart-Service -Name Spooler -Force'},
+'Start-Service':{d:'Inicia un servicio detenido.'},
+'Stop-Service':{d:'Detiene un servicio en ejecución.'},
+'Get-ChildItem':{d:'Lista archivos y carpetas (el clásico dir/ls), con -Recurse y -Filter.',ex:'Get-ChildItem C:\\Users -Recurse -Filter "*.log" -ErrorAction SilentlyContinue'},
+'Get-Content':{d:'Lee el contenido de un archivo; -Tail N para las últimas líneas, -Wait vigila cambios.',ex:'Get-Content .\\log.txt -Tail 50 -Wait'},
+'Set-Content':{d:'Escribe texto a un archivo (sobrescribe).'},
+'Add-Content':{d:'Añade texto al final de un archivo sin borrar nada.'},
+'New-Item':{d:'Crea archivo, carpeta, clave de registro… según -ItemType.',ex:'New-Item -Path .\\reportes -ItemType Directory'},
+'Remove-Item':{d:'Elimina archivos/carpetas; -Recurse para subcarpetas, -WhatIf para ensayar.'},
+'Copy-Item':{d:'Copia archivos o árboles completos con -Recurse.'},
+'Move-Item':{d:'Mueve o renombra archivos y carpetas.'},
+'Rename-Item':{d:'Renombra un elemento; acepta script-block para renombrado masivo.'},
+'Test-Path':{d:'Devuelve $true/$false según exista la ruta.'},
+'Join-Path':{d:'Une partes de ruta correctamente: Join-Path C:\\temp "a.txt".'},
+'Split-Path':{d:'Extrae carpeta, nombre o extensión de una ruta.'},
+'Resolve-Path':{d:'Convierte una ruta relativa en absoluta.'},
+'Get-Command':{d:'Busca cmdlets, funciones y ejecutables; -Syntax muestra su firma.'},
+'Get-Help':{d:'Ayuda integrada: -Examples, -Full, -Online.'},
+'Get-Member':{d:'Inspecciona propiedades y métodos de los objetos del pipeline.',ex:'Get-Process | Get-Member -MemberType Property'},
+'Where-Object':{d:'Filtra objetos del pipeline con una condición.',ex:'Get-Service | Where-Object {$_.Status -eq "Running"}'},
+'Sort-Object':{d:'Ordena por una o varias propiedades, -Descending para invertir.'},
+'Group-Object':{d:'Agrupa objetos por una propiedad y cuenta repeticiones.'},
+'Select-Object':{d:'Elige propiedades, -First/-Skip/-Unique y propiedades calculadas.'},
+'Measure-Object':{d:'Calcula sumas, promedios, mínimos y máximos.'},
+'ForEach-Object':{d:'Ejecuta un bloque por cada objeto del pipeline (alias %).'},
+'Compare-Object':{d:'Compara dos colecciones y muestra diferencias (<= y =>).'},
+'Tee-Object':{d:'Pasa objetos al pipeline y a la vez los guarda en archivo.'},
+'Measure-Command':{d:'Mide cuánto tarda un bloque de script en ejecutarse.'},
+'Start-Sleep':{d:'Pausa el script: -Seconds o -Milliseconds.'},
+'Get-Random':{d:'Número o elemento aleatorio; -InputObject para elegir de una lista.'},
+'New-Guid':{d:'Genera un GUID único.'},
+'Get-Date':{d:'Fecha y hora actuales; -Format para darles formato.'},
+'TimeSpan':{d:'Tipo .NET para diferencias de tiempo: (Get-Date) - $inicio.'},
+'Write-Host':{d:'Escribe directo en consola (con colores). NO participa en el pipeline.'},
+'Write-Output':{d:'Emite objetos al pipeline (es lo que devuelve un script por defecto).'},
+'Write-Warning':{d:'Mensaje de advertencia en amarillo.'},
+'Write-Error':{d:'Reporta un error no terminante.'},
+'Read-Host':{d:'Pide datos al usuario; -AsSecureString enmascara contraseñas.'},
+'Out-File':{d:'Redirige la salida a un archivo (alternativa a >).'},
+'Export-Csv':{d:'Exporta objetos a CSV; casi siempre con -NoTypeInformation.',ex:'Get-Process | Export-Csv .\\procs.csv -NoTypeInformation'},
+'Import-Csv':{d:'Lee un CSV y convierte cada fila en un objeto.'},
+'ConvertTo-Json':{d:'Serializa objetos a JSON; -Depth controla el anidado.'},
+'ConvertFrom-Json':{d:'Convierte JSON en objetos navegables con punto.'},
+'Out-GridView':{d:'Abre una ventana gráfica con la salida (¡incluida en Windows!).'},
+'Invoke-WebRequest':{d:'Descarga o consulta URLs (alias iwr). -OutFile para guardar.'},
+'Invoke-RestMethod':{d:'Llama APIs REST y parsea JSON/XML automáticamente.'},
+'Invoke-Command':{d:'Ejecuta bloques de script en equipos remotos vía WinRM.'},
+'Test-Connection':{d:'Ping moderno; -Quiet devuelve $true/$false para scripts.'},
+'Get-NetIPAddress':{d:'Direcciones IP del equipo por interfaz.'},
+'Get-NetTCPConnection':{d:'Conexiones TCP; con -State Listen ves los puertos abiertos.'},
+'New-NetFirewallRule':{d:'Crea reglas de firewall para puertos o programas.'},
+'Enable-NetFirewallRule':{d:'Activa una regla existente por nombre o grupo.'},
+'Get-NetFirewallRule':{d:'Enumera reglas del firewall de Windows.'},
+'Get-CimInstance':{d:'Consulta clases WMI: hardware, SO, arranque, software instalado.',ex:'Get-CimInstance Win32_OperatingSystem | Select-Object LastBootUpTime'},
+'Get-Credential':{d:'Captura usuario/contraseña de forma segura para operaciones con privilegios.'},
+'Get-Variable':{d:'Enumera variables de la sesión.'},
+'Set-Variable':{d:'Asigna valor y opciones a una variable.'},
+'New-Object':{d:'Crea objetos .NET: New-Object -ComObject WScript.Shell, etc.'},
+'Get-ExecutionPolicy':{d:'Muestra la política de ejecución de scripts vigente.'},
+'Set-ExecutionPolicy':{d:'Cambia la política de ejecución (usa -Scope CurrentUser).'},
+'Install-Module':{d:'Instala módulos desde PSGallery (requiere PSGallery de confianza).'},
+'Get-Module':{d:'Lista módulos cargados; -ListAvailable muestra los instalados.'},
+'Import-Module':{d:'Carga un módulo en la sesión actual.'},
+'Select-String':{d:'El grep de PowerShell: busca patrones en archivos y texto.',ex:'Select-String -Path .\\*.log -Pattern "ERROR"'},
+'Get-Alias':{d:'Lista alias; -Definition localiza el cmdlet detrás de un alias.'},
+'New-Alias':{d:'Crea tus propios atajos de teclado para cmdlets.'},
+'Get-History':{d:'Historial de comandos de la sesión.'},
+'Invoke-History':{d:'Reejecuta un comando del historial por número.'},
+'Compress-Archive':{d:'Crea ZIP a partir de archivos o carpetas.'},
+'Expand-Archive':{d:'Extrae archivos ZIP a una carpeta destino.'},
+'Get-PSDrive':{d:'Unidades lógicas: discos, registro, certificados, variables.'},
+'Get-Volume':{d:'Volúmenes de disco con tamaño y espacio libre.'},
+'Get-ComputerInfo':{d:'Ficha completa del equipo: SO, BIOS, CPU, RAM… (algo lento).'},
+'Get-ItemProperty':{d:'Lee valores del registro u otras rutas de proveedor.'},
+'Set-ItemProperty':{d:'Modifica un valor del registro.'},
+'New-LocalUser':{d:'Crea usuarios locales con contraseña segura.',ex:'New-LocalUser -Name "ana" -Password (Read-Host -AsSecureString)'},
+'Add-LocalGroupMember':{d:'Agrega un usuario a un grupo local (Administradores, etc.).'},
+'Get-LocalGroupMember':{d:'Enumera los miembros de un grupo local.'},
+'Get-LocalUser':{d:'Lista usuarios locales del equipo.'},
+'Get-WinEvent':{d:'Consulta registros de eventos de Windows, muy potente con -FilterHashtable.'},
+'Register-ScheduledTask':{d:'Registra tareas programadas (con acciones y triggers previos).'},
+'New-ScheduledTaskAction':{d:'Define qué ejecuta una tarea programada.'},
+'New-ScheduledTaskTrigger':{d:'Define cuándo se dispara una tarea (diaria, al inicio…).'},
+'Get-Package':{d:'Enumera software instalado reconocido por los proveedores de paquetes.'},
+'Start-Transcript':{d:'Graba toda la sesión (entrada y salida) a un archivo de texto.'},
+'Set-Clipboard':{d:'Copia texto al portapapeles (Get-Clipboard lo lee).'},
+'Clear-Host':{d:'Limpia la consola (alias cls).'},
+'Format-Table':{d:'Da salida en tabla (alias ft); -AutoSize ajusta columnas.'},
+'Format-List':{d:'Da salida en lista propiedad: valor (alias fl).'}
+};
+
+/* ---------- alias → cmdlet ---------- */
+const ALIAS = {
+ls:'Get-ChildItem',dir:'Get-ChildItem',gci:'Get-ChildItem',cat:'Get-Content',gc:'Get-Content',
+type:'Get-Content',cp:'Copy-Item',copy:'Copy-Item',mv:'Move-Item',move:'Move-Item',
+rm:'Remove-Item',del:'Remove-Item',erase:'Remove-Item',ri:'Remove-Item',cd:'Set-Location',
+sl:'Set-Location',pwd:'Get-Location',gl:'Get-Location',echo:'Write-Output',write:'Write-Output',
+cls:'Clear-Host',clear:'Clear-Host',kill:'Stop-Process',ps:'Get-Process',gps:'Get-Process',
+sleep:'Start-Sleep',select:'Select-Object',sort:'Sort-Object',where:'Where-Object','?':'Where-Object',
+'%':'ForEach-Object',foreach:'ForEach-Object',fl:'Format-List',ft:'Format-Table',fw:'Format-Wide',
+gm:'Get-Member',iwr:'Invoke-WebRequest',irm:'Invoke-RestMethod',icm:'Invoke-Command',
+ni:'New-Item',gp:'Get-ItemProperty',sp:'Set-ItemProperty',measure:'Measure-Object',
+compare:'Compare-Object',diff:'Compare-Object',h:'Get-History',history:'Get-History',
+r:'Invoke-History',ihy:'Invoke-History',start:'Start-Process',saps:'Start-Process',
+ac:'Add-Content',sc:'Set-Content',tee:'Tee-Object',ogv:'Out-GridView',ipcsv:'Import-Csv',
+epcsv:'Export-Csv',curl:'Invoke-WebRequest',wget:'Invoke-WebRequest',sal:'New-Alias'
+};
+
+/* ---------- glosario de parámetros (para desglosar comandos) ---------- */
+const PARAMS = {
+Force:'sin pedir confirmación',Name:'nombre del objetivo',Path:'ruta de origen',
+Destination:'ruta destino',Recurse:'incluye subcarpetas',Filter:'patrón de coincidencia simple',
+Include:'incluye solo lo que coincida',Exclude:'excluye lo que coincida',
+ErrorAction:'qué hacer ante errores (Stop/SilentlyContinue)',Verbose:'salida detallada',
+Confirm:'pide confirmación',WhatIf:'simula sin ejecutar nada',OutFile:'guarda en archivo',
+Uri:'dirección URL',Scope:'ámbito (CurrentUser, LocalMachine…)',ComputerName:'equipo remoto',
+Credential:'credenciales alternativas',AsJob:'ejecuta en segundo plano',
+ScriptBlock:'bloque de código a ejecutar',InputObject:'objetos que llegan por pipeline',
+Property:'propiedad a usar',Value:'valor a asignar',TotalCount:'número de líneas',
+Tail:'últimas N líneas',Wait:'vigila cambios en vivo',Append:'añade sin sobrescribir',
+NoNewline:'sin salto de línea final',NoTypeInformation:'CSV sin cabecera de tipo',
+Depth:'profundidad de anidado',Raw:'lee todo de una vez',Encoding:'codificación del texto',
+First:'primeros N resultados',Skip:'salta N resultados',Last:'últimos N resultados',
+Unique:'elimina duplicados',ExpandProperty:'expande una sola propiedad',
+MemberType:'tipo de miembro a listar',DisplayName:'nombre visible',TaskName:'nombre de la tarea',
+Execute:'programa que lanza la tarea',At:'hora de disparo',Count:'número de intentos',
+Quiet:'devuelve $true/$false',Id:'identificador',PassThru:'devuelve el objeto creado',
+Delimiter:'separador',Hidden:'incluye ocultos',File:'solo archivos',Directory:'solo carpetas',
+Argument:'argumentos del programa',Description:'descripción',FullName:'nombre completo',
+Verb:'verbo del cmdlet (RunAs = elevar)',AsSecureString:'entrada enmascarada',
+MaxEvents:'máximo de eventos',Pattern:'patrón regex a buscar',Trigger:'disparador'
+};
+
+/* ---------- sinónimos ES → tokens canónicos ---------- */
+const SYN = {
+matar:'kill',terminar:'kill',detener:'stop',parar:'stop',cerrar:'close',
+listar:'list',mostrar:'show',ver:'show',visualizar:'show',enumerar:'list',
+archivo:'file',archivos:'file',fichero:'file',carpeta:'folder',directorio:'folder',
+crear:'create',nuevo:'new',hacer:'make',generar:'generate',borrar:'delete',eliminar:'delete',
+quitar:'delete',copiar:'copy',mover:'move',renombrar:'rename',leer:'read',escribir:'write',
+abrir:'open',ejecutar:'run',lanzar:'start',buscar:'find',encontrar:'find',filtrar:'filter',
+ordenar:'sort',servicio:'service',servicios:'service',proceso:'process',procesos:'process',
+programa:'program',aplicacion:'app',usuario:'user',usuarios:'user',contrasena:'password',
+clave:'password',llave:'key',contra:'password',red:'network',internet:'network',wifi:'wifi',
+puerto:'port',puertos:'port',ip:'ip',disco:'disk',espacio:'space',memoria:'memory',
+sistema:'system',equipo:'computer',pc:'computer',maquina:'computer',hora:'time',fecha:'date',
+contrasenas:'password',carpetas:'folder',tarea:'task',tareas:'task',programada:'scheduled',
+apagado:'shutdown',apagar:'shutdown',reiniciar:'reboot',reiniciar_pc:'reboot',
+variable:'variable',variables:'variable',entorno:'environment',funcion:'function',
+funciones:'function',bucle:'loop',ciclo:'loop',repetir:'loop',condicion:'condition',
+comparar:'compare',diferencias:'compare',convertir:'convert',exportar:'export',importar:'import',
+descargar:'download',instalar:'install',modulo:'module',modulos:'module',
+politica:'policy',permisos:'permission',permiso:'permission',elevado:'admin',administrador:'admin',
+arranque:'startup',inicio:'startup',registro:'registry',cortafuegos:'firewall',
+archivo_zip:'zip',comprimir:'zip',descomprimir:'unzip',comprimido:'zip',
+contrasena_generar:'random',aleatorio:'random',historial:'history',portapapeles:'clipboard',
+copiar_portapapeles:'clipboard',ayuda:'help',ejemplo:'example',ejemplos:'example',
+version:'version',diferencia:'difference',linux:'linux',bash:'bash',grep:'grep',
+tiempo:'time',medir:'measure',durar:'measure',velocidad:'measure',
+eventos:'events',logs:'logs',registro_eventos:'events',actualizar:'update',
+escalado:'pipeline',tuberia:'pipeline',objeto:'object',objetos:'object',
+propiedad:'property',metodo:'method',miembro:'member',error:'error',errores:'error',
+excepcion:'error',try:'try',capturar:'catch',manejar:'handle',
+servidor:'server',remoto:'remote',remota:'remote',
+cual:'what',como:'how',que:'what','cómo':'how','qué':'what',donde:'where',cuando:'when',
+puedo:'can',poder:'can',quiero:'want',necesito:'need',deseo:'want',
+grandes:'large',grande:'large',tamaño:'size',mas:'more',mas_grande:'large',
+ rapido:'fast',lento:'slow',libre:'free',uso:'usage',usado:'usage'
+};
+
+/* ---------- motor: tokenización y similitud ---------- */
+function tokenize(raw){
+  const words = norm(raw).replace(/[^a-z0-9$_.\\-]+/g,' ').split(/\s+/).filter(Boolean);
+  const out=[];
+  for(let w of words){
+    w = w.replace(/^\W+|\W+$/g,'');
+    if(!w) continue;
+    if(SYN[w]) { SYN[w].split(' ').forEach(x=>out.push(x)); continue; }
+    let base = w.replace(/(es|s)$/,'');
+    if(base.length>2 && SYN[base]){ SYN[base].split(' ').forEach(x=>out.push(x)); continue; }
+    out.push(w);
+  }
+  return out;
+}
+function bag(tokens){
+  const m={}; tokens.forEach(t=>m[t]=(m[t]||0)+1); return m;
+}
+function cosine(a,b){
+  const A=bag(a),B=bag(b); let dot=0,na=0,nb=0;
+  for(const k in A) na+=A[k]*A[k];
+  for(const k in B){ nb+=B[k]*B[k]; if(A[k]) dot+=A[k]*B[k]; }
+  return (na&&nb)? dot/Math.sqrt(na*nb) : 0;
+}
+
+/* ---------- extracción de entidades ---------- */
+function entities(raw){
+  const e={};
+  let m = raw.match(/["“”']([^"“”']{2,40})["“”']/);
+  if(m) e.quoted=m[1];
+  m = raw.match(/(?:proceso|process|programa|app|aplicaci[oó]n)\s+(?:llamado|llamada|named|called|con nombre|de nombre|el|la)?\s*["“”']?([A-Za-z0-9_.-]{2,30})/i);
+  if(m) e.proc = m[1].replace(/\.exe$/i,'');
+  if(!e.proc && e.quoted && /(?:mata|kill|termina|detén|deten|stop|cierra)/i.test(raw)) e.proc = e.quoted.replace(/\.exe$/i,'');
+  m = raw.match(/(?:servicio|service)\s+(?:llamado|named|el)?\s*["“”']?([A-Za-z0-9_.-]{2,40})/i);
+  if(m) e.svc = m[1];
+  m = raw.match(/[A-Za-z]:\\[^\s"“”']*/);
+  if(m) e.path = m[0];
+  m = raw.match(/\.[a-z0-9]{1,4}\b/i);
+  if(m) e.ext = m[0];
+  m = raw.match(/https?:\/\/\S+/);
+  if(m) e.url = m[0];
+  m = raw.match(/\b(\d{1,4})\s*(?:min|minutos|minutes)\b/i);
+  if(m) e.min = m[1];
+  m = raw.match(/(?:m[oó]dulo|module)\s+([A-Za-z][\w.-]{2,30})/i);
+  if(m) e.mod = m[1];
+  m = raw.match(/(?:wifi|red|ssid|perfil)\s+(?:de\s+)?(?:llamad[oa]|named)?\s*["“”']?([A-Za-z0-9 _-]{2,32})["“”']?/i);
+  if(m && /wifi|ssid|clave|contrase|key|pass/i.test(raw)) e.ssid = m[1].trim();
+  return e;
+}
+
+/* ---------- definición de intenciones ---------- */
+const INTENTS=[];
+function I(id,kw,ex,gen){ INTENTS.push({id,kw,ex,gen}); }
+
+/* --- misc / identidad --- */
+I('greet',{hola:3,hello:3,hey:3,buenas:3,saludos:3,holaa:3,hi:3},
+['hola','hello','buenas'],
+()=>({lead:'¡Hola! Soy **PS-LM**, tu copiloto local de PowerShell. Pregúntame lo que quieras en español o inglés — o pega un comando y te lo desgloso pieza a pieza.',
+note:'Sin API, sin red, sin esperas: todo el motor vive en esta página.',
+chips:['¿cómo mato un proceso?','ver la clave del wifi','¿qué es el pipeline?']}));
+
+I('thanks',{gracias:3,thank:3,thanks:3,genial:1,perfecto:1},
+['gracias','thank you'],
+()=>({lead:'¡De nada! Aquí sigo, sin gastar ni un byte de red. Si quieres enseñarme respuestas nuevas, usa `/teach`.'}));
+
+I('identity',{quien:2,eres:2,who:2,are:2,you:2,modelo:2,llm:2,ia:1,funcionas:2,interno:1},
+['quién eres','how do you work','what are you'],
+()=>({lead:'Soy **PS-LM 1.0 "Cascadia"** — un modelo de lenguaje para PowerShell que corre **entero en tu navegador**.',
+steps:[
+'No soy una red neuronal: soy un motor simbólico (intenciones + patrones ponderados + extracción de entidades).',
+'Por eso peso ~200 KB en vez de gigas y respondo en milisegundos, sin GPU ni API.',
+'Puedes ampliar mi conocimiento con `/teach pregunta :: respuesta` — se guarda en tu navegador.',
+'El vocabulario técnico (cmdlets, parámetros, alias) está indexado en inglés, como manda PowerShell.'],
+note:'Honestidad ante todo: simulo ser un LLM, pero la "magia" es indexación y lingüística local.',
+refs:['Get-Command','Get-Help']}));
+
+I('capabilities',{puedes:2,sabes:2,haces:2,capacidades:2,funciones:2,ayuda:2,help:3,ayudar:2,features:1},
+['qué sabes hacer','what can you do','help'],
+()=>({lead:'Soy un copiloto de **Windows PowerShell**. Sé de:',
+steps:[
+'**Administración** — procesos, servicios, usuarios, disco, firewall, registro, tareas programadas, eventos.',
+'**Archivos** — buscar, crear, leer, renombrar en lote, comprimir, comparar.',
+'**Red** — IP, puertos abiertos, ping, claves wifi, descargas.',
+'**Lenguaje** — pipelines, objetos, variables, bucles, funciones, try/catch, hashtables, regex, CSV, JSON.',
+'**Traducción bash → PowerShell** si vienes de Linux.',
+'**Desglose de comandos** — pega cualquier línea PS y te explico cada cmdlet y parámetro.'],
+note:'Comandos: `/help` `/vocab` `/stats` `/teach` `/forget` `/export` `/theme` `/clear`',
+chips:['mapa bash a powershell','desglosa: Get-Service | Where-Object {$_.Status -eq "Running"}','política de ejecución']}));
+
+I('whatis',{powershell:3,que:1,es:1,what:1,is:1},
+['qué es powershell','what is powershell'],
+()=>({lead:'**PowerShell** es la shell de tareas y lenguaje de scripting de Microsoft, sucesor de CMD.',
+steps:[
+'Es **orientado a objetos**: el pipeline no pasa texto, pasa objetos .NET completos.',
+'Convención **Verbo-Sustantivo**: `Get-Process`, `Stop-Service`, `New-Item`… todo se lee como inglés.',
+'Viene preinstalado en Windows (5.1); la versión moderna y multiplataforma es **PowerShell 7+**.',
+'Detrás está .NET: tienes acceso a tipos, métodos y excepciones completas.'],
+note:'CMD trata texto; PowerShell trata objetos. Esa es la diferencia que lo cambia todo.',
+refs:['Get-Command','Get-Member','$PSVersionTable'.replace(' ','')]}));
+
+I('version',{version:3,psversiontable:3,tengo:1,instalada:1,cual:1,pwsh:1,powershell_7:1},
+['qué versión de powershell tengo','check powershell version'],
+()=>({lead:'La forma fiable de ver tu versión:',
+code:['$PSVersionTable',''].join('\n'),
+steps:['`$PSVersionTable` es una tabla automática con `PSVersion`, `PSEdition` (Core/Desktop) y más.',
+'`Get-Host` también muestra versión, pero **no es fiable** para scripts: usa `$PSVersionTable.PSVersion`.'],
+alt:'if ($PSVersionTable.PSVersion.Major -ge 7) { "PowerShell 7+, moderno" } else { "PowerShell 5.1, clásico" }',
+note:'Para instalar PowerShell 7 junto al 5.1: `winget install Microsoft.PowerShell`'}));
+
+I('ps7_vs_51',{powershell:2,diferencia:3,diferencias:3,entre:1,vs:2,7:1,5:1,core:2,cross:1,plataforma:1},
+['diferencias powershell 5.1 y 7','powershell 7 vs 5.1'],
+()=>({lead:'**PowerShell 5.1** (Windows-only, .NET Framework) vs **PowerShell 7** (multiplataforma, .NET Core/5+):',
+steps:['PS7 corre en Windows, Linux y macOS; 5.1 solo en Windows.',
+'PS7 usa `pwsh.exe`; 5.1 usa `powershell.exe`. Pueden coexistir sin conflicto.',
+'PS7 trae el operador ternario `? :`, encadenamiento `&&` y `||`, y `-Parallel` en ForEach-Object.',
+'Algunos módulos de Windows (WMI antiguos, algunos de AD) aún exigen 5.1 — WinRM remoto clásico funciona mejor en 5.1.'],
+note:'Regla práctica: scripts nuevos en PS7; mantenimiento de sistemas legacy, 5.1.'}));
+
+I('bash_map',{linux:2,bash:3,ubuntu:2,equivalente:2,viene:1,venir:1,sudo:2,terminal:1,mac:1},
+['vengo de linux bash','bash to powershell map'],
+()=>({lead:'Mapa mental para venir de bash/terminal Linux:',
+code:['# ls        → Get-ChildItem      # cat      → Get-Content',
+'# grep      → Select-String      # rm -r    → Remove-Item -Recurse',
+'# cp / mv   → Copy-Item/Move-Item# touch    → New-Item -ItemType File',
+'# which     → Get-Command        # history  → Get-History',
+'# pwd       → Get-Location       # cd       → Set-Location',
+'# echo $VAR → Write-Output $env:VAR',
+'# sudo cmd  → Start-Process pwsh -Verb RunAs -Argument "cmd"',
+'# chmod     → icacls (o Get-Acl/Set-Acl)'].join('\n'),
+steps:['Muchos alias de Unix ya existen (`ls`, `cat`, `cp`…) pero **los flags son distintos**: `ls -la` no funciona.',
+'`grep` → `Select-String -Pattern "x" archivo` (acepta regex).',
+'`export VAR=x` → `$env:VAR = "x"` (solo la sesión) o `[Environment]::SetEnvironmentVariable("VAR","x","User")` para persistir.'],
+note:'Consejo: deja de pensar en texto. En PowerShell filtras objetos: `Get-ChildItem | Where-Object Length -gt 1MB`.',
+refs:['Get-ChildItem','Select-String','Where-Object']}));
+
+/* --- procesos --- */
+I('kill_process',{kill:3,matar:3,terminar:2,stop:2,proceso:2,process:2,taskkill:2,detener:2,forzar:1,force:1},
+['cómo mato un proceso','kill a process','terminar proceso'],
+e=>({lead:`Para detener un proceso por nombre${e.proc?` — detecté **${e.proc}** en tu pregunta`:''}:`,
+code:['# Opción 1: directo por nombre (sin .exe)',
+'Stop-Process -Name "'+(e.proc||'notepad')+'" -Force','',
+'# Opción 2: localizar primero, luego parar (pipeline)',
+'Get-Process '+(e.proc||'notepad')+' | Stop-Process -Force'].join('\n'),
+steps:['`Stop-Process` sigue la convención Verbo-Sustantivo.',
+'`-Name` busca por nombre de proceso **sin** extensión .exe.',
+'`-Force` evita el diálogo de confirmación.',
+'Si solo conoces el PID: `Stop-Process -Id 4242 -Force`.'],
+note:'¿No recuerdas el nombre exacto? `Get-Process | Where-Object {$_.Name -like "*note*"}`',
+refs:['Stop-Process','Get-Process','Where-Object']}));
+
+I('list_processes',{list:3,proceso:3,process:3,procesos:2,running:2,activos:2,corriendo:2,task:1,manager:1,ver:1},
+['listar procesos','list running processes'],
+()=>({lead:'Los procesos en ejecución, ordenados por consumo:',
+code:['Get-Process | Sort-Object CPU -Descending | Select-Object -First 15 `',
+'    Name, Id, CPU,',
+'    @{n="RAM(MB)";e={[math]::Round($_.WorkingSet64/1MB)}}'].join('\n'),
+steps:['`Sort-Object CPU -Descending` pone primero los que más CPU acumularon.',
+'`@{n=…;e=…}` es una **propiedad calculada**: renombra y transforma al vuelo.',
+'El backtick `` ` `` parte líneas largas (el guion bajo de bash).'],
+alt:'Get-Process -Name "*sql*"   # filtra por patrón de nombre',
+refs:['Get-Process','Sort-Object','Select-Object']}));
+
+I('heavy_process',{cpu:3,memoria:2,ram:3,consume:3,consumiendo:2,pesado:2,heavy:2,mayor:2,top:2,proceso:1,memory:2,mas:1},
+['qué proceso consume más memoria','top cpu process'],
+()=>({lead:'El top de procesos por RAM (Working Set):',
+code:['Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 10 `',
+'    Name, Id, @{n="RAM(MB)";e={[math]::Round($_.WorkingSet64/1MB,1)}}'].join('\n'),
+steps:['`WorkingSet64` es la RAM real usada, en bytes.',
+'`[math]::Round(x,1)` redondea a 1 decimal — .NET al servicio del shell.'],
+alt:'Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 Name,CPU,Id   # por CPU',
+refs:['Get-Process','Sort-Object']}));
+
+/* --- archivos --- */
+I('list_files',{list:3,archivos:3,files:3,carpeta:2,folder:2,directorio:2,contenido:2,dir:2,ls:2,listar:2},
+['listar archivos de una carpeta','list files'],
+e=>({lead:`Listar el contenido de una carpeta${e.path?` (detecté la ruta **${e.path}**)`:''}:`,
+code:['Get-ChildItem '+(e.path||'C:\\Users')+' | Select-Object Mode, LastWriteTime, Length, Name',
+'',
+'# Solo archivos, con tamaño legible',
+'Get-ChildItem '+(e.path||'.')+' -File | Select-Object Name,',
+'    @{n="KB";e={[math]::Round($_.Length/1KB,1)}}'].join('\n'),
+steps:['`Get-ChildItem` es el `dir`/`ls` real (alias: `gci`, `ls`, `dir`).',
+'`-File` y `-Directory` filtran por tipo; `-Hidden` incluye ocultos.'],
+alt:'Get-ChildItem -Recurse -Depth 2   # subcarpetas hasta 2 niveles',
+refs:['Get-ChildItem','Select-Object']}));
+
+I('find_file',{find:3,buscar:3,archivo:2,files:2,encontrar:2,todos:1,search:2,donde:1,recursivo:1},
+['buscar un archivo','find file by name'],
+e=>({lead:`Buscar archivos por nombre o extensión${e.ext?` — detecté **${e.ext}**`:''}${e.quoted?` — detecté **${e.quoted}**`:''}:`,
+code:['Get-ChildItem C:\\ -Recurse -Filter "*'+(e.quoted||e.ext||'informe')+'*" -ErrorAction SilentlyContinue `',
+'    | Select-Object FullName, LastWriteTime, @{n="MB";e={[math]::Round($_.Length/1MB,2)}}'].join('\n'),
+steps:['`-Recurse` baja por todo el árbol; `-Filter` es más rápido que `-Include`.',
+'`-ErrorAction SilentlyContinue` ignora carpetas sin permiso (típico en C:\\).',
+'Para buscar dentro del contenido de archivos, usa `Select-String`.'],
+alt:'Get-ChildItem C:\\Users -Recurse -Include "*.log","*.tmp" -File   # varias extensiones',
+refs:['Get-ChildItem','Select-String']}));
+
+I('big_files',{grandes:3,large:3,espacio:2,disk:2,disco:2,tamaño:2,ocupan:2,liberar:2,big:3,files:2,llenando:2,mas:1},
+['archivos más grandes del disco','largest files'],
+()=>({lead:'Los 20 archivos más grandes bajo una ruta:',
+code:['Get-ChildItem C:\\ -Recurse -File -ErrorAction SilentlyContinue `',
+'    | Sort-Object Length -Descending `',
+'    | Select-Object -First 20 @{n="GB";e={[math]::Round($_.Length/1GB,2)}}, FullName'].join('\n'),
+steps:['`-File` excluye carpetas del cómputo.',
+'Si `C:\\` tarda mucho, apunta a `C:\\Users\\tuUsuario\\Downloads` primero.'],
+alt:'Get-ChildItem C:\\Windows\\Temp -Recurse -File | Measure-Object Length -Sum   # tamaño total de una carpeta',
+refs:['Get-ChildItem','Measure-Object']}));
+
+I('create_file',{crear:3,create:3,archivo:2,file:2,nuevo:2,new:2,vacio:1,generar:1},
+['crear un archivo','create a file'],
+e=>({lead:`Crear un archivo${e.path?` en **${e.path}**`:''}:`,
+code:['# Archivo vacío',
+'New-Item -Path .\\'+(e.quoted||'notas.txt')+' -ItemType File',
+'',
+'# Archivo con contenido inicial (sobrescribe si existe)',
+'Set-Content -Path .\\'+(e.quoted||'notas.txt')+' -Value "primera línea"'].join('\n'),
+steps:['`-ItemType File` crea archivo; con `Directory` crea carpeta.',
+'`Set-Content` sobrescribe; `Add-Content` añade al final.'],
+alt:'New-Item -Path .\\proyectos\\2024 -ItemType Directory -Force   # -Force crea la carpeta padre',
+refs:['New-Item','Set-Content']}));
+
+I('read_file',{leer:3,read:3,contenido:2,ver:2,archivo:2,file:2,mostrar:2,ultimas:1,lines:1,lineas:1,tail:2},
+['leer un archivo','read file content'],
+e=>({lead:`Leer el contenido de un archivo${e.path?` (**${e.path}**)`:''}:`,
+code:['Get-Content .\\'+(e.quoted||'notas.txt')+'',
+'',
+'# Solo las últimas 50 líneas, vigiando cambios en vivo (como tail -f)',
+'Get-Content .\\'+(e.quoted||'log.txt')+' -Tail 50 -Wait'].join('\n'),
+steps:['`-TotalCount 20` lee las primeras 20 líneas.',
+'`-Raw` devuelve todo como un solo string (útil para JSON).'],
+refs:['Get-Content']}));
+
+I('append_file',{anadir:3,append:3,agregar:3,final:2,archivo:2,linea:2,escribir:2,log:1,guardar:2},
+['añadir línea a un archivo','append to file'],
+()=>({lead:'Añadir texto al final sin borrar el contenido previo:',
+code:['Add-Content -Path .\\registro.txt -Value "$(Get-Date -Format "yyyy-MM-dd HH:mm") — evento ocurrido"'].join('\n'),
+steps:['`Add-Content` escribe al final; nunca sobrescribe.',
+'`$(…)` es **subexpresión**: se evalúa e inserta en el string.'],
+alt:'"línea" | Add-Content .\\registro.txt   # versión pipeline',
+refs:['Add-Content','Get-Date']}));
+
+I('delete_file',{borrar:3,eliminar:3,delete:3,quitar:2,archivo:2,file:2,carpeta:2,remove:2,temporales:1,temp:1},
+['borrar archivos','delete file folder'],
+e=>({lead:`Eliminar archivos o carpetas${e.ext?` (detecté **${e.ext}**)`:''}:`,
+code:['# Ensayar primero: muestra qué haría sin hacerlo',
+'Remove-Item .\\temp -Recurse -WhatIf',
+'',
+'# Ejecutar de verdad',
+'Remove-Item .\\temp -Recurse -Force',
+'',
+'# Borrar todos los .tmp de una carpeta',
+'Get-ChildItem .\\ -Filter '+(e.ext||'*.tmp')+' | Remove-Item -Force'].join('\n'),
+steps:['`-Recurse` borra subcarpetas; `-Force` quita ocultos y de solo lectura.',
+'**`-WhatIf` es tu seguro de vida**: siempre pruébalo antes del `-Force`.'],
+note:'No hay papelera de reciclación en Remove-Item: lo borrado, borrado está.',
+refs:['Remove-Item','Get-ChildItem']}));
+
+I('copy_move',{copiar:3,copy:3,mover:3,move:3,renombrar:1,pasar:1,respaldar:1,backup:2,copiar:2},
+['copiar o mover archivos','copy move files'],
+()=>({lead:'Copiar y mover archivos o árboles completos:',
+code:['Copy-Item C:\\datos D:\\respaldo -Recurse      # copia árbol completo',
+'Move-Item .\\viejo.txt .\\nuevo.txt              # mover = renombrar',
+'',
+'# Respaldo con fecha en el nombre',
+'Copy-Item .\\base.db ("backup_{0:yyyyMMdd}.db" -f (Get-Date))'].join('\n'),
+steps:['`-Recurse` copia subcarpetas; sin él, solo el elemento.',
+'El operador `-f` formatea strings (el printf de .NET).'],
+alt:'robocopy C:\\datos D:\\respaldo /MIR   # el rey del respaldo en Windows (externo a PS)',
+refs:['Copy-Item','Move-Item']}));
+
+I('rename_bulk',{renombrar:3,rename:3,masivo:3,bulk:3,lote:2,todos:2,extension:2,ext:2,cambiar:2,archivos:1},
+['renombrar archivos en lote','bulk rename extension'],
+e=>({lead:`Renombrado en lote${e.ext?` — detecté la extensión **${e.ext}**`:''} (ejemplo: .jpeg → .jpg):`,
+code:['Get-ChildItem *.jpeg | Rename-Item -NewName { $_.Name -replace "\\.jpeg$",".jpg" }'].join('\n'),
+steps:['`Rename-Item` acepta un **script-block**: se evalúa por cada archivo.',
+'`$_.Name` es el nombre actual; `_` es "el objeto actual del pipeline".',
+'`-replace` usa regex por defecto (por eso el punto va escapado).'],
+alt:['# Añadir prefijo a todos los PDF',
+'Get-ChildItem *.pdf | Rename-Item -NewName { "2024_" + $_.Name }'].join('\n'),
+refs:['Rename-Item','Get-ChildItem']}));
+
+I('mkdir',{crear:2,carpeta:3,directorio:3,mkdir:2,cFolder:1,folder:2,new:1,nueva:1},
+['crear carpeta','make directory'],
+()=>({lead:'Crear una carpeta (con subcarpetas si hacen falta):',
+code:['New-Item -Path .\\proyectos\\2024\\enero -ItemType Directory -Force'].join('\n'),
+steps:['`-Force` crea toda la cadena de carpetas padre sin errores si ya existe.'],
+alt:'mkdir proyectos   # el alias mkdir existe y funciona igual',
+refs:['New-Item']}));
+
+/* --- sistema --- */
+I('disk_space',{disco:3,disk:3,espacio:3,space:3,libre:2,free:2,uso:1,gb:2,lleno:2,storage:2},
+['cuánto espacio libre hay en disco','disk space'],
+()=>({lead:'Espacio en los volúmenes:',
+code:['Get-Volume | Where-Object DriveLetter | Select-Object DriveLetter, FileSystemLabel,',
+'    @{n="TotalGB";e={[math]::Round($_.Size/1GB,1)}},',
+'    @{n="LibreGB";e={[math]::Round($_.SizeRemaining/1GB,1)}}'].join('\n'),
+steps:['`Get-Volume` da tamaños ya en bytes; dividimos entre `1GB` (constante numérica).'],
+alt:['Get-PSDrive -PSProvider FileSystem | Select-Object Name,',
+'    @{n="UsedGB";e={[math]::Round($_.Used/1GB,1)}},',
+'    @{n="FreeGB";e={[math]::Round($_.Free/1GB,1)}}'].join('\n'),
+refs:['Get-Volume','Get-PSDrive']}));
+
+I('system_info',{sistema:3,system:3,informacion:2,info:2,equipo:2,computer:2,pc:2,caracteristicas:2,specs:2,hardware:2,cpu:1,ram:2,maquina:1},
+['información del sistema','system info'],
+()=>({lead:'Ficha del equipo:',
+code:['Get-ComputerInfo | Select-Object CsName, WindowsProductName, WindowsVersion,',
+'    OsArchitecture, CsProcessors, CsTotalPhysicalMemory'].join('\n'),
+steps:['`Get-ComputerInfo` es lento (uno o dos segundos): carga muchísima información.',
+'Para algo rápido: `[System.Environment]::OSVersion.VersionString`.'],
+alt:'Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCores, NumberOfLogicalProcessors',
+refs:['Get-ComputerInfo','Get-CimInstance']}));
+
+I('uptime',{encendido:3,uptime:3,arrancado:2,prendido:2,lleva:2,days:1,horas:1,boot:3},
+['cuánto tiempo lleva encendido el equipo','uptime'],
+()=>({lead:'Tiempo desde el último arranque:',
+code:['$so = Get-CimInstance Win32_OperatingSystem',
+'$uptime = (Get-Date) - $so.LastBootUpTime',
+'"Encendido hace: {0}d {1}h {2}m" -f $uptime.Days, $uptime.Hours, $uptime.Minutes'].join('\n'),
+steps:['`LastBootUpTime` llega como fecha y restar fechas produce un objeto **TimeSpan** con Days/Hours/Minutes.',
+'El operador `-f` inserta los valores en los marcadores `{0} {1} {2}`.'],
+refs:['Get-CimInstance']}));
+
+I('list_services',{servicios:3,servicio:2,service:3,running:2,activos:2,list:2,parados:1,estado:1,listar:2},
+['listar servicios','list services'],
+()=>({lead:'Servicios del sistema:',
+code:['# En ejecución',
+'Get-Service | Where-Object Status -eq "Running" | Select-Object Name, DisplayName',
+'',
+'# Detenidos',
+'Get-Service | Where-Object Status -eq "Stopped"'].join('\n'),
+steps:['`Get-Service` devuelve objetos con `.Status`, `.Name` y `.DisplayName`.',
+'La sintaxis corta `Where-Object Status -eq "Running"` evita el script-block en comparaciones simples.'],
+alt:'Get-Service -DisplayName "*sql*"   # buscar por nombre descriptivo',
+refs:['Get-Service','Where-Object']}));
+
+I('restart_service',{reiniciar:3,restart:3,servicio:3,service:3,spooler:1,parar:1,arrancar:1,reset:1},
+['reiniciar un servicio','restart service'],
+e=>({lead:`Reiniciar un servicio${e.svc?` — detecté **${e.svc}**`:''}:`,
+code:['Restart-Service -Name '+(e.svc||'Spooler')+' -Force',
+'',
+'# Verificar el resultado',
+'Get-Service -Name '+(e.svc||'Spooler')+' | Select-Object Name, Status'].join('\n'),
+steps:['`-Name` acepta el nombre corto del servicio (no el DisplayName).',
+'`-Force` detiene también los servicios que dependan de él.'],
+alt:['# Iniciar / detener',
+'Start-Service -Name '+(e.svc||'Spooler'),
+'Stop-Service -Name '+(e.svc||'Spooler')+' -Force'].join('\n'),
+refs:['Restart-Service','Get-Service']}));
+
+I('exec_policy',{politica:3,policy:3,ejecucion:3,execution:3,script:3,scripts:2,bloqueado:2,cannot:1,correr:1,ejecutar:2,restricted:1},
+['política de ejecución de scripts','execution policy'],
+()=>({lead:'Para poder ejecutar tus propios scripts `.ps1` (error típico: "scripts are disabled"):',
+code:['Set-ExecutionPolicy -Scope CurrentUser RemoteSigned'].join('\n'),
+steps:['**RemoteSigned** = locals sí, descargados necesitan firma. Es el equilibrio recomendado.',
+'`-Scope CurrentUser` no requiere admin y solo te afecta a ti.',
+'Niveles: `Restricted` (nada), `RemoteSigned` (recomendado), `AllSigned`, `Unrestricted` (evítalo).',
+'Comprobar el valor actual: `Get-ExecutionPolicy -List`.'],
+note:'La política NO es una medida de seguridad real: existe para impedir ejecuciones accidentales, no para frenar a alguien con malicia.',
+refs:['Set-ExecutionPolicy','Get-ExecutionPolicy']}));
+
+I('install_module',{instalar:3,install:3,modulo:3,module:3,psgallery:2,nuget:1,descargar:1,importexcel:1},
+['instalar un módulo','install module psgallery'],
+e=>({lead:`Instalar un módulo desde PSGallery${e.mod?` — detecté **${e.mod}**`:''}:`,
+code:['Install-Module -Name '+(e.mod||'ImportExcel')+' -Scope CurrentUser','Import-Module '+(e.mod||'ImportExcel')].join('\n'),
+steps:['La primera vez pide confiar en PSGallery: responde Sí.',
+'`-Scope CurrentUser` instala en tu perfil, sin permisos de administrador.',
+'PSGallery es el repositorio oficial: más de 8.000 módulos de la comunidad.'],
+alt:['# Buscar antes de instalar',
+'Find-Module -Name "*excel*" | Select-Object Name, Version, Downloads'].join('\n'),
+refs:['Install-Module','Get-Module']}));
+
+I('modules_list',{modulos:3,modules:3,instalados:2,installed:2,list:2,cargados:1,disponibles:1,listar:2},
+['qué módulos tengo instalados','list modules'],
+()=>({lead:'Módulos disponibles e importados:',
+code:['Get-Module -ListAvailable | Select-Object Name, Version, Path | Sort-Object Name',
+'Get-Module                      # solo los cargados en esta sesión'].join('\n'),
+steps:['Instalado ≠ cargado: `Import-Module Nombre` lo trae a la sesión.',
+'A partir de PS3 los módulos se autocargan al usar un cmdlet suyo.'],
+refs:['Get-Module','Import-Module']}));
+
+/* --- red --- */
+I('net_info',{ip:3,direccion:2,mi:1,red:2,network:2,adaptador:2,ipv4:2,saber:1,configuracion:1,ipconfig:2},
+['cuál es mi IP','network info'],
+()=>({lead:'Tus direcciones IP:',
+code:['Get-NetIPAddress -AddressFamily IPv4 |',
+'    Where-Object InterfaceAlias -notlike "*Loopback*" |',
+'    Select-Object InterfaceAlias, IPAddress, PrefixOrigin'].join('\n'),
+steps:['`-AddressFamily IPv4` filtra el ruido IPv6.',
+'`PrefixOrigin` te dice si la IP es DHCP, manual o automática.'],
+alt:'ipconfig /all   # el clásico de siempre, salida en texto plano',
+refs:['Get-NetIPAddress']}));
+
+I('wifi_password',{wifi:3,clave:4,password:3,contrasena:3,red:2,ssid:2,ver:1,perfil:2,olvidado:1,key:2},
+['ver la clave del wifi guardada','wifi password'],
+e=>({lead:`Mostrar la clave de una red wifi guardada${e.ssid?` — detecté **${e.ssid}**`:''}:`,
+code:['netsh wlan show profile name="'+(e.ssid||'NombreDeTuRed')+'" key=clear'].join('\n'),
+steps:['`netsh` es una herramienta de Windows que PowerShell orquesta como a cualquier exe.',
+'La clave aparece en la sección **Configuración de seguridad → Contenido de la clave**.',
+'Para listar todas las redes guardadas: `netsh wlan show profile`.'],
+alt:['# Todas las claves de golpe (PowerShell puro)',
+'netsh wlan show profile | Select-String ":(.+)$" | ForEach-Object {',
+'    $n = $_.Matches[0].Groups[1].Value.Trim()',
+'    netsh wlan show profile name="$n" key=clear | Select-String "Contenido de la clave|Key Content"',
+'}'].join('\n'),
+note:'En Windows en español el campo se llama "Contenido de la clave"; en inglés, "Key Content".'}));
+
+I('ping',{ping:3,probar:2,conexion:3,conectividad:2,test:2,internet:1,alcanza:1,latencia:1,reach:1},
+['hacer ping a un equipo','test connection'],
+()=>({lead:'El ping moderno de PowerShell:',
+code:['Test-Connection 8.8.8.8 -Count 4',
+'',
+'# Para usar en scripts: devuelve $true o $false',
+'if (Test-Connection google.com -Quiet -Count 1) { "hay red" } else { "sin red" }'].join('\n'),
+steps:['`Test-Connection` devuelve objetos con Latency y RTT, no texto plano.',
+'`-Quiet` colapsa el resultado a un booleano: ideal para condiciones.'],
+alt:'Test-NetConnection google.com -Port 443   # prueba TCP (equivalente a telnet)',
+refs:['Test-Connection']}));
+
+I('ports_listen',{puertos:3,ports:3,abiertos:3,listen:2,listening:2,escuchando:2,conexiones:2,tcp:2,ocupado:1},
+['qué puertos están abiertos','listening ports'],
+()=>({lead:'Puertos TCP a la escucha, con el proceso dueño:',
+code:['Get-NetTCPConnection -State Listen |',
+'    Sort-Object LocalPort -Unique |',
+'    Select-Object LocalAddress, LocalPort,',
+'        @{n="Proceso";e={(Get-Process -Id $_.OwningProcess).ProcessName}}'].join('\n'),
+steps:['`-State Listen` filtra solo sockets abiertos esperando conexiones.',
+'`OwningProcess` es un PID; lo traducimos a nombre con una propiedad calculada.'],
+alt:'netstat -ano | findstr LISTENING   # el clásico en texto plano',
+refs:['Get-NetTCPConnection','Get-Process']}));
+
+I('download',{descargar:3,download:3,bajar:2,guardar:2,url:2,archivo:2,web:1,invoke:1,webrequest:2},
+['descargar un archivo','download file'],
+e=>({lead:`Descargar un archivo por URL${e.url?` — detecté **${e.url}**`:''}:`,
+code:['Invoke-WebRequest -Uri "'+(e.url||'https://ejemplo.com/archivo.zip')+'" -OutFile "archivo.zip"'].join('\n'),
+steps:['`-OutFile` guarda el binario; sin él, obtienes el objeto respuesta (status, headers, contenido).',
+'Con progreso visible (PS 7): añade `-Resume` para reanudar descargas cortadas.'],
+alt:'iwr https://ejemplo.com/api | Select-Object StatusCode, Headers   # inspeccionar respuesta',
+refs:['Invoke-WebRequest']}));
+
+/* --- administración Windows --- */
+I('create_user',{crear:3,usuario:3,user:3,nuevo:2,cuenta:2,local:2,add:1,password:1},
+['crear usuario local','create local user'],
+()=>({lead:'Crear un usuario local de Windows:',
+code:['$pass = Read-Host "Contraseña" -AsSecureString',
+'New-LocalUser -Name "juan" -Password $pass -FullName "Juan Pérez" -Description "cuenta de soporte"',
+'Add-LocalGroupMember -Group "Usuarios" -Member "juan"',
+'',
+'# Para hacerlo administrador:',
+'Add-LocalGroupMember -Group "Administradores" -Member "juan"'].join('\n'),
+steps:['`Read-Host -AsSecureString` enmascara la entrada: la contraseña nunca viaja como texto.',
+'`New-LocalUser` requiere una consola elevada (como administrador).'],
+note:'Para usuarios de dominio (Active Directory) el módulo es otro: `New-ADUser` del módulo ActiveDirectory.',
+refs:['New-LocalUser','Add-LocalGroupMember']}));
+
+I('schedule_task',{tarea:3,task:3,programada:3,scheduled:3,programar:2,automatica:2,diaria:1,cron:1,trigger:1},
+['crear tarea programada','schedule task'],
+()=>({lead:'Una tarea programada que ejecuta un script a diario:',
+code:['$accion  = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\\scripts\\respaldo.ps1"',
+'$disparo = New-ScheduledTaskTrigger -Daily -At 9am',
+'Register-ScheduledTask -TaskName "RespaldoDiario" -Action $accion -Trigger $disparo'].join('\n'),
+steps:['Primero defines **qué** (action) y **cuándo** (trigger), luego registras.',
+'Otros disparos: `-AtLogOn`, `-Weekly`, `-Once -At (Get-Date).AddHours(1)`.',
+'Ver tareas existentes: `Get-ScheduledTask | Where-Object State -eq "Ready"`'].join('\n'),
+alt:'Unregister-ScheduledTask -TaskName "RespaldoDiario" -Confirm:$false   # eliminar',
+refs:['Register-ScheduledTask','New-ScheduledTaskTrigger']}));
+
+I('shutdown_pc',{apagar:3,shutdown:3,reiniciar:2,reboot:2,equipo:2,pc:2,programado:1,minutos:1,restart:1},
+['apagar o reiniciar el equipo','shutdown restart'],
+e=>({lead:`Apagar o reiniciar${e.min?` — detecté **${e.min} minutos**`:''}:`,
+code:['shutdown /s /t '+(e.min||600)+'     # apagar en N segundos (600 = 10 min)',
+'shutdown /r /t 0                  # reiniciar ya',
+'shutdown /a                      # CANCELAR un apagado programado'].join('\n'),
+steps:['`/t` son segundos de gracia; `/a` aborta el apagado pendiente — el comando que todos agradecen conocer.',
+'Equivalente puro PowerShell: `Stop-Computer -Force` y `Restart-Computer -Force`.'],
+note:'Cierra y guarda antes: nada de esto pregunta amablemente.'}));
+
+I('env_vars',{variable:3,variables:3,entorno:3,environment:3,env:3,path:3,declarar:1,asignar:1,permanent:1},
+['variables de entorno','environment variables'],
+e=>({lead:`Variables de entorno${e.quoted?` — detecté **${e.quoted.toUpperCase()}**`:''}:`,
+code:['# Verlas todas',
+'Get-ChildItem Env: | Select-Object Name, Value',
+'',
+'# Solo una',
+'$env:USERNAME',
+'',
+'# Asignar (dura lo que la sesión)',
+'$env:MI_VAR = "hola"',
+'',
+'# Persistente (sobrevive al reinicio)',
+'[Environment]::SetEnvironmentVariable("MI_VAR", "hola", "User")'].join('\n'),
+steps:['`Env:` es una **unidad de proveedor**: las variables se recorren como archivos.',
+'`$env:PATH` es la variable más consultada: `($env:PATH -split ";")` para verla en líneas.'],
+refs:['Get-ChildItem']}));
+
+I('registry',{registro:3,registry:3,regedit:2,clave:2,valor:2,leer:1,editar:1,hklm:2,windows:1},
+['leer o editar el registro','windows registry'],
+()=>({lead:'El registro de Windows se maneja como si fueran carpetas:',
+code:['# Leer la versión de Windows',
+'Get-ItemProperty "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion" |',
+'    Select-Object ProductName, DisplayVersion, CurrentBuild',
+'',
+'# Escribir un valor',
+'Set-ItemProperty "HKLM:\\SOFTWARE\\MiApp" -Name "Instalado" -Value 1'].join('\n'),
+steps:['`HKLM:` y `HKCU:` son unidades de proveedor, igual que `C:\\`.',
+'`Get-Item` da la clave; `Get-ItemProperty` da los **valores** dentro de ella.',
+'Crear claves: `New-Item -Path HKCU:\\SOFTWARE\\MiApp -Force`.'],
+note:'Registro = configuración global. Un valor mal puesto afecta a todo el sistema: exporta antes de tocar (`reg export ...`).',
+refs:['Get-ItemProperty','Set-ItemProperty']}));
+
+I('zip',{comprimir:3,zip:4,comprimir_2:1,archivar:2,comprimido:2,comprimir_3:1,descomprimir:3,extraer:2,unzip:3,archive:2,respaldo:1},
+['comprimir o descomprimir zip','zip unzip'],
+()=>({lead:'Comprimir y extraer ZIP (nativo desde PS 5):',
+code:['# Crear un ZIP de una carpeta',
+'Compress-Archive -Path C:\\datos -DestinationPath .\\respaldo.zip',
+'',
+'# Extraer',
+'Expand-Archive -Path .\\respaldo.zip -DestinationPath C:\\restaurado -Force'].join('\n'),
+steps:['`-Force` sobrescribe el destino si existe.',
+'Para añadir a un ZIP existente: `-Update` en lugar de recrearlo.'],
+note:'Compress-Archive no comprime carpetas vacías ni rutas larguísimas (>260 chars); para casos serios, 7-Zip por línea de comandos.'}));
+
+I('firewall',{firewall:4,cortafuegos:3,regla:2,rule:2,bloquear:2,permitir:2,puerto:2,port:2,puerto_abrir:1},
+['regla de firewall','firewall rule'],
+()=>({lead:'Reglas del firewall de Windows:',
+code:['# Bloquear la salida de un programa',
+'New-NetFirewallRule -DisplayName "Bloquear App" -Direction Outbound `',
+'    -Program "C:\\ruta\\app.exe" -Action Block',
+'',
+'# Abrir un puerto de entrada',
+'New-NetFirewallRule -DisplayName "MiServicio" -Direction Inbound `',
+'    -LocalPort 8080 -Protocol TCP -Action Allow'].join('\n'),
+steps:['`-Direction` In/Out; `-Action` Allow/Block.',
+'Deshabilitar sin borrar: `Disable-NetFirewallRule -DisplayName "MiServicio"`.',
+'Auditar reglas: `Get-NetFirewallRule | Where-Object Enabled -eq True`'].join('\n'),
+note:'Requiere consola elevada. Un puerto abierto sin servicio detrás es una puerta con la cerradura engrasada — abre solo lo que uses.'}));
+
+I('startup_programs',{arranque:3,inicio:3,startup:4,arrancan:2,inician:2,autoarranque:2,boot:1,programas:2,quitar:1,deshabilitar:2},
+['programas que arrancan con Windows','startup programs'],
+()=>({lead:'Qué se ejecuta al iniciar Windows:',
+code:['Get-CimInstance Win32_StartupCommand |',
+'    Select-Object Name, Command, Location, User'].join('\n'),
+steps:['`Location` indica de dónde viene: registro `Run`, carpeta Inicio o carpeta AllUsers.',
+'La ruta del registro a vigilar: `HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run`.',
+'La carpeta de Inicio: `shell:startup` en el explorador.'],
+note:'Deshabilitar limpiamente es más fácil desde el Administrador de tareas → pestaña Inicio.'}));
+
+I('run_admin',{administrador:3,admin:3,elevado:3,elevacion:2,sudo:3,permisos:2,runas:2,elevar:2,privilegios:2},
+['ejecutar como administrador','run elevated'],
+()=>({lead:'Elevación de privilegios desde PowerShell:',
+code:['# Lanzar un programa como administrador',
+'Start-Process powershell -Verb RunAs',
+'',
+'# Elevar un script concreto',
+'Start-Process pwsh -Verb RunAs -Argument "-File C:\\scripts\\tarea.ps1"'].join('\n'),
+steps:['`-Verb RunAs` dispara el UAC y abre el proceso elevado.',
+'No puedes "elevar" la consola actual: siempre es un proceso nuevo.',
+'Detectar si tu sesión ya es admin: `[Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole("Administradores")` — versión corta abajo.'],
+alt:'([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)  # $true si eres admin',
+note:'Windows 11 trae sudo nativo (activarlo en Configuración → Sistema) o usa gsudo de PSGallery.'}));
+
+I('installed_programs',{instalados:3,installed:3,programas:3,software:3,aplicaciones:2,desinstalar:2,uninstall:2,paquetes:2,lista:2},
+['programas instalados','uninstall software'],
+()=>({lead:'Software instalado en el equipo:',
+code:['Get-ItemProperty HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* `',
+'    -ErrorAction SilentlyContinue |',
+'    Where-Object DisplayName |',
+'    Select-Object DisplayName, DisplayVersion, InstallDate |',
+'    Sort-Object DisplayName'].join('\n'),
+steps:['Esta es la misma fuente que usa "Aplicaciones y características".',
+'Los programas de 32 bits viven en `HKLM:\\Software\\WOW6432Node\\...`.',
+'Para desinstalar: `winget uninstall "Nombre"` es hoy lo más cómodo.'],
+alt:'winget list   # inventario moderno: winget, Store y registro juntos',
+refs:['Get-ItemProperty','Where-Object']}));
+
+I('history_cmd',{historial:3,history:4,comandos:2,anteriores:2,usados:2,repetir:2,reusar:1},
+['ver historial de comandos','command history'],
+()=>({lead:'Historial de la sesión actual:',
+code:['Get-History | Select-Object Id, CommandLine',
+'Invoke-History 5        # reejecuta el comando #5',
+'',
+'# Persistente, en el archivo de consola:',
+'Get-Content (Get-PSReadlineOption).HistorySavePath -Tail 30'].join('\n'),
+steps:['`Get-History` (alias `h`) solo recuerda la sesión en curso.',
+'PSReadLine guarda TODO el historial entre sesiones en un archivo de tu perfil.',
+'`Ctrl+R` busca hacia atrás en el historial, como en bash.'],
+refs:['Get-History','Get-Content']}));
+
+I('clipboard',{portapapeles:4,clipboard:4,copiar:2,pegar:2,pegar_2:1},
+['copiar al portapapeles','clipboard'],
+()=>({lead:'Portapapeles desde PowerShell:',
+code:['"texto importante" | Set-Clipboard',
+'Get-Clipboard                          # leer lo que hay',
+'Get-Process | Set-Clipboard            # ¡copia tablas formateadas!'].join('\n'),
+steps:['Cualquier salida puede ir al portapapeles con un pipe.',
+'`Get-Clipboard -Raw` devuelve todo como un solo string.'],
+refs:['Set-Clipboard']}));
+
+I('open_app',{abrir:3,open:2,lanzar:2,start:2,programa:2,aplicacion:2,app:2,ejecutar:1,notepad:1,calc:1},
+['abrir un programa','open application'],
+e=>({lead:`Abrir un programa${e.proc?` — detecté **${e.proc}**`:''}:`,
+code:['Start-Process '+(e.proc||'notepad')+'',
+'Start-Process "https://github.com"    # también abre URLs',
+'Start-Process .\\informe.pdf           # y archivos con su app asociada'].join('\n'),
+steps:['`Start-Process` reemplaza a `start` de CMD y acepta rutas, URLs y documentos.',
+'Esperar a que termine: `-Wait`. Oculto: `-WindowStyle Hidden`.'],
+refs:['Start-Process']}));
+
+I('logs_events',{eventos:3,logs:3,registro:2,event:2,visor:2,errores:2,sistema:1,auditoria:1,crash:1,winevent:2},
+['ver eventos del sistema','windows event logs'],
+()=>({lead:'Eventos de Windows (el Visor de Eventos por consola):',
+code:['# Últimos 20 eventos del registro System',
+'Get-WinEvent -LogName System -MaxEvents 20 |',
+'    Select-Object TimeCreated, Id, LevelDisplayName, Message',
+'',
+'# Solo errores de las últimas 24 h',
+'Get-WinEvent -FilterHashtable @{LogName="System"; Level=2; ',
+'    StartTime=(Get-Date).AddDays(-1)} | Format-List TimeCreated, Message'].join('\n'),
+steps:['`-FilterHashtable` es muchísimo más rápido que filtrar después con `Where-Object`.',
+'`Level`: 2=Error, 3=Advertencia, 4=Información.',
+'El log `Security` requiere permisos de administrador.'],
+refs:['Get-WinEvent']}));
+
+I('update_windows',{actualizar:3,update:3,windows:2,actualizaciones:3,patches:1,parches:2,wu:2},
+['buscar actualizaciones de Windows','windows update'],
+()=>({lead:'Windows Update desde PowerShell:',
+code:['winget upgrade          # qué apps y componentes hay por actualizar',
+'winget upgrade --all     # actualizar todo lo actualizable',
+'',
+'# Con el módulo de la comunidad (más control sobre WU):',
+'Install-Module PSWindowsUpdate -Scope CurrentUser',
+'Get-WindowsUpdate; Install-WindowsUpdate'].join('\n'),
+steps:['`PSWindowsUpdate` es el módulo clásico de la comunidad para WU clásico.',
+'El UsoClient (`UsoClient StartScan`) es la API interna no documentada: funciona, pero sin garantías.'],
+note:'`winget` ya viene en Windows 10/11: suele ser la vía más rápida.'}));
+
+/* --- lenguaje PS --- */
+I('pipeline',{pipeline:3,tuberia:2,pipe:3,canalizar:1,encadenar:2,objetos:2,objects:2,pasar:1},
+['qué es el pipeline','how pipeline works'],
+()=>({lead:'El **pipeline** (`|`) pasa objetos completos de un comando al siguiente — no texto:',
+code:['Get-Service |',
+'    Where-Object Status -eq "Running" |',
+'    Sort-Object DisplayName |',
+'    Select-Object -First 10 DisplayName, Name'].join('\n'),
+steps:['Cada cmdlet recibe objetos .NET **uno a uno** y emite resultados en cuanto los procesa (streaming).',
+'`$_` representa "el objeto que llega ahora mismo".',
+'A diferencia de bash, no parseas texto: filtras por propiedades reales (`$_.Status -eq "Running"`).',
+'Descubrir qué propiedades tiene un objeto: `Get-Member`.'],
+note:'Piensa en cadenas de fábrica: Get-Service produce, Where-Object filtra, Sort-Object ordena, Select-Object empaca.',
+refs:['Get-Member','Where-Object','Sort-Object']}));
+
+I('where_filter',{filtrar:3,filter:3,where:4,whereobject:3,condicion:2,seleccionar:1,filtro:2},
+['filtrar con Where-Object','where filter'],
+()=>({lead:'Filtrar objetos con `Where-Object`:',
+code:['# Sintaxis completa (script-block)',
+'Get-Process | Where-Object { $_.WorkingSet64 -gt 200MB }',
+'',
+'# Sintaxis simplificada (comparaciones simples)',
+'Get-Service | Where-Object Status -eq "Running"',
+'',
+'# Varios criterios con -and',
+'Get-ChildItem -File | Where-Object { $_.Length -gt 1MB -and $_.LastWriteTime -gt (Get-Date).AddDays(-7) }'].join('\n'),
+steps:['`$_` es el objeto actual; `.` accede a sus propiedades.',
+'Operadores de comparación: `-eq -ne -gt -lt -ge -le -like -match -in -contains`.',
+'`-like` usa comodines (`"*.log"`); `-match` usa regex.'],
+refs:['Where-Object']}));
+
+I('sort_group',{ordenar:3,sort:3,agrupar:3,group:3,contar:2,count:2,orden:1,por:1,organizar:1},
+['ordenar y agrupar resultados','sort group objects'],
+()=>({lead:'Ordenar y agrupar:',
+code:['Get-Process | Sort-Object -Property @{e="WorkingSet64";Descending=$true} | Select-Object -First 5 Name',
+'',
+'# Agrupar por extensión de archivo y contar',
+'Get-ChildItem -File -Recurse |',
+'    Group-Object Extension |',
+'    Sort-Object Count -Descending |',
+'    Select-Object Count, Name, @{n="MB";e={[math]::Round(($_.Group | Measure-Object Length -Sum).Sum/1MB,1)}}'].join('\n'),
+steps:['`Sort-Object A,B` ordena por varias claves; `-Descending` invierte.',
+'`Group-Object` devuelve grupos con `.Count` y `.Group` (los miembros).',
+'`Measure-Object -Sum` suma una propiedad de una colección.'],
+refs:['Sort-Object','Group-Object','Measure-Object']}));
+
+I('select_calc',{seleccionar:2,select:3,columnas:2,propiedades:2,calculada:2,primeros:2,unicos:2,unique:1,tabla:1},
+['elegir columnas y propiedades calculadas','select-object'],
+()=>({lead:'Elegir y transformar columnas con `Select-Object`:',
+code:['Get-Process | Select-Object Name, Id,',
+'    @{n="RAM_MB"; e={[math]::Round($_.WorkingSet64/1MB,1)}},',
+'    @{n="Desde";   e={$_.StartTime}}',
+'    -First 10 -Unique'].join('\n'),
+steps:['`@{n="…"; e={…}}` crea una **propiedad calculada**: nombre nuevo + expresión.',
+'`-First / -Skip / -Last` paginan; `-Unique` deduplica.',
+'`-ExpandProperty` aplana: devuelve los valores sueltos, no objetos.'],
+refs:['Select-Object']}));
+
+I('objects_gm',{objeto:3,objetos:2,member:3,miembro:2,propiedades:3,getmember:4,inspect:2,metodo:2,metodos:2,inspeccionar:2},
+['qué propiedades tiene un objeto','get-member'],
+()=>({lead:'Inspeccionar objetos con `Get-Member`:',
+code:['Get-Process | Get-Member -MemberType Property',
+'',
+'# Ver métodos disponibles también',
+'"hola" | Get-Member'].join('\n'),
+steps:['`Get-Member` lista propiedades, métodos y eventos de lo que llegue por el pipe.',
+'Es la herramienta #1 para descubrir qué puedes filtrar o mostrar.',
+'El string `"hola"` tiene métodos .NET: `.ToUpper()`, `.Substring()`, `.Split()`…'],
+refs:['Get-Member']}));
+
+I('variables',{variable:4,variables:4,declarar:2,asignar:2,tipos:2,type:2,scope:1,almacenar:2,guardar:1},
+['cómo funcionan las variables','variables in powershell'],
+()=>({lead:'Variables en PowerShell:',
+code:['$nombre = "Ana"                    # tipo inferido (string)',
+'[int]$edad = 30                    # tipado explícito',
+'$lista  = @(1, 2, 3)              # array',
+'$mapa   = @{ clave = "valor"; n = 5 }   # hashtable',
+'',
+'"Hola, $nombre. En 5 años tendrás $($edad + 5)"'].join('\n'),
+steps:['Todo variable lleva `$` delante; el nombre puede tener espacios: `${mi variable}`.',
+'`$(…)` interpola **expresiones** dentro de strings con comillas dobles.',
+'Scope: `$global:x` (todo), `$script:x` (el script), sin prefijo = local.',
+'Comillas simples NO interpolan; dobles sí.'],
+refs:['Get-Variable']}));
+
+I('hashtable',{hashtable:4,tabla:3,hash:3,diccionario:2,mapa:2,clave:2,valor:1,ordered:2},
+['qué es una hashtable','hashtable'],
+()=>({lead:'Hashtables: pares clave-valor (el diccionario de PS):',
+code:['$persona = @{',
+'    Nombre = "Ana"',
+'    Edad   = 34',
+'    Correo = "ana@ejemplo.com"',
+'}',
+'$persona.Nombre          # acceso con punto',
+'$persona["Edad"]         # acceso con corchete',
+'',
+'# Ordenada (mantiene el orden de inserción)',
+'$ord = [ordered]@{ primero = 1; segundo = 2 }'].join('\n'),
+steps:['Es la base de las propiedades calculadas: `@{n="…"; e={…}}`.',
+'Iterar: `$persona.GetEnumerator() | ForEach-Object { "$($_.Key) = $($_.Value)" }`.',
+'`[ordered]` preserva el orden; el hashtable normal no lo garantiza.'],
+refs:['ForEach-Object']}));
+
+I('arrays',{array:4,arreglo:3,listas:2,lista:2,colecciones:2,vector:1,indice:1},
+['arrays y listas','arrays in powershell'],
+()=>({lead:'Colecciones en PowerShell:',
+code:['$n = @(10, 20, 30, 40)',
+'$n[0]           # primer elemento',
+'$n[-1]          # último (índices negativos!)',
+'$n[1..2]        # rango: 20, 30',
+'$n.Count        # longitud',
+'',
+'$n += 50        # ¡ojo! copia el array entero',
+'',
+'# Para crecer eficientemente, lista real:',
+'$lista = [System.Collections.Generic.List[int]]::new()',
+'$lista.Add(10)'].join('\n'),
+steps:['`@()` crea arrays; `@(…)` también garantiza array aunque llegue un solo valor.',
+'El pipeline devuelve arrays: `$procs = Get-Process` y `$procs[0]` funciona.',
+'`+=` en un array rehace el array: en bucles grandes usa `List[T]` o acumula en el pipeline.'],
+refs:['ForEach-Object']}));
+
+I('loop_foreach',{bucle:4,loop:4,foreach:4,repetir:3,iterar:3,ciclo:3,while:2,for:3,bucles:2},
+['bucles foreach y while','loops in powershell'],
+()=>({lead:'Las tres formas de iterar:',
+code:['# foreach de lenguaje (colección que ya existe)',
+'foreach ($svc in Get-Service) {',
+'    "{0} → {1}" -f $svc.Name, $svc.Status',
+'}',
+'',
+'# ForEach-Object (en el pipeline, streaming)',
+'1..5 | ForEach-Object { "vuelta número $_" }',
+'',
+'# for y while clásicos',
+'for ($i = 0; $i -lt 5; $i++) { $i }',
+'$x = 0; while ($x -lt 3) { $x; $x++ }'].join('\n'),
+steps:['`foreach` (palabra) es más rápido con colecciones en memoria; `ForEach-Object` (alias `%`) procesa en streaming y usa `$_`.',
+'`1..5` genera la secuencia 1,2,3,4,5 — comodísimo para pruebas.',
+'`break` y `continue` funcionan como en C.'],
+refs:['ForEach-Object']}));
+
+I('if_else',{condicional:4,if:4,condicion:3,else:3,elseif:2,comparar:2,ifelse:2,si:2},
+['condicionales if else','if else in powershell'],
+()=>({lead:'Condicionales:',
+code:['$n = 15',
+'if ($n -gt 20) {',
+'    "grande"',
+'} elseif ($n -gt 10) {',
+'    "mediano"      # ← esto se imprime',
+'} else {',
+'    "pequeño"',
+'}',
+'',
+'# Ternario (solo PowerShell 7+)',
+'$etiqueta = $n -gt 10 ? "alto" : "bajo"'].join('\n'),
+steps:['Operadores: `-eq -ne -gt -lt -ge -le` (¡nunca `=` `>` `<`!).',
+'Lógicos: `-and -or -not` (o `!`).',
+'La condición no va entre paréntesis obligatorios… en realidad sí: siempre `if (cond)`.'],
+refs:['Where-Object']}));
+
+I('switch',{switch:4,casos:2,según:1,multiple:2,opciones:2,switches:1},
+['switch para varios casos','switch statement'],
+()=>({lead:'`switch` para comparar contra muchos valores:',
+code:['$extension = ".log"',
+'switch ($extension) {',
+'    ".log"  { "archivo de registro" }',
+'    ".csv"  { "datos tabulares" }',
+'    ".json" { "datos estructurados" }',
+'    default { "extensión desconocida" }',
+'}'].join('\n'),
+steps:['Acepta wildcards: `".txt*" { … }`, regex con `-Regex` y arrays (evalúa cada elemento).',
+'`-Wildcard` y `-CaseSensitive` modifican el comportamiento.',
+'A diferencia de C, **no hace falta `break`**: cada caso coincide y termina (salvo `-Continue`).'],
+refs:['if']}));
+
+I('functions',{funcion:4,function:4,funciones:3,reutilizar:2,definir:2,crear:2,propias:2,modular:1},
+['crear funciones propias','functions in powershell'],
+()=>({lead:'Definir tus propias funciones:',
+code:['function Get-TamanoLegible {',
+'    param([long]$Bytes)',
+'    if ($Bytes -ge 1GB) { "{0:N2} GB" -f ($Bytes/1GB) }',
+'    elseif ($Bytes -ge 1MB) { "{0:N2} MB" -f ($Bytes/1MB) }',
+'    else { "{0:N2} KB" -f ($Bytes/1KB) }',
+'}',
+'',
+'Get-Process | Select-Object -First 5 Name, @{n="Tam";e={Get-TamanoLegible $_.WorkingSet64}}'].join('\n'),
+steps:['`param()` declara parámetros; todo lo que la función "suelta" es su valor de retorno (sin `return` explícito necesario).',
+'`1GB`, `1MB`, `1KB` son constantes numéricas nativas.',
+'Guárdalas en `$PROFILE` para tenerlas en cada sesión.'],
+refs:['param','$PROFILE'.replace(' ','')]}));
+
+I('params_block',{param:3,validacion:3,validate:2,parametros:3,obligatorio:2,mandatory:2,args:2},
+['parámetros con validación','param block validation'],
+()=>({lead:'Parámetros con validación integrada:',
+code:['function Set-Nivel {',
+'    param(',
+'        [Parameter(Mandatory)]',
+'        [ValidateRange(1, 10)]',
+'        [int]$Nivel,',
+'        ',
+'        [ValidateSet("dev", "qa", "prod")]',
+'        [string]$Entorno = "dev"',
+'    )',
+'    "nivel $Nivel en $Entorno"',
+'}',
+'Set-Nivel -Nivel 5 -Entorno prod'].join('\n'),
+steps:['`[Parameter(Mandatory)]` obliga a pedirlo si falta.',
+'`[ValidateSet]` da autocompletado gratis y rechaza valores inválidos.',
+'`[ValidateRange]`, `[ValidateNotNull()]`, `[ValidateScript({…})]` cubren el resto.'],
+note:'Validar en la puerta de entrada evita media página de ifs defensivos.'}));
+
+I('try_catch',{try:4,catch:4,error:3,excepcion:3,manejar:2,manejo:2,finally:2,fallo:2,excepciones:2},
+['manejo de errores try catch','error handling'],
+()=>({lead:'Manejo de errores con try/catch:',
+code:['try {',
+'    Get-Content "C:\\no\\existe.txt" -ErrorAction Stop',
+'}',
+'catch {',
+'    Write-Warning "fallo: $($_.Exception.Message)"',
+'}',
+'finally {',
+'    "esto corre siempre, haya error o no"',
+'}'].join('\n'),
+steps:['En PowerShell los errores son **no terminantes** por defecto: hay que añadir `-ErrorAction Stop` para que `catch` se dispare.',
+'`$_` dentro de `catch` es el registro de error con `.Exception.Message`.',
+'`$Error[0]` guarda el último error de la sesión — oro para depurar.'],
+refs:['Write-Warning']}));
+
+I('common_error',{reconoce:3,recognize:3,cmdlet:2,error:3,rojo:2,not:2,tipo:2,existe:2,encuentra:2,name:2},
+['no se reconoce como cmdlet','command not found error'],
+()=>({lead:'El error **"no se reconoce como nombre de cmdlet"** tiene 5 causas típicas:',
+steps:['**Typo** — PowerShell no adivina: verifica con `Get-Command Nombre`.',
+'**Módulo no cargado** — algunos cmdlets viven en módulos: `Import-Module Nombre` primero.',
+'**Versión** — el cmdlet existe solo en PS7 y estás en 5.1 (o al revés).',
+'**ExecutionPolicy** bloqueando la carga de módulos de scripts.',
+'**PATH** — para ejecutables externos: revisa `($env:PATH -split ";")`.'],
+note:'Diagnóstico en una línea: `Get-Command Nombre* -ErrorAction SilentlyContinue | Select-Object Name, Source`',
+refs:['Get-Command']}));
+
+I('alias',{alias:4,atajo:3,atajos:3,shortcut:2,abreviatura:2,gci:2,ls:2,alias:2},
+['qué es un alias','aliases in powershell'],
+()=>({lead:'Alias = atajos de teclado para cmdlets:',
+code:['Get-Alias -Definition Get-ChildItem   # qué alias tiene un cmdlet',
+'Get-Alias ls                          # qué cmdlet esconde un alias',
+'',
+'# Crear los tuyos',
+'New-Alias g git',
+'New-Alias -Name ".." -Value Set-Location'].join('\n'),
+steps:['Los clásicos: `ls/dir → Get-ChildItem`, `cat → Get-Content`, `% → ForEach-Object`, `? → Where-Object`, `kill → Stop-Process`.',
+'Los alias hacen la consola ágil pero **los scripts deben usar el nombre completo** — legibilidad y portabilidad.',
+'Guárdalos en `$PROFILE` para que existan siempre.'],
+refs:['Get-Alias','New-Alias']}));
+
+I('profile',{profile:4,perfil:3,perfil_ps:2,inicio:2,configuracion:2,personalizar:2,siempre:2,arranque:1,miprofile:2},
+['archivo de perfil de powershell','$PROFILE'],
+()=>({lead:'Tu perfil: el script que corre en cada sesión nueva:',
+code:['$PROFILE                 # ruta del archivo',
+'notepad $PROFILE         # editarlo',
+'',
+'# Crearlo si no existe, y añadir un alias',
+'if (!(Test-Path $PROFILE)) {',
+'    New-Item -ItemType File -Path $PROFILE -Force',
+'}',
+'Add-Content $PROFILE \'New-Alias g git\''].join('\n'),
+steps:['Ahí viven tus alias, funciones y prompts personalizados.',
+'PS 5.1 y PS 7 tienen **perfiles distintos** (`Documents\\WindowsPowerShell` vs `Documents\\PowerShell`).',
+'Si el perfil no carga: revisa la política de ejecución (`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`).'],
+refs:['New-Item','Set-ExecutionPolicy']}));
+
+I('remote',{remoto:3,remote:3,servidor:3,otro:2,equipo:2,ssh:2,winrm:2,invokecommand:3,distinto:1},
+['ejecutar comandos en otro equipo','remote powershell'],
+()=>({lead:'Ejecutar en un equipo remoto (WinRM):',
+code:['Invoke-Command -ComputerName SRV01 -Credential (Get-Credential) -ScriptBlock {',
+'    Get-Service | Where-Object Status -eq "Running"',
+'}'].join('\n'),
+steps:['Requisito: WinRM habilitado en el destino (`Enable-PSRemoting -Force` ejecutado allí como admin).',
+'`Get-Credential` pide usuario/contraseña de forma segura.',
+'En PS7, la vía moderna es **SSH**: `New-PSSession -HostName srv01 -UserName admin` (multiplataforma).'],
+note:'También existe sesiones persistentes: `$s = New-PSSession SRV01` y luego `Invoke-Command -Session $s {…}` reutiliza la conexión.',
+refs:['Invoke-Command','Get-Credential']}));
+
+I('csv',{csv:4,excel:2,exportar:3,tabla:2,hoja:2,importar:2,columnas:1,datos:2},
+['exportar a CSV','csv export import'],
+()=>({lead:'CSV: el puente entre PowerShell y Excel:',
+code:['# Exportar',
+'Get-Process | Select-Object Name, Id, CPU |',
+'    Export-Csv .\\procesos.csv -NoTypeInformation -Encoding UTF8',
+'',
+'# Importar (cada fila = un objeto)',
+'Import-Csv .\\procesos.csv | Where-Object CPU -gt 100 | Select-Object Name, CPU'].join('\n'),
+steps:['`Select-Object` antes de exportar define las columnas del CSV.',
+'`-NoTypeInformation` evita la cabecera `#TYPE` (en PS7 ya es el default).',
+'`-Encoding UTF8` salva los acentos si lo abrirás en Excel.'],
+alt:'Import-Csv .\\usuarios.csv | ForEach-Object { New-LocalUser -Name $_.user ... }   # automatización masiva',
+refs:['Export-Csv','Import-Csv']}));
+
+I('json',{json:4,configuracion:2,config:2,parsear:2,convertir:2,leer:2,api:2,serializar:1},
+['leer y escribir JSON','json in powershell'],
+()=>({lead:'JSON nativo:',
+code:['# Leer configuración',
+'$cfg = Get-Content .\\config.json -Raw | ConvertFrom-Json',
+'$cfg.servidor.puerto        # navegar con punto',
+'',
+'# Escribir',
+'[PSCustomObject]@{',
+'    nombre = "ps-lm"',
+'    activo = $true',
+'} | ConvertTo-Json -Depth 5 | Set-Content .\\config.json'].join('\n'),
+steps:['`ConvertFrom-Json` convierte cada clave en propiedad navegable.',
+'`-Depth` (default 2!) es la trampa clásica: JSON anidado profundo se corta silenciosamente.',
+'`Invoke-RestMethod` parsea respuestas JSON de APIs automáticamente.'],
+refs:['ConvertFrom-Json','ConvertTo-Json']}));
+
+I('string_ops',{texto:3,string:4,strings:3,reemplazar:2,replace:2,dividir:2,split:2,mayusculas:1,recortar:1,formato:2,interpolar:2,concatenar:2},
+['manipular strings','string operations'],
+()=>({lead:'Manipulación de texto:',
+code:['$t = "  PowerShell es potente  "',
+'$t.Trim()                     # "PowerShell es potente"',
+'$t.Trim().ToUpper()           # MAYÚSCULAS',
+'$t.Split(" ")                 # array por espacios',
+'$t -replace "potente","sencillo"   # regex, crea nuevo string',
+'$t.Contains("es")             # $true',
+'',
+'# Formato e interpolación',
+'"{0} tiene {1} archivos" -f "C:\\temp", 42',
+'"la ruta es $($env:TEMP)"     # $(...) dentro de comillas dobles'].join('\n'),
+steps:['Los strings de .NET son **inmutables**: `-replace` devuelve uno nuevo, no modifica.',
+'`-replace`, `-match`, `-split` usan regex; `-like` usa comodines simples.',
+'Métodos útiles: `.StartsWith()`, `.EndsWith()`, `.Substring(2,5)`, `.PadLeft(8,"0")`.'],
+refs:['Select-String']}));
+
+I('regex',{regex:4,regex_2:3,patron:3,regular:3,expresion:2,match:3,coincidencia:2,extraer:1,groups:1},
+['regex y patrones','regular expressions'],
+()=>({lead:'Regex en PowerShell:',
+code:['# Buscar en archivos (el grep de PS)',
+'Select-String -Path .\\*.log -Pattern "ERROR\\d+"',
+'',
+'# Extraer grupos de captura',
+'if ("pedido 4512 enviado" -match "pedido (\\d+)") {',
+'    "número encontrado: $($Matches[1])"   # 4512',
+'}',
+'',
+'# Reemplazar con capturas',
+'"2024-05-01" -replace "(\\d+)-(\\d+)-(\\d+)","$3/$2/$1"   # 01/05/2024'].join('\n'),
+steps:['`-match` llena automáticamente la variable `$Matches` con los grupos.',
+'En `-replace`, `$1 $2…` referencian capturas.',
+'El operador `-match` sobre una lista filtra los elementos que coinciden.'],
+note:'Regex de .NET (-compatible con PCRE en lo esencial). Testea en regex101.com activando el sabor .NET.',
+refs:['Select-String']}));
+
+I('random_password',{contrasena:3,password:3,generar:3,random:4,aleatoria:3,segura:3,seguridad:2,generador:2},
+['generar contraseña aleatoria','random password'],
+()=>({lead:'Contraseña aleatoria fuerte, una línea:',
+code:['-join ((33..90) + (97..122) | Get-Random -Count 28 | ForEach-Object {[char]$_})'].join('\n'),
+steps:['`(33..90)+(97..122)` son rangos de códigos ASCII (símbolos, números, mayúsculas y minúsculas).',
+'`Get-Random -Count 28` elige 28 sin repetir.',
+'`[char]$_` convierte cada código en su letra; `-join` pega todo sin separador.'],
+alt:['# Cumpliendo política típica (mayús + mínus + dígito + símbolo)',
+'$partes = @(',
+'  (Get-Random -InputObject ([char[]]"ABCDEFGHJKLMNPQRSTUVWXYZ") -Count 3) -join ""',
+'  (Get-Random -InputObject ([char[]]"abcdefghijkmnopqrstuvwxyz") -Count 3) -join ""',
+'  (Get-Random -InputObject ([char[]]"!@#$%&*_-") -Count 2) -join ""',
+'  (Get-Random -Maximum 10)',
+'  (Get-Random -InputObject ([char[]]"abcdefghijkmnopqrstuvwxyz23456789") -Count 18) -join ""',
+')',
+'-join (Get-Random -InputObject ($partes -join "" ).ToCharArray())'].join('\n'),
+refs:['Get-Random']}));
+
+I('date_time',{fecha:4,date:4,hora:3,time:3,formato:2,format:2,actual:2,timestamp:2,calcular:1,dias:1},
+['fechas y horas','get-date format'],
+()=>({lead:'Fechas y horas:',
+code:['Get-Date                                   # ahora',
+'Get-Date -Format "yyyy-MM-dd HH:mm"        # 2024-05-01 14:30',
+'Get-Date -Format "yyyyMMdd_HHmmss"         # para nombres de archivo',
+'',
+'# Aritmética con TimeSpan',
+'$fin = Get-Date "2024-12-31"',
+'"quedan {0} días" -f ($fin - (Get-Date)).Days',
+'',
+'# Parsear texto a fecha',
+'[datetime]"2024-05-01 08:00"'].join('\n'),
+steps:['Restar dos fechas produce un **TimeSpan** (`.Days .Hours .TotalMinutes`…).',
+'`-Format` usa formatos de .NET; `-UFormat` los de UNIX.',
+'Para timestamps de archivo: `Get-Date -Format FileDateTime` (seguro para nombres).'],
+refs:['Get-Date']}));
+
+I('measure_time',{medir:3,cuanto:2,tarda:3,duracion:3,tiempo:3,measure:3,benchmark:2,rendimiento:2,performance:2,ms:1},
+['cuánto tarda un comando','measure execution time'],
+()=>({lead:'Cronometrar código:',
+code:['Measure-Command { Get-ChildItem C:\\ -Recurse -ErrorAction SilentlyContinue }'].join('\n'),
+steps:['Devuelve un **TimeSpan** con `TotalSeconds`, `TotalMilliseconds`…',
+'Para comparar dos enfoques: mide ambos y resta.',
+'PS7 tiene `Benchmark-Script` en el módulo Pester… o simplemente mide varias veces y promedia.'],
+alt:'(Measure-Command { tu-codigo }).TotalMilliseconds',
+refs:['Measure-Command']}));
+
+I('write_host_vs_output',{writehost:3,write:2,host:3,output:3,diferencia:3,consola:2,cual:1,usar:2,mensaje:2},
+['diferencia Write-Host y Write-Output','write-host vs write-output'],
+()=>({lead:'`Write-Output` emite objetos al pipeline; `Write-Host` pinta píxeles en la consola:',
+code:['"dato" | ForEach-Object { $_.ToUpper() }   # funciona: "DATO"',
+'',
+'# Write-Host NO entra en el pipeline:',
+'Write-Host "aviso" | ForEach-Object { $_.ToUpper() }   # nada: "aviso" ya se gastó en pantalla',
+'',
+'# Su caso legítimo: mensajes con color, dirigidos a humanos',
+'Write-Host "¡listo!" -ForegroundColor Green'].join('\n'),
+steps:['Regla: **datos → pipeline** (sin Write-Output, déjalos salir), **decoración → Write-Host**.',
+'`Write-Verbose`/`Write-Warning`/`Write-Error` son los canales intermedios correctos para mensajes de script.'],
+refs:['Write-Host']}));
+
+I('read_input',{pedir:3,input:3,entrada:3,readhost:3,interactuar:2,preguntar:2,usuario:2,respuesta:2,teclado:2},
+['pedir datos al usuario','read-host input'],
+()=>({lead:'Pedir entrada al usuario:',
+code:['$nombre = Read-Host "¿Tu nombre?"',
+'',
+'# Contraseña enmascarada',
+'$pass = Read-Host "Contraseña" -AsSecureString',
+'',
+'# Validación simple en bucle',
+'do { $resp = Read-Host "¿Continuar? (s/n)" } while ($resp -notin "s","n")'].join('\n'),
+steps:['`-AsSecureString` muestra asteriscos y guarda un SecureString (nunca texto plano).',
+'Para parámetros de script es mejor `param()` con `[Parameter(Mandatory)]` que Read-Host.'],
+refs:['Read-Host']}));
+
+I('comment_help',{documentar:3,ayuda:3,help:3,comentarios:3,synopsis:3,help_comentado:2,documentacion:3},
+['documentar funciones','comment based help'],
+()=>({lead:'Ayuda integrada para tus funciones (la que lee `Get-Help`):',
+code:['function Get-Saludo {',
+'    <#',
+'    .SYNOPSIS',
+'    Devuelve un saludo personalizado.',
+'    .PARAMETER Nombre',
+'    A quién saludar.',
+'    .EXAMPLE',
+'    Get-Saludo -Nombre "Ana"',
+'    #>',
+'    param([string]$Nombre = "mundo")',
+'    "Hola, $Nombre"',
+'}',
+'',
+'Get-Help Get-Saludo -Examples'].join('\n'),
+steps:['El bloque `<# … #>` va justo antes/dentro de la función.',
+'Secciones: `.SYNOPSIS .DESCRIPTION .PARAMETER .EXAMPLE .NOTES .LINK`.',
+'Documentar no es burocracia: es tu yo del futuro leyendo `Get-Help` a las 3 a.m.'],
+refs:['Get-Help']}));
+
+I('banner_ascii',{banner:3,ascii:4,arte:2,logo:3,colores:2,bonito:2,divertido:1,animado:1,efecto:2},
+['banner ascii con colores','ascii art banner'],
+()=>({lead:'Banner ASCII con colores de consola, letra a letra:',
+code:['$texto = "P S - L M"',
+'foreach ($c in $texto.ToCharArray()) {',
+'    $color = Get-Random -InputObject "Cyan","Yellow","Magenta","Green","Blue"',
+'    Write-Host $c -NoNewline -ForegroundColor $color',
+'    Start-Sleep -Milliseconds 90',
+'}',
+'Write-Host ""'].join('\n'),
+steps:['`Write-Host -NoNewline` pega los caracteres en la misma línea.',
+'`-ForegroundColor` acepta los 16 colores de consola.',
+'Variante bloque: `-BackgroundColor DarkBlue` para relleno.'],
+note:'Un script que arranca con su banner pide a gritos un `-Quiet` param. Consúltalo con el maintainers del futuro.'}));
+
+I('test_path',{existe:3,comprobar:3,verificar:3,test:3,path:3,ruta:2,archivo:2,carpeta:2,check:2},
+['comprobar si existe un archivo','test-path'],
+()=>({lead:'¿Existe la ruta?',
+code:['Test-Path .\\config.json            # $true / $false',
+'Test-Path HKLM:\\SOFTWARE\\MiApp     # funciona en el registro!',
+'',
+'if (Test-Path .\\.env) { ".env encontrado" } else { "crea tu .env" }'].join('\n'),
+steps:['`-PathType Leaf` solo archivos, `-PathType Container` solo carpetas.',
+'Es la guarda estándar antes de leer o borrar cualquier cosa.'],
+refs:['Test-Path']}));
+
+I('whoami',{quien:3,whoami:4,usuario:4,logueado:3,sesion:2,conectado:2,mi:1,estoy:2,user:2},
+['qué usuario estoy usando','whoami'],
+()=>({lead:'Quién eres en este equipo:',
+code:['whoami                              # DOMINIO\\usuario',
+'whoami /groups                      # tus grupos de seguridad',
+'$env:USERNAME                       # solo el nombre',
+'',
+'# Usuarios con sesión abierta en el equipo (terminal server)',
+'quser 2>$null; Get-CimInstance Win32_ComputerSystem | Select-Object UserName'].join('\n'),
+steps:['`whoami /groups` revela si tu token es el de administrador elevado o filtrado.',
+'`$env:USERDOMAIN` distingue equipo local de dominio.'],
+refs:['Get-LocalUser']}));
+
+/* ---------- scoring y despacho ---------- */
+function bestIntent(raw){
+  const toks = tokenize(raw);
+  const set = new Set(toks);
+  let best=null, bestScore=0;
+  for(const it of INTENTS){
+    let hits=0, total=0;
+    for(const [w,wt] of Object.entries(it.kw)){
+      total += wt;
+      if(set.has(w)) hits += wt;
+    }
+    const kwScore = total ? Math.min(1, hits/(total*0.45)) : 0;
+    let exScore=0;
+    for(const ex of it.ex){ exScore=Math.max(exScore, cosine(toks, tokenize(ex))); }
+    const sc = kwScore*0.62 + exScore*0.38;
+    if(sc>bestScore){ bestScore=sc; best=it; }
+  }
+  return {intent:best, score:bestScore};
+}
+function looksLikeCommand(raw){
+  return /\b(Get|Set|New|Remove|Stop|Start|Restart|Copy|Move|Rename|Invoke|Export|Import|Convert|Select|Where|Sort|ForEach|Measure|Test|Write|Read|Out|Add|Clear|Enable|Disable|Install|Compress|Expand|Register)-[A-Za-z]{2,}\b/.test(raw);
+}
+function explainCommand(raw){
+  const found = [...raw.matchAll(/\b([A-Za-z]+-[A-Za-z]{2,})\b/g)].map(m=>m[1]);
+  const uniq = [...new Set(found.map(f=>f[0].toUpperCase()+f.slice(1)))];
+  const params = [...new Set([...raw.matchAll(/(?<![\w-])(-{1,2})([A-Za-z]\w{2,})/g)].map(m=>m[2]))];
+  const lead = uniq.length
+    ? `Desglose del comando que pegaste${uniq.length>1?` (${uniq.length} cmdlets)`:''}:`
+    : 'No veo cmdlets Verbo-Sustantivo en lo que pegaste, pero te cuento la estructura:';
+  const steps=[];
+  uniq.slice(0,5).forEach(c=>{
+    const entry = CMDLETS[c] || CMDLETS[Object.keys(CMDLETS).find(k=>k.toLowerCase()===c.toLowerCase())];
+    steps.push('**'+c+'** — '+(entry?entry.d:'no lo tengo documentado en mi vocabulario; en tu equipo: `Get-Help '+c+'`'));
+  });
+  if(!uniq.length) steps.push('Un comando PowerShell típico: `Cmdlet -Parámetro valor | Otro-Cmdlet` — verbos aprobados + sustantivo singular.');
+  const pipes=(raw.match(/\|/g)||[]).length;
+  if(pipes) steps.push(`El **|** aparece ${pipes} vez/veces: cada tramo recibe los objetos que produce el anterior.`);
+  if(/\$_/.test(raw)) steps.push('`$_` es "el objeto actual" dentro del pipeline; `$_.` accede a sus propiedades.');
+  if(/\$env:/.test(raw)) steps.push('`$env:NOMBRE` lee una variable de entorno del proceso.');
+  params.slice(0,7).forEach(p=>{
+    const known = PARAMS[p] || PARAMS[p.charAt(0).toUpperCase()+p.slice(1)];
+    if(known) steps.push('`-'+p+'` — '+known);
+  });
+  const aliases = [...new Set(norm(raw).split(/\s+/).filter(w=>ALIAS[w]&&!uniq.length).slice(0,3))];
+  aliases.forEach(a=>steps.push('`'+a+'` es alias de **'+ALIAS[a]+'**.'));
+  return {
+    lead,
+    code:raw.trim(),
+    steps:steps.length?steps:['Estructura reconocible. Pega un comando con cmdlets Verbo-Sustantivo para el desglose completo.'],
+    note:'Cualquier comando de esta lista: selecciónalo en tu terminal y pégalo aquí — hago lo mismo con todos.',
+    refs:uniq.filter(c=>CMDLETS[c]).slice(0,4)
+  };
+}
+function cmdletDirect(raw){
+  for(const name of Object.keys(CMDLETS)){
+    if(new RegExp('(^|[^A-Za-z-])'+name.replace(/[-]/g,'\\-')+'([^A-Za-z-]|$)','i').test(raw)){
+      return name;
+    }
+  }
+  return null;
+}
+function cmdletInfo(name){
+  const e = CMDLETS[name];
+  const related = Object.keys(CMDLETS).filter(k=>k!==name && (k.split('-')[0]===name.split('-')[0])).slice(0,4);
+  return {
+    lead:`**${name}** — ${e.d}`,
+    code: e.ex || ('Get-Command '+name+' -Syntax\nGet-Help '+name+' -Examples'),
+    steps:[
+      'Convención Verbo-Sustantivo: `'+name.split('-')[0]+'` (acción aprobada) + `'+name.split('-')[1]+'` (el recurso).',
+      e.ex ? 'Ejemplo canónico arriba.' : 'La sintaxis exacta de tu versión: `Get-Command '+name+' -Syntax`.',
+    ],
+    note:'Ayuda completa con ejemplos en tu equipo: `Get-Help '+name+' -Examples` (o `-Online`).',
+    refs: related.length?related:['Get-Help','Get-Command']
+  };
+}
+/* memoria entrenada */
+function teachMatch(raw){
+  const mem = store.get('pslm.mem',[]);
+  const toks = tokenize(raw);
+  for(const m of mem){
+    if(norm(m.q)===norm(raw)) return {m, sc:1};
+    const c = cosine(toks, tokenize(m.q));
+    if(c>=0.62) return {m, sc:c};
+  }
+  return null;
+}
+
+/* ---------- el "cerebro" ---------- */
+function think(raw){
+  const t0 = performance.now();
+  const q = raw.trim();
+  if(!q) return null;
+  const e = entities(q);
+  const tm = teachMatch(q);
+  const {intent, score} = bestIntent(q);
+  let answer, label;
+  if(tm){
+    answer = {lead:tm.m.a, note:'Respuesta de **tu memoria entrenada** (`/forget` para borrarla).'};
+    label = 'memoria · match '+tm.sc.toFixed(2);
+  } else if(intent && score>=0.30){
+    answer = intent.gen(e);
+    label = 'intent: '+intent.id+' · match '+score.toFixed(2);
+  } else {
+    const cd = looksLikeCommand(q) ? null : cmdletDirect(q);
+    if(cd && score<0.45){
+      answer = cmdletInfo(cd);
+      label = 'vocabulario · '+cd;
+    } else if(looksLikeCommand(q) && score<0.5){
+      answer = explainCommand(q);
+      label = 'desglose de comando';
+    } else {
+      const alts = INTENTS.map(it=>({it,sc:bestIntentForAlt(q,it)}))
+        .filter(x=>x.sc>0.14).sort((a,b)=>b.sc-a.sc).slice(0,3);
+      answer = {
+        lead:'Eso queda fuera de mi vocabulario actual. No invento: te muestro en qué sí puedo ayudarte.',
+        steps:[
+          'Puedes **enseñármelo**: `/teach '+q.slice(0,40)+(q.length>40?'…':'')+' :: tu respuesta aquí` y lo recordaré para siempre (en tu navegador).',
+          'O prueba preguntar de otro modo — proceso, archivo, servicio, red, bucles, registro, firewall…',
+        ],
+        chips: alts.map(x=>x.it.ex[0]),
+      };
+      label='sin coincidencia · fallback';
+    }
+  }
+  const ms = performance.now()-t0;
+  return {answer, label, ms, e};
+}
+function bestIntentForAlt(raw, it){
+  const toks = tokenize(raw); const set=new Set(toks);
+  let hits=0,total=0;
+  for(const [w,wt] of Object.entries(it.kw)){ total+=wt; if(set.has(w)) hits+=wt; }
+  return total?Math.min(1,hits/(total*0.45)):0;
+}
+
+/* ---------- resaltado de sintaxis PowerShell ---------- */
+function hlPS(code){
+  let s = esc(code);
+  s = s.replace(/(#[^\n]*)|(&quot;[^&]*&quot;|"[^"]*"|'[^']*')|(\$\w+)|(\b[A-Za-z]+-[A-Za-z]+\b)|(-[A-Za-z]\w*)|(\b\d+(?:\.\d+)?(?:KB|MB|GB)?\b)/g,
+    (m,com,str,vari,cmd,par,num)=>{
+      if(com) return '<span class="tok-com">'+com+'</span>';
+      if(str) return '<span class="tok-str">'+str+'</span>';
+      if(vari) return '<span class="tok-var">'+vari+'</span>';
+      if(cmd) return '<span class="tok-cmd">'+cmd+'</span>';
+      if(par) return '<span class="tok-par">'+par+'</span>';
+      if(num) return '<span class="tok-num">'+num+'</span>';
+      return m;
+    });
+  return s;
+}
+function inlineMD(t){
+  return esc(t)
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+}
+function plainOf(a){
+  let t=a.lead||'';
+  if(a.code) t+='\n'+a.code;
+  if(a.alt) t+='\n'+a.alt;
+  if(a.steps) t+='\n'+' '+a.steps.join(' ');
+  if(a.note) t+='\n '+a.note;
+  return t.replace(/[`*]/g,'');
+}
+
+/* ---------- render de mensajes ---------- */
+const term = $('#term');
+function nearBottom(el){ return el.scrollHeight - el.scrollTop - el.clientHeight < 120; }
+function scrollTerm(force){ if(force||nearBottom(term)) term.scrollTop=term.scrollHeight; }
+
+function addUser(raw){
+  const d=document.createElement('div'); d.className='uline';
+  d.innerHTML='<span class="ups">PS C:\\you ❯</span><span class="utxt"></span>';
+  d.querySelector('.utxt').textContent=raw;
+  term.appendChild(d); scrollTerm(true);
+}
+function codeBlock(code){
+  const w=document.createElement('div'); w.className='codeblk';
+  w.innerHTML='<div class="codehead"><span class="lang">powershell</span>'+
+    '<button class="copybtn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="8.5" height="8.5" rx="1.5"/><path d="M10.5 3.5h-7a1 1 0 0 0-1 1v7"/></svg>Copiar</button></div>'+
+    '<pre><code></code></pre>';
+  w.querySelector('code').innerHTML=hlPS(code);
+  w.querySelector('.copybtn').addEventListener('click',()=>{
+    copyText(code); toast('Copiado al portapapeles');
+  });
+  return w;
+}
+function copyText(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).catch(()=>fallbackCopy(t)); }
+  else fallbackCopy(t);
+}
+function fallbackCopy(t){
+  const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy') }catch(e){}
+  ta.remove();
+}
+function buildAnswer(a, label, ms){
+  const d=document.createElement('div'); d.className='msg';
+  const head=document.createElement('div'); head.className='ahead';
+  head.innerHTML='<span class="badge'+(label.startsWith('memoria')?' mem':'')+'">ps-lm</span>'+
+    '<span class="ameta">'+esc(label)+' · '+ms.toFixed(1)+' ms</span>';
+  d.appendChild(head);
+  const body=document.createElement('div'); body.className='abody';
+  d.appendChild(body);
+  if(a.lead){ const p=document.createElement('p'); p.innerHTML=inlineMD(a.lead); body.appendChild(p); }
+  if(a.code) body.appendChild(codeBlock(a.code));
+  if(a.steps){
+    const ul=document.createElement('ul'); ul.className='steps';
+    a.steps.forEach(s=>{ const li=document.createElement('li'); li.innerHTML=inlineMD(s); ul.appendChild(li); });
+    body.appendChild(ul);
+  }
+  if(a.alt){
+    const t=document.createElement('div'); t.className='note'; t.innerHTML='▸ <b>Alternativa:</b><br>'+hlPS(a.alt);
+    body.appendChild(t);
+  }
+  if(a.note){ const n=document.createElement('div'); n.className='note'; n.innerHTML='▸ '+inlineMD(a.note); body.appendChild(n); }
+  if(a.refs&&a.refs.length){
+    const r=document.createElement('div'); r.className='refs';
+    r.innerHTML='<span class="rlabel">relacionado:</span>';
+    a.refs.forEach(c=>{
+      const b=document.createElement('button'); b.className='ref'; b.textContent=c;
+      b.addEventListener('click',()=>{ $('#q').value='¿qué hace '+c+'?'; send(); });
+      r.appendChild(b);
+    });
+    body.appendChild(r);
+  }
+  if(a.chips&&a.chips.length){
+    const c=document.createElement('div'); c.className='chips';
+    a.chips.forEach(txt=>{
+      const b=document.createElement('button'); b.className='chip'; b.textContent=txt;
+      b.addEventListener('click',()=>{ $('#q').value=txt; send(); });
+      c.appendChild(b);
+    });
+    body.appendChild(c);
+  }
+  return d;
+}
+
+/* ---------- streaming ---------- */
+function streamAnswer(a,label,ms){
+  const holder=document.createElement('div');
+  term.appendChild(holder); scrollTerm(true);
+  const plain=plainOf(a);
+  const final=buildAnswer(a,label,ms);
+  final.style.display='none';
+  holder.appendChild(final);
+  const tmp=document.createElement('div'); tmp.className='msg';
+  tmp.innerHTML='<div class="ahead"><span class="badge">ps-lm</span><span class="ameta">generando…</span></div>'+
+    '<div class="abody"><p style="color:var(--dim);white-space:pre-wrap"></p></div>';
+  holder.appendChild(tmp);
+  const p=tmp.querySelector('p');
+  const words=plain.split(/(\s+)/);
+  let i=0, skipped=false;
+  const skip=()=>{ if(!skipped){skipped=true;} };
+  tmp.addEventListener('click',skip);
+  const step=()=>{
+    if(skipped){ i=words.length; }
+    const chunk=words.slice(i,i+3).join(''); i+=3;
+    p.textContent=words.slice(0,i).join('');
+    scrollTerm();
+    if(i<words.length){ setTimeout(step, 14); }
+    else{
+      tmp.remove(); final.style.display=''; final.style.animation='msgIn .3s ease';
+      scrollTerm();
+    }
+  };
+  step();
+}
+
+/* ---------- estadísticas persistentes ---------- */
+const stats = store.get('pslm.stats',{tokens:0,asks:0,sessions:0,latSum:0,latN:0});
+stats.sessions++; store.set('pslm.stats',stats);
+function bumpStats(tokens,ms){
+  stats.tokens+=tokens; stats.asks++; stats.latSum+=ms; stats.latN++;
+  store.set('pslm.stats',stats); refreshStatus();
+}
+
+/* ---------- entrada y comandos ---------- */
+const input=$('#q');
+const hist=[]; let histIdx=-1;
+const SLASH=[
+ ['/help','guía de capacidades y comandos'],
+ ['/vocab filtro','buscar en el vocabulario de cmdlets'],
+ ['/stats','métricas del modelo'],
+ ['/teach pregunta :: respuesta','enseñar una respuesta nueva'],
+ ['/forget [n|all]','borrar memoria entrenada'],
+ ['/export','descargar tu memoria entrenada (JSON)'],
+ ['/theme','cambiar tema (carbon / blueprint)'],
+ ['/clear','limpiar la conversación'],
+];
+function send(){
+  const raw=input.value.trim();
+  if(!raw) return;
+  input.value=''; hideSug(); $('#gcursor').style.display='';
+  hist.push(raw); histIdx=hist.length;
+  addUser(raw);
+  if(raw.startsWith('/')){ slash(raw); return; }
+  const res=think(raw);
+  if(!res) return;
+  bumpStats(tokenize(raw).length, res.ms);
+  streamAnswer(res.answer,res.label,res.ms);
+}
+input.addEventListener('keydown',ev=>{
+  if(ev.key==='Enter'){ ev.preventDefault(); send(); }
+  else if(ev.key==='ArrowUp'){ ev.preventDefault();
+    if(hist.length){ histIdx=Math.max(0,histIdx-1); input.value=hist[histIdx]||''; } }
+  else if(ev.key==='ArrowDown'){ ev.preventDefault();
+    if(hist.length){ histIdx=Math.min(hist.length,histIdx+1); input.value=hist[histIdx]||''; } }
+  else if(ev.key==='Tab'){ ev.preventDefault();
+    const first=$('#sugRow .chip'); if(first){ input.value=first.textContent; hideSug(); } }
+});
+
+/* sugerencias en vivo */
+function hideSug(){ $('#sugRow').innerHTML=''; }
+input.addEventListener('input',()=>{
+  $('#gcursor').style.display = input.value ? 'none' : '';
+  const v=input.value.trim().toLowerCase();
+  if(v.length<2){ hideSug(); return; }
+  if(v.startsWith('/')){
+    const row=$('#sugRow'); row.innerHTML='';
+    SLASH.filter(s=>s[0].startsWith(v)).slice(0,5).forEach(s=>{
+      const b=document.createElement('button'); b.className='chip';
+      b.innerHTML='<b>'+s[0]+'</b> · '+s[1];
+      b.addEventListener('click',()=>{ input.value=s[0]; input.focus(); hideSug(); });
+      row.appendChild(b);
+    });
+    return;
+  }
+  const scored=INTENTS.map(it=>({it,sc:bestIntentForAlt(v,it)+Math.max(...it.ex.map(ex=>cosine(tokenize(v),tokenize(ex))))}))
+    .sort((a,b)=>b.sc-a.sc).slice(0,3).filter(x=>x.sc>0.25);
+  const row=$('#sugRow'); row.innerHTML='';
+  scored.forEach(x=>{
+    const b=document.createElement('button'); b.className='chip'; b.textContent=x.it.ex[0];
+    b.addEventListener('click',()=>{ input.value=x.it.ex[0]; send(); });
+    row.appendChild(b);
+  });
+});
+
+/* comandos slash */
+function slash(raw){
+  const [cmd,...rest]=raw.split(/\s+/);
+  const arg=rest.join(' ');
+  if(cmd==='/help'){
+    streamAnswer({
+      lead:'**Comandos del sistema:**',
+      steps:SLASH.map(s=>'`'+s[0]+'` — '+s[1]),
+      note:'Y sobre todo: pregúntame anything sobre PowerShell, en español o inglés, o pega un comando para desglosarlo.',
+    },'sistema · /help',0.1);
+  }
+  else if(cmd==='/clear'){ term.innerHTML=''; welcome(); toast('Conversación limpia'); }
+  else if(cmd==='/stats'){ showStats(); }
+  else if(cmd==='/vocab'){
+    const f=norm(arg);
+    const names=Object.keys(CMDLETS).filter(k=>!f||norm(k).includes(f)||norm(CMDLETS[k].d).includes(f));
+    streamAnswer({
+      lead:f?('Cmdlets que coinciden con **"'+arg+'"** ('+names.length+')'):('Mi vocabulario tiene **'+Object.keys(CMDLETS).length+' cmdlets** documentados. Algunos destacados:'),
+      steps:names.slice(0,25).map(k=>'`'+k+'` — '+CMDLETS[k].d),
+      note:'Explora el completo en el panel lateral (Ctrl+B) → pestaña Vocabulario.',
+    },'sistema · /vocab',0.1);
+  }
+  else if(cmd==='/teach'){
+    const m=arg.match(/^(.+?)\s*::\s*([\s\S]+)$/);
+    if(!m){
+      streamAnswer({lead:'Enseñame así:',code:'/teach cómo reinicio el spooler :: Restart-Service -Name Spooler -Force',
+        steps:['La pregunta la comparo por similitud — no hace falta que coincida palabra por palabra.',
+        'Se guarda en tu navegador (localStorage), nada sale de esta página.',
+        'Revísala en el panel lateral → Memoria, o bórrala con `/forget`.']},
+        'sistema · /teach',0.1);
+      return;
+    }
+    const mem=store.get('pslm.mem',[]);
+    mem.push({q:m[1].trim(),a:m[2].trim(),t:Date.now()});
+    store.set('pslm.mem',mem);
+    renderMem(); refreshStatus();
+    streamAnswer({lead:'Aprendido. La próxima vez que me preguntes algo parecido a **"'+m[1].trim()+' "** responderé con tu texto.',note:'Ya sé '+(mem.length)+' cosa'+(mem.length>1?'s':'')+' que me has enseñado.'},'memoria · aprendido',0.1);
+  }
+  else if(cmd==='/forget'){
+    const mem=store.get('pslm.mem',[]);
+    if(arg==='all'){ store.set('pslm.mem',[]); renderMem(); refreshStatus();
+      streamAnswer({lead:'Memoria entrenada borrada por completo.'},'sistema · /forget',0.1); }
+    else if(/^\d+$/.test(arg)){ mem.splice(parseInt(arg)-1,1); store.set('pslm.mem',mem); renderMem(); refreshStatus();
+      streamAnswer({lead:'Entrada #'+arg+' eliminada.'},'sistema · /forget',0.1); }
+    else{
+      streamAnswer({lead: mem.length?('Tu memoria entrenada ('+mem.length+' entradas):'+mem.map((m,i)=>'\n- #'+(i+1)+' '+m.q).join('')) : 'No tengo nada en memoria entrenada todavía. Usa `/teach`.',
+        note:'Borra una: `/forget 1` · Borra todo: `/forget all`'},'sistema · /forget',0.1);
+    }
+  }
+  else if(cmd==='/export'){
+    const mem=store.get('pslm.mem',[]);
+    const blob=new Blob([JSON.stringify({modelo:'PS-LM 1.0',exportado:new Date().toISOString(),memoria:mem},null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='pslm-memoria.json'; a.click();
+    URL.revokeObjectURL(a.href);
+    toast('Memoria exportada (JSON)');
+  }
+  else if(cmd==='/theme'){
+    const cur=document.documentElement.getAttribute('data-theme');
+    const nx=cur==='carbon'?'blueprint':'carbon';
+    document.documentElement.setAttribute('data-theme',nx);
+    store.set('pslm.theme',nx); $('#stTheme').textContent='tema: '+nx;
+    toast('Tema: '+nx+(nx==='blueprint'?' (azul clásico de consola)':''));
+  }
+  else{
+    streamAnswer({lead:'Comando desconocido: `'+cmd+'`. Los válidos:',steps:SLASH.map(s=>'`'+s[0]+'` — '+s[1])},'sistema',0.1);
+  }
+}
+
+/* ---------- panel lateral ---------- */
+$$('.sidetabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    $$('.sidetabs button').forEach(x=>x.classList.toggle('on',x===b));
+    $$('.sidepane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.pane));
+  });
+});
+const DB_KB=(new Blob([JSON.stringify({c:CMDLETS,i:INTENTS.map(x=>({id:x.id,kw:x.kw,ex:x.ex}))})]).size/1024).toFixed(1);
+function refreshStatus(){
+  const mem=store.get('pslm.mem',[]);
+  $('#stTok').textContent=stats.tokens.toLocaleString('es')+' tokens';
+  $('#stLat').textContent='inferencia '+(stats.latN?(stats.latSum/stats.latN).toFixed(1):'—')+' ms';
+  $('#stMem').textContent='mem '+((parseFloat(DB_KB)+mem.length*0.3).toFixed(1))+' KB / 4 GB';
+  renderState(mem);
+}
+function renderState(mem){
+  const vocab=new Set();
+  INTENTS.forEach(it=>Object.keys(it.kw).forEach(w=>vocab.add(w)));
+  Object.keys(CMDLETS).forEach(c=>vocab.add(c));
+  Object.keys(ALIAS).forEach(a=>vocab.add(a));
+  const usedKB=parseFloat(DB_KB)+mem.length*0.3;
+  const pct=(usedKB*1024/(4*1024*1024*1024)*100);
+  $('#pState').innerHTML=
+    '<div class="sec">Modelo</div>'+
+    '<div class="kv"><span>nombre</span><b>PS-LM 1.0 "Cascadia"</b></div>'+
+    '<div class="kv"><span>tipo</span><b>simbólico · no neuronal</b></div>'+
+    '<div class="kv"><span>idiomas</span><b>es + en (vocabulario técnico en)</b></div>'+
+    '<div class="sec">Base de conocimiento</div>'+
+    '<div class="kv"><span>intenciones</span><b>'+INTENTS.length+'</b></div>'+
+    '<div class="kv"><span>cmdlets documentados</span><b>'+Object.keys(CMDLETS).length+'</b></div>'+
+    '<div class="kv"><span>alias mapeados</span><b>'+Object.keys(ALIAS).length+'</b></div>'+
+    '<div class="kv"><span>términos indexados</span><b>'+vocab.size+'</b></div>'+
+    '<div class="sec">Sesión acumulada</div>'+
+    '<div class="kv"><span>preguntas</span><b>'+stats.asks+'</b></div>'+
+    '<div class="kv"><span>tokens procesados</span><b>'+stats.tokens.toLocaleString('es')+'</b></div>'+
+    '<div class="kv"><span>inferencia media</span><b>'+(stats.latN?(stats.latSum/stats.latN).toFixed(2):'—')+' ms</b></div>'+
+    '<div class="kv"><span>memoria entrenada</span><b>'+mem.length+' entradas</b></div>'+
+    '<div class="sec">Presupuesto: 4 GB</div>'+
+    '<div class="bar"><i style="width:'+Math.max(0.5,Math.min(100,pct*400))+'%"></i></div>'+
+    '<div class="small">'+usedKB.toFixed(1)+' KB en uso ≈ '+pct.toFixed(4)+' % de 4 GB — sin API, sin GPU, sin descargas.</div>'+
+    '<div class="note-side">¿Por qué tan poco? El motor trabaja con <b>intenciones y patrones</b>, no con miles de millones de parámetros: eso es justamente lo que le permite correr en cualquier navegador y responder en milisegundos.</div>'+
+    '<div class="note-side">Red externa: <b>0 llamadas</b>. Todo — motor, vocabulario y memoria — vive en este archivo y en tu localStorage.</div>';
+}
+function renderVocab(filter){
+  const f=norm(filter||'');
+  const list=$('#vocabList'); list.innerHTML='';
+  Object.keys(CMDLETS).filter(k=>!f||norm(k).includes(f)||norm(CMDLETS[k].d).includes(f)).forEach(k=>{
+    const d=document.createElement('div'); d.className='vocitem';
+    d.innerHTML='<div class="vocname">'+k+'</div><div class="vocdesc">'+esc(CMDLETS[k].d)+'</div>';
+    d.addEventListener('click',()=>{ input.value='¿qué hace '+k+'?'; send(); });
+    list.appendChild(d);
+  });
+  if(!list.children.length) list.innerHTML='<div class="small">sin resultados…</div>';
+}
+ $('#vocabSearch').addEventListener('input',e=>renderVocab(e.target.value));
+function renderMem(){
+  const mem=store.get('pslm.mem',[]);
+  const p=$('#pMem');
+  if(!mem.length){
+    p.innerHTML='<div class="small">Todavía no me has enseñado nada.</div>'+
+    '<div class="note-side">Enséñame con:<br><b>/teach tu pregunta :: tu respuesta</b><br><br>Lo que enseñes vive solo en tu navegador y se compara por similitud: no necesitas repetir la pregunta exacta.</div>';
+    return;
+  }
+  p.innerHTML='<div class="sec">Entradas ('+mem.length+')</div>';
+  mem.forEach((m,i)=>{
+    const d=document.createElement('div'); d.className='memitem';
+    d.innerHTML='<div class="memq">#'+(i+1)+' · '+esc(m.q)+'</div><div class="mema">'+esc(m.a)+'</div>'+
+      '<button class="memdel"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 4.5h11M6 4V2.5h4V4M4 4.5l.7 9h6.6l.7-9"/></svg>olvidar</button>';
+    d.querySelector('.memdel').addEventListener('click',()=>{
+      mem.splice(i,1); store.set('pslm.mem',mem); renderMem(); refreshStatus(); toast('Entrada olvidada');
+    });
+    p.appendChild(d);
+  });
+}
+
+/* ---------- ventana: botones, modal, atajos ---------- */
+ $('#btnPanel').addEventListener('click',()=>$('#side').classList.toggle('hidden'));
+ $('#btnWide').addEventListener('click',()=>{ $('#win').classList.toggle('wide'); toast($('#win').classList.contains('wide')?'Ventana ampliada':'Ventana normal'); });
+ $('#btnClose').addEventListener('click',()=>$('#modal').classList.add('on'));
+ $('#mCancel').addEventListener('click',()=>$('#modal').classList.remove('on'));
+ $('#mConfirm').addEventListener('click',()=>{
+  $('#modal').classList.remove('on');
+  term.innerHTML='';
+  const b=$('#boot'); b.classList.remove('off'); b.style.opacity='';
+  $('#bootbox').innerHTML='';
+  stats.sessions++; store.set('pslm.stats',stats);
+  runBoot();
+});
+document.addEventListener('keydown',ev=>{
+  if(ev.key==='Escape'){ $('#modal').classList.remove('on'); hideSug(); }
+  if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='b'){ ev.preventDefault(); $('#side').classList.toggle('hidden'); }
+  if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='l'){ ev.preventDefault(); term.innerHTML=''; welcome(); }
+});
+ $('#mainArea').addEventListener('mouseup',()=>{
+  if(!window.getSelection().toString() && !evTargetIsButton(event)) input.focus();
+});
+function evTargetIsButton(ev){ return ev && ev.target.closest && ev.target.closest('button, .vocitem, .chip, .ref'); }
+
+/* ---------- bienvenida ---------- */
+function welcome(){
+  const a={
+    lead:'**PS-LM 1.0 "Cascadia"** — modelo de lenguaje para PowerShell que corre 100% en tu navegador. Sin API, sin red, sin descargas de gigas.',
+    steps:[
+      'Pregúntame **en español o inglés**: procesos, archivos, servicios, red, registro, firewall, bucles, regex…',
+      '**Pega un comando PowerShell** y lo desgloso cmdlet a cmdlet, parámetro a parámetro.',
+      'Enséñame respuestas nuevas con `/teach` — se quedan en tu navegador.',
+    ],
+    chips:['¿cómo mato un proceso?','ver la clave del wifi','archivos más grandes del disco','¿qué es el pipeline?','política de ejecución','mapa bash → powershell'],
+    note:'Consejo: escribe y mira las sugerencias bajo la línea de entrada. `Tab` acepta la primera.'
+  };
+  streamAnswer(a,'arranque · bienvenida',0.1);
+}
+
+/* ---------- secuencia de arranque ---------- */
+function runBoot(){
+  const vocab=new Set(); INTENTS.forEach(it=>Object.keys(it.kw).forEach(w=>vocab.add(w)));
+  const mem=store.get('pslm.mem',[]);
+  const lines=[
+    {t:'PS-LM v1.0 "Cascadia" — modelo de lenguaje local para PowerShell',cls:'b'},
+    {t:''},
+    {t:'motor de intenciones ............... '+INTENTS.length+' rutas',ok:true},
+    {t:'vocabulario indexado (ES/EN) ....... '+vocab.size+' términos',ok:true},
+    {t:'cmdlets documentados ............... '+Object.keys(CMDLETS).length,ok:true},
+    {t:'alias → cmdlet ..................... '+Object.keys(ALIAS).length,ok:true},
+    {t:'memoria de entrenamiento ........... '+mem.length+' entradas',ok:true},
+    {t:'peso total de la base .............. '+DB_KB+' KB ('+(parseFloat(DB_KB)*1024/(4*1024**3)*100).toFixed(4)+'% del presupuesto 4 GB)'},
+    {t:'APIs externas / llamadas de red .... ninguna',ok:true},
+    {t:''},
+    {t:'motor listo — 100% en tu navegador.',cls:'hl'},
+  ];
+  const box=$('#bootbox');
+  let skipped=false;
+  const finish=()=>{
+    if(skipped) return; skipped=true;
+    $('#boot').classList.add('off');
+    if(window.innerWidth>880) input.focus();
+    welcome(); refreshStatus(); renderMem(); renderVocab('');
+  };
+  $('#boot').addEventListener('click',finish,{once:false});
+  document.addEventListener('keydown',function skipBoot(ev){ finish(); document.removeEventListener('keydown',skipBoot); });
+  // barra de progreso animada
+  const prog=document.createElement('div'); prog.className='bl'; prog.style.color='#59a6ff';
+  box.appendChild(prog);
+  let pc=0;
+  const iv=setInterval(()=>{
+    pc+=Math.random()*22;
+    const cap=Math.min(100,Math.floor(pc));
+    const full=Math.floor(cap/5), empty=20-full;
+    prog.textContent='['+'█'.repeat(full)+'░'.repeat(empty)+'] '+cap+'%';
+    if(pc>=100){ clearInterval(iv); setTimeout(finish,380); }
+  },110);
+  lines.forEach((l,i)=>{
+    setTimeout(()=>{
+      if(skipped) return;
+      const d=document.createElement('div'); d.className='bl';
+      d.innerHTML=esc(l.t)+(l.ok?'  <span class="ok">[ OK ]</span>':'');
+      if(l.cls) d.classList.add(l.cls);
+      box.appendChild(d);
+    }, 130+i*165);
+  });
+}
+
+/* ---------- tema persistente + init ---------- */
+const savedTheme=store.get('pslm.theme','carbon');
+document.documentElement.setAttribute('data-theme',savedTheme);
+ $('#stTheme').textContent='tema: '+savedTheme;
+input.addEventListener('focus',()=>{ $('#gcursor').style.display = input.value ? 'none':''; });
+runBoot();
+</script>
+</body>
+</html>

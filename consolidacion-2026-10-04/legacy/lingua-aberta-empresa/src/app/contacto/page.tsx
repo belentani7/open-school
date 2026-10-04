@@ -1,0 +1,1 @@
+export default function C(){return(<><h1>Contacto</h1><form action='/api/contacto' method='post'><p><input name='nombre' placeholder='Nombre' required/></p><p><input name='email' type='email' placeholder='Email' required/></p><p><textarea name='mensaje' placeholder='Mensaje' required></textarea></p><button className='cta' type='submit'>Enviar</button></form></>);}

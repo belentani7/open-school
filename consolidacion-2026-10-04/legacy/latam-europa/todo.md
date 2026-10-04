@@ -1,0 +1,30 @@
+# Project TODO
+
+- [x] Definir la arquitectura funcional de la página pública con España como primer módulo territorial.
+- [x] Investigar y registrar enlaces oficiales vigentes para documentación, residencia, trabajo, vivienda, salud, educación e integración.
+- [x] Crear el modelo de datos de fuentes verificadas y registros de comprobación de enlaces.
+- [x] Implementar una consulta pública de guías y fuentes con estados de carga, vacío y error.
+- [x] Incorporar un conjunto inicial de guías accionables, orientativas y con advertencia jurídica visible.
+- [x] Incorporar un directorio filtrable de recursos oficiales con entidad, categoría, URL, fecha de revisión y vigencia.
+- [x] Configurar un proceso periódico seguro e idempotente para comprobar enlaces de fuentes registradas.
+- [x] Diseñar y desarrollar la portada pública responsive, accesible y visualmente diferenciada.
+- [x] Añadir buscador y filtros por tema para guías y recursos.
+- [x] Implementar las páginas de detalle de guía y de directorio con enlaces externos identificables.
+- [x] Incorporar navegación pública, pie de página, avisos de alcance y estados de error accesibles.
+- [x] Añadir pruebas unitarias para la consulta, búsqueda y filtrado de contenido.
+- [x] Añadir pruebas unitarias del comprobador de enlaces y verificar el comportamiento ante respuestas fallidas.
+- [x] Verificar el comportamiento de la interfaz en escritorio y móvil, corregir incidencias y ejecutar el conjunto de pruebas.
+- [x] Crear una versión verificada del proyecto, subir el código a un repositorio privado de GitHub y cargar el archivo de entrega en Google Drive.
+- [x] Completar y verificar la portada, navegación, pie, aviso jurídico y estados accesibles en la interfaz pública.
+- [x] Conectar y comprobar en navegador la consulta pública de guías y fuentes, incluidos sus estados de carga, vacío y error.
+- [x] Crear la configuración operativa del comprobador periódico y persistir su identificador de programación en la base de datos.
+- [x] Auditar rutas públicas, contratos de datos, controles de acceso, dependencias y documentación operativa.
+- [x] Completar los vacíos de configuración y trazabilidad identificados por la auditoría.
+- [x] Generar un informe de auditoría con hallazgos, correcciones y limitaciones explícitas.
+- [x] Sincronizar los cambios de auditoría en el repositorio privado de GitHub.
+- [x] Crear y entregar un ZIP final del código fuente y la documentación actualizada.
+- [x] Contrastar y añadir fuentes oficiales complementarias para empadronamiento, cita previa, seguridad social, trabajo y recursos territoriales.
+- [x] Ampliar cada guía con orientación adicional y fuentes específicas sin sustituir asesoramiento profesional.
+- [x] Actualizar el directorio público con las fuentes verificadas adicionales y sus notas de alcance territorial.
+- [x] Revalidar pruebas, compilación, seguridad y diseño responsive tras la ampliación editorial.
+- [x] Guardar la versión ampliada, sincronizarla con GitHub y cargar el ZIP final actualizado en Google Drive.

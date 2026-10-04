@@ -1,0 +1,67 @@
+==============================================================================
+ESTADO DE DESPLIEGUE DE LOS PORTALES EDUCATIVOS
+Actualizado: 2026-09-15 (v2: 8 -> 11 portales)
+==============================================================================
+
+RESULTADO: 11/11 portales con web pública y pack `open-data/` servido.
+Sonda HTTP real (probe_deploy.py) con marca estricta en el cuerpo; un 200 de
+shell SPA no cuenta.
+
+PORTAL                  WEB                                         open-data  voces
+---------------------   -----------------------------------------   ---------  -----
+lingua-aberta           https://lingua-aberta.vercel.app/            SI         NO
+linguaforge             https://openlinguaforge.vercel.app/          SI         NO
+manosabiertas           https://manos-abiertas-psi.vercel.app/       SI         NO
+secure-t-university     https://secure-t-university.vercel.app/      SI         SI
+ux-academy              https://ux-academy-course.vercel.app/        SI         SI
+open-school             https://belentani7.github.io/open-school/    SI         SI
+williamschool           https://belentani7.github.io/WILLIAMSCHOOL/  SI         NO
+aprende-brasil          https://aprende-brasil.vercel.app/           SI         NO
+lingua-aberta-empresa   https://lingua-aberta-empresa.vercel.app/    SI         NO
+cruzando-el-charco      https://belentani7.github.io/Cruzando-el-charco/ SI     NO
+secure-t                https://belentani7.github.io/secure-t/       SI         NO
+
+CAMBIOS QUE DESBLOQUEARON LOS CAÍDOS (vía A: Vercel/Pages estático, sin cambiar
+la visibilidad de ningún repositorio):
+
+[1] lingua-aberta (rama `duck`, repo privado)
+    ANTES: la raíz servía un bundle JS (application/javascript, ~58 KB); el
+    proyecto Vercel apuntaba al artefacto del servidor.
+    ARREGLO: `vercel.json` con `outputDirectory: dist/public` (salida real de
+    Vite). Redeploy con `vercel deploy --prod`.
+
+[2] aprende-brasil (rama `main`, repo privado)
+    ANTES: no existía proyecto Vercel ni web (HTTP 404).
+    ARREGLO: `vercel.json` + creación del proyecto en Vercel y deploy.
+
+[3] manosabiertas
+    La sonda apuntaba a `manosabiertas-seven.vercel.app`, un deploy obsoleto.
+    El proyecto vivo del repo es `manos-abiertas-psi.vercel.app`. Se corrigió
+    la URL en `probe_deploy.py` y el campo homepage del repo.
+
+[4] cruzando-el-charco (Pages publica `dist/`, no la raíz)
+    ANTES: el workflow de Pages sube `dist`, y `scripts/build-pages.mjs` copia
+    una lista blanca de ficheros que NO incluía `open-data` -> 404.
+    ARREGLO: añadido `open-data` a la lista del build. Además se excluyó el
+    pack generado del link-check (`--exclude-path open-data`) y se aceptó el
+    203 de PubMed; y se corrigieron 2 enlaces 404 del ecosistema
+    (ManosAbiertas y linguaforge) apuntando a sus URLs vivas.
+
+PORTALES NUEVOS INCORPORADOS (reutilizando fetchers existentes):
+- lingua-aberta-empresa -> 7 temas (idiomas para empresa y empleo)
+- cruzando-el-charco     -> 6 temas (acogida, arraigo y derechos)
+- secure-t               -> 7 temas (ciberseguridad e IA, versión pública)
+
+MEJORA DE PIPELINE (Python): `get()` en `enrich_portals.py` ahora reintenta con
+backoff exponencial ante 429/5xx. Antes Tatoeba devolvía 429 en la 2ª llamada y
+el tema "frases-de-reunion" quedaba sin ancla; tras el cambio los 3 portales
+nuevos generan 33/33 fuentes OK.
+
+ENLACES ROTOS: 0 (coverage_matrix.py --probe). Los fallos residuales de la
+sonda son respuestas 403/429 de los propios hosts (PubMed, GBIF, Met Museum)
+a peticiones automatizadas, no enlaces muertos.
+
+COBERTURA: 11 portales x 6-7 temas. Sin "temas sin ancla".
+
+NOTA (voces): el audio del campus (`campus/voces/`) solo lo publican 3/11
+portales; es contenido independiente del pack open-data y no bloquea el 100%.

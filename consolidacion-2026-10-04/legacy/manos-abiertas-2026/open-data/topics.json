@@ -1,0 +1,129 @@
+{
+  "portal": "manos-abiertas-2026",
+  "repo": "belentani7/manos-abiertas-2026",
+  "dominio": "Instituto Universal William - competencias digitales y acogida (ES)",
+  "generado_utc": "2026-09-15T15:11:48+00:00",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "fuentes": [
+    {
+      "tema": "competencias-digitales",
+      "fuente": "OpenStax",
+      "spec": "openstax:computer",
+      "ok": true
+    },
+    {
+      "tema": "competencias-digitales",
+      "fuente": "Wikilibros ES",
+      "spec": "mediawiki:es.wikibooks.org:informatica",
+      "ok": true
+    },
+    {
+      "tema": "competencias-digitales",
+      "fuente": "OpenAlex",
+      "spec": "openalex:digital literacy adult education",
+      "ok": true
+    },
+    {
+      "tema": "empleo-y-formacion",
+      "fuente": "World Bank",
+      "spec": "worldbank:SL.UEM.TOTL.ZS:Desempleo (% poblacion activa)",
+      "ok": true
+    },
+    {
+      "tema": "empleo-y-formacion",
+      "fuente": "datos.gob.es",
+      "spec": "datosgob:empleo",
+      "ok": true
+    },
+    {
+      "tema": "derechos-y-tramites",
+      "fuente": "Wikipedia ES",
+      "spec": "mediawiki:es.wikipedia.org:derecho de asilo",
+      "ok": true
+    },
+    {
+      "tema": "derechos-y-tramites",
+      "fuente": "datos.gob.es",
+      "spec": "datosgob:vivienda",
+      "ok": true
+    },
+    {
+      "tema": "salud-y-bienestar",
+      "fuente": "PubMed",
+      "spec": "pubmed:public health migration",
+      "ok": true
+    },
+    {
+      "tema": "salud-y-bienestar",
+      "fuente": "World Bank",
+      "spec": "worldbank:SH.XPD.CHEX.GD.ZS:Gasto en salud (% PIB)",
+      "ok": true
+    },
+    {
+      "tema": "contexto-demografico",
+      "fuente": "Eurostat",
+      "spec": "eurostat_demo",
+      "ok": true
+    },
+    {
+      "tema": "paises-y-comunidad",
+      "fuente": "REST Countries",
+      "spec": "restcountries",
+      "ok": true
+    },
+    {
+      "tema": "formacion-abierta",
+      "fuente": "OpenStax",
+      "spec": "openstax:business",
+      "ok": true
+    },
+    {
+      "tema": "formacion-abierta",
+      "fuente": "Open Library",
+      "spec": "openlibrary:adult education",
+      "ok": true
+    }
+  ],
+  "temas": [
+    {
+      "tema": "competencias-digitales",
+      "fuentes_ok": 3,
+      "fuentes_total": 3
+    },
+    {
+      "tema": "empleo-y-formacion",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "derechos-y-tramites",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "salud-y-bienestar",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "contexto-demografico",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    },
+    {
+      "tema": "paises-y-comunidad",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    },
+    {
+      "tema": "formacion-abierta",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "tema": "lexico-profesional",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "Wiktionary ES",
+      "spec": "wikt_es:empresa",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "empresa",
+          "fragmento": "impresa. empresa ¦ plural: empresas 1 Economía Empresa, compañía o firma. Sinónimo: companyía. Hiperónimo: organización. Del italiano impresa. empresa ¦ plural:"
+        },
+        {
+          "titulo": "empresas",
+          "fragmento": "Forma del plural de empresa. 1 Forma del plural de empresa. 1 Forma del plural de empresa. 1 Forma del plural de empresa. 1 Forma del plural de empresa."
+        },
+        {
+          "titulo": "empreses",
+          "fragmento": "1 Forma del plural de empresa. 1 Forma del plural de empresa."
+        },
+        {
+          "titulo": "empresa unicornio",
+          "fragmento": "empresa + unicornio. empresa unicornio (no copulativa) ¦ plural: empresas unicornio 1 Economía, finanzas Startup que ha crecido rápidamente y ha alcanzado"
+        },
+        {
+          "titulo": "empresa de autogestión",
+          "fragmento": "1 Empresa privada de propiedad compartida en que los medios de producción son de los trabajadores. Wikipedia tiene un artículo sobre empresa de autogestión"
+        }
+      ]
+    },
+    {
+      "fuente": "Wiktionary EN",
+      "spec": "wikt_en:business",
+      "ok": true,
+      "datos": [
+        {
+          "categoria": "Noun",
+          "definiciones": [
+            "<span class=\"usage-label-sense\" about=\"#mwt28\" typeof=\"mw:Transclusion\"></span> A specific <a rel=\"mw:WikiLink\" href=\"/wiki/commercial\" title=\"commercial\">commercial</a> <a rel=\"mw:WikiLink\" href=\"/wiki/enterprise\" title=\"enterprise\">enterprise</a> or <a rel=\"mw:WikiLink\" href=\"/wiki/establishment\" title=\"establishment\">establishment</a>.",
+            "<span class=\"usage-label-sense\" about=\"#mwt32\" typeof=\"mw:Transclusion\"></span> A person's <a rel=\"mw:WikiLink\" href=\"/wiki/occupation\" title=\"occupation\">occupation</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/work\" title=\"work\">work</a>, or <a rel=\"mw:WikiLink\" href=\"/wiki/trade\" title=\"trade\">trade</a>.",
+            "<span class=\"usage-label-sense\" about=\"#mwt35\" typeof=\"mw:Transclusion\"></span> <a rel=\"mw:WikiLink\" href=\"/wiki/commercial\" title=\"commercial\">Commercial</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/industrial\" title=\"industrial\">industrial</a>, or <a rel=\"mw:WikiLink\" href=\"/wiki/professional\" title=\"professional\">professional</a> activity."
+          ]
+        },
+        {
+          "categoria": "Adjective",
+          "definiciones": [
+            "Of, to, <a rel=\"mw:WikiLink\" href=\"/wiki/pertaining\" title=\"pertaining\">pertaining</a> to<span class=\"serial-comma\" about=\"#mwt603\" typeof=\"mw:Transclusion\">,</span> or used for purposes of <a rel=\"mw:WikiLink\" href=\"/wiki/conduct\" title=\"conduct\">conducting</a> <a rel=\"mw:WikiLink\" href=\"/wiki/trade\" title=\"trade\">trade</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/commerce\" title=\"commerce\">commerce</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/governance\" title=\"governance\">governance</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/advocacy\" title=\"advocacy\">advocacy</a> or other professional purposes.",
+            "<a rel=\"mw:WikiLink\" href=\"/wiki/professional\" title=\"professional\">Professional</a>, <a rel=\"mw:WikiLink\" href=\"/wiki/businesslike\" title=\"businesslike\">businesslike</a>, having concern for good business practice.",
+            "Supporting business, <a rel=\"mw:WikiLink\" href=\"/wiki/conducive\" title=\"conducive\">conducive</a> to the <a rel=\"mw:WikiLink\" href=\"/wiki/conduct\" title=\"conduct\">conduct</a> of business."
+          ]
+        },
+        {
+          "categoria": "Noun",
+          "definiciones": [
+            "<span class=\"Latn\" lang=\"en\" about=\"#mwt625\" typeof=\"mw:Transclusion\"><a rel=\"mw:WikiLink\" href=\"/wiki/business#English\" class=\"mw-selflink-fragment\">business</a></span>"
+          ]
+        },
+        {
+          "categoria": "Noun",
+          "definiciones": [
+            "<span class=\"Latn\" lang=\"en\" about=\"#mwt635\" typeof=\"mw:Transclusion\"><a rel=\"mw:WikiLink\" href=\"/wiki/business#English\" class=\"mw-selflink-fragment\">business</a></span> (commercial activity or specific commercial enterprise)"
+          ]
+        }
+      ]
+    },
+    {
+      "fuente": "Tatoeba ES",
+      "spec": "tatoeba:spa:empresa",
+      "ok": true,
+      "datos": [
+        {
+          "origen": "A empresa faliu.",
+          "traduccion": "L'entreprise a fait faillite."
+        },
+        {
+          "origen": "Ela saiu da empresa.",
+          "traduccion": "She quit the company."
+        },
+        {
+          "origen": "Traballo nunha empresa comercial.",
+          "traduccion": "I work for a trading company."
+        },
+        {
+          "origen": "Me gusta la empresa.",
+          "traduccion": "Ta firma se mi líbí."
+        },
+        {
+          "origen": "Eran jefes de empresas.",
+          "traduccion": "Llan d imεellmen n tkebbaniyin."
+        },
+        {
+          "origen": "Eu adoro esta empresa.",
+          "traduccion": "Ich liebe diese Firma."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "tema": "paises-y-comunidad",
+  "portal": "manos-abiertas-2026",
+  "registros": [
+    {
+      "fuente": "REST Countries",
+      "spec": "restcountries",
+      "ok": true,
+      "datos": [
+        {
+          "pais": "Argentina",
+          "codigo": "AR",
+          "region": "Americas",
+          "pt": "Argentina"
+        },
+        {
+          "pais": "Bolivia",
+          "codigo": "BO",
+          "region": "Americas",
+          "pt": "Bolívia"
+        },
+        {
+          "pais": "Brazil",
+          "codigo": "BR",
+          "region": "Americas",
+          "pt": "Brasil"
+        },
+        {
+          "pais": "Chile",
+          "codigo": "CL",
+          "region": "Americas",
+          "pt": "Chile"
+        },
+        {
+          "pais": "Colombia",
+          "codigo": "CO",
+          "region": "Americas",
+          "pt": "Colômbia"
+        },
+        {
+          "pais": "Cuba",
+          "codigo": "CU",
+          "region": "Americas",
+          "pt": "Cuba"
+        },
+        {
+          "pais": "Dominican Republic",
+          "codigo": "DO",
+          "region": "Americas",
+          "pt": "República Dominicana"
+        },
+        {
+          "pais": "Ecuador",
+          "codigo": "EC",
+          "region": "Americas",
+          "pt": "Equador"
+        },
+        {
+          "pais": "Mexico",
+          "codigo": "MX",
+          "region": "Americas",
+          "pt": "México"
+        },
+        {
+          "pais": "Paraguay",
+          "codigo": "PY",
+          "region": "Americas",
+          "pt": "Paraguai"
+        },
+        {
+          "pais": "Peru",
+          "codigo": "PE",
+          "region": "Americas",
+          "pt": "Perú"
+        },
+        {
+          "pais": "Portugal",
+          "codigo": "PT",
+          "region": "Europe",
+          "pt": "Portugal"
+        }
+      ]
+    }
+  ]
+}

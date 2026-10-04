@@ -1,0 +1,22 @@
+node_modules
+.next
+.env*.local
+.vercel
+
+# remediacion 2026-09-14
+node_modules/
+.env
+.env.*
+.mimosa/
+__pycache__/
+.vercel/
+*.log
+
+# IA agent states
+.cline/
+.opencode/
+.mcp/
+.zen/
+.mimocode/
+.zcode/
+*agent_state*

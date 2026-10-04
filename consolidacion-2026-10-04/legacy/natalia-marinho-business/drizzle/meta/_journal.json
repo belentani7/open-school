@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786795760773,
+      "tag": "0000_thin_machine_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1786796897781,
+      "tag": "0001_famous_starbolt",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786797269168,
+      "tag": "0002_majestic_amazoness",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1786798090173,
+      "tag": "0003_exotic_pestilence",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1786951780585,
+      "tag": "0004_youthful_frank_castle",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F2F1E9">
+<title>Manos Abiertas · Instituto Universal William</title>
+<meta name="description" content="Educación abierta para quien llega a España: cuatro niveles, 21 módulos y 250 horas de competencias digitales, con datos abiertos a la vista. Sin matrícula y sin coste.">
+<meta name="author" content="Pedro Belentani">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F2F1E9'/%3E%3Cg fill='%23C8321E'%3E%3Crect x='4' y='15' width='24' height='12' rx='4'/%3E%3Crect x='6' y='5' width='4' height='13' rx='2'/%3E%3Crect x='12' y='3' width='4' height='15' rx='2'/%3E%3Crect x='18' y='4' width='4' height='14' rx='2'/%3E%3Crect x='24' y='7' width='4' height='11' rx='2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ink:#14181C; --paper:#F2F1E9; --paper-2:#EAE8DD; --red:#C8321E; --teal:#0F5C4C;
+  --line:#D5D2C6; --muted:#6B6862;
+  --f-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --maxw:1080px; --r:2px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:16px/1.6 var(--f-body); font-weight:400;
+}
+img,svg{max-width:100%}
+a{color:var(--teal); text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+h1,h2,h3,h4{margin:0; line-height:1.15; font-weight:600; letter-spacing:-.01em}
+p{margin:0 0 1em}
+ul{margin:0; padding-left:1.1em}
+li{margin:.35em 0}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+.skip{position:absolute; left:-999px; top:0; background:var(--ink); color:var(--paper); padding:.6em 1em; z-index:50}
+.skip:focus{left:0}
+
+/* ---------- header ---------- */
+.site-head{position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex; align-items:center; gap:20px; min-height:64px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:600}
+.brand:hover{color:var(--ink)}
+.mark{width:26px; height:26px; flex:none; color:var(--red)}
+.brand b{font-size:1.02rem; letter-spacing:-.01em}
+.brand small{display:block; font-weight:400; font-size:.68rem; color:var(--muted); letter-spacing:.02em}
+.site-nav{display:flex; gap:2px; flex-wrap:wrap; margin-left:auto}
+.site-nav a{
+  color:var(--ink); text-decoration:none; font-size:.86rem; font-weight:500;
+  padding:.45em .7em; border-radius:var(--r)
+}
+.site-nav a:hover,.site-nav a:focus-visible{background:var(--paper-2); color:var(--red)}
+.lang-switch{display:flex; gap:1px; border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.lang-switch button{
+  font:inherit; font-size:.74rem; font-weight:600; letter-spacing:.06em;
+  background:transparent; color:var(--muted); border:0; padding:.5em .7em; cursor:pointer
+}
+.lang-switch button.on{background:var(--ink); color:var(--paper)}
+.lang-switch button:focus-visible{outline:2px solid var(--red); outline-offset:-2px}
+
+/* ---------- masthead ---------- */
+.mast{padding:64px 0 56px}
+.mast .wrap{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,.85fr); gap:48px; align-items:start}
+.mast h1{
+  font-family:var(--f-display); font-weight:600; font-optical-sizing:auto;
+  font-size:clamp(2.4rem,6.4vw,4.5rem); line-height:.98; letter-spacing:-.02em; margin:0 0 .5em
+}
+.mast h1 em{font-style:normal; color:var(--red)}
+.lede{font-size:clamp(1.02rem,1.6vw,1.2rem); color:#3A3F45; max-width:34em; margin-bottom:1.6em}
+.actions{display:flex; gap:10px; flex-wrap:wrap}
+.btn{
+  font:inherit; font-weight:600; font-size:.94rem; cursor:pointer; text-decoration:none;
+  padding:.8em 1.3em; border-radius:var(--r); border:1px solid var(--ink);
+  background:var(--ink); color:var(--paper); display:inline-block
+}
+.btn:hover{background:var(--red); border-color:var(--red); color:#fff}
+.btn.ghost{background:transparent; color:var(--ink)}
+.btn.ghost:hover{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.ficha{border-top:3px solid var(--ink); padding-top:14px}
+.ficha dl{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; margin:0}
+.ficha dt{font-size:1.5rem; font-weight:700; letter-spacing:-.02em}
+.ficha dd{margin:0; align-self:center; color:var(--muted); font-size:.82rem}
+.ficha .lic{margin-top:14px; font-size:.72rem; color:var(--muted); letter-spacing:.02em}
+
+/* ---------- bands ---------- */
+.band{padding:56px 0; border-top:1px solid var(--line)}
+.sec-head{max-width:46em; margin-bottom:32px}
+.sec-head h2{font-size:clamp(1.45rem,3vw,2rem); margin-bottom:.35em}
+.sec-head p{color:#3A3F45; margin:0}
+.note{font-size:.8rem; color:var(--muted); margin-top:20px}
+.state{color:var(--muted); font-size:.92rem}
+
+/* ---------- ruta ---------- */
+.lvl{display:grid; grid-template-columns:88px minmax(0,1fr); gap:22px; padding:26px 0; border-top:1px solid var(--line)}
+.lvl:first-child{border-top:0; padding-top:0}
+.num{
+  font-family:var(--f-display); font-weight:600; font-size:2.4rem; line-height:1;
+  color:var(--red); letter-spacing:-.02em
+}
+.lvl-code{
+  display:inline-block; margin-left:.6em; vertical-align:.15em;
+  font-family:var(--f-body); font-size:.66rem; font-weight:600; letter-spacing:.06em;
+  color:var(--teal); border:1px solid var(--line); border-radius:var(--r); padding:.14em .45em
+}
+.lvl-head h3{font-size:1.18rem}
+.lvl-sub{color:var(--muted); font-size:.88rem; margin:.3em 0 0}
+.lvl-hrs{font-size:.78rem; font-weight:600; color:var(--teal); margin-top:.4em; display:block}
+.mods{margin-top:14px; border-top:1px solid var(--line)}
+.mod{border-bottom:1px solid var(--line)}
+.mod summary{
+  list-style:none; cursor:pointer; display:grid; grid-template-columns:5.4em minmax(0,1fr) auto 1.2em; gap:14px;
+  align-items:baseline; padding:.72em 0
+}
+.mod .mt{overflow-wrap:anywhere}
+.mod summary::-webkit-details-marker{display:none}
+.mod summary::after{content:"+"; color:var(--muted); font-weight:600; text-align:right}
+.mod[open] summary::after{content:"\2013"}
+.mod summary:focus-visible{outline:2px solid var(--red); outline-offset:2px}
+.mod .code{font-size:.74rem; font-weight:600; color:var(--teal); letter-spacing:.04em}
+.mod .mt{font-weight:500; font-size:.95rem}
+.mod .hrs{font-size:.78rem; color:var(--muted); white-space:nowrap}
+.mod-body{padding:0 0 1em; color:#3A3F45; font-size:.9rem}
+.mod-body .objs{margin:.4em 0 .6em}
+.mod-body .tag{display:inline-block; font-size:.68rem; font-weight:600; letter-spacing:.05em;
+  border:1px solid var(--line); border-radius:var(--r); padding:.15em .5em; color:var(--muted); text-transform:uppercase}
+.mod-body .pre{font-size:.82rem; color:var(--muted); margin:.5em 0}
+.mod-body .src{font-size:.74rem; color:var(--muted); margin:.4em 0 0}
+
+/* ---------- datos ---------- */
+.ds{padding:24px 0; border-top:1px solid var(--line)}
+.ds:first-child{border-top:0; padding-top:0}
+.ds h3{font-size:1.05rem; margin-bottom:.2em}
+.ds .meta{font-size:.78rem; color:var(--muted); margin:0 0 .8em}
+.reg{margin:14px 0}
+.reg h4{font-size:.78rem; font-weight:600; letter-spacing:.04em; color:var(--teal); text-transform:uppercase}
+.reg ul{margin-top:.4em}
+.reg li{font-size:.88rem; color:#3A3F45}
+
+/* ---------- recursos ---------- */
+.grid-langs{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line)}
+.lang-card{background:var(--paper); padding:16px 18px}
+.lang-card h3{font-size:.92rem; margin-bottom:.4em}
+.lang-card ul{padding-left:1em}
+.lang-card li{font-size:.84rem}
+
+/* ---------- guia ---------- */
+.grid-guia{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line)}
+.gcard{background:var(--paper); padding:18px}
+.gcard h3{font-size:.95rem; margin-bottom:.35em}
+.gcard p{font-size:.84rem; color:#3A3F45; margin:0 0 .7em}
+.gcard a{font-size:.82rem; font-weight:600}
+
+/* ---------- cv ---------- */
+.cv-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 22px; max-width:820px}
+.field{display:flex; flex-direction:column; gap:.35em}
+.field.full{grid-column:1/-1}
+.field label{font-size:.78rem; font-weight:600; color:var(--teal); letter-spacing:.02em}
+.field input,.field textarea{
+  font:inherit; font-size:.92rem; color:var(--ink); background:var(--paper);
+  border:1px solid var(--line); border-radius:var(--r); padding:.6em .7em; width:100%
+}
+.field textarea{min-height:78px; resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--red); outline-offset:1px; border-color:var(--red)}
+.cv-actions{display:flex; align-items:center; gap:14px; margin-top:22px; flex-wrap:wrap}
+#cv-status{font-size:.85rem; color:var(--teal); font-weight:500}
+
+/* ---------- sobre / footer ---------- */
+.sobre p{max-width:52em; color:#3A3F45}
+footer{border-top:1px solid var(--line); padding:34px 0 46px; font-size:.82rem; color:var(--muted)}
+footer .wrap{display:flex; gap:20px; flex-wrap:wrap; justify-content:space-between}
+footer p{margin:0}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--red)}
+
+/* ---------- motion ---------- */
+.mast .wrap>*{opacity:0; transform:translateY(10px)}
+body.ready .mast .wrap>*{opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease}
+body.ready .mast .ficha{transition-delay:.08s}
+@media (prefers-reduced-motion: reduce){
+  .mast .wrap>*{opacity:1; transform:none}
+  body.ready .mast .wrap>*{transition:none}
+  *{scroll-behavior:auto !important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+  .mast .wrap{grid-template-columns:1fr; gap:30px}
+  .cv-grid{grid-template-columns:1fr}
+  .lvl{grid-template-columns:56px minmax(0,1fr); gap:14px}
+  .num{font-size:1.8rem}
+  .site-nav{margin-left:0; order:3; width:100%; border-top:1px solid var(--line); padding-top:6px}
+  .lang-switch{margin-left:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="currentColor">
+        <rect x="4" y="15" width="24" height="12" rx="4"></rect>
+        <rect x="6" y="5" width="4" height="13" rx="2"></rect>
+        <rect x="12" y="3" width="4" height="15" rx="2"></rect>
+        <rect x="18" y="4" width="4" height="14" rx="2"></rect>
+        <rect x="24" y="7" width="4" height="11" rx="2"></rect>
+      </svg>
+      <span><b>Manos Abiertas</b><small>Instituto Universal William</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="#ruta" data-i18n="nav.ruta">La ruta</a>
+      <a href="#datos" data-i18n="nav.datos">Datos abiertos</a>
+      <a href="#recursos" data-i18n="nav.recursos">Recursos</a>
+      <a href="#guia" data-i18n="nav.guia">Trámites</a>
+      <a href="#cv" data-i18n="nav.cv">Currículum</a>
+      <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+    </nav>
+    <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Idioma">
+      <button type="button" data-lang="pt" lang="pt" aria-pressed="false">PT</button>
+      <button type="button" data-lang="es" lang="es" aria-pressed="true" class="on">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <a id="top"></a>
+
+  <section class="mast">
+    <div class="wrap">
+      <div>
+        <h1 data-i18n-html="mast.title">Educación abierta para quien <em>acaba de llegar</em>.</h1>
+        <p class="lede" data-i18n="mast.lede">Cuatro niveles, 21 módulos y 250 horas de competencias digitales, ofimática, IA y derechos prácticos. Sin matrícula, sin coste y con los datos abiertos a la vista.</p>
+        <div class="actions">
+          <a class="btn" href="#ruta" data-i18n="mast.cta1">Ver la ruta</a>
+          <a class="btn ghost" href="#datos" data-i18n="mast.cta2">Explorar los datos abiertos</a>
+        </div>
+      </div>
+      <aside class="ficha">
+        <dl>
+          <dt>4</dt><dd data-i18n="ficha.niveles">niveles</dd>
+          <dt>21</dt><dd data-i18n="ficha.modulos">módulos</dd>
+          <dt>250</dt><dd data-i18n="ficha.horas">horas de estudio</dd>
+          <dt>7</dt><dd data-i18n="ficha.datos">conjuntos de datos abiertos</dd>
+        </dl>
+        <p class="lic" data-i18n="ficha.license">Contenido CC BY-SA 4.0 · Código MIT</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="ruta">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="ruta.title">La ruta</h2>
+        <p data-i18n="ruta.lede">Empieza donde estés. Cada nivel abre el siguiente: de encender un ordenador a desplegar tus propios proyectos.</p>
+      </div>
+      <div id="ruta-body"><p class="state" data-i18n="ruta.loading">Cargando el currículum…</p></div>
+      <p class="note" data-i18n="ruta.note">Currículum original del proyecto. El material didáctico se publica bajo CC BY-SA 4.0.</p>
+    </div>
+  </section>
+
+  <section class="band" id="datos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="datos.title">Datos abiertos</h2>
+        <p data-i18n="datos.lede">Indicadores reales que enmarcan la acogida: empleo, salud, demografía, derechos y países de origen. Cada cifra declara su fuente.</p>
+      </div>
+      <div id="datos-body" aria-live="polite"><p class="state" data-i18n="datos.loading">Cargando datos…</p></div>
+      <p class="note" data-i18n="datos.note">Generado por el pipeline edu-open-data desde APIs públicas sin credenciales. Revisa la licencia de cada fuente antes de reutilizar.</p>
+    </div>
+  </section>
+
+  <section class="band" id="recursos">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="recursos.title">Canales para seguir aprendiendo</h2>
+        <p data-i18n="recursos.lede">Canales públicos de formación en varios idiomas, para reforzar cada nivel por tu cuenta.</p>
+      </div>
+      <div class="grid-langs" id="recursos-body"></div>
+      <p class="note" data-i18n="recursos.note">Cada enlace abre la búsqueda del canal en YouTube. No son canales propios ni patrocinados.</p>
+      <p class="note" id="recursos-more"></p>
+    </div>
+  </section>
+
+  <section class="band" id="guia">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="guia.title">Fuentes oficiales</h2>
+        <p data-i18n="guia.lede">Los trámites se resuelven en la sede del organismo competente. Aquí están los accesos directos.</p>
+      </div>
+      <div class="grid-guia">
+        <article class="gcard">
+          <h3>Extranjería e Inmigración</h3>
+          <p data-i18n="guia.extranjeria">Permisos, residencia, arraigo y nacionalidad.</p>
+          <a href="https://extranjeros.inclusion.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Sede electrónica · Cita previa</h3>
+          <p data-i18n="guia.sede">Cita previa y trámites de extranjería.</p>
+          <a href="https://sede.administracionespublicas.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Seguridad Social</h3>
+          <p data-i18n="guia.segsocial">Alta, número de afiliación y prestaciones.</p>
+          <a href="https://www.seg-social.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>SEPE · Empleo</h3>
+          <p data-i18n="guia.sepe">Inscripción como demandante de empleo y prestaciones.</p>
+          <a href="https://www.sepe.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Agencia Tributaria</h3>
+          <p data-i18n="guia.aeat">Declaraciones, NIF y cita con Hacienda.</p>
+          <a href="https://sede.agenciatributaria.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Sanidad</h3>
+          <p data-i18n="guia.sanidad">Tarjeta sanitaria y acceso al sistema de salud.</p>
+          <a href="https://www.sanidad.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Educación · Homologación</h3>
+          <p data-i18n="guia.educacion">Homologación de títulos y becas.</p>
+          <a href="https://www.educacionyfp.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>Punto de Acceso General</h3>
+          <p data-i18n="guia.pag">Empadronamiento y guía de trámites.</p>
+          <a href="https://administracion.gob.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+        <article class="gcard">
+          <h3>BOE</h3>
+          <p data-i18n="guia.boe">Normativa vigente y textos consolidados.</p>
+          <a href="https://www.boe.es/" target="_blank" rel="noopener noreferrer" data-i18n="guia.open">Abrir la sede</a>
+        </article>
+      </div>
+      <p class="note" data-i18n="guia.disclaimer">Información orientativa, no asesoría legal. Confirma siempre los requisitos en la sede oficial o con una entidad de acogida.</p>
+    </div>
+  </section>
+
+  <section class="band" id="cv">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="cv.title">Currículum</h2>
+        <p data-i18n="cv.lede">Rellena lo que tengas, genera un archivo y ábrelo para imprimir o guardar en PDF. Todo ocurre en tu navegador: no se envía nada a ningún servidor.</p>
+      </div>
+      <div class="cv-grid">
+        <div class="field"><label for="cv-nombre" data-i18n="cv.nombre">Nombre completo</label><input id="cv-nombre" type="text" autocomplete="name" data-i18n-ph="cv.ph.nombre" placeholder="Nombre y apellidos"></div>
+        <div class="field"><label for="cv-puesto" data-i18n="cv.puesto">Puesto al que aspiras</label><input id="cv-puesto" type="text" data-i18n-ph="cv.ph.puesto" placeholder="Ej. Auxiliar administrativo"></div>
+        <div class="field"><label for="cv-email" data-i18n="cv.email">Correo</label><input id="cv-email" type="email" autocomplete="email" data-i18n-ph="cv.ph.email" placeholder="tu@correo.com"></div>
+        <div class="field"><label for="cv-tel" data-i18n="cv.tel">Teléfono</label><input id="cv-tel" type="tel" autocomplete="tel" data-i18n-ph="cv.ph.tel" placeholder="+34 600 000 000"></div>
+        <div class="field full"><label for="cv-ubi" data-i18n="cv.ubi">Ubicación</label><input id="cv-ubi" type="text" data-i18n-ph="cv.ph.ubi" placeholder="Ciudad, país"></div>
+        <div class="field full"><label for="cv-resumen" data-i18n="cv.resumen">Perfil</label><textarea id="cv-resumen" data-i18n-ph="cv.ph.resumen" placeholder="Dos o tres líneas sobre ti y lo que buscas."></textarea></div>
+        <div class="field full"><label for="cv-exp" data-i18n="cv.exp">Experiencia</label><textarea id="cv-exp" data-i18n-ph="cv.ph.exp" placeholder="Puesto · Empresa · Periodo · Qué hiciste"></textarea></div>
+        <div class="field full"><label for="cv-form" data-i18n="cv.form">Formación</label><textarea id="cv-form" data-i18n-ph="cv.ph.form" placeholder="Título · Centro · Año"></textarea></div>
+        <div class="field full"><label for="cv-hab" data-i18n="cv.hab">Habilidades</label><textarea id="cv-hab" data-i18n-ph="cv.ph.hab" placeholder="Ofimática, atención al público, idiomas…"></textarea></div>
+      </div>
+      <div class="cv-actions">
+        <button type="button" class="btn" id="cv-generate" data-i18n="cv.gen">Generar y descargar</button>
+        <span id="cv-status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band sobre" id="sobre">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="sobre.title">Sobre el proyecto</h2></div>
+      <p data-i18n="sobre.p1">Manos Abiertas es el programa abierto del Instituto Universal William: competencias digitales, ofimática, IA y derechos prácticos para personas que llegan a España o quieren mejorar su empleabilidad.</p>
+      <p data-i18n="sobre.p2">La ruta tiene cuatro niveles y 21 módulos, 250 horas en total. El material curricular es original del proyecto y se publica bajo licencia CC BY-SA 4.0; el código, bajo licencia MIT.</p>
+      <p data-i18n="sobre.p3">Los indicadores de la sección de datos provienen de APIs públicas sin credenciales —Banco Mundial, Eurostat, datos.gob.es, PubMed, Wikipedia, OpenStax y otras—. Cada dato conserva su fuente y su licencia.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-i18n="foot.license">Contenido CC BY-SA 4.0 · Código MIT</p>
+    <p data-i18n="foot.data">Datos abiertos generados por el pipeline edu-open-data.</p>
+    <p><a href="mailto:belentani7studio@proton.me">belentani7studio@proton.me</a> · <a href="https://github.com/belentani7" target="_blank" rel="noopener noreferrer">github.com/belentani7</a></p>
+    <p data-i18n="foot.made">Creado por Pedro Belentani · Educación sin barreras</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var LANGS = ["pt","es","en"];
+  var DEFAULT_LANG = "es";
+
+  var I18N = {
+    es: {
+      "lang.label":"Idioma",
+      "nav.ruta":"La ruta","nav.datos":"Datos abiertos","nav.recursos":"Recursos","nav.guia":"Trámites","nav.cv":"Currículum","nav.sobre":"Sobre",
+      "mast.title":"Educación abierta para quien <em>acaba de llegar</em>.","mast.lede":"Cuatro niveles, 21 módulos y 250 horas de competencias digitales, ofimática, IA y derechos prácticos. Sin matrícula, sin coste y con los datos abiertos a la vista.",
+      "mast.cta1":"Ver la ruta","mast.cta2":"Explorar los datos abiertos",
+      "ficha.niveles":"niveles","ficha.modulos":"módulos","ficha.horas":"horas de estudio","ficha.datos":"conjuntos de datos abiertos","ficha.license":"Contenido CC BY-SA 4.0 · Código MIT",
+      "ruta.title":"La ruta","ruta.lede":"Empieza donde estés. Cada nivel abre el siguiente: de encender un ordenador a desplegar tus propios proyectos.",
+      "ruta.loading":"Cargando el currículum…","ruta.note":"Currículum original del proyecto. El material didáctico se publica bajo CC BY-SA 4.0.",
+      "ruta.prereq":"Requiere","ruta.source":"Material original del proyecto.","ruta.error":"No se pudo cargar el currículum.",
+      "datos.title":"Datos abiertos","datos.lede":"Indicadores reales que enmarcan la acogida: empleo, salud, demografía, derechos y países de origen. Cada cifra declara su fuente.",
+      "datos.loading":"Cargando datos…","datos.empty":"Sin resultados para esta fuente.","datos.unavailable":"Fuente no disponible","datos.sources":"fuentes con datos",
+      "datos.note":"Generado por el pipeline edu-open-data desde APIs públicas sin credenciales. Revisa la licencia de cada fuente antes de reutilizar.","datos.error":"No se pudieron cargar los datos abiertos.",
+      "recursos.title":"Canales para seguir aprendiendo","recursos.lede":"Canales públicos de formación en varios idiomas, para reforzar cada nivel por tu cuenta.","recursos.note":"Cada enlace abre la búsqueda del canal en YouTube. No son canales propios ni patrocinados.","recursos.more":"El material original recoge {n} idiomas; aquí se muestran los principales.",
+      "guia.title":"Fuentes oficiales","guia.lede":"Los trámites se resuelven en la sede del organismo competente. Aquí están los accesos directos.","guia.open":"Abrir la sede",
+      "guia.extranjeria":"Permisos, residencia, arraigo y nacionalidad.","guia.sede":"Cita previa y trámites de extranjería.","guia.segsocial":"Alta, número de afiliación y prestaciones.","guia.sepe":"Inscripción como demandante de empleo y prestaciones.","guia.aeat":"Declaraciones, NIF y cita con Hacienda.","guia.sanidad":"Tarjeta sanitaria y acceso al sistema de salud.","guia.educacion":"Homologación de títulos y becas.","guia.pag":"Empadronamiento y guía de trámites.","guia.boe":"Normativa vigente y textos consolidados.","guia.disclaimer":"Información orientativa, no asesoría legal. Confirma siempre los requisitos en la sede oficial o con una entidad de acogida.",
+      "cv.title":"Currículum","cv.lede":"Rellena lo que tengas, genera un archivo y ábrelo para imprimir o guardar en PDF. Todo ocurre en tu navegador: no se envía nada a ningún servidor.",
+      "cv.nombre":"Nombre completo","cv.puesto":"Puesto al que aspiras","cv.email":"Correo","cv.tel":"Teléfono","cv.ubi":"Ubicación","cv.resumen":"Perfil","cv.exp":"Experiencia","cv.form":"Formación","cv.hab":"Habilidades",
+      "cv.ph.nombre":"Nombre y apellidos","cv.ph.puesto":"Ej. Auxiliar administrativo","cv.ph.email":"tu@correo.com","cv.ph.tel":"+34 600 000 000","cv.ph.ubi":"Ciudad, país",
+      "cv.ph.resumen":"Dos o tres líneas sobre ti y lo que buscas.","cv.ph.exp":"Puesto · Empresa · Periodo · Qué hiciste","cv.ph.form":"Título · Centro · Año","cv.ph.hab":"Ofimática, atención al público, idiomas…",
+      "cv.gen":"Generar y descargar","cv.needname":"Escribe al menos tu nombre para generar el currículum.","cv.done":"Descargado. Ábrelo e imprímelo o guárdalo como PDF.",
+      "sobre.title":"Sobre el proyecto",
+      "sobre.p1":"Manos Abiertas es el programa abierto del Instituto Universal William: competencias digitales, ofimática, IA y derechos prácticos para personas que llegan a España o quieren mejorar su empleabilidad.",
+      "sobre.p2":"La ruta tiene cuatro niveles y 21 módulos, 250 horas en total. El material curricular es original del proyecto y se publica bajo licencia CC BY-SA 4.0; el código, bajo licencia MIT.",
+      "sobre.p3":"Los indicadores de la sección de datos provienen de APIs públicas sin credenciales —Banco Mundial, Eurostat, datos.gob.es, PubMed, Wikipedia, OpenStax y otras—. Cada dato conserva su fuente y su licencia.",
+      "foot.license":"Contenido CC BY-SA 4.0 · Código MIT","foot.data":"Datos abiertos generados por el pipeline edu-open-data.","foot.made":"Creado por Pedro Belentani · Educación sin barreras"
+    },
+    pt: {
+      "lang.label":"Idioma",
+      "nav.ruta":"O percurso","nav.datos":"Dados abertos","nav.recursos":"Recursos","nav.guia":"Trâmites","nav.cv":"Currículo","nav.sobre":"Sobre",
+      "mast.title":"Educação aberta para quem <em>acabou de chegar</em>.","mast.lede":"Quatro níveis, 21 módulos e 250 horas de competências digitais, produtividade, IA e direitos práticos. Sem matrícula, sem custos e com os dados abertos à vista.",
+      "mast.cta1":"Ver o percurso","mast.cta2":"Explorar os dados abertos",
+      "ficha.niveles":"níveis","ficha.modulos":"módulos","ficha.horas":"horas de estudo","ficha.datos":"conjuntos de dados abertos","ficha.license":"Conteúdo CC BY-SA 4.0 · Código MIT",
+      "ruta.title":"O percurso","ruta.lede":"Começa onde estiveres. Cada nível abre o seguinte: de ligar um computador a publicar os teus próprios projetos.",
+      "ruta.loading":"A carregar o currículo…","ruta.note":"Currículo original do projeto. O material didático é publicado sob CC BY-SA 4.0.",
+      "ruta.prereq":"Requer","ruta.source":"Material original do projeto.","ruta.error":"Não foi possível carregar o currículo.",
+      "datos.title":"Dados abertos","datos.lede":"Indicadores reais que enquadram o acolhimento: emprego, saúde, demografia, direitos e países de origem. Cada número declara a sua fonte.",
+      "datos.loading":"A carregar dados…","datos.empty":"Sem resultados para esta fonte.","datos.unavailable":"Fonte indisponível","datos.sources":"fontes com dados",
+      "datos.note":"Gerado pelo pipeline edu-open-data a partir de APIs públicas sem credenciais. Confirma a licença de cada fonte antes de reutilizar.","datos.error":"Não foi possível carregar os dados abertos.",
+      "recursos.title":"Canais para continuar a aprender","recursos.lede":"Canais públicos de formação em vários idiomas, para reforçar cada nível por conta própria.","recursos.note":"Cada ligação abre a pesquisa do canal no YouTube. Não são canais próprios nem patrocinados.","recursos.more":"O material original reúne {n} idiomas; aqui mostram-se os principais.",
+      "guia.title":"Fontes oficiais","guia.lede":"Os trâmites resolvem-se na sede do organismo competente. Aqui estão os acessos diretos.","guia.open":"Abrir a sede",
+      "guia.extranjeria":"Autorizações, residência, arraigo e nacionalidade.","guia.sede":"Marcação prévia e trâmites de estrangeiria.","guia.segsocial":"Inscrição, número de afiliação e prestações.","guia.sepe":"Inscrição como candidato a emprego e subsídios.","guia.aeat":"Declarações, NIF e marcação com as Finanças.","guia.sanidad":"Cartão de saúde e acesso ao sistema de saúde.","guia.educacion":"Equivalência de diplomas e bolsas.","guia.pag":"Recenseamento e guia de trâmites.","guia.boe":"Legislação em vigor e textos consolidados.","guia.disclaimer":"Informação orientativa, não é aconselhamento jurídico. Confirma sempre os requisitos na sede oficial ou com uma entidade de acolhimento.",
+      "cv.title":"Currículo","cv.lede":"Preenche o que tiveres, gera um ficheiro e abre-o para imprimir ou guardar em PDF. Tudo acontece no teu navegador: nada é enviado para servidores.",
+      "cv.nombre":"Nome completo","cv.puesto":"Cargo a que te candidatas","cv.email":"Correio eletrónico","cv.tel":"Telefone","cv.ubi":"Localização","cv.resumen":"Perfil","cv.exp":"Experiência","cv.form":"Formação","cv.hab":"Competências",
+      "cv.ph.nombre":"Nome e apelidos","cv.ph.puesto":"Ex. Assistente administrativo","cv.ph.email":"tu@email.com","cv.ph.tel":"+34 600 000 000","cv.ph.ubi":"Cidade, país",
+      "cv.ph.resumen":"Duas ou três linhas sobre ti e o que procuras.","cv.ph.exp":"Cargo · Empresa · Período · O que fizeste","cv.ph.form":"Curso · Instituição · Ano","cv.ph.hab":"Informática, atendimento ao público, idiomas…",
+      "cv.gen":"Gerar e descarregar","cv.needname":"Escreve pelo menos o teu nome para gerar o currículo.","cv.done":"Descarregado. Abre-o e imprime-o ou guarda-o como PDF.",
+      "sobre.title":"Sobre o projeto",
+      "sobre.p1":"Manos Abiertas é o programa aberto do Instituto Universal William: competências digitais, produtividade, IA e direitos práticos para quem chega a Espanha ou quer melhorar a sua empregabilidade.",
+      "sobre.p2":"O percurso tem quatro níveis e 21 módulos, 250 horas no total. O material curricular é original do projeto e é publicado sob licença CC BY-SA 4.0; o código, sob licença MIT.",
+      "sobre.p3":"Os indicadores da secção de dados vêm de APIs públicas sem credenciais —Banco Mundial, Eurostat, datos.gob.es, PubMed, Wikipédia, OpenStax e outras—. Cada dado conserva a sua fonte e a sua licença.",
+      "foot.license":"Conteúdo CC BY-SA 4.0 · Código MIT","foot.data":"Dados abertos gerados pelo pipeline edu-open-data.","foot.made":"Criado por Pedro Belentani · Educação sem barreiras"
+    },
+    en: {
+      "lang.label":"Language",
+      "nav.ruta":"The route","nav.datos":"Open data","nav.recursos":"Resources","nav.guia":"Procedures","nav.cv":"Résumé","nav.sobre":"About",
+      "mast.title":"Open education for those who <em>just arrived</em>.","mast.lede":"Four levels, 21 modules and 250 hours of digital skills, office tools, AI and practical rights. No enrolment, no fees, with the open data in plain sight.",
+      "mast.cta1":"See the route","mast.cta2":"Explore the open data",
+      "ficha.niveles":"levels","ficha.modulos":"modules","ficha.horas":"study hours","ficha.datos":"open datasets","ficha.license":"Content CC BY-SA 4.0 · Code MIT",
+      "ruta.title":"The route","ruta.lede":"Start wherever you are. Each level opens the next: from switching on a computer to shipping your own projects.",
+      "ruta.loading":"Loading the curriculum…","ruta.note":"Original curriculum of the project. The teaching material is published under CC BY-SA 4.0.",
+      "ruta.prereq":"Requires","ruta.source":"Original material of the project.","ruta.error":"The curriculum could not be loaded.",
+      "datos.title":"Open data","datos.lede":"Real indicators that frame arrival: employment, health, demography, rights and countries of origin. Every figure names its source.",
+      "datos.loading":"Loading data…","datos.empty":"No results for this source.","datos.unavailable":"Source unavailable","datos.sources":"sources with data",
+      "datos.note":"Generated by the edu-open-data pipeline from public APIs without credentials. Check each source's licence before reuse.","datos.error":"The open data could not be loaded.",
+      "recursos.title":"Channels to keep learning","recursos.lede":"Public training channels in several languages, to reinforce each level on your own.","recursos.note":"Each link opens the channel search on YouTube. These are not our own or sponsored channels.","recursos.more":"The original material lists {n} languages; the main ones are shown here.",
+      "guia.title":"Official sources","guia.lede":"Procedures are handled at the competent body's e-office. Here are the direct links.","guia.open":"Open the e-office",
+      "guia.extranjeria":"Permits, residence, settlement and nationality.","guia.sede":"Appointments and immigration procedures.","guia.segsocial":"Registration, affiliation number and benefits.","guia.sepe":"Register as a jobseeker and claim benefits.","guia.aeat":"Tax returns, NIF and tax office appointments.","guia.sanidad":"Health card and access to the health system.","guia.educacion":"Qualification recognition and grants.","guia.pag":"Registration and procedure guide.","guia.boe":"Current legislation and consolidated texts.","guia.disclaimer":"Guidance only, not legal advice. Always confirm requirements at the official e-office or with a reception organisation.",
+      "cv.title":"Résumé","cv.lede":"Fill in what you have, generate a file and open it to print or save as PDF. Everything happens in your browser: nothing is sent to any server.",
+      "cv.nombre":"Full name","cv.puesto":"Target role","cv.email":"Email","cv.tel":"Phone","cv.ubi":"Location","cv.resumen":"Profile","cv.exp":"Experience","cv.form":"Education","cv.hab":"Skills",
+      "cv.ph.nombre":"First and last name","cv.ph.puesto":"E.g. Administrative assistant","cv.ph.email":"you@email.com","cv.ph.tel":"+34 600 000 000","cv.ph.ubi":"City, country",
+      "cv.ph.resumen":"Two or three lines about you and what you are looking for.","cv.ph.exp":"Role · Company · Period · What you did","cv.ph.form":"Degree · Institution · Year","cv.ph.hab":"Office tools, customer service, languages…",
+      "cv.gen":"Generate and download","cv.needname":"Enter at least your name to generate the résumé.","cv.done":"Downloaded. Open it and print it or save it as PDF.",
+      "sobre.title":"About the project",
+      "sobre.p1":"Manos Abiertas is the open programme of Instituto Universal William: digital skills, office tools, AI and practical rights for people arriving in Spain or improving their employability.",
+      "sobre.p2":"The route has four levels and 21 modules, 250 hours in total. The curriculum material is original to the project and published under CC BY-SA 4.0; the code, under MIT.",
+      "sobre.p3":"The indicators in the data section come from public APIs without credentials —World Bank, Eurostat, datos.gob.es, PubMed, Wikipedia, OpenStax and others—. Every datum keeps its source and licence.",
+      "foot.license":"Content CC BY-SA 4.0 · Code MIT","foot.data":"Open data generated by the edu-open-data pipeline.","foot.made":"Created by Pedro Belentani · Education without barriers"
+    }
+  };
+
+  var LEVEL_LABELS = {
+    "N0":{es:"Semilla",pt:"Semente",en:"Seed"},
+    "NI":{es:"Cohete",pt:"Foguete",en:"Rocket"},
+    "NA":{es:"Rayo",pt:"Raio",en:"Lightning"},
+    "NE":{es:"Llave",pt:"Chave",en:"Key"}
+  };
+
+  var TEMA_LABELS = {
+    "competencias-digitales":{es:"Competencias digitales",pt:"Competências digitais",en:"Digital skills"},
+    "empleo-y-formacion":{es:"Empleo y formación",pt:"Emprego e formação",en:"Employment and training"},
+    "derechos-y-tramites":{es:"Derechos y trámites",pt:"Direitos e trâmites",en:"Rights and procedures"},
+    "salud-y-bienestar":{es:"Salud y bienestar",pt:"Saúde e bem-estar",en:"Health and wellbeing"},
+    "contexto-demografico":{es:"Contexto demográfico",pt:"Contexto demográfico",en:"Demographic context"},
+    "paises-y-comunidad":{es:"Países y comunidad",pt:"Países e comunidade",en:"Countries and community"},
+    "formacion-abierta":{es:"Formación abierta",pt:"Formação aberta",en:"Open courses"}
+  };
+
+  var CUR_TITLES = {
+    "N0-M01":{es:"Introducción al entorno digital y sistema operativo",pt:"Introdução ao ambiente digital e sistema operativo",en:"Introduction to the digital environment and operating system"},
+    "N0-M02":{es:"Gestión de archivos y navegación web segura",pt:"Gestão de ficheiros e navegação web segura",en:"File management and safe web browsing"},
+    "N0-M03":{es:"Fundamentos de ofimática: procesador de textos",pt:"Fundamentos de ofimática: processador de texto",en:"Office basics: word processing"},
+    "N0-M04":{es:"Hojas de cálculo básicas y lógica de datos",pt:"Folhas de cálculo básicas e lógica de dados",en:"Basic spreadsheets and data logic"},
+    "N0-M05":{es:"Ética digital y ciudadanía online",pt:"Ética digital e cidadania online",en:"Digital ethics and online citizenship"},
+    "NI-M01":{es:"Hojas de cálculo avanzadas",pt:"Folhas de cálculo avançadas",en:"Advanced spreadsheets"},
+    "NI-M02":{es:"Herramientas colaborativas en la nube",pt:"Ferramentas colaborativas na nuvem",en:"Cloud collaboration tools"},
+    "NI-M03":{es:"Presentaciones eficaces",pt:"Apresentações eficazes",en:"Effective presentations"},
+    "NI-M04":{es:"Introducción a la IA generativa",pt:"Introdução à IA generativa",en:"Introduction to generative AI"},
+    "NI-M05":{es:"Productividad personal digital",pt:"Produtividade pessoal digital",en:"Digital personal productivity"},
+    "NA-M01":{es:"Ingeniería de prompts avanzada",pt:"Engenharia de prompts avançada",en:"Advanced prompt engineering"},
+    "NA-M02":{es:"Integración de IA en flujos de trabajo",pt:"Integração da IA em fluxos de trabalho",en:"Integrating AI into workflows"},
+    "NA-M03":{es:"Git/GitHub: control de versiones",pt:"Git/GitHub: controlo de versões",en:"Git/GitHub: version control"},
+    "NA-M04":{es:"Markdown y documentación técnica",pt:"Markdown e documentação técnica",en:"Markdown and technical documentation"},
+    "NA-M05":{es:"Software libre y herramientas abiertas",pt:"Software livre e ferramentas abertas",en:"Free software and open tools"},
+    "NE-M01":{es:"Terminal CLI y sistemas operativos avanzados",pt:"Terminal CLI e sistemas operativos avançados",en:"CLI terminal and advanced operating systems"},
+    "NE-M02":{es:"Entornos de desarrollo local",pt:"Ambientes de desenvolvimento local",en:"Local development environments"},
+    "NE-M03":{es:"IA local: Ollama y modelos abiertos",pt:"IA local: Ollama e modelos abertos",en:"Local AI: Ollama and open models"},
+    "NE-M04":{es:"Programación y automatización con Python/JS",pt:"Programação e automação com Python/JS",en:"Programming and automation with Python/JS"},
+    "NE-M05":{es:"Arquitectura de proyectos y despliegue",pt:"Arquitetura de projetos e implementação",en:"Project architecture and deployment"},
+    "NE-M06":{es:"Proyecto final y certificación",pt:"Projeto final e certificação",en:"Final project and certification"}
+  };
+
+  var lang = DEFAULT_LANG;
+  var curriculum = null;
+  var openData = null;
+
+  function t(key){
+    var pack = I18N[lang] || I18N[DEFAULT_LANG];
+    return (pack && pack[key]) || I18N[DEFAULT_LANG][key] || key;
+  }
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+  function pickText(it){
+    if(!it || typeof it !== "object") return String(it == null ? "" : it);
+    var keys = ["titulo","title","nombre","name","pais","cve","id","familia"];
+    for(var i=0;i<keys.length;i++){
+      var v = it[keys[i]];
+      if(Array.isArray(v) && v.length) v = v[0];
+      if(v && typeof v === "object") v = v._value || v.value || v.common;
+      if(typeof v === "string" && v.trim()) return v.trim();
+    }
+    for(var k in it){ if(typeof it[k] === "string" && it[k].trim()) return it[k].trim(); }
+    return "";
+  }
+  function pickUrl(it){
+    if(!it || typeof it !== "object") return "";
+    if(typeof it.doi === "string" && it.doi.trim()){
+      return it.doi.indexOf("http") === 0 ? it.doi : "https://doi.org/" + it.doi;
+    }
+    var keys = ["url","link","enlace","href","about"];
+    for(var i=0;i<keys.length;i++){
+      var v = it[keys[i]];
+      if(typeof v === "string" && v.indexOf("http") === 0) return v;
+    }
+    for(var k in it){ if(typeof it[k] === "string" && it[k].indexOf("http") === 0) return it[k]; }
+    return "";
+  }
+  function describe(it){
+    if(!it || typeof it !== "object") return String(it == null ? "" : it);
+    var pais = it.pais || it.country;
+    if(pais){
+      var extra = [];
+      if(it.anio || it.year) extra.push(it.anio || it.year);
+      if(it.valor != null && it.valor !== "") extra.push(it.valor);
+      if(!extra.length && (it.codigo || it.code)) extra.push(it.codigo || it.code);
+      if(!extra.length && it.region) extra.push(it.region);
+      return extra.length ? pais + " · " + extra.join(" · ") : pais;
+    }
+    return pickText(it) || pickUrl(it);
+  }
+
+  function setLang(next){
+    if(LANGS.indexOf(next) === -1) next = DEFAULT_LANG;
+    lang = next;
+    document.documentElement.lang = next;
+    document.documentElement.setAttribute("data-lang", next);
+
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var v = t(el.getAttribute("data-i18n"));
+      if(v) el.textContent = v;
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){
+      var v = t(el.getAttribute("data-i18n-html"));
+      if(v) el.innerHTML = v;
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+      var v = t(el.getAttribute("data-i18n-ph"));
+      if(v) el.setAttribute("placeholder", v);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var v = t(el.getAttribute("data-i18n-aria"));
+      if(v) el.setAttribute("aria-label", v);
+    });
+    document.querySelectorAll(".lang-switch button").forEach(function(b){
+      var on = b.getAttribute("data-lang") === next;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    try { localStorage.setItem("ma.lang", next); } catch(e){}
+
+    renderRuta();
+    renderDatos();
+    renderRecursos();
+  }
+
+  function renderRuta(){
+    var host = document.getElementById("ruta-body");
+    if(!host || !curriculum) return;
+    var niveles = curriculum.niveles || [];
+    if(!niveles.length){ host.innerHTML = '<p class="state">' + esc(t("ruta.error")) + '</p>'; return; }
+    host.innerHTML = niveles.map(function(n, idx){
+      var label = (LEVEL_LABELS[n.id] || {})[lang] || (LEVEL_LABELS[n.id] || {}).es || n.id;
+      var mods = (n.modulos || []).map(function(m){
+        var title = (CUR_TITLES[m.codigo] || {})[lang] || m.titulo || "";
+        var objs = (m.objetivos || []).length
+          ? '<ul class="objs">' + m.objetivos.map(function(o){ return "<li>" + esc(o) + "</li>"; }).join("") + "</ul>"
+          : "";
+        var pre = (m.prerrequisitos || []).length
+          ? '<p class="pre">' + esc(t("ruta.prereq")) + ": " + m.prerrequisitos.map(esc).join(", ") + "</p>"
+          : "";
+        var tag = m.dificultad ? '<span class="tag">' + esc(m.dificultad) + "</span> " : "";
+        return '<details class="mod"><summary>' +
+            '<span class="code">' + esc(m.codigo) + "</span>" +
+            '<span class="mt">' + esc(title) + "</span>" +
+            '<span class="hrs">' + esc(m.horas) + " h</span>" +
+          "</summary>" +
+          '<div class="mod-body">' + tag + pre + objs +
+            '<p class="src">' + esc(t("ruta.source")) + "</p>" +
+          "</div></details>";
+      }).join("");
+      return '<article class="lvl" id="lvl-' + esc(n.id) + '">' +
+          '<div class="num">' + (idx + 1) + "</div>" +
+          "<div>" +
+            '<div class="lvl-head"><h3>' + esc(label) + '<span class="lvl-code">' + esc(n.id) + "</span></h3>" +
+              '<p class="lvl-sub">' + esc(n.descripcion || "") + "</p>" +
+              '<span class="lvl-hrs">' + esc(n.horas) + " h · " + (n.modulos || []).length + "</span>" +
+            "</div>" +
+            '<div class="mods">' + mods + "</div>" +
+          "</div></article>";
+    }).join("");
+  }
+
+  function renderDatos(){
+    var host = document.getElementById("datos-body");
+    if(!host || !openData) return;
+    var topics = openData.topics, packs = openData.packs;
+    host.innerHTML = (topics.temas || []).map(function(tt){
+      var id = tt.tema;
+      var label = (TEMA_LABELS[id] || {})[lang] || (TEMA_LABELS[id] || {}).es || id;
+      var pack = packs[id];
+      if(!pack){
+        return '<article class="ds"><h3>' + esc(label) + '</h3><p class="state">' + esc(t("datos.empty")) + "</p></article>";
+      }
+      var regs = (pack.registros || []).map(function(reg){
+        if(!reg.ok){
+          return '<p class="state">' + esc(t("datos.unavailable")) + ": " + esc(reg.fuente) + "</p>";
+        }
+        var items = Array.isArray(reg.datos) ? reg.datos : (reg.datos ? [reg.datos] : []);
+        var lis = items.slice(0, 6).map(function(it){
+          var texto = describe(it), url = pickUrl(it);
+          if(!texto && !url) return "";
+          if(url) return '<li><a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(texto || url) + "</a></li>";
+          return "<li>" + esc(texto) + "</li>";
+        }).join("");
+        return '<div class="reg"><h4>' + esc(reg.fuente) + "</h4><ul>" +
+          (lis || '<li class="state">' + esc(t("datos.empty")) + "</li>") + "</ul></div>";
+      }).join("");
+      return '<article class="ds"><h3>' + esc(label) + "</h3>" +
+        '<p class="meta">' + esc(tt.fuentes_ok) + "/" + esc(tt.fuentes_total) + " " + esc(t("datos.sources")) + "</p>" +
+        regs + "</article>";
+    }).join("");
+  }
+
+  function renderRecursos(){
+    var host = document.getElementById("recursos-body");
+    if(!host || !curriculum) return;
+    var todos = (curriculum.recursos || {}).canales_por_idioma || [];
+    var pref = ["pt","es","en"];
+    todos = todos.slice().sort(function(a, b){
+      var ia = pref.indexOf(a.codigo); if(ia === -1) ia = 99;
+      var ib = pref.indexOf(b.codigo); if(ib === -1) ib = 99;
+      return ia - ib;
+    });
+    var idiomas = todos.slice(0, 12);
+    var more = document.getElementById("recursos-more");
+    if(more) more.textContent = todos.length > idiomas.length ? t("recursos.more").replace("{n}", todos.length) : "";
+    host.innerHTML = idiomas.map(function(i){
+      var canales = (i.canales || []).map(function(c){
+        var href = "https://www.youtube.com/results?search_query=" + encodeURIComponent(c);
+        return '<li><a href="' + esc(href) + '" target="_blank" rel="noopener noreferrer">' + esc(c) + "</a></li>";
+      }).join("");
+      return '<article class="lang-card"><h3>' + esc(i.nombre || i.codigo) + "</h3><ul>" + canales + "</ul></article>";
+    }).join("");
+  }
+
+  function getJSON(url){
+    return fetch(url, { cache: "no-cache" }).then(function(r){
+      if(!r.ok) throw new Error(r.status + " " + r.statusText);
+      return r.json();
+    });
+  }
+
+  function loadCurriculum(){
+    return getJSON("curriculum.json").then(function(data){
+      curriculum = data;
+      renderRuta();
+      renderRecursos();
+    }).catch(function(){
+      var host = document.getElementById("ruta-body");
+      if(host) host.innerHTML = '<p class="state">' + esc(t("ruta.error")) + "</p>";
+    });
+  }
+
+  function loadOpenData(){
+    return getJSON("open-data/topics.json").then(function(topics){
+      var packs = {};
+      return Promise.all((topics.temas || []).map(function(tt){
+        return getJSON("open-data/data/" + tt.tema + ".json")
+          .then(function(p){ packs[tt.tema] = p; })
+          .catch(function(){ packs[tt.tema] = null; });
+      })).then(function(){
+        openData = { topics: topics, packs: packs };
+        renderDatos();
+      });
+    }).catch(function(){
+      var host = document.getElementById("datos-body");
+      if(host) host.innerHTML = '<p class="state">' + esc(t("datos.error")) + "</p>";
+    });
+  }
+
+  function buildCV(){
+    var val = function(id){
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    };
+    var status = document.getElementById("cv-status");
+    var nombre = val("cv-nombre");
+    if(!nombre){
+      if(status) status.textContent = t("cv.needname");
+      return;
+    }
+    var campos = [
+      [t("cv.puesto"), val("cv-puesto")],
+      [t("cv.ubi"), val("cv-ubi")],
+      [t("cv.email"), val("cv-email")],
+      [t("cv.tel"), val("cv-tel")]
+    ].filter(function(p){ return p[1]; });
+
+    var secciones = [
+      [t("cv.resumen"), val("cv-resumen")],
+      [t("cv.exp"), val("cv-exp")],
+      [t("cv.form"), val("cv-form")],
+      [t("cv.hab"), val("cv-hab")]
+    ].filter(function(p){ return p[1]; });
+
+    var doc = "<!doctype html><html lang=\"" + lang + "\"><head><meta charset=\"utf-8\">" +
+      "<title>CV · " + esc(nombre) + "</title><style>" +
+      "body{font-family:Georgia,'Times New Roman',serif;color:#14181C;max-width:720px;margin:40px auto;padding:0 24px;line-height:1.5}" +
+      "h1{font-size:2rem;margin:0 0 6px;letter-spacing:-.02em}" +
+      ".meta{color:#0F5C4C;font-size:.9rem;margin:0 0 4px}" +
+      ".rule{height:2px;background:#C8321E;margin:18px 0}" +
+      "h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#0F5C4C;margin:22px 0 6px;font-family:system-ui,sans-serif}" +
+      "p{white-space:pre-line;margin:0 0 10px}" +
+      "@media print{body{margin:0}}</style></head><body>" +
+      "<h1>" + esc(nombre) + "</h1>" +
+      campos.map(function(p){ return '<p class="meta"><strong>' + esc(p[0]) + ":</strong> " + esc(p[1]) + "</p>"; }).join("") +
+      '<div class="rule"></div>' +
+      secciones.map(function(s){ return "<h2>" + esc(s[0]) + "</h2><p>" + esc(s[1]) + "</p>"; }).join("") +
+      "<p style=\"margin-top:28px;font-size:.75rem;color:#6B6862;font-family:system-ui,sans-serif\">" +
+      esc(t("sobre.title")) + " · Manos Abiertas · Instituto Universal William</p>" +
+      "</body></html>";
+
+    var slug = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "manos-abiertas";
+    var blob = new Blob([doc], { type: "text/html;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "cv-" + slug + ".html";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+    if(status) status.textContent = t("cv.done");
+  }
+
+  document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll(".lang-switch button").forEach(function(b){
+      b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+    });
+    var gen = document.getElementById("cv-generate");
+    if(gen) gen.addEventListener("click", buildCV);
+
+    var saved = DEFAULT_LANG;
+    try { saved = localStorage.getItem("ma.lang") || DEFAULT_LANG; } catch(e){}
+    setLang(saved);
+
+    Promise.all([loadCurriculum(), loadOpenData()]).then(function(){
+      document.body.classList.add("ready");
+    });
+  });
+})();
+</script>
+</body>
+</html>

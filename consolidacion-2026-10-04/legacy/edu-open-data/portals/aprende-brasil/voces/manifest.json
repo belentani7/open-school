@@ -1,0 +1,42 @@
+{
+  "portal": "aprende-brasil",
+  "dominio": "Educacao PT-BR e cidadania",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "generado_utc": "2026-09-12T21:57:47+00:00",
+  "motor": "edge-tts (voces neuronales, sin API key)",
+  "idiomas": {
+    "pt": {
+      "voz": "pt-BR-FranciscaNeural",
+      "guion": "Bem-vindo ao portal de referência aprende-brasil. Domínio: Educacao PT-BR e cidadania. Reúne 3 temas construídos a partir de 4 fontes de dados abertos verificadas: vocabulario pt, territorio e cidadania, lectura en portugues. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
+      "archivo": "voces/pt/bienvenida.mp3",
+      "bytes": 124848,
+      "sha256": "9532cfc4a35b3c721033ac586c33c965a0ffb7f6209fc57794cfffe9ad8739f5"
+    },
+    "es": {
+      "voz": "es-ES-ElviraNeural",
+      "guion": "Bienvenido al portal de referencia aprende-brasil. Dominio: Educacao PT-BR e cidadania. Reúne 3 temas construidos a partir de 4 fuentes de datos abiertos verificadas: vocabulario pt, territorio e cidadania, lectura en portugues. Todo gratuito, sin credenciales, y funciona sin conexión.",
+      "archivo": "voces/es/bienvenida.mp3",
+      "bytes": 125856,
+      "sha256": "fdbfe18b060d67c6c3c5030d3fa89ca8545a339b70daa38d3dab1a7defb1bf71"
+    },
+    "en": {
+      "voz": "en-US-AriaNeural",
+      "guion": "Welcome to the aprende-brasil reference portal. Domain: Educacao PT-BR e cidadania. It brings together 3 topics built from 4 verified open data sources: vocabulario pt, territorio e cidadania, lectura en portugues. All free, no credentials, and it works offline.",
+      "archivo": "voces/en/bienvenida.mp3",
+      "bytes": 128160,
+      "sha256": "db0086977684587e8658712cd7b2de588e11a102667a608358f0a9825815b1a5"
+    },
+    "ca": {
+      "voz": "ca-ES-JoanaNeural",
+      "guion": "Benvingut al portal de referència aprende-brasil. Domini: Educacao PT-BR e cidadania. Aplega 3 temes construïts a partir de 4 fonts de dades obertes verificades: vocabulario pt, territorio e cidadania, lectura en portugues. Tot gratuït, sense credencials, i funciona sense connexió.",
+      "archivo": "voces/ca/bienvenida.mp3",
+      "bytes": 157824,
+      "sha256": "7e3db32f54f2ca259549bd34f01ad3f41a694d2826f3c9f0eaff2edc565f769a"
+    }
+  }
+}

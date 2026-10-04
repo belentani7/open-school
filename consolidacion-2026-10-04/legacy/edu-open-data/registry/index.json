@@ -1,0 +1,799 @@
+{
+  "generated_utc": "2026-09-15T14:31:49Z",
+  "schema_version": 1,
+  "count": 198,
+  "entries": {
+    "tatoeba": {
+      "area": "idiomas",
+      "sha256": "85dcac74ce011d0e84fb83aff18ea6b1dc5e5b307fe6ec07a9ff8b442228b237"
+    },
+    "wiktionary_es": {
+      "area": "idiomas",
+      "sha256": "2bf1ff839b41d5f4a745046fce0fc16866a3975f4c12e07ec4b79a238a5885ca"
+    },
+    "wikipedia_pt": {
+      "area": "idiomas",
+      "sha256": "14ef44ef2f6f203a1947718a9fdd6d3522a51794e5c39e0cc9b6c3f6090b2653"
+    },
+    "freedict_en": {
+      "area": "idiomas",
+      "sha256": "3b478b8310383d1a658cfedc03167eee13961543f52e2179cc845cbc80cc3840"
+    },
+    "wikidata": {
+      "area": "idiomas",
+      "sha256": "40ce4a513fc9e97f0be3e7e365b4539b878c0f7d2bc67d1b4685ed519104a2c8"
+    },
+    "wikiversity": {
+      "area": "idiomas",
+      "sha256": "dca161a1070642722996ff739cd7fafdadfd19b2e9f50f687255a655df2e13e0"
+    },
+    "openverse": {
+      "area": "idiomas",
+      "sha256": "920d2d100460c83945246d87e253f117cb0a5d619aaffd38e8653afb35f39588"
+    },
+    "gutenberg_direct": {
+      "area": "idiomas",
+      "sha256": "0179991984e70179b80e3859c1b2ae37b6cb1fbd12a92554e19075f2168f1685"
+    },
+    "librivox": {
+      "area": "idiomas",
+      "sha256": "0d4483ab828aa6057966bbee08c64f3a0c942eb3d968577fd1ee37e5f6a9a617"
+    },
+    "apertium-listpairs": {
+      "area": "idiomas",
+      "sha256": "574365f476d6cd0555d87f5594898631039bcc26e57e0b06b004d179806a2ecd"
+    },
+    "apertium-translate-pt-es": {
+      "area": "idiomas",
+      "sha256": "dfd3db98adadf44a95294e631a308aeb735c4741a7c962c275e943aed4b54746"
+    },
+    "cldr-annotations-ca": {
+      "area": "idiomas",
+      "sha256": "4d6ae1a883c8869b7560a937b43832c29c717643609cfb51fe7c43825db6ed3d"
+    },
+    "cldr-annotations-en": {
+      "area": "idiomas",
+      "sha256": "e5fc192b2e8f542da2de73e60e7bb9ddc6aac6a534a4fa01a0ce4208775a9bd5"
+    },
+    "cldr-annotations-es": {
+      "area": "idiomas",
+      "sha256": "20748808b937faea3ab58bc1bd922074e2f39a575e8eaace2a5b330ea64e7040"
+    },
+    "cldr-annotations-pt": {
+      "area": "idiomas",
+      "sha256": "8a42420f2e520624b5eebbd2a882cb6a7f8257c9043a2b2e1e747f5ba8ed6608"
+    },
+    "cldr-likelysubtags": {
+      "area": "idiomas",
+      "sha256": "4d0e199f9a900833cf18df0f213ac81da8c805f0c868ed0cce0e91df88a92fc3"
+    },
+    "datamuse-sug": {
+      "area": "idiomas",
+      "sha256": "9b8739354063e1e6a93271736c7ffbbbd9cb91c298ab224ebcf46f3359e621ae"
+    },
+    "datamuse-words": {
+      "area": "idiomas",
+      "sha256": "e547e65c739319cf3472d9d7cea342b4a85d3d2523c54fc8ba93bc68b574201c"
+    },
+    "freedict": {
+      "area": "idiomas",
+      "sha256": "77b73459fc8187ab3f0c44845ddd3e6efeb72ac578ecb928e49367c746512520"
+    },
+    "languagetool-languages": {
+      "area": "idiomas",
+      "sha256": "b84f19ccee6c89ff89e85e26eccfeae140df24d4c93bec4dcbea627669156924"
+    },
+    "nltk-data-index": {
+      "area": "idiomas",
+      "sha256": "df26955a2fd783c7d8640b36c65686b5f0748277e21da3ddb0a5771b7e8c6981"
+    },
+    "ud-catalan": {
+      "area": "idiomas",
+      "sha256": "8d8ecca0cfdc5e56f32483d26536a320980007f33bbf676fb4ddc42aac6a89dc"
+    },
+    "ud-english": {
+      "area": "idiomas",
+      "sha256": "d60c21b9a8315e65a8a42bf3aed271b2aa6a9233b84a7c4dad7719a95dcecc89"
+    },
+    "ud-portuguese": {
+      "area": "idiomas",
+      "sha256": "d1e72fcc110e05cf3301799ce485a5032a45faff318323f7dbbf640fa07e2e05"
+    },
+    "ud-spanish": {
+      "area": "idiomas",
+      "sha256": "6388215377cfd792ba61eb42a7b247437766541b7ba07a84be13442d144fe852"
+    },
+    "wikiquote-pt": {
+      "area": "idiomas",
+      "sha256": "cc66d5ed2dec660e119dedf7242d8e569190f0d4935a0257ac45c40065a1426e"
+    },
+    "wikisource-en": {
+      "area": "idiomas",
+      "sha256": "2cd913bd25deb90164d1a911cfdf7ffc0cff6431cb1b02a15e5aba409fd5a878"
+    },
+    "wikisource-es": {
+      "area": "idiomas",
+      "sha256": "d900c49dfc0dc145072eb5dd38e3562fd2cf30fae39ff0f9f1e3a8ce4c224378"
+    },
+    "wikisource-pt": {
+      "area": "idiomas",
+      "sha256": "0ce7a65f525f215043a92e1733ee4fa3b14db18691ce9a246846ff5fcb30afef"
+    },
+    "wikiwords-frequency-ca": {
+      "area": "idiomas",
+      "sha256": "7a9ad93977cd1fc125db5749f9b472f975db73c77209b6e998a2dcc5b777e8fc"
+    },
+    "wikiwords-frequency-en": {
+      "area": "idiomas",
+      "sha256": "193bc48909c6408ee6929713acb0c4d484b0b57b41f154970aa1a574e5829b19"
+    },
+    "wikiwords-frequency-es": {
+      "area": "idiomas",
+      "sha256": "2895bd8fd227f8a886dddf7837b82ffd6e8e76ce7ee6992a16be6848d2893698"
+    },
+    "wikiwords-frequency-pt": {
+      "area": "idiomas",
+      "sha256": "94554a6044fdb8ad71c3785fa318a080be850aeb967a4ae64e52ba8fc611be21"
+    },
+    "wiktionary-ca-rest": {
+      "area": "idiomas",
+      "sha256": "13e79ad9ca0d47df62d05fd884b04c7838c283a85cebd5d0adb2e22fb885d669"
+    },
+    "wiktionary-en-rest": {
+      "area": "idiomas",
+      "sha256": "aa752f9e7c52a904454f2d2a0f7c1e5f9c7fb06f7af194ff2ad9eed561ce48c8"
+    },
+    "wiktionary-es-rest": {
+      "area": "idiomas",
+      "sha256": "8efdc120454e4f4b9b4406a2f62549818253bcca8202a51fac5ade2e0f8a4882"
+    },
+    "wiktionary-pt-rest": {
+      "area": "idiomas",
+      "sha256": "c21746fe99cc26233c6de833242236577ff0d7e8fa3d984f30f4ca94453280ec"
+    },
+    "openalex": {
+      "area": "academico",
+      "sha256": "e11003834a6446e6e51cd393d600ac65a107e8196ebf1fe872279df4232e685a"
+    },
+    "crossref": {
+      "area": "academico",
+      "sha256": "a6cb837c090fd334386dded4c8bd1a8ea8df49b8cf98555f442d6273b4b8e474"
+    },
+    "arxiv": {
+      "area": "academico",
+      "sha256": "06b4cb493dc15f06014db2e92a9dabb8590a00405c95ac279b89023a3fb7d138"
+    },
+    "openstax": {
+      "area": "academico",
+      "sha256": "c0363393c3b78a697d6baa5060c14be3fb9c75ea940a8c52ca35600917927968"
+    },
+    "internet_archive": {
+      "area": "academico",
+      "sha256": "8e95d15192e87c79d9bfa4a9e80cc09a8435fd9e1d03773724083ff8f230f39b"
+    },
+    "openlibrary": {
+      "area": "academico",
+      "sha256": "cf391c8c327e9874c0df0b17aa3601102df54cbd884db55a25f4e6506bfb6bff"
+    },
+    "unesco": {
+      "area": "academico",
+      "sha256": "e121e91804d9311ce465cf76eb430b379e42e85bb34c9601040e0edeac21cba4"
+    },
+    "college-scorecard": {
+      "area": "academico",
+      "sha256": "5b1447d4d3318f2a2a930e12e96576a954d8d5ac06b2c6bef8849ac6a3ecb7b3"
+    },
+    "crossref-journals": {
+      "area": "academico",
+      "sha256": "95e6ca0d3b66553c6af3092bfbbefc94ec4e3d62e7480fba317d9e204748f3ba"
+    },
+    "dadosgov-pt": {
+      "area": "academico",
+      "sha256": "7f7dcfba68e9943d830c23844b107f50b8aa02008ea99c870abb724521e88903"
+    },
+    "data-gov-uk": {
+      "area": "academico",
+      "sha256": "b95d621d579378f3e5cbe0e0a38c72483bc259521cab43b1defda0401baf13fb"
+    },
+    "datacite": {
+      "area": "academico",
+      "sha256": "d6e2d7605582c1ead88ac4535867439f23592076d208abd739d97479962b20be"
+    },
+    "dataeuropa": {
+      "area": "academico",
+      "sha256": "82fc18c1829196e06399e007230d72e1873fa10cf81e91c0ebe63c596a018859"
+    },
+    "doab": {
+      "area": "academico",
+      "sha256": "8939b48e5c4256b7c9bbd6a9ea5a3de6a103f36d8ceadfc6c8deb7bd370f9966"
+    },
+    "dryad": {
+      "area": "academico",
+      "sha256": "36fd991fda152f15f23df405315751fd271dfbcf707e809a2c60f8a1e87578e8"
+    },
+    "duckduckgo-instant": {
+      "area": "academico",
+      "sha256": "7699a370b731e86b0fccf9f85b6f7a7f064da74b766856078992ab936b0a66eb"
+    },
+    "eric": {
+      "area": "academico",
+      "sha256": "b5773f2a54bfd62b3e00d63af0aea564d6f7b01ecb726ac38f695d7d34d28ef9"
+    },
+    "europepmc": {
+      "area": "academico",
+      "sha256": "75241ccfdf9075ec247868a67e2b4131e9b1f2165a8b22279a21ccb9389d8819"
+    },
+    "figshare": {
+      "area": "academico",
+      "sha256": "50a35ee065f2fb7398a0d116f4872ff40ad8510376fd9482801927a1ddc5da08"
+    },
+    "govdata-de": {
+      "area": "academico",
+      "sha256": "75e0d4c6d6bc328f1ddb0df92eb85bea0bed04e440a14f2c3053237d0c27ec91"
+    },
+    "ibge-localidades": {
+      "area": "academico",
+      "sha256": "575276794f2d66e03a0ab74cee7dd569e56c74d996aec3c183580ca46e2f727f"
+    },
+    "openaire-pubs": {
+      "area": "academico",
+      "sha256": "3affec3374506f0d03f5f8b19ac0f09cfd1655d50edef6326ccd96fc0b56a0a9"
+    },
+    "openalex-institutions": {
+      "area": "academico",
+      "sha256": "5e0612defa00a4c810362d0112be6eb51a6b071c700993a929d62cbac96ed566"
+    },
+    "opencitations": {
+      "area": "academico",
+      "sha256": "26bf3460ba41dfff121eec020b13d945ce0ab261cf7f54fc35e7099aa24c62f3"
+    },
+    "orcid": {
+      "area": "academico",
+      "sha256": "9389477533723211400cbc3f3b2627a36a7b6175875777c62778584542d6001d"
+    },
+    "ror": {
+      "area": "academico",
+      "sha256": "c0a0e7277c9daa955f7e4f1eb564065c6c9b68596c19de639c2525271f838b07"
+    },
+    "scielo": {
+      "area": "academico",
+      "sha256": "deac6c17a591ebcf8465ba0a87e1afba41319cbb3c47c065bda0a91f2e91cb3a"
+    },
+    "unesco-uis": {
+      "area": "academico",
+      "sha256": "72bf74f2a25dd9798eec0ab0d48d2f3635ddb1e0b523a8c9106e2329e8f6cba0"
+    },
+    "urban-ccd-schools": {
+      "area": "academico",
+      "sha256": "78bfc1d7dd94603daaf8a85c15678290f54c0de979c959b3a06289a620d1eae0"
+    },
+    "urban-ipeds-directory": {
+      "area": "academico",
+      "sha256": "74768697dad094092facfb48fed5bebad10cce497ab31462f3d8a6144d4124f7"
+    },
+    "vikidia-ca": {
+      "area": "academico",
+      "sha256": "acd439df7f92bde78d5deee056e09f1bc95dd099ca0aa3711a942986f144191f"
+    },
+    "vikidia-en": {
+      "area": "academico",
+      "sha256": "f898cf966e4e1abda04d5687275b9caa779844e2d0187570d107f67d06d463f7"
+    },
+    "vikidia-es": {
+      "area": "academico",
+      "sha256": "1f53d89a260e72fa43c019a0e432e7f2911d98c8861d78c304157d7aec64b4da"
+    },
+    "vikidia-pt": {
+      "area": "academico",
+      "sha256": "cec746d90ec938bbc28516095ecf1352acd4a6163731f640b67bb714076b3d58"
+    },
+    "wikibooks-en": {
+      "area": "academico",
+      "sha256": "cd694571c9a433b7c8f62425780bf381c3a2fb3c33514def99051d37dc47277e"
+    },
+    "wikibooks-es": {
+      "area": "academico",
+      "sha256": "0d98a633ca07fd9645089066f0c97e8ce138fda549f8aa5fa6ed10388d23d29d"
+    },
+    "wikibooks-pt": {
+      "area": "academico",
+      "sha256": "f4c72b966040aaed297c0cb230402cc7d42ab1ba67a8ac4bb2ee916460b01dfe"
+    },
+    "wikidata-search": {
+      "area": "academico",
+      "sha256": "a499005d135193d0db731784c5149daac0c07689782a3fcc7b1caf0149109345"
+    },
+    "wikidata-sparql": {
+      "area": "academico",
+      "sha256": "34ea9638eec31168dacb3a70128aa9dc891fde8b87ae77548a0c12fec0f03b9e"
+    },
+    "wikipedia-ca": {
+      "area": "academico",
+      "sha256": "8d68363817345523534f8e8160d65d0c686edb8ce766b6576c27428a2fa8523d"
+    },
+    "wikipedia-pt": {
+      "area": "academico",
+      "sha256": "72e9e8d8c63a395b249012c6d57aa822bfc0de57714d47a7426302076e4235ec"
+    },
+    "wikipedia-search-pt": {
+      "area": "academico",
+      "sha256": "80ba0a667fc6dbcb0d348ce0901c94a3f07cf3d5a052d46ab5f3e8006ba9aa44"
+    },
+    "wikiversity-en": {
+      "area": "academico",
+      "sha256": "43ae501494d70c149f3907cd1a1c304914421cc6651bf1933273713ca15fa02f"
+    },
+    "wikiversity-es": {
+      "area": "academico",
+      "sha256": "753b08d4a74d4ff9e8f3e1d13227e3ad284e79d898c2b33ad4e71baef3b84f12"
+    },
+    "wikiversity-pt": {
+      "area": "academico",
+      "sha256": "f1cc4c2b084de63a173d70c13ff7c1b7842ed057d1921eb58995a22c9d2b6654"
+    },
+    "worldbank-edstats": {
+      "area": "academico",
+      "sha256": "c808af2a5c90b1b290a820f7982b3024a24d785847a538ef834889ef1eef47cd"
+    },
+    "doaj-articles": {
+      "area": "academico",
+      "sha256": "1d67657b211cb63524f0df94e563e186cc3117a75c7e2e5c38b71415362b0711"
+    },
+    "doaj-journals": {
+      "area": "academico",
+      "sha256": "d487103f9d3da3d38cd5f4eb59011932d5d4f0425e3a9ddf2eefe547ed6be4e2"
+    },
+    "ine-es": {
+      "area": "academico",
+      "sha256": "f900f7a3ba24174577590e7a5d643c53defc0d51361d2a2b8b3d82e0ae9f1922"
+    },
+    "eurostat": {
+      "area": "civico_derechos",
+      "sha256": "d0642b3d11d0ebffed51f3cfb4662d211c621d279999600b613e4bb42b4ab663"
+    },
+    "worldbank": {
+      "area": "civico_derechos",
+      "sha256": "15be8eb83f9be1d027b78f14ef889ed5ebeedda435f300f9dd9c680d1b0eb027"
+    },
+    "datos_gob_es": {
+      "area": "civico_derechos",
+      "sha256": "25819dff532cb2bb3a42984697c466f7dad0725bd066c4fbafc31bd28276dc0a"
+    },
+    "eu_publications": {
+      "area": "civico_derechos",
+      "sha256": "b309ebb9036e1c3c8c53d6f3060c098e39d7391d196ee951f9d3f83dfdb4191e"
+    },
+    "unhcr": {
+      "area": "civico_derechos",
+      "sha256": "3221f15a9da08c8de3f0ccea5adc4553e2dd71818d505337a53d0277f647f146"
+    },
+    "ibge_br": {
+      "area": "civico_derechos",
+      "sha256": "5d0355a1a616f5ac289946f6ab74a62c05978f97eb6716d30cecddcf6dcd6a22"
+    },
+    "camara_br": {
+      "area": "civico_derechos",
+      "sha256": "09f3d4769120502ced035415c45df3b1f35ba996e9cae22c303e17522602c382"
+    },
+    "camara-br-deputados": {
+      "area": "civico_derechos",
+      "sha256": "506526c62c93ac0d86ac98523de2729c6564989562e395cfc6f073b9100889c3"
+    },
+    "camara-br-proposicoes": {
+      "area": "civico_derechos",
+      "sha256": "e0ad382eb61cadfbb6d13f277e4a53de7836f1a90696f200a0b1eac15a932c89"
+    },
+    "eurlex-sparql": {
+      "area": "civico_derechos",
+      "sha256": "a8668275b4ba471b97e7e934dd1e94d4acb8b5f468696d696a66ef840283fee1"
+    },
+    "eurostat-catalogue": {
+      "area": "civico_derechos",
+      "sha256": "639becd66207f8afdb2f39f279debd705c6c798a59f6f632d683aee95dc9e5a3"
+    },
+    "eurostat-crime": {
+      "area": "civico_derechos",
+      "sha256": "a9d7cdcad7f8c97f8a056c5437077c05d431116de83b1228cdf1a233fcabf7f4"
+    },
+    "govtrack-bills": {
+      "area": "civico_derechos",
+      "sha256": "968a955434515ad84f7dff5019a32862d39db9c60225277cb45fc04ecd502a0c"
+    },
+    "senado-br-senadores": {
+      "area": "civico_derechos",
+      "sha256": "774ea96a80d9791ecfcf76b3b1ce472dacba022d70549b6f81ced2d571b1a5e7"
+    },
+    "udhr-cat": {
+      "area": "civico_derechos",
+      "sha256": "11f2f991677ab73715b96896da08a4904c898474d9f0bbf1f1b1d221e74ff829"
+    },
+    "udhr-en": {
+      "area": "civico_derechos",
+      "sha256": "723654b734689644258b8d7a70648b169fbc9fce7de92005138c9a7e87e54258"
+    },
+    "udhr-es": {
+      "area": "civico_derechos",
+      "sha256": "09cc33aa2afe1b4e30fdb98119114b407f06b3709bda2cbad6bc8a426ae51dad"
+    },
+    "udhr-pt": {
+      "area": "civico_derechos",
+      "sha256": "19dc36648ba8cb6783dfb6f3d0462c35d41e2d9dcedb1081c9eef0d196f00ff7"
+    },
+    "unhcr-countries": {
+      "area": "civico_derechos",
+      "sha256": "34d074cfdb9133d277f8adfecda370ae699fa9c3cb220cbebc91bac217148d7f"
+    },
+    "unhcr-population": {
+      "area": "civico_derechos",
+      "sha256": "bce8f5bc3b78bc1e7847204583bfd3bf3571c281bdd3f30177f87f0052f08342"
+    },
+    "worldbank-wgi": {
+      "area": "civico_derechos",
+      "sha256": "33431d5bdc35154f6f0bcc624bf4a343e45536098e4c50f79934cc953a34070c"
+    },
+    "cisa_kev": {
+      "area": "ciberseguridad",
+      "sha256": "2517d65715e0175d332643f4c51bb51dc37d11f337acd936b3fa459c504a88ef"
+    },
+    "nvd_nist": {
+      "area": "ciberseguridad",
+      "sha256": "f4927f0b7913173264cf98db8ca8263e8d5a2d2509d01f4ef91d07f6e18f402a"
+    },
+    "mitre_attack": {
+      "area": "ciberseguridad",
+      "sha256": "18a66e45276c7d8001e52eb858f83fe808ac0832fda2217c4afa152fcbf59c3b"
+    },
+    "cwe_mitre": {
+      "area": "ciberseguridad",
+      "sha256": "0d11a6a39409a881de2ece438af9055166b89147e19e61a307f49015db0fe315"
+    },
+    "epss": {
+      "area": "ciberseguridad",
+      "sha256": "266bc19adc20ec2f566fd1672161c731d6aada9b218f677cc920e833a97061ec"
+    },
+    "urlhaus": {
+      "area": "ciberseguridad",
+      "sha256": "f5e9826980456580c1b44c39e6fc7e44649fa337979fde0974c184260e8ebb9c"
+    },
+    "owasp_wstg": {
+      "area": "ciberseguridad",
+      "sha256": "18e9488fe9af23a9d3df6162b351c82e8f9e8b9290be5e848c8820d862330976"
+    },
+    "cisa-kev": {
+      "area": "ciberseguridad",
+      "sha256": "fe986dfb264f61dcb23649330d7c67b1211fd407cef01c8baabaaa9ad2ec3cbe"
+    },
+    "disposable-emails": {
+      "area": "ciberseguridad",
+      "sha256": "9996496699ed55b1cf53a6b8cfdd201f1a1dc39b423734fb1379c300bed18b2a"
+    },
+    "exploitdb": {
+      "area": "ciberseguridad",
+      "sha256": "54be25395591615a368da26991574d07c9200753b6989df4de62b38336c92d98"
+    },
+    "feodo-blocklist": {
+      "area": "ciberseguridad",
+      "sha256": "6da05eee1f31139d3ff99e460f0ca4c311d1de687e0d2af2b8cadcf945c9a16a"
+    },
+    "gh-advisories": {
+      "area": "ciberseguridad",
+      "sha256": "8de33dd7e2312142a416b3021f97acf822943633271fcdf68f1b917f3560d7a0"
+    },
+    "mitre-attack-cti": {
+      "area": "ciberseguridad",
+      "sha256": "6fcfc4cf0e9bbba6e02a9bc64b13bd6c298a65f58da663957b9e2806f4ad47f0"
+    },
+    "mitre-attack-stix": {
+      "area": "ciberseguridad",
+      "sha256": "a45010eb79601deb1f2afef0874619df7056ea008e0ecd4ef798eeafc62eba1e"
+    },
+    "mitre-capec": {
+      "area": "ciberseguridad",
+      "sha256": "fb136ba69b5945377bbb9e9dde88731541eaa05dbe5b535e2631d7cb45dd5142"
+    },
+    "mitre-cwec": {
+      "area": "ciberseguridad",
+      "sha256": "60f62b899f3aab2374e3070742f6fe1d81b037a7596b38f358053ab5faad9ffd"
+    },
+    "nist-oscal-800-53": {
+      "area": "ciberseguridad",
+      "sha256": "6b96016fb03fa2a375d366059f88ca01e8a1d2652e712bc1010dfa6ebb3f6061"
+    },
+    "nuclei-templates-meta": {
+      "area": "ciberseguridad",
+      "sha256": "9107681dcfba8ed0576b2c827a3a9aa2f4ac6fc0f1457c2cc910884963484fb2"
+    },
+    "nvd-cves": {
+      "area": "ciberseguridad",
+      "sha256": "3e5b8445e38c292776d09d1ea2e77eb7e7500282c1534fd10d2c076451613242"
+    },
+    "osv-vuln": {
+      "area": "ciberseguridad",
+      "sha256": "f650ecf7c6b0e0d0f89c86db63bb0cbcae0e19119a0b40ee0d66247614f15bdb"
+    },
+    "owasp-asvs": {
+      "area": "ciberseguridad",
+      "sha256": "90290ab0ceadb0dd1b4acbb0d544c63b09fa8f3cd4f9b091a966b40f0eeaae8a"
+    },
+    "publicsuffix": {
+      "area": "ciberseguridad",
+      "sha256": "c25a58018fed70bae07b221d7978a38c4ab78d1b92d22824313bd79e84108a35"
+    },
+    "sslbl-blacklist": {
+      "area": "ciberseguridad",
+      "sha256": "8d2e9aa40341b9dda424421175c5630036f19467d9af837c8cfbae8c57c834cf"
+    },
+    "stevenblack-hosts": {
+      "area": "ciberseguridad",
+      "sha256": "040b21c3824a4ba5801c27e26508bd2044d15fe05cd5e172d5e1980da4268313"
+    },
+    "yara-rules": {
+      "area": "ciberseguridad",
+      "sha256": "12309d3802e6337fb9f8e4c0b52868fd272fbaeb50d69349c78801051a9af1f3"
+    },
+    "iconify": {
+      "area": "ux_diseno",
+      "sha256": "cf4960c04b359f10e2567c24170fbb2c789203e0977114495c3cf9c3997b9f79"
+    },
+    "open_color": {
+      "area": "ux_diseno",
+      "sha256": "be2f0061ffc8121f01bf5ca7170451464b7689318cecb8738451f21beaedb0a8"
+    },
+    "material_tokens": {
+      "area": "ux_diseno",
+      "sha256": "c64462e6f6ce44eca29c8eeef57d009bc11a0941b4c7f01ee5e84ac373862210"
+    },
+    "lucide": {
+      "area": "ux_diseno",
+      "sha256": "cce92f53238bba8d1295fdbcccf6be8e7d87a9caa5774d3c1867d966c79a0d4d"
+    },
+    "met_museum": {
+      "area": "ux_diseno",
+      "sha256": "758691538fcb390c2eb1252e77c61642a0f257f324b7c7930fd7faf0a4cd082c"
+    },
+    "smk": {
+      "area": "ux_diseno",
+      "sha256": "74431f7eeb16e0285af483e1530713adf46e494d04b51f425bc54e774f19587a"
+    },
+    "bootstrap-icons": {
+      "area": "ux_diseno",
+      "sha256": "daa3390a931f6b17b280b6ea225dbe272841dc6aedae11339d368e29695863ce"
+    },
+    "color-names": {
+      "area": "ux_diseno",
+      "sha256": "bc685328e49f9d83053912b5ac65228ad403968d71092c11cd5f0ed120ad214b"
+    },
+    "feather-icons": {
+      "area": "ux_diseno",
+      "sha256": "e9215cbf3cf1547829d3b85f6a702e870818bf5cde1850659f77efd2a8433838"
+    },
+    "google-fonts-meta": {
+      "area": "ux_diseno",
+      "sha256": "37559d7f88cb5050d3f8c6fa8b9b3a8fb424840d2ff4660057b6d18af1765cfa"
+    },
+    "heroicons-svg": {
+      "area": "ux_diseno",
+      "sha256": "519609bd1ce1634b14c1571a849e45e3e41dd6215061a3a826e29549f0eff289"
+    },
+    "iconify-mdi": {
+      "area": "ux_diseno",
+      "sha256": "9236ef666270b472dcfd0a297bea8a996febacb188f51b9c83bcca69a5161808"
+    },
+    "lucide-icon-svg": {
+      "area": "ux_diseno",
+      "sha256": "8d7db9974eb1279ff952a8e9ac43752ef1ca7eebdcf5c8bac49d29982e3e557d"
+    },
+    "lucide-tags": {
+      "area": "ux_diseno",
+      "sha256": "876cb00f2684429242afd19c74a18e1cad097067d04ae17f6f025e33fe359bac"
+    },
+    "material-symbols-meta": {
+      "area": "ux_diseno",
+      "sha256": "3723dd9c9027dec11384e0e421d7ae5137b477e5cd399c1bc4bd62d77577124a"
+    },
+    "noto-emoji": {
+      "area": "ux_diseno",
+      "sha256": "d05405d474f6ecbdd35f6886fb44bb987ae01449c5dc8c2d0a97d16314252c8a"
+    },
+    "open-color": {
+      "area": "ux_diseno",
+      "sha256": "a3a45daa13295897d14a7cd16a8019673f98a26d96e0c1a813349c280a8d64cd"
+    },
+    "openmoji": {
+      "area": "ux_diseno",
+      "sha256": "cd2249af3cd524e0e7c00d9c3ffc9f1eab9392f248552b51e1b0d4e8fbf8a4e5"
+    },
+    "simple-icons": {
+      "area": "ux_diseno",
+      "sha256": "8cb8c6d6ba591242a50b2e30ae266ca018c9b380ae26084ffa18569b857620a0"
+    },
+    "twemoji": {
+      "area": "ux_diseno",
+      "sha256": "cea0c0174f1e3c5f3a548afa3b7e35bcf50d7c0db3e5d9f529ed3263f7620c91"
+    },
+    "artic-artworks": {
+      "area": "patrimonio_arte",
+      "sha256": "232d6d31be994dc96f12897a1156b38c98819b87c06cd261bd1cacfbe287af11"
+    },
+    "artic-search": {
+      "area": "patrimonio_arte",
+      "sha256": "e10e7daec7fa65afaf2fdec907adabd64619ad666ba5c04e5943e709f61efdac"
+    },
+    "europeana-search": {
+      "area": "patrimonio_arte",
+      "sha256": "e3360e709804373fb01508ad18a4bc6b02dd04af1a2a17e427bc44f00b2d0046"
+    },
+    "getty-aat": {
+      "area": "patrimonio_arte",
+      "sha256": "e5f92e929bc1f99d404514b20088d57eb67148903684885a1c2d8e70c7c4df3d"
+    },
+    "met-object": {
+      "area": "patrimonio_arte",
+      "sha256": "ba65a856b805c65a8328ac3e6b3a63098d25818d3045ee02c4dd2bfd58c12b19"
+    },
+    "musicbrainz-artist": {
+      "area": "patrimonio_arte",
+      "sha256": "1aca457ea702c905e1b4cdc0bebf2ab726c7cfdc3606dd4c253f9072e00c61ea"
+    },
+    "musicbrainz-recording": {
+      "area": "patrimonio_arte",
+      "sha256": "f89c4a0af2ceff24fb4961d46d71e88cc34be0675330cff39c5778fe6006e164"
+    },
+    "musicbrainz-release": {
+      "area": "patrimonio_arte",
+      "sha256": "1c7e2a81f2c53b1a8e5990a690a9e1347ae73ea55ad2385b2fefcfeb6e14a673"
+    },
+    "nasa-apod": {
+      "area": "patrimonio_arte",
+      "sha256": "3822d0f83ac165eeb41a3e429976615ea195d0251baeb899fc36fc6ebeb1d53a"
+    },
+    "nasa-images": {
+      "area": "patrimonio_arte",
+      "sha256": "24e49dc6ad33488144046134473ce6e948edb0dcde287563cd36d1a6e04455c3"
+    },
+    "smithsonian-openaccess": {
+      "area": "patrimonio_arte",
+      "sha256": "62ceb5c391a79cff185ce18e0b2ad5a5ce6dda110bd3709eb23c9303ddde2f6c"
+    },
+    "vam-museum": {
+      "area": "patrimonio_arte",
+      "sha256": "91521111114dd5614530213ba55c662979ab36eb65bfff36236cd121552b9eba"
+    },
+    "sciencemuseum-uk": {
+      "area": "patrimonio_arte",
+      "sha256": "b4f54928fefacad9766714d9e03212d5ff2b44aaae0c7f2eb46c21d099bcc548"
+    },
+    "chembl-target-search": {
+      "area": "ciencia_salud",
+      "sha256": "2b17c0e524ef02a84479c77389245057228b39266d7f3591375f1a681d3f90e1"
+    },
+    "gbif-occurrence": {
+      "area": "ciencia_salud",
+      "sha256": "161037bab3b3971edf402ba0b92ce663f5936292f654d8ac86e68e6c8ba6e996"
+    },
+    "gbif-species": {
+      "area": "ciencia_salud",
+      "sha256": "d5c9eb91ffd3d9f7e06b0f37b5469e2ee5dbd7fd083da8723fb0093916cab07c"
+    },
+    "hpo-term": {
+      "area": "ciencia_salud",
+      "sha256": "f3f0f41ec5be469bbecce60d4bac3e17e406261d161d2785ff9c986fdf80f1cd"
+    },
+    "inaturalist-observations": {
+      "area": "ciencia_salud",
+      "sha256": "510ff9c247f066a36e8240b2fd8fb8676c5ce2fc5d3976ee258f08ec585fa0ea"
+    },
+    "inaturalist-taxa": {
+      "area": "ciencia_salud",
+      "sha256": "c904560622db82a750534fa15a94ec6ce51f5bda7631cd7ad7f9fb5c4a5babd7"
+    },
+    "openfoodfacts-product": {
+      "area": "ciencia_salud",
+      "sha256": "77b598f34d7fadccf2909266add6198410c830b14bef4607c833fa2acb90cfda"
+    },
+    "pdb-entry": {
+      "area": "ciencia_salud",
+      "sha256": "658137285e56291822c54b561df0badf8c1864b420c9415961e7588d34e3ecfb"
+    },
+    "pubchem-property": {
+      "area": "ciencia_salud",
+      "sha256": "45cbd57b24635a80e0bc4859b29eb05abc49bb5d42654eda35bba30f902bd903"
+    },
+    "pubmed-esearch": {
+      "area": "ciencia_salud",
+      "sha256": "14f1b9ef0f4a3d1ec5699ed6c81ac71dcd45b3c4744c046c59de68143915d8ee"
+    },
+    "pubmed-esummary": {
+      "area": "ciencia_salud",
+      "sha256": "3e60ba7b3948e6cff8c5119fa41b0eae49ce01b7980c6239a12405242aa9fc33"
+    },
+    "reactome-pathways-top": {
+      "area": "ciencia_salud",
+      "sha256": "7ed3c0f8769f49c8b6d9cbbffbed70732f0867ee8bb1b36c3fe994a6e4377cc7"
+    },
+    "reactome-query": {
+      "area": "ciencia_salud",
+      "sha256": "fb3f4a879011641a0a8b41090c1ffcdd8913f18d1fed5ea2fcd6fef9fc6ce168"
+    },
+    "uniprot": {
+      "area": "ciencia_salud",
+      "sha256": "3fa527e3e0133f88fa2faa25545c4704696ba0cb2234cc115ebf62526c8ca74e"
+    },
+    "usda-fooddata": {
+      "area": "ciencia_salud",
+      "sha256": "4b93ef2ede099731e3c2e40184ba54169d859004d7df2a57475b871b13ec7694"
+    },
+    "who-gho-indicators": {
+      "area": "ciencia_salud",
+      "sha256": "ca24f597fc3e843ea2a775848ceec128037b16814047255c000aa218969391ff"
+    },
+    "who-gho-observation": {
+      "area": "ciencia_salud",
+      "sha256": "9d980f9b9c65f3673123d9d033eee297a7084def5990b8fb2824720814086d2d"
+    },
+    "countries-states-cities": {
+      "area": "datos_pais",
+      "sha256": "3eddaeb23c81cc77e27df219d51ca2030d199aa6de43d4d3b3dd45c96854b942"
+    },
+    "eurostat-data": {
+      "area": "datos_pais",
+      "sha256": "8d885a000ce1f5d9cf1a99626ecc1883da8f947d2563b7e4d067028d165bde1c"
+    },
+    "geonames-search": {
+      "area": "datos_pais",
+      "sha256": "75beadffeae046d001d3c27214b6cc97d2c4e530145e51dbc72fa4ef252196a3"
+    },
+    "ilostat-indicator": {
+      "area": "datos_pais",
+      "sha256": "d3235e601ac4b5214bfe2d1f03416524f5a161c2ce9249ebccd3bc487223912d"
+    },
+    "imf-gdp": {
+      "area": "datos_pais",
+      "sha256": "e9237529c2edba86285510cbfeb98e8feaf0f22085a4203c4b05589352c13bda"
+    },
+    "imf-indicators": {
+      "area": "datos_pais",
+      "sha256": "107517ea7a72e9aaeb8d30056c9ca40df106a6692c4d9d9edc534cbe8484ee0c"
+    },
+    "iso-country-codes": {
+      "area": "datos_pais",
+      "sha256": "746b789f422317b405dc2764d7b22e459ec6cdc38b305fb47778831c9d3b42cd"
+    },
+    "naturalearth-countries": {
+      "area": "datos_pais",
+      "sha256": "2922056a3819e3e470c2396944523f2887f8745ac13f5c35119ccb8856af1676"
+    },
+    "nominatim-search": {
+      "area": "datos_pais",
+      "sha256": "c8373ec874ed9f76b0a9d141bd51321e7ec05074353346fdaf04eb6df1d45db4"
+    },
+    "oecd-dataflow": {
+      "area": "datos_pais",
+      "sha256": "1daf148d55f66d3eb86bd890a8f24a500722fb6df0d4ec4307fbc7af5f4b0174"
+    },
+    "restcountries-all": {
+      "area": "datos_pais",
+      "sha256": "569c0b3517dd34c36022cd1c39758a4fec8c18ad175a9724bc10d50bf3bdf3aa"
+    },
+    "restcountries-name": {
+      "area": "datos_pais",
+      "sha256": "97fc8a9f782d73ce6acb1ea91c010bc4f1921ecafe174eea3e62258d9ea5e2ea"
+    },
+    "worldbank-countries": {
+      "area": "datos_pais",
+      "sha256": "9d8eb077b07d73ea4c3160e08ad3c10fda03512d2eaa1f55654ed1359c64ec96"
+    },
+    "worldbank-gdp": {
+      "area": "datos_pais",
+      "sha256": "b18063ef30496e6232009f5beeebd280560b2d05a23ff42b939ebbc0763b8f5c"
+    },
+    "worldbank-indicators": {
+      "area": "datos_pais",
+      "sha256": "58aa31c763775bc71890df5963d7aed373ef6dcafd35f63058ad23f597ba3773"
+    },
+    "geoboundaries": {
+      "area": "datos_pais",
+      "sha256": "24166d6f5c04e08acf4decdb5fb15e32bc9a64e96f029dafe22097ef0544b634"
+    }
+  }
+}

@@ -1,0 +1,927 @@
+{
+  "proyecto": {
+    "nombre": "Manos Abiertas - Material Universitario Completo",
+    "version": "1.0.0",
+    "licencia": "CC BY-SA 4.0",
+    "idioma_principal": "es",
+    "descripcion": "Curriculum educativo integral de competencias digitales, IA y herramientas abiertas desde nivel cero hasta experto",
+    "fecha_creacion": "2026-01-29",
+    "estadistica": {
+      "total_niveles": 4,
+      "total_modulos": 21,
+      "horas_estimadas": 280,
+      "idiomas_soportados": 39
+    }
+  },
+  "niveles": [
+    {
+      "id": "N0",
+      "nombre": "SEMINILLA - Iniciacion y Alfabetizacion Digital",
+      "icono": "seedling",
+      "descripcion": "Fundamentos esenciales para personas sin experiencia tecnologica previa",
+      "objetivo_general": "Establecer bases solidas de alfabetizacion digital que permitan al estudiante interactuar con confianza con dispositivos y servicios tecnologicos basicos",
+      "modulos": [
+        {
+          "codigo": "N0-M01",
+          "titulo": "Introduccion al Entorno Digital y Sistema Operativo",
+          "duracion_horas": 8,
+          "prerrequisitos": [],
+          "nivel_dificultad": "principiante",
+          "objetivos_aprendizaje": [
+            "Identificar componentes fisicos y logicos de un dispositivo informatico",
+            "Navegar con fluidez por el sistema operativo (Windows/Linux/macOS)",
+            "Organizar archivos y carpetas utilizando estructura logica",
+            "Aplicar medidas basicas de seguridad y privacidad digital"
+          ],
+          "contenidos_teoricos": {
+            "seccion_1_marco_teorico": {
+              "titulo": "Conceptos Clave del Entorno Digital",
+              "temas": [
+                {
+                  "tema": "Arquitectura de Computadoras",
+                  "descripcion": "El entorno digital contemporaneo constituye un ecosistema complejo de hardware y software que opera en sincronia para posibilitar las actividades computacionales que realizamos diariamente.",
+                  "conceptos_clave": [
+                    "Hardware: componentes fisicos (CPU, RAM, SSD/HDD, GPU, perifericos)",
+                    "Software: programas que controlan el funcionamiento del hardware",
+                    "Sistema Operativo: capa fundamental que gestiona recursos y provee interfaz"
+                  ]
+                },
+                {
+                  "tema": "Familias de Sistemas Operativos",
+                  "comparativa": [
+                    {
+                      "so": "Windows",
+                      "desarrollador": "Microsoft",
+                      "cuota_mercado": "~70%",
+                      "fortalezas": "Compatibilidad, soporte"
+                    },
+                    {
+                      "so": "macOS",
+                      "desarrollador": "Apple",
+                      "cuota_mercado": "~15%",
+                      "fortalezas": "Estabilidad, diseno"
+                    },
+                    {
+                      "so": "Linux",
+                      "desarrollador": "Comunidad",
+                      "cuota_mercado": "~3%",
+                      "fortalezas": "Codigo abierto, gratuito"
+                    }
+                  ]
+                }
+              ]
+            },
+            "seccion_2_tutorial_practico": {
+              "titulo": "Guia Paso a Paso",
+              "pasos": [
+                {
+                  "paso": 1,
+                  "titulo": "Encendido e Inicializacion",
+                  "instrucciones": "Conecte energia, presione power, espere proceso boot"
+                },
+                {
+                  "paso": 2,
+                  "titulo": "Configuracion de Cuenta",
+                  "instrucciones": "Cree cuenta con contrasena robusta"
+                }
+              ]
+            }
+          },
+          "recursos_multimedia": {
+            "videos_youtube_recomendados": [
+              {
+                "canal": "Cisco Networking Academy",
+                "tema": "Fundamentos de informatica",
+                "idiomas_disponibles": [
+                  "es",
+                  "en",
+                  "fr",
+                  "de",
+                  "pt"
+                ]
+              },
+              {
+                "canal": "Juan Carlos Guerra",
+                "tema": "Curso informatica basica",
+                "idioma_principal": "es"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "N0-M02",
+          "titulo": "Gestion de Archivos y Navegacion Web Segura",
+          "duracion_horas": 10,
+          "prerrequisitos": [
+            "N0-M01"
+          ],
+          "contenidos_teoricos": {
+            "tipos_archivos": [
+              "Documentos (.docx, .pdf)",
+              "Imagenes (.jpg, .png)",
+              "Audio (.mp3, .wav)",
+              "Video (.mp4, .avi)"
+            ],
+            "protocolos_web": {
+              "https": "Protocolo seguro con cifrado SSL/TLS",
+              "phishing": "Tecnicas de deteccion de sitios fraudulentos"
+            },
+            "operadores_busqueda": [
+              {
+                "operador": "site:",
+                "ejemplo": "site:edu.ar inteligencia artificial"
+              },
+              {
+                "operador": "filetype:",
+                "ejemplo": "filetype:pdf cambio climatico"
+              },
+              {
+                "operador": "\"\"",
+                "ejemplo": "\"inteligencia artificial generativa\""
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "N0-M03",
+          "titulo": "Fundamentos de Ofimatica: Procesador de Textos",
+          "duracion_horas": 12,
+          "software_recomendado": "LibreOffice Writer (software libre)",
+          "competencias": [
+            "Creacion y formateo de documentos profesionales",
+            "Insercion de imagenes y tablas",
+            "Exportacion a PDF"
+          ]
+        },
+        {
+          "codigo": "N0-M04",
+          "titulo": "Hojas de Calculo Basicas y Logica de Datos",
+          "duracion_horas": 12,
+          "funciones_esenciales": [
+            "SUMA()",
+            "PROMEDIO()",
+            "MAX()/MIN()",
+            "SI()",
+            "BUSCARV()"
+          ],
+          "conceptos_datos": [
+            "Referencias relativas vs absolutas",
+            "Tipos de datos: numerico, texto, fecha, booleano"
+          ]
+        },
+        {
+          "codigo": "N0-M05",
+          "titulo": "Etica Digital y Ciudadania Online",
+          "duracion_horas": 6,
+          "modulo_paralelo": true,
+          "temas": [
+            "Huella digital",
+            "Privacidad de datos",
+            "Ciberacoso",
+            "Desinformacion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NI",
+      "nombre": "COHETE - Productividad y Automatizacion Base",
+      "icono": "rocket",
+      "modulos": [
+        {
+          "codigo": "NI-M01",
+          "titulo": "Hojas de Calculo Avanzadas",
+          "duracion_horas": 15,
+          "funciones_avanzadas": [
+            "PROCV",
+            "SE anidado",
+            "CONTAR.SI",
+            "SUMAR.SI.CONJUNTO",
+            "INDICE/COINCIDIR"
+          ],
+          "tablas_dinamicas": "Herramienta para analisis multidimensional de datos"
+        },
+        {
+          "codigo": "NI-M02",
+          "titulo": "Herramientas Colaborativas Cloud",
+          "duracion_horas": 10,
+          "ecosistemas": [
+            "Google Workspace",
+            "Nextcloud",
+            "CryptPad",
+            "OnlyOffice"
+          ]
+        },
+        {
+          "codigo": "NI-M03",
+          "titulo": "Presentaciones Efectivas",
+          "duracion_horas": 10,
+          "principios_diseno": [
+            "Jerarquia visual",
+            "Regla de tercios",
+            "Paletas de color",
+            "Espacio en blanco"
+          ]
+        },
+        {
+          "codigo": "NI-M04",
+          "titulo": "Introduccion a la IA Generativa",
+          "duracion_horas": 8,
+          "conceptos_llm": [
+            "Tokens",
+            "Temperatura",
+            "Alucinaciones",
+            "Context window"
+          ],
+          "prompting_basico": [
+            "Rol/Persona",
+            "Contexto",
+            "Tarea",
+            "Formato salida",
+            "Restricciones"
+          ]
+        },
+        {
+          "codigo": "NI-M05",
+          "titulo": "Productividad Personal Digital",
+          "duracion_horas": 8,
+          "metodologias": [
+            "GTD (Getting Things Done)",
+            "Kanban",
+            "Time blocking"
+          ],
+          "apps": [
+            "Todoist",
+            "Trello",
+            "Notion",
+            "Zapier"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NA",
+      "nombre": "RAYO - Ingenieria de Prompts y Herramientas Abiertas",
+      "icono": "zap",
+      "modulos": [
+        {
+          "codigo": "NA-M01",
+          "titulo": "Ingenieria de Prompts Avanzada",
+          "duracion_horas": 15,
+          "tecnicas": [
+            "Chain-of-Thought (CoT)",
+            "Few-Shot Learning",
+            "Role Prompting",
+            "Tree of Thoughts",
+            "Self-Consistency"
+          ],
+          "plantillas_prompt": "[ROLE] + [CONTEXT] + [TASK] + [CONSTRAINTS] + [EXAMPLES] + [OUTPUT_FORMAT]"
+        },
+        {
+          "codigo": "NA-M02",
+          "titulo": "Integracion de IA en Flujos de Trabajo",
+          "duracion_horas": 12,
+          "casos_uso": [
+            "Escrita asistida",
+            "Resumen documentos",
+            "Analisis datos",
+            "Generacion codigo"
+          ],
+          "verificacion_calidad": [
+            "Fact-check",
+            "Verificacion tono/estilo",
+            "Deteccion sesgos"
+          ]
+        },
+        {
+          "codigo": "NA-M03",
+          "titulo": "Git/GitHub Control de Versiones",
+          "duracion_horas": 14,
+          "comandos_esenciales": [
+            "git init/clone/add/commit/push/pull",
+            "branch/merge",
+            "checkout/switch"
+          ],
+          "flujo_trabajo": "Fork -> Clone -> Branch -> Commit -> Push -> Pull Request -> Merge"
+        },
+        {
+          "codigo": "NA-M04",
+          "titulo": "Markdown y Documentacion Tecnica",
+          "duracion_horas": 10,
+          "sintaxis_basica": [
+            "# Encabezados",
+            "**negrita** *cursiva*",
+            "- listas",
+            "[enlaces](url)",
+            "```codigo```"
+          ],
+          "publicacion": [
+            "GitHub Pages",
+            "MkDocs",
+            "Docusaurus",
+            "GitBook"
+          ]
+        },
+        {
+          "codigo": "NA-M05",
+          "titulo": "Software Libre y Herramientas Abiertas",
+          "duracion_horas": 10,
+          "licencias": [
+            "GPL v3 (Copyleft fuerte)",
+            "MIT (Permisiva)",
+            "Apache 2.0",
+            "CC BY-SA 4.0"
+          ],
+          "alternativas_libres": [
+            "LibreOffice vs MS Office",
+            "GIMP vs Photoshop",
+            "Firefox vs Chrome",
+            "Linux vs Windows"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NE",
+      "nombre": "LLAVE - Experto: IA Local, Entornos Tecnicos y Autonomia",
+      "icono": "key",
+      "modulos": [
+        {
+          "codigo": "NE-M01",
+          "titulo": "Terminal CLI y Sistemas Operativos Avanzados",
+          "duracion_horas": 14,
+          "comandos_linux": [
+            "ls/cd/mv/cp/rm/mkdir",
+            "cat/grep/find/wc",
+            "chmod/chown/sudo",
+            "ssh/scp/curl"
+          ],
+          "scripting_bash": [
+            "Variables",
+            "Condicionales if/else",
+            "Bucles for/while",
+            "Funciones"
+          ]
+        },
+        {
+          "codigo": "NE-M02",
+          "titulo": "Entornos de Desarrollo Local",
+          "duracion_horas": 12,
+          "herramientas": [
+            "Python venv/poetry/uv",
+            "Node.js npm/yarn/pnpm",
+            "Docker/Docker Compose",
+            "VS Code/VSCodium"
+          ],
+          "containers": [
+            "docker build/run/exec",
+            "Dockerfile basico",
+            "docker-compose.yml"
+          ]
+        },
+        {
+          "codigo": "NE-M03",
+          "titulo": "IA Local Ollama Modelos Abiertos",
+          "duracion_horas": 12,
+          "modelos_recomendados": [
+            {
+              "modelo": "Llama 3.1",
+              "parametros": [
+                "8B",
+                "70B"
+              ],
+              "context_window": "128K"
+            },
+            {
+              "modelo": "Mistral",
+              "parametros": [
+                "7B",
+                "Mixtral 8x7B"
+              ],
+              "context_window": "32K-128K"
+            },
+            {
+              "modelo": "Phi-3",
+              "parametros": [
+                "3.8B",
+                "14B"
+              ],
+              "context_window": "128K"
+            },
+            {
+              "modelo": "Qwen 2",
+              "parametros": [
+                "0.5B a 72B"
+              ],
+              "context_window": "32K-128K"
+            }
+          ],
+          "api_ollama": [
+            "POST /api/generate",
+            "POST /api/chat",
+            "POST /api/embeddings"
+          ],
+          "cuantizacion": [
+            "Q4_K_M (recomendado)",
+            "Q5_K_M",
+            "Q8_0",
+            "FP16"
+          ]
+        },
+        {
+          "codigo": "NE-M04",
+          "titulo": "Programacion y Automatizacion Python/JS",
+          "duracion_horas": 18,
+          "python_fundamentos": [
+            "Tipos datos",
+            "Estructuras control",
+            "Funciones/clases",
+            "Manejo archivos"
+          ],
+          "librerias_python": [
+            "pandas/numpy",
+            "requests/beautifulsoup4",
+            "transformers/langchain",
+            "ollama python"
+          ],
+          "javascript_moderno": [
+            "ES6+ features",
+            "async/await",
+            "Node.js runtime",
+            "Puppeteer/Playwright"
+          ]
+        },
+        {
+          "codigo": "NE-M05",
+          "titulo": "Arquitectura Proyectos y Despliegue",
+          "duracion_horas": 14,
+          "patrones": [
+            "MVC",
+            "REST API",
+            "Microservicios",
+            "Serverless"
+          ],
+          "bases_datos": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "SQLite"
+          ],
+          "despliegue": [
+            "VPS (DigitalOcean, Hetzner)",
+            "PaaS (Railway, Render)",
+            "Docker/Kubernetes",
+            "CI/CD pipelines"
+          ],
+          "monitoreo": [
+            "Logs estructurados (JSON)",
+            "Metricas Prometheus/Grafana",
+            "Alertas multi-canal"
+          ]
+        },
+        {
+          "codigo": "NE-M06",
+          "titulo": "Proyecto Final y Certificacion",
+          "duracion_horas": 20,
+          "opciones_proyecto": [
+            "Opcion A: Asistente IA Local Multi-funcion (RAG + Ollama + Streamlit)",
+            "Opcion B: Plataforma Automatizacion Productividad (scripts + dashboards)",
+            "Opcion C: Portal Educativo Interactivo (Hugo/MkDocs + GitHub Pages)"
+          ],
+          "criterios_evaluacion": [
+            {
+              "criterio": "Funcionalidad completa",
+              "peso": "30%"
+            },
+            {
+              "criterio": "Calidad codigo",
+              "peso": "20%"
+            },
+            {
+              "criterio": "UI/UX",
+              "peso": "15%"
+            },
+            {
+              "criterio": "Documentacion",
+              "peso": "15%"
+            },
+            {
+              "criterio": "Originalidad",
+              "peso": "10%"
+            },
+            {
+              "criterio": "Presentacion defensa",
+              "peso": "10%"
+            }
+          ],
+          "niveles_certificacion": [
+            "Experto (90-100%)",
+            "Avanzado (75-89%)",
+            "Competente (60-74%)",
+            "En desarrollo (<60%)"
+          ]
+        }
+      ]
+    }
+  ],
+  "recursos_globales": {
+    "youtube_tutoriales_39_idiomas": {
+      "lista_completa_idiomas": [
+        {
+          "codigo": "es",
+          "nombre": "Espanol",
+          "hablantes_millones": 550,
+          "canales": [
+            "HolaMundo",
+            "Fazt",
+            "jonmircha",
+            "CodigoFacilito"
+          ]
+        },
+        {
+          "codigo": "en",
+          "nombre": "English",
+          "hablantes_millones": 1500,
+          "canales": [
+            "FreeCodeCamp",
+            "Traversy Media",
+            "The Net Ninja",
+            "Fireship"
+          ]
+        },
+        {
+          "codigo": "zh",
+          "nombre": "Chinese Mandarin",
+          "hablantes_millones": 1100,
+          "canales": [
+            "科技美学",
+            "黑马程序员",
+            "尚硅谷"
+          ]
+        },
+        {
+          "codigo": "hi",
+          "nombre": "Hindi",
+          "hablantes_millones": 600,
+          "canales": [
+            "Tech Keshav",
+            "CodeWithHarry Hindi"
+          ]
+        },
+        {
+          "codigo": "ar",
+          "nombre": "Arabic",
+          "hablantes_millones": 400,
+          "canales": [
+            "قناة التقنية",
+            "Code with Elzero"
+          ]
+        },
+        {
+          "codigo": "pt",
+          "nome": "Portuguese",
+          "hablantes_millones": 260,
+          "canales": [
+            "Curso em Video",
+            "TecMundo",
+            "Canal Tech"
+          ]
+        },
+        {
+          "codigo": "bn",
+          "nombre": "Bengali",
+          "hablantes_millones": 300,
+          "canales": [
+            "Programming with Sakib"
+          ]
+        },
+        {
+          "codigo": "fr",
+          "nombre": "French",
+          "hablantes_millones": 300,
+          "canales": [
+            "GraphikDecks",
+            "Docstring",
+            "Coding avec Jonathan"
+          ]
+        },
+        {
+          "codigo": "ru",
+          "nombre": "Russian",
+          "hablantes_millones": 258,
+          "canales": [
+            "Гоша Дударь",
+            "Selfedu",
+            "Егор Офф"
+          ]
+        },
+        {
+          "codigo": "ja",
+          "nombre": "Japanese",
+          "hablantes_millones": 125,
+          "canales": [
+            "PCAoka",
+            "Yohei Ishii",
+            "Jorge Tamura"
+          ]
+        },
+        {
+          "codigo": "ko",
+          "nombre": "Korean",
+          "hablantes_millones": 82,
+          "canales": [
+            "Gyeonglee",
+            "코딩애플",
+            "나도코딩"
+          ]
+        },
+        {
+          "codigo": "de",
+          "nombre": "German",
+          "hablantes_millones": 135,
+          "canales": [
+            "Nerdguru",
+            "The Morpheus",
+            "Programieren lernen"
+          ]
+        },
+        {
+          "codigo": "it",
+          "nombre": "Italian",
+          "hablantes_millones": 68,
+          "canales": [
+            "Mr. Hack",
+            "Codice Tuscolo",
+            "Informatica Aliante"
+          ]
+        },
+        {
+          "codigo": "tr",
+          "nombre": "Turkish",
+          "hablantes_millones": 88,
+          "canales": [
+            "Baris Ozcan",
+            "Yazilim Bilimi",
+            "Sadik Turan"
+          ]
+        },
+        {
+          "codigo": "vi",
+          "nombre": "Vietnamese",
+          "hablantes_millones": 85,
+          "canales": [
+            "Techmaster VN",
+            "Howkteam",
+            "VietCode"
+          ]
+        },
+        {
+          "codigo": "te",
+          "nombre": "Telugu",
+          "hablantes_millones": 95,
+          "canales": [
+            "Telugu Tech Tutorials",
+            "CSS Telugu"
+          ]
+        },
+        {
+          "codigo": "mr",
+          "nombre": "Marathi",
+          "hablantes_millones": 83,
+          "canales": [
+            "Marathi Coding",
+            "Tech Marathi"
+          ]
+        },
+        {
+          "codigo": "ta",
+          "nombre": "Tamil",
+          "hablantes_millones": 78,
+          "canales": [
+            "Tamil Tech Tutor",
+            "Code Tamil"
+          ]
+        },
+        {
+          "codigo": "ur",
+          "nombre": "Urdu",
+          "hablantes_millones": 170,
+          "canales": [
+            "Urdu IT",
+            "Code with Hamza"
+          ]
+        },
+        {
+          "codigo": "pl",
+          "nombre": "Polish",
+          "hablantes_millones": 45,
+          "canales": [
+            "Pasja Informatyki",
+            "Minsky"
+          ]
+        },
+        {
+          "codigo": "uk",
+          "nombre": "Ukrainian",
+          "hablantes_millones": 40,
+          "canales": [
+            "Kostya Vedy",
+            "Ukrainian Dev"
+          ]
+        },
+        {
+          "codigo": "ro",
+          "nombre": "Romanian",
+          "hablantes_millones": 28,
+          "canales": [
+            "Alex Iliescu",
+            "Codebuddy RO"
+          ]
+        },
+        {
+          "codigo": "nl",
+          "nombre": "Dutch",
+          "hablantes_millones": 28,
+          "canales": [
+            "Startpagina",
+            "Code Academy NL"
+          ]
+        },
+        {
+          "codigo": "th",
+          "nombre": "Thai",
+          "hablantes_millones": 60,
+          "canales": [
+            "Sampath Tech TH",
+            "Boyt ThaiDev"
+          ]
+        },
+        {
+          "codigo": "cs",
+          "nombre": "Czech",
+          "hablantes_millones": 11,
+          "canales": [
+            "Akademie TV",
+            "Czech Python"
+          ]
+        },
+        {
+          "codigo": "el",
+          "nombre": "Greek",
+          "hablantes_millones": 13,
+          "canales": [
+            "CodeHub GR",
+            "Greek Developer"
+          ]
+        },
+        {
+          "codigo": "hu",
+          "nombre": "Hungarian",
+          "hablantes_millones": 13,
+          "canales": [
+            "Codeberry HU",
+            "Hungarian Dev"
+          ]
+        },
+        {
+          "codigo": "sv",
+          "nombre": "Swedish",
+          "hablantes_millones": 11,
+          "canales": [
+            "Codebug.se",
+            "Teknikutbildning"
+          ]
+        },
+        {
+          "codigo": "da",
+          "nombre": "Danish",
+          "hablantes_millones": 6,
+          "canales": [
+            "Tech Torvet DK",
+            "Code Dansk"
+          ]
+        },
+        {
+          "codigo": "fi",
+          "nombre": "Finnish",
+          "hablantes_millones": 5.5,
+          "canales": [
+            "Python Suomi",
+            "Fi Dev"
+          ]
+        },
+        {
+          "codigo": "no",
+          "nombre": "Norwegian",
+          "hablantes_millones": 5.5,
+          "canales": [
+            "Codequinn",
+            "Norwegian Dev"
+          ]
+        },
+        {
+          "codigo": "he",
+          "nombre": "Hebrew",
+          "hablantes_millones": 9,
+          "canales": [
+            "Dev Israel",
+            "Code Hebrew"
+          ]
+        },
+        {
+          "codigo": "id",
+          "nombre": "Indonesian",
+          "hablantes_millones": 275,
+          "canales": [
+            "Web Programming UNPAS",
+            "Indonesia Belajar",
+            "Programming ID"
+          ]
+        },
+        {
+          "codigo": "ms",
+          "nombre": "Malay",
+          "hablantes_millones": 65,
+          "canales": [
+            "Malaysia Tech Channel",
+            "Code Malaysia"
+          ]
+        },
+        {
+          "codigo": "fil",
+          "nombre": "Filipino/Tagalog",
+          "hablantes_millones": 45,
+          "canales": [
+            "Pinoy Dev",
+            "Code Philippines"
+          ]
+        },
+        {
+          "codigo": "sw",
+          "nombre": "Swahili",
+          "hablantes_millones": 50,
+          "canales": [
+            "Swahili Tech",
+            "Code Africa SW"
+          ]
+        },
+        {
+          "codigo": "af",
+          "nombre": "Afrikaans",
+          "hablantes_millones": 7,
+          "canales": [
+            "Code Afrikaans",
+            "Tech SA AF"
+          ]
+        }
+      ]
+    },
+    "playlists_manos_abiertas": {
+      "nivel_0": {
+        "playlist_id": "PL_MANOS_N0",
+        "videos": 45,
+        "horas": 12,
+        "idiomas": [
+          "es",
+          "en",
+          "pt",
+          "fr"
+        ]
+      },
+      "nivel_intermedio": {
+        "playlist_id": "PL_MANOS_NI",
+        "videos": 52,
+        "horas": 16,
+        "idiomas": [
+          "es",
+          "en",
+          "pt"
+        ]
+      },
+      "nivel_avanzado": {
+        "playlist_id": "PL_MANOS_NA",
+        "videos": 58,
+        "horas": 20,
+        "idiomas": [
+          "es",
+          "en"
+        ]
+      },
+      "nivel_experto": {
+        "playlist_id": "PL_MANOS_NE",
+        "videos": 67,
+        "horas": 25,
+        "idiomas": [
+          "es",
+          "en"
+        ]
+      }
+    }
+  },
+  "meta": {
+    "version_formato": "JSON Schema v1.0",
+    "ultima_actualizacion": "2026-01-29",
+    "autor": "Proyecto Manos Abiertas",
+    "licencia_contenido": "Creative Commons BY-SA 4.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "tema": "tipografia-de-marca",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "Google Fonts",
+      "spec": "google_fonts:inter",
+      "ok": true,
+      "datos": [
+        {
+          "familia": "Inter",
+          "categoria": "Sans Serif",
+          "pesos": null
+        },
+        {
+          "familia": "Inter Tight",
+          "categoria": "Sans Serif",
+          "pesos": null
+        }
+      ]
+    }
+  ]
+}

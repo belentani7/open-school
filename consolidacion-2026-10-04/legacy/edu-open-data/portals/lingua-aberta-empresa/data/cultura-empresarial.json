@@ -1,0 +1,48 @@
+{
+  "tema": "cultura-empresarial",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "Wikipedia ES",
+      "spec": "wiki:es:Cultura empresarial",
+      "ok": true,
+      "datos": {
+        "titulo": "Cultura organizacional",
+        "resumen": "La cultura organizacional, cultura institucional, cultura administrativa, cultura corporativa, cultura empresarial, o cultura de negocios, para designar un determinado concepto de cultura aplicado al ámbito restringido de una organización, institución, administración, corporación, empresa, o negocio.",
+        "url": "https://es.wikipedia.org/wiki/Cultura_organizacional"
+      }
+    },
+    {
+      "fuente": "Viccionari CA",
+      "spec": "mediawiki:ca.wiktionary.org:empresa",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "empresa",
+          "url": "https://ca.wiktionary.org/wiki/empresa",
+          "fragmento": "Pronúncia(i): Rimes: -ɛza Etimologia: De emprendre, segle XIV. empresa f. ‎(plural empreses) Organització amb personalitat jurídica que pretén generar riquesa"
+        },
+        {
+          "titulo": "empresa matriu",
+          "url": "https://ca.wiktionary.org/wiki/empresa_matriu",
+          "fragmento": "empresa matriu f. ‎(plural empreses matriu) Empresa que té una participació en una altra empresa de tal manera que pot controlar-la. Traduccions Alemany:"
+        },
+        {
+          "titulo": "empreses",
+          "url": "https://ca.wiktionary.org/wiki/empreses",
+          "fragmento": "Pronúncia(i): Rimes: -ɛzes empreses f. pl. Forma plural de empresa. empreses Participi femení plural del verb emprendre. Síl·labes: em·pre·ses (3) Anagrames:"
+        },
+        {
+          "titulo": "emprar",
+          "url": "https://ca.wiktionary.org/wiki/emprar",
+          "fragmento": "perifràstiques Paradigmes de flexió: empro, empra, emprem Vocal rizotònica: /ɛ/, /ə/, /e/ amprar emprament empre empriu aplicar, dedicar, destinar, donar"
+        },
+        {
+          "titulo": "empreses matriu",
+          "url": "https://ca.wiktionary.org/wiki/empreses_matriu",
+          "fragmento": "empreses matriu f. pl. Forma plural de empresa matriu."
+        }
+      ]
+    }
+  ]
+}

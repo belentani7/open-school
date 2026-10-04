@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belentani Glass — Assets Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* TOKENS — 60-30-10: 60% navy, 30% superficie, 10% lima/cyan. Contrastes verificados WCAG AA:
+   papel #F3EFE7 sobre #070D18 = 15.9:1 | lima #A8FF3E sobre ink #0E2035 = 12.1:1 | cyan solo decorativo, texto cyan sobre navy = 9.4:1 */
+:root{
+  --bel-bg:#070D18; --bel-surface:#0D1626; --bel-ink:#0E2035;
+  --bel-cyan:#38E1FF; --bel-lime:#A8FF3E; --bel-coral:#EA644B;
+  --bel-saffron:#FFC24A; --bel-mint:#CBE9DB; --bel-paper:#F3EFE7;
+  --radius:.8rem;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',sans-serif;color:var(--bel-paper);min-height:100vh;padding:28px;
+  background:
+    radial-gradient(900px 400px at 85% -5%, rgba(168,255,62,.14), transparent 60%),
+    radial-gradient(800px 420px at 10% 10%, rgba(56,225,255,.12), transparent 60%),
+    var(--bel-bg);}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(56,225,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,225,255,.06) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(70% 60% at 50% 20%, black, transparent);}
+.wrap{max-width:1080px;margin:0 auto;position:relative}
+.nav{position:sticky;top:12px;z-index:10;display:flex;align-items:center;gap:14px;padding:12px 18px;border-radius:var(--radius);
+  background:rgba(13,22,38,.55);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid rgba(56,225,255,.18);box-shadow:0 8px 32px rgba(0,0,0,.35);}
+.logo{font-family:'Space Grotesk';font-weight:700;letter-spacing:1px}
+.logo b{color:var(--bel-lime)}
+.links{margin-left:auto;display:flex;gap:16px;font-size:13px;color:#9fb3c8}
+.links a{color:inherit;text-decoration:none}.links a.on{color:var(--bel-lime)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;margin-top:22px}
+h1{font-family:'Space Grotesk';font-size:46px;line-height:1.02}
+h1 span{color:var(--bel-lime)}
+.sub{color:#9fb3c8;margin:12px 0 20px;max-width:520px}
+.btn{display:inline-block;background:var(--bel-lime);color:var(--bel-ink);font-weight:700;padding:13px 24px;border-radius:var(--radius);text-decoration:none;box-shadow:0 0 24px rgba(168,255,62,.35);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:rgba(56,225,255,.08);color:var(--bel-cyan);border:1px solid rgba(56,225,255,.5);box-shadow:none;margin-left:10px}
+.glass{background:rgba(13,22,38,.55);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid rgba(56,225,255,.18);border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.35);padding:22px}
+.glass h2{font-family:'Space Grotesk';font-size:17px;margin-bottom:6px}
+.bar{height:8px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:70%;background:linear-gradient(90deg,var(--bel-cyan),var(--bel-lime))}
+ul.tl{list-style:none;padding:0}
+ul.tl li{padding:7px 0 7px 22px;position:relative;color:#c7d5e3;font-size:14px}
+ul.tl li::before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--bel-lime);box-shadow:0 0 10px var(--bel-lime)}
+ul.tl li.todo::before{background:transparent;border:1px solid #5e6873;box-shadow:none}
+code{font-family:'DM Mono',monospace;color:var(--bel-lime);font-size:13px}
+.chips{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.chip{font-size:11px;letter-spacing:1px;border:1px solid rgba(56,225,255,.4);color:var(--bel-cyan);border-radius:99px;padding:5px 12px;background:rgba(56,225,255,.07)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.grid3 .glass{padding:18px}
+.k{font-family:'Space Grotesk';font-size:26px;color:var(--bel-lime)}
+.foot{margin-top:20px;font-family:'Space Grotesk';letter-spacing:2px;font-size:12px;color:var(--bel-cyan);text-align:center}
+@media(max-width:860px){.hero,.grid3{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav"><div class="logo">SECURE <b>T</b></div>
+    <div class="links"><a class="on" href="#">INICIO</a><a href="#">CARRERAS</a><a href="#">CURSOS</a><a href="#">LABS</a><a href="#">ACCESO</a></div>
+  </div>
+  <div class="hero">
+    <div>
+      <h1>LA UNIVERSIDAD DIGITAL PARA<br><span>UN MUNDO + SEGURO<br>E INTELIGENTE</span></h1>
+      <p class="sub">Ciberseguridad e IA. Aprende haciendo: laboratorios <code>Juice Shop</code>, <code>DVWA</code> y proyectos reales.</p>
+      <a class="btn" href="#">EXPLORA CARRERAS →</a><a class="btn ghost" href="#">VER RUTA</a>
+      <div class="chips"><span class="chip">100% ONLINE</span><span class="chip">APRENDE HACIENDO</span><span class="chip">CERTIFICACIONES</span></div>
+    </div>
+    <div class="glass">
+      <h2>Ruta de Aprendizaje <span style="float:right;color:var(--bel-lime)">70%</span></h2>
+      <div class="bar"><i></i></div>
+      <ul class="tl">
+        <li>Fundamentos de Ciberseguridad</li>
+        <li>Redes y Sistemas</li>
+        <li><code>Hacking Ético</code> — en curso</li>
+        <li class="todo">Inteligencia Artificial</li>
+        <li class="todo">Proyecto Final</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid3">
+    <div class="glass"><div class="k">500M</div><div style="font-size:13px;color:#9fb3c8">patrón Moodle: reach open masivo</div></div>
+    <div class="glass"><div class="k">453K ★</div><div style="font-size:13px;color:#9fb3c8">patrón FCC: código auditable</div></div>
+    <div class="glass"><div class="k">58M DAU</div><div style="font-size:13px;color:#9fb3c8">patrón Duolingo: racha diaria</div></div>
+  </div>
+  <div class="foot">APRENDE. PROTEGE. TRANSFORMA.</div>
+</div>
+</body>
+</html>

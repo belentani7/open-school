@@ -1,0 +1,139 @@
+=== TYPESCRIPT ===
+
+TSC_EXIT=0
+
+=== LINT ===
+
+> app-template@1.0.0 lint /home/ubuntu/niche-lang-app
+> expo lint
+
+(node:17800) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/ubuntu/niche-lang-app/eslint.config.js?mtime=1785215721915 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/ubuntu/niche-lang-app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+/home/ubuntu/niche-lang-app/app/(tabs)/index.tsx
+  11:9  warning  'colors' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/ubuntu/niche-lang-app/app/(tabs)/progress.tsx
+   9:9   warning  'colors' is assigned a value but never used             @typescript-eslint/no-unused-vars
+  11:20  warning  'getLessonProgress' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/home/ubuntu/niche-lang-app/app/(tabs)/settings.tsx
+   6:48  warning  'getConsentStatus' is defined but never used  @typescript-eslint/no-unused-vars
+   9:9   warning  'colors' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  22:14  warning  'error' is defined but never used             @typescript-eslint/no-unused-vars
+  41:22  warning  'error' is defined but never used             @typescript-eslint/no-unused-vars
+
+✖ 7 problems (0 errors, 7 warnings)
+
+
+LINT_EXIT=0
+
+=== TESTS ===
+
+> app-template@1.0.0 test /home/ubuntu/niche-lang-app
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/niche-lang-app
+
+ ✓ tests/lessons-context.test.ts (6 tests) 4ms
+ ✓ tests/user-context.test.ts (5 tests) 6ms
+ ✓ tests/services.test.ts (14 tests) 9ms
+ ↓ tests/auth.logout.test.ts (1 test | 1 skipped)
+
+ Test Files  3 passed | 1 skipped (4)
+      Tests  25 passed | 1 skipped (26)
+   Start at  20:28:46
+   Duration  520ms (transform 412ms, setup 0ms, collect 567ms, tests 19ms, environment 1ms, prepare 349ms)
+
+
+TEST_EXIT=0
+
+=== BUILD ===
+
+> app-template@1.0.0 build /home/ubuntu/niche-lang-app
+> esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+
+  dist/index.js  24.9kb
+
+⚡ Done in 10ms
+
+BUILD_EXIT=0
+
+=== AUDIT DEPENDENCIAS ===
+
+PNPM_AUDIT_EXIT=124
+
+=== FILES ===
+app/(tabs)/_layout.tsx
+app/(tabs)/index.tsx
+app/(tabs)/progress.tsx
+app/(tabs)/settings.tsx
+app/_layout.tsx
+app/dev/theme-lab.tsx
+app/lesson/[id].tsx
+app/niche/[id].tsx
+app/niches.tsx
+app/oauth/callback.tsx
+components/external-link.tsx
+components/haptic-tab.tsx
+components/hello-wave.tsx
+components/parallax-scroll-view.tsx
+components/screen-container.tsx
+components/themed-view.tsx
+components/ui/collapsible.tsx
+components/ui/icon-symbol.ios.tsx
+components/ui/icon-symbol.tsx
+constants/const.ts
+constants/niches.ts
+constants/oauth.ts
+constants/theme.ts
+hooks/use-auth.ts
+hooks/use-color-scheme.ts
+hooks/use-color-scheme.web.ts
+hooks/use-colors.ts
+lib/_core/api.ts
+lib/_core/auth.ts
+lib/_core/manus-runtime.ts
+lib/_core/nativewind-pressable.ts
+lib/_core/theme.ts
+lib/contexts/lessons-context.tsx
+lib/contexts/user-context.tsx
+lib/data/lesson-templates.ts
+lib/services/notifications.ts
+lib/services/security.ts
+lib/services/sync.ts
+lib/theme-provider.tsx
+lib/trpc.ts
+lib/utils.ts
+server/README.md
+server/_core/context.ts
+server/_core/cookies.ts
+server/_core/dataApi.ts
+server/_core/env.ts
+server/_core/heartbeat.ts
+server/_core/imageGeneration.ts
+server/_core/index.ts
+server/_core/llm.ts
+server/_core/notification.ts
+server/_core/oauth.ts
+server/_core/sdk.ts
+server/_core/storageProxy.ts
+server/_core/systemRouter.ts
+server/_core/trpc.ts
+server/_core/types/cookie.d.ts
+server/_core/types/manusTypes.ts
+server/_core/voiceTranscription.ts
+server/db.ts
+server/routers.ts
+server/storage.ts
+shared/_core/errors.ts
+shared/const.ts
+shared/types.ts
+tests/auth.logout.test.ts
+tests/lessons-context.test.ts
+tests/services.test.ts
+tests/user-context.test.ts

@@ -1,0 +1,1 @@
+ALTER TABLE `bookingRequests` ADD CONSTRAINT `booking_slot_unique` UNIQUE(`preferredDate`,`preferredTime`);

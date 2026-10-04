@@ -1,0 +1,19 @@
+import { courses, trackLabels, type Locale } from "@shared/dictCatalog";
+import { ArrowDown, ArrowRight, CheckCircle2, LockKeyhole } from "lucide-react";
+import { Link } from "wouter";
+import PublicShell from "@/components/PublicShell";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const copy: Record<Locale, { eyebrow: string; title: string; lead: string; map: string; mapLead: string; requirement: string; passed: string; sem: string }> = {
+  es: { eyebrow: "Arquitectura académica", title: "Diez semestres. Una progresión verificable.", lead: "La matrícula avanzada queda bloqueada hasta demostrar los prerrequisitos con nota y evidencia de proyecto. Los fundamentos no se negocian; se aplican y se profundizan.", map: "Mapa de prerrequisitos", mapLead: "Cada nodo es navegable. Las líneas de dependencia se muestran como requisitos académicos bloqueantes.", requirement: "Requiere", passed: "Evidencia requerida", sem: "Semestre" },
+  pt: { eyebrow: "Arquitetura académica", title: "Dez semestres. Uma progressão verificável.", lead: "A matrícula avançada fica bloqueada até demonstrar pré-requisitos com nota e evidência de projeto. Os fundamentos não são negociáveis; são aplicados e aprofundados.", map: "Mapa de pré-requisitos", mapLead: "Cada nó é navegável. As dependências são apresentadas como requisitos académicos bloqueantes.", requirement: "Requer", passed: "Evidência requerida", sem: "Semestre" },
+  en: { eyebrow: "Academic architecture", title: "Ten semesters. A verifiable progression.", lead: "Advanced enrollment is blocked until prerequisites are demonstrated through grades and project evidence. Fundamentals are not negotiated; they are applied and deepened.", map: "Prerequisite map", mapLead: "Every node is navigable. Dependencies are shown as blocking academic requirements.", requirement: "Requires", passed: "Required evidence", sem: "Semester" },
+};
+
+export default function Curriculum() {
+  const { locale } = useLanguage(); const text = copy[locale];
+  return <PublicShell><section className="curriculum-hero"><span className="eyebrow">{text.eyebrow}</span><h1>{text.title}</h1><p>{text.lead}</p><div className="curriculum-principles"><span><CheckCircle2 size={17} />300 CA internos</span><span><LockKeyhole size={17} />Prerrequisitos bloqueantes</span><span><ArrowRight size={17} />A → F</span></div></section>
+    <section className="semester-rail" aria-label="Semester curriculum">{Array.from({ length: 10 }, (_, index) => index + 1).map(semester => <article key={semester} className="semester-card"><header><span>{text.sem} {String(semester).padStart(2, "0")}</span><b>30 CA</b></header>{courses.filter(course => course.semester === semester).map(course => <Link href={`/catalog/${course.code}`} key={course.code} className="semester-course"><span className="course-code">{course.code}</span><strong>{course.title[locale]}</strong><small>{trackLabels[course.track][locale]} · {course.entry} → {course.exit}</small>{course.prerequisites.length > 0 && <em>{text.requirement}: {course.prerequisites.join(", ")}</em>}</Link>)}</article>)}</section>
+    <section className="map-section"><div><span className="eyebrow">{text.map}</span><h2>{text.mapLead}</h2></div><div className="prerequisite-map">{courses.filter(course => course.prerequisites.length > 0).map(course => <div className="map-row" key={course.code}><div className="dependency-list">{course.prerequisites.map(item => <Link key={item} href={`/catalog/${item}`}>{item}</Link>)}</div><ArrowDown size={15}/><Link href={`/catalog/${course.code}`} className="map-target"><b>{course.code}</b><span>{course.title[locale]}</span></Link></div>)}</div><p className="map-note"><LockKeyhole size={15}/>{text.passed}: aprobar cada asignatura previa con un mínimo de 65/100 y presentar la evidencia definida en la rúbrica.</p></section>
+  </PublicShell>;
+}

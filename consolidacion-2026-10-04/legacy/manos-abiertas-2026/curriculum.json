@@ -1,0 +1,552 @@
+{
+  "proyecto": {
+    "nombre": "Manos Abiertas - Material Universitario Completo",
+    "version": "1.0.0",
+    "licencia": "CC BY-SA 4.0",
+    "idioma_principal": "es",
+    "descripcion": "Curriculum educativo integral de competencias digitales, IA y herramientas abiertas desde nivel cero hasta experto"
+  },
+  "generado_utc": "2026-09-15T15:07:18+00:00",
+  "origen": {
+    "archivo": "curriculum.source.json",
+    "sha256": "f5eeaabdd8dfc5e44e4957ca52141a7704a8ceff1f0ca40410628f13411341a6"
+  },
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "estadistica": {
+    "total_niveles": 4,
+    "total_modulos": 21,
+    "horas_estimadas": 250
+  },
+  "niveles": [
+    {
+      "id": "N0",
+      "nombre": "SEMINILLA - Iniciacion y Alfabetizacion Digital",
+      "icono": "seedling",
+      "descripcion": "Fundamentos esenciales para personas sin experiencia tecnologica previa",
+      "horas": 48,
+      "modulos": [
+        {
+          "codigo": "N0-M01",
+          "titulo": "Introduccion al Entorno Digital y Sistema Operativo",
+          "horas": 8,
+          "dificultad": "principiante",
+          "prerrequisitos": [],
+          "objetivos": [
+            "Identificar componentes fisicos y logicos de un dispositivo informatico",
+            "Navegar con fluidez por el sistema operativo (Windows/Linux/macOS)",
+            "Organizar archivos y carpetas utilizando estructura logica",
+            "Aplicar medidas basicas de seguridad y privacidad digital"
+          ]
+        },
+        {
+          "codigo": "N0-M02",
+          "titulo": "Gestion de Archivos y Navegacion Web Segura",
+          "horas": 10,
+          "dificultad": "",
+          "prerrequisitos": [
+            "N0-M01"
+          ],
+          "objetivos": []
+        },
+        {
+          "codigo": "N0-M03",
+          "titulo": "Fundamentos de Ofimatica: Procesador de Textos",
+          "horas": 12,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "N0-M04",
+          "titulo": "Hojas de Calculo Basicas y Logica de Datos",
+          "horas": 12,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "N0-M05",
+          "titulo": "Etica Digital y Ciudadania Online",
+          "horas": 6,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        }
+      ]
+    },
+    {
+      "id": "NI",
+      "nombre": "COHETE - Productividad y Automatizacion Base",
+      "icono": "rocket",
+      "descripcion": "",
+      "horas": 51,
+      "modulos": [
+        {
+          "codigo": "NI-M01",
+          "titulo": "Hojas de Calculo Avanzadas",
+          "horas": 15,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NI-M02",
+          "titulo": "Herramientas Colaborativas Cloud",
+          "horas": 10,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NI-M03",
+          "titulo": "Presentaciones Efectivas",
+          "horas": 10,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NI-M04",
+          "titulo": "Introduccion a la IA Generativa",
+          "horas": 8,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NI-M05",
+          "titulo": "Productividad Personal Digital",
+          "horas": 8,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        }
+      ]
+    },
+    {
+      "id": "NA",
+      "nombre": "RAYO - Ingenieria de Prompts y Herramientas Abiertas",
+      "icono": "zap",
+      "descripcion": "",
+      "horas": 61,
+      "modulos": [
+        {
+          "codigo": "NA-M01",
+          "titulo": "Ingenieria de Prompts Avanzada",
+          "horas": 15,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NA-M02",
+          "titulo": "Integracion de IA en Flujos de Trabajo",
+          "horas": 12,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NA-M03",
+          "titulo": "Git/GitHub Control de Versiones",
+          "horas": 14,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NA-M04",
+          "titulo": "Markdown y Documentacion Tecnica",
+          "horas": 10,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NA-M05",
+          "titulo": "Software Libre y Herramientas Abiertas",
+          "horas": 10,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        }
+      ]
+    },
+    {
+      "id": "NE",
+      "nombre": "LLAVE - Experto: IA Local, Entornos Tecnicos y Autonomia",
+      "icono": "key",
+      "descripcion": "",
+      "horas": 90,
+      "modulos": [
+        {
+          "codigo": "NE-M01",
+          "titulo": "Terminal CLI y Sistemas Operativos Avanzados",
+          "horas": 14,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NE-M02",
+          "titulo": "Entornos de Desarrollo Local",
+          "horas": 12,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NE-M03",
+          "titulo": "IA Local Ollama Modelos Abiertos",
+          "horas": 12,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NE-M04",
+          "titulo": "Programacion y Automatizacion Python/JS",
+          "horas": 18,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NE-M05",
+          "titulo": "Arquitectura Proyectos y Despliegue",
+          "horas": 14,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        },
+        {
+          "codigo": "NE-M06",
+          "titulo": "Proyecto Final y Certificacion",
+          "horas": 20,
+          "dificultad": "",
+          "prerrequisitos": [],
+          "objetivos": []
+        }
+      ]
+    }
+  ],
+  "recursos": {
+    "canales_por_idioma": [
+      {
+        "codigo": "es",
+        "nombre": "Espanol",
+        "canales": [
+          "HolaMundo",
+          "Fazt",
+          "jonmircha",
+          "CodigoFacilito"
+        ]
+      },
+      {
+        "codigo": "en",
+        "nombre": "English",
+        "canales": [
+          "FreeCodeCamp",
+          "Traversy Media",
+          "The Net Ninja",
+          "Fireship"
+        ]
+      },
+      {
+        "codigo": "zh",
+        "nombre": "Chinese Mandarin",
+        "canales": [
+          "科技美学",
+          "黑马程序员",
+          "尚硅谷"
+        ]
+      },
+      {
+        "codigo": "hi",
+        "nombre": "Hindi",
+        "canales": [
+          "Tech Keshav",
+          "CodeWithHarry Hindi"
+        ]
+      },
+      {
+        "codigo": "ar",
+        "nombre": "Arabic",
+        "canales": [
+          "قناة التقنية",
+          "Code with Elzero"
+        ]
+      },
+      {
+        "codigo": "pt",
+        "nombre": "Portuguese",
+        "canales": [
+          "Curso em Video",
+          "TecMundo",
+          "Canal Tech"
+        ]
+      },
+      {
+        "codigo": "bn",
+        "nombre": "Bengali",
+        "canales": [
+          "Programming with Sakib"
+        ]
+      },
+      {
+        "codigo": "fr",
+        "nombre": "French",
+        "canales": [
+          "GraphikDecks",
+          "Docstring",
+          "Coding avec Jonathan"
+        ]
+      },
+      {
+        "codigo": "ru",
+        "nombre": "Russian",
+        "canales": [
+          "Гоша Дударь",
+          "Selfedu",
+          "Егор Офф"
+        ]
+      },
+      {
+        "codigo": "ja",
+        "nombre": "Japanese",
+        "canales": [
+          "PCAoka",
+          "Yohei Ishii",
+          "Jorge Tamura"
+        ]
+      },
+      {
+        "codigo": "ko",
+        "nombre": "Korean",
+        "canales": [
+          "Gyeonglee",
+          "코딩애플",
+          "나도코딩"
+        ]
+      },
+      {
+        "codigo": "de",
+        "nombre": "German",
+        "canales": [
+          "Nerdguru",
+          "The Morpheus",
+          "Programieren lernen"
+        ]
+      },
+      {
+        "codigo": "it",
+        "nombre": "Italian",
+        "canales": [
+          "Mr. Hack",
+          "Codice Tuscolo",
+          "Informatica Aliante"
+        ]
+      },
+      {
+        "codigo": "tr",
+        "nombre": "Turkish",
+        "canales": [
+          "Baris Ozcan",
+          "Yazilim Bilimi",
+          "Sadik Turan"
+        ]
+      },
+      {
+        "codigo": "vi",
+        "nombre": "Vietnamese",
+        "canales": [
+          "Techmaster VN",
+          "Howkteam",
+          "VietCode"
+        ]
+      },
+      {
+        "codigo": "te",
+        "nombre": "Telugu",
+        "canales": [
+          "Telugu Tech Tutorials",
+          "CSS Telugu"
+        ]
+      },
+      {
+        "codigo": "mr",
+        "nombre": "Marathi",
+        "canales": [
+          "Marathi Coding",
+          "Tech Marathi"
+        ]
+      },
+      {
+        "codigo": "ta",
+        "nombre": "Tamil",
+        "canales": [
+          "Tamil Tech Tutor",
+          "Code Tamil"
+        ]
+      },
+      {
+        "codigo": "ur",
+        "nombre": "Urdu",
+        "canales": [
+          "Urdu IT",
+          "Code with Hamza"
+        ]
+      },
+      {
+        "codigo": "pl",
+        "nombre": "Polish",
+        "canales": [
+          "Pasja Informatyki",
+          "Minsky"
+        ]
+      },
+      {
+        "codigo": "uk",
+        "nombre": "Ukrainian",
+        "canales": [
+          "Kostya Vedy",
+          "Ukrainian Dev"
+        ]
+      },
+      {
+        "codigo": "ro",
+        "nombre": "Romanian",
+        "canales": [
+          "Alex Iliescu",
+          "Codebuddy RO"
+        ]
+      },
+      {
+        "codigo": "nl",
+        "nombre": "Dutch",
+        "canales": [
+          "Startpagina",
+          "Code Academy NL"
+        ]
+      },
+      {
+        "codigo": "th",
+        "nombre": "Thai",
+        "canales": [
+          "Sampath Tech TH",
+          "Boyt ThaiDev"
+        ]
+      },
+      {
+        "codigo": "cs",
+        "nombre": "Czech",
+        "canales": [
+          "Akademie TV",
+          "Czech Python"
+        ]
+      },
+      {
+        "codigo": "el",
+        "nombre": "Greek",
+        "canales": [
+          "CodeHub GR",
+          "Greek Developer"
+        ]
+      },
+      {
+        "codigo": "hu",
+        "nombre": "Hungarian",
+        "canales": [
+          "Codeberry HU",
+          "Hungarian Dev"
+        ]
+      },
+      {
+        "codigo": "sv",
+        "nombre": "Swedish",
+        "canales": [
+          "Codebug.se",
+          "Teknikutbildning"
+        ]
+      },
+      {
+        "codigo": "da",
+        "nombre": "Danish",
+        "canales": [
+          "Tech Torvet DK",
+          "Code Dansk"
+        ]
+      },
+      {
+        "codigo": "fi",
+        "nombre": "Finnish",
+        "canales": [
+          "Python Suomi",
+          "Fi Dev"
+        ]
+      },
+      {
+        "codigo": "no",
+        "nombre": "Norwegian",
+        "canales": [
+          "Codequinn",
+          "Norwegian Dev"
+        ]
+      },
+      {
+        "codigo": "he",
+        "nombre": "Hebrew",
+        "canales": [
+          "Dev Israel",
+          "Code Hebrew"
+        ]
+      },
+      {
+        "codigo": "id",
+        "nombre": "Indonesian",
+        "canales": [
+          "Web Programming UNPAS",
+          "Indonesia Belajar",
+          "Programming ID"
+        ]
+      },
+      {
+        "codigo": "ms",
+        "nombre": "Malay",
+        "canales": [
+          "Malaysia Tech Channel",
+          "Code Malaysia"
+        ]
+      },
+      {
+        "codigo": "fil",
+        "nombre": "Filipino/Tagalog",
+        "canales": [
+          "Pinoy Dev",
+          "Code Philippines"
+        ]
+      },
+      {
+        "codigo": "sw",
+        "nombre": "Swahili",
+        "canales": [
+          "Swahili Tech",
+          "Code Africa SW"
+        ]
+      },
+      {
+        "codigo": "af",
+        "nombre": "Afrikaans",
+        "canales": [
+          "Code Afrikaans",
+          "Tech SA AF"
+        ]
+      }
+    ]
+  }
+}

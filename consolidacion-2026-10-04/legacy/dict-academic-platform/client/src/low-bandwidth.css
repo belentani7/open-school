@@ -1,0 +1,8 @@
+@layer components {
+  .bandwidth-switch { border: 1px solid var(--border); background: transparent; color: var(--muted-foreground); font-size: .62rem; padding: .3rem .4rem; letter-spacing: .08em; }
+  .bandwidth-switch.active { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+  .low-bandwidth .site-shell { background: var(--background); }
+  .low-bandwidth .hero-signal::after { display: none; }
+  .low-bandwidth .hero-signal, .low-bandwidth .path-preview { background: var(--background); }
+  .low-bandwidth *, .low-bandwidth *::before, .low-bandwidth *::after { animation: none !important; transition: none !important; }
+}

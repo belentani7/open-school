@@ -1,0 +1,69 @@
+{
+  "portal": "manosabiertas",
+  "repo": "belentani7/ManosAbiertas",
+  "dominio": "Integracion, derechos y tramites (ES)",
+  "generado_utc": "2026-10-01T04:24:12.831277+00:00",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "fuentes": [
+    {
+      "tema": "empleo-y-paro",
+      "fuente": "World Bank",
+      "ok": true
+    },
+    {
+      "tema": "empleo-y-paro",
+      "fuente": "datos.gob.es",
+      "ok": false
+    },
+    {
+      "tema": "educacion-y-formacion",
+      "fuente": "World Bank",
+      "ok": true
+    },
+    {
+      "tema": "educacion-y-formacion",
+      "fuente": "OpenStax",
+      "ok": false
+    },
+    {
+      "tema": "vivienda-y-servicios",
+      "fuente": "datos.gob.es",
+      "ok": false
+    },
+    {
+      "tema": "contexto-demografico-ue",
+      "fuente": "Eurostat",
+      "ok": true
+    },
+    {
+      "tema": "contexto-demografico-ue",
+      "fuente": "CountriesNow",
+      "ok": true
+    },
+    {
+      "tema": "salud-publica",
+      "fuente": "PubMed",
+      "ok": true
+    },
+    {
+      "tema": "salud-publica",
+      "fuente": "World Bank",
+      "ok": true
+    },
+    {
+      "tema": "derechos-y-asilo",
+      "fuente": "World Bank",
+      "ok": true
+    },
+    {
+      "tema": "derechos-y-asilo",
+      "fuente": "Wikipedia ES",
+      "ok": false
+    }
+  ]
+}

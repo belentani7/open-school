@@ -1,0 +1,7 @@
+{
+  "name": "Belentani School - Plataforma ESO y Tutoría Cultural",
+  "description": "Plataforma educativa integral Belentani School OS para William Danilo (14 años). 365 clases anuales organizadas y dictadas por día en bloques de 4 horas (Matemáticas, Lenguas PT-ES-CA, Ciencias y Laboratorio), acceso guiado diario a material didáctico y herramientas integradas como Google Sheets y Python.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

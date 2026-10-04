@@ -1,0 +1,42 @@
+{
+  "portal": "williamschool",
+  "dominio": "ESO, tutoria cultural y refuerzo",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "generado_utc": "2026-09-12T21:59:26+00:00",
+  "motor": "edge-tts (voces neuronales, sin API key)",
+  "idiomas": {
+    "pt": {
+      "voz": "pt-BR-FranciscaNeural",
+      "guion": "Bem-vindo ao portal de referência williamschool. Domínio: ESO, tutoria cultural y refuerzo. Reúne 3 temas construídos a partir de 3 fontes de dados abertos verificadas: textos por asignatura, tutorias y cultura, lecturas obligatorias. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
+      "archivo": "voces/pt/bienvenida.mp3",
+      "bytes": 133056,
+      "sha256": "e7328383966f28fcc1dc554d7aabc663ff1b3eb2b31d194f81b15a228b9fe68a"
+    },
+    "es": {
+      "voz": "es-ES-ElviraNeural",
+      "guion": "Bienvenido al portal de referencia williamschool. Dominio: ESO, tutoria cultural y refuerzo. Reúne 3 temas construidos a partir de 3 fuentes de datos abiertos verificadas: textos por asignatura, tutorias y cultura, lecturas obligatorias. Todo gratuito, sin credenciales, y funciona sin conexión.",
+      "archivo": "voces/es/bienvenida.mp3",
+      "bytes": 128016,
+      "sha256": "bcc17d53af7fe706073172b0c51ee236bb81bf58ef4896cb4454f87c539ecf2d"
+    },
+    "en": {
+      "voz": "en-US-AriaNeural",
+      "guion": "Welcome to the williamschool reference portal. Domain: ESO, tutoria cultural y refuerzo. It brings together 3 topics built from 3 verified open data sources: textos por asignatura, tutorias y cultura, lecturas obligatorias. All free, no credentials, and it works offline.",
+      "archivo": "voces/en/bienvenida.mp3",
+      "bytes": 131616,
+      "sha256": "16475e11c0b8d2d3d62ace1fab28e70feee50b7de664134640da59e7a67067ad"
+    },
+    "ca": {
+      "voz": "ca-ES-JoanaNeural",
+      "guion": "Benvingut al portal de referència williamschool. Domini: ESO, tutoria cultural y refuerzo. Aplega 3 temes construïts a partir de 3 fonts de dades obertes verificades: textos por asignatura, tutorias y cultura, lecturas obligatorias. Tot gratuït, sense credencials, i funciona sense connexió.",
+      "archivo": "voces/ca/bienvenida.mp3",
+      "bytes": 156960,
+      "sha256": "3601104729675f551df0208cace62ff1747bd49d1bc942dda2b4aa6e74b1141e"
+    }
+  }
+}

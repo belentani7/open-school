@@ -1,0 +1,101 @@
+id,title,publication_year,cited_by_count,doi,type
+https://openalex.org/W3038568908,Radiation Resistant Camera System for Monitoring Deuterium Plasma Discharges in the Large Helical Device,2020,801217,https://doi.org/10.1585/pfr.15.2402039,article
+https://openalex.org/W1775749144,PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT,1951,318974,https://doi.org/10.1016/s0021-9258(19)52451-6,article
+https://openalex.org/W2100837269,Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4,1970,252001,https://doi.org/10.1038/227680a0,article
+https://openalex.org/W2194775991,Deep Residual Learning for Image Recognition,2016,228750,https://doi.org/10.1109/cvpr.2016.90,conference-paper
+https://openalex.org/W2128635872,A Rapid and Sensitive Method for the Quantitation of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding,1976,225376,https://doi.org/10.1006/abio.1976.9999,article
+https://openalex.org/W1981368803,Generalized Gradient Approximation Made Simple,1996,216442,https://doi.org/10.1103/physrevlett.77.3865,article
+https://openalex.org/W4293247451,A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding,1976,212606,https://doi.org/10.1016/0003-2697(76)90527-3,article
+https://openalex.org/W1979290264,Using thematic analysis in psychology,2006,192943,https://doi.org/10.1191/1478088706qp063oa,article
+https://openalex.org/W2107277218,Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method,2001,184477,https://doi.org/10.1006/meth.2001.1262,article
+https://openalex.org/W2911964244,Random Forests,2001,131918,https://doi.org/10.1023/a:1010933404324,article
+https://openalex.org/W2144634347,Molecular Cloning: A Laboratory Manual,1989,129950,,article
+https://openalex.org/W2083222334,Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set,1996,123535,https://doi.org/10.1103/physrevb.54.11169,article
+https://openalex.org/W4247665917,Diagnostic and Statistical Manual of Mental Disorders,2013,116254,https://doi.org/10.1176/appi.books.9780890425596,book
+https://openalex.org/W3128646645,Global Cancer Statistics 2020: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries,2021,114173,https://doi.org/10.3322/caac.21660,article
+https://openalex.org/W2110065044,Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing,1995,111754,https://doi.org/10.1111/j.2517-6161.1995.tb02031.x,article
+https://openalex.org/W2071666535,Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives,1999,108428,https://doi.org/10.1080/10705519909540118,article
+https://openalex.org/W3118615836,The PRISMA 2020 statement: an updated guideline for reporting systematic reviews,2021,104831,https://doi.org/10.1136/bmj.n71,review
+https://openalex.org/W2143981217,Density-functional thermochemistry. III. The role of exact exchange,1993,103947,https://doi.org/10.1063/1.464913,article
+https://openalex.org/W2179438025,Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2,2014,103480,https://doi.org/10.1186/s13059-014-0550-8,article
+https://openalex.org/W2064675550,Long Short-Term Memory,1997,101761,https://doi.org/10.1162/neco.1997.9.8.1735,article
+https://openalex.org/W2023271753,Development of the Colle-Salvetti correlation-energy formula into a functional of the electron density,1988,101123,https://doi.org/10.1103/physrevb.37.785,article
+https://openalex.org/W2055043387,Basic local alignment search tool,1990,95495,https://doi.org/10.1016/s0022-2836(05)80360-2,article
+https://openalex.org/W1970127494,Projector augmented-wave method,1994,93062,https://doi.org/10.1103/physrevb.50.17953,article
+https://openalex.org/W1901129140,U-Net: Convolutional Networks for Biomedical Image Segmentation,2015,92328,https://doi.org/10.1007/978-3-319-24574-4_28,conference-paper
+https://openalex.org/W1951724000,Fitting Linear Mixed-Effects Models Using lme4,2015,88688,https://doi.org/10.18637/jss.v067.i01,article
+https://openalex.org/W2889646458,Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries,2018,88122,https://doi.org/10.3322/caac.21492,article
+https://openalex.org/W2131350133,A short history of SHELX,2007,87825,https://doi.org/10.1107/s0108767307043930,article
+https://openalex.org/W2099697766,The theory of planned behavior,1991,87492,https://doi.org/10.1016/0749-5978(91)90020-t,article
+https://openalex.org/W1847168837,“Mini-mental state”,1975,87444,https://doi.org/10.1016/0022-3956(75)90026-6,article
+https://openalex.org/W2314225431,Molecular cloning: A laboratory manual,1990,86239,https://doi.org/10.1016/0003-2697(90)90595-z,article
+https://openalex.org/W1979544533,From ultrasoft pseudopotentials to the projector augmented-wave method,1999,85651,https://doi.org/10.1103/physrevb.59.1758,article
+https://openalex.org/W2919115771,Deep learning,2015,84503,https://doi.org/10.1038/nature14539,article
+https://openalex.org/W2156098321,Preferred reporting items for systematic reviews and meta-analyses: the PRISMA statement,2009,83667,https://doi.org/10.1136/bmj.b2535,review
+https://openalex.org/W1995875735,A Mathematical Theory of Communication,1948,82340,https://doi.org/10.1002/j.1538-7305.1948.tb01338.x,article
+https://openalex.org/W2164777277,The Measurement of Observer Agreement for Categorical Data,1977,81076,https://doi.org/10.2307/2529310,article
+https://openalex.org/W2106096361,Common method biases in behavioral research: A critical review of the literature and recommended remedies.,2003,80223,https://doi.org/10.1037/0021-9010.88.5.879,article
+https://openalex.org/W4385245566,Exploiting Generative AI to Scale up Intelligent Tutoring Systems,2023,79058,https://doi.org/10.4230/lipics.itp.2023.19,article
+https://openalex.org/W1484864026,Using multivariate statistics,1983,77448,,article
+https://openalex.org/W2007395042,Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set,1996,76384,https://doi.org/10.1016/0927-0256(96)00008-0,article
+https://openalex.org/W2163605009,ImageNet classification with deep convolutional neural networks,2017,75616,https://doi.org/10.1145/3065386,article
+https://openalex.org/W2158714788,Gapped BLAST and PSI-BLAST: a new generation of protein database search programs,1997,74903,https://doi.org/10.1093/nar/25.17.3389,article
+https://openalex.org/W1527311855,Case Study Research: Design and Methods,1984,74827,,article
+https://openalex.org/W2167279371,Fiji: an open-source platform for biological-image analysis,2012,72770,https://doi.org/10.1038/nmeth.2019,article
+https://openalex.org/W1856219842,Standard methods: For the examination of water and waste water,1990,72444,https://doi.org/10.1016/0003-2697(90)90598-4,article
+https://openalex.org/W1971440513,"The moderator-mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations.",1986,72217,https://doi.org/10.1037//0022-3514.51.6.1173,article
+https://openalex.org/W2752617332,"Theory of the firm: Managerial behavior, agency costs and ownership structure",1976,71809,https://doi.org/10.1016/0304-405x(76)90026-x,article
+https://openalex.org/W2036113194,Special points for Brillouin-zone integrations,1976,71737,https://doi.org/10.1103/physrevb.13.5188,article
+https://openalex.org/W4292811746,"The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations.",1986,71533,https://doi.org/10.1037/0022-3514.51.6.1173,article
+https://openalex.org/W2131271579,Trimmomatic: a flexible trimmer for Illumina sequence data,2014,71487,https://doi.org/10.1093/bioinformatics/btu170,article
+https://openalex.org/W4235678817,Evaluating Structural Equation Models with Unobservable Variables and Measurement Error,1981,71204,https://doi.org/10.1177/002224378101800104,article
+https://openalex.org/W2138270253,DNA sequencing with chain-terminating inhibitors,1977,69411,https://doi.org/10.1073/pnas.74.12.5463,article
+https://openalex.org/W2108234281,The Sequence Alignment/Map format and SAMtools,2009,68783,https://doi.org/10.1093/bioinformatics/btp352,article
+https://openalex.org/W2029667189,VMD: Visual molecular dynamics,1996,68256,https://doi.org/10.1016/0263-7855(96)00018-5,article
+https://openalex.org/W2024556021,A Revised Medium for Rapid Growth and Bio Assays with Tobacco Tissue Cultures,1962,67879,https://doi.org/10.1111/j.1399-3054.1962.tb08052.x,article
+https://openalex.org/W2117692326,Hallmarks of Cancer: The Next Generation,2011,67419,https://doi.org/10.1016/j.cell.2011.02.013,article
+https://openalex.org/W1791587663,"Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology",1989,67377,https://doi.org/10.2307/249008,article
+https://openalex.org/W4211007335,Fuzzy sets,1965,67216,https://doi.org/10.1016/s0019-9958(65)90241-x,article
+https://openalex.org/W2058122340,Electric Field Effect in Atomically Thin Carbon Films,2004,66809,https://doi.org/10.1126/science.1102896,article
+https://openalex.org/W2099540110,NIH Image to ImageJ: 25 years of image analysis,2012,66714,https://doi.org/10.1038/nmeth.2089,article
+https://openalex.org/W1964184380,Mutation of the mouse klotho gene leads to a syndrome resembling ageing.,1997,66570,https://doi.org/10.1038/36285,article
+https://openalex.org/W2087484885,"G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences",2007,65950,https://doi.org/10.3758/bf03193146,article
+https://openalex.org/W2167590372,Revised effective ionic radii and systematic studies of interatomic distances in halides and chalcogenides,1976,65838,https://doi.org/10.1107/s0567739476001551,article
+https://openalex.org/W2107031757,Statistical power analysis for the behavioral sciences,1990,65632,https://doi.org/10.1016/0198-9715(90)90050-4,article
+https://openalex.org/W2168526937,A SIMPLE METHOD FOR THE ISOLATION AND PURIFICATION OF TOTAL LIPIDES FROM ANIMAL TISSUES,1957,65269,https://doi.org/10.1016/s0021-9258(18)64849-5,article
+https://openalex.org/W2106882534,"CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",1994,65264,https://doi.org/10.1093/nar/22.22.4673,article
+https://openalex.org/W4294215472,Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement,2009,65076,https://doi.org/10.1371/journal.pmed.1000097,review
+https://openalex.org/W2230728100,Self-Consistent Equations Including Exchange and Correlation Effects,1965,64130,https://doi.org/10.1103/physrev.140.a1133,article
+https://openalex.org/W2125435699,Measuring inconsistency in meta-analyses,2003,64049,https://doi.org/10.1136/bmj.327.7414.557,article
+https://openalex.org/W2101234009,Scikit-learn: Machine Learning in Python,2012,63985,https://doi.org/10.48550/arxiv.1201.0490,article
+https://openalex.org/W2103441770,Fast and accurate short read alignment with Burrows–Wheeler transform,2009,63766,https://doi.org/10.1093/bioinformatics/btp324,article
+https://openalex.org/W2108598243,ImageNet: A large-scale hierarchical image database,2009,63284,https://doi.org/10.1109/cvpr.2009.5206848,conference-paper
+https://openalex.org/W2134812217,Single-Step Method of RNA Isolation by Acid Guanidinium Thiocyanate–Phenol–Chloroform Extraction,1987,63256,https://doi.org/10.1006/abio.1987.9999,article
+https://openalex.org/W2170551349,Fast gapped-read alignment with Bowtie 2,2012,62435,https://doi.org/10.1038/nmeth.1923,article
+https://openalex.org/W1987258130,Evaluating Structural Equation Models with Unobservable Variables and Measurement Error,1981,61283,https://doi.org/10.2307/3151312,article
+https://openalex.org/W2097706568,The neighbor-joining method: a new method for reconstructing phylogenetic trees.,1987,60624,https://doi.org/10.1093/oxfordjournals.molbev.a040454,article
+https://openalex.org/W2112796928,Gradient-based learning applied to document recognition,1998,59590,https://doi.org/10.1109/5.726791,article
+https://openalex.org/W2298230951,Official Methods of Analysis of,1980,59462,https://doi.org/10.1021/ac50052a726,article
+https://openalex.org/W2092157292,A consistent and accurate ab initio parametrization of density functional dispersion correction (DFT-D) for the 94 elements H-Pu,2010,59171,https://doi.org/10.1063/1.3382344,article
+https://openalex.org/W2133665775,Image quality assessment: from error visibility to structural similarity,2004,58103,https://doi.org/10.1109/tip.2003.819861,article
+https://openalex.org/W2132905138,CRC Handbook of Chemistry and Physics,2014,57911,https://doi.org/10.1201/b17118,book
+https://openalex.org/W2130410032,Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles,2005,57845,https://doi.org/10.1073/pnas.0506580102,article
+https://openalex.org/W2169456326,STAR: ultrafast universal RNA-seq aligner,2012,57746,https://doi.org/10.1093/bioinformatics/bts635,article
+https://openalex.org/W2157823046,"Bias in meta-analysis detected by a simple, graphical test",1997,57639,https://doi.org/10.1136/bmj.315.7109.629,article
+https://openalex.org/W2114918609,Rapid colorimetric assay for cellular growth and survival: Application to proliferation and cytotoxicity assays,1983,56116,https://doi.org/10.1016/0022-1759(83)90303-4,article
+https://openalex.org/W639708223,Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks,2016,55861,https://doi.org/10.1109/tpami.2016.2577031,article
+https://openalex.org/W2151103935,Distinctive Image Features from Scale-Invariant Keypoints,2004,55815,https://doi.org/10.1023/b:visi.0000029664.99615.94,article
+https://openalex.org/W2106787323,Global cancer statistics,2011,55079,https://doi.org/10.3322/caac.20107,article
+https://openalex.org/W2086957099,Density-functional exchange-energy approximation with correct asymptotic behavior,1988,53965,https://doi.org/10.1103/physreva.38.3098,article
+https://openalex.org/W2101108802,Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets: procedure and some applications.,1979,53886,https://doi.org/10.1073/pnas.76.9.4350,article
+https://openalex.org/W2135943618,Mind in Society: The Development of Higher Psychological Processes,1978,53810,,book
+https://openalex.org/W2112778345,The CES-D Scale,1977,53766,https://doi.org/10.1177/014662167700100306,article
+https://openalex.org/W2093274439,Research electronic data capture (REDCap)—A metadata-driven methodology and workflow process for providing translational research informatics support,2008,53212,https://doi.org/10.1016/j.jbi.2008.08.010,article
+https://openalex.org/W2295598076,XGBoost,2016,52862,https://doi.org/10.1145/2939672.2939785,conference-paper
+https://openalex.org/W2135046866,Regression Shrinkage and Selection Via the Lasso,1996,52804,https://doi.org/10.1111/j.2517-6161.1996.tb02080.x,article
+https://openalex.org/W1968834637,Colorimetric Method for Determination of Sugars and Related Substances,1956,52305,https://doi.org/10.1021/ac60111a017,article
+https://openalex.org/W2163815564,The Rat Brain in Stereotaxic Coordinates,1982,52287,https://doi.org/10.1016/c2009-0-63235-9,book
+https://openalex.org/W3001118548,"Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China",2020,51991,https://doi.org/10.1016/s0140-6736(20)30183-5,article
+https://openalex.org/W2142635246,A new look at the statistical model identification,1974,51488,https://doi.org/10.1109/tac.1974.1100705,article
+https://openalex.org/W2000445173,A new method of classifying prognostic comorbidity in longitudinal studies: Development and validation,1987,50593,https://doi.org/10.1016/0021-9681(87)90171-8,article
+https://openalex.org/W2964121744,Adam: A Method for Stochastic Optimization,2015,50293,https://doi.org/10.4230/lipics.cp.2021.42,article

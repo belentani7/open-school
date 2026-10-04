@@ -1,0 +1,81 @@
+{
+  "tema": "competencias-digitales",
+  "portal": "manos-abiertas-2026",
+  "registros": [
+    {
+      "fuente": "OpenStax",
+      "spec": "openstax:computer",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Introduction to Computer Science",
+          "url": "https://openstax.org/details/books/introduction-computer-science"
+        }
+      ]
+    },
+    {
+      "fuente": "Wikilibros ES",
+      "spec": "mediawiki:es.wikibooks.org:informatica",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Informática Educacional",
+          "url": "https://es.wikibooks.org/wiki/Inform%C3%A1tica_Educacional",
+          "fragmento": "El wikilibro Informática Educacional es un producto de la informática colaborativa. Está destinado a los educadores, a los padres en su rol de educadores"
+        },
+        {
+          "titulo": "Seguridad informática",
+          "url": "https://es.wikibooks.org/wiki/Seguridad_inform%C3%A1tica",
+          "fragmento": "por amenazas informáticas. Introducción Definición Terminología Tecnología y el malware Mitos Principios básicos de la seguridad informática Lo básico en"
+        },
+        {
+          "titulo": "Manual de Ingeniería Informática",
+          "url": "https://es.wikibooks.org/wiki/Manual_de_Ingenier%C3%ADa_Inform%C3%A1tica",
+          "fragmento": "entrar a través de: Índice de Contenidos Introducción a la informática Historia de la informática Física Teoría de campos Teoría de Circuitos Electrónica"
+        },
+        {
+          "titulo": "Mantenimiento y Montaje de Equipos Informáticos/Tema 9/Enunciado",
+          "url": "https://es.wikibooks.org/wiki/Mantenimiento_y_Montaje_de_Equipos_Inform%C3%A1ticos%2FTema_9%2FEnunciado",
+          "fragmento": "cuales 3 tendrán una infraestructura informática apropiada para los cursos que la requieran, bien sean de informática o no, puesto que el computador hoy"
+        },
+        {
+          "titulo": "Seguridad informática/Introducción",
+          "url": "https://es.wikibooks.org/wiki/Seguridad_inform%C3%A1tica%2FIntroducci%C3%B3n",
+          "fragmento": "La seguridad informática es un tema al que mucha gente no le da la importancia que realmente tiene; muchas veces por el hecho de considerar que es inútil"
+        }
+      ]
+    },
+    {
+      "fuente": "OpenAlex",
+      "spec": "openalex:digital literacy adult education",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Health literacy and public health: A systematic review and integration of definitions and models",
+          "anio": 2012,
+          "url": "https://doi.org/10.1186/1471-2458-12-80"
+        },
+        {
+          "titulo": "Understanding the role of digital technologies in education: A review",
+          "anio": 2022,
+          "url": "https://doi.org/10.1016/j.susoc.2022.05.004"
+        },
+        {
+          "titulo": "From digital literacy to digital competence: the teacher digital competency (TDC) framework",
+          "anio": 2020,
+          "url": "https://doi.org/10.1007/s11423-020-09767-4"
+        },
+        {
+          "titulo": "eHEALS: The eHealth Literacy Scale",
+          "anio": 2006,
+          "url": "https://doi.org/10.2196/jmir.8.4.e27"
+        },
+        {
+          "titulo": "Digital Literacies: concepts, policies and practices",
+          "anio": 2008,
+          "url": "https://researchonline.jcu.edu.au/27788/1/27788_Lankshear_and_Knobel_2008.pdf"
+        }
+      ]
+    }
+  ]
+}

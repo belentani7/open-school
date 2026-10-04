@@ -1,0 +1,60 @@
+# Project TODO
+
+- [x] Definir las decisiones de alcance, denominación y límites de certificación interna.
+- [x] Investigar y verificar fuentes oficiales, educativas y complementarias para la biblioteca.
+- [x] Diseñar el currículo trilingüe completo de 17 niveles o módulos progresivos.
+- [x] Redactar lecciones originales con objetivos, teoría, ejemplos, errores, ejercicios y aplicación profesional.
+- [x] Preparar proyectos progresivos, capstone, examen final y plantillas de portafolio.
+- [x] Crear quizzes, rangos de desempeño, rúbricas detalladas y reglas de certificado interno.
+- [x] Añadir objetivos explícitos para cada lección publicada en los 17 módulos.
+- [x] Crear briefs completos y separados para los cuatro proyectos progresivos.
+- [x] Ampliar las plantillas de portfolio con checklist de evidencias, presentación y guía de reflexión.
+- [x] Diseñar el modelo de datos para contenido, progreso, resultados, notas, evidencias y enlaces.
+- [x] Aplicar la migración de base de datos y verificar el esquema.
+- [x] Implementar la navegación, catálogo y selector de idioma español, português e inglés.
+- [x] Implementar dashboard de aprendizaje con progreso, puntos, hitos, badges y siguiente actividad.
+- [x] Implementar vistas de módulo, lección, notas, biblioteca de recursos, perfil y certificado.
+- [x] Implementar quizzes, prácticas y seguimiento de calificaciones por módulo.
+- [x] Implementar Practice Lab con intento obligatorio y retroalimentación formativa escalonada.
+- [x] Implementar la gestión segura de evidencias mediante enlaces y adjuntos en almacenamiento externo.
+- [x] Implementar proyectos, capstone, portafolio y criterios de elegibilidad del certificado interno.
+- [x] Crear una vista de detalle por módulo con lecciones, práctica, proyecto y progreso.
+- [x] Conectar Practice Lab al backend con historial y feedback formativo basado en la respuesta real.
+- [x] Añadir seguimiento persistente de prácticas por módulo.
+- [x] Implementar una entrega y evaluación específica para capstone y aplicar todas las reglas de elegibilidad del certificado.
+- [x] Implementar revisión verificable de capstone con rúbrica, nivel alcanzado y decisión final.
+- [x] Aplicar de forma explícita el nivel mínimo de capstone en la elegibilidad del certificado.
+- [x] Añadir persistencia y una interfaz de evaluación interna de capstone.
+- [x] Persistir la evaluación de capstone por criterios de rúbrica detallados.
+- [x] Mostrar y capturar los resultados por criterio dentro de la revisión de capstone.
+- [x] Crear pruebas unitarias para servicios, progreso, evaluación, retroalimentación y evidencias.
+- [x] Realizar auditorías funcional, de contenido, UX/UI, accesibilidad, responsive, rendimiento y seguridad.
+- [x] Documentar arquitectura, configuración, fuentes, uso y mantenimiento en README.
+- [x] Añadir pruebas unitarias para progreso, puntuación de programa, quizzes, examen y flujos de mentoría.
+- [x] Ejecutar y documentar auditorías verificables de práctica, evidencias, capstone, certificado, accesibilidad, seguridad y rendimiento.
+- [x] Ampliar el README con mantenimiento operativo de migraciones, contenido, capstones, certificados y evidencias.
+- [x] Añadir pruebas de integración para los procedimientos de práctica y revelación por fases.
+- [x] Documentar auditorías reproducibles de los flujos de práctica, evidencia, capstone, certificado, accesibilidad y seguridad.
+- [x] Crear y verificar un repositorio privado de GitHub con la entrega completa.
+- [x] Definir la taxonomía, política de licencia y límites de atribución para la ampliación del ecosistema Google.
+- [x] Investigar y verificar recursos oficiales, educativos y de licencia abierta por dominio del ecosistema Google.
+- [x] Crear rutas y materiales originales trilingües sobre herramientas y flujos del ecosistema Google.
+- [x] Integrar catálogo, biblioteca filtrable y rutas complementarias de Google sin eliminar contenido existente.
+- [x] Añadir pruebas, auditoría y documentación de fuentes, licencias y mantenimiento de la ampliación.
+- [x] Sincronizar la ampliación validada con el repositorio privado de GitHub.
+- [x] Redactar y documentar un brief maestro de dirección visual, posicionamiento y contenido respetuoso de licencias.
+- [x] Investigar exhaustivamente recursos gratuitos y atribuidos de SEO, marketing, UX, IA, Workspace y audiovisual.
+- [x] Curar canales, playlists y perfiles educativos públicos sin copiar ni republicar material de terceros.
+- [x] Ampliar la matriz verificada por dominios con formato, acceso y condiciones de licencia de cada recurso.
+- [x] Curar de forma explícita materiales de Workspace e IA con fuentes, cursos y perfiles oficiales verificados.
+- [x] Validar y documentar la cobertura final del inventario de investigación antes de cerrar la fase.
+- [x] Crear una ruta trilingüe avanzada de SEO, marketing de Google, marca y distribución de contenido.
+- [x] Rediseñar la portada, navegación, biblioteca y páginas clave con una estética más distintiva y orientada a conversión.
+- [x] Integrar GSAP y animaciones accesibles de alto rendimiento con degradación para movimiento reducido.
+- [x] Implementar una biblioteca audiovisual filtrable y una experiencia de descubrimiento de contenidos.
+- [x] Mejorar el SEO técnico y la estrategia de posicionamiento orgánico de la plataforma.
+- [x] Añadir pruebas, auditoría visual responsive, accesibilidad y documentación de licencias de la nueva ampliación.
+- [x] Revisar y registrar visualmente Growth Studio en escritorio y móvil.
+- [x] Documentar los controles de navegación, foco, semántica y movimiento reducido de Growth Studio.
+- [x] Publicar Growth Studio como ruta de descubrimiento sin autenticación, preservando privadas las rutas de aprendizaje y datos personales.
+- [x] Guardar y sincronizar la ampliación audiovisual y comercial con GitHub.

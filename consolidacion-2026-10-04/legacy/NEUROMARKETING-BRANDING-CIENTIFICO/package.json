@@ -1,0 +1,23 @@
+{
+  "name": "neuromarketing-branding-cientifico",
+  "version": "1.0.0",
+  "description": "Documento de investigación sobre neuromarketing y branding científico - La Arquitectura Visual de la Marca",
+  "author": "Pedro Marcos Santos Belentani",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -p 3000",
+    "lint": "echo \"Static HTML - no lint configured\""
+  },
+  "keywords": [
+    "neuromarketing",
+    "branding",
+    "neurociencia",
+    "psicologia-cognitiva",
+    "diseno-de-marca",
+    "neuroestetica"
+  ],
+  "homepage": "./"
+}

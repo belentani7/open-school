@@ -1,0 +1,1 @@
+export default function D(){return(<><h1>Panel cliente</h1><div className='grid'><div className='card'><h3>Suscripcion</h3><p>Estado: activa (demo).</p></div><div className='card'><h3>Facturas</h3><p>Disponibles tras conectar Stripe.</p></div></div></>);}

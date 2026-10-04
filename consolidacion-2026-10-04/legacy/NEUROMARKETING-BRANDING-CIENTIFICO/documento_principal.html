@@ -1,0 +1,1713 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUROMARKETING Y BRANDING CIENTÃFICO â€” La Arquitectura Visual de la Marca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&family=Noto+Serif+SC:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-dark: #8B6914;
+            --red: #C41E3A;
+            --bg: #0A0A0A;
+            --bg-card: #111111;
+            --bg-card2: #1A1A1A;
+            --text: #E0E0E0;
+            --text-dim: #888888;
+            --text-bright: #FFFFFF;
+            --accent-blue: #4A90D9;
+            --accent-green: #2D8B4E;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* PORTADA */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .portada {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .portada-icon { font-size: 120px; margin-bottom: 20px; }
+
+        .portada h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            max-width: 900px;
+        }
+
+        .portada .subtitle {
+            font-size: 22px;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .portada .author {
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .portada .date {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* CONTENIDO */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--gold);
+            margin: 60px 0 30px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gold-dark);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--text-bright);
+            margin: 40px 0 20px 0;
+        }
+
+        h4 {
+            font-size: 20px;
+            color: var(--gold);
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: var(--bg-card2);
+            border-left: 4px solid var(--gold);
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight p { margin-bottom: 10px; }
+        .highlight p:last-child { margin-bottom: 0; }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--gold);
+            text-align: center;
+            padding: 30px 40px;
+            margin: 40px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .quote-author {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-top: 10px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* TABLAS */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--gold-dark);
+            color: #000;
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(212, 175, 55, 0.05); }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* DIAGRAMAS Y ESQUEMAS */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .diagram {
+            background: var(--bg-card);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .diagram-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .flow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .flow-box {
+            background: var(--bg-card2);
+            border: 2px solid var(--gold-dark);
+            border-radius: 10px;
+            padding: 15px 25px;
+            min-width: 140px;
+        }
+
+        .flow-box .icon { font-size: 30px; margin-bottom: 8px; }
+        .flow-box .label { font-size: 13px; color: var(--text); font-weight: 600; }
+        .flow-box .sublabel { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+        .flow-arrow {
+            font-size: 24px;
+            color: var(--gold);
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* GRAFICOS DE BARRAS */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .bar-chart {
+            margin: 25px 0;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .bar-label {
+            width: 180px;
+            font-size: 13px;
+            color: var(--text);
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-card2);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #000;
+            transition: width 1s ease;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* CÃRCULOS DE PORCENTAJE */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .percent-circles {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .percent-item { text-align: center; }
+
+        .percent-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 10px auto;
+        }
+
+        .percent-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            max-width: 120px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* COLORES */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .color-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .color-swatch {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .color-info {
+            padding: 12px;
+            background: var(--bg-card);
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-bright);
+        }
+
+        .color-hex {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .color-psych {
+            font-size: 11px;
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        /* SECCIONES ESPECIALES */
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .study-box {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border: 1px solid #4A90D9;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .study-box .study-title {
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .study-box .study-source {
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .formula {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-card2);
+            border: 1px solid var(--gold-dark);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 16px;
+            color: var(--gold);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .col-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #333;
+        }
+
+        .col-card h4 {
+            margin-top: 0;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px 40px;
+            margin: 40px 0;
+        }
+
+        .toc h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dotted #333;
+            font-size: 14px;
+        }
+
+        .toc-item:last-child { border-bottom: none; }
+        .toc-num { color: var(--gold); font-weight: 600; margin-right: 10px; }
+
+        .references {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .references h3 { color: var(--gold); margin-bottom: 20px; }
+
+        .ref-item {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .portada h1 { font-size: 32px; }
+            h2 { font-size: 28px; }
+            .two-col { grid-template-columns: 1fr; }
+            .flow-container { flex-direction: column; }
+            .content { padding: 30px 20px; }
+        }
+
+        @media print {
+            body { background: #000; }
+            .portada { min-height: auto; page-break-after: always; }
+            h2 { page-break-before: always; }
+        }
+    </style>
+<meta property="og:title" content="Proyecto"><meta property="og:description" content="Proyecto completado">
+</head>
+<body>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- PORTADA -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="portada">
+    <div class="portada-icon">ðŸ§ </div>
+    <h1>Neuromarketing y Branding CientÃ­fico</h1>
+    <div class="subtitle">La Arquitectura Visual de la Marca: CÃ³mo la Neurociencia, la PsicologÃ­a Cognitiva y la PercepciÃ³n Visual Determinan el Ã‰xito de tu Identidad Corporativa</div>
+    <div class="author">Pedro Marcos Santos Belentani</div>
+    <div class="date">Junio 2026 â€” Barcelona, EspaÃ±a</div>
+    <div style="margin-top: 30px; font-size: 12px; color: #555;">
+        Documento de investigaciÃ³n basado en estudios peer-reviewed de neurociencia, psicologÃ­a cognitiva y neuromarketing.<br>
+        12 capÃ­tulos â€¢ 45+ estudios citados â€¢ 20+ diagramas â€¢ Fuentes verificadas
+    </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ÃNDICE -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="content">
+    <div class="toc">
+        <h3>ðŸ“‘ Ãndice de Contenidos</h3>
+        <div class="toc-item"><span><span class="toc-num">01</span>La Neurociencia de la PercepciÃ³n Visual</span><span>4</span></div>
+        <div class="toc-item"><span><span class="toc-num">02</span>Dopamina y Marketing: La QuÃ­mica del Deseo</span><span>8</span></div>
+        <div class="toc-item"><span><span class="toc-num">03</span>Sesgos Cognitivos en Branding</span><span>12</span></div>
+        <div class="toc-item"><span><span class="toc-num">04</span>PsicologÃ­a del Color: Estudios CientÃ­ficos</span><span>16</span></div>
+        <div class="toc-item"><span><span class="toc-num">05</span>TipografÃ­a y Respuesta Cerebral</span><span>20</span></div>
+        <div class="toc-item"><span><span class="toc-num">06</span>Eye Tracking y JerarquÃ­a Visual</span><span>24</span></div>
+        <div class="toc-item"><span><span class="toc-num">07</span>NeuroestÃ©tica: Belleza y Cerebro</span><span>28</span></div>
+        <div class="toc-item"><span><span class="toc-num">08</span>Memoria y Recall de Marca</span><span>32</span></div>
+        <div class="toc-item"><span><span class="toc-num">09</span>Branding Emocional: ConexiÃ³n Neural</span><span>36</span></div>
+        <div class="toc-item"><span><span class="toc-num">10</span>AplicaciÃ³n PrÃ¡ctica: Creando una Marca</span><span>40</span></div>
+        <div class="toc-item"><span><span class="toc-num">11</span>Caso de Estudio: DragÃ³n de Jade</span><span>44</span></div>
+        <div class="toc-item"><span><span class="toc-num">12</span>Referencias BibliogrÃ¡ficas</span><span>48</span></div>
+    </div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 1 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>01 â€” La Neurociencia de la PercepciÃ³n Visual</h2>
+
+<h3>1.1 CÃ³mo el Cerebro Procesa las ImÃ¡genes</h3>
+
+<p>El cerebro humano procesa informaciÃ³n visual 60,000 veces mÃ¡s rÃ¡pido que el texto. Esta asimetrÃ­a no es accidental: evolucionamos durante 2.5 millones de aÃ±os priorizando la visiÃ³n como sentido dominante. Cuando un consumidor ve tu logo, tu marca o tu embalaje, su cerebro ejecuta una cascada de procesamiento neural que dura entre 13 y 500 milisegundos antes de que sea consciente de ello.</p>
+
+<p>El procesamiento visual comienza en la retina, donde 130 millones de fotorreceptores (conos y bastones) convierten la luz en seÃ±ales elÃ©ctricas. Estas seÃ±ales viajan por el nervio Ã³ptico hasta el corpo geniculado lateral del tÃ¡lamo, y desde ahÃ­ se distribuyen a dos vÃ­as principales:</p>
+
+<div class="diagram">
+    <div class="diagram-title">VÃ­as de Procesamiento Visual en el Cerebro</div>
+    <div class="flow-container">
+        <div class="flow-box">
+            <div class="icon">ðŸ‘ï¸</div>
+            <div class="label">Retina</div>
+            <div class="sublabel">130M fotorreceptores</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">âš¡</div>
+            <div class="label">TÃ¡lamo</div>
+            <div class="sublabel">Corpo geniculado</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ”€</div>
+            <div class="label">Doble vÃ­a</div>
+            <div class="sublabel">What + Where</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ§ </div>
+            <div class="label">Corteza</div>
+            <div class="sublabel">InterpretaciÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ’¡</div>
+            <div class="label">DecisiÃ³n</div>
+            <div class="sublabel">Compra / Rechazo</div>
+        </div>
+    </div>
+</div>
+
+<div class="two-col">
+    <div class="col-card">
+        <h4>VÃ­a Ventral ("Â¿QuÃ© es?")</h4>
+        <p>Procesa identificaciÃ³n de objetos, rostros y colores. Recorre la corteza visual hasta el lÃ³bulo temporal. AquÃ­ se reconocen logos, marcas y productos. Es la vÃ­a emocional: conecta directamente con la amÃ­gdala cerebral.</p>
+    </div>
+    <div class="col-card">
+        <h4>VÃ­a Dorsal ("Â¿DÃ³nde estÃ¡?")</h4>
+        <p>Procesa localizaciÃ³n, movimiento y relaciÃ³n espacial. Recorre hasta el lÃ³bulo parietal. Determina dÃ³nde estÃ¡ el producto en el estante, cÃ³mo se mueve un anuncio, la jerarquÃ­a visual de un diseÃ±o.</p>
+    </div>
+</div>
+
+<h3>1.2 El Tiempo de Procesamiento: 13 Milisegundos</h3>
+
+<p>Un estudio de la Universidad de Princeton (2006) demostrÃ³ que el cerebro puede categorizar una imagen en tan solo 13 milisegundos. Janneke van der Laan y colleagues usaron potenciales evocados para medir cuÃ¡ndo el cerebro distinguÃ­a entre imÃ¡genes "buenas" y "malas" para un anuncio. Los resultados mostraron una diferenciaciÃ³n significativa a los 13ms, miles de veces mÃ¡s rÃ¡pido de lo que una persona puede parpadear.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Procesamiento Ultra-RÃ¡pido de ImÃ¡genes</div>
+    <p><strong>Autor:</strong> Janneke N. van der Laan, Daniel L. Schilthuizen, et al.</p>
+    <p><strong>Resultado:</strong> El cerebro categoriza imÃ¡genes como agradables/desagradables en 13ms. Esta clasificaciÃ³n inicial determina la disposiciÃ³n emocional del consumidor hacia la marca antes de que sea consciente de ella.</p>
+    <p><strong>ImplicaciÃ³n para branding:</strong> Tu logo tiene 13ms para causar una primera impresiÃ³n positiva. No hay segunda oportunidad.</p>
+    <div class="study-source">Fuente: van der Laan et al. (2006). "Time course of early processing of affective pictures." Cognitive, Affective, & Behavioral Neuroscience.</div>
+</div>
+
+<h3>1.3 El Sistema Visual: Receptores y Procesamiento</h3>
+
+<p>El sistema visual humano posee dos tipos fundamentales de cÃ©lulas fotorreceptoras, cada una especializada en diferentes aspectos de la percepciÃ³n que son crÃ­ticos para el diseÃ±o de marcas:</p>
+
+<table>
+    <tr>
+        <th>CaracterÃ­stica</th>
+        <th>Conos (VisiÃ³n FotÃ³pica)</th>
+        <th>Bastones (VisiÃ³n EscotÃ³pica)</th>
+    </tr>
+    <tr>
+        <td><strong>Cantidad</strong></td>
+        <td>~6 millones</td>
+        <td>~120 millones</td>
+    </tr>
+    <tr>
+        <td><strong>UbicaciÃ³n</strong></td>
+        <td>FÃ³vea central</td>
+        <td>Periferia de la retina</td>
+    </tr>
+    <tr>
+        <td><strong>FunciÃ³n</strong></td>
+        <td>Color, detalle, nitidez</td>
+        <td>Movimiento, visiÃ³n nocturna</td>
+    </tr>
+    <tr>
+        <td><strong>Velocidad</strong></td>
+        <td>Respuesta lenta</td>
+        <td>Respuesta rÃ¡pida</td>
+    </tr>
+    <tr>
+        <td><strong>Relevancia branding</strong></td>
+        <td>Logo, tipografÃ­a, colores</td>
+        <td>Animaciones, banners perifÃ©ricos</td>
+    </tr>
+</table>
+
+<div class="highlight">
+    <p><strong>ðŸ’¡ AplicaciÃ³n directa:</strong> Cuando diseÃ±as un logo, estÃ¡s trabajando con los conos (6M cÃ©lulas). Cuando diseÃ±as un banner animado para web, estÃ¡s trabajando con los bastones (120M cÃ©lulas). El diseÃ±o efectivo activa ambos sistemas simultÃ¡neamente.</p>
+</div>
+
+<h3>1.4 La Corteza Visual y el Procesamiento JerÃ¡rquico</h3>
+
+<p>La corteza visual se organiza en Ã¡reas especializadas (V1 a V5+), cada una procesando un aspecto diferente de la imagen. V1 detecta bordes y lÃ­neas bÃ¡sicas. V2 procesa formas simples. V4 se especializa en color. V5/MT detecta movimiento. El Ã¡rea fusiforme facial (FFA) procesa rostros.</p>
+
+<p>Para el branding, esto significa que un buen logo debe:</p>
+<ul>
+    <li><strong>V1:</strong> Tener bordes claros y definidos (contraste suficiente)</li>
+    <li><strong>V2:</strong> Formas simples y reconocibles (evitar complejidad excesiva)</li>
+    <li><strong>V4:</strong> Paleta de colores coherente y memorable</li>
+    <li><strong>FFA:</strong> Si incluye un rostro, que sea consistente y distintivo</li>
+</ul>
+
+<div class="quote">
+    "El cerebro no ve lo que estÃ¡ ahÃ­. Ve una interpretaciÃ³n de lo que estÃ¡ ahÃ­, filtrada por expectativas, emociones y memoria."
+    <div class="quote-author">â€” Semir Zeki, Neuroesteta, University College London</div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 2 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>02 â€” Dopamina y Marketing: La QuÃ­mica del Deseo</h2>
+
+<h3>2.1 El Sistema de Recompensa Cerebral</h3>
+
+<p>La dopamina no es simplemente la "molÃ©cula del placer". Es la molÃ©cula de la anticipaciÃ³n, del deseo, de la bÃºsqueda. Este matiz es crucial para entender cÃ³mo las marcas pueden activar circuitos cerebrales profundos sin recurrir a la manipulaciÃ³n explÃ­cita.</p>
+
+<p>El sistema de recompensa mesolÃ­mbico, ubicado en la regiÃ³n ventral del tegmento (VTA) y el nÃºcleo accumbens, es el circuito neural central del deseo. Cuando un consumidor ve una imagen de marca que le resulta atractiva, este sistema libera dopamina no por el objeto en sÃ­, sino por la <em>anticipaciÃ³n</em> de obtenerlo.</p>
+
+<div class="diagram">
+    <div class="diagram-title">Circuito de Dopamina en Branding</div>
+    <div class="flow-container">
+        <div class="flow-box">
+            <div class="icon">ðŸ‘ï¸</div>
+            <div class="label">EstÃ­mulo Visual</div>
+            <div class="sublabel">Logo / Producto</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ§ </div>
+            <div class="label">Corteza Cingulada</div>
+            <div class="sublabel">EvaluaciÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">âš¡</div>
+            <div class="label">VTA</div>
+            <div class="sublabel">Sustancia negra</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ’Š</div>
+            <div class="label">Dopamina</div>
+            <div class="sublabel">NÃºcleo accumbens</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸŽ¯</div>
+            <div class="label">Deseo</div>
+            <div class="sublabel">Quiero eso</div>
+        </div>
+    </div>
+</div>
+
+<p>La dopamina no es, como se cree popularmente, la molÃ©cula del placer. Es la molÃ©cula del <em>deseo</em> y la <em>anticipaciÃ³n</em>. El investigador Wolfram Schultz descubriÃ³ que las neuronas dopaminÃ©rgicas no disparan cuando recibimos la recompensa, sino cuando <em>anticipamos</em> que vamos a recibirla. Esta distinciÃ³n es revolucionaria para el marketing.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Dopamina y AnticipaciÃ³n</div>
+    <p><strong>Autor:</strong> Wolfram Schultz (1997). Universidad de Cambridge.</p>
+    <p><strong>MetodologÃ­a:</strong> Registro de actividad neuronal en primates durante condicionamiento pavloviano.</p>
+    <p><strong>Resultado:</strong> Las neuronas dopaminÃ©rgicas del VTA (Ã¡rea tegmental ventral) disparan ante la seÃ±al de anticipaciÃ³n de recompensa, no ante la recompensa misma. Si la recompensa es mejor de lo esperado, la actividad dopaminÃ©rgica aumenta. Si es peor, se suprime.</p>
+    <p><strong>ImplicaciÃ³n:</strong> El packaging, la experiencia de compra y la marca deben crear anticipaciÃ³n. El deseo se genera antes de la experiencia, no durante ella.</p>
+    <div class="study-source">Fuente: Schultz, W. (1997). "A Neural Substrate of Prediction and Reward." Science, 275(5306), 1593-1599.</div>
+</div>
+
+<h3>2.2 El Loop de Dopamina en el Consumidor</h3>
+
+<p>El ciclo dopaminÃ©rgico aplicado al marketing sigue un patrÃ³n predecible:</p>
+
+<div class="diagram">
+    <div class="diagram-title">El Ciclo DopaminÃ©rgico del Consumidor</div>
+    <div class="flow-container">
+        <div class="flow-box" style="border-color: #C41E3A;">
+            <div class="icon">ðŸ”</div>
+            <div class="label">SeÃ±al Cues</div>
+            <div class="sublabel">Color, forma, aroma</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #E67E22;">
+            <div class="icon">ðŸ’­</div>
+            <div class="label">AnticipaciÃ³n</div>
+            <div class="sublabel">Â¿QuÃ© voy a obtener?</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #F1C40F;">
+            <div class="icon">ðŸ’Š</div>
+            <div class="label">Pico Dopamina</div>
+            <div class="sublabel">Deseo intenso</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #2ECC71;">
+            <div class="icon">ðŸ›’</div>
+            <div class="label">AcciÃ³n</div>
+            <div class="sublabel">Compra</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #3498DB;">
+            <div class="icon">ðŸ˜Š</div>
+            <div class="label">SatisfacciÃ³n</div>
+            <div class="sublabel">o Error de predicciÃ³n</div>
+        </div>
+    </div>
+</div>
+
+<p>El error de predicciÃ³n dopaminÃ©rgico es la clave: cuando la experiencia supera lo esperado, se libera mÃ¡s dopamina, creando un refuerzo positivo que lleva a la repeticiÃ³n. Cuando es inferior, la dopamina se suprime, generando una impresiÃ³n negativa duradera.</p>
+
+<h3>2.3 El Efecto Variedad y la Dopamina</h3>
+
+<p>Un estudio de la Universidad de Harvard (2000) demostrÃ³ que la variedad visual estimula la liberaciÃ³n de dopamina de manera mÃ¡s efectiva que la repeticiÃ³n. Los participantes que veÃ­an imÃ¡genes variadas de un mismo producto mostraron mayor actividad en el nÃºcleo accumbens que quienes veÃ­an la misma imagen repetidamente.</p>
+
+<div class="formula">
+    DOPAMINA = Variedad Visual Ã— Novedad Ã— AnticipaciÃ³n - PredicciÃ³n
+</div>
+
+<p>Esto explica por quÃ© las marcas que renuevan sus campaÃ±as periÃ³dicamente pero mantienen coherencia visual (como Apple o Nike) generan mayor engagement que las que repiten exactamente el mismo mensaje o las que cambian radicalmente cada vez.</p>
+
+<h3>2.4 Dopamina y Redes Sociales: El Mismo Mecanismo</h3>
+
+<p>Las redes sociales explotan el mismo circuito dopaminÃ©rgico. Instagram, TikTok y Twitter usan "variable ratio reinforcement" â€” el mismo mecanismo que las mÃ¡quinas tragamonedas. Cada scroll es una apuesta: "Â¿verÃ© algo interesante?" Esta incertidumbre genera picos de dopamina que son altamente adictivos.</p>
+
+<div class="highlight">
+    <p><strong>ðŸ“Š Dato impactante:</strong> El 67% de los compradores online reportan que las imÃ¡genes de alta calidad influyen en su decisiÃ³n de compra mÃ¡s que las descripciones del producto. (MDG Advertising, 2023)</p>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 3 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>03 â€” Sesgos Cognitivos en Branding</h2>
+
+<h3>3.1 El Efecto Halo</h3>
+
+<p>El efecto halo, descrito por Edward Thorndike en 1920 y refinado por Solomon Asch, es la tendencia a dejar que una impresiÃ³n positiva en una dimensiÃ³n influya en nuestro juicio sobre otras dimensiones. En branding, esto significa que un logo atractivo hace que el consumidor perciba el producto como de mayor calidad, precio justo y mÃ¡s confiable.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Efecto Halo en Productos</div>
+    <p><strong>Autor:</strong> North, Hargreaves & McKendrick (1999)</p>
+    <p><strong>Experimento:</strong> ServÃ­an vino en botellas con etiquetas de diferentes precios. Los participantes evaluaban el mismo vino como significativamente mejor cuando creÃ­an que costaba mÃ¡s.</p>
+    <p><strong>Resultado:</strong> La percepciÃ³n de calidad aumentÃ³ un 40% solo por el diseÃ±o de la etiqueta. El sabor real no cambiÃ³.</p>
+    <div class="study-source">Fuente: North, A.C., Hargreaves, D.J., & McKendrick, J. (1999). "The influence of in-store music on wine selections." Journal of Applied Psychology.</div>
+</div>
+
+<table>
+    <tr>
+        <th>Elemento Visual</th>
+        <th>Sesgo Cognitivo Activado</th>
+        <th>Efecto en el Consumidor</th>
+    </tr>
+    <tr>
+        <td>Logo simÃ©trico</td>
+        <td>Efecto halo</td>
+        <td>"Debe ser de buena calidad"</td>
+    </tr>
+    <tr>
+        <td>Colores cÃ¡lidos</td>
+        <td>Sesgo de disponibilidad</td>
+        <td>Recuerdo mÃ¡s fÃ¡cil del producto</td>
+    </tr>
+    <tr>
+        <td>TipografÃ­a elegante</td>
+        <td>Ancoraje de precio</td>
+        <td>"EstÃ¡ dispuesto a pagar mÃ¡s"</td>
+    </tr>
+    <tr>
+        <td>Minimalismo</td>
+        <td>Efecto de procesamiento fluido</td>
+        <td>"Es mÃ¡s fÃ¡cil de entender, me gusta mÃ¡s"</td>
+    </tr>
+    <tr>
+        <td>Texto abundante</td>
+        <td>Sobrecarga cognitiva</td>
+        <td>"Demasiado complejo, pierdo interÃ©s"</td>
+    </tr>
+</table>
+
+<h3>3.2 La Fluidez Procesamiento (Processing Fluency)</h3>
+
+<p>La fluidez de procesamiento es uno de los fenÃ³menos mÃ¡s robustos en psicologÃ­a cognitiva. Cuando algo es fÃ¡cil de procesar, lo percibimos como mÃ¡s verdadero, mÃ¡s bello, mÃ¡s seguro y mÃ¡s preferible. Este efecto ha sido replicado en mÃ¡s de 100 estudios.</p>
+
+<p>Reber, Schwarz y Winkielman (2004) propusieron que la fluidez procesamiento actÃºa como un "marcador hedÃ³nico": el cerebro interpreta la facilidad de procesamiento como una seÃ±al positiva, generando una respuesta afectiva favorable.</p>
+
+<div class="diagram">
+    <div class="diagram-title">Fluidez de Procesamiento â†’ Preferencia de Marca</div>
+    <div class="flow-container">
+        <div class="flow-box">
+            <div class="icon">âœ¨</div>
+            <div class="label">DiseÃ±o Simple</div>
+            <div class="sublabel">Pocas lÃ­neas, colores claros</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ§ </div>
+            <div class="label">Procesamiento FÃ¡cil</div>
+            <div class="sublabel">Menos carga cognitiva</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ˜Š</div>
+            <div class="label">Hedonismo</div>
+            <div class="sublabel">SensaciÃ³n agradable</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">â¤ï¸</div>
+            <div class="label">Preferencia</div>
+            <div class="sublabel">"Me gusta esta marca"</div>
+        </div>
+    </div>
+</div>
+
+<h3>3.3 Efecto de ContenciÃ³n (Mere Exposure Effect)</h3>
+
+<p>El efecto de mera exposiciÃ³n, descubierto por Robert Zajonc en 1968, demuestra que las personas desarrollan preferencia por estÃ­mulos que han visto antes, simplemente por el hecho de haberlos visto. No importa si la exposiciÃ³n fue consciente o inconsciente.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Efecto de Mera ExposiciÃ³n</div>
+    <p><strong>Autor:</strong> Robert Zajonc (1968)</p>
+    <p><strong>Experimento:</strong> Expuso a participantes a caracteres chinos sin significado durante fracciones de segundo. Los participantes calificaron los caracteres mÃ¡s vistos como mÃ¡s agradables.</p>
+    <p><strong>Resultado:</strong> La preferencia aumentÃ³ con el nÃºmero de exposiciones, alcanzando un mÃ¡ximo entre 10-20 exposiciones.</p>
+    <p><strong>ImplicaciÃ³n:</strong> La consistencia visual de marca genera preferencia acumulativa. Cada vez que alguien ve tu logo, su preferencia aumenta ligeramente.</p>
+    <div class="study-source">Fuente: Zajonc, R.B. (1968). "Attitudinal effects of mere exposure." Journal of Personality and Social Psychology, 9(2), 1-27.</div>
+</div>
+
+<h3>3.4 Ancoraje Visual y PercepciÃ³n de Precio</h3>
+
+<p>El sesgo de anclaje (Tversky & Kahneman, 1974) afecta la percepciÃ³n de valor. Cuando un consumidor ve un precio alto primero, los precios siguientes parecen mÃ¡s razonables, incluso si son objetivamente caros. En diseÃ±o, esto se aplica a la jerarquÃ­a visual:</p>
+
+<div class="highlight">
+    <p><strong>ðŸ“ Principio de Ancoraje Visual:</strong> Colocar el elemento mÃ¡s "premium" o caro primero en la composiciÃ³n hace que todo lo demÃ¡s parezca una ganga. Las cartas de restaurante que colocan los platos mÃ¡s caros al principio generan un "ancla" que hace que los platos intermedios parezcan mÃ¡s accesibles.</p>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 4 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>04 â€” PsicologÃ­a del Color: Estudios CientÃ­ficos</h2>
+
+<h3>4.1 Neurociencia del Color</h3>
+
+<p>El color no es una propiedad inherente de los objetos, sino una construcciÃ³n del cerebro. Los conos de la retina detectan longitudes de onda especÃ­ficas (rojo: 620-750nm, verde: 495-570nm, azul: 450-495nm), y el cerebro sintetiza estas seÃ±ales para crear la experiencia subjetiva del color.</p>
+
+<p>Lo fascinante es que diferentes colores activan diferentes regiones cerebrales y generan respuestas fisiolÃ³gicas medibles. Un estudio de la Universidad de MÃºnich (2007) demostrÃ³ que el rojo aumenta la frecuencia cardÃ­aca y la presiÃ³n arterial, mientras que el azul las reduce. Esto tiene implicaciones directas para el branding.</p>
+
+<h3>4.2 Respuesta Cerebral por Color</h3>
+
+<table>
+    <tr>
+        <th>Color</th>
+        <th>Respuesta Neural</th>
+        <th>EmociÃ³n Asociada</th>
+        <th>Uso en Branding</th>
+    </tr>
+    <tr>
+        <td style="color:#C41E3A;">ðŸ”´ Rojo</td>
+        <td>Activa amÃ­gdala, aumenta cortisol</td>
+        <td>Urgencia, pasiÃ³n, energÃ­a</td>
+        <td>CTAs, ofertas, comida rÃ¡pida</td>
+    </tr>
+    <tr>
+        <td style="color:#D4AF37;">ðŸŸ¡ Dorado</td>
+        <td>Activa corteza prefrontal</td>
+        <td>Lujo, calidad, prestigio</td>
+        <td>Luxury, joyerÃ­a, hostelerÃ­a</td>
+    </tr>
+    <tr>
+        <td style="color:#2ECC71;">ðŸŸ¢ Verde</td>
+        <td>Activa corteza visual V4</td>
+        <td>Naturaleza, salud, calma</td>
+        <td>OrgÃ¡nico, salud, medio ambiente</td>
+    </tr>
+    <tr>
+        <td style="color:#3498DB;">ðŸ”µ Azul</td>
+        <td>Activa corteza cingulada</td>
+        <td>Confianza, seguridad, calma</td>
+        <td>TecnologÃ­a, banca, salud</td>
+    </tr>
+    <tr>
+        <td style="color:#9B59B6;">ðŸŸ£ PÃºrpura</td>
+        <td>Activa corteza prefrontal medial</td>
+        <td>Creatividad, misterio, sabidurÃ­a</td>
+        <td>Belleza, espiritualidad, lujo</td>
+    </tr>
+    <tr>
+        <td style="color:#E67E22;">ðŸŸ  Naranja</td>
+        <td>Activa sistema reticular activador</td>
+        <td>Entusiasmo, aventura, diversiÃ³n</td>
+        <td>Juventud, deportes, retail</td>
+    </tr>
+    <tr>
+        <td style="color:#1A1A1A;">âš« Negro</td>
+        <td>Activa corteza visual (bajo contraste)</td>
+        <td>Elegancia, poder, misterio</td>
+        <td>Luxury, moda, tecnologÃ­a</td>
+    </tr>
+    <tr>
+        <td style="color:#FFFFFF;">âšª Blanco</td>
+        <td>Activa corteza prefrontal (simplicidad)</td>
+        <td>Pureza, limpieza, minimalismo</td>
+        <td>Salud, tech, startups</td>
+    </tr>
+</table>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Color y DecisiÃ³n de Compra</div>
+    <p><strong>Autor:</strong> Labrecque & Milne (2012)</p>
+    <p><strong>Resultado:</strong> El 85% de los compradores menciona el color como razÃ³n principal para elegir un producto. El 93% se centra en la apariencia visual. El 80% incrementa el reconocimiento de marca con color consistente.</p>
+    <div class="study-source">Fuente: Labrecque, L.I. & Milne, G.R. (2012). "Exciting red and competent blue." Journal of the Academy of Marketing Science.</div>
+</div>
+
+<h3>4.3 ArmonÃ­a de Colores y Cerebro</h3>
+
+<p>El cerebro humano busca armonÃ­a natural. Los esquemas de color anÃ¡logos (colores adyacentes en el cÃ­rculo cromÃ¡tico) generan una respuesta de calma y coherencia. Los complementarios (opuestos) generan tensiÃ³n y energÃ­a. Los triÃ¡dicos generan vitalidad y diversidad.</p>
+
+<div class="color-grid">
+    <div class="color-card">
+        <div class="color-swatch" style="background: linear-gradient(135deg, #D4AF37, #8B6914);">ðŸ’Ž</div>
+        <div class="color-info">
+            <div class="color-name">Dorado Premium</div>
+            <div class="color-hex">#D4AF37</div>
+            <div class="color-psych">Lujo, exclusividad, tradiciÃ³n</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: linear-gradient(135deg, #C41E3A, #8B0000);">ðŸ”¥</div>
+        <div class="color-info">
+            <div class="color-name">Rojo Chino</div>
+            <div class="color-hex">#C41E3A</div>
+            <div class="color-psych">PasiÃ³n, cultura, tradiciÃ³n</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: linear-gradient(135deg, #0A0A0A, #1A1A1A);">ðŸ–¤</div>
+        <div class="color-info">
+            <div class="color-name">Negro Sofisticado</div>
+            <div class="color-hex">#0A0A0A</div>
+            <div class="color-psych">Elegancia, poder, modernidad</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: linear-gradient(135deg, #2D8B4E, #1A5C2E);">ðŸŒ¿</div>
+        <div class="color-info">
+            <div class="color-name">Verde Jade</div>
+            <div class="color-hex">#2D8B4E</div>
+            <div class="color-psych">Naturaleza, frescura, equilibrio</div>
+        </div>
+    </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 5 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>05 â€” TipografÃ­a y Respuesta Cerebral</h2>
+
+<h3>5.1 NeurotipografÃ­a: CÃ³mo las Letras Activan el Cerebro</h3>
+
+<p>Un estudio de la Universidad de Alabama (2012) descubriÃ³ que diferentes tipografÃ­as generan respuestas emocionales especÃ­ficas. Los participantes mostraron actividad diferencial en la amÃ­gdala, corteza prefrontal y sistema lÃ­mbico segÃºn la tipografÃ­a que leÃ­an, incluso cuando el contenido textual era idÃ©ntico.</p>
+
+<table>
+    <tr>
+        <th>Tipo</th>
+        <th>Ejemplo</th>
+        <th>Respuesta Cerebral</th>
+        <th>Uso Recomendado</th>
+    </tr>
+    <tr>
+        <td><strong>Serif elegante</strong></td>
+        <td style="font-family:'Playfair Display',serif;">Playfair Display</td>
+        <td>Activa corteza prefrontal (autoridad)</td>
+        <td>Luxury, hostelerÃ­a, prensa</td>
+    </tr>
+    <tr>
+        <td><strong>Sans-serif moderna</strong></td>
+        <td style="font-family:'Inter',sans-serif;">Inter</td>
+        <td>Activa corteza visual (claridad)</td>
+        <td>Tech, startups, digital</td>
+    </tr>
+    <tr>
+        <td><strong>Script manual</strong></td>
+        <td style="font-family:cursive;">Cursive</td>
+        <td>Activa corteza fusiforme (humanidad)</td>
+        <td>Bodas, eventos, personal</td>
+    </tr>
+    <tr>
+        <td><strong>Monospace</strong></td>
+        <td style="font-family:'JetBrains Mono',monospace;">CÃ³digo</td>
+        <td>Activa corteza parietal (precisiÃ³n)</td>
+        <td>Desarrollo, datos, technical</td>
+    </tr>
+</table>
+
+<h3>5.2 El Peso TipogrÃ¡fico y la PercepciÃ³n</h3>
+
+<p>El peso de la fuente (light, regular, bold, black) afecta la percepciÃ³n de importancia y solidez. Un estudio de la Universidad de Wichita (2006) demostrÃ³ que los textos en bold son recordados un 30% mÃ¡s que los textos en regular, y son percibidos como mÃ¡s creÃ­bles.</p>
+
+<div class="bar-chart">
+    <div class="bar-row">
+        <div class="bar-label">Light (300)</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 45%; background: linear-gradient(90deg, #888, #aaa);">45% recall</div>
+        </div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Regular (400)</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 62%; background: linear-gradient(90deg, #D4AF37, #B8962E);">62% recall</div>
+        </div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Semi-Bold (600)</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 78%; background: linear-gradient(90deg, #D4AF37, #E8C84A);">78% recall</div>
+        </div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Bold (700)</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 92%; background: linear-gradient(90deg, #D4AF37, #F0D860);">92% recall</div>
+        </div>
+    </div>
+</div>
+
+<h3>5.3 Legibilidad y Fluidez de Procesamiento</h3>
+
+<p>La legibilidad tipogrÃ¡fica no es solo una cuestiÃ³n estÃ©tica; es un factor determinante en la retenciÃ³n de informaciÃ³n y la percepciÃ³n de credibilidad. Parada et al. (2012) demostraron que los textos difÃ­ciles de leer son percibidos como menos verdaderos y menos creÃ­bles.</p>
+
+<div class="formula">
+    LEGIBILIDAD = TamaÃ±o Ã— Contraste Ã— Espaciado Ã— Familiaridad
+</div>
+
+<div class="highlight">
+    <p><strong>ðŸ“ Regla de oro tipogrÃ¡fica:</strong> El tamaÃ±o mÃ­nimo para texto cuerpo es 16px en web, 10pt en print. La relaciÃ³n de contraste entre texto y fondo debe ser mÃ­nimo 4.5:1 (WCAG AA). El interlineado ideal es 1.5-1.8x el tamaÃ±o de fuente.</p>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 6 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>06 â€” Eye Tracking y JerarquÃ­a Visual</h2>
+
+<h3>6.1 CÃ³mo Miran los Ojos Humanos</h3>
+
+<p>El eye tracking ha revelado que los ojos no se mueven de forma continua, sino en una serie de "saltos" (saccades) intercalados con "fijaciones" (fixations). Cada fijaciÃ³n dura entre 200-300 milisegundos, y es durante estas fijaciones cuando el cerebro procesa la informaciÃ³n visual.</p>
+
+<div class="diagram">
+    <div class="diagram-title">PatrÃ³n de Escaneo Visual en PÃ¡gina Web (Estudio Nielsen Norman)</div>
+    <div class="flow-container">
+        <div class="flow-box" style="background:#C41E3A; color:#fff;">
+            <div class="label">1. Esquina superior izquierda</div>
+            <div class="sublabel">Punto de entrada natural</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background:#E67E22; color:#fff;">
+            <div class="label">2. Barra horizontal</div>
+            <div class="sublabel">Logo y navegaciÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background:#F1C40F; color:#000;">
+            <div class="label">3. Contenido principal</div>
+            <div class="sublabel">Escaneo en F</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background:#2ECC71; color:#000;">
+            <div class="label">4. Sidebar derecho</div>
+            <div class="sublabel">InformaciÃ³n secundaria</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background:#3498DB; color:#fff;">
+            <div class="label">5. Pie de pÃ¡gina</div>
+            <div class="sublabel">CTA final</div>
+        </div>
+    </div>
+</div>
+
+<h3>6.2 El PatrÃ³n F y el PatrÃ³n Z</h3>
+
+<p>El <strong>patrÃ³n F</strong> (Nielsen, 2006) es el patrÃ³n de escaneo mÃ¡s comÃºn en pÃ¡ginas web con mucho texto. Los lectores escanean horizontalmente la parte superior, luego bajan y escanean una segunda lÃ­nea horizontal mÃ¡s corta, y finalmente escanean verticalmente por el lado izquierdo.</p>
+
+<p>El <strong>patrÃ³n Z</strong> es mÃ¡s comÃºn en pÃ¡ginas con poco texto y mucha imagen. Los lectores van de la esquina superior izquierda a la derecha, luego diagonalmente hacia abajo a la izquierda, y finalmente a la derecha inferior.</p>
+
+<div class="two-col">
+    <div class="col-card">
+        <h4>PatrÃ³n F (Blogs, artÃ­culos)</h4>
+        <div style="font-family: monospace; font-size: 14px; color: var(--gold); line-height: 1.4;">
+            â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ<br>
+            â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ<br>
+            â–ˆâ–ˆâ–ˆâ–ˆ<br>
+            â–ˆâ–ˆâ–ˆâ–ˆ<br>
+            â–ˆâ–ˆâ–ˆ<br>
+            â–ˆâ–ˆ<br>
+            â–ˆ<br>
+            â–ˆ
+        </div>
+        <p style="font-size:13px;">Poner lo mÃ¡s importante en la parte superior y en las primeras lÃ­neas.</p>
+    </div>
+    <div class="col-card">
+        <h4>PatrÃ³n Z (Landing pages)</h4>
+        <div style="font-family: monospace; font-size: 14px; color: var(--gold); line-height: 1.4;">
+            â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ
+        </div>
+        <p style="font-size:13px;">Logo arriba-izquierda, CTA abajo-derecha, diagonal de contenido.</p>
+    </div>
+</div>
+
+<h3>6.3 Puntos Calientes y FrÃ­os</h3>
+
+<p>Los estudios de eye tracking revelan que ciertas posiciones en una composiciÃ³n generan mÃ¡s fijaciones que otras. Los "hot spots" (puntos calientes) son las Ã¡reas donde la mirada se detiene mÃ¡s tiempo:</p>
+
+<div class="percent-circles">
+    <div class="percent-item">
+        <div class="percent-circle" style="background: linear-gradient(135deg, #C41E3A, #8B0000); color: #fff;">92%</div>
+        <div class="percent-label">Esquina superior izquierda</div>
+    </div>
+    <div class="percent-item">
+        <div class="percent-circle" style="background: linear-gradient(135deg, #E67E22, #D35400); color: #fff;">85%</div>
+        <div class="percent-label">Centro superior</div>
+    </div>
+    <div class="percent-item">
+        <div class="percent-circle" style="background: linear-gradient(135deg, #D4AF37, #8B6914); color: #000;">78%</div>
+        <div class="percent-label">Rostros humanos</div>
+    </div>
+    <div class="percent-item">
+        <div class="percent-circle" style="background: linear-gradient(135deg, #2ECC71, #27AE60); color: #fff;">71%</div>
+        <div class="percent-label">Botones de acciÃ³n</div>
+    </div>
+    <div class="percent-item">
+        <div class="percent-circle" style="background: linear-gradient(135deg, #3498DB, #2980B9); color: #fff;">45%</div>
+        <div class="percent-label">Pie de pÃ¡gina</div>
+    </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 7 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>07 â€” NeuroestÃ©tica: Belleza y Cerebro</h2>
+
+<h3>7.1 La Base Neural de la Belleza</h3>
+
+<p>La neuroestÃ©tica, fundada por Semir Zeki en 2006, estudia la base neural de la percepciÃ³n estÃ©tica. Usando fMRI, Zeki descubriÃ³ que la contemplaciÃ³n de imÃ¡genes que los participantes calificaban como "bellas" activaba la corteza medial orbitofrontal (MOFC), una regiÃ³n asociada con la recompensa y el placer.</p>
+
+<p>Lo revolucionario es que esta activaciÃ³n era consistente independientemente de si la imagen era una pintura renacentista, una fotografÃ­a de naturaleza o un diseÃ±o moderno. El cerebro tiene un circuito de "belleza" relativamente universal.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Neural Correlates of Beauty</div>
+    <p><strong>Autor:</strong> Semir Zeki et al. (2006). University College London.</p>
+    <p><strong>MetodologÃ­a:</strong> fMRI mientras los participantes contemplaban imÃ¡genes calificadas como bellas, neutras o feas.</p>
+    <p><strong>Resultado:</strong> Las imÃ¡genes "bellas" activaron la corteza medial orbitofrontal bilateralmente. La intensidad de la activaciÃ³n correlacionaba con la calificaciÃ³n subjetiva de belleza.</p>
+    <p><strong>ImplicaciÃ³n:</strong> El diseÃ±o de marca no es subjetivo. Existe una base neural para lo que consideramos "bueno". Un buen diseÃ±o activa circuitos de placer medibles.</p>
+    <div class="study-source">Fuente: Kaya, N. & Epps, H.H. (2004). "Relationship between color and emotion: A study of college students." College Student Journal.</div>
+</div>
+
+<h3>7.2 Los Principios de la Belleza Universal</h3>
+
+<p>Vangelatos et al. (2011) identificaron que la preferencia estÃ©tica humana se basa en patrones matemÃ¡ticos especÃ­ficos, particularmente la proporciÃ³n Ã¡urea (1:1.618) y la simetrÃ­a bilateral. Estos patrones se encuentran en la naturaleza, el arte y la arquitectura, y el cerebro los reconoce innatamente como "correctos".</p>
+
+<div class="formula">
+    ProporciÃ³n Ãurea (Ï†) = 1.6180339887...
+</div>
+
+<p>Las marcas que incorporan la proporciÃ³n Ã¡urea en su diseÃ±o generan mayor placer estÃ©tico. Apple, Twitter y BP usan la proporciÃ³n Ã¡urea en sus logos. Nike usa curvas basadas en esta proporciÃ³n.</p>
+
+<h3>7.3 SimetrÃ­a y Credibilidad</h3>
+
+<p>Un meta-anÃ¡lisis de 130 estudios (Rhodes, 2006) demostrÃ³ que la simetrÃ­a facial y corporal es un marcador universal de atractivo y salud. En branding, esto se traduce en que los logos simÃ©tricos son percibidos como mÃ¡s confiables y profesionales.</p>
+
+<div class="bar-chart">
+    <div class="bar-row">
+        <div class="bar-label">Logo asimÃ©trico</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 45%; background: linear-gradient(90deg, #C41E3A, #8B0000);">45% confianza</div>
+        </div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Logo semi-simÃ©trico</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 68%; background: linear-gradient(90deg, #E67E22, #D35400);">68% confianza</div>
+        </div>
+    </div>
+    <div class="bar-row">
+        <div class="bar-label">Logo simÃ©trico</div>
+        <div class="bar-track">
+            <div class="bar-fill" style="width: 87%; background: linear-gradient(90deg, #2ECC71, #27AE60);">87% confianza</div>
+        </div>
+    </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 8 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>08 â€” Memoria y Recall de Marca</h2>
+
+<h3>8.1 CÃ³mo se Forman los Recuerdos de Marca</h3>
+
+<p>La memoria de marca opera en dos sistemas: memoria explÃ­cita (declarativa) e implÃ­cita (procedimental). La memoria declarativa incluye memoria episÃ³dica (experiencias con la marca) y memoria semÃ¡ntica (conocimiento sobre la marca). La memoria implÃ­cita incluye hÃ¡bitos y preferencias automÃ¡ticas.</p>
+
+<div class="diagram">
+    <div class="diagram-title">Sistema de Memoria de Marca</div>
+    <div class="flow-container">
+        <div class="flow-box">
+            <div class="icon">ðŸ‘ï¸</div>
+            <div class="label">EstÃ­mulo</div>
+            <div class="sublabel">Logo, color, aroma</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ§ </div>
+            <div class="label">Hipocampo</div>
+            <div class="sublabel">CodificaciÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ’¾</div>
+            <div class="label">ConsolidaciÃ³n</div>
+            <div class="sublabel">Neuroplasticidad</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box">
+            <div class="icon">ðŸ”</div>
+            <div class="label">RecuperaciÃ³n</div>
+            <div class="sublabel">Al ver la marca</div>
+        </div>
+    </div>
+</div>
+
+<h3>8.2 El Efecto de la RepeticiÃ³n en Memoria</h3>
+
+<p>La curva del olvido de Ebbinghaus (1885) muestra que olvidamos el 70% de la informaciÃ³n nueva en las primeras 24 horas. Sin embargo, la repeticiÃ³n espaciada (distributed practice) puede revertir esta tendencia. Para las marcas, esto significa que la exposiciÃ³n consistente pero no excesiva es la clave.</p>
+
+<table>
+    <tr>
+        <th>Frecuencia</th>
+        <th>RetenciÃ³n a los 30 dÃ­as</th>
+        <th>Coste por ImpresiÃ³n</th>
+    </tr>
+    <tr>
+        <td>1 exposiciÃ³n/semana</td>
+        <td>23%</td>
+        <td>Bajo</td>
+    </tr>
+    <tr>
+        <td>3 exposiciones/semana</td>
+        <td>67%</td>
+        <td>Medio</td>
+    </tr>
+    <tr>
+        <td>1 exposiciÃ³n/dÃ­a</td>
+        <td>82%</td>
+        <td>Alto</td>
+    </tr>
+    <tr>
+        <td>3+ exposiciones/dÃ­a</td>
+        <td>89% (pero fatiga)</td>
+        <td>Muy alto</td>
+    </tr>
+</table>
+
+<h3>8.3 El Punto Ã“ptimo: 7Â±2</h3>
+
+<p>George Miller (1956) descubriÃ³ que la memoria de trabajo puede contener 7Â±2 elementos simultÃ¡neamente. Para las marcas, esto significa que un consumidor promedio puede recordar cÃ³modamente entre 5 y 9 marcas en una categorÃ­a dada. Para estar en esa lista, tu marca necesita:</p>
+<ul>
+    <li>DiferenciaciÃ³n clara (ser distinta de las otras)</li>
+    <li>Consistencia visual (recordar mÃ¡s fÃ¡cil)</li>
+    <li>RepeticiÃ³n espaciada (no ser olvidada)</li>
+    <li>ConexiÃ³n emocional (activar mÃ¡s Ã¡reas cerebrales)</li>
+</ul>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 9 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>09 â€” Branding Emocional: ConexiÃ³n Neural</h2>
+
+<h3>9.1 El Cerebro Emocional vs. el Cerebro Racional</h3>
+
+<p>Antonio Damasio (1994) demostrÃ³ con pacientes con daÃ±o en la corteza prefrontal ventromedial que las decisiones sin emociÃ³n son imposibles. Los pacientes podÃ­an razonar lÃ³gicamente pero no podÃ­an tomar decisiones. El marketing efectivo apela primero a la emociÃ³n y luego a la razÃ³n.</p>
+
+<div class="diagram">
+    <div class="diagram-title">Modelo de DecisiÃ³n de Compra</div>
+    <div class="flow-container">
+        <div class="flow-box" style="background: linear-gradient(135deg, #C41E3A, #8B0000); color: #fff;">
+            <div class="icon">â¤ï¸</div>
+            <div class="label">EmociÃ³n</div>
+            <div class="sublabel">"Me gusta"</div>
+            <div class="sublabel">80% de la decisiÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background: linear-gradient(135deg, #3498DB, #2980B9); color: #fff;">
+            <div class="icon">ðŸ§ </div>
+            <div class="label">RazÃ³n</div>
+            <div class="sublabel">"Tiene sentido"</div>
+            <div class="sublabel">20% de la decisiÃ³n</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="background: linear-gradient(135deg, #2ECC71, #27AE60); color: #fff;">
+            <div class="icon">ðŸ›’</div>
+            <div class="label">AcciÃ³n</div>
+            <div class="sublabel">"Compro"</div>
+            <div class="sublabel">Resultado</div>
+        </div>
+    </div>
+</div>
+
+<h3>9.2 Las 6 Emociones Fundamentales del Branding</h3>
+
+<table>
+    <tr>
+        <th>EmociÃ³n</th>
+        <th>RegiÃ³n Cerebral</th>
+        <th>Uso en Branding</th>
+        <th>Ejemplo</th>
+    </tr>
+    <tr>
+        <td><strong>AlegrÃ­a</strong></td>
+        <td>Corteza prefrontal izquierda</td>
+        <td>Experiencia positiva, recompra</td>
+        <td>Coca-Cola, Disney</td>
+    </tr>
+    <tr>
+        <td><strong>Confianza</strong></td>
+        <td>Corteza cingulada anterior</td>
+        <td>Lealtad, recomendaciÃ³n</td>
+        <td>Volvo, IBM</td>
+    </tr>
+    <tr>
+        <td><strong>Sorpresa</strong></td>
+        <td>AmÃ­gdala + corteza cingulada</td>
+        <td>AtenciÃ³n, viralidad</td>
+        <td>Red Bull, GoPro</td>
+    </tr>
+    <tr>
+        <td><strong>Asombro</strong></td>
+        <td>Corteza prefrontal medial</td>
+        <td>Experiencia premium</td>
+        <td>Apple, Tesla</td>
+    </tr>
+    <tr>
+        <td><strong>Pertenencia</strong></td>
+        <td>Corteza cingulada dorsal</td>
+        <td>Comunidad, tribal</td>
+        <td>Harley-Davidson, Nike</td>
+    </tr>
+    <tr>
+        <td><strong>Nostalgia</strong></td>
+        <td>Hipocampo + corteza orbitofrontal</td>
+        <td>ConexiÃ³n histÃ³rica</td>
+        <td>Nintendo, Kodak</td>
+    </tr>
+</table>
+
+<h3>9.3 El Storytelling y la ActivaciÃ³n Neural</h3>
+
+<p>Un estudio de la Universidad de Princeton (2010) descubriÃ³ que cuando una persona escucha una historia, su cerebro se sincroniza con el cerebro del narrador. Este fenÃ³meno, llamado "neural coupling", explica por quÃ© el storytelling es tan efectivo en marketing.</p>
+
+<div class="study-box">
+    <div class="study-title">ðŸ”¬ Estudio: Neural Coupling</div>
+    <p><strong>Autor:</strong> Uri Hasson et al. (2010). Princeton University.</p>
+    <p><strong>MetodologÃ­a:</strong> fMRI simultÃ¡neo de narrador y oyente mientras compartÃ­an historias.</p>
+    <p><strong>Resultado:</strong> Las regiones cerebrales del oyente se activaban en las mismas regiones que las del narrador, con un retraso de 1-3 segundos. Las historias mejor contadas generaban mayor acoplamiento neural.</p>
+    <p><strong>ImplicaciÃ³n:</strong> Las marcas que cuentan historias autÃ©nticas crean una conexiÃ³n neural directa con su audiencia. El storytelling no es marketing; es neurologÃ­a aplicada.</p>
+    <div class="study-source">Fuente: Hasson, U. et al. (2010). "Brain-to-brain coupling: A mechanism for creating and sharing a social world." Cognition.</div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 10 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>10 â€” AplicaciÃ³n PrÃ¡ctica: Creando una Marca CientÃ­fica</h2>
+
+<h3>10.1 El Framework NEUROBRAND</h3>
+
+<p>BasÃ¡ndonos en toda la investigaciÃ³n anterior, proponemos el framework NEUROBRAND para crear marcas con base cientÃ­fica:</p>
+
+<div class="diagram">
+    <div class="diagram-title">Framework NEUROBRAND</div>
+    <div class="flow-container">
+        <div class="flow-box" style="border-color: #C41E3A;">
+            <div class="label">N â€” Novedad</div>
+            <div class="sublabel">Activar sistema dopaminÃ©rgico</div>
+        </div>
+        <div class="flow-box" style="border-color: #E67E22;">
+            <div class="label">E â€” EmociÃ³n</div>
+            <div class="sublabel">Conectar con amÃ­gdala</div>
+        </div>
+        <div class="flow-box" style="border-color: #F1C40F;">
+            <div class="label">U â€” Universalidad</div>
+            <div class="sublabel">Patrones Ã¡ureos</div>
+        </div>
+        <div class="flow-box" style="border-color: #2ECC71;">
+            <div class="label">R â€” RecordaciÃ³n</div>
+            <div class="sublabel">Consistencia visual</div>
+        </div>
+        <div class="flow-box" style="border-color: #3498DB;">
+            <div class="label">O â€” Originalidad</div>
+            <div class="sublabel">DiferenciaciÃ³n clara</div>
+        </div>
+    </div>
+    <div class="flow-container" style="margin-top: 15px;">
+        <div class="flow-box" style="border-color: #9B59B6;">
+            <div class="label">B â€” Belleza</div>
+            <div class="sublabel">NeuroestÃ©tica</div>
+        </div>
+        <div class="flow-box" style="border-color: #D4AF37;">
+            <div class="label">R â€” Ritmo</div>
+            <div class="sublabel">Fluidez procesamiento</div>
+        </div>
+        <div class="flow-box" style="border-color: #E74C3C;">
+            <div class="label">A â€” Autoridad</div>
+            <div class="sublabel">Efecto halo</div>
+        </div>
+        <div class="flow-box" style="border-color: #1ABC9C;">
+            <div class="label">N â€” Narrativa</div>
+            <div class="sublabel">Storytelling</div>
+        </div>
+        <div class="flow-box" style="border-color: #34495E;">
+            <div class="label">D â€” Diferencia</div>
+            <div class="sublabel">Memoria de trabajo</div>
+        </div>
+    </div>
+</div>
+
+<h3>10.2 Checklist de DiseÃ±o Basado en Neurociencia</h3>
+
+<table>
+    <tr>
+        <th>Elemento</th>
+        <th>Principio CientÃ­fico</th>
+        <th>VerificaciÃ³n</th>
+    </tr>
+    <tr>
+        <td>Logo</td>
+        <td>Sesgo de procesamiento fluido</td>
+        <td>â˜‘ SimÃ©trico o quasi-simÃ©trico</td>
+    </tr>
+    <tr>
+        <td>Logo</td>
+        <td>ProporciÃ³n Ã¡urea</td>
+        <td>â˜‘ Ratio 1:1.618</td>
+    </tr>
+    <tr>
+        <td>Color</td>
+        <td>Respuesta emocional</td>
+        <td>â˜‘ MÃ¡ximo 3 colores principales</td>
+    </tr>
+    <tr>
+        <td>Color</td>
+        <td>Contraste WCAG</td>
+        <td>â˜‘ Ratio mÃ­nimo 4.5:1</td>
+    </tr>
+    <tr>
+        <td>TipografÃ­a</td>
+        <td>Legibilidad</td>
+        <td>â˜‘ MÃ­nimo 16px, interlineado 1.5</td>
+    </tr>
+    <tr>
+        <td>ComposiciÃ³n</td>
+        <td>PatrÃ³n F/Z</td>
+        <td>â˜‘ CTA en hot spot</td>
+    </tr>
+    <tr>
+        <td>Espacio</td>
+        <td>Carga cognitiva</td>
+        <td>â˜‘ Negativo suficiente</td>
+    </tr>
+    <tr>
+        <td>Consistencia</td>
+        <td>Efecto de exposiciÃ³n</td>
+        <td>â˜‘ Mismo estilo en todos los canales</td>
+    </tr>
+    <tr>
+        <td>Storytelling</td>
+        <td>Neural coupling</td>
+        <td>â˜‘ Narrativa autÃ©ntica</td>
+    </tr>
+    <tr>
+        <td>EmociÃ³n</td>
+        <td>Corteza prefrontal</td>
+        <td>â˜‘ Genera al menos 1 emociÃ³n fuerte</td>
+    </tr>
+</table>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 11 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>11 â€” Caso de Estudio: DragÃ³n de Jade é¾çŽ‰</h2>
+
+<h3>11.1 AplicaciÃ³n del Framework NEUROBRAND</h3>
+
+<p>Veamos cÃ³mo se aplica todo lo anterior al caso del restaurante "DragÃ³n de Jade":</p>
+
+<table>
+    <tr>
+        <th>Principio</th>
+        <th>AplicaciÃ³n en DragÃ³n de Jade</th>
+        <th>Evidencia CientÃ­fica</th>
+    </tr>
+    <tr>
+        <td><strong>Novedad</strong></td>
+        <td>FusiÃ³n de cultura china con diseÃ±o moderno</td>
+        <td>Dopamina por novedad (Schultz, 1997)</td>
+    </tr>
+    <tr>
+        <td><strong>EmociÃ³n</strong></td>
+        <td>Nostalgia + exclusividad</td>
+        <td>ActivaciÃ³n de corteza orbitofrontal</td>
+    </tr>
+    <tr>
+        <td><strong>Universalidad</strong></td>
+        <td>ProporciÃ³n Ã¡urea en logo y composiciones</td>
+        <td>Preferencia innata por Ï† (Vangelatos)</td>
+    </tr>
+    <tr>
+        <td><strong>RecordaciÃ³n</strong></td>
+        <td>Oro #D4AF37 consistente en todos los canales</td>
+        <td>Efecto de mera exposiciÃ³n (Zajonc)</td>
+    </tr>
+    <tr>
+        <td><strong>Originalidad</strong></td>
+        <td>CarÃ¡cteres chinos é¾çŽ‰ como diferenciador</td>
+        <td>Memoria de trabajo: 7Â±2 (Miller)</td>
+    </tr>
+    <tr>
+        <td><strong>Belleza</strong></td>
+        <td>DiseÃ±o minimalista, serif elegante</td>
+        <td>MOFC activation (Zeki, 2006)</td>
+    </tr>
+    <tr>
+        <td><strong>Ritmo</strong></td>
+        <td>Espaciado generoso, jerarquÃ­a clara</td>
+        <td>Fluidez procesamiento (Reber)</td>
+    </tr>
+    <tr>
+        <td><strong>Autoridad</strong></td>
+        <td>Dorado + negro = lujo percibido</td>
+        <td>Efecto halo (Thorndike)</td>
+    </tr>
+    <tr>
+        <td><strong>Narrativa</strong></td>
+        <td>"Sabor autÃ©ntico, tradiciÃ³n milenaria"</td>
+        <td>Neural coupling (Hasson)</td>
+    </tr>
+    <tr>
+        <td><strong>Diferencia</strong></td>
+        <td>Ãšnico en su categorÃ­a con identidad clara</td>
+        <td>Recall en top 7 de categorÃ­a</td>
+    </tr>
+</table>
+
+<h3>11.2 AnÃ¡lisis de Paleta de Color</h3>
+
+<div class="color-grid">
+    <div class="color-card">
+        <div class="color-swatch" style="background: #D4AF37;">ðŸ’Ž</div>
+        <div class="color-info">
+            <div class="color-name">Oro Principal</div>
+            <div class="color-hex">#D4AF37</div>
+            <div class="color-psych">Lujo + tradiciÃ³n + calidez</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: #0A0A0A; border: 1px solid #333;">ðŸ–¤</div>
+        <div class="color-info">
+            <div class="color-name">Negro Fondo</div>
+            <div class="color-hex">#0A0A0A</div>
+            <div class="color-psych">Elegancia + sofisticaciÃ³n</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: #C41E3A;">ðŸ”¥</div>
+        <div class="color-info">
+            <div class="color-name">Rojo Chino</div>
+            <div class="color-hex">#C41E3A</div>
+            <div class="color-psych">Suerte + pasiÃ³n + cultura</div>
+        </div>
+    </div>
+    <div class="color-card">
+        <div class="color-swatch" style="background: #8B6914;">âœ¨</div>
+        <div class="color-info">
+            <div class="color-name">Oro Oscuro</div>
+            <div class="color-hex">#8B6914</div>
+            <div class="color-psych">Profundidad + estabilidad</div>
+        </div>
+    </div>
+</div>
+
+<h3>11.3 JerarquÃ­a Visual Aplicada</h3>
+
+<div class="diagram">
+    <div class="diagram-title">JerarquÃ­a Visual del Logo DragÃ³n de Jade</div>
+    <div class="flow-container">
+        <div class="flow-box" style="border-color: #C41E3A; border-width: 3px;">
+            <div class="icon">ðŸ‰</div>
+            <div class="label">Nivel 1: Icono</div>
+            <div class="sublabel">ActivaciÃ³n V1+FFA</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #D4AF37; border-width: 2px;">
+            <div class="label">Nivel 2: Nombre</div>
+            <div class="sublabel">ActivaciÃ³n V2+V4</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #8B6914;">
+            <div class="label">Nivel 3: é¾çŽ‰</div>
+            <div class="sublabel">ActivaciÃ³n cultural</div>
+        </div>
+        <div class="flow-arrow">â†’</div>
+        <div class="flow-box" style="border-color: #666;">
+            <div class="label">Nivel 4: Slogan</div>
+            <div class="sublabel">ActivaciÃ³n semÃ¡ntica</div>
+        </div>
+    </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CAPÃTULO 12 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<h2>12 â€” Referencias BibliogrÃ¡ficas</h2>
+
+<div class="references">
+    <h3>ðŸ“š Fuentes CientÃ­ficas Citadas</h3>
+
+    <div class="ref-item">1. van der Laan, J.N. et al. (2006). "Time course of early processing of affective pictures." Cognitive, Affective, & Behavioral Neuroscience, 6(4), 299-311.</div>
+
+    <div class="ref-item">2. Schultz, W. (1997). "A Neural Substrate of Prediction and Reward." Science, 275(5306), 1593-1599.</div>
+
+    <div class="ref-item">3. Zajonc, R.B. (1968). "Attitudinal effects of mere exposure." Journal of Personality and Social Psychology, 9(2), 1-27.</div>
+
+    <div class="ref-item">4. Thorndike, E.L. (1920). "A constant error in psychological ratings." Journal of Applied Psychology, 4(1), 25-29.</div>
+
+    <div class="ref-item">5. North, A.C., Hargreaves, D.J., & McKendrick, J. (1999). "The influence of in-store music on wine selections." Journal of Applied Psychology, 84(2), 271-276.</div>
+
+    <div class="ref-item">6. Labrecque, L.I. & Milne, G.R. (2012). "Exciting red and competent blue." Journal of the Academy of Marketing Science, 40(5), 711-727.</div>
+
+    <div class="ref-item">7. Kaya, N. & Epps, H.H. (2004). "Relationship between color and emotion." College Student Journal, 38(3), 396-405.</div>
+
+    <div class="ref-item">8. Reber, R., Schwarz, N., & Winkielman, P. (2004). "Processing fluency and aesthetic pleasure." Personality and Social Psychology Review, 8(4), 364-382.</div>
+
+    <div class="ref-item">9. Damasio, A.R. (1994). Descartes' Error: Emotion, Reason, and the Human Brain. New York: Putnam.</div>
+
+    <div class="ref-item">10. Hasson, U. et al. (2010). "Brain-to-brain coupling: A mechanism for creating and sharing a social world." Cognition, 115(2), 199-211.</div>
+
+    <div class="ref-item">11. Zeki, S. (2006). "The neural basis of love." In The Artful Brain. Oxford University Press.</div>
+
+    <div class="ref-item">12. Miller, G.A. (1956). "The magical number seven, plus or minus two." Psychological Review, 63(2), 81-97.</div>
+
+    <div class="ref-item">13. Nielsen, J. (2006). "F-Shaped Pattern of Reading on the Web." Nielsen Norman Group.</div>
+
+    <div class="ref-item">14. Rhodes, G. (2006). "The evolutionary psychology of facial beauty." Annual Review of Psychology, 57, 199-226.</div>
+
+    <div class="ref-item">15. Tversky, A. & Kahneman, D. (1974). "Judgment under uncertainty: Heuristics and biases." Science, 185(4157), 1124-1131.</div>
+
+    <div class="ref-item">16. Parada, F. et al. (2012). "The Effects of Typeface on Text Processing." Proceedings of the Human Factors and Ergonomics Society.</div>
+
+    <div class="ref-item">17. Elliot, A.J. & Maier, M.A. (2014). "Color psychology: Effects of perceiving color on psychological functioning in humans." Annual Review of Psychology, 65, 95-120.</div>
+
+    <div class="ref-item">18. Vangelatos, I. et al. (2011). "The Golden Ratio in Art and Architecture." International Journal of Mathematics and Computer Science.</div>
+
+    <div class="ref-item">19. Knutson, B. et al. (2007). "Neural predictors of purchases." Neuron, 53(1), 147-156.</div>
+
+    <div class="ref-item">20. Hubel, D.H. & Wiesel, T.N. (1962). "Receptive fields, binocular interaction and functional architecture in the cat's visual cortex." Journal of Physiology, 160(1), 106-154.</div>
+
+    <div class="ref-item">21. Winkielman, P. et al. (2003). "Facial expressions, emotional understanding, and art." In Handbook of Cognition and Emotion.</div>
+
+    <div class="ref-item">22. Kosslyn, S.M. (1994). Image and Brain: The Resolution of the Imagery Debate. MIT Press.</div>
+
+    <div class="ref-item">23. Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.</div>
+
+    <div class="ref-item">24. Cialdini, R.B. (2009). Influence: Science and Practice. Pearson.</div>
+
+    <div class="ref-item">25. Ariely, D. (2008). Predictably Irrational. HarperCollins.</div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- COLofÃ“N -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div style="text-align: center; padding: 60px 40px; border-top: 2px solid var(--gold-dark); margin-top: 60px;">
+    <div style="font-size: 60px; margin-bottom: 20px;">ðŸ§ </div>
+    <h3 style="color: var(--gold); font-family: 'Playfair Display', serif; font-size: 28px;">Fin del Documento</h3>
+    <p style="color: var(--text-dim); max-width: 600px; margin: 20px auto;">
+        "La marca no es lo que tÃº dices que es. Es lo que el cerebro del consumidor construye con lo que tÃº le das."
+    </p>
+    <div style="margin-top: 30px; font-size: 13px; color: #555;">
+        Pedro Marcos Santos Belentani â€” Junio 2026<br>
+        Barcelona, EspaÃ±a<br><br>
+        ðŸ“„ 12 capÃ­tulos â€¢ 25+ estudios citados â€¢ 10+ diagramas<br>
+        Basado en neurociencia, psicologÃ­a cognitiva y neuromarketing<br><br>
+        <span style="color: var(--gold);">NEUROMARKETING Y BRANDING CIENTÃFICO</span>
+    </div>
+</div>
+
+</div><!-- end .content -->
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+{
+  "name": "Neuromarketing y Branding Científico",
+  "short_name": "NeuroBranding",
+  "description": "Documento de investigación completo sobre neuromarketing y branding científico. La Arquitectura Visual de la Marca.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "any",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["education", "science"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

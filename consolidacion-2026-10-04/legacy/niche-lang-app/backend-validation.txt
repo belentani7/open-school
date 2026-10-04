@@ -1,0 +1,44 @@
+TSC_EXIT=0
+
+> app-template@1.0.0 test /home/ubuntu/niche-lang-app
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/niche-lang-app
+
+ ✓ tests/lessons-context.test.ts (6 tests) 5ms
+ ✓ tests/user-context.test.ts (5 tests) 7ms
+ ✓ tests/services.test.ts (14 tests) 11ms
+stdout | tests/audit-regressions.test.ts > Audit regressions > retains queued data when no backend sync handler is configured
+Added to sync queue: progress
+
+stderr | tests/audit-regressions.test.ts > Audit regressions > retains queued data when no backend sync handler is configured
+Sync handler is not configured; retaining queued items
+
+stdout | tests/audit-regressions.test.ts > Audit regressions > removes queued data only after a configured handler succeeds
+Added to sync queue: progress
+
+stdout | tests/audit-regressions.test.ts > Audit regressions > pushes queued actions through the injected backend client
+Added to sync queue: stats
+
+stdout | tests/audit-regressions.test.ts > Audit regressions > uses the canonical user_profile key when updating a streak
+Streak updated: 2
+
+ ✓ tests/audit-regressions.test.ts (4 tests) 11ms
+ ↓ tests/auth.logout.test.ts (1 test | 1 skipped)
+
+ Test Files  4 passed | 1 skipped (5)
+      Tests  29 passed | 1 skipped (30)
+   Start at  00:50:19
+   Duration  791ms (transform 283ms, setup 0ms, collect 819ms, tests 33ms, environment 1ms, prepare 403ms)
+
+TEST_EXIT=0
+
+> app-template@1.0.0 build /home/ubuntu/niche-lang-app
+> esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+
+  dist/index.js  26.9kb
+
+⚡ Done in 10ms
+BUILD_EXIT=0

@@ -1,0 +1,28 @@
+
+> app-template@1.0.0 test /home/ubuntu/niche-lang-app
+> vitest run
+
+
+ RUN  v2.1.9 /home/ubuntu/niche-lang-app
+
+ ✓ tests/lessons-context.test.ts (6 tests) 5ms
+ ✓ tests/services.test.ts (14 tests) 8ms
+ ✓ tests/user-context.test.ts (5 tests) 7ms
+ ❯ tests/audit-regressions.test.ts (0 test)
+ ↓ tests/auth.logout.test.ts (1 test | 1 skipped)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/audit-regressions.test.ts [ tests/audit-regressions.test.ts ]
+Error: Failed to load url @/constants/oauth (resolved id: @/constants/oauth) in /home/ubuntu/niche-lang-app/lib/trpc.ts. Does the file exist?
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51969:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed | 3 passed | 1 skipped (5)
+      Tests  25 passed | 1 skipped (26)
+   Start at  00:48:17
+   Duration  784ms (transform 310ms, setup 0ms, collect 678ms, tests 19ms, environment 1ms, prepare 435ms)
+
+ ELIFECYCLE  Test failed. See above for more details.
+TEST_EXIT=1

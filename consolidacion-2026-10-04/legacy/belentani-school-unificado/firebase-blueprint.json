@@ -1,0 +1,99 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with academic progress, role, and gamification points",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "tutor", "parent"] },
+        "grade": { "type": "string" },
+        "coins": { "type": "number" },
+        "streak": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "displayName"]
+    },
+    "AcademicProgress": {
+      "title": "AcademicProgress",
+      "description": "Academic progress, completed lessons and arcade records",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "completedLessons": { "type": "array" },
+        "favoriteGames": { "type": "array" },
+        "mathScore": { "type": "number" },
+        "languageLevel": { "type": "string" },
+        "lastActive": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Gemini chatbot conversation history item",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "sender": { "type": "string", "enum": ["user", "model"] },
+        "text": { "type": "string" },
+        "model": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "sender", "text"]
+    },
+    "AudioTranscription": {
+      "title": "AudioTranscription",
+      "description": "Voice audio transcription created with gemini-3.5-transcribe",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "audioTitle": { "type": "string" },
+        "transcript": { "type": "string" },
+        "duration": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "transcript"]
+    },
+    "CreativeItem": {
+      "title": "CreativeItem",
+      "description": "Generated artwork or Lyria music track",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["image", "music"] },
+        "title": { "type": "string" },
+        "prompt": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "model": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "type", "title", "prompt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Individual student or tutor user account document"
+    },
+    "/users/{userId}/progress/{progressId}": {
+      "schema": "AcademicProgress",
+      "description": "User learning records and homework completion"
+    },
+    "/users/{userId}/chats/{chatId}": {
+      "schema": "ChatMessage",
+      "description": "Conversation threads with the Gemini tutor"
+    },
+    "/users/{userId}/transcriptions/{transcriptionId}": {
+      "schema": "AudioTranscription",
+      "description": "Recorded speech transcripts"
+    },
+    "/users/{userId}/creations/{creationId}": {
+      "schema": "CreativeItem",
+      "description": "Generated images and Lyria music compositions"
+    }
+  }
+}

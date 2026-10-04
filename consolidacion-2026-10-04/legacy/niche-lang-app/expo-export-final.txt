@@ -1,0 +1,173 @@
+React Compiler enabled
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Web node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% (4/7)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  5.2% ( 5/22)
+Web node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% (4/7)
+λ node_modules/expo-router/node/render.js ▓▓▓░░░░░░░░░░░░░ 22.1% (155/330)
+| Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+|   npx update-browserslist-db@latest
+|   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Web node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% ( 85/246)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓░░░░░░░░░░ 43.2% (359/624)
+Web node_modules/expo-router/entry.js ▓▓▓░░░░░░░░░░░░░ 20.4% (146/333)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.6% (506/724)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓░░░░░░░░░░░ 32.9% (235/410)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 51.6% (683/989)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.8% (358/535)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 69.1% ( 923/1110)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.8% (541/821)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓░░░░ 79.8% (1082/1214)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 52.1% (708/981)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░ 87.4% (1160/1241)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.2% ( 995/1155)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 93.2% (1259/1304)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 91.4% (1236/1294)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 95.1% (1378/1418)
+λ Bundled 35513ms node_modules/expo-router/node/render.js (1446 modules)
+[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect.
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 98.5% (1492/1506)
+Web Bundled 37281ms node_modules/expo-router/entry.js (1508 modules)
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+
+› web bundles (2):
+_expo/static/css/web-c37dbbc92f8bbf27901b5a2923c1eb0b.css (11.7 kB)
+_expo/static/js/web/entry-62154cd61d83f9282c81846e87810684.js (3.01 MB)
+
+› Static routes (13):
+/ (index) (23.6 kB)
+/niches (29.4 kB)
+/_sitemap (17.8 kB)
+/progress (27.7 kB)
+/settings (29.6 kB)
+/+not-found (17.8 kB)
+/niche/[id] (24.2 kB)
+/lesson/[id] (24.2 kB)
+/(tabs) (23.6 kB)
+/dev/theme-lab (32.7 kB)
+/oauth/callback (24.7 kB)
+/(tabs)/progress (27.7 kB)
+/(tabs)/settings (29.6 kB)
+
+Exported: dist
+EXPORT_EXIT=0

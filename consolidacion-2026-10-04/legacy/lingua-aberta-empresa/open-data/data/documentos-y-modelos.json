@@ -1,0 +1,70 @@
+{
+  "tema": "documentos-y-modelos",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "Wikisource ES",
+      "spec": "mediawiki:es.wikisource.org:contrato",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "El contrato social (1819)",
+          "url": "https://es.wikisource.org/wiki/El_contrato_social_%281819%29",
+          "fragmento": "respeta la ortografía original de la época El contrato social, o principios del derecho políticoEl contrato social, o principios del derecho"
+        },
+        {
+          "titulo": "El contrato social (1836)/Libro Tercero",
+          "url": "https://es.wikisource.org/wiki/El_contrato_social_%281836%29%2FLibro_Tercero",
+          "fragmento": " otras versiones    metadatos    clase. El contrato social, o sea principios del derecho políticoEl contrato social, o sea principios del derecho"
+        },
+        {
+          "titulo": "El contrato social (1836)",
+          "url": "https://es.wikisource.org/wiki/El_contrato_social_%281836%29",
+          "fragmento": "   clase. Descargar como     El contrato socialEl contrato social1836Jean-Jacques RousseauAnónimoBarcelona El contrato social (1819)danskEnglishfrançaisfrançais"
+        },
+        {
+          "titulo": "El contrato social (1836)/Libro Tercero: Capítulo XVI",
+          "url": "https://es.wikisource.org/wiki/El_contrato_social_%281836%29%2FLibro_Tercero%3A_Cap%C3%ADtulo_XVI",
+          "fragmento": " otras versiones    metadatos    clase. El contrato social, o sea principios del derecho políticoEl contrato social, o sea principios del derecho"
+        },
+        {
+          "titulo": "El contrato social (1836)/Libro Primero",
+          "url": "https://es.wikisource.org/wiki/El_contrato_social_%281836%29%2FLibro_Primero",
+          "fragmento": " otras versiones    metadatos    clase. El contrato social, o sea principios del derecho políticoEl contrato social, o sea principios del derecho"
+        }
+      ]
+    },
+    {
+      "fuente": "Open Library",
+      "spec": "openlibrary:business writing",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Business writing for dummies",
+          "autor": "Sheryl Lindsell-Roberts",
+          "anio": 1999
+        },
+        {
+          "titulo": "Hbr Guide To Better Business Writing",
+          "autor": "Bryan A. Garner",
+          "anio": 2013
+        },
+        {
+          "titulo": "Guide to managerial communication",
+          "autor": "Mary Munter",
+          "anio": 1982
+        },
+        {
+          "titulo": "Business writing",
+          "autor": "Wilma Davidson",
+          "anio": 1994
+        },
+        {
+          "titulo": "Business Writing Today",
+          "autor": "Natalie Canavor",
+          "anio": 2015
+        }
+      ]
+    }
+  ]
+}

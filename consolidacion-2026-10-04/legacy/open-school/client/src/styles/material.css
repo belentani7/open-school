@@ -1,0 +1,414 @@
+/* ===================================================================
+   OPEN SCHOOL — CAPA 2: MATERIAL
+   P2 Material 4 capas: effect + tint solido + shine + content.
+   Nunca "background rgba" a secas.
+   =================================================================== */
+
+/* ---------------- Sustrato ---------------- */
+
+html {
+  background: var(--color-obsidian);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--color-obsidian);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Atmosfera milky: capas radiales Mie. Fija, detras de todo,
+   dentro del presupuesto de luz del 3%. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 18% -10%, var(--milk-1), transparent 62%),
+    radial-gradient(48rem 34rem at 88% 8%, var(--milk-2), transparent 58%),
+    radial-gradient(70rem 50rem at 50% 118%, rgba(3, 3, 40, 0.85), transparent 64%);
+}
+
+/* Grano de pelicula: rompe el banding de los degradados en OLED */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(158, 134, 255, 0.28);
+  color: #fff;
+}
+
+/* Foco visible SIEMPRE. No se negocia por estetica. */
+:focus-visible {
+  outline: 2px solid var(--color-helio);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(158, 134, 255, 0.22);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(158, 134, 255, 0.38); }
+
+/* ---------------- Material: glass de 4 capas ---------------- */
+
+.glass {
+  position: relative;
+  isolation: isolate;
+  border-radius: var(--radius-lg);
+  /* capa 1 — effect */
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  /* capa 2 — tint solido */
+  background: var(--glass-tint);
+  /* capa 3 — shine (bisel) + sombra proyectada */
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shine), var(--glass-cast);
+  transition:
+    border-color 0.5s var(--ease-glide),
+    box-shadow 0.5s var(--ease-glide),
+    transform 0.5s var(--ease-glide);
+}
+
+/* Refraccion real: Chromium aplica el filtro SVG, el resto degrada al
+   blur de arriba sin romperse (progressive enhancement, no polyfill). */
+@supports (backdrop-filter: url(#lg-refract)) {
+  .glass--refract {
+    backdrop-filter: url(#lg-refract) blur(3px) saturate(1.5);
+    -webkit-backdrop-filter: url(#lg-refract) blur(3px) saturate(1.5);
+  }
+}
+
+/* capa 4 — content: se eleva sobre el material */
+.glass > * { position: relative; z-index: 1; }
+
+.glass--lift:hover,
+.glass--lift:focus-within {
+  transform: translateY(-3px);
+  border-color: rgba(158, 134, 255, 0.42);
+  box-shadow: var(--glass-shine), 0 28px 80px rgba(0, 0, 0, 0.72),
+    0 0 34px rgba(158, 134, 255, 0.13);
+}
+
+.glass--flush { border-radius: 0; border-inline: 0; }
+
+/* ---------------- Escala tipografica ---------------- */
+
+/* La palabra monumental se dimensiona por NUMERO DE LETRAS, no por vw a
+   secas: con `17vw` fijo, "APRENDER" (8 letras) se salia del viewport y
+   "404" (3) se quedaba pequeña. 0.66em es el avance medio de Sora 700
+   medido sobre este juego de caracteres; el margen sobrante evita que
+   una palabra con letras anchas (M, W) toque el borde. */
+.t-monument {
+  --chars: 8;
+  /* Mismo motivo que en `.stack`: sin esto, el propio h1 se planta en su
+     ancho min-content (el texto sin cortar) y no hay centrado posible. */
+  min-width: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: max(
+    2.4rem,
+    min(15rem, calc((100vw - 2 * var(--gutter)) / (var(--chars) * 0.66)))
+  );
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+  margin: 0;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 1.2rem + 3.2vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.t-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.t-body {
+  font-size: 1rem;
+  line-height: 1.68;
+  color: var(--color-ink-2);
+  max-width: var(--measure);
+  margin: 0;
+}
+
+.t-lede {
+  font-size: clamp(1.02rem, 0.95rem + 0.42vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--color-ink-2);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* Etiqueta mono. letter-spacing amplio = se lee a distancia (TV). */
+.t-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  margin: 0;
+}
+
+.t-num {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.5rem, 1.2rem + 1.1vw, 2.3rem);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.t-helio { color: var(--color-helio); }
+.t-aula  { color: var(--color-aula); }
+.t-muted { color: var(--color-ink-2); }
+.t-dim   { color: var(--color-ink-3); }
+
+/* ---------------- Controles ---------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 44px;              /* objetivo tactil AAA */
+  padding: 0.78rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.42s var(--ease-glide);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Primario: la luz sale de DENTRO del boton (P3 luz interna > externa) */
+.btn--light {
+  color: #0a0618;
+  background:
+    radial-gradient(120% 160% at 50% -30%, #ffffff 0%, var(--color-helio-hi) 34%, var(--color-helio) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -2px 6px rgba(93, 75, 184, 0.4),
+    0 8px 30px rgba(158, 134, 255, 0.26);
+}
+.btn--light:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 6px rgba(93, 75, 184, 0.35),
+    0 12px 44px rgba(158, 134, 255, 0.42);
+}
+.btn--light:active { transform: translateY(1px); }
+
+.btn--glass {
+  color: var(--color-ink);
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.btn--glass:hover {
+  border-color: rgba(158, 134, 255, 0.5);
+  background: rgba(158, 134, 255, 0.1);
+}
+
+.btn--quiet {
+  color: var(--color-ink-2);
+  background: transparent;
+  padding-inline: 0.9rem;
+}
+.btn--quiet:hover { color: var(--color-ink); }
+
+.btn[aria-pressed="true"] {
+  color: #0a0618;
+  background: var(--color-helio);
+  border-color: var(--color-helio);
+}
+
+.btn:disabled { opacity: 0.38; cursor: not-allowed; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.72rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.035);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-2);
+  white-space: nowrap;
+}
+
+.chip--edge {
+  border-color: rgba(107, 231, 243, 0.42);
+  color: var(--color-aula);
+  background: rgba(107, 231, 243, 0.07);
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-ink);
+  font: inherit;
+  transition: border-color 0.35s var(--ease-glide), box-shadow 0.35s var(--ease-glide);
+}
+.field::placeholder { color: var(--color-ink-3); }
+.field:focus {
+  outline: none;
+  border-color: rgba(158, 134, 255, 0.65);
+  box-shadow: 0 0 0 3px rgba(158, 134, 255, 0.16);
+}
+
+/* ---------------- Rejilla ---------------- */
+
+.shell {
+  width: min(100% - var(--gutter) * 2, 82rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 120rem) {
+  .shell { width: min(100% - var(--gutter) * 2, 108rem); }
+}
+
+.bay { padding-block: var(--bay); }
+
+/* `min-width: 0` no es opcional: por defecto un item de grid tiene
+   `min-width: auto`, que le impide encogerse por debajo de su tamaño
+   min-content. Con un texto `nowrap` dentro, eso fija el contenedor al
+   ancho del texto y ningun `width` lo reduce — el bloque desborda entero
+   hacia la derecha en vez de centrarse. */
+.stack { display: grid; gap: 1rem; align-content: start; min-width: 0; }
+.stack--lg { gap: 1.9rem; }
+.stack--sm { gap: 0.55rem; }
+
+.row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+
+.bento {
+  display: grid;
+  gap: 1.15rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr));
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Salto de navegacion: primer tabulable del documento */
+.skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 999;
+  transform: translateY(-160%);
+  transition: transform 0.3s var(--ease-glide);
+}
+.skip:focus { transform: translateY(0); }
+
+/* ---------------- Movimiento: fisica, no efectos ---------------- */
+
+/* Respiracion: 11s, amplitud minima. Deriva, no rebota. */
+@keyframes breathe {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(0, -7px, 0) scale(1.006); }
+}
+.m-breathe { animation: breathe 11s var(--ease-glide) infinite; }
+
+/* Entrada en cascada con inercia (P4) */
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(7px); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0);   filter: blur(0); }
+}
+.m-rise {
+  animation: rise 1s var(--ease-inertia) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Barrido especular sobre el bisel al pasar el cursor */
+@keyframes sheen {
+  from { transform: translateX(-120%); }
+  to   { transform: translateX(220%); }
+}
+.m-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+.m-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 42%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  transform: translateX(-120%);
+}
+.glass--lift:hover .m-sheen::after { animation: sheen 1.15s var(--ease-glide); }
+
+/* Linea de horizonte: separa capitulos sin dibujar una caja */
+.horizon {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(158, 134, 255, 0.28) 22%,
+    rgba(107, 231, 243, 0.2) 50%,
+    rgba(158, 134, 255, 0.28) 78%,
+    transparent
+  );
+}

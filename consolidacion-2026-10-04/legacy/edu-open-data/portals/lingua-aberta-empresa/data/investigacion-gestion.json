@@ -1,0 +1,70 @@
+{
+  "tema": "investigacion-gestion",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "OpenAlex",
+      "spec": "openalex:business management",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Journal of Small Business Management",
+          "anio": 2020,
+          "url": "https://doi.org/10.1111/(issn)1540-627x"
+        },
+        {
+          "titulo": "African Journal of Business Management",
+          "anio": 2026,
+          "url": "https://doi.org/10.5897/ajbm"
+        },
+        {
+          "titulo": "Essentials of Entrepreneurship and Small Business Management",
+          "anio": 1997,
+          "url": "http://bvbr.bib-bvb.de:8991/F?func=service&amp;doc_library=BVB01&amp;local_base=BVB01&amp;doc_number=008112071&amp;sequence=000002&amp;line_number=0001&amp;func_code=DB_RECORDS&amp;service_type=MEDIA"
+        },
+        {
+          "titulo": "Some Research Perspectives on Entrepreneurship Education, Enterprise Education and Education for Small Business Management: A Ten-Year Literature Review",
+          "anio": 1997,
+          "url": "https://doi.org/10.1177/0266242697153004"
+        },
+        {
+          "titulo": "International Journal of Business and Management",
+          "anio": 2017,
+          "url": "https://doi.org/10.26666/rmp.ijbm"
+        }
+      ]
+    },
+    {
+      "fuente": "Crossref",
+      "spec": "crossref:human resources",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "The Human Resources Manager",
+          "anio": 2010,
+          "doi": "10.5040/9781350897144"
+        },
+        {
+          "titulo": "Auditing human resources",
+          "anio": 2012,
+          "doi": "10.4324/9780080938189-8"
+        },
+        {
+          "titulo": "Human Resources Strategy and Change: Essentials of Human Resources Transformation",
+          "anio": 2015,
+          "doi": "10.1007/978-3-642-40933-2_109-1"
+        },
+        {
+          "titulo": "Human Resources Governance and Compliance: Human Resources Audit and Investigations",
+          "anio": 2015,
+          "doi": "10.1007/978-3-642-40933-2_97-1"
+        },
+        {
+          "titulo": "Developing human resources",
+          "anio": 2012,
+          "doi": "10.1093/hebz/9780199605484.003.0006"
+        }
+      ]
+    }
+  ]
+}

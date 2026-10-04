@@ -1,0 +1,25 @@
+import { courses, program, type Locale } from "@shared/dictCatalog";
+import { ArrowRight, BookOpen, BrainCircuit, Network, ShieldCheck } from "lucide-react";
+import { Link } from "wouter";
+import { startLogin } from "@/const";
+import PublicShell from "@/components/PublicShell";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+/**
+ * All content in this page are only for example, replace with your own feature implementation
+ * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
+ */
+const content: Record<Locale, { eyebrow: string; title: string; lead: string; explore: string; access: string; focus: string; principle: string }> = {
+  es: { eyebrow: "Formación tecnológica independiente · v1.0", title: "Construye sistemas que merezcan confianza.", lead: "Cinco años de fundamentos, ingeniería de software, inteligencia artificial, cloud y ciberseguridad. Diseñado para aprender con rigor, entregar evidencia y defender decisiones técnicas.", explore: "Explorar catálogo", access: "Acceder como estudiante", focus: "Núcleo académico", principle: "Competencia demostrable, no consumo pasivo." },
+  pt: { eyebrow: "Formação tecnológica independente · v1.0", title: "Constrói sistemas que merecem confiança.", lead: "Cinco anos de fundamentos, engenharia de software, inteligência artificial, cloud e cibersegurança. Concebido para aprender com rigor, entregar evidência e defender decisões técnicas.", explore: "Explorar catálogo", access: "Aceder como estudante", focus: "Núcleo académico", principle: "Competência demonstrável, não consumo passivo." },
+  en: { eyebrow: "Independent technology education · v1.0", title: "Build systems worthy of trust.", lead: "Five years of foundations, software engineering, artificial intelligence, cloud and cybersecurity. Designed to learn rigorously, deliver evidence and defend technical decisions.", explore: "Explore catalog", access: "Enter student area", focus: "Academic core", principle: "Demonstrable competence, not passive consumption." },
+};
+
+export default function Home() {
+  const { locale } = useLanguage(); const text = content[locale];
+  return <PublicShell><section className="hero"><div className="hero-copy"><span className="eyebrow">{text.eyebrow}</span><h1>{text.title}</h1><p>{text.lead}</p><div className="hero-actions"><Link href="/catalog" className="primary-cta">{text.explore}<ArrowRight size={17}/></Link><button onClick={() => startLogin()} className="secondary-cta">{text.access}</button></div></div><div className="hero-signal" aria-label="Academic progress illustration"><div className="signal-head"><span>DICT // ACADEMIC SIGNAL</span><i>LIVE STRUCTURE</i></div><div className="signal-metric"><span>300</span><small>CA</small><b>{program.creditName[locale]}</b></div><div className="signal-lines"><i /><i /><i /><i /><i /></div><div className="signal-foot"><span>SOFTWARE</span><span>AI</span><span>CLOUD</span><span>CYBER</span></div></div></section>
+    <section className="proof-strip"><p>{text.principle}</p><div><span><b>10</b> semesters</span><span><b>30</b> courses</span><span><b>05</b> labs</span><span><b>A→F</b> mastery</span></div></section>
+    <section className="focus-section"><div className="section-heading"><span className="eyebrow">{text.focus}</span><h2>Fundamentos profundos. Especialización aplicada.</h2><p>La arquitectura conecta las materias para que cada avance dependa de una evidencia verificable de conocimientos y práctica.</p></div><div className="focus-grid"><article><BookOpen size={22}/><span>01</span><h3>Software & Systems</h3><p>Programación, datos, arquitectura, APIs, pruebas y sistemas distribuidos.</p></article><article><BrainCircuit size={22}/><span>02</span><h3>AI Engineering</h3><p>Machine Learning, visión, LLM, RAG, MLOps, IA local y agentes.</p></article><article><Network size={22}/><span>03</span><h3>Cloud & Delivery</h3><p>Linux, contenedores, CI/CD, observabilidad, escalabilidad y coste.</p></article><article><ShieldCheck size={22}/><span>04</span><h3>Security & Governance</h3><p>Seguridad web, respuesta a incidentes, AI security y tecnología responsable.</p></article></div></section>
+    <section className="path-preview"><div><span className="eyebrow">Plan de estudios</span><h2>Un itinerario con puertas reales.</h2><p>La plataforma no desbloquea materias por tiempo transcurrido. Cada ruta avanzada requiere aprobar su base y demostrar competencias mediante proyectos, laboratorios y defensa.</p><Link href="/curriculum" className="text-link">Ver mapa académico <ArrowRight size={16}/></Link></div><div className="path-list">{courses.filter(course => ["DCT-102", "DCT-301", "DCT-401", "DCT-403", "DCT-504"].includes(course.code)).map(course => <Link href={`/catalog/${course.code}`} key={course.code}><span>{course.code}</span><b>{course.title[locale]}</b><small>S{course.semester} · {course.credits} CA · {course.entry} → {course.exit}</small></Link>)}</div></section>
+  </PublicShell>;
+}

@@ -1,0 +1,14 @@
+:root{--bg:#0a0e14;--oro:#c9a227;--txt:#f2ede0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Georgia,serif}
+header,footer{padding:1.2rem 2rem;border-color:#2a2f3a;border-style:solid;border-width:0}
+header{border-bottom-width:1px;display:flex;gap:1rem;align-items:center}
+.logo{color:var(--oro);font-weight:bold;letter-spacing:.15em}
+nav{margin-left:auto;display:flex;gap:1rem}
+a{color:var(--oro)}main{max-width:960px;margin:0 auto;padding:3rem 1.5rem}
+.hero{text-align:center;padding:3rem 0}
+.hero h1{font-size:2.6rem;margin:.5em 0}
+.cta{display:inline-block;background:var(--oro);color:#111;padding:.9rem 2rem;border-radius:999px;font-weight:bold;text-decoration:none;margin-top:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+.card{border:1px solid #2a2f3a;border-radius:12px;padding:1.5rem}
+.precio{font-size:2rem;color:var(--oro)}
+footer{border-top-width:1px;text-align:center;opacity:.8}

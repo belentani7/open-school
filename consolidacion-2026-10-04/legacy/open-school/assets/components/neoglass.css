@@ -1,0 +1,43 @@
+/* BELENTANI//OS — NEOGLASS CORE · AGPLv3 · microinterfaz óptica reutilizable */
+@import url('../tokens/neoglass-tokens.css');
+.bel-reactive{--mx:50%;--my:50%;--rx:0deg;--ry:0deg;--energy:0;position:relative;isolation:isolate;overflow:hidden;
+transform:perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+transition:transform 420ms cubic-bezier(.16,1,.3,1),border-color 420ms ease,box-shadow 420ms ease;
+background:radial-gradient(160px circle at var(--mx) var(--my),rgba(255,35,60,.20),transparent 65%),linear-gradient(135deg,rgba(255,255,255,.085),rgba(255,255,255,.018));
+border:1px solid rgba(255,255,255,.115);backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(0,0,0,.42),0 18px 60px rgba(0,0,0,.35);}
+.bel-reactive::before{content:"";position:absolute;inset:1px;pointer-events:none;border-radius:inherit;
+background:radial-gradient(140px circle at var(--mx) var(--my),rgba(255,255,255,.19),transparent 60%);opacity:var(--energy);mix-blend-mode:screen;transition:opacity 300ms ease;}
+.bel-reactive::after{content:"";position:absolute;width:45%;height:260%;top:-80%;left:-70%;pointer-events:none;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:rotate(18deg);transition:left 900ms cubic-bezier(.16,1,.3,1);}
+.bel-reactive:hover::after{left:130%;}
+.bel-reactive.is-hovering{border-color:rgba(255,30,55,.48);
+box-shadow:inset 0 1px rgba(255,255,255,.18),inset 0 -1px rgba(0,0,0,.4),0 0 0 1px rgba(255,0,30,.05),0 0 35px rgba(255,0,35,.13),0 20px 70px rgba(0,0,0,.5);}
+.bel-reactive.is-pressed{transform:perspective(900px) rotateX(0) rotateY(0) scale(.965);}
+.bel-ripple{position:absolute;width:12px;height:12px;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);
+background:radial-gradient(circle,rgba(255,255,255,.45),rgba(255,20,50,.25) 35%,transparent 70%);
+animation:bel-ripple 650ms cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes bel-ripple{from{width:12px;height:12px;opacity:.9;}to{width:420px;height:420px;opacity:0;}}
+.bel-reactive.is-loading{pointer-events:none;}
+.bel-reactive.is-loading>*{opacity:.35;}
+.bel-reactive.is-loading::after{content:"";position:absolute;top:0;bottom:0;width:35%;left:-40%;
+background:linear-gradient(90deg,transparent,rgba(255,40,60,.8),rgba(255,255,255,.35),transparent);animation:bel-scan 1.25s infinite;}
+@keyframes bel-scan{to{left:130%;}}
+.bel-reactive.is-glitch{animation:bel-glitch 420ms steps(2);}
+@keyframes bel-glitch{0%{transform:translateX(0);}20%{transform:translateX(-2px) skewX(-2deg);}40%{transform:translateX(3px) skewX(2deg);}60%{transform:translateX(-1px);}100%{transform:translateX(0);}}
+.bel-reactive.is-pulsing{animation:bel-heart 900ms ease;}
+@keyframes bel-heart{0%,100%{box-shadow:0 0 0 rgba(255,0,35,0);}45%{box-shadow:0 0 42px rgba(255,0,35,.32),inset 0 0 22px rgba(255,0,35,.08);}}
+.bel-reactive:focus-visible{outline:1px solid rgba(255,70,90,.9);outline-offset:4px;}
+.bel-reactive:disabled{opacity:.4;cursor:not-allowed;}
+/* Botones base NEOGLASS */
+.ng-btn{display:inline-flex;align-items:center;gap:8px;border-radius:99px;font-weight:600;font-size:13px;padding:12px 22px;cursor:pointer;border:1px solid transparent;font-family:var(--ng-font-b);}
+.ng-primary{background:linear-gradient(135deg,#ff2244,#b3001f);color:#fff;}
+.ng-ghost{background:transparent;color:#ff8a9a;border-color:rgba(255,0,50,.5);}
+.ng-ghost:hover{background:rgba(255,0,50,.1);}
+.ng-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,0,50,.5);color:#ff8a9a;border-radius:99px;padding:6px 14px;font-family:var(--ng-font-m);font-size:10.5px;letter-spacing:.14em;}
+.ng-card{border-radius:18px;padding:22px;}
+.ng-input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 14px;color:#fff;font:inherit;width:100%;}
+.ng-input:focus{outline:1px solid rgba(255,70,90,.9);}
+.ng-invisible{opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;}
+.ng-reveal .ng-invisible,.ng-invisible.revealed{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.bel-reactive,.bel-reactive::after,.bel-reactive::before{transition:none!important;animation:none!important;}}

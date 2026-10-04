@@ -1,0 +1,55 @@
+.vercel
+
+node_modules/
+dist/
+*.zip
+.env
+.env.local
+# dependencias
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# build
+build/
+.next/
+out/
+target/
+*.egg-info/
+
+# entorno y secretos
+.env.*.local
+*.pem
+*.key
+
+# sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+
+# BELENTANI legacy — seguridad
+.env.*
+*.pyc
+.vercel/
+!.env.example
+.aider*
+
+# IA agent states and histories (no versionar: JSONs densos/binarios locales)
+.cline/
+.opencode/
+.mcp/
+.zen/
+.mimosa/
+.history/
+*agent_state*
+.mimocode/
+.zcode/
+audit_tool.py

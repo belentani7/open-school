@@ -1,0 +1,7738 @@
+{
+ "schema_version": 1,
+ "source": "_seeds/catalogs.json",
+ "total": 225,
+ "entries": [
+  {
+   "id": "openalex",
+   "name": "OpenAlex",
+   "area": "academico",
+   "url": "https://api.openalex.org/works?search={q}&per-page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://docs.openalex.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "research",
+    "universities"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "results",
+    "map": {
+     "id": "id",
+     "titulo": "display_name",
+     "url": "doi",
+     "fecha": "publication_year"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.openalex.org/works?search=casa&per-page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "crossref",
+   "name": "Crossref REST API",
+   "area": "academico",
+   "url": "https://api.crossref.org/works?query={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://api.crossref.org/swagger-ui/index.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "doi"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "message.items",
+    "map": {
+     "id": "DOI",
+     "titulo": "title",
+     "url": "URL",
+     "fecha": "created"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.crossref.org/works?query=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "crossref-journals",
+   "name": "Crossref Journals",
+   "area": "academico",
+   "url": "https://api.crossref.org/journals?query={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "journals"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "message.items",
+    "map": {
+     "id": "ISSN",
+     "titulo": "title",
+     "url": "URL"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.crossref.org/journals?query=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "arxiv",
+   "name": "arXiv API",
+   "area": "academico",
+   "url": "http://export.arxiv.org/api/query?search_query=all:{q}&max_results={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://info.arxiv.org/help/api/index.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": true,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "preprints",
+    "stem"
+   ],
+   "parser": {
+    "type": "xml-records",
+    "root": "entry",
+    "map": {
+     "id": "id",
+     "titulo": "title",
+     "url": "id",
+     "fecha": "published"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "http://export.arxiv.org/api/query?search_query=all:education&max_results=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "doaj-articles",
+   "name": "DOAJ Articles",
+   "area": "academico",
+   "url": "https://doaj.org/api/search/articles/{q}?pageSize={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://doaj.org/api/v3/docs",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "open-access"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "results",
+    "map": {
+     "id": "id",
+     "titulo": "bibjson.title"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://doaj.org/api/search/articles/casa?pageSize=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "doaj-journals",
+   "name": "DOAJ Journals",
+   "area": "academico",
+   "url": "https://doaj.org/api/search/journals/{q}?pageSize={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "journals",
+    "open-access"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://doaj.org/api/search/journals/casa?pageSize=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "semanticscholar",
+   "name": "Semantic Scholar Graph",
+   "area": "academico",
+   "url": "https://api.semanticscholar.org/graph/v1/paper/search?query={q}&limit={limit}&fields=title,url,year,abstract",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODC-BY-1.0",
+   "docs_url": "https://api.semanticscholar.org/api-docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "ai"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=casa&limit=3&fields=title,url,year,abstract",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "opencitations",
+   "name": "OpenCitations COCI",
+   "area": "academico",
+   "url": "https://opencitations.net/index/coci/api/v1/citations/{doi}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://opencitations.net/index/api/v1",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "citations"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://opencitations.net/index/coci/api/v1/citations/10.1038/35057062",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ror",
+   "name": "ROR (universidades y centros de investigacion)",
+   "area": "academico",
+   "url": "https://api.ror.org/organizations?query={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://ror.readme.io",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "universities",
+    "schools",
+    "organizations"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "items",
+    "map": {
+     "id": "id",
+     "titulo": "name",
+     "url": "links"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.ror.org/organizations?query=casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "orcid",
+   "name": "ORCID Public API",
+   "area": "academico",
+   "url": "https://pub.orcid.org/v3.0/expanded-search/?q={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://info.orcid.org/documentation/api-reference/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "researchers"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pub.orcid.org/v3.0/expanded-search/?q=education&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "datacite",
+   "name": "DataCite DOIs",
+   "area": "academico",
+   "url": "https://api.datacite.org/dois?query={q}&page%5Bsize%5D={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://support.datacite.org/docs/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "datasets",
+    "doi"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "data",
+    "map": {
+     "id": "id",
+     "titulo": "attributes.titles"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.datacite.org/dois?query=casa&page%5Bsize%5D=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "zenodo",
+   "name": "Zenodo",
+   "area": "academico",
+   "url": "https://zenodo.org/api/records?q={q}&size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://developers.zenodo.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "datasets",
+    "papers",
+    "oer",
+    "software"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "hits.hits",
+    "map": {
+     "id": "id",
+     "titulo": "metadata.title",
+     "url": "links.self_html"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://zenodo.org/api/records?q=casa&size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "figshare",
+   "name": "Figshare",
+   "area": "academico",
+   "url": "https://api.figshare.com/v2/articles?search_for={q}&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://docs.figshare.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "datasets",
+    "figures"
+   ],
+   "parser": {
+    "type": "list-map",
+    "map": {
+     "id": "id",
+     "titulo": "title",
+     "url": "url_public_html"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.figshare.com/v2/articles?search_for=casa&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "dryad",
+   "name": "Dryad",
+   "area": "academico",
+   "url": "https://datadryad.org/api/v2/search?q={q}&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://datadryad.org/api/v2/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "datasets"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://datadryad.org/api/v2/search?q=casa&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openaire-pubs",
+   "name": "OpenAIRE Publications",
+   "area": "academico",
+   "url": "https://api.openaire.eu/search/publications?title={q}&size={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://graph.openaire.eu/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "repositories",
+    "europe"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.openaire.eu/search/publications?title=casa&size=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "openaire-projects",
+   "name": "OpenAIRE Projects",
+   "area": "academico",
+   "url": "https://api.openaire.eu/search/projects?title={q}&size={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "projects",
+    "funding"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.openaire.eu/search/projects?title=casa&size=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "doab",
+   "name": "DOAB (libros academicos de acceso abierto)",
+   "area": "academico",
+   "url": "https://directory.doabooks.org/rest/search?query={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://directory.doabooks.org/rest",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "books",
+    "open-access"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://directory.doabooks.org/rest/search?query=casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "oapen",
+   "name": "OAPEN Library",
+   "area": "academico",
+   "url": "https://library.oapen.org/rest/search?query={q}&expand=metadata",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://library.oapen.org/rest",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "books",
+    "open-access"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://library.oapen.org/rest/search?query=casa&expand=metadata",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "scielo",
+   "name": "SciELO",
+   "area": "academico",
+   "url": "https://articlemeta.scielo.org/api/v1/article/identifiers/?limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://search.scielo.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "latam",
+    "pt",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://articlemeta.scielo.org/api/v1/article/identifiers/?limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "eric",
+   "name": "ERIC - Education Resources Information Center",
+   "area": "academico",
+   "url": "https://api.ies.ed.gov/eric/?search=title%3A{q}&format=json&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://eric.ed.gov/?api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "education",
+    "schools",
+    "teachers",
+    "papers"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.ies.ed.gov/eric/?search=title%3Acasa&format=json&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openstax",
+   "name": "OpenStax",
+   "area": "academico",
+   "url": "https://openstax.org/apps/cms/api/v2/pages/?type=books.Book&fields=title,slug&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://openstax.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "textbooks",
+    "schools",
+    "oer"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://openstax.org/apps/cms/api/v2/pages/?type=books.Book&fields=title,slug&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikiversity-en",
+   "name": "Wikiversity (EN)",
+   "area": "academico",
+   "url": "https://en.wikiversity.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://www.mediawiki.org/wiki/API:Main_page",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "courses",
+    "schools",
+    "university"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.wikiversity.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikiversity-pt",
+   "name": "Wikiversidade (PT)",
+   "area": "academico",
+   "url": "https://pt.wikiversity.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "courses",
+    "university",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikiversity.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikiversity-es",
+   "name": "Wikiversidad (ES)",
+   "area": "academico",
+   "url": "https://es.wikiversity.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "courses",
+    "university",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.wikiversity.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikibooks-pt",
+   "name": "Wikilivros (PT)",
+   "area": "academico",
+   "url": "https://pt.wikibooks.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "textbooks",
+    "schools",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikibooks.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikibooks-en",
+   "name": "Wikibooks (EN)",
+   "area": "academico",
+   "url": "https://en.wikibooks.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "textbooks",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.wikibooks.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikibooks-es",
+   "name": "Wikilibros (ES)",
+   "area": "academico",
+   "url": "https://es.wikibooks.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "textbooks",
+    "schools",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.wikibooks.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikipedia-pt",
+   "name": "Wikipedia PT (REST)",
+   "area": "academico",
+   "url": "https://pt.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://pt.wikipedia.org/api/rest_v1/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikipedia.org/api/rest_v1/page/summary/Casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikipedia-es",
+   "name": "Wikipedia ES (REST)",
+   "area": "academico",
+   "url": "https://es.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.wikipedia.org/api/rest_v1/page/summary/Casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikipedia-en",
+   "name": "Wikipedia EN (REST)",
+   "area": "academico",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/summary/House",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikipedia-ca",
+   "name": "Wikipedia CA (REST)",
+   "area": "academico",
+   "url": "https://ca.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ca.wikipedia.org/api/rest_v1/page/summary/Casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikipedia-search-pt",
+   "name": "Wikipedia PT Search",
+   "area": "academico",
+   "url": "https://pt.wikipedia.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikipedia.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikidata-sparql",
+   "name": "Wikidata SPARQL",
+   "area": "academico",
+   "url": "https://query.wikidata.org/sparql?query=SELECT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wdt%3AP31%20wd%3AQ3918%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22pt%22%20%7D%20%7D%20LIMIT%203&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://query.wikidata.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "linked-data",
+    "schools",
+    "universities"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://query.wikidata.org/sparql?query=SELECT%20%3Fs%20%3FsLabel%20WHERE%20%7B%20%3Fs%20wdt%3AP31%20wd%3AQ3918%20%3B%20rdfs%3Alabel%20%3FsLabel%20FILTER(lang(%3FsLabel)%3D%22pt%22)%20%7D%20LIMIT%201&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikidata-search",
+   "name": "Wikidata wbsearchentities",
+   "area": "academico",
+   "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search={q}&language=pt&uselang=pt&limit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "linked-data"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=casa&language=pt&uselang=pt&limit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "dbpedia",
+   "name": "DBpedia SPARQL",
+   "area": "academico",
+   "url": "https://dbpedia.org/sparql?query=SELECT%20%3Fs%20%3Fp%20%3Fo%20WHERE%20%7B%20%3Fs%20a%20dbo%3AUniversity%20%7D%20LIMIT%203&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-3.0",
+   "docs_url": "https://dbpedia.org/sparql",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "linked-data",
+    "universities"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://dbpedia.org/sparql?query=SELECT%20%3Fs%20WHERE%20%7B%20%3Fs%20a%20dbo%3AUniversity%20%7D%20LIMIT%201&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "unesco-uis",
+   "name": "UNESCO UIS (Instituto de Estadistica)",
+   "area": "academico",
+   "url": "https://api.uis.unesco.org/api/public/definitions/indicators?lang=en",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-3.0-IGO",
+   "docs_url": "https://api.uis.unesco.org/api/public/documentation/swagger-ui/index.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "education",
+    "statistics",
+    "schools",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.uis.unesco.org/api/public/definitions/indicators?lang=en",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "worldbank-edstats",
+   "name": "World Bank EdStats",
+   "area": "academico",
+   "url": "https://api.worldbank.org/v2/country/{iso3}/indicator/SE.PRM.ENRR?format=json&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "education",
+    "statistics",
+    "schools",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.worldbank.org/v2/country/BRA/indicator/SE.PRM.ENRR?format=json&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ibge-localidades",
+   "name": "IBGE Localidades (BR)",
+   "area": "academico",
+   "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?view=nivelado",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://servicodados.ibge.gov.br/api/docs/localidades",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "geography",
+    "schools",
+    "brazil",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?view=nivelado",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ibge-escolas",
+   "name": "IBGE Censo Escolar",
+   "area": "academico",
+   "url": "https://servicodados.ibge.gov.br/api/v1/pesquisas/indicadores/77828/resultados/BR",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://servicodados.ibge.gov.br/api/docs",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "schools",
+    "education",
+    "brazil",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://servicodados.ibge.gov.br/api/v1/pesquisas/indicadores/77828/resultados/BR",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ine-es",
+   "name": "INE Espana (series temporales)",
+   "area": "academico",
+   "url": "https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.ine.es/dyngs/DataLab/es/manual.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "statistics",
+    "education",
+    "spain",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://servicios.ine.es/wstempus/js/ES/OPERACIONES_DISPONIBLES",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "dataeuropa",
+   "name": "data.europa.eu",
+   "area": "academico",
+   "url": "https://data.europa.eu/api/hub/search/search?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://data.europa.eu/api/hub/search/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "europe",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://data.europa.eu/api/hub/search/search?q=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "datagov-us",
+   "name": "data.gov (US)",
+   "area": "academico",
+   "url": "https://catalog.data.gov/api/3/action/package_search?q={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://catalog.data.gov/api/3/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://catalog.data.gov/api/3/action/package_search?q=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "datosgob-es",
+   "name": "datos.gob.es",
+   "area": "academico",
+   "url": "https://datos.gob.es/apidata/catalog/dataset?_pageSize={limit}&q={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://datos.gob.es/es/apidata",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "spain",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://datos.gob.es/apidata/catalog/dataset?_pageSize=3&q=casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "dadosgov-pt",
+   "name": "dados.gov.pt",
+   "area": "academico",
+   "url": "https://dados.gov.pt/api/1/datasets/?q={q}&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://dados.gov.pt/pt/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "portugal",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://dados.gov.pt/api/1/datasets/?q=casa&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "govdata-de",
+   "name": "GovData (DE)",
+   "area": "academico",
+   "url": "https://www.govdata.de/ckan/api/3/action/package_search?q={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "germany"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.govdata.de/ckan/api/3/action/package_search?q=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "data-gov-uk",
+   "name": "data.gov.uk",
+   "area": "academico",
+   "url": "https://data.gov.uk/api/3/action/package_search?q={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "OGL-3.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "opendata",
+    "uk"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://data.gov.uk/api/3/action/package_search?q=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openlibrary",
+   "name": "Open Library",
+   "area": "academico",
+   "url": "https://openlibrary.org/search.json?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://openlibrary.org/developers/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "books",
+    "library",
+    "schools"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "docs",
+    "map": {
+     "id": "key",
+     "titulo": "title",
+     "url": "key",
+     "fecha": "first_publish_year"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://openlibrary.org/search.json?q=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "archive-org",
+   "name": "Internet Archive",
+   "area": "academico",
+   "url": "https://archive.org/advancedsearch.php?q={q}&fl%5B%5D=identifier&fl%5B%5D=title&rows={limit}&output=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://archive.org/advancedsearch.php",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "books",
+    "archive",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://archive.org/advancedsearch.php?q=casa&fl%5B%5D=identifier&fl%5B%5D=title&rows=3&output=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "googlebooks",
+   "name": "Google Books API",
+   "area": "academico",
+   "url": "https://www.googleapis.com/books/v1/volumes?q={q}&maxResults={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://developers.google.com/books",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "books",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.googleapis.com/books/v1/volumes?q=casa&maxResults=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "dblp",
+   "name": "dblp computer science bibliography",
+   "area": "academico",
+   "url": "https://dblp.org/search/publ/api?q={q}&format=json&h={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://dblp.org/faq/How+to+use+the+dblp+search+API.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "computer-science",
+    "university"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://dblp.org/search/publ/api?q=casa&format=json&h=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "europepmc",
+   "name": "Europe PMC",
+   "area": "academico",
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&format=json&pageSize={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://europepmc.org/RestfulWebService",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "papers",
+    "health",
+    "university"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=casa&format=json&pageSize=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "tatoeba-search",
+   "name": "Tatoeba (frases paralelas PT-ES)",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/search?query={q}&trans_from=por&trans_to=spa",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-2.0-FR",
+   "docs_url": "https://tatoeba.org/en/downloads",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "sentences",
+    "translation",
+    "pt",
+    "es"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "results",
+    "map": {
+     "id": "id",
+     "titulo": "text"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://tatoeba.org/en/api_v0/search?query=casa&trans_from=por&trans_to=spa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "tatoeba-pt-en",
+   "name": "Tatoeba (frases paralelas PT-EN)",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/search?query={q}&trans_from=por&trans_to=eng",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-2.0-FR",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "sentences",
+    "translation",
+    "pt",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://tatoeba.org/en/api_v0/search?query=casa&trans_from=por&trans_to=eng",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "tatoeba-audio",
+   "name": "Tatoeba (con audio)",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/search?query={q}&audio=yes",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-2.0-FR",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "audio",
+    "pronunciation"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://tatoeba.org/en/api_v0/search?query=casa&audio=yes",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "tatoeba-languages",
+   "name": "Tatoeba Languages",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/languages",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-2.0-FR",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "languages"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://tatoeba.org/en/api_v0/languages",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wiktionary-pt-rest",
+   "name": "Wikcionario PT (definicion REST)",
+   "area": "idiomas",
+   "url": "https://pt.wiktionary.org/w/api.php?action=query&titles={q}&prop=extracts&explaintext=1&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://pt.wiktionary.org/api/rest_v1/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "definitions",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wiktionary.org/w/api.php?action=query&titles=casa&prop=extracts&explaintext=1&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wiktionary-es-rest",
+   "name": "Wikcionario ES (definicion REST)",
+   "area": "idiomas",
+   "url": "https://es.wiktionary.org/w/api.php?action=query&titles={q}&prop=extracts&explaintext=1&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "definitions",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.wiktionary.org/w/api.php?action=query&titles=casa&prop=extracts&explaintext=1&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wiktionary-en-rest",
+   "name": "Wiktionary EN (definition REST)",
+   "area": "idiomas",
+   "url": "https://en.wiktionary.org/w/api.php?action=query&titles={q}&prop=extracts&explaintext=1&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "definitions",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.wiktionary.org/w/api.php?action=query&titles=house&prop=extracts&explaintext=1&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wiktionary-ca-rest",
+   "name": "Viccionari CA (definicio REST)",
+   "area": "idiomas",
+   "url": "https://ca.wiktionary.org/w/api.php?action=query&titles={q}&prop=extracts&explaintext=1&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "definitions",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ca.wiktionary.org/w/api.php?action=query&titles=casa&prop=extracts&explaintext=1&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wiktionary-pt-search",
+   "name": "Wikcionario PT (busqueda)",
+   "area": "idiomas",
+   "url": "https://pt.wiktionary.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wiktionary.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikiwords-frequency-pt",
+   "name": "FrequencyWords PT (50k)",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/pt/pt_50k.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://github.com/hermitdave/FrequencyWords",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "frequency",
+    "vocabulary",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/pt/pt_50k.txt",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "wikiwords-frequency-es",
+   "name": "FrequencyWords ES (50k)",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/es/es_50k.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "frequency",
+    "vocabulary",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/es/es_50k.txt",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "wikiwords-frequency-en",
+   "name": "FrequencyWords EN (50k)",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "frequency",
+    "vocabulary",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "wikiwords-frequency-ca",
+   "name": "FrequencyWords CA (50k)",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ca/ca_50k.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "frequency",
+    "vocabulary",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/ca/ca_50k.txt",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "ud-portuguese",
+   "name": "Universal Dependencies PT-Bosque",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/pt_bosque-ud-test.conllu",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://universaldependencies.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "grammar",
+    "syntax",
+    "pt",
+    "corpus"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Portuguese-Bosque/master/pt_bosque-ud-test.conllu",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "ud-spanish",
+   "name": "Universal Dependencies ES-AnCora",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Spanish-AnCora/master/es_ancora-ud-test.conllu",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://universaldependencies.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "grammar",
+    "syntax",
+    "es",
+    "corpus"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Spanish-AnCora/master/es_ancora-ud-test.conllu",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "ud-catalan",
+   "name": "Universal Dependencies CA-AnCora",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Catalan-AnCora/master/ca_ancora-ud-test.conllu",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://universaldependencies.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "grammar",
+    "syntax",
+    "ca",
+    "corpus"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_Catalan-AnCora/master/ca_ancora-ud-test.conllu",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "ud-english",
+   "name": "Universal Dependencies EN-EWT",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/master/en_ewt-ud-test.conllu",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "grammar",
+    "syntax",
+    "en",
+    "corpus"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/UniversalDependencies/UD_English-EWT/master/en_ewt-ud-test.conllu",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "opus-api",
+   "name": "OPUS (corpus paralelos)",
+   "area": "idiomas",
+   "url": "https://opus.nlpl.eu/opusapi/?source=pt&target=es&corpus=OpenSubtitles&preprocessing=moses&version=latest",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://opus.nlpl.eu/tools/opusapi/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "corpus",
+    "translation",
+    "pt",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://opus.nlpl.eu/opusapi/?source=pt&target=es&corpus=OpenSubtitles&preprocessing=moses&version=latest",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "apertium-listpairs",
+   "name": "Apertium (pares de idiomas)",
+   "area": "idiomas",
+   "url": "https://apertium.org/apy/listPairs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": "https://wiki.apertium.org/wiki/Apertium_web_service",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "translation",
+    "mt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://apertium.org/apy/listPairs",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "apertium-translate-pt-es",
+   "name": "Apertium Traductor PT-ES",
+   "area": "idiomas",
+   "url": "https://apertium.org/apy/translate?langpair=pt%7Ces&q={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "translation",
+    "mt",
+    "pt",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://apertium.org/apy/translate?langpair=pt%7Ces&q=casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "apertium-translate-pt-en",
+   "name": "Apertium Traductor PT-EN",
+   "area": "idiomas",
+   "url": "https://apertium.org/apy/translate?langpair=pt%7Cen&q={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "translation",
+    "mt",
+    "pt",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://apertium.org/apy/translate?langpair=pt%7Cen&q=casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "languagetool-languages",
+   "name": "LanguageTool (idiomas soportados)",
+   "area": "idiomas",
+   "url": "https://api.languagetool.org/v2/languages",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "LGPL-2.1",
+   "docs_url": "https://languagetool.org/http-api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "grammar",
+    "spellcheck"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.languagetool.org/v2/languages",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "lingua-libre",
+   "name": "Lingua Libre (Wikimedia audio)",
+   "area": "idiomas",
+   "url": "https://lingualibre.org/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://lingualibre.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "audio",
+    "pronunciation",
+    "pt",
+    "es",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://lingualibre.org/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "freedict",
+   "name": "FreeDict (diccionarios libres)",
+   "area": "idiomas",
+   "url": "https://freedict.org/freedict-database.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": "https://freedict.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "dictionary",
+    "translation"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://freedict.org/freedict-database.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cldr-likelysubtags",
+   "name": "Unicode CLDR likelySubtags",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/likelySubtags.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Unicode-3.0",
+   "docs_url": "https://cldr.unicode.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "locale",
+    "i18n"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/likelySubtags.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cldr-annotations-pt",
+   "name": "Unicode CLDR anotaciones PT",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/pt/annotations.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Unicode-3.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "i18n",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/pt/annotations.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cldr-annotations-es",
+   "name": "Unicode CLDR anotaciones ES",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/es/annotations.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Unicode-3.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "i18n",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/es/annotations.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cldr-annotations-en",
+   "name": "Unicode CLDR anotaciones EN",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/en/annotations.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Unicode-3.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "i18n",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/en/annotations.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cldr-annotations-ca",
+   "name": "Unicode CLDR anotaciones CA",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/ca/annotations.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Unicode-3.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "i18n",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-annotations-full/annotations/ca/annotations.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "nltk-data-index",
+   "name": "NLTK Data (indice de corpus)",
+   "area": "idiomas",
+   "url": "https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Apache-2.0",
+   "docs_url": "https://www.nltk.org/nltk_data/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "corpus",
+    "nlp",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "huggingface-datasets",
+   "name": "Hugging Face Datasets",
+   "area": "idiomas",
+   "url": "https://huggingface.co/api/datasets?search={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://huggingface.co/docs/hub/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "datasets",
+    "nlp",
+    "corpus"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://huggingface.co/api/datasets?search=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "huggingface-models",
+   "name": "Hugging Face Models",
+   "area": "idiomas",
+   "url": "https://huggingface.co/api/models?search={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://huggingface.co/docs/hub/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "models",
+    "nlp"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://huggingface.co/api/models?search=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikisource-pt",
+   "name": "Wikisource PT (textos)",
+   "area": "idiomas",
+   "url": "https://pt.wikisource.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "literature",
+    "public-domain",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikisource.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikisource-es",
+   "name": "Wikisource ES (textos)",
+   "area": "idiomas",
+   "url": "https://es.wikisource.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "literature",
+    "public-domain",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.wikisource.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikisource-en",
+   "name": "Wikisource EN (textos)",
+   "area": "idiomas",
+   "url": "https://en.wikisource.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "literature",
+    "public-domain",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.wikisource.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikiquote-pt",
+   "name": "Wikiquote PT",
+   "area": "idiomas",
+   "url": "https://pt.wikiquote.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "quotes",
+    "literature",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.wikiquote.org/w/api.php?action=query&list=search&srsearch=casa&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "udhr-pt",
+   "name": "Wikimedia Core Search PT",
+   "area": "civico_derechos",
+   "url": "https://api.wikimedia.org/core/v1/wikipedia/pt/search/page?q={q}&limit={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://unicode.org/udhr/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "human-rights",
+    "civics",
+    "search",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.wikimedia.org/core/v1/wikipedia/pt/search/page?q=direitos+humanos&limit=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "udhr-es",
+   "name": "Wikimedia Core Search ES",
+   "area": "civico_derechos",
+   "url": "https://api.wikimedia.org/core/v1/wikipedia/es/search/page?q={q}&limit={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "human-rights",
+    "civics",
+    "search",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.wikimedia.org/core/v1/wikipedia/es/search/page?q=derechos+humanos&limit=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "udhr-en",
+   "name": "Wikimedia Core Search EN",
+   "area": "civico_derechos",
+   "url": "https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q={q}&limit={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "human-rights",
+    "civics",
+    "search",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.wikimedia.org/core/v1/wikipedia/en/search/page?q=human+rights&limit=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "udhr-cat",
+   "name": "Wikimedia Core Search AT",
+   "area": "civico_derechos",
+   "url": "https://api.wikimedia.org/core/v1/wikipedia/ca/search/page?q={q}&limit={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "human-rights",
+    "civics",
+    "search",
+    "at"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.wikimedia.org/core/v1/wikipedia/ca/search/page?q=drets+humans&limit=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "camara-br-deputados",
+   "name": "Camara dos Deputados (BR)",
+   "area": "civico_derechos",
+   "url": "https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome&itens={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://dadosabertos.camara.leg.br/swagger/api.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "civics",
+    "government",
+    "brazil",
+    "pt",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome&itens=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "camara-br-proposicoes",
+   "name": "Camara dos Deputados - Proposicoes",
+   "area": "civico_derechos",
+   "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?ordem=DESC&ordenarPor=id&itens={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "civics",
+    "legislation",
+    "brazil",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://dadosabertos.camara.leg.br/api/v2/proposicoes?ordem=DESC&ordenarPor=id&itens=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "senado-br-senadores",
+   "name": "Senado Federal (BR)",
+   "area": "civico_derechos",
+   "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/atual",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://legis.senado.leg.br/dadosabertos/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "civics",
+    "government",
+    "brazil",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/atual",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "govtrack-bills",
+   "name": "GovTrack (US Congress)",
+   "area": "civico_derechos",
+   "url": "https://www.govtrack.us/api/v2/bill?congress=118&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://www.govtrack.us/developers/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "civics",
+    "legislation",
+    "usa"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.govtrack.us/api/v2/bill?congress=118&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "eurlex-sparql",
+   "name": "EUR-Lex / CELLAR SPARQL",
+   "area": "civico_derechos",
+   "url": "https://publications.europa.eu/webapi/rdf/sparql?query=SELECT%20%3Fs%20%3Fp%20%3Fo%20WHERE%20%7B%20%3Fs%20%3Fp%20%3Fo%20%7D%20LIMIT%203&format=application%2Fjson",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://data.europa.eu/euodp/en/data/dataset/cellar",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "legislation",
+    "europe",
+    "law"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://publications.europa.eu/webapi/rdf/sparql?query=SELECT%20%3Fs%20%3Fp%20%3Fo%20WHERE%20%7B%20%3Fs%20%3Fp%20%3Fo%20%7D%20LIMIT%203&format=application%2Fjson",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "unhcr-population",
+   "name": "UNHCR Refugee Population",
+   "area": "civico_derechos",
+   "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2020&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://api.unhcr.org/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "refugees",
+    "human-rights",
+    "countries",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2020&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "unhcr-countries",
+   "name": "UNHCR Countries",
+   "area": "civico_derechos",
+   "url": "https://api.unhcr.org/population/v1/countries/",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "refugees",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.unhcr.org/population/v1/countries/",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "unicef-sdmx-dataflows",
+   "name": "UNICEF SDMX",
+   "area": "civico_derechos",
+   "url": "https://sdmx.data.unicef.org/statistics/api/v1/dataflow/UNICEF",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://data.unicef.org/sdmx-api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "children",
+    "education",
+    "rights",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://sdmx.data.unicef.org/statistics/api/v1/dataflow/UNICEF",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "cepalstat-indicators",
+   "name": "CEPALSTAT (America Latina)",
+   "area": "civico_derechos",
+   "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator?lang=es/",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://api-cepalstat.cepal.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "latam",
+    "statistics",
+    "education",
+    "es",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator?lang=es/",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gdelt-doc",
+   "name": "GDELT (noticias globales)",
+   "area": "civico_derechos",
+   "url": "https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&format=json&maxrecords={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "news",
+    "media",
+    "civics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=casa&mode=artlist&format=json&maxrecords=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gdelt-tv",
+   "name": "GDELT TV",
+   "area": "civico_derechos",
+   "url": "https://api.gdeltproject.org/api/v2/tv/tv?query={q}&mode=clipgallery&format=json&timespan=1d",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "media",
+    "civics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.gdeltproject.org/api/v2/tv/tv?query=casa&mode=clipgallery&format=json&timespan=1d",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ourworldindata",
+   "name": "Our World in Data",
+   "area": "civico_derechos",
+   "url": "https://api.ourworldindata.org/v1/indicators/{q}.metadata.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://docs.owid.io/projects/etl/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "statistics",
+    "education",
+    "countries",
+    "research"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.ourworldindata.org/v1/indicators/94025.metadata.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "worldbank-wgi",
+   "name": "World Bank Governance Indicators",
+   "area": "civico_derechos",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GE.EST?format=json&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "governance",
+    "statistics",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.worldbank.org/v2/country/all/indicator/GE.EST?format=json&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "eurostat-crime",
+   "name": "Eurostat (delitos registrados)",
+   "area": "civico_derechos",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/crim_off_cat?format=JSON&lang=en",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://wikis.ec.europa.eu/display/EUROSTATHELP/API+-+Getting+started",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "crime",
+    "justice",
+    "europe",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/crim_off_cat?format=JSON&lang=en",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "eurostat-catalogue",
+   "name": "Eurostat Catalogue",
+   "area": "civico_derechos",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "statistics",
+    "europe",
+    "catalogue"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/catalogue/toc/txt?lang=en",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "nvd-cves",
+   "name": "NVD CVE 2.0",
+   "area": "ciberseguridad",
+   "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://nvd.nist.gov/developers/vulnerabilities",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "cve",
+    "vulnerabilities",
+    "security"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "vulnerabilities",
+    "map": {
+     "id": "cve.id",
+     "titulo": "cve.id",
+     "fecha": "cve.published"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "nvd-search",
+   "name": "NVD CVE (busqueda por palabra)",
+   "area": "ciberseguridad",
+   "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch={q}&resultsPerPage={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "cve",
+    "search",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=casa&resultsPerPage=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cisa-kev",
+   "name": "CISA Known Exploited Vulnerabilities",
+   "area": "ciberseguridad",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "kev",
+    "exploited",
+    "security"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "vulnerabilities",
+    "map": {
+     "id": "cveID",
+     "titulo": "vulnerabilityName",
+     "fecha": "dateAdded"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "mitre-cwec",
+   "name": "MITRE CWE (debilidades)",
+   "area": "ciberseguridad",
+   "url": "https://cwe.mitre.org/data/xml/cwec_latest.xml",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MITRE-TOU",
+   "docs_url": "https://cwe.mitre.org/data/index.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "cwe",
+    "weaknesses",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://cwe.mitre.org/data/xml/cwec_latest.xml",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "mitre-capec",
+   "name": "MITRE CAPEC (patrones de ataque)",
+   "area": "ciberseguridad",
+   "url": "https://capec.mitre.org/data/xml/capec_latest.xml",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MITRE-TOU",
+   "docs_url": "https://capec.mitre.org/about/faq.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "capec",
+    "attacks",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://capec.mitre.org/data/xml/capec_latest.xml",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "mitre-attack-stix",
+   "name": "MITRE ATT&CK (STIX)",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MITRE-TOU",
+   "docs_url": "https://github.com/mitre-attack/attack-stix-data",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "attack",
+    "ttp",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "mitre-attack-cti",
+   "name": "MITRE ATT&CK (cti legacy)",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MITRE-TOU",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "attack",
+    "ttp"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "epss",
+   "name": "EPSS (probabilidad de explotacion)",
+   "area": "ciberseguridad",
+   "url": "https://api.first.org/data/v1/epss?limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "EPSS-TOU",
+   "docs_url": "https://www.first.org/epss/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "epss",
+    "risk",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.first.org/data/v1/epss?limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "osv-vuln",
+   "name": "OSV.dev (vulnerabilidad)",
+   "area": "ciberseguridad",
+   "url": "https://api.osv.dev/v1/vulns/OSV-2020-111",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://google.github.io/osv.dev/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vulnerabilities",
+    "oss",
+    "software"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.osv.dev/v1/vulns/OSV-2020-111",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gh-advisories",
+   "name": "GitHub Security Advisories",
+   "area": "ciberseguridad",
+   "url": "https://api.github.com/advisories?per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://docs.github.com/rest/security-advisories/global-advisories",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "advisories",
+    "oss",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.github.com/advisories?per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "exploitdb",
+   "name": "ExploitDB (catalogo de exploits)",
+   "area": "ciberseguridad",
+   "url": "https://gitlab.com/exploit-database/exploitdb/-/raw/main/files_exploits.csv",
+   "kind": "csv",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": "https://gitlab.com/exploit-database/exploitdb",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "exploits",
+    "research",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://gitlab.com/exploit-database/exploitdb/-/raw/main/files_exploits.csv",
+    "expect": "csv"
+   }
+  },
+  {
+   "id": "nist-oscal-800-53",
+   "name": "NIST SP 800-53 (OSCAL)",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://pages.nist.gov/OSCAL/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "nist",
+    "compliance",
+    "controls"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "yara-rules",
+   "name": "Yara-Rules (firmas)",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/Yara-Rules/rules/master/index.yar",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "GPL-2.0",
+   "docs_url": "https://yara.readthedocs.io",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "yara",
+    "malware",
+    "detection"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/Yara-Rules/rules/master/index.yar",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "publicsuffix",
+   "name": "Public Suffix List",
+   "area": "ciberseguridad",
+   "url": "https://publicsuffix.org/list/public_suffix_list.dat",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MPL-2.0",
+   "docs_url": "https://publicsuffix.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "domains",
+    "web",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://publicsuffix.org/list/public_suffix_list.dat",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "disposable-emails",
+   "name": "Disposable Email Domains",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/master/disposable_email_blocklist.conf",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "email",
+    "abuse",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/disposable-email-domains/disposable-email-domains/master/disposable_email_blocklist.conf",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "openphish-feed",
+   "name": "OpenPhish (feed publico)",
+   "area": "ciberseguridad",
+   "url": "https://openphish.com/feed.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://openphish.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "phishing",
+    "threat-intel"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://openphish.com/feed.txt",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "feodo-blocklist",
+   "name": "abuse.ch Feodo Tracker",
+   "area": "ciberseguridad",
+   "url": "https://feodotracker.abuse.ch/downloads/ipblocklist.csv",
+   "kind": "csv",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://feodotracker.abuse.ch",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "botnet",
+    "threat-intel",
+    "c2"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://feodotracker.abuse.ch/downloads/ipblocklist.csv",
+    "expect": "csv"
+   }
+  },
+  {
+   "id": "sslbl-blacklist",
+   "name": "abuse.ch SSL Blacklist",
+   "area": "ciberseguridad",
+   "url": "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv",
+   "kind": "csv",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://sslbl.abuse.ch",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "tls",
+    "threat-intel"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://sslbl.abuse.ch/blacklist/sslipblacklist.csv",
+    "expect": "csv"
+   }
+  },
+  {
+   "id": "stevenblack-hosts",
+   "name": "StevenBlack hosts (bloqueo)",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://github.com/StevenBlack/hosts",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "adblock",
+    "dns",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "owasp-asvs",
+   "name": "OWASP ASVS 4.0",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/OWASP/ASVS/master/4.0/docs_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.3-en.csv",
+   "kind": "csv",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://owasp.org/www-project-application-security-verification-standard/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "owasp",
+    "appsec",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/OWASP/ASVS/master/4.0/docs_en/OWASP%20Application%20Security%20Verification%20Standard%204.0.3-en.csv",
+    "expect": "csv"
+   }
+  },
+  {
+   "id": "owasp-top10",
+   "name": "OWASP Top 10",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/OWASP/Top10/master/2021/docs/index.md",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://owasp.org/Top10/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "owasp",
+    "appsec",
+    "teaching"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/OWASP/Top10/master/2021/docs/index.md",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "nuclei-templates-meta",
+   "name": "Nuclei Templates (meta)",
+   "area": "ciberseguridad",
+   "url": "https://api.github.com/repos/projectdiscovery/nuclei-templates/contents/README.md",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://docs.projectdiscovery.io",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "scanning",
+    "templates",
+    "security"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.github.com/repos/projectdiscovery/nuclei-templates/contents/README.md",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "iconify-collections",
+   "name": "Iconify Collections",
+   "area": "ux_diseno",
+   "url": "https://api.iconify.design/collections",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://iconify.design/docs/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "ui",
+    "design"
+   ],
+   "parser": {
+    "type": "json-map",
+    "root": "",
+    "map": {
+     "id": "",
+     "titulo": "name"
+    }
+   },
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.iconify.design/collections",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "iconify-search",
+   "name": "Iconify Search",
+   "area": "ux_diseno",
+   "url": "https://api.iconify.design/search?query={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://iconify.design/docs/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "search",
+    "ui"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.iconify.design/search?query=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "iconify-mdi",
+   "name": "Iconify Material Design Icons",
+   "area": "ux_diseno",
+   "url": "https://api.iconify.design/collection?prefix=mdi",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Apache-2.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "material"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.iconify.design/collection?prefix=mdi",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "simple-icons",
+   "name": "Simple Icons (marcas)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/data/simple-icons.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://simpleicons.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "brands",
+    "svg"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/data/simple-icons.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "lucide-tags",
+   "name": "Lucide (catalogo de iconos)",
+   "area": "ux_diseno",
+   "url": "https://cdn.jsdelivr.net/npm/lucide-static/tags.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ISC",
+   "docs_url": "https://lucide.dev",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "svg",
+    "ui"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/tags.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "lucide-icon-svg",
+   "name": "Lucide (SVG individual)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/accessibility.svg",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ISC",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "svg",
+    "accessibility"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/accessibility.svg",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "heroicons-svg",
+   "name": "Heroicons (SVG)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/24/outline/academic-cap.svg",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://heroicons.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "svg",
+    "tailwind"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/tailwindlabs/heroicons/master/optimized/24/outline/academic-cap.svg",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "feather-icons",
+   "name": "Feather Icons (SVG)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/feathericons/feather/main/icons/activity.svg",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://feathericons.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "svg"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/feathericons/feather/main/icons/activity.svg",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "bootstrap-icons",
+   "name": "Bootstrap Icons (catalogo)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/twbs/icons/main/font/bootstrap-icons.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://icons.getbootstrap.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "bootstrap"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/twbs/icons/main/font/bootstrap-icons.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "material-symbols-meta",
+   "name": "Material Symbols (metadata)",
+   "area": "ux_diseno",
+   "url": "https://fonts.google.com/metadata/icons?incomplete=true",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Apache-2.0",
+   "docs_url": "https://fonts.google.com/icons",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "icons",
+    "material",
+    "fonts"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://fonts.google.com/metadata/icons?incomplete=true",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "google-fonts-meta",
+   "name": "Google Fonts (metadata publica)",
+   "area": "ux_diseno",
+   "url": "https://fonts.google.com/metadata/fonts",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "OFL-1.1",
+   "docs_url": "https://fonts.google.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "fonts",
+    "typography",
+    "design"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://fonts.google.com/metadata/fonts",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "open-color",
+   "name": "Open Color (paleta)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/yeun/open-color/master/open-color.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://yeun.github.io/open-color/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "color",
+    "palette",
+    "design"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/yeun/open-color/master/open-color.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "color-names",
+   "name": "Color Names (nombre a hex)",
+   "area": "ux_diseno",
+   "url": "https://cdn.jsdelivr.net/npm/color-name-list/dist/colornames.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "MIT",
+   "docs_url": "https://meodai.github.io/color-names/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "color",
+    "naming",
+    "design"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://cdn.jsdelivr.net/npm/color-name-list/dist/colornames.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openverse-images",
+   "name": "Openverse (imagenes CC)",
+   "area": "ux_diseno",
+   "url": "https://api.openverse.org/v1/images/?q={q}&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://api.openverse.org/v1/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "images",
+    "cc",
+    "design"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.openverse.org/v1/images/?q=casa&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "commons-search-images",
+   "name": "Wikimedia Commons (busqueda)",
+   "area": "ux_diseno",
+   "url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch={q}&srnamespace=6&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://commons.wikimedia.org/wiki/Commons:API",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "images",
+    "media",
+    "cc"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=casa&srnamespace=6&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "commons-imageinfo",
+   "name": "Wikimedia Commons (imageinfo)",
+   "area": "ux_diseno",
+   "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Example.jpg&prop=imageinfo&iiprop=url%7Cextmetadata&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "images",
+    "licensing",
+    "media"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://commons.wikimedia.org/w/api.php?action=query&titles=File:Example.jpg&prop=imageinfo&iiprop=url&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openmoji",
+   "name": "OpenMoji (emojis libres)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/data/openmoji.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://openmoji.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "emoji",
+    "icons",
+    "svg"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/data/openmoji.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "twemoji",
+   "name": "Twemoji (PNG)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f600.png",
+   "kind": "image",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://github.com/twitter/twemoji",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "emoji",
+    "images"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f600.png",
+    "expect": "image"
+   }
+  },
+  {
+   "id": "noto-emoji",
+   "name": "Noto Emoji (SVG)",
+   "area": "ux_diseno",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/svg/emoji_u1f600.svg",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "OFL-1.1",
+   "docs_url": "https://github.com/googlefonts/noto-emoji",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "emoji",
+    "svg",
+    "fonts"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/svg/emoji_u1f600.svg",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "europeana-search",
+   "name": "Europeana (patrimonio europeo)",
+   "area": "patrimonio_arte",
+   "url": "https://api.europeana.eu/record/v2/search.json?query={q}&rows={limit}&wskey=api2demo",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://pro.europeana.eu/page/search",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "museum",
+    "heritage",
+    "europe"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.europeana.eu/record/v2/search.json?query=casa&rows=3&wskey=api2demo",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "smithsonian-openaccess",
+   "name": "Smithsonian Open Access",
+   "area": "patrimonio_arte",
+   "url": "https://api.si.edu/openaccess/api/v1.0/search?q={q}&api_key=DEMO_KEY",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://edan.si.edu/openaccess/apidocs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "museum",
+    "heritage",
+    "usa"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.si.edu/openaccess/api/v1.0/search?q=casa&api_key=DEMO_KEY",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "met-search",
+   "name": "Met Museum (busqueda)",
+   "area": "patrimonio_arte",
+   "url": "https://collectionapi.metmuseum.org/public/collection/v1/search?q={q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://metmuseum.github.io",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "art",
+    "history"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "met-object",
+   "name": "Met Museum (objeto)",
+   "area": "patrimonio_arte",
+   "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/1",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://metmuseum.github.io",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "art"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/1",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "artic-search",
+   "name": "Art Institute of Chicago (busqueda)",
+   "area": "patrimonio_arte",
+   "url": "https://api.artic.edu/api/v1/artworks/search?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://api.artic.edu/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "art"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.artic.edu/api/v1/artworks/search?q=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "artic-artworks",
+   "name": "Art Institute of Chicago (obras)",
+   "area": "patrimonio_arte",
+   "url": "https://api.artic.edu/api/v1/artworks?limit={limit}&fields=id,title,artist_display,date_display",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "art"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.artic.edu/api/v1/artworks?limit=3&fields=id,title,artist_display,date_display",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "cleveland-art",
+   "name": "Cleveland Museum of Art",
+   "area": "patrimonio_arte",
+   "url": "https://openaccess-api.clevelandart.org/api/artworks/?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://openaccess-api.clevelandart.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "art"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=painting&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "vam-museum",
+   "name": "Victoria and Albert Museum",
+   "area": "patrimonio_arte",
+   "url": "https://api.vam.ac.uk/v2/objects/search?q={q}&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://developers.vam.ac.uk",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "design",
+    "heritage"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.vam.ac.uk/v2/objects/search?q=casa&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "sciencemuseum-uk",
+   "name": "Science Museum Group (UK)",
+   "area": "patrimonio_arte",
+   "url": "https://collection.sciencemuseumgroup.org.uk/search/objects?q={q}&page[size]={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://collection.sciencemuseumgroup.org.uk",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "museum",
+    "science",
+    "history"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://collection.sciencemuseumgroup.org.uk/search/objects?q=casa&page[size]=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gallica-sru",
+   "name": "Gallica / BnF (SRU)",
+   "area": "patrimonio_arte",
+   "url": "https://gallica.bnf.fr/SRU?operation=searchRetrieve&version=1.2&query=gallica%20all%20%22{q}%22&maximumRecords={limit}",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://api.bnf.fr/api-gallica-de-recherche",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "library",
+    "books",
+    "heritage",
+    "france"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://gallica.bnf.fr/SRU?operation=searchRetrieve&version=1.2&query=gallica%20all%20%22casa%22&maximumRecords=3",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "getty-aat",
+   "name": "Getty Art & Architecture Thesaurus",
+   "area": "patrimonio_arte",
+   "url": "https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fs%20%3Flabel%20WHERE%20%7B%20%3Fs%20skos%3AprefLabel%20%3Flabel%20FILTER(lang(%3Flabel)%3D%22en%22)%20%7D%20LIMIT%203",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODC-BY-1.0",
+   "docs_url": "https://vocab.getty.edu",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "vocabulary",
+    "art",
+    "heritage"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://vocab.getty.edu/sparql.json?query=SELECT%20%3Fs%20%3Flabel%20WHERE%20%7B%20%3Fs%20skos%3AprefLabel%20%3Flabel%20FILTER(lang(%3Flabel)%3D%22en%22)%20%7D%20LIMIT%203",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "nasa-images",
+   "name": "NASA Image and Video Library",
+   "area": "patrimonio_arte",
+   "url": "https://images-api.nasa.gov/search?q={q}&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://api.nasa.gov",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "images",
+    "space",
+    "science",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://images-api.nasa.gov/search?q=casa&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "nasa-apod",
+   "name": "NASA Astronomy Picture of the Day",
+   "area": "patrimonio_arte",
+   "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://api.nasa.gov",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "images",
+    "space",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "musicbrainz-artist",
+   "name": "MusicBrainz (artistas)",
+   "area": "patrimonio_arte",
+   "url": "https://musicbrainz.org/ws/2/artist?query={q}&fmt=json&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "music",
+    "artists",
+    "culture"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://musicbrainz.org/ws/2/artist?query=casa&fmt=json&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "musicbrainz-recording",
+   "name": "MusicBrainz (grabaciones)",
+   "area": "patrimonio_arte",
+   "url": "https://musicbrainz.org/ws/2/recording?query={q}&fmt=json&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "music",
+    "culture"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://musicbrainz.org/ws/2/recording?query=music&fmt=json&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "musicbrainz-release",
+   "name": "MusicBrainz (albumes)",
+   "area": "patrimonio_arte",
+   "url": "https://musicbrainz.org/ws/2/release?query={q}&fmt=json&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "music",
+    "culture"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://musicbrainz.org/ws/2/release?query=casa&fmt=json&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pubmed-esearch",
+   "name": "PubMed E-utilities (busqueda)",
+   "area": "ciencia_salud",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term={q}&retmax={limit}&retmode=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "papers",
+    "medicine",
+    "university"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=casa&retmax=3&retmode=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pubmed-esummary",
+   "name": "PubMed E-utilities (resumen)",
+   "area": "ciencia_salud",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=38000000&retmode=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "papers"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=38000000&retmode=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ncbi-taxonomy",
+   "name": "NCBI Taxonomy",
+   "area": "ciencia_salud",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=taxonomy&term={q}&retmode=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "species",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=taxonomy&term=casa&retmode=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pmc-oa",
+   "name": "PubMed Central Open Access",
+   "area": "ciencia_salud",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=PMC3257301&format=json",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://www.ncbi.nlm.nih.gov/pmc/tools/oa-service/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "open-access"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=PMC3257301&format=json",
+    "expect": "xml"
+   }
+  },
+  {
+   "id": "who-gho-indicators",
+   "name": "WHO Global Health Observatory",
+   "area": "ciencia_salud",
+   "url": "https://ghoapi.azureedge.net/api/Indicator",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-NC-SA-3.0-IGO",
+   "docs_url": "https://www.who.int/data/gho/info/gho-odata-api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "statistics",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ghoapi.azureedge.net/api/Indicator",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "who-gho-observation",
+   "name": "WHO GHO (observaciones)",
+   "area": "ciencia_salud",
+   "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-NC-SA-3.0-IGO",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "clinicaltrials-v2",
+   "name": "ClinicalTrials.gov API v2",
+   "area": "ciencia_salud",
+   "url": "https://clinicaltrials.gov/api/v2/studies?query.term={q}&pageSize={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://clinicaltrials.gov/data-api/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "health",
+    "trials",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://clinicaltrials.gov/api/v2/studies?query.term=casa&pageSize=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "uniprot",
+   "name": "UniProtKB",
+   "area": "ciencia_salud",
+   "url": "https://rest.uniprot.org/uniprotkb/search?query={q}&size={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.uniprot.org/help/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "proteins",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://rest.uniprot.org/uniprotkb/search?query=casa&size=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pdb-entry",
+   "name": "RCSB PDB (entrada)",
+   "area": "ciencia_salud",
+   "url": "https://data.rcsb.org/rest/v1/core/entry/1CRN",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://data.rcsb.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "proteins",
+    "structures"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://data.rcsb.org/rest/v1/core/entry/1CRN",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ensembl-lookup-symbol",
+   "name": "Ensembl (gen por simbolo)",
+   "area": "ciencia_salud",
+   "url": "https://rest.ensembl.org/lookup/symbol/homo_sapiens/{q}?content-type=application/json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "Apache-2.0",
+   "docs_url": "https://rest.ensembl.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "genomics",
+    "biology",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://rest.ensembl.org/lookup/symbol/homo_sapiens/BRCA2?content-type=application/json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ebi-proteins",
+   "name": "EBI Proteins API",
+   "area": "ciencia_salud",
+   "url": "https://www.ebi.ac.uk/proteins/api/proteins?offset=0&size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.ebi.ac.uk/proteins/api/doc/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "proteins"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.ebi.ac.uk/proteins/api/proteins?offset=0&size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "chembl-target-search",
+   "name": "ChEMBL (dianas)",
+   "area": "ciencia_salud",
+   "url": "https://www.ebi.ac.uk/chembl/api/data/target/search?q={q}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-3.0",
+   "docs_url": "https://chembl.gitbook.io/chembl-interface-documentation/web-services",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "chemistry",
+    "drugs",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.ebi.ac.uk/chembl/api/data/target/search?q=casa&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pubchem-name",
+   "name": "PubChem (compuesto por nombre)",
+   "area": "ciencia_salud",
+   "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{q}/JSON",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "chemistry",
+    "compounds",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/JSON",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "pubchem-property",
+   "name": "PubChem (propiedades)",
+   "area": "ciencia_salud",
+   "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularFormula,MolecularWeight/JSON",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "chemistry",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/2244/property/MolecularFormula/JSON",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "reactome-query",
+   "name": "Reactome Content Service",
+   "area": "ciencia_salud",
+   "url": "https://reactome.org/ContentService/data/eventsHierarchy/9606",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://reactome.org/ContentService/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "pathways",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://reactome.org/ContentService/data/eventsHierarchy/9606",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "reactome-pathways-top",
+   "name": "Reactome (vias principales)",
+   "area": "ciencia_salud",
+   "url": "https://reactome.org/ContentService/data/pathways/top/9606",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "pathways"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://reactome.org/ContentService/data/pathways/top/9606",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "kegg-find-genes",
+   "name": "KEGG (busqueda de genes)",
+   "area": "ciencia_salud",
+   "url": "https://rest.kegg.jp/find/genes/{q}",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://www.kegg.jp/kegg/rest/keggapi.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "biology",
+    "genes",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://rest.kegg.jp/find/genes/TP53",
+    "expect": "text"
+   }
+  },
+  {
+   "id": "mesh-lookup",
+   "name": "MeSH (descriptor)",
+   "area": "ciencia_salud",
+   "url": "https://id.nlm.nih.gov/mesh/lookup/descriptor?label={q}&match=contains&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://id.nlm.nih.gov/mesh/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "medicine",
+    "vocabulary",
+    "health"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://id.nlm.nih.gov/mesh/lookup/descriptor?label=diabetes&match=contains&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "hpo-term",
+   "name": "Human Phenotype Ontology",
+   "area": "ciencia_salud",
+   "url": "https://purl.obolibrary.org/obo/hp.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "custom-free",
+   "docs_url": "https://hpo.jax.org/api/hpo",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "genetics",
+    "health",
+    "ontology"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://purl.obolibrary.org/obo/hp.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "geneontology-autocomplete",
+   "name": "Gene Ontology (autocomplete)",
+   "area": "ciencia_salud",
+   "url": "https://api.geneontology.org/api/search/entity/autocomplete/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://api.geneontology.org/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biology",
+    "ontology",
+    "science"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.geneontology.org/api/search/entity/autocomplete/diabetes",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gbif-species",
+   "name": "GBIF (especies)",
+   "area": "ciencia_salud",
+   "url": "https://api.gbif.org/v1/species/search?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://techdocs.gbif.org/en/openapi/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biodiversity",
+    "species",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.gbif.org/v1/species/search?q=casa&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "gbif-occurrence",
+   "name": "GBIF (observaciones)",
+   "area": "ciencia_salud",
+   "url": "https://api.gbif.org/v1/occurrence/search?limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biodiversity",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.gbif.org/v1/occurrence/search?limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "inaturalist-observations",
+   "name": "iNaturalist (observaciones)",
+   "area": "ciencia_salud",
+   "url": "https://api.inaturalist.org/v1/observations?q={q}&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-NC-4.0",
+   "docs_url": "https://api.inaturalist.org/v1/docs/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biodiversity",
+    "citizen-science",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.inaturalist.org/v1/observations?q=casa&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "inaturalist-taxa",
+   "name": "iNaturalist (taxones)",
+   "area": "ciencia_salud",
+   "url": "https://api.inaturalist.org/v1/taxa?q={q}&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-NC-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "biodiversity",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.inaturalist.org/v1/taxa?q=casa&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openfoodfacts-search",
+   "name": "Open Food Facts (busqueda)",
+   "area": "ciencia_salud",
+   "url": "https://world.openfoodfacts.org/api/v2/search?categories_tags=en:breakfast_cereals&page_size={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "nutrition",
+    "health",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://world.openfoodfacts.org/api/v2/search?categories_tags=en:breakfast_cereals&page_size=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openfoodfacts-product",
+   "name": "Open Food Facts (producto)",
+   "area": "ciencia_salud",
+   "url": "https://world.openfoodfacts.org/api/v2/product/737628064502.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": true,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "nutrition",
+    "health"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://world.openfoodfacts.org/api/v2/product/737628064502.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "usda-fooddata",
+   "name": "USDA FoodData Central",
+   "area": "ciencia_salud",
+   "url": "https://api.nal.usda.gov/fdc/v1/foods/search?query={q}&api_key=DEMO_KEY&pageSize={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://fdc.nal.usda.gov/api-guide.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "nutrition",
+    "health"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.nal.usda.gov/fdc/v1/foods/search?query=casa&api_key=DEMO_KEY&pageSize=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "worldbank-countries",
+   "name": "World Bank (paises)",
+   "area": "datos_pais",
+   "url": "https://api.worldbank.org/v2/country?format=json&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/898581",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "countries",
+    "geography",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.worldbank.org/v2/country?format=json&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "worldbank-indicators",
+   "name": "World Bank (indicadores)",
+   "area": "datos_pais",
+   "url": "https://api.worldbank.org/v2/indicator?format=json&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "indicators",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.worldbank.org/v2/indicator?format=json&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "worldbank-gdp",
+   "name": "World Bank PIB por pais",
+   "area": "datos_pais",
+   "url": "https://api.worldbank.org/v2/country/{iso3}/indicator/NY.GDP.MKTP.CD?format=json&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "economy",
+    "countries",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.worldbank.org/v2/country/BRA/indicator/NY.GDP.MKTP.CD?format=json&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "eurostat-data",
+   "name": "Eurostat (dataset JSON)",
+   "area": "datos_pais",
+   "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_manr?format=JSON&lang=en",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://wikis.ec.europa.eu/display/EUROSTATHELP/API+-+Getting+started",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "statistics",
+    "europe",
+    "economy"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_manr?format=JSON&lang=en",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "oecd-dataflow",
+   "name": "OECD SDMX (dataflows)",
+   "area": "datos_pais",
+   "url": "https://sdmx.oecd.org/public/rest/dataflow/all/all/latest",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://data.oecd.org/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "statistics",
+    "oecd",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://sdmx.oecd.org/public/rest/dataflow/all/all/latest",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "imf-indicators",
+   "name": "IMF DataMapper (indicadores)",
+   "area": "datos_pais",
+   "url": "https://www.imf.org/external/datamapper/api/v1/indicators",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.imf.org/external/datamapper/api/help",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "economy",
+    "countries",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.imf.org/external/datamapper/api/v1/indicators",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "imf-gdp",
+   "name": "IMF DataMapper (PIB)",
+   "area": "datos_pais",
+   "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "economy",
+    "countries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "ilostat-indicator",
+   "name": "ILOSTAT (indicadores de trabajo)",
+   "area": "datos_pais",
+   "url": "https://rplumber.ilo.org/data/indicator/?id=UNE_2EAP_SEX_AGE_RT_A&format=.json&timefrom=2020&lim=1",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://ilostat.ilo.org/resources/sdmx-tools/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "labour",
+    "employment",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://rplumber.ilo.org/data/indicator/?id=UNE_2EAP_SEX_AGE_RT_A&format=.json&timefrom=2020&lim=1",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "faostat-domains",
+   "name": "FAOSTAT (dominios)",
+   "area": "datos_pais",
+   "url": "https://fenixservices.fao.org/faostat/api/v1/en/definitions/domain/",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.fao.org/faostat/en/#data/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "agriculture",
+    "food",
+    "statistics",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://fenixservices.fao.org/faostat/api/v1/en/definitions/domain/",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "faostat-data",
+   "name": "FAOSTAT (datos)",
+   "area": "datos_pais",
+   "url": "https://fenixservices.fao.org/faostat/api/v1/en/data/RL/?area=351&item=15&year=2020",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "agriculture",
+    "food",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://fenixservices.fao.org/faostat/api/v1/en/data/RL/?area=351&item=15&year=2020",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "restcountries-name",
+   "name": "REST Countries (por nombre)",
+   "area": "datos_pais",
+   "url": "https://restcountries.com/v3.1/name/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": "https://restcountries.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "countries",
+    "flags",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://restcountries.com/v3.1/name/casa",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "restcountries-all",
+   "name": "REST Countries (todos)",
+   "area": "datos_pais",
+   "url": "https://restcountries.com/v3.1/all?fields=name,cca3,capital,region,flag",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "countries",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://restcountries.com/v3.1/all?fields=name,cca3,capital,region,flag",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "nominatim-search",
+   "name": "OpenStreetMap Nominatim",
+   "area": "datos_pais",
+   "url": "https://nominatim.openstreetmap.org/search?q={q}&format=json&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": "https://nominatim.org/release-docs/latest/api/Overview/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "geography",
+    "maps",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://nominatim.openstreetmap.org/search?q=casa&format=json&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "overpass-schools",
+   "name": "OSM Overpass (escuelas cercanas)",
+   "area": "datos_pais",
+   "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bnode%5Bamenity%3Dschool%5D(around%3A2000%2C-23.55%2C-46.63)%3Bout%20{limit}%3B",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "geography",
+    "schools",
+    "maps",
+    "osm"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bnode%5Bamenity%3Dschool%5D(around%3A2000%2C-23.55%2C-46.63)%3Bout%203%3B",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "naturalearth-countries",
+   "name": "Natural Earth (paises GeoJSON)",
+   "area": "datos_pais",
+   "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://www.naturalearthdata.com",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "geography",
+    "maps",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "geonames-search",
+   "name": "GeoNames (demo)",
+   "area": "datos_pais",
+   "url": "http://api.geonames.org/searchJSON?q={q}&maxRows={limit}&username=demo",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.geonames.org/export/web-services.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": true,
+   "quality": "B",
+   "topics": [
+    "geography",
+    "places",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "http://api.geonames.org/searchJSON?q=casa&maxRows=3&username=demo",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "geoboundaries",
+   "name": "geoBoundaries (fronteras)",
+   "area": "datos_pais",
+   "url": "https://www.geoboundaries.org/api/current/gbOpen/{iso3}/ADM1/",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-4.0",
+   "docs_url": "https://www.geoboundaries.org/api.html",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "geography",
+    "boundaries"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://www.geoboundaries.org/api/current/gbOpen/BRA/ADM1/",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "iso-country-codes",
+   "name": "ISO Country Codes (dataset)",
+   "area": "datos_pais",
+   "url": "https://raw.githubusercontent.com/datasets/country-codes/master/data/country-codes.csv",
+   "kind": "csv",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "PDDL-1.0",
+   "docs_url": "https://datahub.io/core/country-codes",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "countries",
+    "iso",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/datasets/country-codes/master/data/country-codes.csv",
+    "expect": "csv"
+   }
+  },
+  {
+   "id": "countries-states-cities",
+   "name": "Countries States Cities DB",
+   "area": "datos_pais",
+   "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/countries.json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "ODbL-1.0",
+   "docs_url": "https://github.com/dr5hn/countries-states-cities-database",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "geography",
+    "countries",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/countries.json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "hdx-package-search",
+   "name": "HDX (datos humanitarios)",
+   "area": "datos_pais",
+   "url": "https://data.humdata.org/api/3/action/package_search?q={q}&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": "https://data.humdata.org/api/3",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "humanitarian",
+    "opendata",
+    "education"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://data.humdata.org/api/3/action/package_search?q=casa&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "hdx-education",
+   "name": "HDX (datos de educacion)",
+   "area": "datos_pais",
+   "url": "https://data.humdata.org/api/3/action/package_search?q=education&rows={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "mixed",
+   "docs_url": null,
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "humanitarian",
+    "education",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://data.humdata.org/api/3/action/package_search?q=education&rows=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "urban-ipeds-directory",
+   "name": "Urban Institute IPEDS (universidades US)",
+   "area": "academico",
+   "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2020/?per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://educationdata.urban.org/documentation/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "universities",
+    "schools",
+    "usa",
+    "ipeds"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://educationdata.urban.org/api/v1/college-university/ipeds/directory/2020/?per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "urban-ccd-schools",
+   "name": "Urban Institute CCD (escuelas K-12 US)",
+   "area": "academico",
+   "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2020/?per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://educationdata.urban.org/documentation/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "schools",
+    "k-12",
+    "usa",
+    "teachers"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://educationdata.urban.org/api/v1/schools/ccd/directory/2020/?per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "college-scorecard",
+   "name": "College Scorecard (Dept. de Educacion US)",
+   "area": "academico",
+   "url": "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=DEMO_KEY&per_page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "public-domain",
+   "docs_url": "https://collegescorecard.ed.gov/data/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "B",
+   "topics": [
+    "universities",
+    "usa",
+    "statistics"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=DEMO_KEY&per_page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "oeis",
+   "name": "OEIS (enciclopedia de sucesiones enteras)",
+   "area": "academico",
+   "url": "https://oeis.org/search?q={q}&fmt=json&start=0",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-NC-SA-4.0",
+   "docs_url": "https://oeis.org/wiki/JSON_Format",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "math",
+    "schools",
+    "sequences"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://oeis.org/search?q=1,2,3,6,11,23&fmt=json&start=0",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "openalex-institutions",
+   "name": "OpenAlex Institutions (universidades del mundo)",
+   "area": "academico",
+   "url": "https://api.openalex.org/institutions?search={q}&per-page={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC0-1.0",
+   "docs_url": "https://docs.openalex.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "universities",
+    "schools",
+    "global"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.openalex.org/institutions?search=university&per-page=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "vikidia-pt",
+   "name": "Vikidia PT (enciclopedia para ninos)",
+   "area": "academico",
+   "url": "https://pt.vikidia.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://pt.vikidia.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "kids",
+    "schools",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://pt.vikidia.org/w/api.php?action=query&list=search&srsearch=escola&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "vikidia-es",
+   "name": "Vikidia ES (enciclopedia para ninos)",
+   "area": "academico",
+   "url": "https://es.vikidia.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://es.vikidia.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "kids",
+    "schools",
+    "es"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://es.vikidia.org/w/api.php?action=query&list=search&srsearch=escuela&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "vikidia-en",
+   "name": "Vikidia EN (children's encyclopedia)",
+   "area": "academico",
+   "url": "https://en.vikidia.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://en.vikidia.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "kids",
+    "schools",
+    "en"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://en.vikidia.org/w/api.php?action=query&list=search&srsearch=school&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "vikidia-ca",
+   "name": "Vikidia CA (enciclopedia per a infants)",
+   "area": "academico",
+   "url": "https://ca.vikidia.org/w/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://ca.vikidia.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "kids",
+    "schools",
+    "ca"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://ca.vikidia.org/w/api.php?action=query&list=search&srsearch=escola&srlimit=3&format=json",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "simple-wikipedia",
+   "name": "Simple English Wikipedia (lectura facil)",
+   "area": "academico",
+   "url": "https://simple.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://simple.wikipedia.org",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "plain-language",
+    "schools"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://simple.wikipedia.org/api/rest_v1/page/summary/School",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "wikimedia-search-pt",
+   "name": "Wikimedia Core API - busqueda PT",
+   "area": "academico",
+   "url": "https://api.wikimedia.org/core/v1/wikipedia/pt/search/page?q={q}&limit={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "CC-BY-SA-4.0",
+   "docs_url": "https://api.wikimedia.org/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "encyclopedia",
+    "search",
+    "pt"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.wikimedia.org/core/v1/wikipedia/pt/search/page?q=escola&limit=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "datamuse-words",
+   "name": "Datamuse (palabras por significado)",
+   "area": "idiomas",
+   "url": "https://api.datamuse.com/words?ml={q}&max={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "custom-free",
+   "docs_url": "https://www.datamuse.com/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "semantics",
+    "dictionary"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.datamuse.com/words?ml=casa&max=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "datamuse-sug",
+   "name": "Datamuse (sugerencias y ortografia)",
+   "area": "idiomas",
+   "url": "https://api.datamuse.com/sug?s={q}&max={limit}",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "custom-free",
+   "docs_url": "https://www.datamuse.com/api/",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "vocabulary",
+    "spelling"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.datamuse.com/sug?s=escola&max=3",
+    "expect": "json"
+   }
+  },
+  {
+   "id": "duckduckgo-instant",
+   "name": "DuckDuckGo Instant Answer",
+   "area": "academico",
+   "url": "https://api.duckduckgo.com/?q={q}&format=json&no_html=1&skip_disambig=1",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "custom-free",
+   "docs_url": "https://duckduckgo.com/api",
+   "rate_limit": null,
+   "ttl_h": 168,
+   "tls_insecure": false,
+   "http_only": false,
+   "quality": "A",
+   "topics": [
+    "search",
+    "reference"
+   ],
+   "parser": null,
+   "source": "catalogs",
+   "probe": {
+    "url": "https://api.duckduckgo.com/?q=education&format=json&no_html=1&skip_disambig=1",
+    "expect": "json"
+   }
+  }
+ ]
+}

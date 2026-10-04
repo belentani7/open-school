@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #06070a;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Astra AI Design System - Deep Cosmic Obsidian & Ambient Prisms */
+:root {
+  --astra-bg: #06070a;
+  --astra-surface: #0c0d14;
+  --astra-surface-hover: #131420;
+  --astra-border: rgba(255, 255, 255, 0.08);
+  --astra-border-hover: rgba(168, 85, 247, 0.35);
+  --astra-blue: #3b82f6;
+  --astra-indigo: #6366f1;
+  --astra-violet: #8b5cf6;
+  --astra-cyan: #06b6d4;
+  --astra-emerald: #10b981;
+  --astra-amber: #facc15;
+}
+
+/* Background Grid Mesh (Astra AI signature canvas) */
+.astra-grid-bg {
+  background-color: #06070a;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.18), transparent),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(circle at 20% 90%, rgba(6, 182, 212, 0.06), transparent),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Astra Obsidian Cards */
+.astra-card {
+  background: linear-gradient(145deg, rgba(16, 17, 28, 0.8) 0%, rgba(10, 11, 18, 0.95) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.astra-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 15px 35px -5px rgba(99, 102, 241, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.astra-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.astra-card-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.9), rgba(6, 182, 212, 0.8), transparent);
+  pointer-events: none;
+}
+
+/* Astra Action Buttons */
+.astra-btn-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.astra-btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 0 35px rgba(99, 102, 241, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.astra-btn-secondary {
+  background: rgba(15, 17, 26, 0.8);
+  color: #e2e8f0;
+  font-weight: 600;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.astra-btn-secondary:hover {
+  background: rgba(26, 29, 44, 0.9);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Astra Socratic & Mode Switcher */
+.astra-mode-pill {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.astra-mode-pill-active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.2) 100%);
+  color: #ffffff;
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.astra-mode-pill-inactive {
+  color: #94a3b8;
+  background: transparent;
+}
+
+.astra-mode-pill-inactive:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Step-by-Step Card (Astra Signature) */
+.astra-step-card {
+  background: #090a12;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.astra-step-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: #0c0e18;
+}
+
+.astra-step-number {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Astra Ambient Glow Accents */
+.astra-glow-violet {
+  box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.35);
+}
+
+.astra-glow-emerald {
+  box-shadow: 0 0 45px -10px rgba(16, 185, 129, 0.3);
+}
+
+.astra-glow-cyan {
+  box-shadow: 0 0 45px -10px rgba(6, 182, 212, 0.3);
+}
+
+/* Astra Pill Navigation */
+.astra-nav-pill {
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.astra-nav-pill-active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.15) 100%);
+  color: #ffffff;
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.astra-nav-pill-inactive {
+  color: #94a3b8;
+}
+
+.astra-nav-pill-inactive:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Astra Text Gradient */
+.astra-text-gradient {
+  background: linear-gradient(135deg, #ffffff 20%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.astra-text-glow {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Astra Shimmer Animation */
+@keyframes astra-pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.animate-astra-glow {
+  animation: astra-pulse-glow 5s infinite ease-in-out;
+}
+
+/* Custom Cosmic Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1b2e;
+  border-radius: 4px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Code Highlighting in Dark Mode */
+.code-dark-canvas {
+  background: #090a11;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}

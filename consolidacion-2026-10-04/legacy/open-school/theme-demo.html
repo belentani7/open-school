@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belentani Theme — Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bel-bg:#070D18; --bel-ink:#0E2035; --bel-cyan:#38E1FF; --bel-lime:#A8FF3E;
+  --bel-coral:#EA644B; --bel-saffron:#FFC24A; --bel-mint:#CBE9DB; --bel-paper:#F3EFE7;
+  --radius:.8rem;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bel-bg);color:var(--bel-paper);padding:32px}
+h1,h2{font-family:'Space Grotesk',sans-serif}
+.badge{display:inline-block;border:1px solid var(--bel-cyan);color:var(--bel-cyan);border-radius:99px;padding:4px 12px;font-size:12px;letter-spacing:1px;margin-bottom:12px}
+h1{font-size:42px;line-height:1.05}
+h1 span{color:var(--bel-lime)}
+.sub{color:#9fb3c8;margin:12px 0 20px;max-width:560px}
+.btn{display:inline-block;background:var(--bel-lime);color:var(--bel-ink);font-weight:700;padding:12px 22px;border-radius:var(--radius);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--bel-cyan);border:1px solid var(--bel-cyan);margin-left:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.card{background:#0d1626;border:1px solid rgba(56,225,255,.16);border-radius:var(--radius);padding:20px}
+.card.light{background:var(--bel-paper);color:var(--bel-ink);border-color:transparent}
+.card h2{font-size:18px;margin-bottom:8px}
+.tag{font-family:'DM Mono',monospace;font-size:12px;background:rgba(56,225,255,.12);color:var(--bel-cyan);padding:2px 8px;border-radius:6px}
+ul.timeline{list-style:none;padding:0;margin-top:12px}
+ul.timeline li{padding:8px 0 8px 22px;position:relative;color:#c7d5e3;font-size:14px}
+ul.timeline li::before{content:"";position:absolute;left:4px;top:14px;width:8px;height:8px;border-radius:50%;background:var(--bel-lime)}
+ul.timeline li.todo::before{background:transparent;border:1px solid #5e6873}
+.bar{height:8px;background:#1b2942;border-radius:99px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;width:70%;background:linear-gradient(90deg,var(--bel-cyan),var(--bel-lime))}
+.palette{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.sw{width:64px;height:44px;border-radius:8px;border:1px solid rgba(255,255,255,.2)}
+.foot{margin-top:28px;font-family:'Space Grotesk';letter-spacing:2px;font-size:13px;color:var(--bel-cyan)}
+code{font-family:'DM Mono',monospace;color:var(--bel-lime);font-size:13px}
+</style>
+</head>
+<body>
+<div class="badge">SECURE-T · UNIVERSIDAD DIGITAL</div>
+<h1>LA UNIVERSIDAD DIGITAL PARA<br><span>UN MUNDO + SEGURO<br>E INTELIGENTE</span></h1>
+<p class="sub">Especializados en <b>Ciberseguridad</b> e <b>Inteligencia Artificial</b>. Aprende haciendo: laboratorios y proyectos del mundo real.</p>
+<a class="btn" href="#">EXPLORA CARRERAS →</a>
+<a class="btn ghost" href="#">VER RUTA</a>
+
+<div class="grid">
+  <div class="card">
+    <h2>Ruta de Aprendizaje <span style="float:right;color:var(--bel-lime)">70%</span></h2>
+    <div class="bar"><i></i></div>
+    <ul class="timeline">
+      <li>Fundamentos de Ciberseguridad</li>
+      <li>Redes y Sistemas</li>
+      <li><code>Hacking Ético</code> — en curso</li>
+      <li class="todo">Inteligencia Artificial</li>
+      <li class="todo">Proyecto Final</li>
+    </ul>
+    <div class="palette">
+      <div class="sw" style="background:#070D18" title="bg"></div>
+      <div class="sw" style="background:#38E1FF" title="cyan"></div>
+      <div class="sw" style="background:#A8FF3E" title="lime"></div>
+      <div class="sw" style="background:#EA644B" title="coral"></div>
+      <div class="sw" style="background:#FFC24A" title="saffron"></div>
+      <div class="sw" style="background:#F3EFE7" title="paper"></div>
+    </div>
+  </div>
+  <div class="card light">
+    <h2>UX Academy — variante clara <span class="tag">paper</span></h2>
+    <p style="font-size:14px;margin:6px 0 12px">Mismo font, mismo radio, mismo botón. Solo cambia fondo a papel para lectura larga.</p>
+    <a class="btn" href="#">EMPEZAR MÓDULO →</a>
+    <p style="margin-top:12px;font-size:13px">LinguaForge: <code>5 min/día</code> + streak lime + liga semanal.</p>
+  </div>
+</div>
+<div class="foot">APRENDE. PROTEGE. TRANSFORMA. — El conocimiento es tu mejor defensa.</div>
+</body>
+</html>

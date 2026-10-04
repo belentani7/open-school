@@ -1,0 +1,93 @@
+{
+  "lingua-aberta": {
+    "web": true,
+    "raiz": "https://lingua-aberta.vercel.app/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 367778B | od HTTP 200 3164B | voz HTTP 404 0B"
+  },
+  "linguaforge": {
+    "web": true,
+    "raiz": "https://openlinguaforge.vercel.app/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 14289B | od HTTP 200 2605B | voz HTTP 404 0B"
+  },
+  "manosabiertas": {
+    "web": true,
+    "raiz": "https://manos-abiertas-psi.vercel.app/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 184983B | od HTTP 200 2410B | voz HTTP 404 0B"
+  },
+  "secure-t-university": {
+    "web": true,
+    "raiz": "https://secure-t-university.vercel.app/",
+    "open_data": true,
+    "voces": true,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 54546B | od HTTP 200 2023B | voz HTTP 200 2616B"
+  },
+  "ux-academy": {
+    "web": true,
+    "raiz": "https://ux-academy-course.vercel.app/",
+    "open_data": true,
+    "voces": true,
+    "alternativa": [
+      "pages",
+      "pages/voz"
+    ],
+    "detalle": "raiz HTTP 200 369389B | od HTTP 200 369389B | voz HTTP 200 369389B"
+  },
+  "open-school": {
+    "web": true,
+    "raiz": "https://belentani7.github.io/open-school/",
+    "open_data": true,
+    "voces": true,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 220B | od HTTP 200 2312B | voz HTTP 200 2472B"
+  },
+  "williamschool": {
+    "web": true,
+    "raiz": "https://belentani7.github.io/WILLIAMSCHOOL/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 1645B | od HTTP 200 2145B | voz HTTP 404 0B"
+  },
+  "aprende-brasil": {
+    "web": true,
+    "raiz": "https://aprende-brasil.vercel.app/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 367884B | od HTTP 200 2296B | voz HTTP 404 0B"
+  },
+  "lingua-aberta-empresa": {
+    "web": true,
+    "raiz": "https://lingua-aberta-empresa.vercel.app/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 6258B | od HTTP 200 3088B | voz HTTP 404 0B"
+  },
+  "cruzando-el-charco": {
+    "web": true,
+    "raiz": "https://belentani7.github.io/Cruzando-el-charco/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 22398B | od HTTP 200 2444B | voz HTTP 404 0B"
+  },
+  "secure-t": {
+    "web": true,
+    "raiz": "https://belentani7.github.io/secure-t/",
+    "open_data": true,
+    "voces": false,
+    "alternativa": [],
+    "detalle": "raiz HTTP 200 513B | od HTTP 200 2158B | voz HTTP 404 0B"
+  }
+}

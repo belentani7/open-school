@@ -1,0 +1,68 @@
+{
+  "tema": "frases-de-reunion",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "Tatoeba ES",
+      "spec": "tatoeba:spa:trabajo",
+      "ok": true,
+      "datos": [
+        {
+          "origen": "Trabajabais.",
+          "traduccion": "You guys were working."
+        },
+        {
+          "origen": "Trabaja.",
+          "traduccion": "Work."
+        },
+        {
+          "origen": "¡Trabajamos!",
+          "traduccion": "Lavoriamo!"
+        },
+        {
+          "origen": "¡Trabaja!",
+          "traduccion": "Arbeite!"
+        },
+        {
+          "origen": "¿Trabaja?",
+          "traduccion": "Vous travaillez ?"
+        },
+        {
+          "origen": "¡Trabajemos!",
+          "traduccion": "Arbeiten wir!"
+        }
+      ]
+    },
+    {
+      "fuente": "Tatoeba EN",
+      "spec": "tatoeba:eng:work",
+      "ok": true,
+      "datos": [
+        {
+          "origen": "Work!",
+          "traduccion": "İşlə!"
+        },
+        {
+          "origen": "Work.",
+          "traduccion": "İşlə."
+        },
+        {
+          "origen": "Work smart.",
+          "traduccion": "o pali sona."
+        },
+        {
+          "origen": "Nice work!",
+          "traduccion": "お疲れ様。"
+        },
+        {
+          "origen": "We work!",
+          "traduccion": "我們工作！"
+        },
+        {
+          "origen": "It works!",
+          "traduccion": "Ça fonctionne !"
+        }
+      ]
+    }
+  ]
+}

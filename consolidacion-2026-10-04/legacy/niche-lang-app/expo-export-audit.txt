@@ -1,0 +1,170 @@
+React Compiler enabled
+Starting Metro Bundler
+Static rendering is enabled. Learn more: https://docs.expo.dev/router/reference/static-rendering/
+Web node_modules/expo-router/entry.js ▓▓░░░░░░░░░░░░░░ 16.0% (4/7)
+λ node_modules/expo-router/node/render.js ░░░░░░░░░░░░░░░░  4.4% ( 9/43)
+Web node_modules/expo-router/entry.js ▓▓▓░░░░░░░░░░░░░ 21.0% (15/87)
+λ node_modules/expo-router/node/render.js ▓▓▓▓░░░░░░░░░░░░ 29.8% (198/386)
+| Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+|   npx update-browserslist-db@latest
+|   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+Web node_modules/expo-router/entry.js ▓▓▓░░░░░░░░░░░░░ 21.0% ( 92/204)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 53.8% (432/663)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓░░░░░░░░░░░ 32.1% (208/381)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓░░░░░░░░ 55.4% (562/820)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓░░░░░░░░░░ 41.3% (335/571)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 61.7% ( 796/1013)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 44.6% (499/789)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 72.1% ( 981/1155)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓░░░░░░░░ 52.0% (641/892)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 87.8% (1163/1241)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓░░░░░ 74.5% (1023/1187)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ 91.0% (1233/1300)
+Web node_modules/expo-router/entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 94.8% (1321/1357)
+λ node_modules/expo-router/node/render.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 94.3% (1372/1414)
+λ Bundled 31081ms node_modules/expo-router/node/render.js (1444 modules)
+[expo-notifications] Listening to push token changes is not yet fully supported on web. Adding a listener will have no effect.
+Web Bundled 32779ms node_modules/expo-router/entry.js (1508 modules)
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+λ  LOG  { colorScheme: 'light', setColorScheme: [Function (anonymous)] } {
+  '--color-primary': '#0A7EA4',
+  '--color-background': '#ffffff',
+  '--color-surface': '#f5f5f5',
+  '--color-foreground': '#11181C',
+  '--color-muted': '#687076',
+  '--color-border': '#E5E7EB',
+  '--color-success': '#22C55E',
+  '--color-warning': '#F59E0B',
+  '--color-error': '#EF4444'
+}
+
+› web bundles (2):
+_expo/static/css/web-c37dbbc92f8bbf27901b5a2923c1eb0b.css (11.7 kB)
+_expo/static/js/web/entry-c76702210157f05bd29a99e3f556701d.js (3.01 MB)
+
+› Static routes (13):
+/ (index) (23.6 kB)
+/niches (29.4 kB)
+/_sitemap (17.8 kB)
+/progress (27.7 kB)
+/settings (28.9 kB)
+/+not-found (17.8 kB)
+/niche/[id] (24.2 kB)
+/lesson/[id] (24.2 kB)
+/(tabs) (23.6 kB)
+/dev/theme-lab (32.7 kB)
+/oauth/callback (24.7 kB)
+/(tabs)/progress (27.7 kB)
+/(tabs)/settings (28.9 kB)
+
+Exported: audit-web-export
+EXPO_EXPORT_EXIT=0

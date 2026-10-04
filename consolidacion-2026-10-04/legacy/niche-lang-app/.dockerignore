@@ -1,0 +1,17 @@
+node_modules
+.git
+.github
+.expo
+.env
+.env.*
+!.env.template
+dist
+web-build
+*.log
+*.zip
+coverage
+.DS_Store
+manus-logs
+.audit*
+*.tmp
+*_validation.txt

@@ -1,0 +1,4956 @@
+{
+ "total": 374,
+ "by_reason": {
+  "network_or_timeout": 55,
+  "html_not_api": 237,
+  "http_404": 39,
+  "server_error_502": 2,
+  "too_small": 9,
+  "rate_limited": 4,
+  "auth_required_or_blocked": 10,
+  "server_error_500": 1,
+  "too_slow": 1,
+  "not_html": 8,
+  "server_error_503": 2,
+  "not_xml": 1,
+  "json_parse_error": 3,
+  "no_records": 1,
+  "html_not_xml": 1
+ },
+ "entries": [
+  {
+   "id": "arxiv",
+   "name": "arXiv API",
+   "area": "academico",
+   "url": "http://export.arxiv.org/api/query?search_query=all:{q}&max_results={limit}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12101,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "crossref-metadata-search-github",
+   "name": "Crossref Metadata Search",
+   "area": "academico",
+   "url": "https://github.com/CrossRef/rest-api-doc",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 836
+   }
+  },
+  {
+   "id": "datagov-us",
+   "name": "data.gov (US)",
+   "area": "academico",
+   "url": "https://catalog.data.gov/api/3/action/package_search?q={q}&rows={limit}",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 36,
+    "ms": 287
+   }
+  },
+  {
+   "id": "datosgob-es",
+   "name": "datos.gob.es",
+   "area": "academico",
+   "url": "https://datos.gob.es/apidata/catalog/dataset?_pageSize={limit}&q={q}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 400,
+    "ctype": "application/json",
+    "bytes": 375,
+    "ms": 146,
+    "error": "HTTP 400"
+   }
+  },
+  {
+   "id": "dblp",
+   "name": "dblp computer science bibliography",
+   "area": "academico",
+   "url": "https://dblp.org/search/publ/api?q={q}&format=json&h={limit}",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 7491,
+    "ms": 184
+   }
+  },
+  {
+   "id": "dbpedia",
+   "name": "DBpedia SPARQL",
+   "area": "academico",
+   "url": "https://dbpedia.org/sparql?query=SELECT%20%3Fs%20%3Fp%20%3Fo%20WHERE%20%7B%20%3Fs%20a%20dbo%3AUniversity%20%7D%20LIMIT%203&format=json",
+   "reason": "server_error_502",
+   "evidence": {
+    "status": 502,
+    "ctype": "text/html",
+    "bytes": 1903,
+    "ms": 6666
+   }
+  },
+  {
+   "id": "europe-pmc-europepmc",
+   "name": "Europe PMC",
+   "area": "academico",
+   "url": "https://europepmc.org/RestfulWebService",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 65400,
+    "ms": 3610
+   }
+  },
+  {
+   "id": "googlebooks",
+   "name": "Google Books API",
+   "area": "academico",
+   "url": "https://www.googleapis.com/books/v1/volumes?q={q}&maxResults={limit}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 93,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "gurbaninow-github",
+   "name": "GurbaniNow",
+   "area": "academico",
+   "url": "https://github.com/GurbaniNow/api",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 431
+   }
+  },
+  {
+   "id": "ibge-escolas",
+   "name": "IBGE Censo Escolar",
+   "area": "academico",
+   "url": "https://servicodados.ibge.gov.br/api/v1/pesquisas/indicadores/77828/resultados/BR",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 2,
+    "ms": 919
+   }
+  },
+  {
+   "id": "kdp-intelligence-kdp-intelligence-api",
+   "name": "KDP Intelligence",
+   "area": "academico",
+   "url": "https://kdp-intelligence-api.vercel.app/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1019,
+    "ms": 289
+   }
+  },
+  {
+   "id": "launch-library-2-thespacedevs",
+   "name": "Launch Library 2",
+   "area": "academico",
+   "url": "https://thespacedevs.com/llapi",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 36436,
+    "ms": 560
+   }
+  },
+  {
+   "id": "newton-newton",
+   "name": "Newton",
+   "area": "academico",
+   "url": "https://newton.vercel.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 3512,
+    "ms": 190
+   }
+  },
+  {
+   "id": "oapen",
+   "name": "OAPEN Library",
+   "area": "academico",
+   "url": "https://library.oapen.org/rest/search?query={q}&expand=metadata",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12173,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "oeis",
+   "name": "OEIS (enciclopedia de sucesiones enteras)",
+   "area": "academico",
+   "url": "https://oeis.org/search?q={q}&fmt=json&start=0",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 4,
+    "ms": 190
+   }
+  },
+  {
+   "id": "open-scholarships-scholarships",
+   "name": "Open Scholarships",
+   "area": "academico",
+   "url": "https://scholarships.grudged.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 9816,
+    "ms": 632
+   }
+  },
+  {
+   "id": "openaire-projects",
+   "name": "OpenAIRE Projects",
+   "area": "academico",
+   "url": "https://api.openaire.eu/search/projects?title={q}&size={limit}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 400,
+    "ctype": "application/json",
+    "bytes": 418,
+    "ms": 4078,
+    "error": "HTTP 400"
+   }
+  },
+  {
+   "id": "publicdatahub-publicdatahub",
+   "name": "PublicDataHub",
+   "area": "academico",
+   "url": "https://publicdatahub.org/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 58303,
+    "ms": 342
+   }
+  },
+  {
+   "id": "quran-cloud-alquran",
+   "name": "Quran Cloud",
+   "area": "academico",
+   "url": "https://alquran.cloud/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 86925,
+    "ms": 332
+   }
+  },
+  {
+   "id": "remote-calc-github",
+   "name": "Remote Calc",
+   "area": "academico",
+   "url": "https://github.com/elizabethadegbaju/remotecalc",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 807
+   }
+  },
+  {
+   "id": "runyankole-bible-runyankole-bible-api",
+   "name": "Runyankole Bible",
+   "area": "academico",
+   "url": "https://runyankole-bible-api.vercel.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 15774,
+    "ms": 197
+   }
+  },
+  {
+   "id": "semanticscholar",
+   "name": "Semantic Scholar Graph",
+   "area": "academico",
+   "url": "https://api.semanticscholar.org/graph/v1/paper/search?query={q}&limit={limit}&fields=title,url,year,abstract",
+   "reason": "rate_limited",
+   "evidence": {
+    "status": 429,
+    "ctype": "application/json",
+    "bytes": 174,
+    "ms": 259
+   }
+  },
+  {
+   "id": "simple-wikipedia",
+   "name": "Simple English Wikipedia (lectura facil)",
+   "area": "academico",
+   "url": "https://simple.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 38,
+    "ms": 402
+   }
+  },
+  {
+   "id": "spacex-github",
+   "name": "SpaceX",
+   "area": "academico",
+   "url": "https://github.com/r-spacex/SpaceX-API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 783
+   }
+  },
+  {
+   "id": "sunrise-and-sunset-sunrise-sunset",
+   "name": "Sunrise and Sunset",
+   "area": "academico",
+   "url": "https://sunrise-sunset.org/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 26708,
+    "ms": 420
+   }
+  },
+  {
+   "id": "times-adder-github",
+   "name": "Times Adder",
+   "area": "academico",
+   "url": "https://github.com/FranP-code/API-Times-Adder",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 249918,
+    "ms": 788
+   }
+  },
+  {
+   "id": "tle-tle",
+   "name": "TLE",
+   "area": "academico",
+   "url": "https://tle.ivanstanojevic.me/#/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1779,
+    "ms": 284
+   }
+  },
+  {
+   "id": "universities-list-github",
+   "name": "Universities List",
+   "area": "academico",
+   "url": "https://github.com/Hipo/university-domains-list",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 720
+   }
+  },
+  {
+   "id": "wikipedia-en",
+   "name": "Wikipedia EN (REST)",
+   "area": "academico",
+   "url": "https://en.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 38,
+    "ms": 119
+   }
+  },
+  {
+   "id": "wikipedia-es",
+   "name": "Wikipedia ES (REST)",
+   "area": "academico",
+   "url": "https://es.wikipedia.org/api/rest_v1/page/summary/{q}",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 38,
+    "ms": 151
+   }
+  },
+  {
+   "id": "wikipedia-www",
+   "name": "Wikipedia",
+   "area": "academico",
+   "url": "https://www.mediawiki.org/wiki/API:Main_page",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 158656,
+    "ms": 223
+   }
+  },
+  {
+   "id": "zenodo",
+   "name": "Zenodo",
+   "area": "academico",
+   "url": "https://zenodo.org/api/records?q={q}&size={limit}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12123,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "ocean-facts-oceanfacts",
+   "name": "Ocean Facts",
+   "area": "academico",
+   "url": "https://oceanfacts.herokuapp.com/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 246
+   }
+  },
+  {
+   "id": "prc-exam-schedule-api",
+   "name": "PRC Exam Schedule",
+   "area": "academico",
+   "url": "https://api.whenisthenextboardexam.com/docs/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 14,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "spacex-api",
+   "name": "SpaceX",
+   "area": "academico",
+   "url": "https://api.spacex.land/graphql/",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 216,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "xmath-x-math",
+   "name": "xMath",
+   "area": "academico",
+   "url": "https://x-math.herokuapp.com/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 498
+   }
+  },
+  {
+   "id": "bhagavad-gita-telugu-gita-api",
+   "name": "Bhagavad Gita telugu",
+   "area": "idiomas",
+   "url": "https://gita-api.vercel.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 241,
+    "ms": 259
+   }
+  },
+  {
+   "id": "chinese-text-project-ctext",
+   "name": "Chinese Text Project",
+   "area": "idiomas",
+   "url": "https://ctext.org/tools/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 92547,
+    "ms": 712
+   }
+  },
+  {
+   "id": "codex-github",
+   "name": "Codex",
+   "area": "idiomas",
+   "url": "https://github.com/Jaagrav/CodeX",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 513
+   }
+  },
+  {
+   "id": "datacube-ai-www",
+   "name": "DataCube AI",
+   "area": "idiomas",
+   "url": "https://www.datacubeai.space/en/tools/ai-news-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 83056,
+    "ms": 432
+   }
+  },
+  {
+   "id": "english-random-words-random-words-api",
+   "name": "English Random Words",
+   "area": "idiomas",
+   "url": "https://random-words-api.vercel.app/word",
+   "reason": "server_error_500",
+   "evidence": {
+    "status": 500,
+    "ctype": "application/json",
+    "bytes": 60,
+    "ms": 286
+   }
+  },
+  {
+   "id": "libretranslate-libretranslate",
+   "name": "LibreTranslate",
+   "area": "idiomas",
+   "url": "https://libretranslate.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1303,
+    "ms": 330
+   }
+  },
+  {
+   "id": "lingua-libre",
+   "name": "Lingua Libre (Wikimedia audio)",
+   "area": "idiomas",
+   "url": "https://lingualibre.org/api.php?action=query&list=search&srsearch={q}&srlimit={limit}&format=json",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 446,
+    "ms": 400
+   }
+  },
+  {
+   "id": "quran-api-github",
+   "name": "Quran-api",
+   "area": "idiomas",
+   "url": "https://github.com/fawazahmed0/quran-api#readme",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 877
+   }
+  },
+  {
+   "id": "spanish-random-words-palabras-aleatorias-publ",
+   "name": "Spanish random words",
+   "area": "idiomas",
+   "url": "https://palabras-aleatorias-public-api.herokuapp.com",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 499
+   }
+  },
+  {
+   "id": "tatoeba-languages",
+   "name": "Tatoeba Languages",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/languages",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12304,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "tatoeba-search",
+   "name": "Tatoeba (frases paralelas PT-ES)",
+   "area": "idiomas",
+   "url": "https://tatoeba.org/en/api_v0/search?query={q}&trans_from=por&trans_to=spa",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12253,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "urantia-papers-urantia",
+   "name": "Urantia Papers",
+   "area": "idiomas",
+   "url": "https://urantia.dev",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 251981,
+    "ms": 411
+   }
+  },
+  {
+   "id": "wandbox-github",
+   "name": "Wandbox",
+   "area": "idiomas",
+   "url": "https://github.com/melpon/wandbox/blob/master/kennel2/API.rst",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 568
+   }
+  },
+  {
+   "id": "domaindb-info-api",
+   "name": "DomainDb Info",
+   "area": "idiomas",
+   "url": "https://api.domainsdb.info/",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 54,
+    "ms": 338
+   }
+  },
+  {
+   "id": "exude-api-uttesh",
+   "name": "EXUDE-API",
+   "area": "idiomas",
+   "url": "http://uttesh.com/exude-api/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 906,
+    "ms": 352
+   }
+  },
+  {
+   "id": "indonesia-dictionary-new-kbbi-api",
+   "name": "Indonesia Dictionary",
+   "area": "idiomas",
+   "url": "https://new-kbbi-api.herokuapp.com/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 265
+   }
+  },
+  {
+   "id": "callook-info-callook",
+   "name": "Callook.info",
+   "area": "civico_derechos",
+   "url": "https://callook.info",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4664,
+    "ms": 353
+   }
+  },
+  {
+   "id": "cepalstat-indicators",
+   "name": "CEPALSTAT (America Latina)",
+   "area": "civico_derechos",
+   "url": "https://api-cepalstat.cepal.org/cepalstat/api/v1/indicator?lang=es/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 475,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "city-gdansk-ckan",
+   "name": "City, Gdańsk",
+   "area": "civico_derechos",
+   "url": "https://ckan.multimediagdansk.pl/en",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 16267,
+    "ms": 488
+   }
+  },
+  {
+   "id": "cuttingtoolsai-cuttingtoolsai",
+   "name": "CuttingToolsAI",
+   "area": "civico_derechos",
+   "url": "https://cuttingtoolsai.eu/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 34583,
+    "ms": 235
+   }
+  },
+  {
+   "id": "district-of-columbia-open-data-opendata",
+   "name": "District of Columbia Open Data",
+   "area": "civico_derechos",
+   "url": "http://opendata.dc.gov/pages/using-apis",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 37,
+    "ms": 768
+   }
+  },
+  {
+   "id": "epa-www",
+   "name": "EPA",
+   "area": "civico_derechos",
+   "url": "https://www.epa.gov/developers/data-data-products#apis",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 61814,
+    "ms": 443
+   }
+  },
+  {
+   "id": "fbi-wanted-www",
+   "name": "FBI Wanted",
+   "area": "civico_derechos",
+   "url": "https://www.fbi.gov/wanted/api",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 131,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "federal-register-www",
+   "name": "Federal Register",
+   "area": "civico_derechos",
+   "url": "https://www.federalregister.gov/reader-aids/developer-resources/rest-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 10596,
+    "ms": 714
+   }
+  },
+  {
+   "id": "french-address-search-geo",
+   "name": "French Address Search",
+   "area": "civico_derechos",
+   "url": "https://geo.api.gouv.fr/adresse",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 82823,
+    "ms": 717
+   }
+  },
+  {
+   "id": "gdelt-doc",
+   "name": "GDELT (noticias globales)",
+   "area": "civico_derechos",
+   "url": "https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&format=json&maxrecords={limit}",
+   "reason": "too_slow",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 1457,
+    "ms": 14866
+   }
+  },
+  {
+   "id": "gdelt-tv",
+   "name": "GDELT TV",
+   "area": "civico_derechos",
+   "url": "https://api.gdeltproject.org/api/v2/tv/tv?query={q}&mode=clipgallery&format=json&timespan=1d",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 63,
+    "ms": 11324
+   }
+  },
+  {
+   "id": "indian-mandi-prices-mandi-api",
+   "name": "Indian Mandi Prices",
+   "area": "civico_derechos",
+   "url": "https://mandi-api.vercel.app/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 21492,
+    "ms": 200
+   }
+  },
+  {
+   "id": "istanbul-ibb-open-data-data",
+   "name": "Istanbul (İBB) Open Data",
+   "area": "civico_derechos",
+   "url": "https://data.ibb.gov.tr",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 26036,
+    "ms": 980
+   }
+  },
+  {
+   "id": "lowy-asia-power-index-github",
+   "name": "Lowy Asia Power Index",
+   "area": "civico_derechos",
+   "url": "https://github.com/0x0is1/lowy-index-api-docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 1083
+   }
+  },
+  {
+   "id": "microlink-io-microlink",
+   "name": "Microlink.io",
+   "area": "civico_derechos",
+   "url": "https://microlink.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 275
+   }
+  },
+  {
+   "id": "modelpartfinder-error-codes-modelpartfinder",
+   "name": "ModelPartFinder Error Codes",
+   "area": "civico_derechos",
+   "url": "https://modelpartfinder.com/docs/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 29801,
+    "ms": 421
+   }
+  },
+  {
+   "id": "mostexpensivewatches-mostexpensivewatches",
+   "name": "MostExpensiveWatches",
+   "area": "civico_derechos",
+   "url": "https://mostexpensivewatches.net/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 23871,
+    "ms": 407
+   }
+  },
+  {
+   "id": "neotimo-dgfip-mirror-neotimo",
+   "name": "Neotimo DGFiP Mirror",
+   "area": "civico_derechos",
+   "url": "https://neotimo.com/annuaire-dgfip",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 99850,
+    "ms": 326
+   }
+  },
+  {
+   "id": "open-government-finland-www",
+   "name": "Open Government, Finland",
+   "area": "civico_derechos",
+   "url": "https://www.avoindata.fi/en",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 40535,
+    "ms": 2478
+   }
+  },
+  {
+   "id": "open-government-germany-www",
+   "name": "Open Government, Germany",
+   "area": "civico_derechos",
+   "url": "https://www.govdata.de/daten/-/details/govdata-metadatenkatalog",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 54550,
+    "ms": 673
+   }
+  },
+  {
+   "id": "open-government-ireland-data",
+   "name": "Open Government, Ireland",
+   "area": "civico_derechos",
+   "url": "https://data.gov.ie/pages/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 19979,
+    "ms": 4161
+   }
+  },
+  {
+   "id": "open-government-lithuania-data",
+   "name": "Open Government, Lithuania",
+   "area": "civico_derechos",
+   "url": "https://data.gov.lt/public/api/1",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 18453,
+    "ms": 816
+   }
+  },
+  {
+   "id": "open-government-netherlands-data",
+   "name": "Open Government, Netherlands",
+   "area": "civico_derechos",
+   "url": "https://data.overheid.nl/en/ondersteuning/data-publiceren/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 21578,
+    "ms": 413
+   }
+  },
+  {
+   "id": "open-government-norway-data",
+   "name": "Open Government, Norway",
+   "area": "civico_derechos",
+   "url": "https://data.norge.no/dataservices",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 405,
+    "ctype": "text/html",
+    "bytes": 285,
+    "ms": 326,
+    "error": "HTTP 405"
+   }
+  },
+  {
+   "id": "open-government-poland-dane",
+   "name": "Open Government, Poland",
+   "area": "civico_derechos",
+   "url": "https://dane.gov.pl/en",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 60229,
+    "ms": 607
+   }
+  },
+  {
+   "id": "open-government-saudi-arabia-data",
+   "name": "Open Government, Saudi Arabia",
+   "area": "civico_derechos",
+   "url": "https://data.gov.sa",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12095,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "open-government-singapore-data",
+   "name": "Open Government, Singapore",
+   "area": "civico_derechos",
+   "url": "https://data.gov.sg/developer",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 337
+   }
+  },
+  {
+   "id": "open-government-spain-datos",
+   "name": "Open Government, Spain",
+   "area": "civico_derechos",
+   "url": "https://datos.gob.es/en",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 142992,
+    "ms": 215
+   }
+  },
+  {
+   "id": "open-government-sweden-www",
+   "name": "Open Government, Sweden",
+   "area": "civico_derechos",
+   "url": "https://www.dataportal.se/en/dataservice/91_29789/api-for-the-statistical-database",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 56874,
+    "ms": 730
+   }
+  },
+  {
+   "id": "openmercantil-openmercantil",
+   "name": "OpenMercantil",
+   "area": "civico_derechos",
+   "url": "https://openmercantil.es/api/documentacion",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 153946,
+    "ms": 160
+   }
+  },
+  {
+   "id": "ourworldindata",
+   "name": "Our World in Data",
+   "area": "civico_derechos",
+   "url": "https://api.ourworldindata.org/v1/indicators/{q}.metadata.json",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 134
+   }
+  },
+  {
+   "id": "pm2-5-open-data-portal-pm25",
+   "name": "PM2.5 Open Data Portal",
+   "area": "civico_derechos",
+   "url": "https://pm25.lass-net.org/#apis",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 42712,
+    "ms": 1232
+   }
+  },
+  {
+   "id": "slashyear-slashyear",
+   "name": "SlashYear",
+   "area": "civico_derechos",
+   "url": "https://slashyear.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 42561,
+    "ms": 174
+   }
+  },
+  {
+   "id": "tilth-www",
+   "name": "Tilth",
+   "area": "civico_derechos",
+   "url": "https://www.tilth.uk/data",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 536
+   }
+  },
+  {
+   "id": "uk-legislation-changes-uk-legal-changes",
+   "name": "UK Legislation Changes",
+   "area": "civico_derechos",
+   "url": "https://uk-legal-changes.pages.dev/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5004,
+    "ms": 93
+   }
+  },
+  {
+   "id": "unicef-sdmx-dataflows",
+   "name": "UNICEF SDMX",
+   "area": "civico_derechos",
+   "url": "https://sdmx.data.unicef.org/statistics/api/v1/dataflow/UNICEF",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 305
+   }
+  },
+  {
+   "id": "us-federal-contracts-grants-government-data-api",
+   "name": "US Federal Contracts & Grants",
+   "area": "civico_derechos",
+   "url": "https://government-data-api.onrender.com/docs",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 10,
+    "ms": 272
+   }
+  },
+  {
+   "id": "velib-metropolis-paris-france-www",
+   "name": "Velib metropolis, Paris, France",
+   "area": "civico_derechos",
+   "url": "https://www.velib-metropole.fr/donnees-open-data-gbfs-du-service-velib-metropole",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 151,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "city-lviv-opendata",
+   "name": "City, Lviv",
+   "area": "civico_derechos",
+   "url": "https://opendata.city-adm.lviv.ua/",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 94,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "editalmd-editalmd",
+   "name": "EditalMD",
+   "area": "civico_derechos",
+   "url": "https://editalmd.com/api/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 164053,
+    "ms": 178
+   }
+  },
+  {
+   "id": "indian-pincode-indianpincode",
+   "name": "Indian Pincode",
+   "area": "civico_derechos",
+   "url": "https://indianpincode.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 192,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "national-grid-eso-data",
+   "name": "National Grid ESO",
+   "area": "civico_derechos",
+   "url": "https://data.nationalgrideso.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 13,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "open-government-mexico-datos",
+   "name": "Open Government, Mexico",
+   "area": "civico_derechos",
+   "url": "https://datos.gob.mx/",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 364,
+    "ms": 107,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "open-government-peru-www",
+   "name": "Open Government, Peru",
+   "area": "civico_derechos",
+   "url": "https://www.datosabiertos.gob.pe/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 418,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 1000,
+    "error": "HTTP 418"
+   }
+  },
+  {
+   "id": "open-government-portugal-dados",
+   "name": "Open Government, Portugal",
+   "area": "civico_derechos",
+   "url": "https://dados.gov.pt/en/docapi/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 215
+   }
+  },
+  {
+   "id": "openafrica-africaopendata",
+   "name": "openAFRICA",
+   "area": "civico_derechos",
+   "url": "https://africaopendata.org/",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 165,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "radar-cnpj-radar-cnpj",
+   "name": "Radar CNPJ",
+   "area": "civico_derechos",
+   "url": "https://radar-cnpj.com/api/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 58173,
+    "ms": 174
+   }
+  },
+  {
+   "id": "teleport-developers",
+   "name": "Teleport",
+   "area": "civico_derechos",
+   "url": "https://developers.teleport.org/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 36,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "transport-for-hessen-germany-opendata",
+   "name": "Transport for Hessen, Germany",
+   "area": "civico_derechos",
+   "url": "https://opendata.rmv.de/site/start.html",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12018,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "us-presidential-election-data-by-togatech-uselection",
+   "name": "US Presidential Election Data by TogaTech",
+   "area": "civico_derechos",
+   "url": "https://uselection.togatech.org/api/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 286,
+    "ms": 628
+   }
+  },
+  {
+   "id": "arxiv-arxiv",
+   "name": "arXiv",
+   "area": "ciencia_salud",
+   "url": "https://arxiv.org/help/api/user-manual",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 448
+   }
+  },
+  {
+   "id": "aviationapi-docs",
+   "name": "AviationAPI",
+   "area": "ciencia_salud",
+   "url": "https://docs.aviationapi.com",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 37,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "aviationweather-www",
+   "name": "AviationWeather",
+   "area": "ciencia_salud",
+   "url": "https://www.aviationweather.gov/dataserver",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 30281,
+    "ms": 855
+   }
+  },
+  {
+   "id": "clinical-trials-directory-trials",
+   "name": "Clinical Trials Directory",
+   "area": "ciencia_salud",
+   "url": "https://trials.starfile.org/api",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 19,
+    "ms": 588
+   }
+  },
+  {
+   "id": "clinicaltrials-v2",
+   "name": "ClinicalTrials.gov API v2",
+   "area": "ciencia_salud",
+   "url": "https://clinicaltrials.gov/api/v2/studies?query.term={q}&pageSize={limit}",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 134,
+    "ms": 288,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "coronavirus-in-the-uk-coronavirus",
+   "name": "Coronavirus in the UK",
+   "area": "ciencia_salud",
+   "url": "https://coronavirus.data.gov.uk/details/developers-guide",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 457
+   }
+  },
+  {
+   "id": "coronavirus-pipedream",
+   "name": "Coronavirus",
+   "area": "ciencia_salud",
+   "url": "https://pipedream.com/@pravin/http-api-for-latest-wuhan-coronavirus-data-2019-ncov-p_G6CLVM/readme",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 8472,
+    "ms": 511
+   }
+  },
+  {
+   "id": "covid-19-datenhub-npgeo-corona-npgeo-de",
+   "name": "Covid-19 Datenhub",
+   "area": "ciencia_salud",
+   "url": "https://npgeo-corona-npgeo-de.hub.arcgis.com",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 37,
+    "ms": 419
+   }
+  },
+  {
+   "id": "covid-19-github",
+   "name": "Covid-19",
+   "area": "ciencia_salud",
+   "url": "https://github.com/M-Media-Group/Covid-19-API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 807
+   }
+  },
+  {
+   "id": "covid-19-government-response-covidtracker",
+   "name": "Covid-19 Government Response",
+   "area": "ciencia_salud",
+   "url": "https://covidtracker.bsg.ox.ac.uk",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 171577,
+    "ms": 488
+   }
+  },
+  {
+   "id": "covid-19-live-data-github",
+   "name": "Covid-19 Live Data",
+   "area": "ciencia_salud",
+   "url": "https://github.com/mathdroid/covid-19-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 811
+   }
+  },
+  {
+   "id": "covid-19-philippines-github",
+   "name": "Covid-19 Philippines",
+   "area": "ciencia_salud",
+   "url": "https://github.com/Simperfy/Covid-19-API-Philippines-DOH",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 768
+   }
+  },
+  {
+   "id": "covid-19-tracker-canada-api",
+   "name": "COVID-19 Tracker Canada",
+   "area": "ciencia_salud",
+   "url": "https://api.covid19tracker.ca/docs/1.0/overview",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 0,
+    "ms": 538
+   }
+  },
+  {
+   "id": "covid-19-tracker-sri-lanka-www",
+   "name": "COVID-19 Tracker Sri Lanka",
+   "area": "ciencia_salud",
+   "url": "https://www.hpb.health.gov.lk/en/api-documentation",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 1918
+   }
+  },
+  {
+   "id": "covid-id-data",
+   "name": "COVID-ID",
+   "area": "ciencia_salud",
+   "url": "https://data.covid19.go.id/public/api/prov.json",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12051,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "covid-tracking-project-covidtracking",
+   "name": "Covid Tracking Project",
+   "area": "ciencia_salud",
+   "url": "https://covidtracking.com/data/api/version-2",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 216048,
+    "ms": 603
+   }
+  },
+  {
+   "id": "dataflow-kit-covid-19-covid-19",
+   "name": "Dataflow Kit COVID-19",
+   "area": "ciencia_salud",
+   "url": "https://covid-19.dataflowkit.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 12853,
+    "ms": 253
+   }
+  },
+  {
+   "id": "ebi-proteins",
+   "name": "EBI Proteins API",
+   "area": "ciencia_salud",
+   "url": "https://www.ebi.ac.uk/proteins/api/proteins?offset=0&size={limit}",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 400,
+    "ctype": "application/json",
+    "bytes": 263,
+    "ms": 218,
+    "error": "HTTP 400"
+   }
+  },
+  {
+   "id": "ensembl-lookup-symbol",
+   "name": "Ensembl (gen por simbolo)",
+   "area": "ciencia_salud",
+   "url": "https://rest.ensembl.org/lookup/symbol/homo_sapiens/{q}?content-type=application/json",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 400,
+    "ctype": "application/json",
+    "bytes": 51,
+    "ms": 244,
+    "error": "HTTP 400"
+   }
+  },
+  {
+   "id": "fishwatch-www",
+   "name": "FishWatch",
+   "area": "ciencia_salud",
+   "url": "https://www.fishwatch.gov/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 250069,
+    "ms": 847
+   }
+  },
+  {
+   "id": "gbif-www",
+   "name": "GBIF",
+   "area": "ciencia_salud",
+   "url": "https://www.gbif.org/developer/summary",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 82,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "geneontology-autocomplete",
+   "name": "Gene Ontology (autocomplete)",
+   "area": "ciencia_salud",
+   "url": "https://api.geneontology.org/api/search/entity/autocomplete/{q}",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 11,
+    "ms": 98
+   }
+  },
+  {
+   "id": "gridcarbon-gridcarbon",
+   "name": "gridcarbon",
+   "area": "ciencia_salud",
+   "url": "https://gridcarbon.dev",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 45095,
+    "ms": 156
+   }
+  },
+  {
+   "id": "inspirehep-net-github",
+   "name": "inspirehep.net",
+   "area": "ciencia_salud",
+   "url": "https://github.com/inspirehep/rest-api-doc",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 723
+   }
+  },
+  {
+   "id": "isro-isro",
+   "name": "ISRO",
+   "area": "ciencia_salud",
+   "url": "https://isro.vercel.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1772,
+    "ms": 148
+   }
+  },
+  {
+   "id": "kegg-find-genes",
+   "name": "KEGG (busqueda de genes)",
+   "area": "ciencia_salud",
+   "url": "https://rest.kegg.jp/find/genes/{q}",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/plain",
+    "bytes": 1,
+    "ms": 1999
+   }
+  },
+  {
+   "id": "lapis-cov-spectrum",
+   "name": "LAPIS",
+   "area": "ciencia_salud",
+   "url": "https://cov-spectrum.ethz.ch/public",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1292,
+    "ms": 406
+   }
+  },
+  {
+   "id": "meltema-meltema",
+   "name": "Meltema",
+   "area": "ciencia_salud",
+   "url": "https://meltema.com/docs",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12055,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "meowfacts-github",
+   "name": "MeowFacts",
+   "area": "ciencia_salud",
+   "url": "https://github.com/wh-iterabb-it/meowfacts",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 807
+   }
+  },
+  {
+   "id": "mesh-lookup",
+   "name": "MeSH (descriptor)",
+   "area": "ciencia_salud",
+   "url": "https://id.nlm.nih.gov/mesh/lookup/descriptor?label={q}&match=contains&limit={limit}",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 2,
+    "ms": 647
+   }
+  },
+  {
+   "id": "movebank-github",
+   "name": "Movebank",
+   "area": "ciencia_salud",
+   "url": "https://github.com/movebank/movebank-api-doc",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 249987,
+    "ms": 770
+   }
+  },
+  {
+   "id": "myvaccination-documenter",
+   "name": "MyVaccination",
+   "area": "ciencia_salud",
+   "url": "https://documenter.getpostman.com/view/16605343/Tzm8GG7u",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 40009,
+    "ms": 1322
+   }
+  },
+  {
+   "id": "nasa-api",
+   "name": "NASA",
+   "area": "ciencia_salud",
+   "url": "https://api.nasa.gov",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4737,
+    "ms": 912
+   }
+  },
+  {
+   "id": "nppes-npiregistry",
+   "name": "NPPES",
+   "area": "ciencia_salud",
+   "url": "https://npiregistry.cms.hhs.gov/registry/help-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 406,
+    "ms": 547
+   }
+  },
+  {
+   "id": "open-data-nhs-scotland-www",
+   "name": "Open Data NHS Scotland",
+   "area": "ciencia_salud",
+   "url": "https://www.opendata.nhs.scot",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 16771,
+    "ms": 296
+   }
+  },
+  {
+   "id": "open-meteo-ensemble-open-meteo",
+   "name": "Open-Meteo Ensemble",
+   "area": "ciencia_salud",
+   "url": "https://open-meteo.com/en/docs/ensemble-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 273
+   }
+  },
+  {
+   "id": "openfoodfacts-search",
+   "name": "Open Food Facts (busqueda)",
+   "area": "ciencia_salud",
+   "url": "https://world.openfoodfacts.org/api/v2/search?categories_tags=en:breakfast_cereals&page_size={limit}",
+   "reason": "server_error_503",
+   "evidence": {
+    "status": 503,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 216
+   }
+  },
+  {
+   "id": "openvan-openvan",
+   "name": "OpenVan",
+   "area": "ciencia_salud",
+   "url": "https://openvan.camp/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 208157,
+    "ms": 357
+   }
+  },
+  {
+   "id": "placedog-place",
+   "name": "PlaceDog",
+   "area": "ciencia_salud",
+   "url": "https://place.dog",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1463,
+    "ms": 325
+   }
+  },
+  {
+   "id": "pmc-oa",
+   "name": "PubMed Central Open Access",
+   "area": "ciencia_salud",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=PMC3257301&format=json",
+   "reason": "not_xml",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 383,
+    "ms": 622
+   }
+  },
+  {
+   "id": "pubchem-name",
+   "name": "PubChem (compuesto por nombre)",
+   "area": "ciencia_salud",
+   "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{q}/JSON",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/json",
+    "bytes": 156,
+    "ms": 344
+   }
+  },
+  {
+   "id": "randomduck-random-d",
+   "name": "RandomDuck",
+   "area": "ciencia_salud",
+   "url": "https://random-d.uk/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 9760,
+    "ms": 207
+   }
+  },
+  {
+   "id": "rescuegroups-userguide",
+   "name": "RescueGroups",
+   "area": "ciencia_salud",
+   "url": "https://userguide.rescuegroups.org/display/APIDG/API+Developers+Guide+Home",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 65629,
+    "ms": 919
+   }
+  },
+  {
+   "id": "solematica-www",
+   "name": "Solematica",
+   "area": "ciencia_salud",
+   "url": "https://www.solematica.it/sviluppatori",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 132498,
+    "ms": 284
+   }
+  },
+  {
+   "id": "tallytopia-tallytopia",
+   "name": "Tallytopia",
+   "area": "ciencia_salud",
+   "url": "https://tallytopia.com/api-docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 26279,
+    "ms": 218
+   }
+  },
+  {
+   "id": "uk-carbon-intensity-carbon-intensity",
+   "name": "UK Carbon Intensity",
+   "area": "ciencia_salud",
+   "url": "https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v1-0-0",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 414
+   }
+  },
+  {
+   "id": "urgences-quebec-sante",
+   "name": "Urgences Québec",
+   "area": "ciencia_salud",
+   "url": "https://sante.handled.tools/api",
+   "reason": "json_parse_error",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/plain",
+    "bytes": 2381,
+    "ms": 121,
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "head": "Urgences Quebec - public API\nhttps://sante.handled.tools/api\n\nEmergency-room occupancy for every hospital ED in Quebec, "
+   }
+  },
+  {
+   "id": "us-weather-www",
+   "name": "US Weather",
+   "area": "ciencia_salud",
+   "url": "https://www.weather.gov/documentation/services-web-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 48844,
+    "ms": 401
+   }
+  },
+  {
+   "id": "weather-api-github",
+   "name": "weather-api",
+   "area": "ciencia_salud",
+   "url": "https://github.com/robertoduessmann/weather-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 1037
+   }
+  },
+  {
+   "id": "weathertotals-weathertotals",
+   "name": "WeatherTotals",
+   "area": "ciencia_salud",
+   "url": "https://weathertotals.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 62200,
+    "ms": 349
+   }
+  },
+  {
+   "id": "wttr-in-wttr",
+   "name": "wttr.in",
+   "area": "ciencia_salud",
+   "url": "https://wttr.in/:help",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 15037,
+    "ms": 186
+   }
+  },
+  {
+   "id": "xeno-canto-xeno-canto",
+   "name": "xeno-canto",
+   "area": "ciencia_salud",
+   "url": "https://xeno-canto.org/explore/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 7568,
+    "ms": 202
+   }
+  },
+  {
+   "id": "covid-19-covid19api",
+   "name": "Covid-19",
+   "area": "ciencia_salud",
+   "url": "https://covid19api.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12038,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "hashable-hashable",
+   "name": "Hashable",
+   "area": "ciencia_salud",
+   "url": "https://hashable.space/pages/api/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 384,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "opensensemap-api",
+   "name": "openSenseMap",
+   "area": "ciencia_salud",
+   "url": "https://api.opensensemap.org/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/plain",
+    "bytes": 4636,
+    "ms": 206
+   }
+  },
+  {
+   "id": "pirate-weather-pirateweather",
+   "name": "Pirate Weather",
+   "area": "ciencia_salud",
+   "url": "https://pirateweather.net/en/latest/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 118
+   }
+  },
+  {
+   "id": "quarantine-quarantine",
+   "name": "Quarantine",
+   "area": "ciencia_salud",
+   "url": "https://quarantine.country/coronavirus/api/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 36,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "randomfox-randomfox",
+   "name": "RandomFox",
+   "area": "ciencia_salud",
+   "url": "https://randomfox.ca/floof/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 91,
+    "ms": 765
+   }
+  },
+  {
+   "id": "addressmock-addressmock",
+   "name": "AddressMock",
+   "area": "datos_pais",
+   "url": "https://addressmock.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 36492,
+    "ms": 126
+   }
+  },
+  {
+   "id": "administrative-divisons-db-github",
+   "name": "administrative-divisons-db",
+   "area": "datos_pais",
+   "url": "https://github.com/kamikazechaser/administrative-divisions-db",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 260775,
+    "ms": 729
+   }
+  },
+  {
+   "id": "adresse-data-gouv-fr-adresse",
+   "name": "adresse.data.gouv.fr",
+   "area": "datos_pais",
+   "url": "https://adresse.data.gouv.fr",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 109192,
+    "ms": 339
+   }
+  },
+  {
+   "id": "auto-body-shop-directory-autobodyshopnear",
+   "name": "Auto Body Shop Directory",
+   "area": "datos_pais",
+   "url": "https://autobodyshopnear.com/developers/body-shop-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 94302,
+    "ms": 171
+   }
+  },
+  {
+   "id": "bng2latlong-www",
+   "name": "bng2latlong",
+   "area": "datos_pais",
+   "url": "https://www.getthedata.com/bng2latlong",
+   "reason": "server_error_503",
+   "evidence": {
+    "status": 503,
+    "ctype": "text/html",
+    "bytes": 66,
+    "ms": 152
+   }
+  },
+  {
+   "id": "caldays-caldays",
+   "name": "caldays",
+   "area": "datos_pais",
+   "url": "https://caldays.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 42411,
+    "ms": 137
+   }
+  },
+  {
+   "id": "cartes-io-github",
+   "name": "Cartes.io",
+   "area": "datos_pais",
+   "url": "https://github.com/M-Media-Group/Cartes.io/wiki/API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 750
+   }
+  },
+  {
+   "id": "cloudflare-trace-github",
+   "name": "Cloudflare Trace",
+   "area": "datos_pais",
+   "url": "https://github.com/fawazahmed0/cloudflare-trace-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 860
+   }
+  },
+  {
+   "id": "ducks-unlimited-gis",
+   "name": "Ducks Unlimited",
+   "area": "datos_pais",
+   "url": "https://gis.ducks.org/datasets/du-university-chapters/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 41165,
+    "ms": 608
+   }
+  },
+  {
+   "id": "faostat-data",
+   "name": "FAOSTAT (datos)",
+   "area": "datos_pais",
+   "url": "https://fenixservices.fao.org/faostat/api/v1/en/data/RL/?area=351&item=15&year=2020",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12141,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "faostat-domains",
+   "name": "FAOSTAT (dominios)",
+   "area": "datos_pais",
+   "url": "https://fenixservices.fao.org/faostat/api/v1/en/definitions/domain/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12065,
+    "error": "TimeoutError"
+   }
+  },
+  {
+   "id": "geocode-xyz-geocode",
+   "name": "Geocode.xyz",
+   "area": "datos_pais",
+   "url": "https://geocode.xyz/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 107606,
+    "ms": 916
+   }
+  },
+  {
+   "id": "geographql-geographql",
+   "name": "GeographQL",
+   "area": "datos_pais",
+   "url": "https://geographql.netlify.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 8684,
+    "ms": 153
+   }
+  },
+  {
+   "id": "geokeo-geokeo",
+   "name": "Geokeo",
+   "area": "datos_pais",
+   "url": "https://geokeo.com",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12067,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "geoplugin-www",
+   "name": "geoPlugin",
+   "area": "datos_pais",
+   "url": "https://www.geoplugin.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 169802,
+    "ms": 597
+   }
+  },
+  {
+   "id": "github-readme-stats-github",
+   "name": "GitHub ReadMe Stats",
+   "area": "datos_pais",
+   "url": "https://github.com/anuraghazra/github-readme-stats",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 954
+   }
+  },
+  {
+   "id": "goldprice-dev-goldprice",
+   "name": "Goldprice.dev",
+   "area": "datos_pais",
+   "url": "https://goldprice.dev/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 38108,
+    "ms": 265
+   }
+  },
+  {
+   "id": "graph-countries-github",
+   "name": "Graph Countries",
+   "area": "datos_pais",
+   "url": "https://github.com/lennertVanSever/graphcountries",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 770
+   }
+  },
+  {
+   "id": "graphs-for-coronavirus-corona",
+   "name": "Graphs for Coronavirus",
+   "area": "datos_pais",
+   "url": "https://corona.dnsforfamily.com/api.txt",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 15,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "hackmyip-hackmyip",
+   "name": "HackMyIP",
+   "area": "datos_pais",
+   "url": "https://hackmyip.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 88572,
+    "ms": 217
+   }
+  },
+  {
+   "id": "iban-analyzer-iban-analyzer",
+   "name": "IBAN Analyzer",
+   "area": "datos_pais",
+   "url": "https://iban-analyzer.com/free-iban-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 19026,
+    "ms": 285
+   }
+  },
+  {
+   "id": "ip-2-country-ip2country",
+   "name": "IP 2 Country",
+   "area": "datos_pais",
+   "url": "https://ip2country.info",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5275,
+    "ms": 152
+   }
+  },
+  {
+   "id": "ipapi-co-ipapi",
+   "name": "ipapi.co",
+   "area": "datos_pais",
+   "url": "https://ipapi.co/api/#introduction",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 98960,
+    "ms": 371
+   }
+  },
+  {
+   "id": "ipinfo-ipinfo",
+   "name": "IPinfo",
+   "area": "datos_pais",
+   "url": "https://ipinfo.io/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 448
+   }
+  },
+  {
+   "id": "ipwhois-ipwhois",
+   "name": "ipwhois",
+   "area": "datos_pais",
+   "url": "https://ipwhois.io/documentation",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 49598,
+    "ms": 102
+   }
+  },
+  {
+   "id": "kmalservico-gold-price-dataset-www",
+   "name": "KmalServico Gold Price Dataset",
+   "area": "datos_pais",
+   "url": "https://www.kmalservico.com/data",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 35425,
+    "ms": 395
+   }
+  },
+  {
+   "id": "latlng-www",
+   "name": "LatLng",
+   "area": "datos_pais",
+   "url": "https://www.latlng.work/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 61409,
+    "ms": 233
+   }
+  },
+  {
+   "id": "mexico-github",
+   "name": "Mexico",
+   "area": "datos_pais",
+   "url": "https://github.com/IcaliaLabs/sepomex",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 864
+   }
+  },
+  {
+   "id": "myiprightnow-myiprightnow",
+   "name": "MyIPRightNow",
+   "area": "datos_pais",
+   "url": "https://myiprightnow.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 77191,
+    "ms": 186
+   }
+  },
+  {
+   "id": "nager-date-date",
+   "name": "Nager.Date",
+   "area": "datos_pais",
+   "url": "https://date.nager.at",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 70931,
+    "ms": 288
+   }
+  },
+  {
+   "id": "namedays-calendar-nameday",
+   "name": "Namedays Calendar",
+   "area": "datos_pais",
+   "url": "https://nameday.abalin.net",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 17306,
+    "ms": 271
+   }
+  },
+  {
+   "id": "open-topo-data-www",
+   "name": "Open Topo Data",
+   "area": "datos_pais",
+   "url": "https://www.opentopodata.org",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 34702,
+    "ms": 254
+   }
+  },
+  {
+   "id": "overpass-schools",
+   "name": "OSM Overpass (escuelas cercanas)",
+   "area": "datos_pais",
+   "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bnode%5Bamenity%3Dschool%5D(around%3A2000%2C-23.55%2C-46.63)%3Bout%20{limit}%3B",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 24014,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "pinball-map-pinballmap",
+   "name": "Pinball Map",
+   "area": "datos_pais",
+   "url": "https://pinballmap.com/api/v1/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 26693,
+    "ms": 794
+   }
+  },
+  {
+   "id": "postalcodes-postalcodes",
+   "name": "PostalCodes",
+   "area": "datos_pais",
+   "url": "https://postalcodes.info/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 57669,
+    "ms": 169
+   }
+  },
+  {
+   "id": "postali-postali",
+   "name": "Postali",
+   "area": "datos_pais",
+   "url": "https://postali.app/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 16514,
+    "ms": 140
+   }
+  },
+  {
+   "id": "postcodes-io-postcodes",
+   "name": "Postcodes.io",
+   "area": "datos_pais",
+   "url": "https://postcodes.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 16926,
+    "ms": 112
+   }
+  },
+  {
+   "id": "rest-countries-restcountries",
+   "name": "REST Countries",
+   "area": "datos_pais",
+   "url": "https://restcountries.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 61877,
+    "ms": 778
+   }
+  },
+  {
+   "id": "russian-calendar-github",
+   "name": "Russian Calendar",
+   "area": "datos_pais",
+   "url": "https://github.com/egno/work-calendar",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 823
+   }
+  },
+  {
+   "id": "rwanda-locations-rapidapi",
+   "name": "Rwanda Locations",
+   "area": "datos_pais",
+   "url": "https://rapidapi.com/victorkarangwa4/api/rwanda",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 243439,
+    "ms": 11960
+   }
+  },
+  {
+   "id": "statistics-of-the-world-statisticsoftheworld",
+   "name": "Statistics of the World",
+   "area": "datos_pais",
+   "url": "https://statisticsoftheworld.com/api-docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 88527,
+    "ms": 657
+   }
+  },
+  {
+   "id": "transport-for-the-netherlands-github",
+   "name": "Transport for The Netherlands",
+   "area": "datos_pais",
+   "url": "https://github.com/skywave/KV78Turbo-OVAPI/wiki",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 212559,
+    "ms": 1048
+   }
+  },
+  {
+   "id": "viacep-viacep",
+   "name": "ViaCep",
+   "area": "datos_pais",
+   "url": "https://viacep.com.br",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 9865,
+    "ms": 323
+   }
+  },
+  {
+   "id": "voidly-voidly",
+   "name": "Voidly",
+   "area": "datos_pais",
+   "url": "https://voidly.ai/api-docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 141260,
+    "ms": 225
+   }
+  },
+  {
+   "id": "warnely-warnely",
+   "name": "Warnely",
+   "area": "datos_pais",
+   "url": "https://warnely.com/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 38295,
+    "ms": 665
+   }
+  },
+  {
+   "id": "world-bank-datahelpdesk",
+   "name": "World Bank",
+   "area": "datos_pais",
+   "url": "https://datahelpdesk.worldbank.org/knowledgebase/topics/125589",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 233665,
+    "ms": 602
+   }
+  },
+  {
+   "id": "airtel-ip-sys",
+   "name": "Airtel IP",
+   "area": "datos_pais",
+   "url": "https://sys.airtel.lv/ip2country/1.1.1.1/?full=true",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 89,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "bdapis-bdapis",
+   "name": "BdAPIs",
+   "area": "datos_pais",
+   "url": "https://bdapis.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12010,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "geodata-gov-gr-geodata",
+   "name": "Geodata.gov.gr",
+   "area": "datos_pais",
+   "url": "https://geodata.gov.gr/en/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12004,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "hong-kong-geodata-store-geodata",
+   "name": "Hong Kong GeoData Store",
+   "area": "datos_pais",
+   "url": "https://geodata.gov.hk/gs/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 39,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "ip-address-details-ipinfo",
+   "name": "IP Address Details",
+   "area": "datos_pais",
+   "url": "https://ipinfo.io/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 300,
+    "ms": 240
+   }
+  },
+  {
+   "id": "ipgeo-api",
+   "name": "IPGEO",
+   "area": "datos_pais",
+   "url": "https://api.techniknews.net/ipgeo/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 471,
+    "ms": 294
+   }
+  },
+  {
+   "id": "pontofato-pontofato",
+   "name": "PontoFato",
+   "area": "datos_pais",
+   "url": "https://pontofato.com/api/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 33242,
+    "ms": 172
+   }
+  },
+  {
+   "id": "queimadas-inpe-queimadas",
+   "name": "Queimadas INPE",
+   "area": "datos_pais",
+   "url": "https://queimadas.dgi.inpe.br/queimadas/dados-abertos/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 998,
+    "ms": 1567
+   }
+  },
+  {
+   "id": "classify-classify-web",
+   "name": "Classify",
+   "area": "ciberseguridad",
+   "url": "https://classify-web.herokuapp.com/#/api",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 527
+   }
+  },
+  {
+   "id": "csr-plus-csr",
+   "name": "CSR.plus",
+   "area": "ciberseguridad",
+   "url": "https://csr.plus/docs/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 222128,
+    "ms": 1038
+   }
+  },
+  {
+   "id": "dead-drop-api",
+   "name": "dead-drop",
+   "area": "ciberseguridad",
+   "url": "https://api.dead-drop.xyz/api/v1/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 753,
+    "ms": 120
+   }
+  },
+  {
+   "id": "dehash-lt-github",
+   "name": "Dehash.lt",
+   "area": "ciberseguridad",
+   "url": "https://github.com/Dehash-lt/api",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 461
+   }
+  },
+  {
+   "id": "dreamthreads-mydreamthreads",
+   "name": "DreamThreads",
+   "area": "ciberseguridad",
+   "url": "https://mydreamthreads.xyz/dream-interpretation-api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 199,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "escape-github",
+   "name": "Escape",
+   "area": "ciberseguridad",
+   "url": "https://github.com/polarspetroll/EscapeAPI",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 247012,
+    "ms": 762
+   }
+  },
+  {
+   "id": "filterlists-filterlists",
+   "name": "FilterLists",
+   "area": "ciberseguridad",
+   "url": "https://filterlists.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 2295,
+    "ms": 431
+   }
+  },
+  {
+   "id": "inshorts-news-github",
+   "name": "Inshorts News",
+   "area": "ciberseguridad",
+   "url": "https://github.com/cyberboysumanjay/Inshorts-News-API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 829
+   }
+  },
+  {
+   "id": "iplogs-iplogs",
+   "name": "IPLogs",
+   "area": "ciberseguridad",
+   "url": "https://iplogs.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 94803,
+    "ms": 354
+   }
+  },
+  {
+   "id": "ipwhois-net-blacklist-ipwhois",
+   "name": "IPWhois.net Blacklist",
+   "area": "ciberseguridad",
+   "url": "https://ipwhois.net/blacklist/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 100130,
+    "ms": 360
+   }
+  },
+  {
+   "id": "microsoft-security-response-center-msrc-msrc",
+   "name": "Microsoft Security Response Center (MSRC)",
+   "area": "ciberseguridad",
+   "url": "https://msrc.microsoft.com/report/developer",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 2820,
+    "ms": 244
+   }
+  },
+  {
+   "id": "mozilla-tls-scanner-github",
+   "name": "Mozilla tls scanner",
+   "area": "ciberseguridad",
+   "url": "https://github.com/mozilla/tls-observatory#api-endpoints",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 997
+   }
+  },
+  {
+   "id": "national-vulnerability-database-nvd",
+   "name": "National Vulnerability Database",
+   "area": "ciberseguridad",
+   "url": "https://nvd.nist.gov/vuln/Data-Feeds/JSON-feed-changelog",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 2453,
+    "ms": 1044
+   }
+  },
+  {
+   "id": "networkcalc-networkcalc",
+   "name": "NetworkCalc",
+   "area": "ciberseguridad",
+   "url": "https://networkcalc.com/api/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 23289,
+    "ms": 727
+   }
+  },
+  {
+   "id": "owasp-top10",
+   "name": "OWASP Top 10",
+   "area": "ciberseguridad",
+   "url": "https://raw.githubusercontent.com/OWASP/Top10/master/2021/docs/index.md",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 14,
+    "ms": 304
+   }
+  },
+  {
+   "id": "emailrep-docs",
+   "name": "EmailRep",
+   "area": "ciberseguridad",
+   "url": "https://docs.emailrep.io/",
+   "reason": "rate_limited",
+   "evidence": {
+    "status": 429,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 618
+   }
+  },
+  {
+   "id": "virushee-api",
+   "name": "Virushee",
+   "area": "ciberseguridad",
+   "url": "https://api.virushee.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 13,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "4chan-github",
+   "name": "4chan",
+   "area": "ux_diseno",
+   "url": "https://github.com/4chan/4chan-API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 256454,
+    "ms": 703
+   }
+  },
+  {
+   "id": "codecogs-editor",
+   "name": "CodeCogs",
+   "area": "ux_diseno",
+   "url": "https://editor.codecogs.com/docs/4-LaTeX_rendering.php",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 18054,
+    "ms": 444
+   }
+  },
+  {
+   "id": "emojihub-github",
+   "name": "EmojiHub",
+   "area": "ux_diseno",
+   "url": "https://github.com/cheatsnake/emojihub",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 811
+   }
+  },
+  {
+   "id": "github-contribution-chart-generator-github-contributions",
+   "name": "GitHub Contribution Chart Generator",
+   "area": "ux_diseno",
+   "url": "https://github-contributions.vercel.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 12530,
+    "ms": 176
+   }
+  },
+  {
+   "id": "icon-horse-icon",
+   "name": "Icon Horse",
+   "area": "ux_diseno",
+   "url": "https://icon.horse",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 34083,
+    "ms": 391
+   }
+  },
+  {
+   "id": "orca-scan-orcascan",
+   "name": "Orca Scan",
+   "area": "ux_diseno",
+   "url": "https://orcascan.com/guides/free-barcode-image-api-0e4a4fa6",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 36436,
+    "ms": 250
+   }
+  },
+  {
+   "id": "oyyi-oyyi",
+   "name": "oyyi",
+   "area": "ux_diseno",
+   "url": "https://oyyi.xyz/docs/1.0",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "application/problem+json",
+    "bytes": 197,
+    "ms": 511
+   }
+  },
+  {
+   "id": "pixel-encounter-pixelencounter",
+   "name": "Pixel Encounter",
+   "area": "ux_diseno",
+   "url": "https://pixelencounter.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4832,
+    "ms": 405
+   }
+  },
+  {
+   "id": "qr-code-crafter-qrcodecrafter",
+   "name": "QR Code Crafter",
+   "area": "ux_diseno",
+   "url": "https://qrcodecrafter.com/qr-code-api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 252667,
+    "ms": 910
+   }
+  },
+  {
+   "id": "readme-typing-svg-github",
+   "name": "Readme typing SVG",
+   "area": "ux_diseno",
+   "url": "https://github.com/DenverCoder1/readme-typing-svg",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 894
+   }
+  },
+  {
+   "id": "screenshot-studio-www",
+   "name": "Screenshot Studio",
+   "area": "ux_diseno",
+   "url": "https://www.screenshot-studio.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 110958,
+    "ms": 505
+   }
+  },
+  {
+   "id": "tollmint-api",
+   "name": "Tollmint",
+   "area": "ux_diseno",
+   "url": "https://api.tollmint.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 1956,
+    "ms": 596
+   }
+  },
+  {
+   "id": "imsea-imsea",
+   "name": "Imsea",
+   "area": "ux_diseno",
+   "url": "https://imsea.herokuapp.com/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 507
+   }
+  },
+  {
+   "id": "qr-barcode-solsigs",
+   "name": "QR & Barcode",
+   "area": "ux_diseno",
+   "url": "https://solsigs.com/qrapi/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 145,
+    "ms": 325
+   }
+  },
+  {
+   "id": "49-gallery-historical-data-api",
+   "name": "49 Gallery Historical Data",
+   "area": "patrimonio_arte",
+   "url": "https://api.181649.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 3381,
+    "ms": 171
+   }
+  },
+  {
+   "id": "archive-org-archive",
+   "name": "Archive.org",
+   "area": "patrimonio_arte",
+   "url": "https://archive.readme.io/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 210772,
+    "ms": 567
+   }
+  },
+  {
+   "id": "bandsintown-app",
+   "name": "Bandsintown",
+   "area": "patrimonio_arte",
+   "url": "https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 353
+   }
+  },
+  {
+   "id": "cleveland-art",
+   "name": "Cleveland Museum of Art",
+   "area": "patrimonio_arte",
+   "url": "https://openaccess-api.clevelandart.org/api/artworks/?q={q}&limit={limit}",
+   "reason": "no_records",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 248,
+    "ms": 466,
+    "records": 0
+   }
+  },
+  {
+   "id": "gaana-github",
+   "name": "Gaana",
+   "area": "patrimonio_arte",
+   "url": "https://github.com/cyberboysumanjay/GaanaAPI",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 886
+   }
+  },
+  {
+   "id": "idigbio-github",
+   "name": "iDigBio",
+   "area": "patrimonio_arte",
+   "url": "https://github.com/idigbio/idigbio-search-api/wiki",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 690
+   }
+  },
+  {
+   "id": "jiosaavn-github",
+   "name": "JioSaavn",
+   "area": "patrimonio_arte",
+   "url": "https://github.com/cyberboysumanjay/JioSaavnAPI",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 831
+   }
+  },
+  {
+   "id": "kanari-kanari",
+   "name": "kanari",
+   "area": "patrimonio_arte",
+   "url": "https://kanari.io/en/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 54450,
+    "ms": 231
+   }
+  },
+  {
+   "id": "lyrics-ovh-lyricsovh",
+   "name": "Lyrics.ovh",
+   "area": "patrimonio_arte",
+   "url": "https://lyricsovh.docs.apiary.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5640,
+    "ms": 250
+   }
+  },
+  {
+   "id": "met-search",
+   "name": "Met Museum (busqueda)",
+   "area": "patrimonio_arte",
+   "url": "https://collectionapi.metmuseum.org/public/collection/v1/search?q={q}",
+   "reason": "too_small",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 54,
+    "ms": 235
+   }
+  },
+  {
+   "id": "musicbrainz-musicbrainz",
+   "name": "MusicBrainz",
+   "area": "patrimonio_arte",
+   "url": "https://musicbrainz.org/doc/Development/XML_Web_Service/Version_2",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 59244,
+    "ms": 1269
+   }
+  },
+  {
+   "id": "open-science-framework-developer",
+   "name": "Open Science Framework",
+   "area": "patrimonio_arte",
+   "url": "https://developer.osf.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 551,
+    "ms": 189
+   }
+  },
+  {
+   "id": "openwhyd-openwhyd",
+   "name": "Openwhyd",
+   "area": "patrimonio_arte",
+   "url": "https://openwhyd.github.io/openwhyd/API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 53002,
+    "ms": 236
+   }
+  },
+  {
+   "id": "poetrydb-github",
+   "name": "PoetryDB",
+   "area": "patrimonio_arte",
+   "url": "https://github.com/thundercomb/poetrydb#readme",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 819
+   }
+  },
+  {
+   "id": "verome-github",
+   "name": "Verome",
+   "area": "patrimonio_arte",
+   "url": "https://github.com/Kirazul/Verome-API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 761
+   }
+  },
+  {
+   "id": "itunes-search-affiliate",
+   "name": "iTunes Search",
+   "area": "patrimonio_arte",
+   "url": "https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 23,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "songsterr-www",
+   "name": "Songsterr",
+   "area": "patrimonio_arte",
+   "url": "https://www.songsterr.com/a/wa/api/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 103,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 366,
+    "error": "HTTP 103"
+   }
+  },
+  {
+   "id": "24-pull-requests-24pullrequests",
+   "name": "24 Pull Requests",
+   "area": "sin_clasificar",
+   "url": "https://24pullrequests.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 31119,
+    "ms": 447
+   }
+  },
+  {
+   "id": "agify-io-agify",
+   "name": "Agify.io",
+   "area": "sin_clasificar",
+   "url": "https://agify.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 235954,
+    "ms": 1009
+   }
+  },
+  {
+   "id": "agpc-domain-check-guild",
+   "name": "AGPC Domain Check",
+   "area": "sin_clasificar",
+   "url": "https://guild.tradeuniquecapital.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 13387,
+    "ms": 162
+   }
+  },
+  {
+   "id": "ai-dev-jobs-aidevboard",
+   "name": "AI Dev Jobs",
+   "area": "sin_clasificar",
+   "url": "https://aidevboard.com/openapi.yaml",
+   "reason": "json_parse_error",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/yaml",
+    "bytes": 33033,
+    "ms": 476,
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "head": "openapi: 3.0.3\ninfo:\n  title: AI Dev Jobs API\n  description: REST API for searching, posting, and applying to AI/ML deve"
+   }
+  },
+  {
+   "id": "apicagent-www",
+   "name": "ApicAgent",
+   "area": "sin_clasificar",
+   "url": "https://www.apicagent.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 34482,
+    "ms": 505
+   }
+  },
+  {
+   "id": "apizone-apizone",
+   "name": "APIzone",
+   "area": "sin_clasificar",
+   "url": "https://apizone.io/api-docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 21897,
+    "ms": 162
+   }
+  },
+  {
+   "id": "aquanode-docs",
+   "name": "Aquanode",
+   "area": "sin_clasificar",
+   "url": "https://docs.aquanode.io/docs/api/marketplace",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 188716,
+    "ms": 220
+   }
+  },
+  {
+   "id": "arbeitnow-documenter",
+   "name": "Arbeitnow",
+   "area": "sin_clasificar",
+   "url": "https://documenter.getpostman.com/view/18545278/UVJbJdKh",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 42822,
+    "ms": 615
+   }
+  },
+  {
+   "id": "artificial-intelligence-jobs-artificialintelligencejo",
+   "name": "Artificial Intelligence Jobs",
+   "area": "sin_clasificar",
+   "url": "https://artificialintelligencejobs.co/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 23430,
+    "ms": 139
+   }
+  },
+  {
+   "id": "aviation-safety-data-himaxym",
+   "name": "Aviation Safety Data",
+   "area": "sin_clasificar",
+   "url": "https://himaxym.com/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 110054,
+    "ms": 339
+   }
+  },
+  {
+   "id": "bc-ferries-www",
+   "name": "BC Ferries",
+   "area": "sin_clasificar",
+   "url": "https://www.bcferriesapi.ca",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4631,
+    "ms": 560
+   }
+  },
+  {
+   "id": "best-temp-mail-best-tempmail",
+   "name": "Best Temp Mail",
+   "area": "sin_clasificar",
+   "url": "https://best-tempmail.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 105979,
+    "ms": 278
+   }
+  },
+  {
+   "id": "brewpage-brewpage",
+   "name": "BrewPage",
+   "area": "sin_clasificar",
+   "url": "https://brewpage.app",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 88903,
+    "ms": 249
+   }
+  },
+  {
+   "id": "can-i-enter-canienter",
+   "name": "Can I enter",
+   "area": "sin_clasificar",
+   "url": "https://canienter.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 289
+   }
+  },
+  {
+   "id": "ciprand-github",
+   "name": "Ciprand",
+   "area": "sin_clasificar",
+   "url": "https://github.com/polarspetroll/ciprand",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 249910,
+    "ms": 725
+   }
+  },
+  {
+   "id": "community-transit-github",
+   "name": "Community Transit",
+   "area": "sin_clasificar",
+   "url": "https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 243839,
+    "ms": 764
+   }
+  },
+  {
+   "id": "countapi-countapi",
+   "name": "CountAPI",
+   "area": "sin_clasificar",
+   "url": "https://countapi.xyz",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 175,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "crates-io-crates",
+   "name": "crates.io",
+   "area": "sin_clasificar",
+   "url": "https://crates.io/data-access",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5050,
+    "ms": 217
+   }
+  },
+  {
+   "id": "deepcode-www",
+   "name": "Deepcode",
+   "area": "sin_clasificar",
+   "url": "https://www.deepcode.ai",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 131775,
+    "ms": 1011
+   }
+  },
+  {
+   "id": "devitjobs-uk-devitjobs",
+   "name": "DevITjobs UK",
+   "area": "sin_clasificar",
+   "url": "https://devitjobs.uk/job_feed.xml",
+   "reason": "html_not_xml",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 10284,
+    "ms": 342
+   }
+  },
+  {
+   "id": "digitalocean-status-status",
+   "name": "DigitalOcean Status",
+   "area": "sin_clasificar",
+   "url": "https://status.digitalocean.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 107027,
+    "ms": 569
+   }
+  },
+  {
+   "id": "digmyname-digmyname",
+   "name": "DigMyName",
+   "area": "sin_clasificar",
+   "url": "https://digmyname.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 8868,
+    "ms": 332
+   }
+  },
+  {
+   "id": "docstruct-docstruct",
+   "name": "DocStruct",
+   "area": "sin_clasificar",
+   "url": "https://docstruct.pages.dev",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14822,
+    "ms": 117
+   }
+  },
+  {
+   "id": "doge-meme-api",
+   "name": "Doge-Meme",
+   "area": "sin_clasificar",
+   "url": "https://api.doge-meme.lol/docs",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 38,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "dotsweep-dotsweep",
+   "name": "dotsweep",
+   "area": "sin_clasificar",
+   "url": "https://dotsweep.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 33307,
+    "ms": 98
+   }
+  },
+  {
+   "id": "downstatus-isitdownstatus",
+   "name": "DownStatus",
+   "area": "sin_clasificar",
+   "url": "https://isitdownstatus.com",
+   "reason": "rate_limited",
+   "evidence": {
+    "status": 429,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 142
+   }
+  },
+  {
+   "id": "dropmail-dropmail",
+   "name": "DropMail",
+   "area": "sin_clasificar",
+   "url": "https://dropmail.me/api/#live-demo",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 93827,
+    "ms": 242
+   }
+  },
+  {
+   "id": "drupal-org-www",
+   "name": "Drupal.org",
+   "area": "sin_clasificar",
+   "url": "https://www.drupal.org/drupalorg/docs/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 66228,
+    "ms": 1745
+   }
+  },
+  {
+   "id": "evil-insult-generator-evilinsult",
+   "name": "Evil Insult Generator",
+   "area": "sin_clasificar",
+   "url": "https://evilinsult.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 24194,
+    "ms": 398
+   }
+  },
+  {
+   "id": "faa-n-number-registry-n-number",
+   "name": "FAA N-Number Registry",
+   "area": "sin_clasificar",
+   "url": "https://n-number.starfile.org/api",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/plain",
+    "bytes": 19,
+    "ms": 541
+   }
+  },
+  {
+   "id": "fakerapi-fakerapi",
+   "name": "FakerAPI",
+   "area": "sin_clasificar",
+   "url": "https://fakerapi.it/en",
+   "reason": "server_error_502",
+   "evidence": {
+    "status": 502,
+    "ctype": "text/html",
+    "bytes": 150,
+    "ms": 172
+   }
+  },
+  {
+   "id": "file-io-www",
+   "name": "File.io",
+   "area": "sin_clasificar",
+   "url": "https://www.file.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 378
+   }
+  },
+  {
+   "id": "fileup-github",
+   "name": "FileUp",
+   "area": "sin_clasificar",
+   "url": "https://github.com/RealSinaSnp/FileUp",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 935
+   }
+  },
+  {
+   "id": "flaky-flakyapi",
+   "name": "flaky",
+   "area": "sin_clasificar",
+   "url": "https://flakyapi.dev",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14485,
+    "ms": 129
+   }
+  },
+  {
+   "id": "florida-man-github",
+   "name": "Florida Man",
+   "area": "sin_clasificar",
+   "url": "https://github.com/juliayxhuang/florida-man-api#readme",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 963
+   }
+  },
+  {
+   "id": "freehire-freehire",
+   "name": "freehire",
+   "area": "sin_clasificar",
+   "url": "https://freehire.dev/docs/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 622
+   }
+  },
+  {
+   "id": "fuck-off-as-a-service-www",
+   "name": "Fuck Off as a Service",
+   "area": "sin_clasificar",
+   "url": "https://www.foaas.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 68531,
+    "ms": 192
+   }
+  },
+  {
+   "id": "futures-clock-futuresclock",
+   "name": "Futures Clock",
+   "area": "sin_clasificar",
+   "url": "https://futuresclock.com/en/data-methodology/#open-data",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14819,
+    "ms": 144
+   }
+  },
+  {
+   "id": "genderize-io-genderize",
+   "name": "Genderize.io",
+   "area": "sin_clasificar",
+   "url": "https://genderize.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 240851,
+    "ms": 953
+   }
+  },
+  {
+   "id": "hackernews-github",
+   "name": "HackerNews",
+   "area": "sin_clasificar",
+   "url": "https://github.com/HackerNews/API",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 743
+   }
+  },
+  {
+   "id": "hashnode-hashnode",
+   "name": "Hashnode",
+   "area": "sin_clasificar",
+   "url": "https://hashnode.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 296
+   }
+  },
+  {
+   "id": "hipsum-hipsum",
+   "name": "Hipsum",
+   "area": "sin_clasificar",
+   "url": "https://hipsum.co",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 21636,
+    "ms": 743
+   }
+  },
+  {
+   "id": "host-t-com-host-t",
+   "name": "host-t.com",
+   "area": "sin_clasificar",
+   "url": "https://host-t.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 15637,
+    "ms": 959
+   }
+  },
+  {
+   "id": "http2-pro-http2",
+   "name": "HTTP2.Pro",
+   "area": "sin_clasificar",
+   "url": "https://http2.pro/doc/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 80100,
+    "ms": 2003
+   }
+  },
+  {
+   "id": "icanhazepoch-icanhazepoch",
+   "name": "Icanhazepoch",
+   "area": "sin_clasificar",
+   "url": "https://icanhazepoch.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 321,
+    "ms": 834
+   }
+  },
+  {
+   "id": "ifttt-platform",
+   "name": "IFTTT",
+   "area": "sin_clasificar",
+   "url": "https://platform.ifttt.com/docs/connect_api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 117835,
+    "ms": 394
+   }
+  },
+  {
+   "id": "itsthisforthat-itsthisforthat",
+   "name": "ItsThisForThat",
+   "area": "sin_clasificar",
+   "url": "https://itsthisforthat.com/api.php",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 419,
+    "ms": 267
+   }
+  },
+  {
+   "id": "jsdelivr-github",
+   "name": "jsDelivr",
+   "area": "sin_clasificar",
+   "url": "https://github.com/jsdelivr/data.jsdelivr.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 797
+   }
+  },
+  {
+   "id": "jsonplaceholder-jsonplaceholder",
+   "name": "JSONPlaceholder",
+   "area": "sin_clasificar",
+   "url": "https://jsonplaceholder.typicode.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 8840,
+    "ms": 89
+   }
+  },
+  {
+   "id": "kontests-kontests",
+   "name": "KONTESTS",
+   "area": "sin_clasificar",
+   "url": "https://kontests.net/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12003,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "kroki-kroki",
+   "name": "Kroki",
+   "area": "sin_clasificar",
+   "url": "https://kroki.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 58698,
+    "ms": 245
+   }
+  },
+  {
+   "id": "lanyard-github",
+   "name": "Lanyard",
+   "area": "sin_clasificar",
+   "url": "https://github.com/Phineas/lanyard",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 725
+   }
+  },
+  {
+   "id": "mail-gw-docs",
+   "name": "mail.gw",
+   "area": "sin_clasificar",
+   "url": "https://docs.mail.gw",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 105588,
+    "ms": 285
+   }
+  },
+  {
+   "id": "mail-tm-docs",
+   "name": "mail.tm",
+   "area": "sin_clasificar",
+   "url": "https://docs.mail.tm",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 60982,
+    "ms": 116
+   }
+  },
+  {
+   "id": "mailcheck-ai-www",
+   "name": "MailCheck.ai",
+   "area": "sin_clasificar",
+   "url": "https://www.mailcheck.ai/#documentation",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 107569,
+    "ms": 282
+   }
+  },
+  {
+   "id": "nationalize-io-nationalize",
+   "name": "Nationalize.io",
+   "area": "sin_clasificar",
+   "url": "https://nationalize.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 235676,
+    "ms": 939
+   }
+  },
+  {
+   "id": "non-working-days-github",
+   "name": "Non-Working Days",
+   "area": "sin_clasificar",
+   "url": "https://github.com/gadael/icsdb",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 750
+   }
+  },
+  {
+   "id": "non-working-days-isdayoff",
+   "name": "Non-Working Days",
+   "area": "sin_clasificar",
+   "url": "https://isdayoff.ru",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14766,
+    "ms": 620
+   }
+  },
+  {
+   "id": "noozra-noozra",
+   "name": "Noozra",
+   "area": "sin_clasificar",
+   "url": "https://noozra.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 38721,
+    "ms": 110
+   }
+  },
+  {
+   "id": "not-human-search-nothumansearch",
+   "name": "Not Human Search",
+   "area": "sin_clasificar",
+   "url": "https://nothumansearch.ai/openapi.yaml",
+   "reason": "json_parse_error",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/yaml",
+    "bytes": 86272,
+    "ms": 680,
+    "error": "Expecting value: line 1 column 1 (char 0)",
+    "head": "openapi: \"3.0.3\"\ninfo:\n  title: Not Human Search API\n  description: Free neutral search for AI agents. Optional provider"
+   }
+  },
+  {
+   "id": "nuget-learn",
+   "name": "NuGet",
+   "area": "sin_clasificar",
+   "url": "https://learn.microsoft.com/en-us/nuget/api/overview",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 58335,
+    "ms": 380
+   }
+  },
+  {
+   "id": "open-collective-docs",
+   "name": "Open Collective",
+   "area": "sin_clasificar",
+   "url": "https://docs.opencollective.com/help/developers/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 556
+   }
+  },
+  {
+   "id": "openvisionapi-openvisionapi",
+   "name": "OpenVisionAPI",
+   "area": "sin_clasificar",
+   "url": "https://openvisionapi.com",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 115,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "outagedeck-outagedeck",
+   "name": "OutageDeck",
+   "area": "sin_clasificar",
+   "url": "https://outagedeck.com/developers/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 173860,
+    "ms": 822
+   }
+  },
+  {
+   "id": "packagist-packagist",
+   "name": "Packagist",
+   "area": "sin_clasificar",
+   "url": "https://packagist.org/apidoc",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 34677,
+    "ms": 213
+   }
+  },
+  {
+   "id": "patentsview-patentsview",
+   "name": "PatentsView",
+   "area": "sin_clasificar",
+   "url": "https://patentsview.org/apis/purpose",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 20666,
+    "ms": 890
+   }
+  },
+  {
+   "id": "phone-specs-phone-specs-api-producti",
+   "name": "Phone Specs",
+   "area": "sin_clasificar",
+   "url": "https://phone-specs-api-production.up.railway.app/docs",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 477
+   }
+  },
+  {
+   "id": "pick-an-agency-www",
+   "name": "Pick an Agency",
+   "area": "sin_clasificar",
+   "url": "https://www.pickanagency.com/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 74703,
+    "ms": 190
+   }
+  },
+  {
+   "id": "postman-echo-www",
+   "name": "Postman Echo",
+   "area": "sin_clasificar",
+   "url": "https://www.postman-echo.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 101310,
+    "ms": 1129
+   }
+  },
+  {
+   "id": "quickmocker-quickmocker",
+   "name": "QuickMocker",
+   "area": "sin_clasificar",
+   "url": "https://quickmocker.com",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 8,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "random-data-random-data-api",
+   "name": "Random Data",
+   "area": "sin_clasificar",
+   "url": "https://random-data-api.com",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 3511,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "randomuser-randomuser",
+   "name": "RandomUser",
+   "area": "sin_clasificar",
+   "url": "https://randomuser.me",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 9078,
+    "ms": 216
+   }
+  },
+  {
+   "id": "refuge-restrooms-www",
+   "name": "REFUGE Restrooms",
+   "area": "sin_clasificar",
+   "url": "https://www.refugerestrooms.org/api/docs/#!/restrooms",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5214,
+    "ms": 559
+   }
+  },
+  {
+   "id": "restful-api-restful-api",
+   "name": "restful-api",
+   "area": "sin_clasificar",
+   "url": "https://restful-api.dev",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 232854,
+    "ms": 260
+   }
+  },
+  {
+   "id": "rss-feed-to-json-rss-to-json-serverless-a",
+   "name": "RSS feed to JSON",
+   "area": "sin_clasificar",
+   "url": "https://rss-to-json-serverless-api.vercel.app",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 402,
+    "ctype": "application/json",
+    "bytes": 57,
+    "ms": 152,
+    "error": "HTTP 402"
+   }
+  },
+  {
+   "id": "screenshotlayer-screenshotlayer",
+   "name": "Screenshotlayer",
+   "area": "sin_clasificar",
+   "url": "https://screenshotlayer.com?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 633
+   }
+  },
+  {
+   "id": "sec-edgar-data-www",
+   "name": "SEC EDGAR Data",
+   "area": "sin_clasificar",
+   "url": "https://www.sec.gov/edgar/sec-api-documentation",
+   "reason": "auth_required_or_blocked",
+   "evidence": {
+    "status": 403,
+    "ctype": "text/html",
+    "bytes": 1925,
+    "ms": 112,
+    "error": "HTTP 403"
+   }
+  },
+  {
+   "id": "sonar-github",
+   "name": "Sonar",
+   "area": "sin_clasificar",
+   "url": "https://github.com/Cgboal/SonarSearch",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 844
+   }
+  },
+  {
+   "id": "spaceflight-news-spaceflightnewsapi",
+   "name": "Spaceflight News",
+   "area": "sin_clasificar",
+   "url": "https://spaceflightnewsapi.net",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14038,
+    "ms": 190
+   }
+  },
+  {
+   "id": "spanish-random-names-random-names-api",
+   "name": "Spanish random names",
+   "area": "sin_clasificar",
+   "url": "https://random-names-api.herokuapp.com/public",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 504
+   }
+  },
+  {
+   "id": "statlyte-statlyte",
+   "name": "Statlyte",
+   "area": "sin_clasificar",
+   "url": "https://statlyte.com/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 23424,
+    "ms": 156
+   }
+  },
+  {
+   "id": "techrole-index-techrole",
+   "name": "TechRole Index",
+   "area": "sin_clasificar",
+   "url": "https://techrole.ru/open-data-daily",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 125648,
+    "ms": 895
+   }
+  },
+  {
+   "id": "tenders-in-hungary-tenders",
+   "name": "Tenders in Hungary",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/hu/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12069,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "tenders-in-poland-tenders",
+   "name": "Tenders in Poland",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/pl/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12014,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "tenders-in-romania-tenders",
+   "name": "Tenders in Romania",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/ro/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12005,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "tenders-in-spain-tenders",
+   "name": "Tenders in Spain",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/es/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12001,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "tenders-in-ukraine-tenders",
+   "name": "Tenders in Ukraine",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/ua/api",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 12016,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "tensorfeed-tensorfeed",
+   "name": "TensorFeed",
+   "area": "sin_clasificar",
+   "url": "https://tensorfeed.ai/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 262144,
+    "ms": 348
+   }
+  },
+  {
+   "id": "the-null-pointer-0x0",
+   "name": "The Null Pointer",
+   "area": "sin_clasificar",
+   "url": "https://0x0.st",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": 418,
+    "ctype": "application/octet-stream",
+    "bytes": 34,
+    "ms": 200,
+    "error": "HTTP 418"
+   }
+  },
+  {
+   "id": "this-person-does-not-exist-thispersondoesnotexist",
+   "name": "This Person Does not Exist",
+   "area": "sin_clasificar",
+   "url": "https://thispersondoesnotexist.com",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 4532,
+    "ms": 278
+   }
+  },
+  {
+   "id": "top-5-stocks-top5stocks",
+   "name": "Top 5 Stocks",
+   "area": "sin_clasificar",
+   "url": "https://top5stocks.netlify.app/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 82770,
+    "ms": 1305
+   }
+  },
+  {
+   "id": "tradedatahub-www",
+   "name": "TradeDataHub",
+   "area": "sin_clasificar",
+   "url": "https://www.tradedatahub.net",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 60971,
+    "ms": 775
+   }
+  },
+  {
+   "id": "transport-for-budapest-hungary-bkkfutar",
+   "name": "Transport for Budapest, Hungary",
+   "area": "sin_clasificar",
+   "url": "https://bkkfutar.docs.apiary.io",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5687,
+    "ms": 257
+   }
+  },
+  {
+   "id": "transport-for-czech-republic-www",
+   "name": "Transport for Czech Republic",
+   "area": "sin_clasificar",
+   "url": "https://www.chaps.cz/eng/products/idos-internet",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 15413,
+    "ms": 298
+   }
+  },
+  {
+   "id": "transport-for-toronto-canada-myttc",
+   "name": "Transport for Toronto, Canada",
+   "area": "sin_clasificar",
+   "url": "https://myttc.ca/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 6997,
+    "ms": 621
+   }
+  },
+  {
+   "id": "transport-rest-transport",
+   "name": "transport.rest",
+   "area": "sin_clasificar",
+   "url": "https://transport.rest",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5791,
+    "ms": 711
+   }
+  },
+  {
+   "id": "us-mortgage-calculator-www",
+   "name": "US Mortgage Calculator",
+   "area": "sin_clasificar",
+   "url": "https://www.usmortgagecalc.com/developers/api",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 66302,
+    "ms": 299
+   }
+  },
+  {
+   "id": "uspto-www",
+   "name": "USPTO",
+   "area": "sin_clasificar",
+   "url": "https://www.uspto.gov/learning-and-resources/open-data-and-mobility",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 128583,
+    "ms": 437
+   }
+  },
+  {
+   "id": "uuid-generator-www",
+   "name": "UUID Generator",
+   "area": "sin_clasificar",
+   "url": "https://www.uuidtools.com/docs",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 14831,
+    "ms": 230
+   }
+  },
+  {
+   "id": "vector-express-v2-0-vector",
+   "name": "Vector Express v2.0",
+   "area": "sin_clasificar",
+   "url": "https://vector.express",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 5603,
+    "ms": 89
+   }
+  },
+  {
+   "id": "wakatime-wakatime",
+   "name": "WakaTime",
+   "area": "sin_clasificar",
+   "url": "https://wakatime.com/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 230669,
+    "ms": 1448
+   }
+  },
+  {
+   "id": "zelothorn-zelothorn",
+   "name": "Zelothorn",
+   "area": "sin_clasificar",
+   "url": "https://zelothorn.com/developers",
+   "reason": "html_not_api",
+   "evidence": {
+    "status": 200,
+    "ctype": "text/html",
+    "bytes": 17966,
+    "ms": 247
+   }
+  },
+  {
+   "id": "api-gratis-apigratis",
+   "name": "API Grátis",
+   "area": "sin_clasificar",
+   "url": "https://apigratis.com.br/",
+   "reason": "rate_limited",
+   "evidence": {
+    "status": 429,
+    "ctype": "text/html",
+    "bytes": 2048,
+    "ms": 130
+   }
+  },
+  {
+   "id": "aztro-aztro",
+   "name": "aztro",
+   "area": "sin_clasificar",
+   "url": "https://aztro.sameerkumar.website/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 548,
+    "ms": 496
+   }
+  },
+  {
+   "id": "econdb-www",
+   "name": "Econdb",
+   "area": "sin_clasificar",
+   "url": "https://www.econdb.com/api/",
+   "reason": "not_html",
+   "evidence": {
+    "status": 200,
+    "ctype": "application/json",
+    "bytes": 269,
+    "ms": 328
+   }
+  },
+  {
+   "id": "eva-eva",
+   "name": "EVA",
+   "area": "sin_clasificar",
+   "url": "https://eva.pingutil.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 16,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "graphql-jobs-graphql",
+   "name": "GraphQL Jobs",
+   "area": "sin_clasificar",
+   "url": "https://graphql.jobs/docs/api/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 22,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "httpbin-cloudflare-cloudflare-quic",
+   "name": "Httpbin Cloudflare",
+   "area": "sin_clasificar",
+   "url": "https://cloudflare-quic.com/b/",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 169,
+    "ms": 598
+   }
+  },
+  {
+   "id": "lua-decompiler-lua-decompiler",
+   "name": "Lua Decompiler",
+   "area": "sin_clasificar",
+   "url": "https://lua-decompiler.ferib.dev/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 16,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "mocky-designer",
+   "name": "Mocky",
+   "area": "sin_clasificar",
+   "url": "https://designer.mocky.io/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 143,
+    "error": "URLError"
+   }
+  },
+  {
+   "id": "opensky-network-opensky-network",
+   "name": "OpenSky Network",
+   "area": "sin_clasificar",
+   "url": "https://opensky-network.org/apidoc/index.html",
+   "reason": "http_404",
+   "evidence": {
+    "status": 404,
+    "ctype": "text/html",
+    "bytes": 275,
+    "ms": 166
+   }
+  },
+  {
+   "id": "toolcarton-testimonialapi",
+   "name": "Toolcarton",
+   "area": "sin_clasificar",
+   "url": "https://testimonialapi.toolcarton.com/",
+   "reason": "network_or_timeout",
+   "evidence": {
+    "status": null,
+    "ctype": "",
+    "bytes": 0,
+    "ms": 32,
+    "error": "URLError"
+   }
+  }
+ ]
+}

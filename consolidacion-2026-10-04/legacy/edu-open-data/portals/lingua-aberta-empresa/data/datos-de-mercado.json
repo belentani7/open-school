@@ -1,0 +1,55 @@
+{
+  "tema": "datos-de-mercado",
+  "portal": "lingua-aberta-empresa",
+  "registros": [
+    {
+      "fuente": "World Bank",
+      "spec": "worldbank:SL.UEM.TOTL.ZS:Desempleo (% poblacion activa)",
+      "ok": true,
+      "datos": [
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2025",
+          "valor": 5.97
+        },
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2024",
+          "valor": 6.801
+        },
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2023",
+          "valor": 7.947
+        },
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2022",
+          "valor": 9.231
+        },
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2021",
+          "valor": 13.158
+        },
+        {
+          "indicador": "Desempleo (% poblacion activa)",
+          "pais": "Brazil",
+          "anio": "2020",
+          "valor": 13.697
+        }
+      ]
+    },
+    {
+      "fuente": "REST Countries",
+      "spec": "restcountries",
+      "ok": true,
+      "datos": []
+    }
+  ]
+}

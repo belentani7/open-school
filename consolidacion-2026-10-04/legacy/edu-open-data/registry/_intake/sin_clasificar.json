@@ -1,0 +1,5483 @@
+{
+ "total": 166,
+ "entries": [
+  {
+   "id": "24-pull-requests-24pullrequests",
+   "name": "24 Pull Requests",
+   "area": "sin_clasificar",
+   "url": "https://24pullrequests.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://24pullrequests.com/api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Project to promote open source collaboration during December",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://24pullrequests.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "agify-io-agify",
+   "name": "Agify.io",
+   "area": "sin_clasificar",
+   "url": "https://agify.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://agify.io",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Estimates the age from a first name",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://agify.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "agpc-domain-check-guild",
+   "name": "AGPC Domain Check",
+   "area": "sin_clasificar",
+   "url": "https://guild.tradeuniquecapital.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://guild.tradeuniquecapital.com/api",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Check a domain's SPF, DKIM, DMARC and MX with a graded shareable report",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://guild.tradeuniquecapital.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "ai-dev-jobs-aidevboard",
+   "name": "AI Dev Jobs",
+   "area": "sin_clasificar",
+   "url": "https://aidevboard.com/openapi.yaml",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://aidevboard.com/openapi.yaml",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "AI/ML engineering job aggregator with REST, RSS, and MCP endpoints",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://aidevboard.com/openapi.yaml",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "airportsapi-airport-web",
+   "name": "airportsapi",
+   "area": "sin_clasificar",
+   "url": "https://airport-web.appspot.com/api/docs/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://airport-web.appspot.com/api/docs/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Get name and website-URL for airports by ICAO code",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://airport-web.appspot.com/api/docs/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "api-gratis-apigratis",
+   "name": "API Grátis",
+   "area": "sin_clasificar",
+   "url": "https://apigratis.com.br/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://apigratis.com.br/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Multiples services and public APIs",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://apigratis.com.br/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "apicagent-www",
+   "name": "ApicAgent",
+   "area": "sin_clasificar",
+   "url": "https://www.apicagent.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.apicagent.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Extract device details from user-agent string",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.apicagent.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "apis-guru-apis",
+   "name": "APIs.guru",
+   "area": "sin_clasificar",
+   "url": "https://apis.guru/api-doc/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://apis.guru/api-doc/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Wikipedia for Web APIs, OpenAPI/Swagger specs for public APIs",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://apis.guru/api-doc/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "apizone-apizone",
+   "name": "APIzone",
+   "area": "sin_clasificar",
+   "url": "https://apizone.io/api-docs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://apizone.io/api-docs",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Independent uptime & status monitoring for 200+ popular APIs",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://apizone.io/api-docs",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "aquanode-docs",
+   "name": "Aquanode",
+   "area": "sin_clasificar",
+   "url": "https://docs.aquanode.io/docs/api/marketplace",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.aquanode.io/docs/api/marketplace",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Live GPU rental prices and availability across nine cloud providers",
+   "cors": "No",
+   "probe": {
+    "url": "https://docs.aquanode.io/docs/api/marketplace",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "arbeitnow-documenter",
+   "name": "Arbeitnow",
+   "area": "sin_clasificar",
+   "url": "https://documenter.getpostman.com/view/18545278/UVJbJdKh",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://documenter.getpostman.com/view/18545278/UVJbJdKh",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "API for Job board aggregator in Europe / Remote",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://documenter.getpostman.com/view/18545278/UVJbJdKh",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "arcnautical-arcnautical",
+   "name": "ArcNautical",
+   "area": "sin_clasificar",
+   "url": "https://arcnautical.com/developers/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://arcnautical.com/developers/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Screen any ship by IMO for OFAC/EU/UN/UK sanctions, ownership opacity and a vetting grade",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://arcnautical.com/developers/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "artificial-intelligence-jobs-artificialintelligencejo",
+   "name": "Artificial Intelligence Jobs",
+   "area": "sin_clasificar",
+   "url": "https://artificialintelligencejobs.co/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://artificialintelligencejobs.co/developers",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "Live AI/ML job listings from 260+ companies' own career pages, with salary, location, remote and seniority filters",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://artificialintelligencejobs.co/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "aviation-safety-data-himaxym",
+   "name": "Aviation Safety Data",
+   "area": "sin_clasificar",
+   "url": "https://himaxym.com/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://himaxym.com/developers",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "164,068 aircraft accident narratives from 128 official investigation authorities, plus FAA data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://himaxym.com/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "aztro-aztro",
+   "name": "aztro",
+   "area": "sin_clasificar",
+   "url": "https://aztro.sameerkumar.website/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://aztro.sameerkumar.website/",
+   "topics": [
+    "social"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Daily horoscope info for yesterday, today, and tomorrow",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://aztro.sameerkumar.website/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "bacon-ipsum-baconipsum",
+   "name": "Bacon Ipsum",
+   "area": "sin_clasificar",
+   "url": "https://baconipsum.com/json-api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://baconipsum.com/json-api/",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "A Meatier Lorem Ipsum Generator",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://baconipsum.com/json-api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "bc-ferries-www",
+   "name": "BC Ferries",
+   "area": "sin_clasificar",
+   "url": "https://www.bcferriesapi.ca",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.bcferriesapi.ca",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Sailing times and capacities for BC Ferries",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.bcferriesapi.ca",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "beeceptor-beeceptor",
+   "name": "Beeceptor",
+   "area": "sin_clasificar",
+   "url": "https://beeceptor.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://beeceptor.com/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Build a mock Rest API endpoint in seconds",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://beeceptor.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "best-temp-mail-best-tempmail",
+   "name": "Best Temp Mail",
+   "area": "sin_clasificar",
+   "url": "https://best-tempmail.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://best-tempmail.com/api",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Disposable inboxes for automated email testing, with OTP extraction",
+   "cors": "No",
+   "probe": {
+    "url": "https://best-tempmail.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "binlist-binlist",
+   "name": "Binlist",
+   "area": "sin_clasificar",
+   "url": "https://binlist.net/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://binlist.net/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Public access to a database of IIN/BIN information",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://binlist.net/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "bluesky-docs",
+   "name": "Bluesky",
+   "area": "sin_clasificar",
+   "url": "https://docs.bsky.app/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.bsky.app/",
+   "topics": [
+    "social"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Decentralized social networking via the AT protocol",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://docs.bsky.app/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "bored-bored-api",
+   "name": "Bored",
+   "area": "sin_clasificar",
+   "url": "https://bored-api.appbrewery.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://bored-api.appbrewery.com/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Find random activities to fight boredom",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://bored-api.appbrewery.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "brazilian-vehicles-and-prices-deividfortuna",
+   "name": "Brazilian Vehicles and Prices",
+   "area": "sin_clasificar",
+   "url": "https://deividfortuna.github.io/fipe/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://deividfortuna.github.io/fipe/",
+   "topics": [
+    "vehicle"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Vehicle",
+   "descripcion": "Vehicles information from Fundação Instituto de Pesquisas Econômicas - Fipe",
+   "cors": "No",
+   "probe": {
+    "url": "https://deividfortuna.github.io/fipe/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "brewpage-brewpage",
+   "name": "BrewPage",
+   "area": "sin_clasificar",
+   "url": "https://brewpage.app",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://brewpage.app",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Free hosting for HTML, JSON, key-value, files, multi-file sites with short URLs and TTL retention",
+   "cors": "No",
+   "probe": {
+    "url": "https://brewpage.app",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "can-i-enter-canienter",
+   "name": "Can I enter",
+   "area": "sin_clasificar",
+   "url": "https://canienter.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://canienter.com",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Visa and entry requirements for 199 passports, cited to official sources, verified daily",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://canienter.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "changelogs-md-changelogs",
+   "name": "Changelogs.md",
+   "area": "sin_clasificar",
+   "url": "https://changelogs.md",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://changelogs.md",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Structured changelog metadata from open source projects",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://changelogs.md",
+    "expect": "text"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "ciprand-github",
+   "name": "Ciprand",
+   "area": "sin_clasificar",
+   "url": "https://github.com/polarspetroll/ciprand",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/polarspetroll/ciprand",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Secure random string generator",
+   "cors": "No",
+   "probe": {
+    "url": "https://github.com/polarspetroll/ciprand",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "community-transit-github",
+   "name": "Community Transit",
+   "area": "sin_clasificar",
+   "url": "https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Transitland API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "countapi-countapi",
+   "name": "CountAPI",
+   "area": "sin_clasificar",
+   "url": "https://countapi.xyz",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://countapi.xyz",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Free and simple counting service. You can use it to track page hits and specific events",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://countapi.xyz",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "crates-io-crates",
+   "name": "crates.io",
+   "area": "sin_clasificar",
+   "url": "https://crates.io/data-access",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://crates.io/data-access",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Rust crate versions, downloads and dependency metadata",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://crates.io/data-access",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "deepcode-www",
+   "name": "Deepcode",
+   "area": "sin_clasificar",
+   "url": "https://www.deepcode.ai",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.deepcode.ai",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "AI for code review",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.deepcode.ai",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "devitjobs-uk-devitjobs",
+   "name": "DevITjobs UK",
+   "area": "sin_clasificar",
+   "url": "https://devitjobs.uk/job_feed.xml",
+   "kind": "xml",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://devitjobs.uk/job_feed.xml",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "Jobs with GraphQL",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://devitjobs.uk/job_feed.xml",
+    "expect": "xml"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "digitalocean-status-status",
+   "name": "DigitalOcean Status",
+   "area": "sin_clasificar",
+   "url": "https://status.digitalocean.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://status.digitalocean.com/api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Status of all DigitalOcean services",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://status.digitalocean.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "digmyname-digmyname",
+   "name": "DigMyName",
+   "area": "sin_clasificar",
+   "url": "https://digmyname.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://digmyname.com/api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Domain availability and registrar pricing across 52 TLDs",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://digmyname.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "disify-www",
+   "name": "Disify",
+   "area": "sin_clasificar",
+   "url": "https://www.disify.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.disify.com/",
+   "topics": [
+    "email"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Validate and detect disposable and temporary email addresses",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.disify.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "docstruct-docstruct",
+   "name": "DocStruct",
+   "area": "sin_clasificar",
+   "url": "https://docstruct.pages.dev",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docstruct.pages.dev",
+   "topics": [
+    "documents-productivity"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Documents & Productivity",
+   "descripcion": "AI extraction of invoices, receipts, bank statements & contracts into structured JSON/CSV",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://docstruct.pages.dev",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "doge-meme-api",
+   "name": "Doge-Meme",
+   "area": "sin_clasificar",
+   "url": "https://api.doge-meme.lol/docs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://api.doge-meme.lol/docs",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Top meme posts from r/dogecoin which include 'Meme' flair",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://api.doge-meme.lol/docs",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "domainsdb-info-domainsdb",
+   "name": "Domainsdb.info",
+   "area": "sin_clasificar",
+   "url": "https://domainsdb.info/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://domainsdb.info/",
+   "topics": [
+    "business"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Registered Domain Names Search",
+   "cors": "No",
+   "probe": {
+    "url": "https://domainsdb.info/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "dotsweep-dotsweep",
+   "name": "dotsweep",
+   "area": "sin_clasificar",
+   "url": "https://dotsweep.com/docs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://dotsweep.com/docs",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Domain availability across 1200+ TLDs with registration and renewal prices",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://dotsweep.com/docs",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "downstatus-isitdownstatus",
+   "name": "DownStatus",
+   "area": "sin_clasificar",
+   "url": "https://isitdownstatus.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://isitdownstatus.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Real-time status for GitHub, AWS, Discord and 90+ services",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://isitdownstatus.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "dropmail-dropmail",
+   "name": "DropMail",
+   "area": "sin_clasificar",
+   "url": "https://dropmail.me/api/#live-demo",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://dropmail.me/api/#live-demo",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "GraphQL API for creating and managing ephemeral e-mail inboxes",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://dropmail.me/api/#live-demo",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "drupal-org-www",
+   "name": "Drupal.org",
+   "area": "sin_clasificar",
+   "url": "https://www.drupal.org/drupalorg/docs/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.drupal.org/drupalorg/docs/api",
+   "topics": [
+    "open-source-projects"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Open Source Projects",
+   "descripcion": "Drupal.org",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.drupal.org/drupalorg/docs/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "dummyjson-dummyjson",
+   "name": "DummyJSON",
+   "area": "sin_clasificar",
+   "url": "https://dummyjson.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://dummyjson.com/",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Fake REST API with products, users, posts, comments, todos and more",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://dummyjson.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "econdb-www",
+   "name": "Econdb",
+   "area": "sin_clasificar",
+   "url": "https://www.econdb.com/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.econdb.com/api/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Global macroeconomic data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.econdb.com/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "estimatetax-estimatetax",
+   "name": "EstimateTax",
+   "area": "sin_clasificar",
+   "url": "https://estimatetax.net/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://estimatetax.net/api/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "US federal, state and local income tax calculation for 2026, with the source of every figure",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://estimatetax.net/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "eva-eva",
+   "name": "EVA",
+   "area": "sin_clasificar",
+   "url": "https://eva.pingutil.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://eva.pingutil.com/",
+   "topics": [
+    "email"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Validate email addresses",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://eva.pingutil.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "evil-insult-generator-evilinsult",
+   "name": "Evil Insult Generator",
+   "area": "sin_clasificar",
+   "url": "https://evilinsult.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://evilinsult.com/api",
+   "topics": [
+    "open-source-projects"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Open Source Projects",
+   "descripcion": "Evil Insults",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://evilinsult.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "extendsclass-json-storage-extendsclass",
+   "name": "ExtendsClass JSON Storage",
+   "area": "sin_clasificar",
+   "url": "https://extendsclass.com/json-storage.html",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://extendsclass.com/json-storage.html",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "A simple JSON store API",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://extendsclass.com/json-storage.html",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "faa-n-number-registry-n-number",
+   "name": "FAA N-Number Registry",
+   "area": "sin_clasificar",
+   "url": "https://n-number.starfile.org/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://n-number.starfile.org/api",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Every FAA-registered civil aircraft in the United States, lookup by N-number or Mode S hex code",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://n-number.starfile.org/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "fakerapi-fakerapi",
+   "name": "FakerAPI",
+   "area": "sin_clasificar",
+   "url": "https://fakerapi.it/en",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://fakerapi.it/en",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "APIs collection to get fake data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://fakerapi.it/en",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "fakestoreapi-fakestoreapi",
+   "name": "FakeStoreAPI",
+   "area": "sin_clasificar",
+   "url": "https://fakestoreapi.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://fakestoreapi.com/",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Fake store rest API for your e-commerce or shopping website prototype",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://fakestoreapi.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "fed-treasury-fiscaldata",
+   "name": "Fed Treasury",
+   "area": "sin_clasificar",
+   "url": "https://fiscaldata.treasury.gov/api-documentation/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://fiscaldata.treasury.gov/api-documentation/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "U.S. Department of the Treasury Data",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://fiscaldata.treasury.gov/api-documentation/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "file-io-www",
+   "name": "File.io",
+   "area": "sin_clasificar",
+   "url": "https://www.file.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.file.io",
+   "topics": [
+    "cloud-storage-file-sharing"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Cloud Storage & File Sharing",
+   "descripcion": "Super simple file sharing, convenient, anonymous and secure",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.file.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "fileup-github",
+   "name": "FileUp",
+   "area": "sin_clasificar",
+   "url": "https://github.com/RealSinaSnp/FileUp",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/RealSinaSnp/FileUp",
+   "topics": [
+    "cloud-storage-file-sharing"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Cloud Storage & File Sharing",
+   "descripcion": "Temporary file hosting with upload API, expiration times, and view limits",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://github.com/RealSinaSnp/FileUp",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "flaky-flakyapi",
+   "name": "flaky",
+   "area": "sin_clasificar",
+   "url": "https://flakyapi.dev",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://flakyapi.dev",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Fake REST API with chaos controls: force any status code, add latency, or a failure rate",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://flakyapi.dev",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "florida-man-github",
+   "name": "Florida Man",
+   "area": "sin_clasificar",
+   "url": "https://github.com/juliayxhuang/florida-man-api#readme",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/juliayxhuang/florida-man-api#readme",
+   "topics": [
+    "news"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "News",
+   "descripcion": "Static JSON dataset of 10,000+ Florida Man headlines by date",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://github.com/juliayxhuang/florida-man-api#readme",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "freehire-freehire",
+   "name": "freehire",
+   "area": "sin_clasificar",
+   "url": "https://freehire.dev/docs/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://freehire.dev/docs/api",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "Open-source search engine aggregating tech jobs from company ATS boards",
+   "cors": "No",
+   "probe": {
+    "url": "https://freehire.dev/docs/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "fuck-off-as-a-service-www",
+   "name": "Fuck Off as a Service",
+   "area": "sin_clasificar",
+   "url": "https://www.foaas.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.foaas.com",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Asks someone to fuck off",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.foaas.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "futures-clock-futuresclock",
+   "name": "Futures Clock",
+   "area": "sin_clasificar",
+   "url": "https://futuresclock.com/en/data-methodology/#open-data",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://futuresclock.com/en/data-methodology/#open-data",
+   "topics": [
+    "finance"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Trading hours and session windows for 65 futures products on 16 global exchanges",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://futuresclock.com/en/data-methodology/#open-data",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "genderize-io-genderize",
+   "name": "Genderize.io",
+   "area": "sin_clasificar",
+   "url": "https://genderize.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://genderize.io",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Estimates a gender from a first name",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://genderize.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "graphql-jobs-graphql",
+   "name": "GraphQL Jobs",
+   "area": "sin_clasificar",
+   "url": "https://graphql.jobs/docs/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://graphql.jobs/docs/api/",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "Jobs with GraphQL",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://graphql.jobs/docs/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "guerrilla-mail-www",
+   "name": "Guerrilla Mail",
+   "area": "sin_clasificar",
+   "url": "https://www.guerrillamail.com/GuerrillaMailAPI.html",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.guerrillamail.com/GuerrillaMailAPI.html",
+   "topics": [
+    "email"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Disposable temporary Email addresses",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.guerrillamail.com/GuerrillaMailAPI.html",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "hackernews-github",
+   "name": "HackerNews",
+   "area": "sin_clasificar",
+   "url": "https://github.com/HackerNews/API",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/HackerNews/API",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Social news for CS and entrepreneurship",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://github.com/HackerNews/API",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "hashnode-hashnode",
+   "name": "Hashnode",
+   "area": "sin_clasificar",
+   "url": "https://hashnode.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://hashnode.com",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "A blogging platform built for developers",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://hashnode.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "helium-heliumtrades",
+   "name": "Helium",
+   "area": "sin_clasificar",
+   "url": "https://heliumtrades.com/mcp-page/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://heliumtrades.com/mcp-page/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "News with media bias scoring, balanced news synthesis, live market data, AI options pricing",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://heliumtrades.com/mcp-page/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "hipsum-hipsum",
+   "name": "Hipsum",
+   "area": "sin_clasificar",
+   "url": "https://hipsum.co",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://hipsum.co",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Hipster-themed lorem ipsum generator for placeholder text",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://hipsum.co",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "host-t-com-host-t",
+   "name": "host-t.com",
+   "area": "sin_clasificar",
+   "url": "https://host-t.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://host-t.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Basic DNS query via HTTP GET request",
+   "cors": "No",
+   "probe": {
+    "url": "https://host-t.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "http2-pro-http2",
+   "name": "HTTP2.Pro",
+   "area": "sin_clasificar",
+   "url": "https://http2.pro/doc/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://http2.pro/doc/api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Test endpoints for client and server HTTP/2 protocol support",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://http2.pro/doc/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "httpbin-cloudflare-cloudflare-quic",
+   "name": "Httpbin Cloudflare",
+   "area": "sin_clasificar",
+   "url": "https://cloudflare-quic.com/b/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://cloudflare-quic.com/b/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "A Simple HTTP Request & Response Service with HTTP/3 Support by Cloudflare",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://cloudflare-quic.com/b/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "httpbin-httpbin",
+   "name": "Httpbin",
+   "area": "sin_clasificar",
+   "url": "https://httpbin.org/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://httpbin.org/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "A Simple HTTP Request & Response Service",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://httpbin.org/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "icanhazepoch-icanhazepoch",
+   "name": "Icanhazepoch",
+   "area": "sin_clasificar",
+   "url": "https://icanhazepoch.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://icanhazepoch.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Get Epoch time",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://icanhazepoch.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "icelandic-apis-docs",
+   "name": "Icelandic APIs",
+   "area": "sin_clasificar",
+   "url": "http://docs.apis.is/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "http://docs.apis.is/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Open APIs that deliver services in or regarding Iceland",
+   "cors": "Unknown",
+   "probe": {
+    "url": "http://docs.apis.is/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "ifttt-platform",
+   "name": "IFTTT",
+   "area": "sin_clasificar",
+   "url": "https://platform.ifttt.com/docs/connect_api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://platform.ifttt.com/docs/connect_api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "IFTTT Connect API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://platform.ifttt.com/docs/connect_api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "itsthisforthat-itsthisforthat",
+   "name": "ItsThisForThat",
+   "area": "sin_clasificar",
+   "url": "https://itsthisforthat.com/api.php",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://itsthisforthat.com/api.php",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generate Random startup ideas",
+   "cors": "No",
+   "probe": {
+    "url": "https://itsthisforthat.com/api.php",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "jsdelivr-github",
+   "name": "jsDelivr",
+   "area": "sin_clasificar",
+   "url": "https://github.com/jsdelivr/data.jsdelivr.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/jsdelivr/data.jsdelivr.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Package info and download stats on jsDelivr CDN",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://github.com/jsdelivr/data.jsdelivr.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "json-2-jsonp-json2jsonp",
+   "name": "JSON 2 JSONP",
+   "area": "sin_clasificar",
+   "url": "https://json2jsonp.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://json2jsonp.com/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Convert JSON to JSONP (on-the-fly) for easy cross-domain data requests using client-side JavaScript",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://json2jsonp.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "jsonplaceholder-jsonplaceholder",
+   "name": "JSONPlaceholder",
+   "area": "sin_clasificar",
+   "url": "https://jsonplaceholder.typicode.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://jsonplaceholder.typicode.com",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Fake REST API for testing and prototyping",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://jsonplaceholder.typicode.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "keyvalue-keyvalue",
+   "name": "Keyvalue",
+   "area": "sin_clasificar",
+   "url": "https://keyvalue.immanuel.co/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://keyvalue.immanuel.co/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Simple key-value storage REST API for quick prototyping",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://keyvalue.immanuel.co/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "kickbox-open",
+   "name": "Kickbox",
+   "area": "sin_clasificar",
+   "url": "https://open.kickbox.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://open.kickbox.com/",
+   "topics": [
+    "email"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Email verification API",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://open.kickbox.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "kontests-kontests",
+   "name": "KONTESTS",
+   "area": "sin_clasificar",
+   "url": "https://kontests.net/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://kontests.net/api",
+   "topics": [
+    "programming"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Programming",
+   "descripcion": "For upcoming and ongoing competitive coding contests",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://kontests.net/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "kroki-kroki",
+   "name": "Kroki",
+   "area": "sin_clasificar",
+   "url": "https://kroki.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://kroki.io",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Creates diagrams from textual descriptions",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://kroki.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "lanyard-github",
+   "name": "Lanyard",
+   "area": "sin_clasificar",
+   "url": "https://github.com/Phineas/lanyard",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/Phineas/lanyard",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Retrieve your presence on Discord through an HTTP REST API or WebSocket",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://github.com/Phineas/lanyard",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "license-api-github",
+   "name": "License-API",
+   "area": "sin_clasificar",
+   "url": "https://github.com/cmccandless/license-api/blob/master/README.md",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/cmccandless/license-api/blob/master/README.md",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Unofficial REST API for choosealicense.com",
+   "cors": "No",
+   "probe": {
+    "url": "https://github.com/cmccandless/license-api/blob/master/README.md",
+    "expect": "text"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "liquilens-liquilens",
+   "name": "LiquiLens",
+   "area": "sin_clasificar",
+   "url": "https://liquilens.in/developers/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://liquilens.in/developers/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Public-record bank and lender failure-risk evidence",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://liquilens.in/developers/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "livetrafficcam-bzsasson",
+   "name": "LiveTrafficCam",
+   "area": "sin_clasificar",
+   "url": "https://bzsasson.github.io/traffic-camera-sources/api.html",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://bzsasson.github.io/traffic-camera-sources/api.html",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Live US state DOT traffic cameras with verified live status and measured uptime",
+   "cors": "No",
+   "probe": {
+    "url": "https://bzsasson.github.io/traffic-camera-sources/api.html",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "lua-decompiler-lua-decompiler",
+   "name": "Lua Decompiler",
+   "area": "sin_clasificar",
+   "url": "https://lua-decompiler.ferib.dev/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://lua-decompiler.ferib.dev/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Online Lua 5.1 Decompiler",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://lua-decompiler.ferib.dev/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "mail-gw-docs",
+   "name": "mail.gw",
+   "area": "sin_clasificar",
+   "url": "https://docs.mail.gw",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.mail.gw",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "10 Minute Mail",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://docs.mail.gw",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "mail-tm-docs",
+   "name": "mail.tm",
+   "area": "sin_clasificar",
+   "url": "https://docs.mail.tm",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.mail.tm",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Temporary Email Service",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://docs.mail.tm",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "mailcheck-ai-www",
+   "name": "MailCheck.ai",
+   "area": "sin_clasificar",
+   "url": "https://www.mailcheck.ai/#documentation",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.mailcheck.ai/#documentation",
+   "topics": [
+    "email"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Email",
+   "descripcion": "Prevent users to sign up with temporary email addresses",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.mailcheck.ai/#documentation",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "metabase-www",
+   "name": "Metabase",
+   "area": "sin_clasificar",
+   "url": "https://www.metabase.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.metabase.com/",
+   "topics": [
+    "open-source-projects"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Open Source Projects",
+   "descripcion": "An open source Business Intelligence server to share data and analytics inside your company",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.metabase.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "microenv-microenv",
+   "name": "MicroENV",
+   "area": "sin_clasificar",
+   "url": "https://microenv.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://microenv.com/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Fake Rest API for developers",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://microenv.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "mocky-designer",
+   "name": "Mocky",
+   "area": "sin_clasificar",
+   "url": "https://designer.mocky.io/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://designer.mocky.io/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Mock user defined test JSON for REST API endpoints",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://designer.mocky.io/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "modelfax-bytebrujo",
+   "name": "Modelfax",
+   "area": "sin_clasificar",
+   "url": "https://bytebrujo.github.io/modelfax/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://bytebrujo.github.io/modelfax/",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "LLM pricing, context windows and deprecation dates, schema-validated and updated daily",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://bytebrujo.github.io/modelfax/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "nationalize-io-nationalize",
+   "name": "Nationalize.io",
+   "area": "sin_clasificar",
+   "url": "https://nationalize.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://nationalize.io",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Estimate the nationality of a first name",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://nationalize.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "nhtsa-vpic",
+   "name": "NHTSA",
+   "area": "sin_clasificar",
+   "url": "https://vpic.nhtsa.dot.gov/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://vpic.nhtsa.dot.gov/api/",
+   "topics": [
+    "vehicle"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Vehicle",
+   "descripcion": "NHTSA Product Information Catalog and Vehicle Listing",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://vpic.nhtsa.dot.gov/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "non-working-days-github",
+   "name": "Non-Working Days",
+   "area": "sin_clasificar",
+   "url": "https://github.com/gadael/icsdb",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/gadael/icsdb",
+   "topics": [
+    "calendar"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Calendar",
+   "descripcion": "Database of ICS files for non working days",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://github.com/gadael/icsdb",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "non-working-days-isdayoff",
+   "name": "Non-Working Days",
+   "area": "sin_clasificar",
+   "url": "https://isdayoff.ru",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://isdayoff.ru",
+   "topics": [
+    "calendar"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Calendar",
+   "descripcion": "Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://isdayoff.ru",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "noozra-noozra",
+   "name": "Noozra",
+   "area": "sin_clasificar",
+   "url": "https://noozra.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://noozra.com/api",
+   "topics": [
+    "news"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "News",
+   "descripcion": "Free news headlines from 200+ curated RSS sources",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://noozra.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "not-human-search-nothumansearch",
+   "name": "Not Human Search",
+   "area": "sin_clasificar",
+   "url": "https://nothumansearch.ai/openapi.yaml",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://nothumansearch.ai/openapi.yaml",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "AI tool discovery with agentic scoring for 8,600+ tools and MCP servers",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://nothumansearch.ai/openapi.yaml",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "nuget-learn",
+   "name": "NuGet",
+   "area": "sin_clasificar",
+   "url": "https://learn.microsoft.com/en-us/nuget/api/overview",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://learn.microsoft.com/en-us/nuget/api/overview",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": ".NET package versions, metadata and search",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://learn.microsoft.com/en-us/nuget/api/overview",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "open-collective-docs",
+   "name": "Open Collective",
+   "area": "sin_clasificar",
+   "url": "https://docs.opencollective.com/help/developers/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.opencollective.com/help/developers/api",
+   "topics": [
+    "social"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Social",
+   "descripcion": "Get Open Collective data",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://docs.opencollective.com/help/developers/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "opensky-network-opensky-network",
+   "name": "OpenSky Network",
+   "area": "sin_clasificar",
+   "url": "https://opensky-network.org/apidoc/index.html",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://opensky-network.org/apidoc/index.html",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Free real-time ADS-B aviation data",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://opensky-network.org/apidoc/index.html",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "openvisionapi-openvisionapi",
+   "name": "OpenVisionAPI",
+   "area": "sin_clasificar",
+   "url": "https://openvisionapi.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://openvisionapi.com",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "Open source computer vision API based on open source models",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://openvisionapi.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "outagedeck-outagedeck",
+   "name": "OutageDeck",
+   "area": "sin_clasificar",
+   "url": "https://outagedeck.com/developers/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://outagedeck.com/developers/api",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Live status and incidents for 170+ cloud and SaaS providers from official feeds",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://outagedeck.com/developers/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "packagist-packagist",
+   "name": "Packagist",
+   "area": "sin_clasificar",
+   "url": "https://packagist.org/apidoc",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://packagist.org/apidoc",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "PHP Composer package versions and dist metadata",
+   "cors": "No",
+   "probe": {
+    "url": "https://packagist.org/apidoc",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "pantry-getpantry",
+   "name": "Pantry",
+   "area": "sin_clasificar",
+   "url": "https://getpantry.cloud/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://getpantry.cloud/",
+   "topics": [
+    "cloud-storage-file-sharing"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Cloud Storage & File Sharing",
+   "descripcion": "Free JSON storage for small projects",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://getpantry.cloud/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "patentsview-patentsview",
+   "name": "PatentsView",
+   "area": "sin_clasificar",
+   "url": "https://patentsview.org/apis/purpose",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://patentsview.org/apis/purpose",
+   "topics": [
+    "patent"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Patent",
+   "descripcion": "API is intended to explore and visualize trends/patterns across the US innovation landscape",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://patentsview.org/apis/purpose",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "phone-specs-phone-specs-api-producti",
+   "name": "Phone Specs",
+   "area": "sin_clasificar",
+   "url": "https://phone-specs-api-production.up.railway.app/docs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://phone-specs-api-production.up.railway.app/docs",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Real-time smartphone specifications database for 263 devices",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://phone-specs-api-production.up.railway.app/docs",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "pick-an-agency-www",
+   "name": "Pick an Agency",
+   "area": "sin_clasificar",
+   "url": "https://www.pickanagency.com/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.pickanagency.com/developers",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Search 47,000+ marketing agencies by service, location and rating",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.pickanagency.com/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "portfolio-optimizer-portfoliooptimizer",
+   "name": "Portfolio Optimizer",
+   "area": "sin_clasificar",
+   "url": "https://portfoliooptimizer.io/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://portfoliooptimizer.io/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Portfolio analysis and optimization",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://portfoliooptimizer.io/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "postman-echo-www",
+   "name": "Postman Echo",
+   "area": "sin_clasificar",
+   "url": "https://www.postman-echo.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.postman-echo.com",
+   "topics": [
+    "data-validation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Data Validation",
+   "descripcion": "Test api server to receive and return value from HTTP method",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.postman-echo.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "qr-code-goqr",
+   "name": "QR code",
+   "area": "sin_clasificar",
+   "url": "http://goqr.me/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "http://goqr.me/api/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Generate and decode / read QR code graphics",
+   "cors": "Unknown",
+   "probe": {
+    "url": "http://goqr.me/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "qr-code-www",
+   "name": "QR code",
+   "area": "sin_clasificar",
+   "url": "https://www.qrtag.net/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.qrtag.net/api/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Create an easy to read QR code and URL shortener",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.qrtag.net/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "qrcode-monkey-www",
+   "name": "Qrcode Monkey",
+   "area": "sin_clasificar",
+   "url": "https://www.qrcode-monkey.com/qr-code-api-with-logo/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.qrcode-monkey.com/qr-code-api-with-logo/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Integrate custom and unique looking QR codes into your system or workflow",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.qrcode-monkey.com/qr-code-api-with-logo/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "quickmocker-quickmocker",
+   "name": "QuickMocker",
+   "area": "sin_clasificar",
+   "url": "https://quickmocker.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://quickmocker.com",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "API mocking tool to generate contextual, fake or random data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://quickmocker.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "random-data-random-data-api",
+   "name": "Random Data",
+   "area": "sin_clasificar",
+   "url": "https://random-data-api.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://random-data-api.com",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Random data generator",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://random-data-api.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "randomuser-randomuser",
+   "name": "RandomUser",
+   "area": "sin_clasificar",
+   "url": "https://randomuser.me",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://randomuser.me",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generates and list user data",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://randomuser.me",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "razorpay-ifsc-razorpay",
+   "name": "Razorpay IFSC",
+   "area": "sin_clasificar",
+   "url": "https://razorpay.com/docs/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://razorpay.com/docs/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Indian Financial Systems Code (Bank Branch Codes)",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://razorpay.com/docs/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "refuge-restrooms-www",
+   "name": "REFUGE Restrooms",
+   "area": "sin_clasificar",
+   "url": "https://www.refugerestrooms.org/api/docs/#!/restrooms",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.refugerestrooms.org/api/docs/#!/restrooms",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Provides safe restroom access for transgender, intersex and gender nonconforming individuals",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.refugerestrooms.org/api/docs/#!/restrooms",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "reqres-reqres",
+   "name": "ReqRes",
+   "area": "sin_clasificar",
+   "url": "https://reqres.in/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://reqres.in/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "A hosted REST-API ready to respond to your AJAX requests",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://reqres.in/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "restful-api-restful-api",
+   "name": "restful-api",
+   "area": "sin_clasificar",
+   "url": "https://restful-api.dev",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://restful-api.dev",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Fake REST API for testing and prototyping with CRUD endpoints",
+   "cors": "No",
+   "probe": {
+    "url": "https://restful-api.dev",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "rss-feed-to-json-rss-to-json-serverless-a",
+   "name": "RSS feed to JSON",
+   "area": "sin_clasificar",
+   "url": "https://rss-to-json-serverless-api.vercel.app",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://rss-to-json-serverless-api.vercel.app",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Returns RSS feed in JSON format using feed URL",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://rss-to-json-serverless-api.vercel.app",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "rubygems-guides",
+   "name": "RubyGems",
+   "area": "sin_clasificar",
+   "url": "https://guides.rubygems.org/rubygems-org-api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://guides.rubygems.org/rubygems-org-api/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Ruby gem metadata, versions, dependencies and search",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://guides.rubygems.org/rubygems-org-api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "screenshotlayer-screenshotlayer",
+   "name": "Screenshotlayer",
+   "area": "sin_clasificar",
+   "url": "https://screenshotlayer.com?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://screenshotlayer.com?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers",
+   "topics": [
+    "photography"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Photography",
+   "descripcion": "URL to screenshot",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://screenshotlayer.com?utm_source=Github&utm_medium=Referral&utm_campaign=Public-apis-repo-Best-sellers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "sec-edgar-data-www",
+   "name": "SEC EDGAR Data",
+   "area": "sin_clasificar",
+   "url": "https://www.sec.gov/edgar/sec-api-documentation",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.sec.gov/edgar/sec-api-documentation",
+   "topics": [
+    "finance"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "API to access annual reports of public US companies",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.sec.gov/edgar/sec-api-documentation",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "sonar-github",
+   "name": "Sonar",
+   "area": "sin_clasificar",
+   "url": "https://github.com/Cgboal/SonarSearch",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/Cgboal/SonarSearch",
+   "topics": [
+    "development"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "Project Sonar DNS Enumeration API",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://github.com/Cgboal/SonarSearch",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "spaceflight-news-spaceflightnewsapi",
+   "name": "Spaceflight News",
+   "area": "sin_clasificar",
+   "url": "https://spaceflightnewsapi.net",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://spaceflightnewsapi.net",
+   "topics": [
+    "news"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "News",
+   "descripcion": "Spaceflight related news 🚀",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://spaceflightnewsapi.net",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "spanish-random-names-random-names-api",
+   "name": "Spanish random names",
+   "area": "sin_clasificar",
+   "url": "https://random-names-api.herokuapp.com/public",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://random-names-api.herokuapp.com/public",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generate spanish names (with gender) randomly",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://random-names-api.herokuapp.com/public",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "statically-statically",
+   "name": "Statically",
+   "area": "sin_clasificar",
+   "url": "https://statically.io/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://statically.io/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "A free CDN for developers",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://statically.io/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "statlyte-statlyte",
+   "name": "Statlyte",
+   "area": "sin_clasificar",
+   "url": "https://statlyte.com/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://statlyte.com/api",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "Live pricing, context windows and model ids for major LLM APIs",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://statlyte.com/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "strait-of-hormuz-ship-monitor-hormuz",
+   "name": "Strait of Hormuz Ship Monitor",
+   "area": "sin_clasificar",
+   "url": "https://hormuz.data-tracking.net/llms.txt",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://hormuz.data-tracking.net/llms.txt",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Live AIS vessel traffic, crossings and oil flow through the Strait of Hormuz",
+   "cors": "No",
+   "probe": {
+    "url": "https://hormuz.data-tracking.net/llms.txt",
+    "expect": "text"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "techrole-index-techrole",
+   "name": "TechRole Index",
+   "area": "sin_clasificar",
+   "url": "https://techrole.ru/open-data-daily",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://techrole.ru/open-data-daily",
+   "topics": [
+    "jobs"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Jobs",
+   "descripcion": "Russian IT profession, vacancy publication and salary aggregates",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://techrole.ru/open-data-daily",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tenders-in-hungary-tenders",
+   "name": "Tenders in Hungary",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/hu/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tenders.guru/hu/api",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Get data for procurements in Hungary in JSON format",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://tenders.guru/hu/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tenders-in-poland-tenders",
+   "name": "Tenders in Poland",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/pl/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tenders.guru/pl/api",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Get data for procurements in Poland in JSON format",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://tenders.guru/pl/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tenders-in-romania-tenders",
+   "name": "Tenders in Romania",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/ro/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tenders.guru/ro/api",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Get data for procurements in Romania in JSON format",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://tenders.guru/ro/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tenders-in-spain-tenders",
+   "name": "Tenders in Spain",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/es/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tenders.guru/es/api",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Get data for procurements in Spain in JSON format",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://tenders.guru/es/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tenders-in-ukraine-tenders",
+   "name": "Tenders in Ukraine",
+   "area": "sin_clasificar",
+   "url": "https://tenders.guru/ua/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tenders.guru/ua/api",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "Get data for procurements in Ukraine in JSON format",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://tenders.guru/ua/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tensorfeed-tensorfeed",
+   "name": "TensorFeed",
+   "area": "sin_clasificar",
+   "url": "https://tensorfeed.ai/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://tensorfeed.ai/developers",
+   "topics": [
+    "machine-learning"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Machine Learning",
+   "descripcion": "Real-time AI news, model pricing, service status, and agent activity feeds",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://tensorfeed.ai/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "the-null-pointer-0x0",
+   "name": "The Null Pointer",
+   "area": "sin_clasificar",
+   "url": "https://0x0.st",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://0x0.st",
+   "topics": [
+    "cloud-storage-file-sharing"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Cloud Storage & File Sharing",
+   "descripcion": "No-bullshit file hosting and URL shortening service",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://0x0.st",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "this-person-does-not-exist-thispersondoesnotexist",
+   "name": "This Person Does not Exist",
+   "area": "sin_clasificar",
+   "url": "https://thispersondoesnotexist.com",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://thispersondoesnotexist.com",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generates real-life faces of people who do not exist",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://thispersondoesnotexist.com",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "thunder-client-www",
+   "name": "Thunder Client",
+   "area": "sin_clasificar",
+   "url": "https://www.thunderclient.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.thunderclient.com/",
+   "topics": [
+    "development"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Development",
+   "descripcion": "API testing tool",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.thunderclient.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "toolcarton-testimonialapi",
+   "name": "Toolcarton",
+   "area": "sin_clasificar",
+   "url": "https://testimonialapi.toolcarton.com/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://testimonialapi.toolcarton.com/",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generate random testimonial data",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://testimonialapi.toolcarton.com/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "top-5-stocks-top5stocks",
+   "name": "Top 5 Stocks",
+   "area": "sin_clasificar",
+   "url": "https://top5stocks.netlify.app/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://top5stocks.netlify.app/developers",
+   "topics": [
+    "finance"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Daily AI-ranked stock and crypto watchlists",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://top5stocks.netlify.app/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "totalshiftleft-sandbox-demo",
+   "name": "TotalShiftLeft Sandbox",
+   "area": "sin_clasificar",
+   "url": "https://demo.totalshiftleft.ai/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://demo.totalshiftleft.ai/",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Free multi-protocol sandbox: REST, GraphQL & SOAP with OAuth2/JWT auth and OpenAPI 3.0 spec",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://demo.totalshiftleft.ai/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "tradedatahub-www",
+   "name": "TradeDataHub",
+   "area": "sin_clasificar",
+   "url": "https://www.tradedatahub.net",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.tradedatahub.net",
+   "topics": [
+    "business"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Business",
+   "descripcion": "U.S. contractor datasets with a free discovery API for coverage, pricing and masked previews",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.tradedatahub.net",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transitland-www",
+   "name": "TransitLand",
+   "area": "sin_clasificar",
+   "url": "https://www.transit.land/documentation/datastore/api-endpoints.html",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.transit.land/documentation/datastore/api-endpoints.html",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Transit Aggregation",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.transit.land/documentation/datastore/api-endpoints.html",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-auckland-new-zealand-dev-portal",
+   "name": "Transport for Auckland, New Zealand",
+   "area": "sin_clasificar",
+   "url": "https://dev-portal.at.govt.nz/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://dev-portal.at.govt.nz/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Auckland Transport",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://dev-portal.at.govt.nz/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-belgium-docs",
+   "name": "Transport for Belgium",
+   "area": "sin_clasificar",
+   "url": "https://docs.irail.be/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://docs.irail.be/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "The iRail API is a third-party API for Belgian public transport by train",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://docs.irail.be/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-berlin-germany-github",
+   "name": "Transport for Berlin, Germany",
+   "area": "sin_clasificar",
+   "url": "https://github.com/derhuerst/vbb-rest/blob/3/docs/index.md",
+   "kind": "text",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://github.com/derhuerst/vbb-rest/blob/3/docs/index.md",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Third-party VBB API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://github.com/derhuerst/vbb-rest/blob/3/docs/index.md",
+    "expect": "text"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-budapest-hungary-bkkfutar",
+   "name": "Transport for Budapest, Hungary",
+   "area": "sin_clasificar",
+   "url": "https://bkkfutar.docs.apiary.io",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://bkkfutar.docs.apiary.io",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Budapest public transport API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://bkkfutar.docs.apiary.io",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-czech-republic-www",
+   "name": "Transport for Czech Republic",
+   "area": "sin_clasificar",
+   "url": "https://www.chaps.cz/eng/products/idos-internet",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.chaps.cz/eng/products/idos-internet",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Czech transport API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.chaps.cz/eng/products/idos-internet",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-finland-digitransit",
+   "name": "Transport for Finland",
+   "area": "sin_clasificar",
+   "url": "https://digitransit.fi/en/developers/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://digitransit.fi/en/developers/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Finnish transport API",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://digitransit.fi/en/developers/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-los-angeles-us-developer",
+   "name": "Transport for Los Angeles, US",
+   "area": "sin_clasificar",
+   "url": "https://developer.metro.net/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://developer.metro.net/api/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Data about positions of Metro vehicles in real time and travel their routes",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://developer.metro.net/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-norway-developer",
+   "name": "Transport for Norway",
+   "area": "sin_clasificar",
+   "url": "https://developer.entur.org/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://developer.entur.org/",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Transport APIs and dataset for Norway",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://developer.entur.org/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-spain-data",
+   "name": "Transport for Spain",
+   "area": "sin_clasificar",
+   "url": "https://data.renfe.com/api/1/util/snippet/api_info.html?resource_id=a2368cff-1562-4dde-8466-9635ea3a572a",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://data.renfe.com/api/1/util/snippet/api_info.html?resource_id=a2368cff-1562-4dde-8466-9635ea3a572a",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Public trains of Spain",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://data.renfe.com/api/1/util/snippet/api_info.html?resource_id=a2368cff-1562-4dde-8466-9635ea3a572a",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-for-toronto-canada-myttc",
+   "name": "Transport for Toronto, Canada",
+   "area": "sin_clasificar",
+   "url": "https://myttc.ca/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://myttc.ca/developers",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "TTC",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://myttc.ca/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "transport-rest-transport",
+   "name": "transport.rest",
+   "area": "sin_clasificar",
+   "url": "https://transport.rest",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://transport.rest",
+   "topics": [
+    "transportation"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Transportation",
+   "descripcion": "Community maintained, developer-friendly public transport API",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://transport.rest",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "us-mortgage-calculator-www",
+   "name": "US Mortgage Calculator",
+   "area": "sin_clasificar",
+   "url": "https://www.usmortgagecalc.com/developers/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.usmortgagecalc.com/developers/api",
+   "topics": [
+    "finance"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Mortgage payment, amortization, affordability and 50-state property tax data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://www.usmortgagecalc.com/developers/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "uspto-www",
+   "name": "USPTO",
+   "area": "sin_clasificar",
+   "url": "https://www.uspto.gov/learning-and-resources/open-data-and-mobility",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.uspto.gov/learning-and-resources/open-data-and-mobility",
+   "topics": [
+    "patent"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Patent",
+   "descripcion": "USA patent api services",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://www.uspto.gov/learning-and-resources/open-data-and-mobility",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "uuid-generator-www",
+   "name": "UUID Generator",
+   "area": "sin_clasificar",
+   "url": "https://www.uuidtools.com/docs",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://www.uuidtools.com/docs",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generate UUIDs",
+   "cors": "No",
+   "probe": {
+    "url": "https://www.uuidtools.com/docs",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "vector-express-v2-0-vector",
+   "name": "Vector Express v2.0",
+   "area": "sin_clasificar",
+   "url": "https://vector.express",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://vector.express",
+   "topics": [
+    "documents-productivity"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Documents & Productivity",
+   "descripcion": "Free vector file converting API",
+   "cors": "No",
+   "probe": {
+    "url": "https://vector.express",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "wakatime-wakatime",
+   "name": "WakaTime",
+   "area": "sin_clasificar",
+   "url": "https://wakatime.com/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://wakatime.com/developers",
+   "topics": [
+    "documents-productivity"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Documents & Productivity",
+   "descripcion": "Automated time tracking leaderboards for programmers",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://wakatime.com/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "wallstreetbets-dashboard",
+   "name": "WallstreetBets",
+   "area": "sin_clasificar",
+   "url": "https://dashboard.nbshare.io/apps/reddit/api/",
+   "kind": "html",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://dashboard.nbshare.io/apps/reddit/api/",
+   "topics": [
+    "finance"
+   ],
+   "quality": "C",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "WallstreetBets Stock Comments Sentiment Analysis",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://dashboard.nbshare.io/apps/reddit/api/",
+    "expect": "html"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "wheelwise-cars",
+   "name": "Wheelwise",
+   "area": "sin_clasificar",
+   "url": "https://cars.limoja.ai/api/search?q=BMW&limit=1",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://cars.limoja.ai/api/search?q=BMW&limit=1",
+   "topics": [
+    "vehicle"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Vehicle",
+   "descripcion": "UK used-car listings with fair-price grade, 36-month resale forecast and true monthly cost per advert",
+   "cors": "No",
+   "probe": {
+    "url": "https://cars.limoja.ai/api/search?q=BMW&limit=1",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "yes-no-yesno",
+   "name": "Yes No",
+   "area": "sin_clasificar",
+   "url": "https://yesno.wtf/api",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://yesno.wtf/api",
+   "topics": [
+    "test-data"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Test Data",
+   "descripcion": "Generate yes or no randomly",
+   "cors": "Unknown",
+   "probe": {
+    "url": "https://yesno.wtf/api",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  },
+  {
+   "id": "zelothorn-zelothorn",
+   "name": "Zelothorn",
+   "area": "sin_clasificar",
+   "url": "https://zelothorn.com/developers",
+   "kind": "json",
+   "auth": "none",
+   "country": "global",
+   "region": "global",
+   "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+   ],
+   "license": "unknown",
+   "docs_url": "https://zelothorn.com/developers",
+   "topics": [
+    "finance"
+   ],
+   "quality": "B",
+   "source": "public-apis",
+   "categoria_public_apis": "Finance",
+   "descripcion": "Plain-English explanations of US public companies with SEC filings and earnings data",
+   "cors": "Yes",
+   "probe": {
+    "url": "https://zelothorn.com/developers",
+    "expect": "json"
+   },
+   "_score": 0,
+   "_score_all": {},
+   "already_registered": false
+  }
+ ]
+}

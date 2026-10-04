@@ -1,0 +1,43 @@
+{
+  "portal": "linguaforge",
+  "dominio": "Idiomas (motor de practica)",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "generado_utc": "2026-09-12T21:58:20+00:00",
+  "motor": "edge-tts (voces neuronales, sin API key)",
+  "idiomas": {
+    "pt": {
+      "voz": "pt-BR-FranciscaNeural",
+      "guion": "Bem-vindo ao portal de referencia linguaforge. Dominio: Linguas (motor de pratica). Reune 3 temas construidos a partir de 5 fontes de dados abertos verificadas: lexico comparado, leitura graduada, referencia academica. Tudo gratuito, sem credenciais, e funciona sem ligacao a Internet.",
+      "archivo": "voces/pt/bienvenida.mp3",
+      "bytes": 119520,
+      "sha256": "f8a763a43f853116217c57b80767d0fd72041acd490d4c086b0a9d045d2231e5"
+    },
+    "es": {
+      "voz": "es-ES-ElviraNeural",
+      "guion": "Bienvenido al portal de referencia linguaforge. Dominio: Idiomas (motor de practica). Reune 3 temas construidos a partir de 5 fuentes de datos abiertos verificadas: lexico comparado, lectura graduada, referencia academica. Todo gratuito, sin credenciales, y funciona sin conexion.",
+      "archivo": "voces/es/bienvenida.mp3",
+      "bytes": 123264,
+      "sha256": "32fe4a5fac3c11505784f6794bd2aaee4cca54edeed9c352622ce1e4a0312845"
+    },
+    "en": {
+      "voz": "en-US-AriaNeural",
+      "guion": "Welcome to the linguaforge reference portal. Domain: Languages (practice engine). It brings together 3 topics built from 5 verified open data sources: comparative lexicon, graded reading, academic reference. All free, no credentials, and it works offline.",
+      "archivo": "voces/en/bienvenida.mp3",
+      "bytes": 116064,
+      "sha256": "dbcfce18886ceb7eb82874cbb078b0ddd4838563277bca8f2c00b25e92730264"
+    },
+    "ca": {
+      "voz": "ca-ES-JoanaNeural",
+      "guion": "Benvingut al portal de referencia linguaforge. Domini: Llengues (motor de practica). Aplega 3 temes construits a partir de 5 fonts de dades obertes verificades: lexic comparat, lectura graduada, referencia academica. Tot gratuit, sense credencials, i funciona sense connexio.",
+      "archivo": "voces/ca/bienvenida.mp3",
+      "bytes": 150624,
+      "sha256": "0afff0ef4ce55ef3881f4bada647c5189a52ef2e7f385c466ffa5aa517f8ffa6"
+    }
+  },
+  "nota_correccion": "2026-09-15: guiones PT/EN/CA contenian dominio y temas en espanol; traducidos y audio regenerado."
+}

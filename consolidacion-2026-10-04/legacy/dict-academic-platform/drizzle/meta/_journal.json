@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787809756197,
+      "tag": "0000_abnormal_blue_shield",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787810270686,
+      "tag": "0001_mysterious_monster_badoon",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787811419628,
+      "tag": "0002_tiresome_hitman",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "purpose": "Registro de fuentes de datos abiertos sin API key para portales educativos Belentani",
+  "langs": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "areas": [
+    "idiomas",
+    "academico",
+    "civico_derechos",
+    "ciberseguridad",
+    "ux_diseno",
+    "patrimonio_arte",
+    "ciencia_salud",
+    "datos_pais"
+  ],
+  "verified_at": "2026-09-13T08:37:30Z",
+  "rules": [
+    "Solo fuentes con endpoint documentado accesible sin credenciales",
+    "Licencia obligatoria para redistribucion",
+    "PT > ES > EN > CA en contenido multilingue"
+  ],
+  "fix_log": "2026: endpoints reparados tras verify_sources.py; TLS local bloquea eurostat/gutendex/urlhaus por HTTPS (eurostat via HTTP, resto sustituido). | 2026-09-13: ingesta del harvest mundial desde registry/_intake (approved.json + rejections.json): 162 altas, 0 retiradas, 198 fuentes. Excluidas por la regla 2 de licencia: portales HTML y fichas sin licencia determinada. | 2026-09-13: ingesta del harvest mundial desde registry/_intake (approved.json + rejections.json): 0 altas, 0 retiradas, 198 fuentes. Excluidas por la regla 2 de licencia: portales HTML y fichas sin licencia determinada. | 2026-09-13: ingesta del harvest mundial desde registry/_intake (approved.json + rejections.json): 0 altas, 0 retiradas, 198 fuentes. Excluidas por la regla 2 de licencia: portales HTML y fichas sin licencia determinada. | 2026-09-13: ingesta del harvest mundial desde registry/_intake (approved.json + rejections.json): 0 altas, 5 retiradas, 193 fuentes. Excluidas por la regla 2 de licencia: portales HTML y fichas sin licencia determinada. | 2026-09-13: ingesta del harvest mundial desde registry/_intake (approved.json + rejections.json): 5 altas, 0 retiradas, 198 fuentes. Excluidas por la regla 2 de licencia: portales HTML y fichas sin licencia determinada.",
+  "split_from": "sources.json",
+  "split_at": "2026-09-13T07:57:16Z"
+}

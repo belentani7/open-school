@@ -1,0 +1,578 @@
+{
+  "aprende-brasil": {
+    "repo": "belentani7/aprende-brasil",
+    "dominio": "Educacao PT-BR e cidadania",
+    "categorias": [
+      "academico",
+      "ciencia_salud",
+      "civico_derechos",
+      "datos_pais",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "idiomas": [
+        "Project Gutenberg",
+        "Tatoeba EN",
+        "Wikisource PT",
+        "Wiktionary ES"
+      ],
+      "civico_derechos": [
+        "IBGE"
+      ],
+      "datos_pais": [
+        "REST Countries"
+      ],
+      "ciencia_salud": [
+        "GBIF"
+      ],
+      "academico": [
+        "OpenAlex",
+        "Wikipedia PT"
+      ]
+    },
+    "temas": [
+      "vocabulario-pt",
+      "territorio-e-cidadania",
+      "lectura-en-portugues",
+      "dados-abertos-br",
+      "ciencia-br",
+      "cultura-e-historia"
+    ],
+    "secciones": [
+      "vocabulario-pt",
+      "territorio-e-cidadania",
+      "lectura-en-portugues",
+      "dados-abertos-br",
+      "ciencia-br",
+      "cultura-e-historia"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 17,
+    "enlaces_rotos": [],
+    "probe_ok": 5,
+    "probe_ko": 1,
+    "probe_fallos": [
+      "www.gbif.org HTTP 403"
+    ]
+  },
+  "cruzando-el-charco": {
+    "repo": "belentani7/Cruzando-el-charco",
+    "dominio": "Acogida, arraigo y derechos (migrantes LGBT+)",
+    "categorias": [
+      "academico",
+      "ciencia_salud",
+      "civico_derechos",
+      "datos_pais",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "idiomas": [
+        "Wikipedia ES"
+      ],
+      "datos_pais": [
+        "Eurostat",
+        "REST Countries",
+        "World Bank"
+      ],
+      "ciencia_salud": [
+        "PubMed"
+      ],
+      "civico_derechos": [
+        "IBGE",
+        "datos.gob.es"
+      ],
+      "academico": [
+        "Wikilibros ES"
+      ]
+    },
+    "temas": [
+      "derechos-y-asilo",
+      "salud-y-bienestar",
+      "vivienda-y-empleo",
+      "contexto-demografico-ue",
+      "comunidad-y-cultura",
+      "tramites-y-datos"
+    ],
+    "secciones": [
+      "derechos-y-asilo",
+      "salud-y-bienestar",
+      "vivienda-y-empleo",
+      "contexto-demografico-ue",
+      "comunidad-y-cultura",
+      "tramites-y-datos"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 30,
+    "enlaces_rotos": [],
+    "probe_ok": 3,
+    "probe_ko": 1,
+    "probe_fallos": [
+      "pubmed.ncbi.nlm.nih.gov HTTP 403"
+    ]
+  },
+  "lingua-aberta": {
+    "repo": "belentani7/lingua-aberta",
+    "dominio": "Idiomas (PT > ES > EN > CA)",
+    "categorias": [
+      "academico",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "idiomas": [
+        "Openverse",
+        "Project Gutenberg",
+        "Tatoeba EN",
+        "Tatoeba ES",
+        "Tatoeba PT",
+        "Viccionari CA",
+        "Wikipedia ES",
+        "Wiktionary EN",
+        "Wiktionary ES"
+      ],
+      "academico": [
+        "Open Library",
+        "Vikidia ES",
+        "Vikidia PT",
+        "Wikipedia PT"
+      ]
+    },
+    "temas": [
+      "vocabulario-basico",
+      "lectura-graduada",
+      "cultura-y-contexto",
+      "media-para-clase",
+      "practica-frases",
+      "gramatica-ca",
+      "enciclopedia-infantil"
+    ],
+    "secciones": [
+      "vocabulario-basico",
+      "lectura-graduada",
+      "cultura-y-contexto",
+      "media-para-clase",
+      "practica-frases",
+      "gramatica-ca",
+      "enciclopedia-infantil"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 18,
+    "enlaces_rotos": [],
+    "probe_ok": 4,
+    "probe_ko": 2,
+    "probe_fallos": [
+      "pt.vikidia.org HTTP 403",
+      "es.vikidia.org HTTP 403"
+    ]
+  },
+  "lingua-aberta-empresa": {
+    "repo": "belentani7/lingua-aberta-empresa",
+    "dominio": "Idiomas para empresa y empleo (PT > ES > EN > CA)",
+    "categorias": [
+      "academico",
+      "datos_pais",
+      "idiomas",
+      "ux_diseno"
+    ],
+    "fuentes_por_categoria": {
+      "idiomas": [
+        "Tatoeba EN",
+        "Tatoeba ES",
+        "Viccionari CA",
+        "Wikipedia ES",
+        "Wikisource ES",
+        "Wiktionary EN",
+        "Wiktionary ES"
+      ],
+      "academico": [
+        "Crossref",
+        "Open Library",
+        "OpenAlex"
+      ],
+      "datos_pais": [
+        "REST Countries",
+        "World Bank"
+      ],
+      "ux_diseno": [
+        "Google Fonts"
+      ]
+    },
+    "temas": [
+      "lexico-profesional",
+      "frases-de-reunion",
+      "documentos-y-modelos",
+      "datos-de-mercado",
+      "investigacion-gestion",
+      "cultura-empresarial",
+      "tipografia-de-marca"
+    ],
+    "secciones": [
+      "lexico-profesional",
+      "frases-de-reunion",
+      "documentos-y-modelos",
+      "datos-de-mercado",
+      "investigacion-gestion",
+      "cultura-empresarial",
+      "tipografia-de-marca"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 16,
+    "enlaces_rotos": [],
+    "probe_ok": 4,
+    "probe_ko": 1,
+    "probe_fallos": [
+      "doi.org HTTP 403"
+    ]
+  },
+  "linguaforge": {
+    "repo": "belentani7/linguaforge",
+    "dominio": "Idiomas (motor de practica)",
+    "categorias": [
+      "academico",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "idiomas": [
+        "Project Gutenberg",
+        "Tatoeba ES",
+        "Tatoeba PT",
+        "Wikisource PT",
+        "Wiktionary EN",
+        "Wiktionary ES"
+      ],
+      "academico": [
+        "arXiv"
+      ]
+    },
+    "temas": [
+      "lexico-comparado",
+      "lectura-graduada",
+      "referencia-academica",
+      "falsos-amigos",
+      "frases-ejemplo",
+      "textos-clasicos"
+    ],
+    "secciones": [
+      "lexico-comparado",
+      "lectura-graduada",
+      "referencia-academica",
+      "falsos-amigos",
+      "frases-ejemplo",
+      "textos-clasicos"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 7,
+    "enlaces_rotos": [],
+    "probe_ok": 2,
+    "probe_ko": 0,
+    "probe_fallos": []
+  },
+  "manosabiertas": {
+    "repo": "belentani7/ManosAbiertas",
+    "dominio": "Integracion, derechos y tramites (ES)",
+    "categorias": [
+      "academico",
+      "ciencia_salud",
+      "civico_derechos",
+      "datos_pais",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "datos_pais": [
+        "Eurostat",
+        "REST Countries",
+        "World Bank"
+      ],
+      "civico_derechos": [
+        "datos.gob.es"
+      ],
+      "academico": [
+        "OpenStax"
+      ],
+      "ciencia_salud": [
+        "PubMed"
+      ],
+      "idiomas": [
+        "Wikipedia ES"
+      ]
+    },
+    "temas": [
+      "empleo-y-paro",
+      "educacion-y-formacion",
+      "vivienda-y-servicios",
+      "contexto-demografico-ue",
+      "salud-publica",
+      "derechos-y-asilo"
+    ],
+    "secciones": [
+      "empleo-y-paro",
+      "educacion-y-formacion",
+      "vivienda-y-servicios",
+      "contexto-demografico-ue",
+      "salud-publica",
+      "derechos-y-asilo"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 33,
+    "enlaces_rotos": [],
+    "probe_ok": 3,
+    "probe_ko": 1,
+    "probe_fallos": [
+      "pubmed.ncbi.nlm.nih.gov HTTP 403"
+    ]
+  },
+  "open-school": {
+    "repo": "belentani7/open-school",
+    "dominio": "Instituto digital (ESO y bachillerato)",
+    "categorias": [
+      "academico",
+      "datos_pais"
+    ],
+    "fuentes_por_categoria": {
+      "academico": [
+        "Crossref",
+        "Open Library",
+        "OpenAlex",
+        "OpenStax",
+        "Wikilibros ES",
+        "Wikiversidad ES",
+        "arXiv"
+      ],
+      "datos_pais": [
+        "World Bank"
+      ]
+    },
+    "temas": [
+      "textos-por-asignatura",
+      "lecturas-obligatorias",
+      "ciencia-y-actualidad",
+      "datos-educativos",
+      "libros-libres",
+      "investigacion-escolar"
+    ],
+    "secciones": [
+      "textos-por-asignatura",
+      "lecturas-obligatorias",
+      "ciencia-y-actualidad",
+      "datos-educativos",
+      "libros-libres",
+      "investigacion-escolar"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 24,
+    "enlaces_rotos": [],
+    "probe_ok": 4,
+    "probe_ko": 0,
+    "probe_fallos": []
+  },
+  "secure-t": {
+    "repo": "belentani7/secure-t",
+    "dominio": "Ciberseguridad e IA (universidad publica)",
+    "categorias": [
+      "academico",
+      "ciberseguridad",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "ciberseguridad": [
+        "CISA KEV",
+        "GitHub Advisories",
+        "MITRE ATT&CK",
+        "NVD NIST"
+      ],
+      "academico": [
+        "Crossref",
+        "OpenAlex",
+        "Wikilibros EN"
+      ],
+      "idiomas": [
+        "Wikipedia ES"
+      ]
+    },
+    "temas": [
+      "vulnerabilidades-explotadas",
+      "cves-recientes",
+      "tecnicas-de-adversario",
+      "avisos-github",
+      "investigacion-ia",
+      "normas-y-estandares",
+      "ia-y-etica"
+    ],
+    "secciones": [
+      "vulnerabilidades-explotadas",
+      "cves-recientes",
+      "tecnicas-de-adversario",
+      "avisos-github",
+      "investigacion-ia",
+      "normas-y-estandares",
+      "ia-y-etica"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 23,
+    "enlaces_rotos": [],
+    "probe_ok": 4,
+    "probe_ko": 0,
+    "probe_fallos": []
+  },
+  "secure-t-university": {
+    "repo": "belentani7/secure-t-university",
+    "dominio": "Ciberseguridad y trust & safety",
+    "categorias": [
+      "academico",
+      "ciberseguridad",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "ciberseguridad": [
+        "CISA KEV",
+        "GitHub Advisories",
+        "MITRE ATT&CK",
+        "NVD NIST"
+      ],
+      "idiomas": [
+        "Openverse"
+      ],
+      "academico": [
+        "OpenAlex",
+        "Wikilibros EN"
+      ]
+    },
+    "temas": [
+      "vulnerabilidades-explotadas",
+      "cves-recientes",
+      "tecnicas-de-adversario",
+      "media-y-casos",
+      "avisos-github",
+      "investigacion-seguridad",
+      "normas-y-estandares"
+    ],
+    "secciones": [
+      "vulnerabilidades-explotadas",
+      "cves-recientes",
+      "tecnicas-de-adversario",
+      "media-y-casos",
+      "avisos-github",
+      "investigacion-seguridad",
+      "normas-y-estandares"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 24,
+    "enlaces_rotos": [],
+    "probe_ok": 4,
+    "probe_ko": 0,
+    "probe_fallos": []
+  },
+  "ux-academy": {
+    "repo": "belentani7/ux-academy-professional-program",
+    "dominio": "UX, producto y diseno",
+    "categorias": [
+      "idiomas",
+      "patrimonio_arte",
+      "ux_diseno"
+    ],
+    "fuentes_por_categoria": {
+      "ux_diseno": [
+        "Google Fonts",
+        "Iconify",
+        "Lucide",
+        "Open Color",
+        "Tailwind tokens"
+      ],
+      "patrimonio_arte": [
+        "Art Institute",
+        "Met Museum"
+      ],
+      "idiomas": [
+        "Openverse"
+      ]
+    },
+    "temas": [
+      "iconografia",
+      "color-y-accesibilidad",
+      "tokens-de-diseno",
+      "referencias-visuales",
+      "tipografia",
+      "arte-y-museos"
+    ],
+    "secciones": [
+      "iconografia",
+      "color-y-accesibilidad",
+      "tokens-de-diseno",
+      "referencias-visuales",
+      "tipografia",
+      "arte-y-museos"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 27,
+    "enlaces_rotos": [],
+    "probe_ok": 3,
+    "probe_ko": 2,
+    "probe_fallos": [
+      "www.metmuseum.org HTTP 429",
+      "images.metmuseum.org UnicodeEncodeError"
+    ]
+  },
+  "williamschool": {
+    "repo": "belentani7/WILLIAMSCHOOL",
+    "dominio": "ESO, tutoria cultural y refuerzo",
+    "categorias": [
+      "academico",
+      "ciencia_salud",
+      "datos_pais",
+      "idiomas"
+    ],
+    "fuentes_por_categoria": {
+      "academico": [
+        "Open Library",
+        "OpenStax"
+      ],
+      "idiomas": [
+        "Tatoeba EN",
+        "Wikipedia ES",
+        "Wiktionary ES"
+      ],
+      "ciencia_salud": [
+        "GBIF",
+        "PubMed"
+      ],
+      "datos_pais": [
+        "REST Countries"
+      ]
+    },
+    "temas": [
+      "textos-por-asignatura",
+      "tutorias-y-cultura",
+      "lecturas-obligatorias",
+      "refuerzo-idiomas",
+      "ciencia-natural",
+      "datos-del-mundo"
+    ],
+    "secciones": [
+      "textos-por-asignatura",
+      "tutorias-y-cultura",
+      "lecturas-obligatorias",
+      "refuerzo-idiomas",
+      "ciencia-natural",
+      "datos-del-mundo"
+    ],
+    "temas_sin_seccion": [],
+    "temas_sin_ancla_nav": [],
+    "enlaces_totales": 27,
+    "enlaces_rotos": [],
+    "probe_ok": 2,
+    "probe_ko": 2,
+    "probe_fallos": [
+      "www.gbif.org HTTP 403",
+      "pubmed.ncbi.nlm.nih.gov HTTP 403"
+    ]
+  }
+}
