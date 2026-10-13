@@ -26,7 +26,7 @@ navegador; no hay servidor propio ni base de datos conectada.
 | Panel anónimo (UUID + borrado real) | funcionando |
 | Tutor orientador | funcionando, **sin modelo de lenguaje** |
 | Instalable / funciona sin conexión | funcionando (service worker) |
-| Contenido de las lecciones | no implementado |
+| Contenido de las lecciones | primera unidad interactiva publicada en Manos Abiertas; resto pendiente |
 | API, base de datos, autenticación | no implementado |
 | Certificados verificables por QR | no implementado |
 
@@ -150,7 +150,7 @@ para los assets con hash).
 
 Por orden de dependencia:
 
-1. Contenido real de las lecciones (hoy el catálogo es metadatos).
+1. Completar las lecciones de todas las rutas. La primera unidad de Manos Abiertas incluye teoría, práctica y evaluación; únicamente esa unidad puede sumar progreso aquí.
 2. API y base de datos — el esquema Drizzle ya está definido.
 3. Conectar el tutor a un modelo local (Ollama), sin claves externas.
 4. Certificados verificables por QR.
