@@ -8,14 +8,20 @@ import { Glass } from '../components/Glass';
 import { PlasmaField } from '../components/PlasmaField';
 import { getRoute, STATUS_LABEL } from '../lib/catalog';
 import { readProgress, setProgress } from '../lib/progress';
+import { getIntroLesson } from '../lib/introLesson';
 
 export function CourseDetail() {
   const { id = '' } = useParams<{ id: string }>();
   const route = getRoute(id);
+  const lesson = getIntroLesson(id);
   const [done, setDone] = useState(0);
+  const [selected, setSelected] = useState<number | null>(null);
+  const [feedback, setFeedback] = useState('');
 
   useEffect(() => {
     setDone(readProgress()[id] ?? 0);
+    setSelected(null);
+    setFeedback('');
   }, [id]);
 
   if (!route) {
@@ -32,12 +38,18 @@ export function CourseDetail() {
     );
   }
 
-  const start = () => {
-    // Sin backend todavia: se marca el primer modulo para que la promesa
-    // de "tu progreso se guarda en tu dispositivo" sea cierta desde ya.
-    const next = Math.min(1, (done || 0) + 1 / route.modules);
+  const evaluate = () => {
+    if (!lesson || selected === null) return;
+    if (selected !== lesson.quiz.correctIndex) {
+      setFeedback('Todavía no. Revisa la lección y prueba otra respuesta.');
+      return;
+    }
+    // Una única unidad publicada = un único módulo completado.
+    // Nunca avanzar módulos que el alumnado no ha podido cursar.
+    const next = Math.max(done, Math.min(1, 1 / route.modules));
     setProgress(route.id, next);
     setDone(next);
+    setFeedback('¡Correcto! Has completado esta unidad. El avance se ha guardado en este dispositivo.');
   };
 
   const pct = Math.round(done * 100);
@@ -63,7 +75,7 @@ export function CourseDetail() {
             <div className="row" style={{ gap: '0.45rem', marginTop: '0.6rem' }}>
               <span className="chip chip--edge">Nivel {route.level}</span>
               {route.offline && <span className="chip">Sin conexión</span>}
-              {route.certified && <span className="chip">Certificado verificable</span>}
+              {route.certified && <span className="chip">Certificación indicada en catálogo; no emitida aquí</span>}
               <span className="chip">
                 <i className={`dot dot--${route.status}`} aria-hidden="true" style={{ marginRight: 6 }} />
                 {STATUS_LABEL[route.status]}
@@ -97,6 +109,63 @@ export function CourseDetail() {
                 </ul>
               </div>
             </Glass>
+
+            {lesson ? (
+              <Glass style={{ padding: 'clamp(1.5rem, 3.5vw, 2.6rem)' }}>
+                <article id="leccion" className="stack stack--lg" aria-labelledby="lesson-title">
+                  <div className="stack stack--sm">
+                    <p className="t-label">Unidad introductoria publicada · {lesson.estimatedMinutes} min</p>
+                    <h2 id="lesson-title" className="t-title">{lesson.title}</h2>
+                    <p className="t-body">{lesson.objective}</p>
+                    <p className="t-label">1 de {route.modules} módulos previstos. El resto aún no está publicado aquí.</p>
+                  </div>
+
+                  {lesson.steps.map((step) => (
+                    <section key={step.title} className="stack stack--sm">
+                      <h3 className="t-subtitle">{step.title}</h3>
+                      <p className="t-body">{step.explanation}</p>
+                      <p className="t-body"><strong>Practica:</strong> {step.practice}</p>
+                    </section>
+                  ))}
+
+                  <form className="stack stack--sm" onSubmit={(event) => { event.preventDefault(); evaluate(); }}>
+                    <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
+                      <legend className="t-title" style={{ marginBottom: '1rem' }}>Comprueba lo aprendido</legend>
+                      <p className="t-body" style={{ marginBottom: '0.75rem' }}>{lesson.quiz.question}</p>
+                      <div className="stack stack--sm">
+                        {lesson.quiz.choices.map((choice, index) => (
+                          <label key={choice} className="row" style={{ gap: '0.7rem', alignItems: 'start', cursor: 'pointer' }}>
+                            <input
+                              type="radio"
+                              name={`answer-${route.id}`}
+                              checked={selected === index}
+                              onChange={() => { setSelected(index); setFeedback(''); }}
+                              style={{ marginTop: '0.4rem' }}
+                            />
+                            <span className="t-body">{choice}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <button type="submit" className="btn btn--light" disabled={selected === null}>
+                      Comprobar respuesta
+                    </button>
+                    <p role="status" aria-live="polite" className="t-body">{feedback}</p>
+                    {feedback.startsWith('¡Correcto!') && <p className="t-body">{lesson.quiz.explanation}</p>}
+                  </form>
+                </article>
+              </Glass>
+            ) : (
+              <Glass style={{ padding: 'clamp(1.5rem, 3.5vw, 2.6rem)' }}>
+                <div className="stack stack--sm">
+                  <h2 className="t-title">Contenido en preparación</h2>
+                  <p className="t-body">
+                    Esta ficha describe una ruta prevista. Aquí todavía no hay lecciones evaluables:
+                    no simularemos su progreso ni emitiremos certificados.
+                  </p>
+                </div>
+              </Glass>
+            )}
           </div>
 
           {/* ── Panel lateral, pegajoso en desktop ── */}
@@ -139,9 +208,13 @@ export function CourseDetail() {
                   ))}
                 </dl>
 
-                <button type="button" className="btn btn--light" onClick={start}>
-                  {done > 0 ? 'Continuar' : 'Empezar ahora'}
-                </button>
+                {lesson ? (
+                  <a className="btn btn--light" href="#leccion">
+                    {done > 0 ? 'Repasar unidad publicada' : 'Estudiar unidad publicada'}
+                  </a>
+                ) : (
+                  <p className="t-label">No hay unidades que completar todavía.</p>
+                )}
 
                 <p className="t-label" style={{ textAlign: 'center', color: 'var(--color-ink-3)' }}>
                   Sin registro
