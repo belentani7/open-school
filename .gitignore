@@ -3,6 +3,12 @@
 node_modules/
 dist/
 *.zip
+*.tar.gz
+*.rar
+*.7z
+*-coupling*
+*.backup
+*.bak
 .env
 .env.local
 # dependencias
