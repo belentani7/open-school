@@ -4,26 +4,20 @@ on:
     branches: [main, master]
   pull_request:
 jobs:
-  smoke:
-    name: Humo del repositorio
+  verify:
+    name: Verificacion completa
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Instalar dependencias
-        run: npm ci || npm install
-      - name: Build (informativo)
-        # Se ejecuta de forma advisory: informa del estado real del build sin
-        # dejar el repositorio entero en rojo mientras se estabiliza la cadena
-        # de dependencias (pnpm/vite/vitest conviven por migrating).
-        run: npm run build --if-present
-        continue-on-error: true
-      - name: Ficheros JSON validos
-        run: |
-          mal=0
-          for f in $(git ls-files '*.json' | head -50); do
-            if ! node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f" 2>/dev/null; then
-              echo "::warning file=$f::JSON no parseable"
-              mal=1
-            fi
-          done
-          [ "$mal" -eq 0 ] && echo "ok   JSON valido"
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm check
+      - name: Tests
+        run: pnpm test
+      - name: Build
+        run: pnpm build
