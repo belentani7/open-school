@@ -14,9 +14,6 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10.4.1
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10.4.1
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -47,6 +44,9 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
       - uses: actions/setup-node@v5
         with:
           node-version: 22
