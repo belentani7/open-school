@@ -3,6 +3,8 @@ on:
   push:
     branches: [main, master]
   pull_request:
+permissions:
+  contents: read
 jobs:
   verify:
     name: Verificacion completa
@@ -17,6 +19,17 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Dependency audit
+        run: pnpm audit --audit-level=high
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Backend tests and lint
+        working-directory: backend
+        run: |
+          python -m pip install --no-cache-dir -e '.[dev]'
+          python -m pytest -q
+          python -m ruff check app tests ../api
       - name: Typecheck
         run: pnpm check
       - name: Tests

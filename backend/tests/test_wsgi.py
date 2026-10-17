@@ -25,6 +25,12 @@ def test_health_is_stable():
     assert body == b'{"status": "ok"}'
 
 
+def test_health_has_a_same_origin_api_alias_for_local_development():
+    status, _, body = call(make_app(), "/api/health")
+    assert status == "200 OK"
+    assert body == b'{"status": "ok"}'
+
+
 def test_catalog_is_empty_until_content_is_added():
     status, _, body = call(make_app(), "/api/v1/catalog")
     assert status == "200 OK"

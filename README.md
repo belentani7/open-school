@@ -5,10 +5,9 @@
 Instituto digital abierto y gratuito. Formación para quien empieza de cero
 en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-> **Estado:** frontend completo y con build verde · backend sin implementar.
+> **Estado:** frontend completo y con build verde · backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
 > Este README describe lo que hay en el repositorio hoy. Lo que está
-> planificado va aparte, en [Hoja de ruta](#hoja-de-ruta), para que nadie
-> clone esperando un servidor que todavía no existe.
+> planificado va aparte, en [Hoja de ruta](#hoja-de-ruta).
 > La especificación completa del producto está en [`SKILL.md`](SKILL.md).
 
 ---
@@ -24,30 +23,42 @@ navegador; no hay servidor propio ni base de datos conectada.
 | Catálogo, buscador y filtros | funcionando |
 | Ficha de ruta con progreso | funcionando, progreso local |
 | Panel anónimo (UUID + borrado real) | funcionando |
-| Tutor orientador | funcionando, **sin modelo de lenguaje** |
+| Tutor orientador | funcionando en modo local; Ollama opcional con consentimiento explícito |
 | Instalable / funciona sin conexión | funcionando (service worker) |
 | Contenido de las lecciones | primera unidad interactiva publicada en Manos Abiertas; resto pendiente |
-| API, base de datos, autenticación | no implementado |
+| API Python WSGI | salud, catálogo en memoria y tutor; expuesta en Vercel mediante `api/` |
+| Base de datos, autenticación y sincronización | no implementadas; el progreso sigue local |
 | Certificados verificables por QR | no implementado |
 
 ### Anónimo de verdad
 
 No hay pantalla de registro porque no hay cuentas. Al entrar se genera un
 UUID aleatorio en el propio dispositivo, con caducidad de 365 días, y el
-progreso se guarda junto a él en `localStorage`. Sin correo, sin teléfono,
-sin IP, sin cookies de terceros. El botón **Borrar todo** del panel elimina
-identificador y progreso; no queda copia en ninguna parte porque nunca
-salió del dispositivo.
+progreso se guarda junto a él en `localStorage`. No se solicita correo ni
+teléfono y no se usan cookies de terceros. Por defecto, las preguntas del
+tutor tampoco salen del dispositivo; activar Ollama envía el texto al
+backend de esta instalación. El hosting puede procesar metadatos de red
+según su propia política. El botón **Borrar todo** elimina el identificador
+y el progreso locales.
 
 Implementación: [`client/src/lib/progress.ts`](client/src/lib/progress.ts).
 
 ### El tutor no finge
 
-No hay ningún LLM detrás. El tutor enruta la pregunta por palabras clave y
-responde con datos reales del catálogo; cuando no sabe, lo dice en vez de
-improvisar. Simular inteligencia en una plataforma educativa es
-precisamente el fallo que no se perdona. Cuando haya endpoint, se sustituye
-la función `answer()` y el aviso desaparece solo.
+Por defecto, el tutor enruta la pregunta por palabras clave en el navegador
+y responde con datos reales del catálogo. No envía la conversación a ningún
+servidor en ese modo. Si la persona activa la casilla de Ollama, solo se
+envían las preguntas escritas bajo ese consentimiento y el historial
+producido en ese modo; las preguntas anteriores del modo privado se excluyen.
+El backend de esta instalación procesa el texto; no se envía audio y la
+interfaz vuelve al enrutador local si el servicio no está configurado o falla.
+No incluyas datos sensibles en el modo de modelo.
+
+El endpoint usa un modelo Ollama elegido por la instalación (por defecto
+`llama3.2:3b`) y no requiere una API key de un proveedor externo. Las
+conversaciones no se guardan intencionalmente por esta aplicación; el
+operador del servidor y su configuración de registros siguen siendo parte
+de la política de privacidad.
 
 ---
 
@@ -92,6 +103,10 @@ color. Respeta `prefers-reduced-motion` y `prefers-contrast`.
 
 ```
 open-school/
+├── api/                  rutas de Vercel para el backend Python
+├── backend/
+│   ├── app/              dominio, casos de uso, adaptadores e interfaz WSGI
+│   └── tests/            pruebas del backend
 ├── client/
 │   ├── public/            favicon, manifest, service worker
 │   ├── index.html
@@ -104,8 +119,7 @@ open-school/
 │       ├── pages/         Home, Catalog, CourseDetail, Dashboard,
 │       │                  Chat, NotFound
 │       └── styles/        tokens · material · chrome
-├── shared/                types.ts + design system heredado
-├── drizzle/               esquema de BD (definido, sin conectar)
+├── open-data/             temas, fuentes y licencias
 ├── SKILL.md               especificación completa del producto
 └── AGENTS.md              instrucciones para agentes
 ```
@@ -120,9 +134,10 @@ open-school/
 | Persistencia | `localStorage` (anónima) |
 | Offline | Service worker propio, sin dependencias |
 
-`package.json` incluye además el stack previsto en `SKILL.md` (Radix,
-Drizzle, Zod, Recharts…) que **todavía no usa ningún componente**. Están
-declaradas a propósito, como contrato con la especificación.
+`package.json` mantiene el runtime pequeño: React, React DOM y Wouter.
+Vite, TypeScript, Vitest y Tailwind 4 están en las dependencias de desarrollo.
+No hay una base de datos conectada ni dependencias declaradas para Drizzle,
+Radix, Zod o Recharts.
 
 ## Puesta en marcha
 
@@ -141,21 +156,29 @@ No hace falta `.env` para arrancar: no hay servicios externos conectados.
 
 ## Despliegue
 
-Vercel, configurado en [`vercel.json`](vercel.json): build con pnpm, salida
-en `dist/client`, *rewrite* de SPA y cabeceras de seguridad (CSP,
-`X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`, caché inmutable
-para los assets con hash).
+Vercel, configurado en [`vercel.json`](vercel.json): build reproducible
+con pnpm, salida en `dist/client`, *rewrite* de SPA y cabeceras de seguridad
+(CSP, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`, caché
+inmutable para los assets con hash). Las funciones Python publican
+`/api/tutor`, `/api/v1/catalog` y `/api/health` desde `api/`.
+
+El tutor de servidor usa Ollama. Las funciones se ejecutan en París
+(`cdg1`). En un despliegue que quiera habilitarlo, configura `OLLAMA_HOST`,
+`OLLAMA_PORT` y `OLLAMA_MODEL` como variables del entorno del backend (nunca
+en el cliente ni en un archivo versionado). El
+valor predeterminado (`127.0.0.1:11434`) es para un backend y Ollama en la
+misma máquina; una función cloud necesita una instancia Ollama alcanzable.
+Sin ella, el tutor local del navegador sigue funcionando.
 
 ## Hoja de ruta
 
 Por orden de dependencia:
 
 1. Completar las lecciones de todas las rutas. La primera unidad de Manos Abiertas incluye teoría, práctica y evaluación; únicamente esa unidad puede sumar progreso aquí.
-2. API y base de datos — el esquema Drizzle ya está definido.
-3. Conectar el tutor a un modelo local (Ollama), sin claves externas.
-4. Certificados verificables por QR.
-5. Voz: Web Speech API para la ruta de fonética.
-6. Multilenguaje PT · ES · CA · EN (hoy la interfaz es solo español).
+2. Decidir si el catálogo necesita persistencia. El endpoint está disponible, pero el repositorio sigue en memoria; el progreso anónimo permanece en el dispositivo.
+3. Certificados verificables por QR.
+4. Voz: Web Speech API para la ruta de fonética.
+5. Multilenguaje PT · ES · CA · EN (hoy la interfaz es solo español).
 
 ## Licencia
 

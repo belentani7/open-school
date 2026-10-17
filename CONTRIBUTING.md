@@ -1,34 +1,34 @@
-Contributing to Belentani Project
+# Contributing to Open School
 
-## Getting Started
+## Set up
 
-1. Fork the repository and clone it locally
-2. Install dependencies: `npm install` or `pip install -r requirements.txt`
-3. Create a branch: `git checkout -b feat/feature-name`
+Use Node 20+ and the single checked-in lockfile (`pnpm-lock.yaml`):
 
-## Development Workflow
+```bash
+corepack pnpm install --frozen-lockfile
+```
 
-- Run linting: `npm run lint` or `python -m ruff lint`
-- Run tests: `npm test` or `python -m pytest`
-- Build the project: `npm run build` or `pip install -e .`
+The optional Python backend requires Python 3.10+. Install test tools with
+`python -m pip install -e 'backend[dev]'`.
 
-## Pull Request Process
+## Development checks
 
-1. Commit your changes using conventional commits: `git commit -m "feat: add new feature"`
-2. Push to your fork: `git push origin feat/feature-name`
-3. Submit a Pull Request with a clear description
-4. Link any related issues: `Fixes #123`
+```bash
+corepack pnpm check
+corepack pnpm test
+corepack pnpm build
+corepack pnpm audit --audit-level=high
+(cd backend && python -m pytest -q)
+```
 
-## Code Standards
+For local backend work, run `python -m app.main` from `backend/`. The tutor
+uses the Ollama service configured by the operator; the browser does not send
+questions to it unless the user enables the model option.
 
-- Follow the project's code style (ESLint/Prettier for JS, ruff/black for Python)
-- Write tests for new functionality
-- Update documentation as needed
-- Ensure all CI checks pass before merging
+## Changes and pull requests
 
-## Reporting Issues
-
-- Use the issue templates: `.github/ISSUE_TEMPLATE/bug_report.yml`
-- Check for existing issues first
-- Provide clear reproduction steps
-- Include environment details (OS, version, etc.)
+- Create a focused branch and use a conventional commit message.
+- Add regression tests for behavior changes.
+- Keep the privacy-first, offline-capable product behavior intact.
+- Do not add credentials, student data, or generated build output to commits.
+- Update the relevant documentation when routes or setup instructions change.
