@@ -134,6 +134,12 @@ las voces de bienvenida ya existen en los cuatro idiomas.
 
 ---
 
+## Contrato común de calidad
+
+Las plataformas del ecosistema adoptan un único contrato verificable de 200 reglas. La fuente canónica y su protocolo de evidencias están en [\`docs/CONTRATO_EDUCATIVO_200_REGLAS.md\`](docs/CONTRATO_EDUCATIVO_200_REGLAS.md). Ningún repositorio mantiene una copia divergente: aporta evidencia local y actualiza la matriz mediante PR.
+
+---
+
 ## Principios
 
 1. **Gratuito.** Sin registro, sin coste, sin barrera.
