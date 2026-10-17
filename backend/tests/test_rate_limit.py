@@ -6,7 +6,7 @@ from app.application.tutor_service import TutorService
 from app.interfaces.wsgi import RateLimiter, create_app
 
 
-class FakeNvidiaClient:
+class FakeTutorClient:
     def chat_completion(self, messages, max_tokens=500):
         return "ok"
 
@@ -23,7 +23,7 @@ def make_app(limiter: RateLimiter):
     catalog = InMemoryCourseRepository()
 
     def tutor_factory():
-        return TutorService(FakeNvidiaClient())
+        return TutorService(FakeTutorClient())
 
     return create_app(CatalogService(catalog), tutor_factory, limiter=limiter)
 
@@ -97,3 +97,27 @@ def test_get_endpoints_are_never_rate_limited():
         b"".join(app(environ, start_response))
 
     assert captured["status"] == "200 OK"
+
+
+def test_rate_limiter_bounds_unique_keys_and_reclaims_expired_slots():
+    clock = FakeClock()
+    limiter = RateLimiter(limit=2, window=60.0, clock=clock, max_keys=2)
+
+    assert limiter.allow("198.51.100.1")
+    assert limiter.allow("198.51.100.2")
+    assert limiter.allow("198.51.100.1")  # Existing clients still use their own bucket.
+    assert not limiter.allow("198.51.100.3")
+    assert len(limiter._hits) == 2
+
+    clock.now = 61.0
+    assert limiter.allow("198.51.100.3")
+    assert len(limiter._hits) == 1
+
+
+def test_rate_limiter_requires_a_positive_key_capacity():
+    try:
+        RateLimiter(max_keys=0)
+    except ValueError as exc:
+        assert "max_keys" in str(exc)
+    else:
+        raise AssertionError("max_keys=0 must be rejected")

@@ -6,7 +6,7 @@ import time
 from collections.abc import Callable, Iterable
 from typing import Any
 
-from app.adapters.nvidia_client import NvidiaClient
+from app.adapters.ollama_client import OllamaClient
 from app.application.catalog_service import CatalogService
 from app.application.tutor_service import TutorService
 
@@ -26,33 +26,56 @@ RATE_LIMIT_MAX_KEYS = 4096
 
 
 class RateLimiter:
-    """Ventana fija de tiempo por clave (IP). Sin dependencias ni estado
-    compartido entre procesos: en un despliegue multi-instancia cada una
-    cuenta lo suyo, que sigue cortando el abuso sostenido."""
+    """Ventana fija por IP con memoria acotada.
+
+    El estado es local al proceso: en despliegues con varias instancias cada
+    una aplica su propio límite. Cuando se alcanza el máximo de claves y las
+    entradas siguen activas, las IP nuevas se rechazan sin reservar memoria.
+    """
 
     def __init__(
         self,
         limit: int = 30,
         window: float = 60.0,
         clock: Callable[[], float] = time.monotonic,
+        max_keys: int = RATE_LIMIT_MAX_KEYS,
     ) -> None:
+        if limit < 1:
+            raise ValueError("limit must be at least 1")
+        if window <= 0:
+            raise ValueError("window must be greater than 0")
+        if max_keys < 1:
+            raise ValueError("max_keys must be at least 1")
         self.limit = limit
         self.window = window
         self.clock = clock
+        self.max_keys = max_keys
         self._hits: dict[str, list[float]] = {}
+
+    def _prune_expired(self, now: float) -> None:
+        for key, timestamps in tuple(self._hits.items()):
+            active = [timestamp for timestamp in timestamps if now - timestamp < self.window]
+            if active:
+                self._hits[key] = active
+            else:
+                del self._hits[key]
 
     def allow(self, key: str) -> bool:
         now = self.clock()
         hits = [t for t in self._hits.get(key, ()) if now - t < self.window]
-        if len(hits) >= self.limit:
+        if hits:
             self._hits[key] = hits
+        else:
+            self._hits.pop(key, None)
+            if len(self._hits) >= self.max_keys:
+                self._prune_expired(now)
+                if len(self._hits) >= self.max_keys:
+                    return False
+
+        if len(hits) >= self.limit:
             return False
         hits.append(now)
         self._hits[key] = hits
-        if len(self._hits) > RATE_LIMIT_MAX_KEYS:
-            # Poda: sin esto, una lista infinita de claves seria el
-            # propio vector de DoS que este modulo intenta evitar.
-            self._hits = {k: v for k, v in self._hits.items() if v}
         return True
 
 
@@ -97,7 +120,7 @@ def create_app(
 ) -> Callable[..., Iterable[bytes]]:
     if tutor_factory is None:
         def tutor_factory() -> TutorService:
-            return TutorService(NvidiaClient())
+            return TutorService(OllamaClient())
 
     # Una instancia por app: las pruebas quedan aisladas entre si.
     if limiter is None:
@@ -108,7 +131,7 @@ def create_app(
         path = environ.get("PATH_INFO", "/")
 
         if method == "GET":
-            if path == "/health":
+            if path in {"/health", "/api/health"}:
                 return _json_response(start_response, "200 OK", {"status": "ok"})
             if path == "/api/v1/catalog":
                 return _json_response(start_response, "200 OK", {"items": catalog.list_catalog()})
@@ -116,7 +139,7 @@ def create_app(
 
         if method == "POST" and path == "/api/tutor":
             # Antes de leer nada ni tocar el modelo: cada llamada aqui
-            # consume creditos de NVIDIA, asi que el corte es lo primero.
+            # invoca el modelo Ollama, asi que el corte es lo primero.
             if not limiter.allow(environ.get("REMOTE_ADDR", "unknown")):
                 return _json_response(
                     start_response,
@@ -140,9 +163,8 @@ def create_app(
                     return _json_response(start_response, "400 Bad Request", {"error": "missing_messages"})
                 messages = data["messages"]
                 # Validar ANTES de construir el tutor. Si no, una peticion
-                # malformada construye el cliente de NVIDIA (y en un entorno
-                # sin NVIDIA_API_KEY revienta con 500) en vez deresponder
-                # 400 — que es lo que el cuerpo de la peticion ya decide.
+                # malformada construye el cliente ni conecta con Ollama antes de
+                # responder 400 — que es lo que el cuerpo ya decide.
                 try:
                     TutorService.validate_messages(messages)
                 except (ValueError, TypeError) as e:

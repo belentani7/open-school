@@ -37,7 +37,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-
   education-contract:
     name: Validate education contract
     runs-on: ubuntu-latest

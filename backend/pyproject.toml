@@ -13,6 +13,7 @@ dependencies = []
 api = ["fastapi>=0.110", "uvicorn>=0.29"]
 flask = ["flask>=3.0"]
 django = ["django>=5.0"]
+server = ["gunicorn>=22,<24"]
 dev = ["pytest>=8.0", "ruff>=0.6"]
 
 [tool.pytest.ini_options]
