@@ -36,3 +36,18 @@ jobs:
         run: pnpm test
       - name: Build
         run: pnpm build
+
+
+  education-contract:
+    name: Validate education contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Test contract validator
+        run: node --test scripts/verify-education-contract.test.mjs
+      - name: Validate project ledger
+        run: node scripts/verify-education-contract.mjs
