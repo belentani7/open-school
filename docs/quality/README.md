@@ -19,10 +19,11 @@ Cada avance debe modificar solo las reglas demostradas y enlazar su evidencia.
 
 ## Reconciliación verificada — 17 de octubre de 2026
 
-La rama del contrato (PR #28, base `eab4896`) se reconcilió con `main`
-(`d7935ed`). Se conserva la verificación completa del frontend y del backend,
-incluidos los cambios de privacidad del tutor, además del gate del contrato.
-El único conflicto de integración estaba en `.github/workflows/ci.yml`.
+La rama del contrato (PR #28, base `eab4896`) se verificó combinada con `main`
+(`d7935ed`). Durante esa comprobación, el contrato y su baseline se incorporaron
+a `main` mediante el PR #31 (`b43c58b`). Se conserva esa fuente canónica y su
+workflow sin cambios; el delta del PR #28 registra esta evidencia, aclara el
+alcance del validador y excluye archivos generados de Python y Vercel.
 
 Verificación ejecutada con Node 22.23.3, pnpm 10.4.1 y Python 3.12.14:
 
