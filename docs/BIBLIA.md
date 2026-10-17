@@ -8,7 +8,7 @@ de cada término al curso donde se usa de verdad.
 
 ```
 docs/BIBLIA_TERMINOS_DESARROLLO.md   ← fuente única, se edita aquí
-        │  npm run build:biblia
+        │  corepack pnpm build:biblia
         ▼
 client/src/lib/biblia.ts             ← generado, no se toca a mano
         │  import desde la UI
@@ -23,9 +23,9 @@ es una proyección suya. Si `biblia.ts` se edita a mano, el siguiente
 ## Regenerar
 
 ```bash
-npm run build:biblia   # node client/scripts/build-biblia.mjs
-npm run check
-npm run test
+corepack pnpm build:biblia   # node client/scripts/build-biblia.mjs
+corepack pnpm check
+corepack pnpm test
 ```
 
 El script no necesita Python ni red, solo Node. Su comportamiento:
@@ -65,7 +65,7 @@ El Markdown es cómodo para leer y corregir, pero no puede hacer en el navegador
 | `client/src/lib/biblia.test.ts` | Integridad del documento (673/23, sin campos vacíos), enlaces a cursos reales, siglas ambiguas, búsqueda, ranking y vecinos |
 | `client/src/lib/highlight.test.ts` | El resaltado de resultados: `unir(tramos(x)) === x`, es decir, el resaltado no borra ni inventa texto |
 
-Ejecutar con `npm test`.
+Ejecutar con `corepack pnpm test`.
 
 ## Adjunto en rutas
 

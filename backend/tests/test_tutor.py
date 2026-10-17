@@ -4,7 +4,7 @@ from app.application.tutor_service import TutorService
 from app.interfaces.wsgi import create_app
 
 
-class FakeNvidiaClient:
+class FakeTutorClient:
     def __init__(self, reply="Hola, ¿en qué te ayudo?"):
         self.reply = reply
 
@@ -19,7 +19,7 @@ class DummyCatalog:
 
 def make_app(reply="Hola, ¿en qué te ayudo?"):
     catalog = DummyCatalog()
-    tutor_factory = lambda: TutorService(FakeNvidiaClient(reply))
+    tutor_factory = lambda: TutorService(FakeTutorClient(reply))
     return create_app(catalog, tutor_factory)
 
 
@@ -83,3 +83,31 @@ def test_tutor_upstream_error():
     }).encode("utf-8"))
     assert status == "502 Bad Gateway"
     assert payload["error"] == "upstream_error"
+
+
+def test_tutor_rejects_untrusted_message_fields():
+    app = make_app()
+    status, payload = call_app(app, "POST", "/api/tutor", json.dumps({
+        "messages": [{"role": "user", "content": "Hola", "tools": [{"name": "unsafe"}]}]
+    }).encode("utf-8"))
+    assert status == "400 Bad Request"
+    assert "only role and content" in payload["error"]
+
+
+def test_tutor_adds_a_server_owned_educational_system_prompt():
+    class RecordingClient:
+        def __init__(self):
+            self.messages = None
+
+        def chat_completion(self, messages, max_tokens=500):
+            self.messages = messages
+            return "Respuesta"
+
+    client = RecordingClient()
+    service = TutorService(client)
+    user_messages = [{"role": "user", "content": "Hola"}]
+
+    assert service.generate_reply(user_messages) == "Respuesta"
+    assert client.messages[0]["role"] == "system"
+    assert "No pidas datos personales" in client.messages[0]["content"]
+    assert client.messages[1:] == user_messages

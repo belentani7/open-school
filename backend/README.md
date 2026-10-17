@@ -1,44 +1,51 @@
 # Open School · backend Python
 
-Esta carpeta añade un backend **opcional y aislado** al frontend existente. No sustituye React/Vite, no cambia el esquema Drizzle y no contiene contenido educativo real. Su propósito es ofrecer una base compatible para un SaaS educativo institucional: universidad, catálogo de cursos, módulos, lecciones, progreso y futuras certificaciones.
+Backend WSGI opcional, sin dependencias obligatorias y separado del progreso local del navegador. Expone salud, un catálogo en memoria y un tutor conectado a Ollama cuando la persona lo activa en la interfaz.
 
-## Principios
+## Rutas
 
-- **Núcleo independiente:** el dominio usa solo la biblioteca estándar de Python.
-- **Adaptadores intercambiables:** memoria, PostgreSQL, SQLite, FastAPI, Flask o Django pueden conectarse sin modificar el dominio.
-- **Contratos explícitos:** los puertos se definen con `Protocol`, por lo que las implementaciones pueden sustituirse en pruebas o producción.
-- **Fallos controlados:** la API devuelve respuestas JSON consistentes y no expone excepciones internas.
-- **Contenido separado:** los cursos son entidades y contratos; el contenido real se añadirá después.
+| Método | Ruta | Comportamiento |
+|---|---|---|
+| `GET` | `/health` | Salud del proceso |
+| `GET` | `/api/v1/catalog` | Catálogo en memoria (vacío hasta cargar contenido) |
+| `POST` | `/api/tutor` | Tutor Ollama; límites de tamaño, mensajes y frecuencia |
 
-## Arranque sin dependencias externas
+Las funciones de Vercel de `api/` adaptan esas rutas a `/api/health`, `/api/v1/catalog` y `/api/tutor`. La app web sigue teniendo un tutor determinista local y no manda preguntas al servidor por defecto.
+
+## Desarrollo local
 
 ```bash
 cd backend
 python3 -m app.main
 ```
 
-El servidor WSGI estándar queda en `http://127.0.0.1:8001`. Rutas iniciales:
+Arranca en `http://127.0.0.1:8001`. Para habilitar el tutor, arranca Ollama en el mismo equipo y configura opcionalmente:
 
-- `GET /health`
-- `GET /api/v1/catalog`
+```bash
+OLLAMA_HOST=127.0.0.1 OLLAMA_PORT=11434 OLLAMA_MODEL=llama3.2:3b python3 -m app.main
+```
 
-También se puede ejecutar el objeto `app` con Gunicorn, uWSGI, mod_wsgi o un adaptador de FastAPI/Flask cuando se añada ese extra.
+El proceso se comunica solo con el host Ollama configurado por el operador; el destino no puede elegirse desde una petición. No se requiere ni se incluye una API key de un proveedor externo. No guardes preguntas ni credenciales en Git o en el frontend.
 
-## Estructura
+## Ejecución WSGI en servidor propio
 
-| Capa | Ubicación | Responsabilidad |
-|---|---|---|
-| Dominio | `app/domain/` | Entidades y contratos sin infraestructura |
-| Aplicación | `app/application/` | Casos de uso y orquestación |
-| Adaptadores | `app/adapters/` | Persistencia y servicios reemplazables |
-| Interfaces | `app/interfaces/` | HTTP/JSON y futuros adaptadores de framework |
-| Entrada | `app/main.py` | Composición de dependencias y servidor local |
-| Pruebas | `tests/` | Contratos mínimos y regresión |
+Para un proceso de producción instala el extra `server` y usa Gunicorn:
 
-## Evolución prevista
+```bash
+cd backend
+python3 -m pip install '.[server]'
+HOST=0.0.0.0 PORT=8001 gunicorn --bind 0.0.0.0:8001 --workers 2 app.main:app
+```
 
-1. Sustituir `InMemoryCourseRepository` por un adaptador PostgreSQL alineado con `drizzle/schema.ts`.
-2. Añadir autenticación institucional detrás de un puerto, sin acoplarla al dominio.
-3. Incorporar FastAPI, Flask o Django como capa HTTP opcional.
-4. Añadir colas, almacenamiento de archivos y certificados como adaptadores independientes.
-5. Conectar el frontend mediante `/api/v1`, manteniendo compatibilidad offline cuando la API no esté disponible.
+Las funciones Vercel usan la misma app WSGI; el backend de Ollama debe ser alcanzable desde el entorno de ejecución. El host predeterminado `127.0.0.1` solo funciona si Ollama comparte ese entorno. Sin Ollama, el endpoint falla de forma controlada y el frontend conserva la orientación local.
+
+## Límites deliberados
+
+- El repositorio de cursos es en memoria y no contiene el currículo completo; sus datos se pierden al reiniciar o cambiar de instancia.
+- No hay cuentas, autenticación, sincronización de progreso, base de datos ni certificados verificables implementados.
+- El limitador de frecuencia es local a cada proceso y tiene capacidad acotada; no sustituye un limitador distribuido ni una cuota de proveedor.
+- La pregunta solo se envía al endpoint cuando la persona activa la opción de Ollama. La política de registros y retención del hosting sigue correspondiendo a quien opera el despliegue.
+
+## Pruebas
+
+Desde esta carpeta: `python3 -m pytest -q` (requiere el extra `dev`).

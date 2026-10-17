@@ -4,7 +4,7 @@ This file provides guidance to AI coding agents working on Open School or
 related educational platforms. Agents should read this file before making any
 changes.
 
-Everything below was verified against the code on 2026-10-01. If you find a
+This file was refreshed against the code on 2026-10-16. If you find a
 mismatch, fix this file rather than trusting it blindly.
 
 ## What this project is
@@ -25,7 +25,7 @@ Python backend that serves the course catalog and an AI tutor endpoint.
 | Routing | `wouter` (`Route`, `Switch`, `Link`, `useLocation`) — client-side only |
 | Styling | Own CSS design system in `client/src/styles/*.css` + inline `style={{}}` |
 | State | React state/hooks; persistence in `localStorage` (`client/src/lib/progress.ts`) |
-| Backend | Python WSGI (`backend/app/`), in-memory repository, `wsgiref` server on port 8001 |
+| Backend | Python WSGI (`backend/app/`), in-memory catalog, optional Ollama client, Vercel routes in `api/` |
 | Tests | Vitest (frontend, colocated `*.test.ts`) + pytest (backend) |
 
 ### Dependencies: pruned on 2026-10-01
@@ -37,7 +37,7 @@ Python backend that serves the course catalog and an AI tutor endpoint.
 `zod`, `recharts`, `sonner`, `lucide-react`, `@react-pdf/renderer`,
 `@radix-ui/*`, `class-variance-authority`, `tailwind-merge`,
 `next-themes`, `qrcode`, `axios`, `clsx`, `nanoid`, …) were removed.
-`npm audit` reports **0 vulnerabilities** as a result.
+The active dependency lockfile is `pnpm-lock.yaml`; keep it as the only package-manager lockfile.
 
 If you need a new library, declare it deliberately and import it in the
 same change — do not re-add "for later".
@@ -55,13 +55,13 @@ code should follow that, not introduce utility-class soup.
 ## Commands
 
 ```bash
-npm run dev            # Vite dev server
-npm run build          # production build → dist/client
-npm run check          # tsc --noEmit
-npm test               # vitest run
-npm run build:biblia   # regenerate client/src/lib/biblia.ts
-npm audit              # dependency advisories (must stay at 0)
-npm run format         # prettier
+corepack pnpm dev            # Vite dev server
+corepack pnpm build          # production build → dist/client
+corepack pnpm check          # tsc --noEmit
+corepack pnpm test           # vitest run
+corepack pnpm build:biblia   # regenerate client/src/lib/biblia.ts
+corepack pnpm audit          # dependency advisories
+corepack pnpm format         # prettier
 ```
 
 Backend (uses `backend/.venv`, gitignored):
@@ -85,7 +85,7 @@ client/src/
 backend/app/
   domain/        catalog entities
   application/   catalog + tutor services
-  adapters/      in-memory repository, NVIDIA client
+  adapters/      in-memory repository, local Ollama client
   interfaces/    wsgi.py — HTTP layer
 campus/          curriculum content
 open-data/       static JSON registries
@@ -113,7 +113,7 @@ are plain client components; use hooks and `fetch` for data.
 `client/src/lib/biblia.ts` is generated. Never edit it by hand:
 
 - Correct definitions in `docs/BIBLIA_TERMINOS_DESARROLLO.md` (single source).
-- Run `npm run build:biblia`.
+- Run `corepack pnpm build:biblia`.
 - Details in `docs/BIBLIA.md`.
 
 The generator validates course links **before writing**, so a typo in a course
@@ -133,19 +133,18 @@ id aborts with an error instead of shipping a broken link.
 
 ## Backend
 
-Layered, no framework: `interfaces/wsgi.py` builds the WSGI app from
-`application` services over `adapters` (in-memory store — data does not
-survive a restart). Endpoints: `GET /api/v1/catalog`, `POST /api/tutor`
-(NVIDIA proxy, streaming).
+Layered WSGI app: `interfaces/wsgi.py` builds the service graph over
+adapters. The catalog is in memory and does not survive a restart. The
+optional tutor uses the Ollama host configured by the operator; questions
+are sent only after explicit opt-in in `Chat.tsx`. Vercel entrypoints live
+in `api/` and expose tutor, health and catalog routes.
 
 ## Known gaps (not fixed yet)
 
-1. **Tutor endpoint wiring.** `Chat.tsx` POSTs `/api/tutor`. In dev, Vite
-   proxies `/api` to the Python backend on `8001` (its default). In
-   production, `vercel.json` serves the SPA statically and rewrites
-   everything to `index.html`, so there is no `/api` function: the endpoint
-   exists in the backend but is not reachable on Vercel until a serverless
-   function is added.
+1. **Ollama availability.** `api/tutor.py` exposes the shared WSGI endpoint
+   on Vercel, but the function can answer with a model only when the
+   operator-configured Ollama host is reachable. Without it the endpoint
+   returns a controlled error and the browser falls back to its local router.
 2. **Course detail progress** is still partially simulated; real persistence
    lives in `lib/progress.ts`.
 3. **Federated registry abandoned (2026-10-01).** `Escuelas.tsx` used to fetch
@@ -160,12 +159,11 @@ survive a restart). Endpoints: `GET /api/v1/catalog`, `POST /api/tutor`
    If the federated view is ever wanted again, it needs a generator that emits
    only public metadata, and a decision on where that inventory is hosted.
 4. **Rate limiting is per process.** `RateLimiter` (`interfaces/wsgi.py`)
-   keeps its counters in memory: two instances behind a load balancer each
-   allow their own 30 req/min. That still stops sustained abuse from one
-   client; an exact global limit would need a shared store (Redis).
-5. **No SAST / secret scanning in CI.** CI gates on `tsc`, `npm audit
-   --audit-level=high`, build and tests, but there is no CodeQL or
-   secret-scanning workflow yet.
+   keeps counters in memory and caps the key table. Separate instances still
+   apply separate limits; an exact global quota needs a shared store.
+5. **No secret scanning in CI.** CI runs dependency audit, typecheck, tests
+   and build; `.github/workflows/security.yml` runs CodeQL for JavaScript and
+   TypeScript, but there is no credential-scanning workflow yet.
 
 ## Security (audited 2026-10-01)
 
@@ -178,9 +176,9 @@ Frontend attack surface:
   `connect-src 'self'`. If you add an external origin it must be declared
   there explicitly — and `security-headers.test.ts` will notice if you relax
   it.
-- **Zero third-party requests.** Fonts are self-hosted in
-  `client/src/fonts/` (SIL OFL); `index.html` references no external origin.
-  `security-headers.test.ts` fails if either regresses.
+- **No third-party requests from the frontend bundle.** Fonts are self-hosted
+  in `client/src/fonts/` (SIL OFL); `index.html` references no external
+  origin. The optional tutor call is same-origin and off by default.
 - No cookies, no analytics, no tracking pixels. Progress is local-only
   (`localStorage`, already guarded for Safari private mode).
 - The service worker caches only `res.ok` responses, so a 404/500 can never
@@ -193,15 +191,14 @@ Backend (Python WSGI):
   tutor). Also ≤20 messages and ≤2000 chars each.
 - Body capped at 512 KiB → `413` **before** the buffer is read.
 - Per-IP rate limit (30/min) → `429` + `Retry-After`, checked before any
-  work so a request that will be rejected never spends NVIDIA credit.
-- Outbound host is a fixed constant (no SSRF from user input); the NVIDIA
-  API key is read from the environment and never reaches the client.
+  model call; the in-memory key table is capped and expired entries are pruned.
+- The Ollama host and model come only from server configuration; request
+  content cannot change the outbound destination. No provider API key is used.
 - JSON responses carry `X-Content-Type-Options: nosniff`.
 - No database, no filesystem paths taken from input, no cookies → no SQLi,
   path traversal or CSRF surface to speak of.
 
-Dependencies: `npm audit` reports **0 vulnerabilities** (express and its
-`qs` advisory are gone; vitest ≥4.1.11). CI fails on high/critical.
+Dependencies: the active lockfile is `pnpm-lock.yaml`; run `corepack pnpm audit` after dependency changes. Vercel and CI use pnpm consistently.
 
 ## Tests
 
@@ -214,6 +211,6 @@ Dependencies: `npm audit` reports **0 vulnerabilities** (express and its
 | `client/src/lib/security-headers.test.ts` | CSP + security headers in `vercel.json`, zero third-party origins |
 | `client/src/lib/openData.test.ts` | Published open data is intact: every manifest theme has its file, ids unique, no item without title or source, links are https, failed sources reported, and the 5 heterogeneous source shapes flatten correctly (loads the real JSON) |
 | `client/src/lib/xss-surface.test.ts` | No `innerHTML` / `eval` / `dangerouslySetInnerHTML` in `client/src` |
-| `backend/tests/` | WSGI status codes, `nosniff`, body cap, tutor validation and prompt-injection role, per-IP rate limiting |
+| `backend/tests/` | WSGI routes, `nosniff`, body cap, tutor validation, Ollama adapter, Vercel routing and bounded per-IP rate limiting |
 
-Run `npm test`, `npm run check` and `npm audit` before declaring work done.
+Run `corepack pnpm test`, `corepack pnpm check`, `corepack pnpm build` and `corepack pnpm audit` before declaring work done.

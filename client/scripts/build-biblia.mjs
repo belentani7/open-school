@@ -12,7 +12,7 @@
    que no exista aborta el script en vez de producir un enlace roto.
 
    Uso:  node client/scripts/build-biblia.mjs
-     o:  npm run build:biblia
+     o:  corepack pnpm build:biblia
    =================================================================== */
 
 import fs from 'node:fs';
