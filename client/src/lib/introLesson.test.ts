@@ -29,8 +29,11 @@ describe('intro lessons — contenido real y progreso honesto', () => {
   });
 
   it('las rutas sin clase publicada no simulan progreso', () => {
-    expect(getIntroLesson('manos-abiertas')).toBeDefined();
-    expect(getIntroLesson('agent-systems')).toBeUndefined();
+    expect(INTRO_LESSONS).toHaveLength(6);
+    for (const routeId of ['manos-abiertas','secure-t','lingua-aberta','ux-academy','creative-tech','agent-systems']) {
+      expect(getIntroLesson(routeId)).toBeDefined();
+    }
+    expect(INTRO_LESSONS.every(lesson => new Set(lesson.quiz.choices).size === lesson.quiz.choices.length)).toBe(true);
     expect(getIntroLesson('ruta-falsa')).toBeUndefined();
   });
 });
