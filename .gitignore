@@ -47,3 +47,11 @@ __pycache__/
 
 # Local deployment metadata
 .vercel/
+
+# Historical Secure-T coupling artifact and transient bundles are not deployable school sources.
+open-school-secure-t-coupling.zip
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.bak
