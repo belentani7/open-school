@@ -21,6 +21,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Capsula didactica del dia
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python campus/agente/tutor.py capsula
 
   tutor:
