@@ -103,7 +103,7 @@ def tutor_issue() -> None:
 
 def capsula_diaria() -> None:
     """Publish a reviewable capsule branch; never write to protected main."""
-    hoy = datetime.now(timezone.utc).datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     lang = ["pt", "es", "en", "ca"][datetime.now(timezone.utc).day % 4]
     rama = f"bot/capsula-{hoy}"
     remoto = subprocess.run(
