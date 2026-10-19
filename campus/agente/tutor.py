@@ -102,29 +102,53 @@ def tutor_issue() -> None:
 
 
 def capsula_diaria() -> None:
-    hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    d = datetime.now(timezone.utc)
-    langs = ["pt", "es", "en", "ca"]
-    lang = langs[d.day % len(langs)]
+    """Publish a reviewable capsule branch; never write to protected main."""
+    hoy = datetime.now(timezone.utc).datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    lang = ["pt", "es", "en", "ca"][datetime.now(timezone.utc).day % 4]
+    rama = f"bot/capsula-{hoy}"
+    remoto = subprocess.run(
+        ["git", "ls-remote", "--exit-code", "--heads", "origin", rama],
+        capture_output=True, text=True, check=False, timeout=30,
+    )
+    if remoto.returncode == 0:
+        print(f"[capsula] rama existente {rama}; no se duplica")
+        return
+    if remoto.returncode != 2:
+        raise RuntimeError("No se pudo verificar la rama del tutor en GitHub")
+
     carpeta = Path("campus/capsulas")
     carpeta.mkdir(parents=True, exist_ok=True)
-    texto = CAPSULAS[lang]
     archivo = carpeta / f"{hoy}.md"
     if archivo.exists():
-        print("[capsula] ya existe para hoy"); return
+        print("[capsula] ya existe para hoy")
+        return
     archivo.write_text(
-        f"# Cápsula {hoy} [{lang.upper()}]\n\n{texto}\n\n"
-        f"*Generada por el agente tutor que vive en GitHub Actions.*\n",
-        encoding="utf-8")
-    subprocess.run(["git", "config", "user.name", "Belentani"], check=True)
-    subprocess.run(["git", "config", "user.email",
-                    "belentani7pedro@gmail.com"], check=True)
+        f"# Cápsula {hoy} [{lang.upper()}]\n\n{CAPSULAS[lang]}\n\n"
+        "*Generada por el tutor; pendiente de revisión.\n",
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "config", "user.name", "Belentani Tutor Bot"], check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"],
+        check=True,
+    )
+    subprocess.run(["git", "switch", "-c", rama], check=True)
     subprocess.run(["git", "add", str(archivo)], check=True)
-    subprocess.run(["git", "commit", "-m",
-                    f"tutor-ia: capsula didactica {hoy} [{lang}]"],
-                   check=True)
-    subprocess.run(["git", "push"], check=True)
-    print(f"[capsula] publicada {hoy} [{lang}]")
+    subprocess.run(["git", "commit", "-m", f"docs(capsula): {hoy} [{lang}]"], check=True)
+    subprocess.run(["git", "push", "--set-upstream", "origin", rama], check=True)
+    pr = subprocess.run(
+        [
+            "gh", "pr", "create", "--base", "main", "--head", rama,
+            "--title", f"docs(capsula): {hoy} [{lang}]",
+            "--body", "Cápsula didáctica del tutor. Revisar antes de fusionar.",
+        ],
+        capture_output=True, text=True, check=False, timeout=45,
+    )
+    if pr.returncode != 0:
+        print("::warning::La cápsula está en su rama, pero el token del runner no puede crear PRs.")
+        print(f"[capsula] revisión manual pendiente en {rama}")
+        return
+    print(f"[capsula] PR abierto: {pr.stdout.strip()}")
 
 
 def main() -> int:
