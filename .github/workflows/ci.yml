@@ -18,6 +18,8 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+      - name: Verify no tracked coupling or backup archives
+        run: node scripts/verify-no-archives.mjs
       - run: pnpm install --frozen-lockfile
       - name: Dependency audit
         run: pnpm audit --audit-level=high
