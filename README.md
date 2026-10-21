@@ -5,7 +5,7 @@
 Instituto digital abierto y gratuito. Formación para quien empieza de cero
 en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-> **Estado:** frontend completo y con build verde · backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
+> **Estado de esta rama:** 12 unidades interactivas integradas en el frontend React; el build y los tests de esta versión todavía requieren ejecución verificable. Backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
 > Este README describe lo que hay en el repositorio hoy. Lo que está
 > planificado va aparte, en [Hoja de ruta](#hoja-de-ruta).
 > La especificación completa del producto está en [`SKILL.md`](SKILL.md).
