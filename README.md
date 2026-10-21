@@ -5,12 +5,16 @@
 Instituto digital abierto y gratuito. Formación para quien empieza de cero
 en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-> **Estado:** frontend funcional; build y pruebas de publicación pendientes de CI · backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
+> **Estado de esta rama:** 12 unidades interactivas integradas en el frontend React; el build y los tests de esta versión todavía requieren ejecución verificable. Backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
 > Este README describe lo que hay en el repositorio hoy. Lo que está
 > planificado va aparte, en [Hoja de ruta](#hoja-de-ruta).
 > La especificación completa del producto está en [`SKILL.md`](SKILL.md).
 
 ---
+
+## Entrega real frente a programa previsto
+
+El catálogo define **6 rutas** y presenta su programa previsto (módulos y horas), pero **hay 12 unidades evaluables publicadas en esta aplicación (dos por ruta)**. Las fichas muestran "módulos previstos" y "duración prevista"; el panel distingue unidades disponibles de planes. La certificación está contemplada en algunos itinerarios, **pero este campus no emite ni verifica certificados**. No se declara completo un curso por tener su ficha o una unidad inicial.
 
 ## Qué funciona hoy
 
@@ -25,7 +29,7 @@ navegador; no hay servidor propio ni base de datos conectada.
 | Panel anónimo (UUID + borrado real) | funcionando |
 | Tutor orientador | funcionando en modo local; Ollama opcional con consentimiento explícito |
 | Instalable / funciona sin conexión | funcionando (service worker) |
-| Contenido de las lecciones | 12 unidades evaluables en 6 rutas (2 por ruta); los programas extensos siguen pendientes |
+| Contenido de las lecciones | doce unidades propias (dos por ruta), con ejercicios y evaluación; los módulos completos restantes siguen pendientes |
 | API Python WSGI | salud, catálogo en memoria y tutor; expuesta en Vercel mediante `api/` |
 | Base de datos, autenticación y sincronización | no implementadas; el progreso sigue local |
 | Certificados verificables por QR | no implementado |
@@ -174,7 +178,7 @@ Sin ella, el tutor local del navegador sigue funcionando.
 
 Por orden de dependencia:
 
-1. Completar las lecciones de todas las rutas. La primera unidad de Manos Abiertas incluye teoría, práctica y evaluación; únicamente esa unidad puede sumar progreso aquí.
+1. Completar las lecciones de todas las rutas. Cada ruta dispone de dos unidades completas con teoría, práctica y evaluación; únicamente estas unidades pueden sumar progreso aquí.
 2. Decidir si el catálogo necesita persistencia. El endpoint está disponible, pero el repositorio sigue en memoria; el progreso anónimo permanece en el dispositivo.
 3. Certificados verificables por QR.
 4. Voz: Web Speech API para la ruta de fonética.
