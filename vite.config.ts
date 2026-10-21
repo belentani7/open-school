@@ -1,26 +1,32 @@
-import path from "path";
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-  root: "./client",
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./client/src"),
-    },
-  },
-  server: {
-    allowedHosts: process.env.ARENA_PREVIEW_HOST
-      ? [process.env.ARENA_PREVIEW_HOST]
-      : [],
-    proxy: {
-      "/api": "http://127.0.0.1:8001",
+      '@': path.resolve(__dirname, './src'),
     },
   },
   build: {
-    outDir: "../dist/client",
-    emptyOutDir: true,
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
   },
-});
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      exclude: ['node_modules/', 'src/test/', '**/*.d.ts'],
+    },
+  },
+})
