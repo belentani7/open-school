@@ -1,25 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
     "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./client/src/*"]
-    }
+    "paths": { "@/*": ["src/*"] }
   },
-  "include": ["client/src/**/*.ts", "client/src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"]
 }
