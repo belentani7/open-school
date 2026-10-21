@@ -7,8 +7,9 @@ import { useEffect, useState } from 'react';
 import { Glass } from '../components/Glass';
 import { PlasmaField } from '../components/PlasmaField';
 import { getRoute, STATUS_LABEL } from '../lib/catalog';
-import { anonId, completeUnit, readCompletedUnits, readProgress, setProgress } from '../lib/progress';
+import { anonId, completeUnit, readCompletedUnits, setProgress } from '../lib/progress';
 import { getRouteUnits } from '../lib/courseUnits';
+import { publishedProgress } from '../lib/courseProgress';
 
 export function CourseDetail() {
   const { id = '' } = useParams<{ id: string }>();
@@ -23,12 +24,13 @@ export function CourseDetail() {
 
   useEffect(() => {
     anonId(); // Establish retention identity before any progress writes.
-    setDone(readProgress()[id] ?? 0);
-    setCompletedUnits(readCompletedUnits(id));
+    const saved = readCompletedUnits(id);
+    setCompletedUnits(saved);
+    setDone(publishedProgress(saved, units.length));
     setUnitIndex(0);
     setSelected(null);
     setFeedback('');
-  }, [id]);
+  }, [id, units.length]);
 
   if (!route) {
     return (
@@ -52,7 +54,7 @@ export function CourseDetail() {
     }
     // Solo se acredita una unidad después de contestar bien su evaluación.
     const recorded = completeUnit(route.id, unitIndex);
-    const next = Math.max(done, Math.min(1, recorded.length / route.modules));
+    const next = publishedProgress(recorded, units.length);
     setCompletedUnits(recorded);
     setProgress(route.id, next);
     setDone(next);
@@ -202,12 +204,12 @@ export function CourseDetail() {
                     aria-valuenow={pct}
                     aria-valuemin={0}
                     aria-valuemax={100}
-                    aria-label={`Progreso en ${route.title}`}
+                    aria-label={`Progreso de unidades publicadas en ${route.title}`}
                   >
                     <span className="meter__fill" style={{ transform: `scaleX(${done})` }} />
                   </div>
                   <p className="t-label" style={{ color: 'var(--color-ink-3)' }}>
-                    Guardado en este dispositivo
+                    Progreso de las unidades publicadas, guardado en este dispositivo
                   </p>
                 </div>
 
