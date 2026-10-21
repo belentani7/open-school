@@ -20,7 +20,7 @@ const PILLARS = [
   },
   {
     k: 'Progreso sin cuenta',
-    v: `Puedes estudiar ${TOTALS.availableUnits} unidades introductorias reales. Tu progreso queda en este dispositivo y puedes borrarlo cuando quieras.`,
+    v: `Puedes estudiar ${TOTALS.availableUnits} unidades evaluables reales. Tu progreso queda en este dispositivo y puedes borrarlo cuando quieras.`,
   },
   {
     k: 'Sin diplomas inventados',
