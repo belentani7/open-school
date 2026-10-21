@@ -97,7 +97,7 @@ export function Dashboard() {
           ['Rutas empezadas', `${started.length}`],
           ['Rutas completadas', `${completed}`],
           ['Módulos superados', `${modulesDone}`],
-          ['Disponibles', `${TOTALS.modules}`],
+          ['Unidades disponibles', `${TOTALS.availableUnits}`],
         ].map(([k, v]) => (
           <Glass key={k} style={{ padding: '1.4rem' }}>
             <div className="stack stack--sm">

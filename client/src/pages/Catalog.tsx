@@ -50,10 +50,10 @@ export function Catalog() {
         <header className="stack stack--sm">
           <p className="t-label">Catálogo</p>
           <h1 className="t-display" style={{ maxWidth: '15ch' }}>
-            {TOTALS.routes} rutas, {TOTALS.modules} módulos
+            {TOTALS.routes} rutas, {TOTALS.availableUnits} unidades disponibles
           </h1>
           <p className="t-lede">
-            Todas gratuitas. Ninguna pide datos personales para empezar.
+            Todas gratuitas, sin matrícula. Los {TOTALS.modules} módulos del catálogo representan programas previstos; aquí puedes estudiar sus unidades introductorias publicadas.
           </p>
         </header>
 
