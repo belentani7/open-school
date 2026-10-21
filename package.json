@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "description": "Platforma educativa digital universal — cursos modulares, certificaciones verificables, roles múltiples, accesibilidad WCAG, offline-first",
+  "description": "Escuela digital gratuita: seis rutas, doce unidades evaluables, progreso local y tutor orientador",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
