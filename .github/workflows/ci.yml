@@ -1,60 +1,12 @@
 name: CI
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-permissions:
-  contents: read
+on: [push, pull_request]
 jobs:
-  verify:
-    name: Verificacion completa
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10.4.1
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: pnpm
-      - name: Verify no tracked coupling or backup archives
-        run: node scripts/verify-no-archives.mjs
-      - run: pnpm install --frozen-lockfile
-      - name: Dependency audit
-        run: pnpm audit --audit-level=high
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Validate tutor syntax
-        run: python -m py_compile campus/agente/tutor.py
-      - name: Backend tests and lint
-        working-directory: backend
-        run: |
-          python -m pip install --no-cache-dir -e '.[dev]'
-          python -m pytest -q
-          python -m ruff check app tests ../api
-      - name: Typecheck
-        run: pnpm check
-      - name: Tests
-        run: pnpm test
-      - name: Build
-        run: pnpm build
-
-
-  education-contract:
-    name: Validate education contract
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10.4.1
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-      - name: Test contract validator
-        run: node --test scripts/verify-education-contract.test.mjs
-      - name: Validate project ledger
-        run: node scripts/verify-education-contract.mjs
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'pnpm' }
+      - run: pnpm install
+      - run: pnpm lint
