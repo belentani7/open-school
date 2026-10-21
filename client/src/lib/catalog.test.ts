@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { LEVELS, ROUTES, STATUS_LABEL, TOTALS, getRoute } from './catalog';
-import { INTRO_LESSONS } from './introLesson';
+import { PUBLISHED_UNITS } from './courseUnits';
 
 /* El catalogo declara en su cabecera que la prueba social inventada se quito.
    Estos tests convierten esa promesa en algo que el CI comprueba. */
@@ -13,7 +13,7 @@ describe('catalog — invariantes', () => {
 
   it('TOTALS se derivan de ROUTES', () => {
     expect(TOTALS.routes).toBe(ROUTES.length);
-    expect(TOTALS.availableUnits).toBe(INTRO_LESSONS.length);
+    expect(TOTALS.availableUnits).toBe(PUBLISHED_UNITS.length);
     expect(TOTALS.modules).toBeGreaterThan(TOTALS.availableUnits);
     expect(TOTALS.modules).toBe(ROUTES.reduce((n, r) => n + r.modules, 0));
     expect(TOTALS.hours).toBe(ROUTES.reduce((n, r) => n + r.hours, 0));
