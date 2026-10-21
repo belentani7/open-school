@@ -11,7 +11,7 @@
    Cuando haya matriculas reales, se añaden desde la API, no a mano.
    =================================================================== */
 
-import { INTRO_LESSONS } from './introLesson';
+import { PUBLISHED_UNITS } from './courseUnits';
 
 export type Level = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 
@@ -130,7 +130,7 @@ export const ROUTES: Route[] = [
 /* --- Metricas derivadas: se calculan, no se escriben a mano. --- */
 export const TOTALS = {
   routes: ROUTES.length,
-  availableUnits: INTRO_LESSONS.length,
+  availableUnits: PUBLISHED_UNITS.length,
   modules: ROUTES.reduce((n, r) => n + r.modules, 0),
   hours: ROUTES.reduce((n, r) => n + r.hours, 0),
   langs: [...new Set(ROUTES.flatMap((r) => r.langs))].length,
