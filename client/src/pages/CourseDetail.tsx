@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { Glass } from '../components/Glass';
 import { PlasmaField } from '../components/PlasmaField';
 import { getRoute, STATUS_LABEL } from '../lib/catalog';
-import { completeUnit, readCompletedUnits, readProgress, setProgress } from '../lib/progress';
+import { anonId, completeUnit, readCompletedUnits, readProgress, setProgress } from '../lib/progress';
 import { getRouteUnits } from '../lib/courseUnits';
 
 export function CourseDetail() {
@@ -22,6 +22,7 @@ export function CourseDetail() {
   const [feedback, setFeedback] = useState('');
 
   useEffect(() => {
+    anonId(); // Establish retention identity before any progress writes.
     setDone(readProgress()[id] ?? 0);
     setCompletedUnits(readCompletedUnits(id));
     setUnitIndex(0);
