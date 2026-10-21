@@ -95,7 +95,7 @@ export function Home() {
               ['Módulos previstos', TOTALS.modules],
               ['Unidades publicadas', TOTALS.availableUnits],
               ['Horas previstas', `${TOTALS.hours}`],
-              ['Idiomas', TOTALS.langs],
+              ['Idiomas previstos', TOTALS.langs],
             ].map(([label, value]) => (
               <div key={String(label)} className="stack stack--sm">
                 <dd className="t-num" style={{ margin: 0 }}>{value}</dd>
