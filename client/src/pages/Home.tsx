@@ -19,12 +19,12 @@ const PILLARS = [
     v: 'No hay registro. Un identificador local de 365 días guarda tu progreso en tu propio dispositivo. Sin correo, sin teléfono, sin rastreo.',
   },
   {
-    k: 'Funciona sin datos',
-    v: `La aplicación se instala en el móvil y abre sin conexión. ${TOTALS.offline} de las ${TOTALS.routes} rutas están diseñadas para completarse sin gastar plan de datos.`,
+    k: 'Progreso sin cuenta',
+    v: `Puedes estudiar ${TOTALS.availableUnits} unidades evaluables reales. Tu progreso queda en este dispositivo y puedes borrarlo cuando quieras.`,
   },
   {
-    k: 'El certificado se verifica',
-    v: 'Cada certificado lleva un código comprobable por terceros. No depende de que esta plataforma siga existiendo.',
+    k: 'Sin diplomas inventados',
+    v: 'Este campus todavía no emite certificados. Los programas largos del catálogo son itinerarios previstos, no cientos de módulos ya disponibles.',
   },
 ];
 
@@ -92,9 +92,10 @@ export function Home() {
           <dl className="bento" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(9rem,1fr))', gap: '1.6rem' }}>
             {[
               ['Rutas', TOTALS.routes],
-              ['Módulos', TOTALS.modules],
-              ['Horas de contenido', `${TOTALS.hours}`],
-              ['Idiomas', TOTALS.langs],
+              ['Módulos previstos', TOTALS.modules],
+              ['Unidades publicadas', TOTALS.availableUnits],
+              ['Horas previstas', `${TOTALS.hours}`],
+              ['Idiomas previstos', TOTALS.langs],
             ].map(([label, value]) => (
               <div key={String(label)} className="stack stack--sm">
                 <dd className="t-num" style={{ margin: 0 }}>{value}</dd>
