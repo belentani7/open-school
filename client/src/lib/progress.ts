@@ -13,6 +13,7 @@
 const KEY_ID = 'os.anon.id';
 const KEY_EXP = 'os.anon.exp';
 const KEY_PROGRESS = 'os.progress';
+const KEY_UNITS = 'os.units.completed';
 const YEAR_MS = 365 * 24 * 60 * 60 * 1000;
 
 /** localStorage lanza en modo privado de Safari y con cookies bloqueadas. */
@@ -63,6 +64,7 @@ export function anonId(): string {
   s.setItem(KEY_EXP, String(Date.now() + YEAR_MS));
   // Identificador nuevo = persona nueva. El progreso anterior no le pertenece.
   s.removeItem(KEY_PROGRESS);
+  s.removeItem(KEY_UNITS);
   return fresh;
 }
 
@@ -109,4 +111,41 @@ export function forgetMe(): void {
   s.removeItem(KEY_ID);
   s.removeItem(KEY_EXP);
   s.removeItem(KEY_PROGRESS);
+  s.removeItem(KEY_UNITS);
+}
+
+/** Solo guarda el índice de unidades evaluadas, sin respuestas ni identidad. */
+export function readCompletedUnits(routeId: string): number[] {
+  const s = safeStorage();
+  if (!s) return [];
+  try {
+    const parsed: unknown = JSON.parse(s.getItem(KEY_UNITS) ?? '{}');
+    if (!parsed || Array.isArray(parsed) || typeof parsed !== 'object') return [];
+    const values: unknown = (parsed as Record<string, unknown>)[routeId];
+    if (!Array.isArray(values)) return [];
+    return [...new Set(values.filter((i): i is number =>
+      typeof i === 'number' && Number.isSafeInteger(i) && i >= 0 && i < 100
+    ))].sort((a, b) => a - b);
+  } catch {
+    return [];
+  }
+}
+
+export function completeUnit(routeId: string, index: number): number[] {
+  if (!/^[a-z][a-z0-9-]{1,80}$/.test(routeId) || !Number.isSafeInteger(index) || index < 0 || index >= 100) {
+    throw new Error('Invalid unit identifier');
+  }
+  const s = safeStorage();
+  const next = [...new Set([...readCompletedUnits(routeId), index])].sort((a, b) => a - b);
+  if (!s) return next;
+  let stored: Record<string, unknown> = {};
+  try {
+    const value: unknown = JSON.parse(s.getItem(KEY_UNITS) ?? '{}');
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      stored = value as Record<string, unknown>;
+    }
+  } catch { /* corrupted browser storage: overwrite with safe structure */ }
+  stored[routeId] = next;
+  s.setItem(KEY_UNITS, JSON.stringify(stored));
+  return next;
 }
