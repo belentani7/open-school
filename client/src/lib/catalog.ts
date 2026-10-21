@@ -11,6 +11,8 @@
    Cuando haya matriculas reales, se añaden desde la API, no a mano.
    =================================================================== */
 
+import { INTRO_LESSONS } from './introLesson';
+
 export type Level = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 
 export type Route = {
@@ -128,6 +130,7 @@ export const ROUTES: Route[] = [
 /* --- Metricas derivadas: se calculan, no se escriben a mano. --- */
 export const TOTALS = {
   routes: ROUTES.length,
+  availableUnits: INTRO_LESSONS.length,
   modules: ROUTES.reduce((n, r) => n + r.modules, 0),
   hours: ROUTES.reduce((n, r) => n + r.hours, 0),
   langs: [...new Set(ROUTES.flatMap((r) => r.langs))].length,
@@ -138,9 +141,9 @@ export const TOTALS = {
 export const LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 export const STATUS_LABEL: Record<Route['status'], string> = {
-  produccion: 'En producción',
-  beta: 'Beta abierta',
-  construccion: 'En construcción',
+  produccion: 'Ruta presentada',
+  beta: 'Unidad piloto disponible',
+  construccion: 'Programa en desarrollo',
 };
 
 export const getRoute = (id: string): Route | undefined =>
