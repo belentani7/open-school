@@ -41,17 +41,17 @@ export function RouteCase({ route, index = 0 }: { route: Route; index?: number }
         <div className="row" style={{ gap: '0.4rem' }}>
           <span className="chip chip--edge">{route.level}</span>
           {route.offline && <span className="chip">Sin conexión</span>}
-          {route.certified && <span className="chip">Certifica</span>}
+          {route.certified && <span className="chip">Certificación prevista</span>}
         </div>
 
         <div className="case__meta">
           <span className="case__stat">
             <b>{route.modules}</b>
-            <span className="t-label">Módulos</span>
+            <span className="t-label">Módulos previstos</span>
           </span>
           <span className="case__stat">
             <b>{route.hours}h</b>
-            <span className="t-label">Duración</span>
+            <span className="t-label">Duración prevista</span>
           </span>
           <span className="case__stat">
             <b>{route.langs.join(' · ')}</b>
