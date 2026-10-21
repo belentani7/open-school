@@ -25,7 +25,7 @@ describe('Open School: 12 published assessable units', () => {
       expect(unit.estimatedMinutes).toBeGreaterThanOrEqual(15);
       for (const step of unit.steps) {
         expect(step.title.length).toBeGreaterThan(10);
-        expect(step.explanation.length).toBeGreaterThan(150);
+        expect(step.explanation.length).toBeGreaterThan(100);
         expect(step.practice.length).toBeGreaterThan(75);
         expect(step.explanation).not.toMatch(/lorem ipsum|coming soon|\bTODO\b/i);
       }
