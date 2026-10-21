@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { INTRO_LESSONS } from './introLesson';
+import { PUBLISHED_UNITS } from './courseUnits';
 
 describe('Open School — metadata visible para buscadores', () => {
   const html = readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
@@ -13,7 +13,7 @@ describe('Open School — metadata visible para buscadores', () => {
     expect(data['@type']).toBe('WebSite');
     expect(data.name).toBe('Open School');
     expect(data.inLanguage).toBe('es');
-    expect(data.description).toContain(String(INTRO_LESSONS.length) + ' unidades introductorias');
+    expect(data.description).toContain(String(PUBLISHED_UNITS.length) + ' unidades evaluables');
     expect(JSON.stringify(data).toLowerCase()).not.toMatch(/certificado|matriculados|rating|estudiantes inscritos/);
   });
 
