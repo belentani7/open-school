@@ -5,7 +5,7 @@
 Instituto digital abierto y gratuito. Formación para quien empieza de cero
 en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-> **Estado:** frontend completo y con build verde · backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
+> **Estado:** frontend funcional; build y pruebas de publicación pendientes de CI · backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
 > Este README describe lo que hay en el repositorio hoy. Lo que está
 > planificado va aparte, en [Hoja de ruta](#hoja-de-ruta).
 > La especificación completa del producto está en [`SKILL.md`](SKILL.md).
@@ -25,7 +25,7 @@ navegador; no hay servidor propio ni base de datos conectada.
 | Panel anónimo (UUID + borrado real) | funcionando |
 | Tutor orientador | funcionando en modo local; Ollama opcional con consentimiento explícito |
 | Instalable / funciona sin conexión | funcionando (service worker) |
-| Contenido de las lecciones | primera unidad interactiva publicada en Manos Abiertas; resto pendiente |
+| Contenido de las lecciones | 12 unidades evaluables en 6 rutas (2 por ruta); los programas extensos siguen pendientes |
 | API Python WSGI | salud, catálogo en memoria y tutor; expuesta en Vercel mediante `api/` |
 | Base de datos, autenticación y sincronización | no implementadas; el progreso sigue local |
 | Certificados verificables por QR | no implementado |
