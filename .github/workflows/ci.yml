@@ -1,169 +1,60 @@
 name: CI
-
 on:
   push:
-    branches: [main, develop]
+    branches: [main, master]
   pull_request:
-    branches: [main, develop]
-
-env:
-  NODE_VERSION: '20.x'
-  PNPM_VERSION: '9.x'
-
+permissions:
+  contents: read
 jobs:
-  lint-and-typecheck:
-    name: Lint & TypeCheck
+  verify:
+    name: Verificacion completa
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
         with:
-          fetch-depth: 0
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+          version: 10.4.1
+      - uses: actions/setup-node@v5
         with:
-          version: ${{ env.PNPM_VERSION }}
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          node-version: 22
+          cache: pnpm
+      - name: Verify no tracked coupling or backup archives
+        run: node scripts/verify-no-archives.mjs
+      - run: pnpm install --frozen-lockfile
+      - name: Dependency audit
+        run: pnpm audit --audit-level=high
+      - uses: actions/setup-python@v5
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      - name: Run Biome
-        run: pnpm biome check --apply .
-      
-      - name: Run ESLint
-        run: pnpm lint
-      
-      - name: Run Prettier
-        run: pnpm format:check
-      
-      - name: TypeScript type check
-        run: pnpm typecheck
-
-  test:
-    name: Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      - name: Run unit tests with coverage
-        run: pnpm test:coverage
-      
-      - name: Upload coverage
-        uses: codecov/codecov-action@v4
-        with:
-          files: ./coverage/lcov.info
-          fail_ci_if_error: true
-
-  test-e2e:
-    name: E2E Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      - name: Install Playwright browsers
-        run: pnpm playwright install --with-deps chromium
-      
+          python-version: "3.12"
+      - name: Validate tutor syntax
+        run: python -m py_compile campus/agente/tutor.py
+      - name: Backend tests and lint
+        working-directory: backend
+        run: |
+          python -m pip install --no-cache-dir -e '.[dev]'
+          python -m pytest -q
+          python -m ruff check app tests ../api
+      - name: Typecheck
+        run: pnpm check
+      - name: Tests
+        run: pnpm test
       - name: Build
         run: pnpm build
-      
-      - name: Run E2E tests
-        run: pnpm test:e2e
-      
-      - name: Upload Playwright report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 7
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: [lint-and-typecheck, test]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      - name: Build
-        run: pnpm build
-      
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-          retention-days: 7
 
-  docker:
-    name: Docker Build
+  education-contract:
+    name: Validate education contract
     runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 5
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      
-      - name: Build Docker image
-        uses: docker/build-push-action@v5
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
         with:
-          context: .
-          push: false
-          tags: ${{ github.repository }}:latest
-          load: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          version: 10.4.1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Test contract validator
+        run: node --test scripts/verify-education-contract.test.mjs
+      - name: Validate project ledger
+        run: node scripts/verify-education-contract.mjs
