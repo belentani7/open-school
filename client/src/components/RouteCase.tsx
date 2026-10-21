@@ -55,7 +55,7 @@ export function RouteCase({ route, index = 0 }: { route: Route; index?: number }
           </span>
           <span className="case__stat">
             <b>{route.langs.join(' · ')}</b>
-            <span className="t-label">Idiomas</span>
+            <span className="t-label">Idiomas previstos</span>
           </span>
           <span className="case__stat" style={{ marginLeft: 'auto' }}>
             <span className="row" style={{ gap: '0.45rem' }}>
