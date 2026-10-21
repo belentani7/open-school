@@ -80,7 +80,15 @@ describe('cabeceras de seguridad (vercel.json)', () => {
 describe('cero terceros en el arranque', () => {
   it('index.html no referencia ningun origen externo', () => {
     const html = readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
-    expect(html).not.toMatch(/https?:\/\//);
+    // JSON-LD may contain vocabulary IDs such as https://schema.org.
+    // Only resource URLs in markup initiate network requests at startup.
+    const assetTags = html.match(/<(?:script|link|img|iframe|source|audio|video)\b[^>]*>/gi) ?? [];
+    for (const tag of assetTags) {
+      for (const [, url] of tag.matchAll(/\b(?:src|href|srcset)\s*=\s*["']([^"']+)["']/gi)) {
+        expect(url, 'remote startup asset: ' + tag).not.toMatch(/^https?:\/\//i);
+      }
+    }
+    expect(html).not.toMatch(/@import\s+(?:url\()?\s*["']?https?:\/\//i);
     expect(html).not.toContain('fonts.googleapis.com');
     expect(html).not.toContain('preconnect');
   });
