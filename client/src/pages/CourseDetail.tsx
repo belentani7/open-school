@@ -194,9 +194,9 @@ export function CourseDetail() {
 
                 <dl className="stack stack--sm" style={{ margin: 0 }}>
                   {[
-                    ['Módulos', String(route.modules)],
-                    ['Duración', `${route.hours} h`],
-                    ['Idiomas', route.langs.join(' · ')],
+                    ['Módulos previstos', String(route.modules)],
+                    ['Duración prevista', `${route.hours} h`],
+                    ['Idiomas previstos', route.langs.join(' · ')],
                     ['Precio', 'Gratuito'],
                   ].map(([k, v]) => (
                     <div key={k} className="row" style={{ justifyContent: 'space-between' }}>
