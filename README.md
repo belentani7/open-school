@@ -12,6 +12,10 @@ en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
 ---
 
+## Entrega real frente a programa previsto
+
+El catálogo define **6 rutas** y presenta su programa previsto (módulos y horas), pero **solo hay 6 unidades introductorias evaluables en esta aplicación**. Las fichas muestran "módulos previstos" y "duración prevista"; el panel distingue unidades disponibles de planes. La certificación está contemplada en algunos itinerarios, **pero este campus no emite ni verifica certificados**. No se declara completo un curso por tener su ficha o una unidad inicial.
+
 ## Qué funciona hoy
 
 Una SPA de React que sirve el catálogo de rutas, el detalle de cada una,
@@ -25,7 +29,7 @@ navegador; no hay servidor propio ni base de datos conectada.
 | Panel anónimo (UUID + borrado real) | funcionando |
 | Tutor orientador | funcionando en modo local; Ollama opcional con consentimiento explícito |
 | Instalable / funciona sin conexión | funcionando (service worker) |
-| Contenido de las lecciones | primera unidad interactiva publicada en Manos Abiertas; resto pendiente |
+| Contenido de las lecciones | seis unidades introductorias propias (una por ruta), con ejercicios y evaluación; los módulos completos restantes siguen pendientes |
 | API Python WSGI | salud, catálogo en memoria y tutor; expuesta en Vercel mediante `api/` |
 | Base de datos, autenticación y sincronización | no implementadas; el progreso sigue local |
 | Certificados verificables por QR | no implementado |
