@@ -7,19 +7,25 @@ import { useEffect, useState } from 'react';
 import { Glass } from '../components/Glass';
 import { PlasmaField } from '../components/PlasmaField';
 import { getRoute, STATUS_LABEL } from '../lib/catalog';
-import { readProgress, setProgress } from '../lib/progress';
-import { getIntroLesson } from '../lib/introLesson';
+import { anonId, completeUnit, readCompletedUnits, readProgress, setProgress } from '../lib/progress';
+import { getRouteUnits } from '../lib/courseUnits';
 
 export function CourseDetail() {
   const { id = '' } = useParams<{ id: string }>();
   const route = getRoute(id);
-  const lesson = getIntroLesson(id);
+  const units = getRouteUnits(id);
+  const [unitIndex, setUnitIndex] = useState(0);
+  const lesson = units[unitIndex];
+  const [completedUnits, setCompletedUnits] = useState<number[]>([]);
   const [done, setDone] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [feedback, setFeedback] = useState('');
 
   useEffect(() => {
+    anonId(); // Establish retention identity before any progress writes.
     setDone(readProgress()[id] ?? 0);
+    setCompletedUnits(readCompletedUnits(id));
+    setUnitIndex(0);
     setSelected(null);
     setFeedback('');
   }, [id]);
@@ -44,9 +50,10 @@ export function CourseDetail() {
       setFeedback('Todavía no. Revisa la lección y prueba otra respuesta.');
       return;
     }
-    // Una única unidad publicada = un único módulo completado.
-    // Nunca avanzar módulos que el alumnado no ha podido cursar.
-    const next = Math.max(done, Math.min(1, 1 / route.modules));
+    // Solo se acredita una unidad después de contestar bien su evaluación.
+    const recorded = completeUnit(route.id, unitIndex);
+    const next = Math.max(done, Math.min(1, recorded.length / route.modules));
+    setCompletedUnits(recorded);
     setProgress(route.id, next);
     setDone(next);
     setFeedback('¡Correcto! Has completado esta unidad. El avance se ha guardado en este dispositivo.');
@@ -114,10 +121,24 @@ export function CourseDetail() {
               <Glass style={{ padding: 'clamp(1.5rem, 3.5vw, 2.6rem)' }}>
                 <article id="leccion" className="stack stack--lg" aria-labelledby="lesson-title">
                   <div className="stack stack--sm">
-                    <p className="t-label">Unidad introductoria publicada · {lesson.estimatedMinutes} min</p>
+                    <p className="t-label">Unidad {unitIndex + 1} de {units.length} publicadas · {lesson.estimatedMinutes} min</p>
                     <h2 id="lesson-title" className="t-title">{lesson.title}</h2>
                     <p className="t-body">{lesson.objective}</p>
-                    <p className="t-label">1 de {route.modules} módulos previstos. El resto aún no está publicado aquí.</p>
+                    <p className="t-label">{units.length} de {route.modules} módulos previstos disponibles aquí. El resto sigue en desarrollo.</p>
+                    <nav className="row" aria-label="Elegir unidad para estudiar" style={{ flexWrap: 'wrap', gap: '0.6rem' }}>
+                      {units.map((unit, index) => (
+                        <button
+                          key={unit.title}
+                          type="button"
+                          className={`btn ${index === unitIndex ? 'btn--light' : 'btn--quiet'}`}
+                          aria-pressed={index === unitIndex}
+                          onClick={() => { setUnitIndex(index); setSelected(null); setFeedback(''); }}
+                          title={unit.title}
+                        >
+                          {completedUnits.includes(index) ? '✓ ' : ''}Unidad {index + 1}
+                        </button>
+                      ))}
+                    </nav>
                   </div>
 
                   {lesson.steps.map((step) => (
@@ -194,9 +215,9 @@ export function CourseDetail() {
 
                 <dl className="stack stack--sm" style={{ margin: 0 }}>
                   {[
-                    ['Módulos', String(route.modules)],
-                    ['Duración', `${route.hours} h`],
-                    ['Idiomas', route.langs.join(' · ')],
+                    ['Unidades disponibles', `${units.length} de ${route.modules} previstas`],
+                    ['Duración prevista', `${route.hours} h`],
+                    ['Idiomas previstos', route.langs.join(' · ')],
                     ['Precio', 'Gratuito'],
                   ].map(([k, v]) => (
                     <div key={k} className="row" style={{ justifyContent: 'space-between' }}>
@@ -210,7 +231,7 @@ export function CourseDetail() {
 
                 {lesson ? (
                   <a className="btn btn--light" href="#leccion">
-                    {done > 0 ? 'Repasar unidad publicada' : 'Estudiar unidad publicada'}
+                    {done > 0 ? 'Repasar unidades publicadas' : 'Estudiar unidades publicadas'}
                   </a>
                 ) : (
                   <p className="t-label">No hay unidades que completar todavía.</p>
