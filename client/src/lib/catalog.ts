@@ -29,7 +29,7 @@ export type Route = {
   stack: string[];
   /** Funciona sin conexion una vez cacheada. */
   offline: boolean;
-  /** Emite certificado verificable. */
+  /** La ruta contempla certificación en su diseño; aquí todavía no se emiten certificados. */
   certified: boolean;
   status: 'produccion' | 'beta' | 'construccion';
 };
