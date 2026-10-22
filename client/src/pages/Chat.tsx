@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { Glass } from "../components/Glass";
 import { ROUTES, TOTALS } from "../lib/catalog";
+import { getRouteUnits } from "../lib/courseUnits";
 import { buildTutorMessages } from "../lib/tutorConsent";
 
 type Msg = {
@@ -42,9 +43,9 @@ export function answer(input: string): { text: string; routes?: string[] } {
   if (/offline|sin internet|sin conexi|sin datos|descarg/.test(q)) {
     const offline = ROUTES.filter((r) => r.offline);
     return {
-      text: `${offline.length} de las ${TOTALS.routes} rutas se descargan y siguen funcionando sin conexión: ${offline
+      text: `${offline.length} de las ${TOTALS.routes} rutas están diseñadas para consulta sin conexión una vez guardadas: ${offline
         .map((r) => r.title)
-        .join(", ")}.`,
+        .join(", ")}. La disponibilidad offline real depende de los recursos descargados y del navegador; no garantizamos aquí que el curso entero funcione sin internet.`,
       routes: offline.map((r) => r.id),
     };
   }
@@ -79,14 +80,14 @@ export function answer(input: string): { text: string; routes?: string[] } {
 
   if (/segur|privac|hack|ciber|proteg/.test(q)) {
     return {
-      text: "Secure-T cubre seguridad digital aplicada a situaciones reales: dispositivos compartidos, documentación, banca y fronteras. Son 69 módulos y funciona sin conexión.",
+      text: `Secure-T introduce seguridad digital para situaciones reales: dispositivos compartidos, documentación, banca y fronteras. En Open School hay ${getRouteUnits("secure-t").length} unidades introductorias publicadas; los 69 módulos indicados en el plan todavía no están disponibles aquí.`,
       routes: ["secure-t"],
     };
   }
 
   if (/idioma|lengua|hablar|español|catal|portug/.test(q)) {
     return {
-      text: "Lingua Aberta trabaja la fonética contrastiva entre portugués, español y catalán. El reconocimiento de voz corre en tu navegador: el audio no se sube a ningún sitio.",
+      text: `Lingua Aberta presenta fonética contrastiva de portugués, español y catalán. En Open School hay ${getRouteUnits("lingua-aberta").length} unidades introductorias publicadas. El motor de voz completo está pendiente; no afirmamos que el reconocimiento de voz sea local ni que ningún proveedor procese audio.`,
       routes: ["lingua-aberta"],
     };
   }
