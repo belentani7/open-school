@@ -20,7 +20,7 @@ const PILLARS = [
   },
   {
     k: 'Progreso sin cuenta',
-    v: `Puedes estudiar ${TOTALS.availableUnits} unidades evaluables reales. Tu progreso queda en este dispositivo y puedes borrarlo cuando quieras.`,
+    v: `Puedes estudiar ${TOTALS.availableUnits} unidades evaluables del catálogo y los ejercicios de la Plaza Educativa. Todos comparten el mismo borrado y caducidad de la identidad local.`, 
   },
   {
     k: 'Sin diplomas inventados',
@@ -43,10 +43,11 @@ export function Home() {
             sub="Formación seria para quien empieza de cero en un país nuevo. Sin matrícula, sin datos personales, sin letra pequeña."
           />
 
-          <div className="row m-rise" style={{ '--d': '340ms', justifyContent: 'center' } as React.CSSProperties}>
+          <div className="row m-rise" style={{ '--d': '340ms', justifyContent: 'center', flexWrap: 'wrap' } as React.CSSProperties}>
             <Link href="/catalog" className="btn btn--light">
               Ver las {TOTALS.routes} rutas
             </Link>
+            <Link href="/plaza" className="btn btn--glass">Entrar en la Plaza Educativa</Link>
             <a href="#sistema" className="btn btn--glass">
               Cómo funciona
             </a>
@@ -93,7 +94,7 @@ export function Home() {
             {[
               ['Rutas', TOTALS.routes],
               ['Módulos previstos', TOTALS.modules],
-              ['Unidades publicadas', TOTALS.availableUnits],
+              ['Unidades publicadas en catálogo', TOTALS.availableUnits],
               ['Horas previstas', `${TOTALS.hours}`],
               ['Idiomas previstos', TOTALS.langs],
             ].map(([label, value]) => (

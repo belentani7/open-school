@@ -13,19 +13,23 @@ import { ROUTES, TOTALS } from '../lib/catalog';
 import { getRouteUnits } from '../lib/courseUnits';
 import { countCompletedPublishedUnits, publishedProgress } from '../lib/courseProgress';
 import { anonId, daysLeft, forgetMe, readCompletedUnits } from '../lib/progress';
+import { getPlazaProgress, readPlazaCompleted } from '../lib/plazaProgress';
 
 export function Dashboard() {
   const [id, setId] = useState('');
   const [days, setDays] = useState(0);
   const [completedByRoute, setCompletedByRoute] = useState<Record<string, number[]>>({});
+  const [plazaCompleted, setPlazaCompleted] = useState<string[]>([]);
   const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     setId(anonId());
     setDays(daysLeft());
     setCompletedByRoute(Object.fromEntries(ROUTES.map((route) => [route.id, readCompletedUnits(route.id)])));
+    setPlazaCompleted(readPlazaCompleted());
   }, []);
 
+  const plaza = getPlazaProgress(plazaCompleted);
   const publishedCount = (routeId: string) => getRouteUnits(routeId).length;
   const earnedCount = (routeId: string) =>
     countCompletedPublishedUnits(completedByRoute[routeId] ?? [], publishedCount(routeId));
@@ -36,6 +40,7 @@ export function Dashboard() {
   const wipe = () => {
     forgetMe();
     setCompletedByRoute({});
+    setPlazaCompleted([]);
     setId(anonId());
     setDays(daysLeft());
     setConfirming(false);
@@ -109,6 +114,31 @@ export function Dashboard() {
           </Glass>
         ))}
       </dl>
+
+      {/* Plaza shares the same local identity, expiry and delete-all action. */}
+      <section className="stack stack--sm">
+        <div className="row" style={{ flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'end' }}>
+          <div className="stack stack--sm">
+            <p className="t-label">Plaza de aprendizaje · progreso comprobado</p>
+            <h2 className="t-title">{plaza.doneUnits} de {plaza.availableUnits} unidades evaluadas</h2>
+            <p className="t-body">
+              {plaza.startedTracks} itinerarios empezados · {plaza.completeTracks} con sus cuatro unidades respondidas correctamente.
+              Los proyectos finales se autoevalúan y no emiten certificados.
+            </p>
+          </div>
+          <Link href="/plaza" className="btn btn--light">Continuar en la Plaza →</Link>
+        </div>
+        <div
+          className="meter"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={plaza.availableUnits}
+          aria-valuenow={plaza.doneUnits}
+          aria-label="Unidades completadas en la Plaza Educativa"
+        >
+          <span className="meter__fill" style={{ transform: `scaleX(${plaza.availableUnits ? plaza.doneUnits / plaza.availableUnits : 0})` }} />
+        </div>
+      </section>
 
       {/* ── Rutas en curso ── */}
       <section className="stack stack--lg">

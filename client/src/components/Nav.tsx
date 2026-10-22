@@ -12,6 +12,7 @@ import { Link, useLocation } from 'wouter';
 const LINKS = [
   { href: '/', label: 'Inicio', glyph: '◈' },
   { href: '/catalog', label: 'Rutas', glyph: '▤' },
+  { href: '/plaza', label: 'Plaza', glyph: '◇' },
   { href: '/biblia', label: 'Biblia', glyph: '⬡' },
   { href: '/escuelas', label: 'Escuelas', glyph: '▦' },
   { href: '/dashboard', label: 'Progreso', glyph: '◐' },

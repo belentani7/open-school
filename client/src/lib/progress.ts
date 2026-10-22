@@ -14,6 +14,8 @@ const KEY_ID = 'os.anon.id';
 const KEY_EXP = 'os.anon.exp';
 const KEY_PROGRESS = 'os.progress';
 const KEY_UNITS = 'os.units.completed';
+/** Plaza uses the same anonymous-identity lifecycle and the same delete-all contract. */
+export const PLAZA_STORAGE_KEY = 'open-school:plaza:completed:v1';
 const YEAR_MS = 365 * 24 * 60 * 60 * 1000;
 
 /** localStorage lanza en modo privado de Safari y con cookies bloqueadas. */
@@ -65,6 +67,7 @@ export function anonId(): string {
   // Identificador nuevo = persona nueva. El progreso anterior no le pertenece.
   s.removeItem(KEY_PROGRESS);
   s.removeItem(KEY_UNITS);
+  s.removeItem(PLAZA_STORAGE_KEY);
   return fresh;
 }
 
@@ -112,6 +115,7 @@ export function forgetMe(): void {
   s.removeItem(KEY_EXP);
   s.removeItem(KEY_PROGRESS);
   s.removeItem(KEY_UNITS);
+  s.removeItem(PLAZA_STORAGE_KEY);
 }
 
 /** Solo guarda el índice de unidades evaluadas, sin respuestas ni identidad. */

@@ -11,6 +11,7 @@ import { RefractionDefs } from './components/Refraction';
 
 import { Home } from './pages/Home';
 import { Catalog } from './pages/Catalog';
+import { Plaza } from './pages/Plaza';
 import { Escuelas } from './pages/Escuelas';
 import { CourseDetail } from './pages/CourseDetail';
 import { Dashboard } from './pages/Dashboard';
@@ -84,6 +85,7 @@ export function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/catalog" component={Catalog} />
+          <Route path="/plaza" component={Plaza} />
           {/* Ruta fija antes que /courses/:id. En wouter la primera que
               coincide gana, y asi un termino no puede ser tomado por
               un slug de curso. */}

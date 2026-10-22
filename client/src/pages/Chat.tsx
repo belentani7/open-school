@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { Glass } from "../components/Glass";
 import { ROUTES, TOTALS } from "../lib/catalog";
+import { getRouteUnits } from "../lib/courseUnits";
 import { buildTutorMessages } from "../lib/tutorConsent";
 
 type Msg = {
@@ -30,7 +31,7 @@ const SUGGESTIONS = [
 ];
 
 /** Enrutador de intencion por palabras clave. Determinista y auditable. */
-function answer(input: string): { text: string; routes?: string[] } {
+export function answer(input: string): { text: string; routes?: string[] } {
   const q = input.toLowerCase();
 
   if (/dato|privacidad|registr|rastre|cookie/.test(q)) {
@@ -42,9 +43,9 @@ function answer(input: string): { text: string; routes?: string[] } {
   if (/offline|sin internet|sin conexi|sin datos|descarg/.test(q)) {
     const offline = ROUTES.filter((r) => r.offline);
     return {
-      text: `${offline.length} de las ${TOTALS.routes} rutas se descargan y siguen funcionando sin conexión: ${offline
+      text: `${offline.length} de las ${TOTALS.routes} rutas están diseñadas para consulta sin conexión una vez guardadas: ${offline
         .map((r) => r.title)
-        .join(", ")}.`,
+        .join(", ")}. La disponibilidad offline real depende de los recursos descargados y del navegador; no garantizamos aquí que el curso entero funcione sin internet.`,
       routes: offline.map((r) => r.id),
     };
   }
@@ -52,10 +53,16 @@ function answer(input: string): { text: string; routes?: string[] } {
   if (/certific|titul|diploma|acredit/.test(q)) {
     const cert = ROUTES.filter((r) => r.certified);
     return {
-      text: `Estas ${cert.length} emiten certificado con código verificable por terceros: ${cert
+      text: `El catálogo contempla certificación futura en ${cert.length} rutas: ${cert
         .map((r) => r.title)
-        .join(", ")}.`,
+        .join(", ")}. Open School todavía no emite ni verifica certificados. Puedes estudiar y guardar progreso local sin presentar ese avance como un título oficial.`,
       routes: cert.map((r) => r.id),
+    };
+  }
+
+  if (/salud|m[eé]dic|diagn[oó]s|tratamiento|s[ií]ntoma/.test(q)) {
+    return {
+      text: "Puedo ayudarte a encontrar aprendizaje general sobre fuentes fiables, privacidad y preparación de preguntas en la Plaza Educativa, apartado Salud y orientación segura. No interpreto síntomas, no diagnostico ni recomiendo tratamientos. Para decisiones individuales consulta a profesionales sanitarios; si se trata de una emergencia, usa los servicios de emergencia de tu localidad.",
     };
   }
 
@@ -73,14 +80,14 @@ function answer(input: string): { text: string; routes?: string[] } {
 
   if (/segur|privac|hack|ciber|proteg/.test(q)) {
     return {
-      text: "Secure-T cubre seguridad digital aplicada a situaciones reales: dispositivos compartidos, documentación, banca y fronteras. Son 69 módulos y funciona sin conexión.",
+      text: `Secure-T introduce seguridad digital para situaciones reales: dispositivos compartidos, documentación, banca y fronteras. En Open School hay ${getRouteUnits("secure-t").length} unidades introductorias publicadas; los 69 módulos indicados en el plan todavía no están disponibles aquí.`,
       routes: ["secure-t"],
     };
   }
 
   if (/idioma|lengua|hablar|español|catal|portug/.test(q)) {
     return {
-      text: "Lingua Aberta trabaja la fonética contrastiva entre portugués, español y catalán. El reconocimiento de voz corre en tu navegador: el audio no se sube a ningún sitio.",
+      text: `Lingua Aberta presenta fonética contrastiva de portugués, español y catalán. En Open School hay ${getRouteUnits("lingua-aberta").length} unidades introductorias publicadas. El motor de voz completo está pendiente; no afirmamos que el reconocimiento de voz sea local ni que ningún proveedor procese audio.`,
       routes: ["lingua-aberta"],
     };
   }
@@ -174,6 +181,7 @@ export function Chat() {
           Orientación por catálogo, sin enviar tus preguntas por defecto. El
           modelo Ollama de esta instalación es opcional.
         </p>
+        <p className="t-body">¿Prefieres estudiar con ejercicios? <Link href="/plaza">Ir a la Plaza Educativa: 20 unidades evaluables</Link>.</p>
         <label
           className="row"
           style={{
