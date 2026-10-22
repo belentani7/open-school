@@ -30,7 +30,7 @@ const SUGGESTIONS = [
 ];
 
 /** Enrutador de intencion por palabras clave. Determinista y auditable. */
-function answer(input: string): { text: string; routes?: string[] } {
+export function answer(input: string): { text: string; routes?: string[] } {
   const q = input.toLowerCase();
 
   if (/dato|privacidad|registr|rastre|cookie/.test(q)) {
