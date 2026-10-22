@@ -14,6 +14,20 @@ describe('tutor local — hechos y limites', () => {
       expect(text).toContain('profesionales sanitarios');
     }
   });
+  it('no promete programas completos ni reconocimiento de voz local sin evidencias', () => {
+    const secure = answer('seguridad digital').text;
+    expect(secure).toContain('unidades introductorias publicadas');
+    expect(secure).toContain('todavía no están disponibles');
+    expect(secure).not.toContain('funciona sin conexión');
+    const languages = answer('quiero aprender portugués').text;
+    expect(languages).toContain('motor de voz completo está pendiente');
+    expect(languages).not.toContain('el audio no se sube');
+  });
+  it('distingue diseño offline de disponibilidad offline verificada', () => {
+    const reply = answer('¿Puedo usarlo sin internet?').text;
+    expect(reply).toContain('disponibilidad offline real depende');
+    expect(reply).not.toContain('siguen funcionando sin conexión');
+  });
   it('mantiene el modo privado por defecto en las respuestas de privacidad', () => {
     expect(answer('¿Guardáis mis datos?').text).toContain('este dispositivo');
   });
