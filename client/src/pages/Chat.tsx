@@ -52,10 +52,16 @@ function answer(input: string): { text: string; routes?: string[] } {
   if (/certific|titul|diploma|acredit/.test(q)) {
     const cert = ROUTES.filter((r) => r.certified);
     return {
-      text: `Estas ${cert.length} emiten certificado con código verificable por terceros: ${cert
+      text: `El catálogo contempla certificación futura en ${cert.length} rutas: ${cert
         .map((r) => r.title)
-        .join(", ")}.`,
+        .join(", ")}. Open School todavía no emite ni verifica certificados. Puedes estudiar y guardar progreso local sin presentar ese avance como un título oficial.`,
       routes: cert.map((r) => r.id),
+    };
+  }
+
+  if (/salud|m[eé]dic|diagn[oó]s|tratamiento|s[ií]ntoma/.test(q)) {
+    return {
+      text: "Puedo ayudarte a encontrar aprendizaje general sobre fuentes fiables, privacidad y preparación de preguntas en la Plaza Educativa, apartado Salud y orientación segura. No interpreto síntomas, no diagnostico ni recomiendo tratamientos. Para decisiones individuales consulta a profesionales sanitarios; si se trata de una emergencia, usa los servicios de emergencia de tu localidad.",
     };
   }
 
@@ -174,6 +180,7 @@ export function Chat() {
           Orientación por catálogo, sin enviar tus preguntas por defecto. El
           modelo Ollama de esta instalación es opcional.
         </p>
+        <p className="t-body">¿Prefieres estudiar con ejercicios? <Link href="/plaza">Ir a la Plaza Educativa: 20 unidades evaluables</Link>.</p>
         <label
           className="row"
           style={{
