@@ -57,6 +57,19 @@ describe('catalog — invariantes', () => {
     }
   });
 
+  it('las descripciones distinguen unidades reales de programas futuros', () => {
+    expect(PUBLISHED_UNITS).toHaveLength(12);
+    for (const route of ROUTES) {
+      const actual = PUBLISHED_UNITS.filter((unit) => unit.routeId === route.id);
+      expect(actual, route.id).toHaveLength(2);
+      expect(route.modules, route.id).toBeGreaterThan(actual.length);
+      expect(route.desc, route.id).toMatch(/previst|introductor|publicad/i);
+      expect(route.desc, route.id).not.toMatch(/ya rellenables|certificado verificable por QR\./i);
+    }
+    const design = getRoute('ux-academy');
+    expect(design?.desc).toMatch(/todavía no se ofrecen/);
+  });
+
   it('getRoute resuelve por id y no inventa rutas', () => {
     expect(getRoute(ROUTES[0].id)?.id).toBe(ROUTES[0].id);
     expect(getRoute('ruta-inexistente')).toBeUndefined();
