@@ -2,20 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { Glass } from '../components/Glass';
 import { findTrack, PLAZA_NEEDS, PLAZA_TRACKS, recommendTrack } from '../lib/plazaContent';
-
-const STORAGE_KEY = 'open-school:plaza:completed:v1';
-
-function readCompleted(): string[] {
-  try {
-    const value: unknown = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? '[]');
-    const allowed = new Set(PLAZA_TRACKS.flatMap((t) => t.lessons.map((l) => `${t.id}/${l.id}`)));
-    return Array.isArray(value)
-      ? [...new Set(value.filter((item): item is string => typeof item === 'string' && allowed.has(item)))]
-      : [];
-  } catch {
-    return [];
-  }
-}
+import { completePlazaLesson, readPlazaCompleted } from '../lib/plazaProgress';
 
 /**
  * Plaza Educativa: 20 unidades redactadas, ejercicios, evaluación y progreso.
@@ -27,7 +14,7 @@ export function Plaza() {
   const [choice, setChoice] = useState<number | null>(null);
   const [feedback, setFeedback] = useState('');
   const [needId, setNeedId] = useState<string>(PLAZA_NEEDS[0].id);
-  const [completed, setCompleted] = useState<string[]>(readCompleted);
+  const [completed, setCompleted] = useState<string[]>(readPlazaCompleted);
 
   const track = findTrack(trackId) ?? PLAZA_TRACKS[0];
   const lesson = track.lessons[lessonIndex] ?? track.lessons[0];
@@ -58,8 +45,8 @@ export function Plaza() {
       return;
     }
     const next = [...new Set([...completed, key])];
+    completePlazaLesson(key);
     setCompleted(next);
-    try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } catch { /* Modo privado: progreso temporal */ }
     setFeedback('Respuesta correcta. Unidad completada en este dispositivo.');
   }
 
