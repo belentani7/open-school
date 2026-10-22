@@ -6,14 +6,15 @@
    no hay nada mas. El boton "Borrar todo" cumple lo que dice.
    =================================================================== */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { Link } from 'wouter';
 import { Glass } from '../components/Glass';
 import { ROUTES, TOTALS } from '../lib/catalog';
 import { getRouteUnits } from '../lib/courseUnits';
 import { countCompletedPublishedUnits, publishedProgress } from '../lib/courseProgress';
-import { anonId, daysLeft, forgetMe, readCompletedUnits } from '../lib/progress';
+import { anonId, completeUnit, daysLeft, forgetMe, readCompletedUnits, setProgress } from '../lib/progress';
 import { getPlazaProgress, readPlazaCompleted } from '../lib/plazaProgress';
+import { exportProgressBackup, importProgressBackup } from '../lib/progressTransfer';
 
 export function Dashboard() {
   const [id, setId] = useState('');
@@ -21,6 +22,9 @@ export function Dashboard() {
   const [completedByRoute, setCompletedByRoute] = useState<Record<string, number[]>>({});
   const [plazaCompleted, setPlazaCompleted] = useState<string[]>([]);
   const [confirming, setConfirming] = useState(false);
+  const [transferMessage, setTransferMessage] = useState('');
+  const [transferError, setTransferError] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setId(anonId());
@@ -37,6 +41,63 @@ export function Dashboard() {
   const completed = started.filter((route) => earnedCount(route.id) === publishedCount(route.id)).length;
   const unitsDone = started.reduce((total, route) => total + earnedCount(route.id), 0);
 
+  const unitCounts = () => Object.fromEntries(ROUTES.map((route) => [route.id, publishedCount(route.id)]));
+
+  const exportBackup = () => {
+    try {
+      const completed = Object.fromEntries(ROUTES.map((route) => [route.id, readCompletedUnits(route.id).filter((index) => index < publishedCount(route.id))]));
+      const json = exportProgressBackup(completed, unitCounts());
+      const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'open-school-progreso.json';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setTransferError(false);
+      setTransferMessage('Respaldo generado sin tu identificador personal.');
+    } catch {
+      setTransferError(true);
+      setTransferMessage('No se pudo generar el archivo de progreso.');
+    }
+  };
+
+  const importBackup = async (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      if (file.size > 64 * 1024) throw new Error('El archivo supera 64 KB.');
+      // Validate the entire file before any local write. Import merges evidence
+      // rather than replacing existing progress or an anonymous identity.
+      const incoming = importProgressBackup(await file.text(), unitCounts());
+      for (const [routeId, indexes] of Object.entries(incoming)) {
+        for (const index of indexes) completeUnit(routeId, index);
+      }
+      const updated = Object.fromEntries(ROUTES.map((route) => [
+        route.id, readCompletedUnits(route.id),
+      ])) as Record<string, number[]>;
+      for (const [routeId, indexes] of Object.entries(incoming)) {
+        if (!indexes.every((index) => updated[routeId]?.includes(index))) {
+          throw new Error('Tu navegador no ha guardado el progreso.');
+        }
+      }
+      for (const route of ROUTES) {
+        setProgress(route.id, publishedProgress(updated[route.id] ?? [], publishedCount(route.id)));
+      }
+      setCompletedByRoute(updated);
+      setTransferError(false);
+      setTransferMessage('Progreso importado. Tus unidades anteriores también se han conservado.');
+    } catch (error) {
+      setTransferError(true);
+      setTransferMessage(error instanceof Error ? error.message : 'No se pudo importar el respaldo.');
+    } finally {
+      input.value = '';
+    }
+  };
+
   const wipe = () => {
     forgetMe();
     setCompletedByRoute({});
@@ -44,6 +105,7 @@ export function Dashboard() {
     setId(anonId());
     setDays(daysLeft());
     setConfirming(false);
+    setTransferMessage('');
   };
 
   return (
@@ -96,6 +158,34 @@ export function Dashboard() {
             )}
           </div>
         </div>
+      </Glass>
+
+      {/* ── Exportación e importación sin identidad ── */}
+      <Glass style={{ padding: 'clamp(1.4rem, 3vw, 2.2rem)' }}>
+        <section className="stack stack--sm" aria-labelledby="progress-transfer-title">
+          <p className="t-label">Tu progreso te pertenece</p>
+          <h2 className="t-title" id="progress-transfer-title">Conservar o trasladar mis unidades</h2>
+          <p className="t-body" style={{ maxWidth: '58ch' }}>
+            Descarga un archivo JSON que contiene solo los números de las unidades completadas por ruta.
+            No incluye identificadores, respuestas ni datos de contacto. Al importarlo se conservan
+            las unidades que ya hayas completado en este dispositivo.
+          </p>
+          <div className="row" style={{ flexWrap: 'wrap' }}>
+            <button type="button" className="btn btn--light" onClick={exportBackup}>Descargar progreso</button>
+            <button type="button" className="btn btn--glass" onClick={() => fileInputRef.current?.click()}>
+              Importar progreso
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".json,application/json"
+              aria-label="Archivo JSON de progreso"
+              style={{ display: 'none' }}
+              onChange={importBackup}
+            />
+          </div>
+          {transferMessage && <p role={transferError ? 'alert' : 'status'} className="t-body">{transferMessage}</p>}
+        </section>
       </Glass>
 
       {/* ── Cifras ── */}
