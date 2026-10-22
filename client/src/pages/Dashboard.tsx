@@ -11,19 +11,23 @@ import { Link } from 'wouter';
 import { Glass } from '../components/Glass';
 import { ROUTES, TOTALS } from '../lib/catalog';
 import { anonId, daysLeft, forgetMe, readProgress, type Progress } from '../lib/progress';
+import { getPlazaProgress, readPlazaCompleted } from '../lib/plazaProgress';
 
 export function Dashboard() {
   const [id, setId] = useState('');
   const [days, setDays] = useState(0);
   const [progress, setProgressState] = useState<Progress>({});
+  const [plazaCompleted, setPlazaCompleted] = useState<string[]>([]);
   const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     setId(anonId());
     setDays(daysLeft());
     setProgressState(readProgress());
+    setPlazaCompleted(readPlazaCompleted());
   }, []);
 
+  const plaza = getPlazaProgress(plazaCompleted);
   const started = ROUTES.filter((r) => (progress[r.id] ?? 0) > 0);
   const completed = started.filter((r) => (progress[r.id] ?? 0) >= 1).length;
   const modulesDone = started.reduce(
@@ -34,6 +38,7 @@ export function Dashboard() {
   const wipe = () => {
     forgetMe();
     setProgressState({});
+    setPlazaCompleted([]);
     setId(anonId());
     setDays(daysLeft());
     setConfirming(false);
@@ -108,6 +113,31 @@ export function Dashboard() {
         ))}
       </dl>
 
+      {/* Plaza shares the same local identity, expiry and delete-all action. */}
+      <section className="stack stack--sm">
+        <div className="row" style={{ flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'end' }}>
+          <div className="stack stack--sm">
+            <p className="t-label">Plaza de aprendizaje · progreso comprobado</p>
+            <h2 className="t-title">{plaza.doneUnits} de {plaza.availableUnits} unidades evaluadas</h2>
+            <p className="t-body">
+              {plaza.startedTracks} itinerarios empezados · {plaza.completeTracks} con sus cuatro unidades respondidas correctamente.
+              Los proyectos finales se autoevalúan y no emiten certificados.
+            </p>
+          </div>
+          <Link href="/plaza" className="btn btn--light">Continuar en la Plaza →</Link>
+        </div>
+        <div
+          className="meter"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={plaza.availableUnits}
+          aria-valuenow={plaza.doneUnits}
+          aria-label="Unidades completadas en la Plaza Educativa"
+        >
+          <span className="meter__fill" style={{ transform: `scaleX(${plaza.availableUnits ? plaza.doneUnits / plaza.availableUnits : 0})` }} />
+        </div>
+      </section>
+
       {/* ── Rutas en curso ── */}
       <section className="stack stack--lg">
         <h2 className="t-title">En curso</h2>
@@ -116,7 +146,7 @@ export function Dashboard() {
           <Glass style={{ padding: 'clamp(2rem, 6vw, 3.5rem)', textAlign: 'center' }}>
             <div className="stack" style={{ justifyItems: 'center' }}>
               <p className="t-body" style={{ textAlign: 'center' }}>
-                Todavía no has empezado ninguna ruta.
+                Todavía no has empezado ninguna ruta del catálogo. El progreso de la Plaza aparece por separado.
               </p>
               <Link href="/catalog" className="btn btn--light">Elegir una ruta</Link>
             </div>
