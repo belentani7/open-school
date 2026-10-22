@@ -22,6 +22,8 @@ Las duraciones son orientativas. El contenido educativo sobre salud nunca realiz
 ## Protección de datos
 El cuestionario solo permite seleccionar un objetivo de aprendizaje predefinido.
 La clave de `localStorage` es `open-school:plaza:completed:v1`; guarda identificadores de unidades, no texto libre ni datos sanitarios.
+El mismo identificador anónimo de Open School aplica su caducidad de 365 días; al expirar se borran las unidades de Plaza.
+El botón **Borrar todo** en `/dashboard` elimina también los resultados de Plaza. El panel distingue los itinerarios de Plaza de las rutas largas del catálogo, sin sumar módulos previstos a las unidades realizadas.
 Si el almacenamiento está bloqueado, el progreso de la sesión funciona en memoria.
 
 ## Comprobaciones reproducibles
