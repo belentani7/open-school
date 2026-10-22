@@ -10,34 +10,36 @@ import { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import { Glass } from '../components/Glass';
 import { ROUTES, TOTALS } from '../lib/catalog';
-import { anonId, daysLeft, forgetMe, readProgress, type Progress } from '../lib/progress';
+import { getRouteUnits } from '../lib/courseUnits';
+import { countCompletedPublishedUnits, publishedProgress } from '../lib/courseProgress';
+import { anonId, daysLeft, forgetMe, readCompletedUnits } from '../lib/progress';
 import { getPlazaProgress, readPlazaCompleted } from '../lib/plazaProgress';
 
 export function Dashboard() {
   const [id, setId] = useState('');
   const [days, setDays] = useState(0);
-  const [progress, setProgressState] = useState<Progress>({});
+  const [completedByRoute, setCompletedByRoute] = useState<Record<string, number[]>>({});
   const [plazaCompleted, setPlazaCompleted] = useState<string[]>([]);
   const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     setId(anonId());
     setDays(daysLeft());
-    setProgressState(readProgress());
+    setCompletedByRoute(Object.fromEntries(ROUTES.map((route) => [route.id, readCompletedUnits(route.id)])));
     setPlazaCompleted(readPlazaCompleted());
   }, []);
 
   const plaza = getPlazaProgress(plazaCompleted);
-  const started = ROUTES.filter((r) => (progress[r.id] ?? 0) > 0);
-  const completed = started.filter((r) => (progress[r.id] ?? 0) >= 1).length;
-  const modulesDone = started.reduce(
-    (n, r) => n + Math.round((progress[r.id] ?? 0) * r.modules),
-    0
-  );
+  const publishedCount = (routeId: string) => getRouteUnits(routeId).length;
+  const earnedCount = (routeId: string) =>
+    countCompletedPublishedUnits(completedByRoute[routeId] ?? [], publishedCount(routeId));
+  const started = ROUTES.filter((route) => earnedCount(route.id) > 0);
+  const completed = started.filter((route) => earnedCount(route.id) === publishedCount(route.id)).length;
+  const unitsDone = started.reduce((total, route) => total + earnedCount(route.id), 0);
 
   const wipe = () => {
     forgetMe();
-    setProgressState({});
+    setCompletedByRoute({});
     setPlazaCompleted([]);
     setId(anonId());
     setDays(daysLeft());
@@ -100,8 +102,8 @@ export function Dashboard() {
       <dl className="bento" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(10rem,1fr))' }}>
         {[
           ['Rutas empezadas', `${started.length}`],
-          ['Rutas completadas', `${completed}`],
-          ['Módulos superados', `${modulesDone}`],
+          ['Rutas al día (unidades publicadas)', `${completed}`],
+          ['Unidades aprobadas', `${unitsDone}`],
           ['Unidades disponibles', `${TOTALS.availableUnits}`],
         ].map(([k, v]) => (
           <Glass key={k} style={{ padding: '1.4rem' }}>
@@ -140,13 +142,13 @@ export function Dashboard() {
 
       {/* ── Rutas en curso ── */}
       <section className="stack stack--lg">
-        <h2 className="t-title">En curso</h2>
+        <h2 className="t-title">En curso · unidades publicadas</h2>
 
         {started.length === 0 ? (
           <Glass style={{ padding: 'clamp(2rem, 6vw, 3.5rem)', textAlign: 'center' }}>
             <div className="stack" style={{ justifyItems: 'center' }}>
               <p className="t-body" style={{ textAlign: 'center' }}>
-                Todavía no has empezado ninguna ruta del catálogo. El progreso de la Plaza aparece por separado.
+                Todavía no has empezado ninguna ruta.
               </p>
               <Link href="/catalog" className="btn btn--light">Elegir una ruta</Link>
             </div>
@@ -154,7 +156,7 @@ export function Dashboard() {
         ) : (
           <div className="stack">
             {started.map((r) => {
-              const pct = Math.round((progress[r.id] ?? 0) * 100);
+              const pct = Math.round(publishedProgress(completedByRoute[r.id] ?? [], publishedCount(r.id)) * 100);
               return (
                 <Glass key={r.id} lift style={{ padding: '1.3rem 1.6rem' }}>
                   <Link href={`/courses/${r.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -169,9 +171,9 @@ export function Dashboard() {
                         aria-valuenow={pct}
                         aria-valuemin={0}
                         aria-valuemax={100}
-                        aria-label={`Progreso en ${r.title}`}
+                        aria-label={`Progreso de unidades publicadas en ${r.title}`}
                       >
-                        <span className="meter__fill" style={{ transform: `scaleX(${progress[r.id] ?? 0})` }} />
+                        <span className="meter__fill" style={{ transform: `scaleX(${pct / 100})` }} />
                       </div>
                     </div>
                   </Link>
