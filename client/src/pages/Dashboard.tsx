@@ -41,7 +41,7 @@ export function Dashboard() {
 
   const exportBackup = () => {
     try {
-      const completed = Object.fromEntries(ROUTES.map((route) => [route.id, readCompletedUnits(route.id)]));
+      const completed = Object.fromEntries(ROUTES.map((route) => [route.id, readCompletedUnits(route.id).filter((index) => index < publishedCount(route.id))]));
       const json = exportProgressBackup(completed, unitCounts());
       const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
