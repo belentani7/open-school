@@ -32,8 +32,8 @@ export function Footer() {
           <div className="stack stack--sm">
             <p className="t-label">Licencia</p>
             <p className="t-body" style={{ fontSize: '0.9rem' }}>
-              Código bajo licencia MIT. Puedes copiarlo, modificarlo y
-              desplegarlo, también en proyectos institucionales.
+              Código con licencia MIT. El acceso al código fuente aún no es público;
+              la licencia no supone que el repositorio privado sea descargable.
             </p>
           </div>
 
@@ -41,9 +41,9 @@ export function Footer() {
             <p className="t-label">Enlaces</p>
             <ul className="footer__links">
               <li>
-                <a href="https://github.com/belentani7/open-school" className="footer__link">
-                  Repositorio
-                </a>
+                <span className="footer__link" aria-label="Repositorio privado, no disponible al público">
+                  Repositorio privado
+                </span>
               </li>
               <li><a href="/catalog" className="footer__link">Rutas</a></li>
               <li>
@@ -55,7 +55,7 @@ export function Footer() {
                   Biblia del desarrollo
                 </Link>
               </li>
-              <li><a href="#top" className="footer__link">Volver arriba</a></li>
+              <li><a href="#" className="footer__link">Volver arriba</a></li>
             </ul>
           </div>
         </div>
