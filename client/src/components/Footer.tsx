@@ -55,7 +55,7 @@ export function Footer() {
                   Biblia del desarrollo
                 </Link>
               </li>
-              <li><a href="#top" className="footer__link">Volver arriba</a></li>
+              <li><a href="#" className="footer__link">Volver arriba</a></li>
             </ul>
           </div>
         </div>
