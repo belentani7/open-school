@@ -56,14 +56,6 @@ paths = [
   '''yarn\.lock$''',
 ]
 
-# Allowlist for REDACTED placeholders (replacement text from git-filter-repo)
-[[allowlists]]
-description = "REDACTED placeholders from secret cleanup"
-paths = [
-  '''.*'''
-]
-regex = '''\bREDACTED\b'''
-
 # Allowlist for legacy WILLIAMSCHOOL consolidation files
 [[allowlists]]
 description = "Legacy WILLIAMSCHOOL consolidation files with historical secrets"
