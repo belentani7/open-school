@@ -1,0 +1,21 @@
+/* ===================================================================
+   OPEN SCHOOL — ENTRY CSS
+   Orden de cascada (no alterar):
+     1. tailwindcss   motor de utilidades
+     2. tokens        identidad: color, luz, tipo, forma, fisica
+     3. material      liquid glass, escala tipografica, controles
+   ------------------------------------------------------------------
+   Antes de 2026-09-10 este fichero definia una identidad NOIACORE roja
+   que contradecia tanto al manual (HBO Noir) como al design system
+   (CHROMA cian/lima) — y ademas nunca importo Tailwind, por lo que
+   las paginas se renderizaban sin estilos. Unificado sobre el manual.
+   =================================================================== */
+
+/* Fuentes auto-alojadas: cero llamadas a terceros (ver fonts/fonts.css). */
+@import "./fonts/fonts.css";
+
+@import "tailwindcss";
+
+@import "./styles/tokens.css";
+@import "./styles/material.css";
+@import "./styles/chrome.css";

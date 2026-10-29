@@ -1,0 +1,32 @@
+{
+  "name": "Open School — Instituto abierto",
+  "short_name": "Open School",
+  "description": "Formación gratuita y anónima. Sin matrícula, sin datos personales.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Rutas", "url": "/catalog" },
+    { "name": "Mi progreso", "url": "/dashboard" }
+  ]
+}
