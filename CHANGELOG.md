@@ -8,20 +8,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial project structure
-- CI/CD pipeline with GitHub Actions
-- Security scanning with CodeQL and Gitleaks
-- Dependabot configuration for automated dependency updates
-- Governance files (CODEOWNERS, SECURITY.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md)
+- Initial project template with professional standards
 
 ### Changed
-- Updated GitHub Actions to v5
-- Removed `--if-present` from CI scripts
-- Added explicit `continue-on-error: false` to security jobs
+- N/A
 
-## [1.0.0] - 2026-10-25
+### Deprecated
+- N/A
+
+### Removed
+- N/A
+
+### Fixed
+- N/A
+
+### Security
+- N/A
+
+## [0.1.0] - 2026-10-21
 
 ### Added
-- Initial release
-- Core application features
-- Documentation
+- Professional project structure
+- TypeScript strict configuration
+- ESLint + Prettier + Biome
+- Vitest + Playwright testing
+- GitHub Actions CI/CD
+- Docker support
+- Dependabot + CodeQL

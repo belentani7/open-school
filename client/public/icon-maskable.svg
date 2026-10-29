@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Open School">
+  <defs>
+    <radialGradient id="m-core" cx="42%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="34%" stop-color="#c3b3ff"/>
+      <stop offset="70%" stop-color="#9e86ff"/>
+      <stop offset="100%" stop-color="#3b2f78"/>
+    </radialGradient>
+  </defs>
+  <!-- Maskable: el sistema recorta hasta un 20% por lado, asi que la
+       marca se encoge a la zona segura central (40% del lienzo). -->
+  <rect width="64" height="64" fill="#000000"/>
+  <rect width="64" height="64" fill="#030328" opacity=".85"/>
+  <path d="M32 19 45 32 32 45 19 32Z" fill="none" stroke="url(#m-core)" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M32 26 38 32 32 38 26 32Z" fill="url(#m-core)"/>
+</svg>

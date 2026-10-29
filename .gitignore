@@ -1,41 +1,66 @@
-# dependencies
-node_modules
-.pnp
-.pnp.js
+# Dependencies
+node_modules/
+bower_components/
 
-# testing
-coverage
+# Production
+build/
+dist/
 
-# next.js
-.next/
-out/
-build
+docs/
 
-# production
-dist
+# Misc
+.env
+.env.local
+.env.*.local
 
-# misc
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
 .DS_Store
-*.pem
+Thumbs.db
 
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
-.env
+# Coverage
+coverage/
+.nyc_output/
 
-# vercel
-.vercel
+# Tests
+.cypress/
 
-# typescript
+# Cache
+.cache/
+
+# Python tooling and editable installs
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local deployment metadata
+.vercel/
+
+# Historical Secure-T coupling artifact and transient bundles are not deployable school sources.
+open-school-secure-t-coupling.zip
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.bak
+
+# Additional generated and sensitive files
+.pnpm-store/
+*.pem
+*.key
 *.tsbuildinfo
-next-env.d.ts
-
-# IDE
-.idea
-.vscode
-*.swp
+playwright-report/
+test-results/
 *.swo
