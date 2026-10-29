@@ -79,6 +79,26 @@ class RateLimiter:
         return True
 
 
+def _trusted_browser_mutation(environ: dict[str, Any]) -> bool:
+    """Deny cross-origin browser mutations before invoking AI."""
+    from urllib.parse import urlsplit
+    site = str(environ.get("HTTP_SEC_FETCH_SITE") or "").strip().lower()
+    if site and site not in {"same-origin", "none"}:
+        return False
+    origin = environ.get("HTTP_ORIGIN")
+    if origin is None:
+        return True
+    try:
+        u = urlsplit(str(origin))
+        host = str(environ.get("HTTP_HOST") or "").lower()
+        return (u.scheme in {"http", "https"} and bool(host)
+            and u.netloc.lower() == host
+            and not u.username and not u.password
+            and not u.path and not u.query and not u.fragment)
+    except ValueError:
+        return False
+
+
 def _json_response(
     start_response: StartResponse,
     status: str,
@@ -92,6 +112,10 @@ def _json_response(
         # Sin esto, un navegador podria intentar "snifear" la respuesta
         # como si fuera HTML/JS en vez de JSON.
         ("X-Content-Type-Options", "nosniff"),
+        ("Cache-Control", "private, no-store, max-age=0"),
+        ("Referrer-Policy", "no-referrer"),
+        ("X-Frame-Options", "DENY"),
+        ("Content-Security-Policy", "default-src 'none'; base-uri 'none'; frame-ancestors 'none'"),
     ]
     if extra_headers:
         headers.extend(extra_headers)
@@ -138,6 +162,10 @@ def create_app(
             return _json_response(start_response, "404 Not Found", {"error": "not_found"})
 
         if method == "POST" and path == "/api/tutor":
+            if not _trusted_browser_mutation(environ):
+                return _json_response(
+                    start_response, "403 Forbidden", {"error": "origin_forbidden"}
+                )
             # Antes de leer nada ni tocar el modelo: cada llamada aqui
             # invoca el modelo Ollama, asi que el corte es lo primero.
             if not limiter.allow(environ.get("REMOTE_ADDR", "unknown")):
