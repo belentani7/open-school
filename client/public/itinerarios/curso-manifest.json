@@ -1,0 +1,16 @@
+{
+  "project": "OPEN SCHOOL",
+  "base": "./cursos",
+  "courses": [
+    {
+      "slug": "ciberseguridad-5-anios",
+      "title": "Plan de ciberseguridad y Full Stack · Material introductorio",
+      "description": "Tres unidades publicadas de un plan curricular amplio; no equivalen a los cinco años completos.",
+      "weeks": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
