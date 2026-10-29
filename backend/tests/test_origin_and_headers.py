@@ -1,8 +1,10 @@
 import io
 import json
+
 from app.adapters.memory_catalog import InMemoryCourseRepository
 from app.application.catalog_service import CatalogService
 from app.interfaces.wsgi import create_app
+
 
 def call(origin=None, fetch_site=None):
     calls = []
