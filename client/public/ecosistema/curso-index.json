@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "generated_on": "2026-10-29",
+  "scope": "snapshot of repository sources, not live API or shared progress",
+  "standards_note": "Read-only course discovery; not LTI/xAPI certification",
+  "projects": [
+    {
+      "repo": "ManosAbiertas",
+      "path": "public/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "Manos Abiertas",
+      "description": "Empleo, ofimática, ciudadanía e IA práctica.",
+      "base": "../campus/cursos",
+      "courses": [
+        {
+          "slug": "alfabetizacion-ia",
+          "title": "Alfabetización en inteligencia artificial",
+          "units": 3,
+          "source_url": "https://github.com/belentani7/ManosAbiertas/tree/main/campus/cursos/alfabetizacion-ia"
+        },
+        {
+          "slug": "office-sin-miedo",
+          "title": "Office sin miedo",
+          "units": 3,
+          "source_url": "https://github.com/belentani7/ManosAbiertas/tree/main/campus/cursos/office-sin-miedo"
+        },
+        {
+          "slug": "falsos-amigos-pt-es",
+          "title": "Puente PT–ES · Falsos amigos",
+          "units": 4,
+          "source_url": "https://github.com/belentani7/ManosAbiertas/tree/main/campus/cursos/falsos-amigos-pt-es"
+        }
+      ]
+    },
+    {
+      "repo": "linguaforge",
+      "path": "campus/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "LinguaForge",
+      "description": "Aprendizaje lingüístico y adaptación.",
+      "base": "../cursos",
+      "courses": [
+        {
+          "slug": "forja-linguistica",
+          "title": "Forja lingüística · Traducción y adaptación",
+          "units": 4,
+          "source_url": "https://github.com/belentani7/linguaforge/tree/main/campus/cursos/forja-linguistica"
+        }
+      ]
+    },
+    {
+      "repo": "lingua-aberta",
+      "path": "campus/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "Língua Aberta",
+      "description": "Portugués, español y catalán en contexto.",
+      "base": "../cursos",
+      "courses": [
+        {
+          "slug": "catalan-a1-brasileiros",
+          "title": "Català A1 · Primeiros passos",
+          "units": 4,
+          "source_url": "https://github.com/belentani7/lingua-aberta/tree/main/campus/cursos/catalan-a1-brasileiros"
+        },
+        {
+          "slug": "falsos-amigos-pt-es",
+          "title": "Espanhol · Falsos amigos PT–ES",
+          "units": 4,
+          "source_url": "https://github.com/belentani7/lingua-aberta/tree/main/campus/cursos/falsos-amigos-pt-es"
+        },
+        {
+          "slug": "espanol-academico-eso",
+          "title": "Espanhol acadêmico para a ESO",
+          "units": 3,
+          "source_url": "https://github.com/belentani7/lingua-aberta/tree/main/campus/cursos/espanol-academico-eso"
+        }
+      ]
+    },
+    {
+      "repo": "secure-t",
+      "path": "campus/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "Secure T",
+      "description": "Seguridad defensiva, ofensiva ética, IA y gobernanza.",
+      "base": "../cursos",
+      "courses": [
+        {
+          "slug": "ciber-defensiva",
+          "title": "Seguridad defensiva · SOC",
+          "units": 20,
+          "source_url": "https://github.com/belentani7/secure-t/tree/main/campus/cursos/ciber-defensiva"
+        },
+        {
+          "slug": "ciber-ofensiva",
+          "title": "Seguridad ofensiva autorizada",
+          "units": 20,
+          "source_url": "https://github.com/belentani7/secure-t/tree/main/campus/cursos/ciber-ofensiva"
+        },
+        {
+          "slug": "ia-aplicada-segura",
+          "title": "Inteligencia artificial aplicada y segura",
+          "units": 20,
+          "source_url": "https://github.com/belentani7/secure-t/tree/main/campus/cursos/ia-aplicada-segura"
+        },
+        {
+          "slug": "gobernanza-compliance",
+          "title": "Gobernanza y compliance digital",
+          "units": 20,
+          "source_url": "https://github.com/belentani7/secure-t/tree/main/campus/cursos/gobernanza-compliance"
+        }
+      ]
+    },
+    {
+      "repo": "open-school",
+      "path": "client/public/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "Open School",
+      "description": "Instituto digital de rutas abiertas y tutoría.",
+      "base": "./cursos",
+      "courses": [
+        {
+          "slug": "ciberseguridad-5-anios",
+          "title": "Plan de ciberseguridad y Full Stack · Material introductorio",
+          "units": 3,
+          "source_url": "https://github.com/belentani7/open-school/tree/main/campus/cursos/ciberseguridad-5-anios"
+        }
+      ]
+    },
+    {
+      "repo": "ux-academy-professional-program",
+      "path": "client/public/itinerarios/curso-manifest.json",
+      "kind": "campus",
+      "title": "UX Academy",
+      "description": "UX, producto, evidencias y proyectos.",
+      "base": "./cursos",
+      "courses": [
+        {
+          "slug": "ux-profesional",
+          "title": "UX profesional · Del criterio al portafolio",
+          "units": 6,
+          "source_url": "https://github.com/belentani7/ux-academy-professional-program/tree/main/campus/ux-profesional"
+        }
+      ]
+    },
+    {
+      "repo": "WILLIAMSCHOOL",
+      "title": "WILLIAMSCHOOL",
+      "description": "ESO/Bachillerato y formación intercultural; currículos académicos y comunitarios disponibles.",
+      "kind": "json",
+      "source_url": "https://github.com/belentani7/WILLIAMSCHOOL/tree/main/public/modules",
+      "courses": [
+        {
+          "title": "ESO y Bachillerato",
+          "source_url": "https://github.com/belentani7/WILLIAMSCHOOL/blob/main/public/modules/belentani/curriculumData__ACADEMIC_MODULES.json"
+        },
+        {
+          "title": "Formación comunitaria",
+          "source_url": "https://github.com/belentani7/WILLIAMSCHOOL/blob/main/public/modules/manos-abiertas/educationData__EDUCATION_COURSES.json"
+        },
+        {
+          "title": "Omega · Rutas aplicadas",
+          "source_url": "https://github.com/belentani7/WILLIAMSCHOOL/blob/main/public/modules/belentani/omegaCourseraPythonHub__OMEGA_COURSE_TRACKS.json"
+        }
+      ]
+    },
+    {
+      "repo": "aprende-brasil",
+      "title": "Aprende Brasil",
+      "description": "205 módulos en alfabetización, matemáticas, informática e idiomas.",
+      "kind": "json",
+      "source_url": "https://github.com/belentani7/aprende-brasil/blob/main/client/src/data/curriculum.json",
+      "courses": [
+        {
+          "title": "Alfabetização · 93 módulos",
+          "units": 93
+        },
+        {
+          "title": "Matemática · 40 módulos",
+          "units": 40
+        },
+        {
+          "title": "Informática · 40 módulos",
+          "units": 40
+        },
+        {
+          "title": "Idiomas · 32 módulos",
+          "units": 32
+        }
+      ]
+    }
+  ]
+}

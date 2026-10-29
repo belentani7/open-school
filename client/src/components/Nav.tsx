@@ -65,6 +65,7 @@ export function Nav() {
             );
           })}
           <li><a className="nav__link" href="/itinerarios/index.html"><span className="nav__link-glyph" aria-hidden="true">↗</span><span className="nav__link-text">Biblioteca de cursos</span></a></li>
+          <li><a className="nav__link" href="/ecosistema/index.html"><span className="nav__link-glyph" aria-hidden="true">◇</span><span className="nav__link-text">Ecosistema</span></a></li>
         </ul>
 
         <Link href="/catalog" className="btn btn--light nav__cta">
