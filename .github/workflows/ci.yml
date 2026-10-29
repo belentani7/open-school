@@ -57,3 +57,42 @@ jobs:
         run: node --test scripts/verify-education-contract.test.mjs
       - name: Validate project ledger
         run: node scripts/verify-education-contract.mjs
+
+  browser-journeys:
+    name: Real student journeys (desktop and mobile Chromium)
+    needs: [verify, education-contract]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.4.1
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build production campus
+        run: pnpm build
+      - name: Confirm preinstalled Chrome
+        run: command -v google-chrome || command -v google-chrome-stable
+      - name: Exercise real desktop and mobile learner journeys
+        run: pnpm exec playwright test --project=chromium --project="Mobile Chrome"
+        env:
+          CI: true
+      - name: Save browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: open-school-browser-evidence
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 7
+          if-no-files-found: ignore
