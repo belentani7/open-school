@@ -46,6 +46,7 @@ export function Footer() {
                 </a>
               </li>
               <li><a href="/catalog" className="footer__link">Rutas</a></li>
+              <li><a href="/campus/index.html" className="footer__link">Campus HTML · lectura, quiz y voces</a></li>
               <li>
                 {/* Sin el numero de terminos a proposito: importar
                     BIBLIA_TOTAL arrastraria las 219 entradas al bundle
