@@ -6,7 +6,17 @@ const $ = (sel, root = document) => root.querySelector(sel);
 function loadQuiz(url) {
   const box = $('.quiz-box');
   if (!box) return;
-  fetch(url).then(r => r.json()).then(items => {
+  fetch(url).then(r => {
+    if (!r.ok) throw new Error('No se pudo cargar el quiz');
+    return r.json();
+  }).then(items => {
+    if (!Array.isArray(items) || items.length === 0 ||
+        items.some(q => typeof q.pregunta !== 'string' ||
+          !Array.isArray(q.opciones) || q.opciones.length < 2 ||
+          !Number.isInteger(q.correcta) || q.correcta < 0 ||
+          q.correcta >= q.opciones.length || typeof q.explicacion !== 'string')) {
+      throw new Error('Datos del quiz no válidos');
+    }
     let idx = 0, score = 0;
     const titulo = $('.quiz-titulo', box);
     const opciones = $('.opciones', box);
@@ -16,14 +26,15 @@ function loadQuiz(url) {
     const render = () => {
       const q = items[idx];
       titulo.textContent = `${idx + 1}/${items.length} · ${q.pregunta}`;
-      opciones.innerHTML = '';
+      opciones.replaceChildren();
       q.opciones.forEach((o, i) => {
         const b = document.createElement('button');
         b.className = 'opcion';
         b.textContent = o;
         b.addEventListener('click', () => {
           [...opciones.children].forEach((el, j) => {
-            el.classList.add(j === q.correcta ? 'correcta' : 'fallo');
+            if (j === q.correcta) el.classList.add('correcta');
+            else if (j === i) el.classList.add('fallo');
             el.disabled = true;
           });
           const ok = i === q.correcta;
@@ -32,17 +43,20 @@ function loadQuiz(url) {
             ? `Correcto. ${q.explicacion}`
             : `Incorrecto. ${q.explicacion}`;
           marcador.textContent = `Aciertos: ${score}`;
+          btn.textContent = idx === items.length - 1 ? 'Ver resultado' : 'Siguiente pregunta';
           btn.hidden = false;
         });
         opciones.appendChild(b);
       });
       btn.hidden = true;
     };
+    titulo.setAttribute('tabindex', '-1');
     btn.addEventListener('click', () => {
       idx++;
       if (idx >= items.length) {
         titulo.textContent = `Terminado: ${score}/${items.length}`;
-        opciones.innerHTML = '';
+        titulo.focus();
+        opciones.replaceChildren();
         feedback.textContent = score >= items.length * 0.7
           ? 'Nivel superado.' : 'Repasa y vuelve a intentarlo.';
         btn.hidden = true;
@@ -50,10 +64,11 @@ function loadQuiz(url) {
         return;
       }
       render();
+      titulo.focus();
     });
     render();
   }).catch(() => {
-    $('.quiz-titulo', box).textContent = 'Quiz no disponible offline.';
+    $('.quiz-titulo', box).textContent = 'No se pudo cargar el cuestionario. Revisa la conexión e inténtalo más tarde.';
   });
 }
 
