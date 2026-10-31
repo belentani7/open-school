@@ -16,7 +16,7 @@ interface Harness {
   listeners: Record<string, Listener>;
   puts: string[];
   setFetch: (fn: FetchFn) => void;
-  dispatch: (event: Record<string, unknown>) => { responded: boolean; result: Promise<Response> | undefined };
+  dispatch: (event: Record<string, unknown>) => { responded: boolean; result: Promise<Response> | undefined; lifetime: Promise<void> };
 }
 
 function loadServiceWorker(): Harness {
@@ -27,7 +27,8 @@ function loadServiceWorker(): Harness {
 
   const cache = {
     put: async (key: unknown) => {
-      puts.push(String(key));
+      const path = key && typeof key === 'object' && 'url' in key ? (key as { url: unknown }).url : key;
+      puts.push(String(path));
     },
     add: async () => undefined,
     match: async () => undefined,
@@ -62,15 +63,19 @@ function loadServiceWorker(): Harness {
     dispatch: (event) => {
       let responded = false;
       let result: Promise<Response> | undefined;
+      const waits: Promise<unknown>[] = [];
       const evt = {
         ...event,
+        waitUntil: (p: Promise<unknown>) => {
+          waits.push(Promise.resolve(p));
+        },
         respondWith: (p: Promise<Response>) => {
           responded = true;
           result = p;
         },
       };
       listeners.fetch(evt);
-      return { responded, result };
+      return { responded, result, lifetime: Promise.all(waits).then(() => undefined) };
     },
   };
 }
@@ -80,14 +85,13 @@ describe('service worker', () => {
     const sw = loadServiceWorker();
     sw.setFetch(async () => new Response('<!doctype html>ok', { status: 200 }));
 
-    const { responded, result } = sw.dispatch({
+    const { responded, result, lifetime } = sw.dispatch({
       request: { method: 'GET', url: 'https://example.test/cursos', mode: 'navigate' },
     });
 
     expect(responded).toBe(true);
     await result;
-    // el put es asincrono: dar un tick a la cola de microtareas
-    await Promise.resolve();
+    await lifetime;
     expect(sw.puts).toEqual(['/index.html']);
   });
 
@@ -95,15 +99,28 @@ describe('service worker', () => {
     const sw = loadServiceWorker();
     sw.setFetch(async () => new Response('Internal Server Error', { status: 500 }));
 
-    const { responded, result } = sw.dispatch({
+    const { responded, result, lifetime } = sw.dispatch({
       request: { method: 'GET', url: 'https://example.test/cursos', mode: 'navigate' },
     });
 
     expect(responded).toBe(true);
     const res = await result;
     expect(res?.status).toBe(500);
-    await Promise.resolve();
+    await lifetime;
     expect(sw.puts).toEqual([]);
+  });
+
+  it('mantiene la escritura de assets dentro de la vida del evento fetch', async () => {
+    const sw = loadServiceWorker();
+    const url = 'https://example.test/assets/app-123.js';
+    const { responded, result, lifetime } = sw.dispatch({
+      request: { method: 'GET', url, mode: 'no-cors' },
+    });
+
+    expect(responded).toBe(true);
+    expect((await result)?.status).toBe(200);
+    await lifetime;
+    expect(sw.puts).toEqual([url]);
   });
 
   it('no intercepta peticiones que no sean GET', () => {
