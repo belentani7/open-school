@@ -151,6 +151,10 @@ export function CourseDetail() {
                     </section>
                   ))}
 
+                  <a className="btn btn--quiet" href={`/learning-library/courses/${route.id}/unit-${String(unitIndex + 1).padStart(2, '0')}/00-orientacion.html`}>
+                    Leer esta unidad en la biblioteca HTML accesible
+                  </a>
+
                   <form className="stack stack--sm" onSubmit={(event) => { event.preventDefault(); evaluate(); }}>
                     <fieldset style={{ border: 0, padding: 0, margin: 0 }}>
                       <legend className="t-title" style={{ marginBottom: '1rem' }}>Comprueba lo aprendido</legend>
