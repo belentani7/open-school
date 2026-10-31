@@ -22,6 +22,19 @@ Una SPA de React que sirve el catálogo de rutas, el detalle de cada una,
 un panel de progreso y un tutor de orientación. Todo el estado vive en el
 navegador; no hay servidor propio ni base de datos conectada.
 
+### Biblioteca HTML independiente
+
+Las unidades publicadas también se generan como páginas HTML estáticas, navegables e imprimibles. No se copian textos a mano: el generador toma el currículo real y escapa el contenido antes de escribir cada página.
+
+- **84 páginas de curso:** 12 unidades evaluables × orientación, 3 pasos, práctica, evaluación y revisión.
+- **120 páginas de Plaza:** 20 lecciones × objetivo, concepto, caso, práctica, evaluación y revisión.
+- **Total previsto por el manifiesto de build: 204 páginas de contenido**, además del índice, CSS y manifiesto.
+- En desarrollo: `/learning-library/index.html`. En producción: `dist/client/learning-library/`.
+- Cada pantalla de curso y Plaza enlaza a su unidad independiente. Las páginas conservan el estilo Open School, navegación de pasos, foco visible, movimiento reducido, vista móvil y reglas de impresión.
+
+El generador se ejecuta al iniciar Vite en desarrollo y al construir para producción. `pnpm test` comprueba el recuento, la estructura HTML, el escape editorial, los enlaces internos y rasgos de accesibilidad. Las carpetas generadas se ignoran en Git; la fuente sigue siendo el currículo.
+
+
 | Área | Estado |
 |---|---|
 | Catálogo, buscador y filtros | funcionando |
