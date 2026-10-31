@@ -53,38 +53,38 @@ self.addEventListener('fetch', (event) => {
 
   // --- Navegacion: red primero ---
   if (request.mode === 'navigate') {
+    const response = fetch(request);
+    const cacheUpdate = response
+      .then((res) => {
+        // La copia offline forma parte de la vida del evento fetch.
+        // Si la caché falla, la respuesta de red sigue siendo válida.
+        if (!res.ok) return undefined;
+        return caches.open(SHELL).then((cache) => cache.put('/index.html', res.clone()));
+      })
+      .catch(() => undefined);
+
+    event.waitUntil(cacheUpdate);
     event.respondWith(
-      fetch(request)
-        .then((res) => {
-          // Solo se cachea si la respuesta es valida. Guardar un 404 o un
-          // 500 como shell dejaria la app rota para siempre en offline:
-          // esa respuesta se serviria como si fuera la aplicacion.
-          if (res.ok) {
-            const copy = res.clone();
-            caches.open(SHELL).then((c) => c.put('/index.html', copy));
-          }
-          return res;
-        })
-        // SPA: cualquier ruta se resuelve contra el mismo shell.
-        .catch(() => caches.match('/index.html').then((r) => r || Response.error()))
+      response.catch(() => caches.match('/index.html').then((cached) => cached || Response.error()))
     );
     return;
   }
 
   // --- Estaticos con hash: cache primero ---
   if (url.pathname.startsWith('/assets/')) {
-    event.respondWith(
-      caches.match(request).then(
-        (hit) =>
-          hit ||
-          fetch(request).then((res) => {
-            if (res.ok) {
-              const copy = res.clone();
-              caches.open(ASSETS).then((c) => c.put(request, copy));
-            }
-            return res;
-          })
-      )
-    );
+    const cached = caches.match(request);
+    const response = cached.then((hit) => hit || fetch(request));
+    const cacheUpdate = cached
+      .then((hit) => {
+        if (hit) return undefined;
+        return response.then((res) => {
+          if (!res.ok) return undefined;
+          return caches.open(ASSETS).then((cache) => cache.put(request, res.clone()));
+        });
+      })
+      .catch(() => undefined);
+
+    event.waitUntil(cacheUpdate);
+    event.respondWith(response);
   }
 });
