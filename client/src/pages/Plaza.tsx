@@ -60,6 +60,9 @@ export function Plaza() {
             Cinco itinerarios con veinte unidades reales. Teoría clara, caso práctico,
             actividad y comprobación por unidad. Gratis, sin registro y sin publicidad.
           </p>
+          <a className="btn btn--quiet" href="/learning-library/index.html">
+            Abrir biblioteca HTML completa
+          </a>
           <div className="row" style={{ flexWrap: 'wrap', gap: '0.6rem' }}>
             <span className="chip chip--edge">5 itinerarios</span>
             <span className="chip">20 unidades evaluables</span>
@@ -175,6 +178,9 @@ export function Plaza() {
                 <h3 id="plaza-lesson-title" className="t-title">{lesson.title}</h3>
                 <p className="t-body"><strong>Al terminar sabrás:</strong> {lesson.objective}</p>
               </div>
+              <a className="btn btn--quiet" href={`/learning-library/plaza/${track.id}/${lesson.id}/00-objetivo.html`}>
+                Leer esta unidad en la biblioteca HTML
+              </a>
               <section className="stack stack--sm">
                 <h4 className="t-subtitle">Comprende</h4><p className="t-body">{lesson.concept}</p>
               </section>
