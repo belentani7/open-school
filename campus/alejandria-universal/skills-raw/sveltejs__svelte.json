@@ -1,0 +1,10 @@
+{
+  "repo": "sveltejs/svelte",
+  "stars": 88495,
+  "desc": "web development for the rest of us",
+  "topics": [
+    "compiler",
+    "template",
+    "ui"
+  ]
+}

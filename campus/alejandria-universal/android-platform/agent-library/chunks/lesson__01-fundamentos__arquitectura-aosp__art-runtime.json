@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/arquitectura-aosp/art-runtime",
+  "text": "Título: Android Runtime (ART) y formato DEX. Contexto: art-runtime, arquitectura-aosp, 01-fundamentos. Definición: Síntesis educativa de Android Runtime (ART) y formato DEX. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/arquitectura-aosp/lessons/art-runtime.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Android Runtime (ART) y formato DEX",
+    "path": "tracks/01-fundamentos/modules/arquitectura-aosp/lessons/art-runtime.html",
+    "tags": [
+      "art-runtime",
+      "arquitectura-aosp",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Android Runtime (ART) y formato DEX. Usar para responder con cita a tracks/01-fundamentos/modules/arquitectura-aosp/lessons/art-runtime.html."
+}

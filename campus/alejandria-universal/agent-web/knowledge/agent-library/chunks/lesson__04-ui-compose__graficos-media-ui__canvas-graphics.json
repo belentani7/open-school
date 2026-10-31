@@ -1,0 +1,16 @@
+{
+  "id": "lesson:04-ui-compose/graficos-media-ui/canvas-graphics",
+  "text": "Título: Canvas, Path y gráficos vectoriales. Contexto: canvas-graphics, graficos-media-ui, 04-ui-compose. Definición: Síntesis educativa de Canvas, Path y gráficos vectoriales. Fuente canónica: https://developer.android.com. Path: tracks/04-ui-compose/modules/graficos-media-ui/lessons/canvas-graphics.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Canvas, Path y gráficos vectoriales",
+    "path": "tracks/04-ui-compose/modules/graficos-media-ui/lessons/canvas-graphics.html",
+    "tags": [
+      "canvas-graphics",
+      "graficos-media-ui",
+      "04-ui-compose"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Canvas, Path y gráficos vectoriales. Usar para responder con cita a tracks/04-ui-compose/modules/graficos-media-ui/lessons/canvas-graphics.html."
+}

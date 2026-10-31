@@ -1,0 +1,16 @@
+{
+  "id": "lesson:10-publicacion/cicd-devops/github-actions",
+  "text": "Título: GitHub Actions y Gradle cache. Contexto: github-actions, cicd-devops, 10-publicacion. Definición: Síntesis educativa de GitHub Actions y Gradle cache. Fuente canónica: https://developer.android.com. Path: tracks/10-publicacion/modules/cicd-devops/lessons/github-actions.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "GitHub Actions y Gradle cache",
+    "path": "tracks/10-publicacion/modules/cicd-devops/lessons/github-actions.html",
+    "tags": [
+      "github-actions",
+      "cicd-devops",
+      "10-publicacion"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de GitHub Actions y Gradle cache. Usar para responder con cita a tracks/10-publicacion/modules/cicd-devops/lessons/github-actions.html."
+}

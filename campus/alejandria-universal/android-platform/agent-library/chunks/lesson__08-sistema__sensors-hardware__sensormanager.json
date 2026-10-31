@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/sensors-hardware/sensormanager",
+  "text": "Título: SensorManager: acelerómetro, gyro. Contexto: sensormanager, sensors-hardware, 08-sistema. Definición: Síntesis educativa de SensorManager: acelerómetro, gyro. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/sensors-hardware/lessons/sensormanager.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "SensorManager: acelerómetro, gyro",
+    "path": "tracks/08-sistema/modules/sensors-hardware/lessons/sensormanager.html",
+    "tags": [
+      "sensormanager",
+      "sensors-hardware",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de SensorManager: acelerómetro, gyro. Usar para responder con cita a tracks/08-sistema/modules/sensors-hardware/lessons/sensormanager.html."
+}

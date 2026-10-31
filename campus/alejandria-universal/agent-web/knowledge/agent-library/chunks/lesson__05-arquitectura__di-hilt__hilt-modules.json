@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/di-hilt/hilt-modules",
+  "text": "Título: Hilt: modules, components y scopes. Contexto: hilt-modules, di-hilt, 05-arquitectura. Definición: Síntesis educativa de Hilt: modules, components y scopes. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/di-hilt/lessons/hilt-modules.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Hilt: modules, components y scopes",
+    "path": "tracks/05-arquitectura/modules/di-hilt/lessons/hilt-modules.html",
+    "tags": [
+      "hilt-modules",
+      "di-hilt",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Hilt: modules, components y scopes. Usar para responder con cita a tracks/05-arquitectura/modules/di-hilt/lessons/hilt-modules.html."
+}

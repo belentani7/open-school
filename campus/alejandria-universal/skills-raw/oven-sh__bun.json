@@ -1,0 +1,19 @@
+{
+  "repo": "oven-sh/bun",
+  "stars": 96471,
+  "desc": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
+  "topics": [
+    "bun",
+    "bundler",
+    "javascript",
+    "javascriptcore",
+    "jsx",
+    "nodejs",
+    "npm",
+    "react",
+    "rust",
+    "rust-lang",
+    "transpiler",
+    "typescript"
+  ]
+}

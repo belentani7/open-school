@@ -1,0 +1,17 @@
+{
+  "id": "semantic-search",
+  "name": "semantic-search",
+  "description": "RAG sobre chunks.jsonl + graph. Responde con cita a lección y fuente oficial.",
+  "inputs": [
+    "chunks/*.json",
+    "graph/knowledge-graph.json"
+  ],
+  "outputs": [
+    "answer + citations"
+  ],
+  "capabilities": [
+    "vector-search",
+    "graph-traversal",
+    "citation"
+  ]
+}

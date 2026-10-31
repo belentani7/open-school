@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/privacy-permisos/photo-picker-perms",
+  "text": "Título: Photo Picker y permisos granulares. Contexto: photo-picker-perms, privacy-permisos, 09-seguridad. Definición: Síntesis educativa de Photo Picker y permisos granulares. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/privacy-permisos/lessons/photo-picker-perms.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Photo Picker y permisos granulares",
+    "path": "tracks/09-seguridad/modules/privacy-permisos/lessons/photo-picker-perms.html",
+    "tags": [
+      "photo-picker-perms",
+      "privacy-permisos",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Photo Picker y permisos granulares. Usar para responder con cita a tracks/09-seguridad/modules/privacy-permisos/lessons/photo-picker-perms.html."
+}

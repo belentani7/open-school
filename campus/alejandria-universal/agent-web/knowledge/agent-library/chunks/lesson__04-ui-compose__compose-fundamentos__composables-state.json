@@ -1,0 +1,16 @@
+{
+  "id": "lesson:04-ui-compose/compose-fundamentos/composables-state",
+  "text": "Título: @Composable, recomposición y State. Contexto: composables-state, compose-fundamentos, 04-ui-compose. Definición: Síntesis educativa de @Composable, recomposición y State. Fuente canónica: https://developer.android.com. Path: tracks/04-ui-compose/modules/compose-fundamentos/lessons/composables-state.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: ble, gatt.",
+  "metadata": {
+    "title": "@Composable, recomposición y State",
+    "path": "tracks/04-ui-compose/modules/compose-fundamentos/lessons/composables-state.html",
+    "tags": [
+      "composables-state",
+      "compose-fundamentos",
+      "04-ui-compose"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de @Composable, recomposición y State. Usar para responder con cita a tracks/04-ui-compose/modules/compose-fundamentos/lessons/composables-state.html."
+}

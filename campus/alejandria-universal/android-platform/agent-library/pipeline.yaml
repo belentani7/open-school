@@ -1,0 +1,25 @@
+name: Alexandria Completion Pipeline
+on: [push, pull_request, manual]
+jobs:
+  gap-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - run: node agent-library/tools/alexandria_query.js --check-gaps
+  content-creator:
+    needs: gap-analysis
+    steps:
+      - run: node generate-agent-library.js
+  html-generator:
+    needs: content-creator
+    steps:
+      - run: node ../generate.js
+  validator:
+    needs: html-generator
+    steps:
+      - run: node agent-library/tools/validate.js --strict --a11y 95
+  security-auditor:
+    steps:
+      - run: node agent-library/skills/security-auditor.skill.json
+  architecture-guardian:
+    steps:
+      - run: npx archunit --rules pipeline.yaml

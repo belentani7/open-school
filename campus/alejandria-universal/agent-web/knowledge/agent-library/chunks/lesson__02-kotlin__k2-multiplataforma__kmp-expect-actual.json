@@ -1,0 +1,16 @@
+{
+  "id": "lesson:02-kotlin/k2-multiplataforma/kmp-expect-actual",
+  "text": "Título: Kotlin Multiplatform expect/actual. Contexto: kmp-expect-actual, k2-multiplataforma, 02-kotlin. Definición: Síntesis educativa de Kotlin Multiplatform expect/actual. Fuente canónica: https://kotlinlang.org/docs/home.html. Path: tracks/02-kotlin/modules/k2-multiplataforma/lessons/kmp-expect-actual.html. Criterios: api-level, cts. Lenguajes: kotlin, kotlin-coroutines, kotlin-flow. Protocolos: .",
+  "metadata": {
+    "title": "Kotlin Multiplatform expect/actual",
+    "path": "tracks/02-kotlin/modules/k2-multiplataforma/lessons/kmp-expect-actual.html",
+    "tags": [
+      "kmp-expect-actual",
+      "k2-multiplataforma",
+      "02-kotlin"
+    ],
+    "source": "https://kotlinlang.org/docs/home.html",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Kotlin Multiplatform expect/actual. Usar para responder con cita a tracks/02-kotlin/modules/k2-multiplataforma/lessons/kmp-expect-actual.html."
+}

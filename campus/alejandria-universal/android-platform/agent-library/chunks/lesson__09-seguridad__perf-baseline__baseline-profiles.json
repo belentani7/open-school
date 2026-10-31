@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/perf-baseline/baseline-profiles",
+  "text": "Título: Baseline Profiles y startup. Contexto: baseline-profiles, perf-baseline, 09-seguridad. Definición: Síntesis educativa de Baseline Profiles y startup. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/perf-baseline/lessons/baseline-profiles.html. Criterios: baseline-profiles, macrobenchmark. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Baseline Profiles y startup",
+    "path": "tracks/09-seguridad/modules/perf-baseline/lessons/baseline-profiles.html",
+    "tags": [
+      "baseline-profiles",
+      "perf-baseline",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Baseline Profiles y startup. Usar para responder con cita a tracks/09-seguridad/modules/perf-baseline/lessons/baseline-profiles.html."
+}

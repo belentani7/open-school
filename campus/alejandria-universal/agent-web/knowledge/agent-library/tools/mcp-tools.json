@@ -1,0 +1,75 @@
+{
+  "mcp": {
+    "version": "2024-11-05",
+    "tools": [
+      {
+        "name": "alexandria_query",
+        "description": "Consulta la Biblioteca de Alejandría. Devuelve lecciones, definiciones y fuentes oficiales.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array"
+            },
+            "level": {
+              "type": "string",
+              "enum": [
+                "track",
+                "module",
+                "lesson"
+              ]
+            }
+          },
+          "required": [
+            "query"
+          ]
+        },
+        "handler": "agent-library/tools/alexandria_query.js"
+      },
+      {
+        "name": "alexandria_generate_htmls",
+        "description": "Genera/regenera 216 HTMLs faltantes. Estructura implícita en código.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string"
+            },
+            "finalize": {
+              "type": "boolean"
+            }
+          }
+        },
+        "handler": "generate.js"
+      },
+      {
+        "name": "alexandria_validate",
+        "description": "Valida HTML5 + enlaces + a11y. Bloquea si no 100%.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "handler": "agent-library/tools/validate.js"
+      },
+      {
+        "name": "alexandria_get_protocol",
+        "description": "Obtiene definición canónica de protocolo (https, grpc, ble, nfc, mqtt) con ejemplo.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "protocol"
+          ]
+        },
+        "handler": "agent-library/protocols/index.json"
+      }
+    ]
+  }
+}

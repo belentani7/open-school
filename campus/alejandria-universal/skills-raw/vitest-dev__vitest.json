@@ -1,0 +1,10 @@
+{
+  "repo": "vitest-dev/vitest",
+  "stars": 17312,
+  "desc": "Next generation testing framework powered by Vite.",
+  "topics": [
+    "test",
+    "testing-tools",
+    "vite"
+  ]
+}

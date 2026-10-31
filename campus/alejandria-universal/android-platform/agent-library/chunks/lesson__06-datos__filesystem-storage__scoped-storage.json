@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/filesystem-storage/scoped-storage",
+  "text": "Título: Scoped Storage y MediaStore. Contexto: scoped-storage, filesystem-storage, 06-datos. Definición: Síntesis educativa de Scoped Storage y MediaStore. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/filesystem-storage/lessons/scoped-storage.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Scoped Storage y MediaStore",
+    "path": "tracks/06-datos/modules/filesystem-storage/lessons/scoped-storage.html",
+    "tags": [
+      "scoped-storage",
+      "filesystem-storage",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Scoped Storage y MediaStore. Usar para responder con cita a tracks/06-datos/modules/filesystem-storage/lessons/scoped-storage.html."
+}

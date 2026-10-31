@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/iot-mqtt/mqtt-android",
+  "text": "Título: MQTT en Android (Paho). Contexto: mqtt-android, iot-mqtt, 07-conectividad. Definición: Síntesis educativa de MQTT en Android (Paho). Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/iot-mqtt/lessons/mqtt-android.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "MQTT en Android (Paho)",
+    "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/mqtt-android.html",
+    "tags": [
+      "mqtt-android",
+      "iot-mqtt",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de MQTT en Android (Paho). Usar para responder con cita a tracks/07-conectividad/modules/iot-mqtt/lessons/mqtt-android.html."
+}

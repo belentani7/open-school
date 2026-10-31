@@ -1,0 +1,20 @@
+{
+  "repo": "triggerdotdev/trigger.dev",
+  "stars": 16665,
+  "desc": "Trigger.dev – build and deploy durable AI agents and workflows",
+  "topics": [
+    "ai",
+    "ai-agent-framework",
+    "ai-agents",
+    "automation",
+    "background-jobs",
+    "mcp",
+    "mcp-server",
+    "nextjs",
+    "orchestration",
+    "scheduler",
+    "serverless",
+    "workflow-automation",
+    "workflows"
+  ]
+}

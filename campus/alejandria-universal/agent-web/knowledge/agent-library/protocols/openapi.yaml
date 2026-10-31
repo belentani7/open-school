@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: Alexandria Agent API
+  version: 1.0.0
+  description: API nativa para agentes - Biblioteca de Alejandría Android
+paths:
+  /query:
+    post:
+      summary: Consulta semántica
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query: {type: string, example: "WorkManager vs Foreground Service"}
+      responses:
+        '200':
+          description: Lecciones con citas y fuentes oficiales
+  /generate:
+    post:
+      summary: Genera HTMLs faltantes (216)
+      responses: {'200': {description: Generados}}
+  /validate:
+    get:
+      summary: Valida HTML5 + enlaces

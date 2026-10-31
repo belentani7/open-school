@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/camera-cameraX/camerax-preview",
+  "text": "Título: Preview, ImageCapture y análisis. Contexto: camerax-preview, camera-cameraX, 08-sistema. Definición: Síntesis educativa de Preview, ImageCapture y análisis. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/camera-cameraX/lessons/camerax-preview.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Preview, ImageCapture y análisis",
+    "path": "tracks/08-sistema/modules/camera-cameraX/lessons/camerax-preview.html",
+    "tags": [
+      "camerax-preview",
+      "camera-cameraX",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Preview, ImageCapture y análisis. Usar para responder con cita a tracks/08-sistema/modules/camera-cameraX/lessons/camerax-preview.html."
+}

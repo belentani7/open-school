@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/testing-calidad/compose-ui-tests",
+  "text": "Título: Compose UI tests y Espresso. Contexto: compose-ui-tests, testing-calidad, 09-seguridad. Definición: Síntesis educativa de Compose UI tests y Espresso. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/testing-calidad/lessons/compose-ui-tests.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Compose UI tests y Espresso",
+    "path": "tracks/09-seguridad/modules/testing-calidad/lessons/compose-ui-tests.html",
+    "tags": [
+      "compose-ui-tests",
+      "testing-calidad",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Compose UI tests y Espresso. Usar para responder con cita a tracks/09-seguridad/modules/testing-calidad/lessons/compose-ui-tests.html."
+}

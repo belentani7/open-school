@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/background-work/workmanager",
+  "text": "Título: WorkManager: workers y constraints. Contexto: workmanager, background-work, 08-sistema. Definición: Síntesis educativa de WorkManager: workers y constraints. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/background-work/lessons/workmanager.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "WorkManager: workers y constraints",
+    "path": "tracks/08-sistema/modules/background-work/lessons/workmanager.html",
+    "tags": [
+      "workmanager",
+      "background-work",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de WorkManager: workers y constraints. Usar para responder con cita a tracks/08-sistema/modules/background-work/lessons/workmanager.html."
+}

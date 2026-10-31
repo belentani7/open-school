@@ -1,0 +1,15 @@
+{
+  "repo": "inngest/inngest",
+  "stars": 6003,
+  "desc": "The leading workflow orchestration platform.  Run stateful step functions and AI workflows on serverless, servers, or the edge.",
+  "topics": [
+    "cli",
+    "event-driven",
+    "event-driven-architecture",
+    "queues",
+    "serverless",
+    "serverless-functions",
+    "workflow-engine",
+    "workflows"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "env-sync",
+  "name": "env-sync",
+  "category": "infra",
+  "description": "Sincroniza .env con Vault, detecta drift. De cloudflare/workers-sdk",
+  "source_repos": "cloudflare/workers-sdk",
+  "inputs": [
+    "manifest.json",
+    "**/*.{ts,js,md}"
+  ],
+  "outputs": [
+    "artifacts/env-sync/*"
+  ],
+  "tools": [
+    "env-sync",
+    "read_file",
+    "write_file",
+    "validate"
+  ],
+  "prompt": "Eres skill env-sync. Aplica patrón de Sincroniza .env con Vault, detecta drift.. Si fallas, bloquea PR.",
+  "version": "1.0.0",
+  "harvested_from": "anthropics/anthropic-cookbook, anthropics/claude-code",
+  "harvested_at": "2026-10-30T20:46:10.759Z"
+}

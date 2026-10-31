@@ -1,0 +1,11 @@
+{
+  "repo": "openai/openai-cookbook",
+  "stars": 76880,
+  "desc": "Examples and guides for using the OpenAI API",
+  "topics": [
+    "chatgpt",
+    "gpt-4",
+    "openai",
+    "openai-api"
+  ]
+}

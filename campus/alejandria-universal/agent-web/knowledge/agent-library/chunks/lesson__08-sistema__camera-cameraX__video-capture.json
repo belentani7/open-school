@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/camera-cameraX/video-capture",
+  "text": "Título: Video capture y estabilización. Contexto: video-capture, camera-cameraX, 08-sistema. Definición: Síntesis educativa de Video capture y estabilización. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/camera-cameraX/lessons/video-capture.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Video capture y estabilización",
+    "path": "tracks/08-sistema/modules/camera-cameraX/lessons/video-capture.html",
+    "tags": [
+      "video-capture",
+      "camera-cameraX",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Video capture y estabilización. Usar para responder con cita a tracks/08-sistema/modules/camera-cameraX/lessons/video-capture.html."
+}

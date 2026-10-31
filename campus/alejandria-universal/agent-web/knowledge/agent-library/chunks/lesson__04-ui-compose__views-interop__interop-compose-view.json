@@ -1,0 +1,16 @@
+{
+  "id": "lesson:04-ui-compose/views-interop/interop-compose-view",
+  "text": "Título: Interop: AndroidView y ComposeView. Contexto: interop-compose-view, views-interop, 04-ui-compose. Definición: Síntesis educativa de Interop: AndroidView y ComposeView. Fuente canónica: https://developer.android.com. Path: tracks/04-ui-compose/modules/views-interop/lessons/interop-compose-view.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Interop: AndroidView y ComposeView",
+    "path": "tracks/04-ui-compose/modules/views-interop/lessons/interop-compose-view.html",
+    "tags": [
+      "interop-compose-view",
+      "views-interop",
+      "04-ui-compose"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Interop: AndroidView y ComposeView. Usar para responder con cita a tracks/04-ui-compose/modules/views-interop/lessons/interop-compose-view.html."
+}

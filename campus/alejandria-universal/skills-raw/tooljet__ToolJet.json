@@ -1,0 +1,25 @@
+{
+  "repo": "tooljet/ToolJet",
+  "stars": 41150,
+  "desc": "Open-source foundation of ToolJet AI - the enterprise app generation platform for internal tools, dashboards, business applications, workflows and AI agents. Build visually, from a prompt, or from Claude Code, Codex and Cursor over MCP 🚀",
+  "topics": [
+    "ai-app-builder",
+    "docker",
+    "internal-applications",
+    "internal-project",
+    "internal-tool",
+    "internal-tools",
+    "javascript",
+    "kubernetes",
+    "low-code",
+    "low-code-development-platform",
+    "low-code-framework",
+    "no-code",
+    "nodejs",
+    "reactjs",
+    "self-hosted",
+    "typescript",
+    "web-development-tools",
+    "workflow-automation"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:02-kotlin/flow-stateflow/cold-hot-flows",
+  "text": "Título: Flows fríos/calientes, operators. Contexto: cold-hot-flows, flow-stateflow, 02-kotlin. Definición: Síntesis educativa de Flows fríos/calientes, operators. Fuente canónica: https://kotlinlang.org/docs/home.html. Path: tracks/02-kotlin/modules/flow-stateflow/lessons/cold-hot-flows.html. Criterios: api-level, cts. Lenguajes: kotlin, kotlin-coroutines, kotlin-flow. Protocolos: .",
+  "metadata": {
+    "title": "Flows fríos/calientes, operators",
+    "path": "tracks/02-kotlin/modules/flow-stateflow/lessons/cold-hot-flows.html",
+    "tags": [
+      "cold-hot-flows",
+      "flow-stateflow",
+      "02-kotlin"
+    ],
+    "source": "https://kotlinlang.org/docs/home.html",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Flows fríos/calientes, operators. Usar para responder con cita a tracks/02-kotlin/modules/flow-stateflow/lessons/cold-hot-flows.html."
+}

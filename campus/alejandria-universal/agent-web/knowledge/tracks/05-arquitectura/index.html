@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MVVM/MVI, Clean Architecture, modularización, Navigation 2 y state management.">
+<meta name="color-scheme" content="light">
+<title>Arquitectura, Navegación y Modularización — Plataforma Android</title>
+<link rel="stylesheet" href="../../assets/css/platform.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%233DDC84'/><text x='50' y='60' text-anchor='middle' font-size='42'>🤖</text></svg>">
+</head>
+<body data-page-id="tracks/05-arquitectura/index.html">
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="Inicio plataforma Android">
+      <span class="brand-mark" aria-hidden="true">🤖</span>
+      <span>Android Platform <small>Plataforma completa • 211 HTMLs • HTML5</small></span>
+    </a>
+    <nav class="topnav" aria-label="Navegación superior">
+      <a class="btn" href="../../index.html">Inicio</a>
+      <a class="btn" href="../../tracks/01-fundamentos/index.html">Tracks</a>
+      <a class="btn primary" href="https://developer.android.com" target="_blank" rel="noopener">Docs oficiales ↗</a>
+    </nav>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Inicio</a> <span aria-hidden="true">›</span> <span>Arquitectura, Navegación y Modularización</span></nav>
+<main>
+  <aside class="sidebar" aria-label="Navegación lateral">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong style="font-size:14px">Progreso global</strong><span id="pct" class="badge">0%</span>
+    </div>
+    <div class="progress" aria-hidden="true"><div class="bar" style="width:8%"></div></div>
+    <p style="font-size:12px;color:var(--muted)">211 páginas • HTML5 semántico • offline-first</p>
+    <label for="q" style="font-size:12px;font-weight:700">Buscar en esta sección</label>
+    <div class="searchbox"><input id="q" type="search" placeholder="filtrar…   (ej: Compose, Room, BLE)" aria-label="Buscar"></div>
+    
+      <h3>Arquitectura, Navegación y Modularización</h3>
+      <a href="../../tracks/05-arquitectura/modules/mvvm-mvi/index.html">MVVM, MVI y presentación</a><a href="../../tracks/05-arquitectura/modules/clean-arch/index.html">Clean Architecture y capas</a><a href="../../tracks/05-arquitectura/modules/navigation2/index.html">Navigation Compose y Deep Links</a><a href="../../tracks/05-arquitectura/modules/di-hilt/index.html">DI con Hilt/Koin y Scopes</a><a href="../../tracks/05-arquitectura/modules/offline-sync/index.html">Offline-first y Sincronización</a>
+      <h3>Todos los tracks</h3>
+      <a class="" href="../../tracks/01-fundamentos/index.html">Fundamentos de la Plataforma Android</a><a class="" href="../../tracks/02-kotlin/index.html">Kotlin para Android - Lenguaje Oficial</a><a class="" href="../../tracks/03-java-interop/index.html">Java Moderno e Interoperabilidad</a><a class="" href="../../tracks/04-ui-compose/index.html">UI Moderna con Jetpack Compose y Views</a><a class="active" href="../../tracks/05-arquitectura/index.html">Arquitectura, Navegación y Modularización</a><a class="" href="../../tracks/06-datos/index.html">Datos, Persistencia y Almacenamiento</a><a class="" href="../../tracks/07-conectividad/index.html">Conectividad, Red y Protocolos</a><a class="" href="../../tracks/08-sistema/index.html">Sistema, Hardware y Multimedia</a><a class="" href="../../tracks/09-seguridad/index.html">Seguridad, Rendimiento y Calidad</a><a class="" href="../../tracks/10-publicacion/index.html">Publicación, CI/CD y Ecosistema Expandido</a>
+    
+    <h3>Recursos oficiales</h3>
+    <a href="https://developer.android.com/docs" target="_blank" rel="noopener">developer.android.com</a>
+    <a href="https://source.android.com" target="_blank" rel="noopener">source.android.com (AOSP)</a>
+    <a href="https://kotlinlang.org/docs/home.html" target="_blank" rel="noopener">kotlinlang.org</a>
+  </aside>
+  <article class="content" role="main">
+    <p class="kicker">Track • 5 módulos</p>
+    <h1>Arquitectura, Navegación y Modularización</h1>
+    <p class="lead">MVVM/MVI, Clean Architecture, modularización, Navigation 2 y state management.</p>
+    <nav class="toc"><strong>En esta página</strong><ol><li><a href="#modulos">Módulos</a></li><li><a href="#objetivos">Objetivos</a></li></ol></nav>
+    
+      <section>
+        <span class="badge">05-arquitectura</span>
+        <p style="margin-top:10px">5 módulos • 15 lecciones • HTML5 completo en cada nivel. Estructura implícita: el código genera la navegación y breadcrumbs.</p>
+        <div class="grid2"><a class="card" href="modules/mvvm-mvi/index.html" data-search="mvvm, mvi y presentación 3 lecciones • viewmodel, ui state y unidireccionalidad • patrón mvi: intent → reducer → state" style="display:block">
+    <span class="badge">MÓDULO</span>
+    <h4>MVVM, MVI y presentación</h4>
+    <p style="font-size:14px;color:var(--muted)">3 lecciones • ViewModel, UI State y unidireccionalidad • Patrón MVI: intent → reducer → state</p>
+  </a><a class="card" href="modules/clean-arch/index.html" data-search="clean architecture y capas 3 lecciones • capas data/domain/ui y dependencias • repository, datasource y mappers" style="display:block">
+    <span class="badge">MÓDULO</span>
+    <h4>Clean Architecture y capas</h4>
+    <p style="font-size:14px;color:var(--muted)">3 lecciones • Capas data/domain/ui y dependencias • Repository, DataSource y mappers</p>
+  </a><a class="card" href="modules/navigation2/index.html" data-search="navigation compose y deep links 3 lecciones • navgraph, type-safety y argumentos • deep links y app links verificados" style="display:block">
+    <span class="badge">MÓDULO</span>
+    <h4>Navigation Compose y Deep Links</h4>
+    <p style="font-size:14px;color:var(--muted)">3 lecciones • NavGraph, type-safety y argumentos • Deep links y app links verificados</p>
+  </a><a class="card" href="modules/di-hilt/index.html" data-search="di con hilt/koin y scopes 3 lecciones • hilt: modules, components y scopes • koin como alternativa ligera" style="display:block">
+    <span class="badge">MÓDULO</span>
+    <h4>DI con Hilt/Koin y Scopes</h4>
+    <p style="font-size:14px;color:var(--muted)">3 lecciones • Hilt: modules, components y scopes • Koin como alternativa ligera</p>
+  </a><a class="card" href="modules/offline-sync/index.html" data-search="offline-first y sincronización 3 lecciones • estrategias offline y cache • sincronización con workmanager" style="display:block">
+    <span class="badge">MÓDULO</span>
+    <h4>Offline-first y Sincronización</h4>
+    <p style="font-size:14px;color:var(--muted)">3 lecciones • Estrategias offline y cache • Sincronización con WorkManager</p>
+  </a></div>
+      </section>
+      <section>
+        <h2>Objetivos del track</h2>
+        <ul style="padding-left:18px">
+          <li>Dominar mvvm/mvi, clean architecture, modularización, navigation 2 y state management.</li>
+          <li>Aplicar criterios oficiales de compatibilidad, performance y seguridad.</li>
+          <li>Implementar ejemplos Kotlin/Compose con buenas prácticas y testing.</li>
+        </ul>
+        <h3>Stack oficial referenciado</h3>
+        <table class="table"><thead><tr><th>Oficial</th><th>Fuente</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>AOSP &amp; CTS</td><td><a href="https://source.android.com" target="_blank">source.android.com</a></td><td>Arquitectura y compatibilidad</td></tr>
+          <tr><td>Developer Guides</td><td><a href="https://developer.android.com" target="_blank">developer.android.com</a></td><td>APIs, guías y samples</td></tr>
+          <tr><td>Kotlin</td><td><a href="https://kotlinlang.org" target="_blank">kotlinlang.org</a></td><td>Lenguaje y coroutines</td></tr>
+        </tbody></table>
+        <pre><code>// ViewModel + StateFlow (UI State unidireccional)
+class TrackViewModel : ViewModel() {
+  private val _uiState = MutableStateFlow(TrackUiState())
+  val uiState: StateFlow&lt;TrackUiState&gt; = _uiState.asStateFlow()
+  fun onAction(action: TrackAction) = viewModelScope.launch { /* ... */ }
+}</code></pre>
+      </section>
+    
+  </article>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <span>© 2026 Plataforma Android Completa — Contenido educativo original + enlaces oficiales. No es copia literal de documentación propietaria.</span>
+  <span><span class="kbd">HTML5</span> <span class="kbd">A11Y</span> <span class="kbd">211 páginas</span> <span class="kbd">PWA ready</span></span>
+</footer>
+<script src="../../assets/js/platform.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/recursos-config/config-changes",
+  "text": "Título: Cambios de configuración y ViewModel. Contexto: config-changes, recursos-config, 01-fundamentos. Definición: Síntesis educativa de Cambios de configuración y ViewModel. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/recursos-config/lessons/config-changes.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Cambios de configuración y ViewModel",
+    "path": "tracks/01-fundamentos/modules/recursos-config/lessons/config-changes.html",
+    "tags": [
+      "config-changes",
+      "recursos-config",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Cambios de configuración y ViewModel. Usar para responder con cita a tracks/01-fundamentos/modules/recursos-config/lessons/config-changes.html."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:02-kotlin/oop-kotlin/extensiones-dsl",
+  "text": "Título: Extensiones, infix y DSL builders. Contexto: extensiones-dsl, oop-kotlin, 02-kotlin. Definición: Síntesis educativa de Extensiones, infix y DSL builders. Fuente canónica: https://kotlinlang.org/docs/home.html. Path: tracks/02-kotlin/modules/oop-kotlin/lessons/extensiones-dsl.html. Criterios: api-level, cts. Lenguajes: kotlin, kotlin-coroutines, kotlin-flow. Protocolos: .",
+  "metadata": {
+    "title": "Extensiones, infix y DSL builders",
+    "path": "tracks/02-kotlin/modules/oop-kotlin/lessons/extensiones-dsl.html",
+    "tags": [
+      "extensiones-dsl",
+      "oop-kotlin",
+      "02-kotlin"
+    ],
+    "source": "https://kotlinlang.org/docs/home.html",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Extensiones, infix y DSL builders. Usar para responder con cita a tracks/02-kotlin/modules/oop-kotlin/lessons/extensiones-dsl.html."
+}

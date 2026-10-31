@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/arquitectura-aosp/capas-linux-hal",
+  "text": "Título: Capas: Linux Kernel, HAL, Native, Framework y Apps. Contexto: capas-linux-hal, arquitectura-aosp, 01-fundamentos. Definición: Síntesis educativa de Capas: Linux Kernel, HAL, Native, Framework y Apps. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/arquitectura-aosp/lessons/capas-linux-hal.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Capas: Linux Kernel, HAL, Native, Framework y Apps",
+    "path": "tracks/01-fundamentos/modules/arquitectura-aosp/lessons/capas-linux-hal.html",
+    "tags": [
+      "capas-linux-hal",
+      "arquitectura-aosp",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Capas: Linux Kernel, HAL, Native, Framework y Apps. Usar para responder con cita a tracks/01-fundamentos/modules/arquitectura-aosp/lessons/capas-linux-hal.html."
+}

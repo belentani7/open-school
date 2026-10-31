@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/graphql-websockets/graphql-apollo",
+  "text": "Título: GraphQL con Apollo Kotlin. Contexto: graphql-apollo, graphql-websockets, 07-conectividad. Definición: Síntesis educativa de GraphQL con Apollo Kotlin. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/graphql-websockets/lessons/graphql-apollo.html. Criterios: api-level, cts. Lenguajes: graphql, kotlin. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "GraphQL con Apollo Kotlin",
+    "path": "tracks/07-conectividad/modules/graphql-websockets/lessons/graphql-apollo.html",
+    "tags": [
+      "graphql-apollo",
+      "graphql-websockets",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de GraphQL con Apollo Kotlin. Usar para responder con cita a tracks/07-conectividad/modules/graphql-websockets/lessons/graphql-apollo.html."
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package android.alexandria;
+option java_package = "com.example.alexandria";
+
+// Contrato canónico: cada Lesson tiene referencia oficial y criterio bloqueante
+message Lesson {
+  string id = 1; // lesson:track/module/lesson
+  string title = 2;
+  repeated string languages = 3; // kotlin, java, proto
+  repeated string protocols = 4; // https, grpc, ble
+  repeated string criteria = 5; // cts, keystore
+  string source_canonical = 6; // https://developer.android.com/...
+  string path = 7; // tracks/.../lesson.html
+}
+message Manifest {
+  string platform = 1;
+  string version = 2;
+  repeated Lesson lessons = 3;
+}

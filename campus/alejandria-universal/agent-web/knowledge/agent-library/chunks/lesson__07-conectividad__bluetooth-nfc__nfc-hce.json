@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/bluetooth-nfc/nfc-hce",
+  "text": "Título: NFC y Host Card Emulation. Contexto: nfc-hce, bluetooth-nfc, 07-conectividad. Definición: Síntesis educativa de NFC y Host Card Emulation. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/bluetooth-nfc/lessons/nfc-hce.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "NFC y Host Card Emulation",
+    "path": "tracks/07-conectividad/modules/bluetooth-nfc/lessons/nfc-hce.html",
+    "tags": [
+      "nfc-hce",
+      "bluetooth-nfc",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de NFC y Host Card Emulation. Usar para responder con cita a tracks/07-conectividad/modules/bluetooth-nfc/lessons/nfc-hce.html."
+}

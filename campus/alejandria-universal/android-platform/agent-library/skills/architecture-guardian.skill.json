@@ -1,0 +1,16 @@
+{
+  "id": "architecture-guardian",
+  "name": "architecture-guardian",
+  "description": "Fitness functions (ArchUnit) que invierten Conway: bloquea imports ilegales entre features.",
+  "inputs": [
+    "src/**/*.kt"
+  ],
+  "outputs": [
+    "reports/architecture.json"
+  ],
+  "capabilities": [
+    "fitness-functions",
+    "boundary-check",
+    "conway-inversion"
+  ]
+}

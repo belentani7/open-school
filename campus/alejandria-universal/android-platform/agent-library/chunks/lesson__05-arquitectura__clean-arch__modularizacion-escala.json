@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/clean-arch/modularizacion-escala",
+  "text": "Título: Modularización a escala y boundaries. Contexto: modularizacion-escala, clean-arch, 05-arquitectura. Definición: Síntesis educativa de Modularización a escala y boundaries. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/clean-arch/lessons/modularizacion-escala.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Modularización a escala y boundaries",
+    "path": "tracks/05-arquitectura/modules/clean-arch/lessons/modularizacion-escala.html",
+    "tags": [
+      "modularizacion-escala",
+      "clean-arch",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Modularización a escala y boundaries. Usar para responder con cita a tracks/05-arquitectura/modules/clean-arch/lessons/modularizacion-escala.html."
+}

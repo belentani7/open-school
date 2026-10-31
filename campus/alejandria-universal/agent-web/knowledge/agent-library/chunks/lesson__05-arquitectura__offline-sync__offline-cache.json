@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/offline-sync/offline-cache",
+  "text": "Título: Estrategias offline y cache. Contexto: offline-cache, offline-sync, 05-arquitectura. Definición: Síntesis educativa de Estrategias offline y cache. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/offline-sync/lessons/offline-cache.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Estrategias offline y cache",
+    "path": "tracks/05-arquitectura/modules/offline-sync/lessons/offline-cache.html",
+    "tags": [
+      "offline-cache",
+      "offline-sync",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Estrategias offline y cache. Usar para responder con cita a tracks/05-arquitectura/modules/offline-sync/lessons/offline-cache.html."
+}

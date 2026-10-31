@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/componentes-manifest/activities",
+  "text": "Título: Activities, Intents y ciclo de vida. Contexto: activities, componentes-manifest, 01-fundamentos. Definición: Síntesis educativa de Activities, Intents y ciclo de vida. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/componentes-manifest/lessons/activities.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Activities, Intents y ciclo de vida",
+    "path": "tracks/01-fundamentos/modules/componentes-manifest/lessons/activities.html",
+    "tags": [
+      "activities",
+      "componentes-manifest",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Activities, Intents y ciclo de vida. Usar para responder con cita a tracks/01-fundamentos/modules/componentes-manifest/lessons/activities.html."
+}

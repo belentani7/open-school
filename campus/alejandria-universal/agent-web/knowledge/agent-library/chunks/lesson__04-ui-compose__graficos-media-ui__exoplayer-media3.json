@@ -1,0 +1,16 @@
+{
+  "id": "lesson:04-ui-compose/graficos-media-ui/exoplayer-media3",
+  "text": "Título: Media3 ExoPlayer y UI de reproducción. Contexto: exoplayer-media3, graficos-media-ui, 04-ui-compose. Definición: Síntesis educativa de Media3 ExoPlayer y UI de reproducción. Fuente canónica: https://developer.android.com. Path: tracks/04-ui-compose/modules/graficos-media-ui/lessons/exoplayer-media3.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Media3 ExoPlayer y UI de reproducción",
+    "path": "tracks/04-ui-compose/modules/graficos-media-ui/lessons/exoplayer-media3.html",
+    "tags": [
+      "exoplayer-media3",
+      "graficos-media-ui",
+      "04-ui-compose"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Media3 ExoPlayer y UI de reproducción. Usar para responder con cita a tracks/04-ui-compose/modules/graficos-media-ui/lessons/exoplayer-media3.html."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/java8-desugaring/time-api",
+  "text": "Título: java.time con desugaring. Contexto: time-api, java8-desugaring, 03-java-interop. Definición: Síntesis educativa de java.time con desugaring. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/java8-desugaring/lessons/time-api.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "java.time con desugaring",
+    "path": "tracks/03-java-interop/modules/java8-desugaring/lessons/time-api.html",
+    "tags": [
+      "time-api",
+      "java8-desugaring",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de java.time con desugaring. Usar para responder con cita a tracks/03-java-interop/modules/java8-desugaring/lessons/time-api.html."
+}

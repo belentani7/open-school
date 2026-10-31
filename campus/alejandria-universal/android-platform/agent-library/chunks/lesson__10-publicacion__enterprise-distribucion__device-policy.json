@@ -1,0 +1,16 @@
+{
+  "id": "lesson:10-publicacion/enterprise-distribucion/device-policy",
+  "text": "Título: Device Policy y work profiles. Contexto: device-policy, enterprise-distribucion, 10-publicacion. Definición: Síntesis educativa de Device Policy y work profiles. Fuente canónica: https://developer.android.com. Path: tracks/10-publicacion/modules/enterprise-distribucion/lessons/device-policy.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Device Policy y work profiles",
+    "path": "tracks/10-publicacion/modules/enterprise-distribucion/lessons/device-policy.html",
+    "tags": [
+      "device-policy",
+      "enterprise-distribucion",
+      "10-publicacion"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Device Policy y work profiles. Usar para responder con cita a tracks/10-publicacion/modules/enterprise-distribucion/lessons/device-policy.html."
+}

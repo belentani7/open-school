@@ -1,0 +1,19 @@
+{
+  "id": "security-auditor",
+  "name": "security-auditor",
+  "description": "Shift-left: SAST, NSC, Keystore, permisos 13/14, Play Integrity.",
+  "inputs": [
+    "AndroidManifest.xml",
+    "network_security_config.xml",
+    "src/**/*.kt"
+  ],
+  "outputs": [
+    "reports/security.json"
+  ],
+  "capabilities": [
+    "sast",
+    "nsc-check",
+    "keystore-check",
+    "permission-audit"
+  ]
+}

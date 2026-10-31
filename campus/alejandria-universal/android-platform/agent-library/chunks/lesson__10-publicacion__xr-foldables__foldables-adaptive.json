@@ -1,0 +1,16 @@
+{
+  "id": "lesson:10-publicacion/xr-foldables/foldables-adaptive",
+  "text": "Título: Foldables y postures. Contexto: foldables-adaptive, xr-foldables, 10-publicacion. Definición: Síntesis educativa de Foldables y postures. Fuente canónica: https://developer.android.com. Path: tracks/10-publicacion/modules/xr-foldables/lessons/foldables-adaptive.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: ble, gatt.",
+  "metadata": {
+    "title": "Foldables y postures",
+    "path": "tracks/10-publicacion/modules/xr-foldables/lessons/foldables-adaptive.html",
+    "tags": [
+      "foldables-adaptive",
+      "xr-foldables",
+      "10-publicacion"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Foldables y postures. Usar para responder con cita a tracks/10-publicacion/modules/xr-foldables/lessons/foldables-adaptive.html."
+}

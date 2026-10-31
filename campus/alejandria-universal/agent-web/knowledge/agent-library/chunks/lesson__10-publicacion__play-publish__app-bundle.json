@@ -1,0 +1,16 @@
+{
+  "id": "lesson:10-publicacion/play-publish/app-bundle",
+  "text": "Título: Android App Bundle y Play Signing. Contexto: app-bundle, play-publish, 10-publicacion. Definición: Síntesis educativa de Android App Bundle y Play Signing. Fuente canónica: https://developer.android.com. Path: tracks/10-publicacion/modules/play-publish/lessons/app-bundle.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Android App Bundle y Play Signing",
+    "path": "tracks/10-publicacion/modules/play-publish/lessons/app-bundle.html",
+    "tags": [
+      "app-bundle",
+      "play-publish",
+      "10-publicacion"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Android App Bundle y Play Signing. Usar para responder con cita a tracks/10-publicacion/modules/play-publish/lessons/app-bundle.html."
+}

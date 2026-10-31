@@ -1,0 +1,27 @@
+{
+  "repo": "appsmithorg/appsmith",
+  "stars": 41140,
+  "desc": "Platform to build admin panels, internal tools, and dashboards. Integrates with 25+ databases and any API.",
+  "topics": [
+    "admin-dashboard",
+    "admin-panels",
+    "app-builder",
+    "automation",
+    "crud",
+    "custom-internal",
+    "developer-tools",
+    "gui",
+    "gui-application",
+    "hacktoberfest",
+    "internal-tools",
+    "java",
+    "javascript",
+    "low-code",
+    "low-code-framework",
+    "react",
+    "self-hosted",
+    "typescript",
+    "webdevelopment",
+    "workflows"
+  ]
+}

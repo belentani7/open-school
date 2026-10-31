@@ -1,0 +1,5 @@
+{
+  "count": 150,
+  "format": "json per lesson",
+  "usage": "Cargar en vector DB (pinecone/weaviate) con embedding text-embedding-3-large"
+}

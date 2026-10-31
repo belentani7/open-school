@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/preferences-datastore/encrypted-prefs",
+  "text": "Título: EncryptedSharedPreferences y Security Crypto. Contexto: encrypted-prefs, preferences-datastore, 06-datos. Definición: Síntesis educativa de EncryptedSharedPreferences y Security Crypto. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/preferences-datastore/lessons/encrypted-prefs.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "EncryptedSharedPreferences y Security Crypto",
+    "path": "tracks/06-datos/modules/preferences-datastore/lessons/encrypted-prefs.html",
+    "tags": [
+      "encrypted-prefs",
+      "preferences-datastore",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de EncryptedSharedPreferences y Security Crypto. Usar para responder con cita a tracks/06-datos/modules/preferences-datastore/lessons/encrypted-prefs.html."
+}

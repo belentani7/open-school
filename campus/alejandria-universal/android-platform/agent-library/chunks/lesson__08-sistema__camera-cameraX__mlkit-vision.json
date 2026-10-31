@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/camera-cameraX/mlkit-vision",
+  "text": "Título: ML Kit Vision: barcode, face, text. Contexto: mlkit-vision, camera-cameraX, 08-sistema. Definición: Síntesis educativa de ML Kit Vision: barcode, face, text. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/camera-cameraX/lessons/mlkit-vision.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "ML Kit Vision: barcode, face, text",
+    "path": "tracks/08-sistema/modules/camera-cameraX/lessons/mlkit-vision.html",
+    "tags": [
+      "mlkit-vision",
+      "camera-cameraX",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de ML Kit Vision: barcode, face, text. Usar para responder con cita a tracks/08-sistema/modules/camera-cameraX/lessons/mlkit-vision.html."
+}

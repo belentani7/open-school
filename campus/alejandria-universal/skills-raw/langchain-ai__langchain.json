@@ -1,0 +1,27 @@
+{
+  "repo": "langchain-ai/langchain",
+  "stars": 148726,
+  "desc": "The agent engineering platform.",
+  "topics": [
+    "agents",
+    "ai",
+    "ai-agents",
+    "anthropic",
+    "chatgpt",
+    "deepagents",
+    "enterprise",
+    "framework",
+    "gemini",
+    "generative-ai",
+    "langchain",
+    "langgraph",
+    "llm",
+    "multiagent",
+    "open-source",
+    "openai",
+    "pydantic",
+    "python",
+    "rag",
+    "typescript"
+  ]
+}

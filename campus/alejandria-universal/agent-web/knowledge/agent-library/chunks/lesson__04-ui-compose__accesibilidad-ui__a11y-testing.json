@@ -1,0 +1,16 @@
+{
+  "id": "lesson:04-ui-compose/accesibilidad-ui/a11y-testing",
+  "text": "Título: Testing de accesibilidad automatizado. Contexto: a11y-testing, accesibilidad-ui, 04-ui-compose. Definición: Síntesis educativa de Testing de accesibilidad automatizado. Fuente canónica: https://developer.android.com. Path: tracks/04-ui-compose/modules/accesibilidad-ui/lessons/a11y-testing.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Testing de accesibilidad automatizado",
+    "path": "tracks/04-ui-compose/modules/accesibilidad-ui/lessons/a11y-testing.html",
+    "tags": [
+      "a11y-testing",
+      "accesibilidad-ui",
+      "04-ui-compose"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Testing de accesibilidad automatizado. Usar para responder con cita a tracks/04-ui-compose/modules/accesibilidad-ui/lessons/a11y-testing.html."
+}

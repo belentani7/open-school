@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/librerias-java/guava-apache",
+  "text": "Título: Guava, Apache Commons y utilidades. Contexto: guava-apache, librerias-java, 03-java-interop. Definición: Síntesis educativa de Guava, Apache Commons y utilidades. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/librerias-java/lessons/guava-apache.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "Guava, Apache Commons y utilidades",
+    "path": "tracks/03-java-interop/modules/librerias-java/lessons/guava-apache.html",
+    "tags": [
+      "guava-apache",
+      "librerias-java",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Guava, Apache Commons y utilidades. Usar para responder con cita a tracks/03-java-interop/modules/librerias-java/lessons/guava-apache.html."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/iot-mqtt/coap-http2",
+  "text": "Título: CoAP y HTTP/2 en dispositivos. Contexto: coap-http2, iot-mqtt, 07-conectividad. Definición: Síntesis educativa de CoAP y HTTP/2 en dispositivos. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/iot-mqtt/lessons/coap-http2.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "CoAP y HTTP/2 en dispositivos",
+    "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/coap-http2.html",
+    "tags": [
+      "coap-http2",
+      "iot-mqtt",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de CoAP y HTTP/2 en dispositivos. Usar para responder con cita a tracks/07-conectividad/modules/iot-mqtt/lessons/coap-http2.html."
+}

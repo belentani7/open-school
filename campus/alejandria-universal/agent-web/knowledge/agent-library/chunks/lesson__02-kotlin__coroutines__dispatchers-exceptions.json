@@ -1,0 +1,16 @@
+{
+  "id": "lesson:02-kotlin/coroutines/dispatchers-exceptions",
+  "text": "Título: Dispatchers, excepciones y supervision. Contexto: dispatchers-exceptions, coroutines, 02-kotlin. Definición: Síntesis educativa de Dispatchers, excepciones y supervision. Fuente canónica: https://kotlinlang.org/docs/home.html. Path: tracks/02-kotlin/modules/coroutines/lessons/dispatchers-exceptions.html. Criterios: api-level, cts. Lenguajes: kotlin, kotlin-coroutines, kotlin-flow. Protocolos: .",
+  "metadata": {
+    "title": "Dispatchers, excepciones y supervision",
+    "path": "tracks/02-kotlin/modules/coroutines/lessons/dispatchers-exceptions.html",
+    "tags": [
+      "dispatchers-exceptions",
+      "coroutines",
+      "02-kotlin"
+    ],
+    "source": "https://kotlinlang.org/docs/home.html",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Dispatchers, excepciones y supervision. Usar para responder con cita a tracks/02-kotlin/modules/coroutines/lessons/dispatchers-exceptions.html."
+}

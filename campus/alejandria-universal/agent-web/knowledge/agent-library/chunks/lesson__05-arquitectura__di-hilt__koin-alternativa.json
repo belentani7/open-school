@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/di-hilt/koin-alternativa",
+  "text": "Título: Koin como alternativa ligera. Contexto: koin-alternativa, di-hilt, 05-arquitectura. Definición: Síntesis educativa de Koin como alternativa ligera. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/di-hilt/lessons/koin-alternativa.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Koin como alternativa ligera",
+    "path": "tracks/05-arquitectura/modules/di-hilt/lessons/koin-alternativa.html",
+    "tags": [
+      "koin-alternativa",
+      "di-hilt",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Koin como alternativa ligera. Usar para responder con cita a tracks/05-arquitectura/modules/di-hilt/lessons/koin-alternativa.html."
+}

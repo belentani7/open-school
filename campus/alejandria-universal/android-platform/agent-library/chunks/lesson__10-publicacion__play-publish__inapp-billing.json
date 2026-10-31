@@ -1,0 +1,16 @@
+{
+  "id": "lesson:10-publicacion/play-publish/inapp-billing",
+  "text": "Título: In-App Billing y subscriptions. Contexto: inapp-billing, play-publish, 10-publicacion. Definición: Síntesis educativa de In-App Billing y subscriptions. Fuente canónica: https://developer.android.com. Path: tracks/10-publicacion/modules/play-publish/lessons/inapp-billing.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "In-App Billing y subscriptions",
+    "path": "tracks/10-publicacion/modules/play-publish/lessons/inapp-billing.html",
+    "tags": [
+      "inapp-billing",
+      "play-publish",
+      "10-publicacion"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de In-App Billing y subscriptions. Usar para responder con cita a tracks/10-publicacion/modules/play-publish/lessons/inapp-billing.html."
+}

@@ -1,0 +1,5457 @@
+{
+  "platform": "android-alexandria",
+  "version": "1.0.0",
+  "generated_at": "2026-10-30T20:23:09.237Z",
+  "description": "Biblioteca de Alejandría para agentes: plataforma Android completa, 216 HTMLs + grafo + chunks + skills. Lenguaje nativo para agentes, no solo para humanos.",
+  "stats": {
+    "pages": 216,
+    "tracks": 10,
+    "modules": 50,
+    "lessons": 150,
+    "docs": 5,
+    "html_files": 216
+  },
+  "languages_covered": [
+    "kotlin",
+    "java",
+    "xml",
+    "kotlin-dsl",
+    "sql",
+    "proto",
+    "graphql",
+    "yaml",
+    "bash"
+  ],
+  "protocols_covered": [
+    "https",
+    "http2",
+    "http3",
+    "tls1.3",
+    "grpc",
+    "websocket",
+    "sse",
+    "mqtt",
+    "coap",
+    "ble",
+    "classic-bt",
+    "nfc",
+    "uwb",
+    "nearby",
+    "fcm"
+  ],
+  "criteria_covered": [
+    "cts",
+    "cdd",
+    "api-level",
+    "permission-runtime",
+    "scoped-storage",
+    "nsc",
+    "keystore",
+    "strongbox",
+    "play-integrity",
+    "baseline-profiles",
+    "r8",
+    "a11y-wcag2.2",
+    "privacy-sandbox"
+  ],
+  "design_principles": [
+    "html5-semantico-en-todos-los-niveles",
+    "estructura-implicita-en-codigo",
+    "contratos-como-verdad-unica",
+    "shift-left-security",
+    "fitness-functions-bloqueantes"
+  ],
+  "pages": [
+    {
+      "id": "root",
+      "type": "Platform",
+      "slug": "/",
+      "title": "Android Platform — Biblioteca de Alejandría para Agentes",
+      "path": "index.html",
+      "level": 0,
+      "tags": [
+        "android",
+        "platform",
+        "aosp"
+      ],
+      "languages": [
+        "kotlin",
+        "java",
+        "xml",
+        "proto",
+        "graphql"
+      ],
+      "protocols": [
+        "https",
+        "grpc",
+        "mqtt",
+        "ble",
+        "nfc"
+      ],
+      "children": [
+        "track:01-fundamentos",
+        "track:02-kotlin",
+        "track:03-java-interop",
+        "track:04-ui-compose",
+        "track:05-arquitectura",
+        "track:06-datos",
+        "track:07-conectividad",
+        "track:08-sistema",
+        "track:09-seguridad",
+        "track:10-publicacion"
+      ]
+    },
+    {
+      "id": "track:01-fundamentos",
+      "type": "Track",
+      "slug": "01-fundamentos",
+      "title": "Fundamentos de la Plataforma Android",
+      "path": "tracks/01-fundamentos/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:01-fundamentos/arquitectura-aosp",
+        "module:01-fundamentos/componentes-manifest",
+        "module:01-fundamentos/recursos-config",
+        "module:01-fundamentos/gradle-build",
+        "module:01-fundamentos/depuracion-logs"
+      ],
+      "tags": [
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:01-fundamentos/arquitectura-aosp",
+      "type": "Module",
+      "slug": "arquitectura-aosp",
+      "title": "Arquitectura AOSP y Capas del Sistema",
+      "path": "tracks/01-fundamentos/modules/arquitectura-aosp/index.html",
+      "level": 2,
+      "parent": "track:01-fundamentos",
+      "children": [
+        "lesson:01-fundamentos/arquitectura-aosp/capas-linux-hal",
+        "lesson:01-fundamentos/arquitectura-aosp/art-runtime",
+        "lesson:01-fundamentos/arquitectura-aosp/compatibilidad-cts"
+      ],
+      "tags": [
+        "arquitectura-aosp"
+      ]
+    },
+    {
+      "id": "lesson:01-fundamentos/arquitectura-aosp/capas-linux-hal",
+      "type": "Lesson",
+      "slug": "capas-linux-hal",
+      "title": "Capas: Linux Kernel, HAL, Native, Framework y Apps",
+      "path": "tracks/01-fundamentos/modules/arquitectura-aosp/lessons/capas-linux-hal.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/arquitectura-aosp",
+      "tags": [
+        "capas-linux-hal",
+        "arquitectura-aosp",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Capas: Linux Kernel, HAL, Native, Framework y Apps.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__arquitectura-aosp__capas-linux-hal.json",
+      "example": "kotlin:capas-linux-hal"
+    },
+    {
+      "id": "lesson:01-fundamentos/arquitectura-aosp/art-runtime",
+      "type": "Lesson",
+      "slug": "art-runtime",
+      "title": "Android Runtime (ART) y formato DEX",
+      "path": "tracks/01-fundamentos/modules/arquitectura-aosp/lessons/art-runtime.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/arquitectura-aosp",
+      "tags": [
+        "art-runtime",
+        "arquitectura-aosp",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Android Runtime (ART) y formato DEX.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__arquitectura-aosp__art-runtime.json",
+      "example": "kotlin:art-runtime"
+    },
+    {
+      "id": "lesson:01-fundamentos/arquitectura-aosp/compatibilidad-cts",
+      "type": "Lesson",
+      "slug": "compatibilidad-cts",
+      "title": "Compatibilidad, CTS y Treble/Mainline",
+      "path": "tracks/01-fundamentos/modules/arquitectura-aosp/lessons/compatibilidad-cts.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/arquitectura-aosp",
+      "tags": [
+        "compatibilidad-cts",
+        "arquitectura-aosp",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Compatibilidad, CTS y Treble/Mainline.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__arquitectura-aosp__compatibilidad-cts.json",
+      "example": "kotlin:compatibilidad-cts"
+    },
+    {
+      "id": "module:01-fundamentos/componentes-manifest",
+      "type": "Module",
+      "slug": "componentes-manifest",
+      "title": "Componentes y AndroidManifest.xml",
+      "path": "tracks/01-fundamentos/modules/componentes-manifest/index.html",
+      "level": 2,
+      "parent": "track:01-fundamentos",
+      "children": [
+        "lesson:01-fundamentos/componentes-manifest/activities",
+        "lesson:01-fundamentos/componentes-manifest/services-broadcast",
+        "lesson:01-fundamentos/componentes-manifest/manifest-permisos"
+      ],
+      "tags": [
+        "componentes-manifest"
+      ]
+    },
+    {
+      "id": "lesson:01-fundamentos/componentes-manifest/activities",
+      "type": "Lesson",
+      "slug": "activities",
+      "title": "Activities, Intents y ciclo de vida",
+      "path": "tracks/01-fundamentos/modules/componentes-manifest/lessons/activities.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/componentes-manifest",
+      "tags": [
+        "activities",
+        "componentes-manifest",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Activities, Intents y ciclo de vida.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__componentes-manifest__activities.json",
+      "example": "kotlin:activities"
+    },
+    {
+      "id": "lesson:01-fundamentos/componentes-manifest/services-broadcast",
+      "type": "Lesson",
+      "slug": "services-broadcast",
+      "title": "Services, BroadcastReceivers y ContentProviders",
+      "path": "tracks/01-fundamentos/modules/componentes-manifest/lessons/services-broadcast.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/componentes-manifest",
+      "tags": [
+        "services-broadcast",
+        "componentes-manifest",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Services, BroadcastReceivers y ContentProviders.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__componentes-manifest__services-broadcast.json",
+      "example": "kotlin:services-broadcast"
+    },
+    {
+      "id": "lesson:01-fundamentos/componentes-manifest/manifest-permisos",
+      "type": "Lesson",
+      "slug": "manifest-permisos",
+      "title": "Manifest, permisos y queries",
+      "path": "tracks/01-fundamentos/modules/componentes-manifest/lessons/manifest-permisos.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/componentes-manifest",
+      "tags": [
+        "manifest-permisos",
+        "componentes-manifest",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Manifest, permisos y queries.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__componentes-manifest__manifest-permisos.json",
+      "example": "kotlin:manifest-permisos"
+    },
+    {
+      "id": "module:01-fundamentos/recursos-config",
+      "type": "Module",
+      "slug": "recursos-config",
+      "title": "Recursos, Configuración y Localización",
+      "path": "tracks/01-fundamentos/modules/recursos-config/index.html",
+      "level": 2,
+      "parent": "track:01-fundamentos",
+      "children": [
+        "lesson:01-fundamentos/recursos-config/resources-qualifiers",
+        "lesson:01-fundamentos/recursos-config/localizacion-i18n",
+        "lesson:01-fundamentos/recursos-config/config-changes"
+      ],
+      "tags": [
+        "recursos-config"
+      ]
+    },
+    {
+      "id": "lesson:01-fundamentos/recursos-config/resources-qualifiers",
+      "type": "Lesson",
+      "slug": "resources-qualifiers",
+      "title": "Resources, qualifiers y theming",
+      "path": "tracks/01-fundamentos/modules/recursos-config/lessons/resources-qualifiers.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/recursos-config",
+      "tags": [
+        "resources-qualifiers",
+        "recursos-config",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Resources, qualifiers y theming.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__recursos-config__resources-qualifiers.json",
+      "example": "kotlin:resources-qualifiers"
+    },
+    {
+      "id": "lesson:01-fundamentos/recursos-config/localizacion-i18n",
+      "type": "Lesson",
+      "slug": "localizacion-i18n",
+      "title": "Internacionalización y plurales",
+      "path": "tracks/01-fundamentos/modules/recursos-config/lessons/localizacion-i18n.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/recursos-config",
+      "tags": [
+        "localizacion-i18n",
+        "recursos-config",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Internacionalización y plurales.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__recursos-config__localizacion-i18n.json",
+      "example": "kotlin:localizacion-i18n"
+    },
+    {
+      "id": "lesson:01-fundamentos/recursos-config/config-changes",
+      "type": "Lesson",
+      "slug": "config-changes",
+      "title": "Cambios de configuración y ViewModel",
+      "path": "tracks/01-fundamentos/modules/recursos-config/lessons/config-changes.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/recursos-config",
+      "tags": [
+        "config-changes",
+        "recursos-config",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Cambios de configuración y ViewModel.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__recursos-config__config-changes.json",
+      "example": "kotlin:config-changes"
+    },
+    {
+      "id": "module:01-fundamentos/gradle-build",
+      "type": "Module",
+      "slug": "gradle-build",
+      "title": "Gradle, Build Variants y Versionado",
+      "path": "tracks/01-fundamentos/modules/gradle-build/index.html",
+      "level": 2,
+      "parent": "track:01-fundamentos",
+      "children": [
+        "lesson:01-fundamentos/gradle-build/gradle-kts",
+        "lesson:01-fundamentos/gradle-build/build-variants",
+        "lesson:01-fundamentos/gradle-build/signing-versioning"
+      ],
+      "tags": [
+        "gradle-build"
+      ]
+    },
+    {
+      "id": "lesson:01-fundamentos/gradle-build/gradle-kts",
+      "type": "Lesson",
+      "slug": "gradle-kts",
+      "title": "Gradle Kotlin DSL y Version Catalogs",
+      "path": "tracks/01-fundamentos/modules/gradle-build/lessons/gradle-kts.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/gradle-build",
+      "tags": [
+        "gradle-kts",
+        "gradle-build",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Gradle Kotlin DSL y Version Catalogs.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__gradle-build__gradle-kts.json",
+      "example": "kotlin:gradle-kts"
+    },
+    {
+      "id": "lesson:01-fundamentos/gradle-build/build-variants",
+      "type": "Lesson",
+      "slug": "build-variants",
+      "title": "Build Types, Flavors y BuildConfig",
+      "path": "tracks/01-fundamentos/modules/gradle-build/lessons/build-variants.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/gradle-build",
+      "tags": [
+        "build-variants",
+        "gradle-build",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Build Types, Flavors y BuildConfig.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__gradle-build__build-variants.json",
+      "example": "kotlin:build-variants"
+    },
+    {
+      "id": "lesson:01-fundamentos/gradle-build/signing-versioning",
+      "type": "Lesson",
+      "slug": "signing-versioning",
+      "title": "Firma, versionCode y versioning semántico",
+      "path": "tracks/01-fundamentos/modules/gradle-build/lessons/signing-versioning.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/gradle-build",
+      "tags": [
+        "signing-versioning",
+        "gradle-build",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Firma, versionCode y versioning semántico.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__gradle-build__signing-versioning.json",
+      "example": "kotlin:signing-versioning"
+    },
+    {
+      "id": "module:01-fundamentos/depuracion-logs",
+      "type": "Module",
+      "slug": "depuracion-logs",
+      "title": "Depuración, Logs y Herramientas",
+      "path": "tracks/01-fundamentos/modules/depuracion-logs/index.html",
+      "level": 2,
+      "parent": "track:01-fundamentos",
+      "children": [
+        "lesson:01-fundamentos/depuracion-logs/adb-logcat",
+        "lesson:01-fundamentos/depuracion-logs/studio-inspectors",
+        "lesson:01-fundamentos/depuracion-logs/crash-analytics"
+      ],
+      "tags": [
+        "depuracion-logs"
+      ]
+    },
+    {
+      "id": "lesson:01-fundamentos/depuracion-logs/adb-logcat",
+      "type": "Lesson",
+      "slug": "adb-logcat",
+      "title": "ADB, Logcat y Device Explorer",
+      "path": "tracks/01-fundamentos/modules/depuracion-logs/lessons/adb-logcat.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/depuracion-logs",
+      "tags": [
+        "adb-logcat",
+        "depuracion-logs",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ADB, Logcat y Device Explorer.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__depuracion-logs__adb-logcat.json",
+      "example": "kotlin:adb-logcat"
+    },
+    {
+      "id": "lesson:01-fundamentos/depuracion-logs/studio-inspectors",
+      "type": "Lesson",
+      "slug": "studio-inspectors",
+      "title": "Layout Inspector, Profiler y App Inspection",
+      "path": "tracks/01-fundamentos/modules/depuracion-logs/lessons/studio-inspectors.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/depuracion-logs",
+      "tags": [
+        "studio-inspectors",
+        "depuracion-logs",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Layout Inspector, Profiler y App Inspection.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__depuracion-logs__studio-inspectors.json",
+      "example": "kotlin:studio-inspectors"
+    },
+    {
+      "id": "lesson:01-fundamentos/depuracion-logs/crash-analytics",
+      "type": "Lesson",
+      "slug": "crash-analytics",
+      "title": "ANR, crashes y reporting",
+      "path": "tracks/01-fundamentos/modules/depuracion-logs/lessons/crash-analytics.html",
+      "level": 3,
+      "parent": "module:01-fundamentos/depuracion-logs",
+      "tags": [
+        "crash-analytics",
+        "depuracion-logs",
+        "01-fundamentos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ANR, crashes y reporting.",
+      "source_canonical": "https://source.android.com / https://developer.android.com/guide",
+      "embeddings": "chunks/01-fundamentos__depuracion-logs__crash-analytics.json",
+      "example": "kotlin:crash-analytics"
+    },
+    {
+      "id": "track:02-kotlin",
+      "type": "Track",
+      "slug": "02-kotlin",
+      "title": "Kotlin para Android - Lenguaje Oficial",
+      "path": "tracks/02-kotlin/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:02-kotlin/sintaxis-fundamentos",
+        "module:02-kotlin/oop-kotlin",
+        "module:02-kotlin/coroutines",
+        "module:02-kotlin/flow-stateflow",
+        "module:02-kotlin/k2-multiplataforma"
+      ],
+      "tags": [
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:02-kotlin/sintaxis-fundamentos",
+      "type": "Module",
+      "slug": "sintaxis-fundamentos",
+      "title": "Sintaxis, Tipos y Null Safety",
+      "path": "tracks/02-kotlin/modules/sintaxis-fundamentos/index.html",
+      "level": 2,
+      "parent": "track:02-kotlin",
+      "children": [
+        "lesson:02-kotlin/sintaxis-fundamentos/val-var-tipos",
+        "lesson:02-kotlin/sintaxis-fundamentos/null-safety",
+        "lesson:02-kotlin/sintaxis-fundamentos/colecciones-funcional"
+      ],
+      "tags": [
+        "sintaxis-fundamentos"
+      ]
+    },
+    {
+      "id": "lesson:02-kotlin/sintaxis-fundamentos/val-var-tipos",
+      "type": "Lesson",
+      "slug": "val-var-tipos",
+      "title": "val/var, tipos, smart casts e inferencia",
+      "path": "tracks/02-kotlin/modules/sintaxis-fundamentos/lessons/val-var-tipos.html",
+      "level": 3,
+      "parent": "module:02-kotlin/sintaxis-fundamentos",
+      "tags": [
+        "val-var-tipos",
+        "sintaxis-fundamentos",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de val/var, tipos, smart casts e inferencia.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__sintaxis-fundamentos__val-var-tipos.json",
+      "example": "kotlin:val-var-tipos"
+    },
+    {
+      "id": "lesson:02-kotlin/sintaxis-fundamentos/null-safety",
+      "type": "Lesson",
+      "slug": "null-safety",
+      "title": "Null safety: ?, !!, ?: y let/run",
+      "path": "tracks/02-kotlin/modules/sintaxis-fundamentos/lessons/null-safety.html",
+      "level": 3,
+      "parent": "module:02-kotlin/sintaxis-fundamentos",
+      "tags": [
+        "null-safety",
+        "sintaxis-fundamentos",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Null safety: ?, !!, ?: y let/run.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__sintaxis-fundamentos__null-safety.json",
+      "example": "kotlin:null-safety"
+    },
+    {
+      "id": "lesson:02-kotlin/sintaxis-fundamentos/colecciones-funcional",
+      "type": "Lesson",
+      "slug": "colecciones-funcional",
+      "title": "Colecciones, lambdas y scope functions",
+      "path": "tracks/02-kotlin/modules/sintaxis-fundamentos/lessons/colecciones-funcional.html",
+      "level": 3,
+      "parent": "module:02-kotlin/sintaxis-fundamentos",
+      "tags": [
+        "colecciones-funcional",
+        "sintaxis-fundamentos",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Colecciones, lambdas y scope functions.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__sintaxis-fundamentos__colecciones-funcional.json",
+      "example": "kotlin:colecciones-funcional"
+    },
+    {
+      "id": "module:02-kotlin/oop-kotlin",
+      "type": "Module",
+      "slug": "oop-kotlin",
+      "title": "OOP en Kotlin: clases, objetos y extensiones",
+      "path": "tracks/02-kotlin/modules/oop-kotlin/index.html",
+      "level": 2,
+      "parent": "track:02-kotlin",
+      "children": [
+        "lesson:02-kotlin/oop-kotlin/clases-data-sealed",
+        "lesson:02-kotlin/oop-kotlin/extensiones-dsl",
+        "lesson:02-kotlin/oop-kotlin/delegates-properties"
+      ],
+      "tags": [
+        "oop-kotlin"
+      ]
+    },
+    {
+      "id": "lesson:02-kotlin/oop-kotlin/clases-data-sealed",
+      "type": "Lesson",
+      "slug": "clases-data-sealed",
+      "title": "data, sealed, value y object",
+      "path": "tracks/02-kotlin/modules/oop-kotlin/lessons/clases-data-sealed.html",
+      "level": 3,
+      "parent": "module:02-kotlin/oop-kotlin",
+      "tags": [
+        "clases-data-sealed",
+        "oop-kotlin",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de data, sealed, value y object.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__oop-kotlin__clases-data-sealed.json",
+      "example": "kotlin:clases-data-sealed"
+    },
+    {
+      "id": "lesson:02-kotlin/oop-kotlin/extensiones-dsl",
+      "type": "Lesson",
+      "slug": "extensiones-dsl",
+      "title": "Extensiones, infix y DSL builders",
+      "path": "tracks/02-kotlin/modules/oop-kotlin/lessons/extensiones-dsl.html",
+      "level": 3,
+      "parent": "module:02-kotlin/oop-kotlin",
+      "tags": [
+        "extensiones-dsl",
+        "oop-kotlin",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Extensiones, infix y DSL builders.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__oop-kotlin__extensiones-dsl.json",
+      "example": "kotlin:extensiones-dsl"
+    },
+    {
+      "id": "lesson:02-kotlin/oop-kotlin/delegates-properties",
+      "type": "Lesson",
+      "slug": "delegates-properties",
+      "title": "Delegated properties y observables",
+      "path": "tracks/02-kotlin/modules/oop-kotlin/lessons/delegates-properties.html",
+      "level": 3,
+      "parent": "module:02-kotlin/oop-kotlin",
+      "tags": [
+        "delegates-properties",
+        "oop-kotlin",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Delegated properties y observables.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__oop-kotlin__delegates-properties.json",
+      "example": "kotlin:delegates-properties"
+    },
+    {
+      "id": "module:02-kotlin/coroutines",
+      "type": "Module",
+      "slug": "coroutines",
+      "title": "Coroutines y Concurrencia Estructurada",
+      "path": "tracks/02-kotlin/modules/coroutines/index.html",
+      "level": 2,
+      "parent": "track:02-kotlin",
+      "children": [
+        "lesson:02-kotlin/coroutines/suspend-corrutinas",
+        "lesson:02-kotlin/coroutines/dispatchers-exceptions",
+        "lesson:02-kotlin/coroutines/testing-coroutines"
+      ],
+      "tags": [
+        "coroutines"
+      ]
+    },
+    {
+      "id": "lesson:02-kotlin/coroutines/suspend-corrutinas",
+      "type": "Lesson",
+      "slug": "suspend-corrutinas",
+      "title": "suspend, launch, async y scopes",
+      "path": "tracks/02-kotlin/modules/coroutines/lessons/suspend-corrutinas.html",
+      "level": 3,
+      "parent": "module:02-kotlin/coroutines",
+      "tags": [
+        "suspend-corrutinas",
+        "coroutines",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de suspend, launch, async y scopes.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__coroutines__suspend-corrutinas.json",
+      "example": "kotlin:suspend-corrutinas"
+    },
+    {
+      "id": "lesson:02-kotlin/coroutines/dispatchers-exceptions",
+      "type": "Lesson",
+      "slug": "dispatchers-exceptions",
+      "title": "Dispatchers, excepciones y supervision",
+      "path": "tracks/02-kotlin/modules/coroutines/lessons/dispatchers-exceptions.html",
+      "level": 3,
+      "parent": "module:02-kotlin/coroutines",
+      "tags": [
+        "dispatchers-exceptions",
+        "coroutines",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Dispatchers, excepciones y supervision.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__coroutines__dispatchers-exceptions.json",
+      "example": "kotlin:dispatchers-exceptions"
+    },
+    {
+      "id": "lesson:02-kotlin/coroutines/testing-coroutines",
+      "type": "Lesson",
+      "slug": "testing-coroutines",
+      "title": "Testing de coroutines con Turbine",
+      "path": "tracks/02-kotlin/modules/coroutines/lessons/testing-coroutines.html",
+      "level": 3,
+      "parent": "module:02-kotlin/coroutines",
+      "tags": [
+        "testing-coroutines",
+        "coroutines",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Testing de coroutines con Turbine.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__coroutines__testing-coroutines.json",
+      "example": "kotlin:testing-coroutines"
+    },
+    {
+      "id": "module:02-kotlin/flow-stateflow",
+      "type": "Module",
+      "slug": "flow-stateflow",
+      "title": "Flow, StateFlow y SharedFlow",
+      "path": "tracks/02-kotlin/modules/flow-stateflow/index.html",
+      "level": 2,
+      "parent": "track:02-kotlin",
+      "children": [
+        "lesson:02-kotlin/flow-stateflow/cold-hot-flows",
+        "lesson:02-kotlin/flow-stateflow/state-shared",
+        "lesson:02-kotlin/flow-stateflow/lifecycle-aware"
+      ],
+      "tags": [
+        "flow-stateflow"
+      ]
+    },
+    {
+      "id": "lesson:02-kotlin/flow-stateflow/cold-hot-flows",
+      "type": "Lesson",
+      "slug": "cold-hot-flows",
+      "title": "Flows fríos/calientes, operators",
+      "path": "tracks/02-kotlin/modules/flow-stateflow/lessons/cold-hot-flows.html",
+      "level": 3,
+      "parent": "module:02-kotlin/flow-stateflow",
+      "tags": [
+        "cold-hot-flows",
+        "flow-stateflow",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Flows fríos/calientes, operators.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__flow-stateflow__cold-hot-flows.json",
+      "example": "kotlin:cold-hot-flows"
+    },
+    {
+      "id": "lesson:02-kotlin/flow-stateflow/state-shared",
+      "type": "Lesson",
+      "slug": "state-shared",
+      "title": "StateFlow vs SharedFlow en UI",
+      "path": "tracks/02-kotlin/modules/flow-stateflow/lessons/state-shared.html",
+      "level": 3,
+      "parent": "module:02-kotlin/flow-stateflow",
+      "tags": [
+        "state-shared",
+        "flow-stateflow",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de StateFlow vs SharedFlow en UI.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__flow-stateflow__state-shared.json",
+      "example": "kotlin:state-shared"
+    },
+    {
+      "id": "lesson:02-kotlin/flow-stateflow/lifecycle-aware",
+      "type": "Lesson",
+      "slug": "lifecycle-aware",
+      "title": "Flows con lifecycle: repeatOnLifecycle",
+      "path": "tracks/02-kotlin/modules/flow-stateflow/lessons/lifecycle-aware.html",
+      "level": 3,
+      "parent": "module:02-kotlin/flow-stateflow",
+      "tags": [
+        "lifecycle-aware",
+        "flow-stateflow",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Flows con lifecycle: repeatOnLifecycle.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__flow-stateflow__lifecycle-aware.json",
+      "example": "kotlin:lifecycle-aware"
+    },
+    {
+      "id": "module:02-kotlin/k2-multiplataforma",
+      "type": "Module",
+      "slug": "k2-multiplataforma",
+      "title": "Kotlin 2.0, KMP y Multiplataforma",
+      "path": "tracks/02-kotlin/modules/k2-multiplataforma/index.html",
+      "level": 2,
+      "parent": "track:02-kotlin",
+      "children": [
+        "lesson:02-kotlin/k2-multiplataforma/k2-compiler",
+        "lesson:02-kotlin/k2-multiplataforma/kmp-expect-actual",
+        "lesson:02-kotlin/k2-multiplataforma/serialization-parcelize"
+      ],
+      "tags": [
+        "k2-multiplataforma"
+      ]
+    },
+    {
+      "id": "lesson:02-kotlin/k2-multiplataforma/k2-compiler",
+      "type": "Lesson",
+      "slug": "k2-compiler",
+      "title": "Compilador K2 y mejoras de performance",
+      "path": "tracks/02-kotlin/modules/k2-multiplataforma/lessons/k2-compiler.html",
+      "level": 3,
+      "parent": "module:02-kotlin/k2-multiplataforma",
+      "tags": [
+        "k2-compiler",
+        "k2-multiplataforma",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Compilador K2 y mejoras de performance.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__k2-multiplataforma__k2-compiler.json",
+      "example": "kotlin:k2-compiler"
+    },
+    {
+      "id": "lesson:02-kotlin/k2-multiplataforma/kmp-expect-actual",
+      "type": "Lesson",
+      "slug": "kmp-expect-actual",
+      "title": "Kotlin Multiplatform expect/actual",
+      "path": "tracks/02-kotlin/modules/k2-multiplataforma/lessons/kmp-expect-actual.html",
+      "level": 3,
+      "parent": "module:02-kotlin/k2-multiplataforma",
+      "tags": [
+        "kmp-expect-actual",
+        "k2-multiplataforma",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Kotlin Multiplatform expect/actual.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__k2-multiplataforma__kmp-expect-actual.json",
+      "example": "kotlin:kmp-expect-actual"
+    },
+    {
+      "id": "lesson:02-kotlin/k2-multiplataforma/serialization-parcelize",
+      "type": "Lesson",
+      "slug": "serialization-parcelize",
+      "title": "Serialization, Parcelize y interop",
+      "path": "tracks/02-kotlin/modules/k2-multiplataforma/lessons/serialization-parcelize.html",
+      "level": 3,
+      "parent": "module:02-kotlin/k2-multiplataforma",
+      "tags": [
+        "serialization-parcelize",
+        "k2-multiplataforma",
+        "02-kotlin"
+      ],
+      "languages": [
+        "kotlin",
+        "kotlin-coroutines",
+        "kotlin-flow"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Serialization, Parcelize y interop.",
+      "source_canonical": "https://kotlinlang.org/docs/home.html",
+      "embeddings": "chunks/02-kotlin__k2-multiplataforma__serialization-parcelize.json",
+      "example": "kotlin:serialization-parcelize"
+    },
+    {
+      "id": "track:03-java-interop",
+      "type": "Track",
+      "slug": "03-java-interop",
+      "title": "Java Moderno e Interoperabilidad",
+      "path": "tracks/03-java-interop/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:03-java-interop/java8-desugaring",
+        "module:03-java-interop/interop",
+        "module:03-java-interop/jvm-memory",
+        "module:03-java-interop/librerias-java",
+        "module:03-java-interop/tooling-java"
+      ],
+      "tags": [
+        "03-java-interop"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:03-java-interop/java8-desugaring",
+      "type": "Module",
+      "slug": "java8-desugaring",
+      "title": "Java 8+ y Desugaring en Android",
+      "path": "tracks/03-java-interop/modules/java8-desugaring/index.html",
+      "level": 2,
+      "parent": "track:03-java-interop",
+      "children": [
+        "lesson:03-java-interop/java8-desugaring/lambdas-streams",
+        "lesson:03-java-interop/java8-desugaring/time-api",
+        "lesson:03-java-interop/java8-desugaring/optional-records"
+      ],
+      "tags": [
+        "java8-desugaring"
+      ]
+    },
+    {
+      "id": "lesson:03-java-interop/java8-desugaring/lambdas-streams",
+      "type": "Lesson",
+      "slug": "lambdas-streams",
+      "title": "Lambdas, Streams y Method References",
+      "path": "tracks/03-java-interop/modules/java8-desugaring/lessons/lambdas-streams.html",
+      "level": 3,
+      "parent": "module:03-java-interop/java8-desugaring",
+      "tags": [
+        "lambdas-streams",
+        "java8-desugaring",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Lambdas, Streams y Method References.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__java8-desugaring__lambdas-streams.json",
+      "example": "kotlin:lambdas-streams"
+    },
+    {
+      "id": "lesson:03-java-interop/java8-desugaring/time-api",
+      "type": "Lesson",
+      "slug": "time-api",
+      "title": "java.time con desugaring",
+      "path": "tracks/03-java-interop/modules/java8-desugaring/lessons/time-api.html",
+      "level": 3,
+      "parent": "module:03-java-interop/java8-desugaring",
+      "tags": [
+        "time-api",
+        "java8-desugaring",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de java.time con desugaring.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__java8-desugaring__time-api.json",
+      "example": "kotlin:time-api"
+    },
+    {
+      "id": "lesson:03-java-interop/java8-desugaring/optional-records",
+      "type": "Lesson",
+      "slug": "optional-records",
+      "title": "Optional, Records y características modernas",
+      "path": "tracks/03-java-interop/modules/java8-desugaring/lessons/optional-records.html",
+      "level": 3,
+      "parent": "module:03-java-interop/java8-desugaring",
+      "tags": [
+        "optional-records",
+        "java8-desugaring",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Optional, Records y características modernas.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__java8-desugaring__optional-records.json",
+      "example": "kotlin:optional-records"
+    },
+    {
+      "id": "module:03-java-interop/interop",
+      "type": "Module",
+      "slug": "interop",
+      "title": "Interop Kotlin ↔ Java",
+      "path": "tracks/03-java-interop/modules/interop/index.html",
+      "level": 2,
+      "parent": "track:03-java-interop",
+      "children": [
+        "lesson:03-java-interop/interop/platform-types",
+        "lesson:03-java-interop/interop/jvm-annotations",
+        "lesson:03-java-interop/interop/migracion-kotlin"
+      ],
+      "tags": [
+        "interop"
+      ]
+    },
+    {
+      "id": "lesson:03-java-interop/interop/platform-types",
+      "type": "Lesson",
+      "slug": "platform-types",
+      "title": "Platform types y anotaciones de nulabilidad",
+      "path": "tracks/03-java-interop/modules/interop/lessons/platform-types.html",
+      "level": 3,
+      "parent": "module:03-java-interop/interop",
+      "tags": [
+        "platform-types",
+        "interop",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Platform types y anotaciones de nulabilidad.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__interop__platform-types.json",
+      "example": "kotlin:platform-types"
+    },
+    {
+      "id": "lesson:03-java-interop/interop/jvm-annotations",
+      "type": "Lesson",
+      "slug": "jvm-annotations",
+      "title": "@JvmStatic, @JvmOverloads, @JvmName",
+      "path": "tracks/03-java-interop/modules/interop/lessons/jvm-annotations.html",
+      "level": 3,
+      "parent": "module:03-java-interop/interop",
+      "tags": [
+        "jvm-annotations",
+        "interop",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de @JvmStatic, @JvmOverloads, @JvmName.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__interop__jvm-annotations.json",
+      "example": "kotlin:jvm-annotations"
+    },
+    {
+      "id": "lesson:03-java-interop/interop/migracion-kotlin",
+      "type": "Lesson",
+      "slug": "migracion-kotlin",
+      "title": "Estrategia de migración Java → Kotlin",
+      "path": "tracks/03-java-interop/modules/interop/lessons/migracion-kotlin.html",
+      "level": 3,
+      "parent": "module:03-java-interop/interop",
+      "tags": [
+        "migracion-kotlin",
+        "interop",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Estrategia de migración Java → Kotlin.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__interop__migracion-kotlin.json",
+      "example": "kotlin:migracion-kotlin"
+    },
+    {
+      "id": "module:03-java-interop/jvm-memory",
+      "type": "Module",
+      "slug": "jvm-memory",
+      "title": "JVM Memory Model en Android",
+      "path": "tracks/03-java-interop/modules/jvm-memory/index.html",
+      "level": 2,
+      "parent": "track:03-java-interop",
+      "children": [
+        "lesson:03-java-interop/jvm-memory/heap-gc",
+        "lesson:03-java-interop/jvm-memory/threads-concurrency",
+        "lesson:03-java-interop/jvm-memory/jni-ndk"
+      ],
+      "tags": [
+        "jvm-memory"
+      ]
+    },
+    {
+      "id": "lesson:03-java-interop/jvm-memory/heap-gc",
+      "type": "Lesson",
+      "slug": "heap-gc",
+      "title": "Heap, GC y referencias",
+      "path": "tracks/03-java-interop/modules/jvm-memory/lessons/heap-gc.html",
+      "level": 3,
+      "parent": "module:03-java-interop/jvm-memory",
+      "tags": [
+        "heap-gc",
+        "jvm-memory",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Heap, GC y referencias.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__jvm-memory__heap-gc.json",
+      "example": "kotlin:heap-gc"
+    },
+    {
+      "id": "lesson:03-java-interop/jvm-memory/threads-concurrency",
+      "type": "Lesson",
+      "slug": "threads-concurrency",
+      "title": "Threads, Executors y concurrencia clásica",
+      "path": "tracks/03-java-interop/modules/jvm-memory/lessons/threads-concurrency.html",
+      "level": 3,
+      "parent": "module:03-java-interop/jvm-memory",
+      "tags": [
+        "threads-concurrency",
+        "jvm-memory",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Threads, Executors y concurrencia clásica.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__jvm-memory__threads-concurrency.json",
+      "example": "kotlin:threads-concurrency"
+    },
+    {
+      "id": "lesson:03-java-interop/jvm-memory/jni-ndk",
+      "type": "Lesson",
+      "slug": "jni-ndk",
+      "title": "JNI y NDK en proyectos híbridos",
+      "path": "tracks/03-java-interop/modules/jvm-memory/lessons/jni-ndk.html",
+      "level": 3,
+      "parent": "module:03-java-interop/jvm-memory",
+      "tags": [
+        "jni-ndk",
+        "jvm-memory",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de JNI y NDK en proyectos híbridos.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__jvm-memory__jni-ndk.json",
+      "example": "kotlin:jni-ndk"
+    },
+    {
+      "id": "module:03-java-interop/librerias-java",
+      "type": "Module",
+      "slug": "librerias-java",
+      "title": "Librerías Java clave en Android",
+      "path": "tracks/03-java-interop/modules/librerias-java/index.html",
+      "level": 2,
+      "parent": "track:03-java-interop",
+      "children": [
+        "lesson:03-java-interop/librerias-java/guava-apache",
+        "lesson:03-java-interop/librerias-java/dagger-java",
+        "lesson:03-java-interop/librerias-java/rxjava-legacy"
+      ],
+      "tags": [
+        "librerias-java"
+      ]
+    },
+    {
+      "id": "lesson:03-java-interop/librerias-java/guava-apache",
+      "type": "Lesson",
+      "slug": "guava-apache",
+      "title": "Guava, Apache Commons y utilidades",
+      "path": "tracks/03-java-interop/modules/librerias-java/lessons/guava-apache.html",
+      "level": 3,
+      "parent": "module:03-java-interop/librerias-java",
+      "tags": [
+        "guava-apache",
+        "librerias-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Guava, Apache Commons y utilidades.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__librerias-java__guava-apache.json",
+      "example": "kotlin:guava-apache"
+    },
+    {
+      "id": "lesson:03-java-interop/librerias-java/dagger-java",
+      "type": "Lesson",
+      "slug": "dagger-java",
+      "title": "Dagger/Hilt y anotaciones",
+      "path": "tracks/03-java-interop/modules/librerias-java/lessons/dagger-java.html",
+      "level": 3,
+      "parent": "module:03-java-interop/librerias-java",
+      "tags": [
+        "dagger-java",
+        "librerias-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Dagger/Hilt y anotaciones.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__librerias-java__dagger-java.json",
+      "example": "kotlin:dagger-java"
+    },
+    {
+      "id": "lesson:03-java-interop/librerias-java/rxjava-legacy",
+      "type": "Lesson",
+      "slug": "rxjava-legacy",
+      "title": "RxJava legacy y migración a Flow",
+      "path": "tracks/03-java-interop/modules/librerias-java/lessons/rxjava-legacy.html",
+      "level": 3,
+      "parent": "module:03-java-interop/librerias-java",
+      "tags": [
+        "rxjava-legacy",
+        "librerias-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de RxJava legacy y migración a Flow.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__librerias-java__rxjava-legacy.json",
+      "example": "kotlin:rxjava-legacy"
+    },
+    {
+      "id": "module:03-java-interop/tooling-java",
+      "type": "Module",
+      "slug": "tooling-java",
+      "title": "Tooling Java: Lint, ErrorProne, NullAway",
+      "path": "tracks/03-java-interop/modules/tooling-java/index.html",
+      "level": 2,
+      "parent": "track:03-java-interop",
+      "children": [
+        "lesson:03-java-interop/tooling-java/lint-errorprone",
+        "lesson:03-java-interop/tooling-java/format-checkstyle",
+        "lesson:03-java-interop/tooling-java/testing-junit"
+      ],
+      "tags": [
+        "tooling-java"
+      ]
+    },
+    {
+      "id": "lesson:03-java-interop/tooling-java/lint-errorprone",
+      "type": "Lesson",
+      "slug": "lint-errorprone",
+      "title": "Lint, Error Prone y NullAway",
+      "path": "tracks/03-java-interop/modules/tooling-java/lessons/lint-errorprone.html",
+      "level": 3,
+      "parent": "module:03-java-interop/tooling-java",
+      "tags": [
+        "lint-errorprone",
+        "tooling-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Lint, Error Prone y NullAway.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__tooling-java__lint-errorprone.json",
+      "example": "kotlin:lint-errorprone"
+    },
+    {
+      "id": "lesson:03-java-interop/tooling-java/format-checkstyle",
+      "type": "Lesson",
+      "slug": "format-checkstyle",
+      "title": "Formato, Checkstyle y Spotless",
+      "path": "tracks/03-java-interop/modules/tooling-java/lessons/format-checkstyle.html",
+      "level": 3,
+      "parent": "module:03-java-interop/tooling-java",
+      "tags": [
+        "format-checkstyle",
+        "tooling-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Formato, Checkstyle y Spotless.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__tooling-java__format-checkstyle.json",
+      "example": "kotlin:format-checkstyle"
+    },
+    {
+      "id": "lesson:03-java-interop/tooling-java/testing-junit",
+      "type": "Lesson",
+      "slug": "testing-junit",
+      "title": "JUnit 4/5, Mockito y AssertJ",
+      "path": "tracks/03-java-interop/modules/tooling-java/lessons/testing-junit.html",
+      "level": 3,
+      "parent": "module:03-java-interop/tooling-java",
+      "tags": [
+        "testing-junit",
+        "tooling-java",
+        "03-java-interop"
+      ],
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de JUnit 4/5, Mockito y AssertJ.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/03-java-interop__tooling-java__testing-junit.json",
+      "example": "kotlin:testing-junit"
+    },
+    {
+      "id": "track:04-ui-compose",
+      "type": "Track",
+      "slug": "04-ui-compose",
+      "title": "UI Moderna con Jetpack Compose y Views",
+      "path": "tracks/04-ui-compose/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:04-ui-compose/compose-fundamentos",
+        "module:04-ui-compose/material3-design",
+        "module:04-ui-compose/views-interop",
+        "module:04-ui-compose/accesibilidad-ui",
+        "module:04-ui-compose/graficos-media-ui"
+      ],
+      "tags": [
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:04-ui-compose/compose-fundamentos",
+      "type": "Module",
+      "slug": "compose-fundamentos",
+      "title": "Compose Fundamentos: Composables y Estado",
+      "path": "tracks/04-ui-compose/modules/compose-fundamentos/index.html",
+      "level": 2,
+      "parent": "track:04-ui-compose",
+      "children": [
+        "lesson:04-ui-compose/compose-fundamentos/composables-state",
+        "lesson:04-ui-compose/compose-fundamentos/layouts-modifiers",
+        "lesson:04-ui-compose/compose-fundamentos/listas-lazy"
+      ],
+      "tags": [
+        "compose-fundamentos"
+      ]
+    },
+    {
+      "id": "lesson:04-ui-compose/compose-fundamentos/composables-state",
+      "type": "Lesson",
+      "slug": "composables-state",
+      "title": "@Composable, recomposición y State",
+      "path": "tracks/04-ui-compose/modules/compose-fundamentos/lessons/composables-state.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/compose-fundamentos",
+      "tags": [
+        "composables-state",
+        "compose-fundamentos",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "ble",
+        "gatt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de @Composable, recomposición y State.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__compose-fundamentos__composables-state.json",
+      "example": "kotlin:composables-state"
+    },
+    {
+      "id": "lesson:04-ui-compose/compose-fundamentos/layouts-modifiers",
+      "type": "Lesson",
+      "slug": "layouts-modifiers",
+      "title": "Layouts, Modifiers y theming",
+      "path": "tracks/04-ui-compose/modules/compose-fundamentos/lessons/layouts-modifiers.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/compose-fundamentos",
+      "tags": [
+        "layouts-modifiers",
+        "compose-fundamentos",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Layouts, Modifiers y theming.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__compose-fundamentos__layouts-modifiers.json",
+      "example": "kotlin:layouts-modifiers"
+    },
+    {
+      "id": "lesson:04-ui-compose/compose-fundamentos/listas-lazy",
+      "type": "Lesson",
+      "slug": "listas-lazy",
+      "title": "LazyColumn/Row, keys y performance",
+      "path": "tracks/04-ui-compose/modules/compose-fundamentos/lessons/listas-lazy.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/compose-fundamentos",
+      "tags": [
+        "listas-lazy",
+        "compose-fundamentos",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de LazyColumn/Row, keys y performance.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__compose-fundamentos__listas-lazy.json",
+      "example": "kotlin:listas-lazy"
+    },
+    {
+      "id": "module:04-ui-compose/material3-design",
+      "type": "Module",
+      "slug": "material3-design",
+      "title": "Material 3, Design Tokens y Theming",
+      "path": "tracks/04-ui-compose/modules/material3-design/index.html",
+      "level": 2,
+      "parent": "track:04-ui-compose",
+      "children": [
+        "lesson:04-ui-compose/material3-design/m3-tokens",
+        "lesson:04-ui-compose/material3-design/adaptive-layouts",
+        "lesson:04-ui-compose/material3-design/motion-anim"
+      ],
+      "tags": [
+        "material3-design"
+      ]
+    },
+    {
+      "id": "lesson:04-ui-compose/material3-design/m3-tokens",
+      "type": "Lesson",
+      "slug": "m3-tokens",
+      "title": "Material 3 y Design Tokens",
+      "path": "tracks/04-ui-compose/modules/material3-design/lessons/m3-tokens.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/material3-design",
+      "tags": [
+        "m3-tokens",
+        "material3-design",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Material 3 y Design Tokens.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__material3-design__m3-tokens.json",
+      "example": "kotlin:m3-tokens"
+    },
+    {
+      "id": "lesson:04-ui-compose/material3-design/adaptive-layouts",
+      "type": "Lesson",
+      "slug": "adaptive-layouts",
+      "title": "Adaptive layouts y Window Size Classes",
+      "path": "tracks/04-ui-compose/modules/material3-design/lessons/adaptive-layouts.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/material3-design",
+      "tags": [
+        "adaptive-layouts",
+        "material3-design",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Adaptive layouts y Window Size Classes.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__material3-design__adaptive-layouts.json",
+      "example": "kotlin:adaptive-layouts"
+    },
+    {
+      "id": "lesson:04-ui-compose/material3-design/motion-anim",
+      "type": "Lesson",
+      "slug": "motion-anim",
+      "title": "Motion: AnimatedVisibility y transitions",
+      "path": "tracks/04-ui-compose/modules/material3-design/lessons/motion-anim.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/material3-design",
+      "tags": [
+        "motion-anim",
+        "material3-design",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Motion: AnimatedVisibility y transitions.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__material3-design__motion-anim.json",
+      "example": "kotlin:motion-anim"
+    },
+    {
+      "id": "module:04-ui-compose/views-interop",
+      "type": "Module",
+      "slug": "views-interop",
+      "title": "Views Clásicas e Interoperabilidad",
+      "path": "tracks/04-ui-compose/modules/views-interop/index.html",
+      "level": 2,
+      "parent": "track:04-ui-compose",
+      "children": [
+        "lesson:04-ui-compose/views-interop/view-system",
+        "lesson:04-ui-compose/views-interop/interop-compose-view",
+        "lesson:04-ui-compose/views-interop/fragments-navigation"
+      ],
+      "tags": [
+        "views-interop"
+      ]
+    },
+    {
+      "id": "lesson:04-ui-compose/views-interop/view-system",
+      "type": "Lesson",
+      "slug": "view-system",
+      "title": "View System: ViewGroup y Custom Views",
+      "path": "tracks/04-ui-compose/modules/views-interop/lessons/view-system.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/views-interop",
+      "tags": [
+        "view-system",
+        "views-interop",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de View System: ViewGroup y Custom Views.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__views-interop__view-system.json",
+      "example": "kotlin:view-system"
+    },
+    {
+      "id": "lesson:04-ui-compose/views-interop/interop-compose-view",
+      "type": "Lesson",
+      "slug": "interop-compose-view",
+      "title": "Interop: AndroidView y ComposeView",
+      "path": "tracks/04-ui-compose/modules/views-interop/lessons/interop-compose-view.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/views-interop",
+      "tags": [
+        "interop-compose-view",
+        "views-interop",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Interop: AndroidView y ComposeView.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__views-interop__interop-compose-view.json",
+      "example": "kotlin:interop-compose-view"
+    },
+    {
+      "id": "lesson:04-ui-compose/views-interop/fragments-navigation",
+      "type": "Lesson",
+      "slug": "fragments-navigation",
+      "title": "Fragments modernos y Navigation",
+      "path": "tracks/04-ui-compose/modules/views-interop/lessons/fragments-navigation.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/views-interop",
+      "tags": [
+        "fragments-navigation",
+        "views-interop",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Fragments modernos y Navigation.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__views-interop__fragments-navigation.json",
+      "example": "kotlin:fragments-navigation"
+    },
+    {
+      "id": "module:04-ui-compose/accesibilidad-ui",
+      "type": "Module",
+      "slug": "accesibilidad-ui",
+      "title": "Accesibilidad y UX Inclusiva",
+      "path": "tracks/04-ui-compose/modules/accesibilidad-ui/index.html",
+      "level": 2,
+      "parent": "track:04-ui-compose",
+      "children": [
+        "lesson:04-ui-compose/accesibilidad-ui/semantics-talkback",
+        "lesson:04-ui-compose/accesibilidad-ui/a11y-testing",
+        "lesson:04-ui-compose/accesibilidad-ui/i18n-rtl"
+      ],
+      "tags": [
+        "accesibilidad-ui"
+      ]
+    },
+    {
+      "id": "lesson:04-ui-compose/accesibilidad-ui/semantics-talkback",
+      "type": "Lesson",
+      "slug": "semantics-talkback",
+      "title": "Semantics, TalkBack y roles",
+      "path": "tracks/04-ui-compose/modules/accesibilidad-ui/lessons/semantics-talkback.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/accesibilidad-ui",
+      "tags": [
+        "semantics-talkback",
+        "accesibilidad-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Semantics, TalkBack y roles.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__accesibilidad-ui__semantics-talkback.json",
+      "example": "kotlin:semantics-talkback"
+    },
+    {
+      "id": "lesson:04-ui-compose/accesibilidad-ui/a11y-testing",
+      "type": "Lesson",
+      "slug": "a11y-testing",
+      "title": "Testing de accesibilidad automatizado",
+      "path": "tracks/04-ui-compose/modules/accesibilidad-ui/lessons/a11y-testing.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/accesibilidad-ui",
+      "tags": [
+        "a11y-testing",
+        "accesibilidad-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Testing de accesibilidad automatizado.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__accesibilidad-ui__a11y-testing.json",
+      "example": "kotlin:a11y-testing"
+    },
+    {
+      "id": "lesson:04-ui-compose/accesibilidad-ui/i18n-rtl",
+      "type": "Lesson",
+      "slug": "i18n-rtl",
+      "title": "RTL, localización y fuentes escalables",
+      "path": "tracks/04-ui-compose/modules/accesibilidad-ui/lessons/i18n-rtl.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/accesibilidad-ui",
+      "tags": [
+        "i18n-rtl",
+        "accesibilidad-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de RTL, localización y fuentes escalables.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__accesibilidad-ui__i18n-rtl.json",
+      "example": "kotlin:i18n-rtl"
+    },
+    {
+      "id": "module:04-ui-compose/graficos-media-ui",
+      "type": "Module",
+      "slug": "graficos-media-ui",
+      "title": "Gráficos, Media y Canvas Avanzado",
+      "path": "tracks/04-ui-compose/modules/graficos-media-ui/index.html",
+      "level": 2,
+      "parent": "track:04-ui-compose",
+      "children": [
+        "lesson:04-ui-compose/graficos-media-ui/canvas-graphics",
+        "lesson:04-ui-compose/graficos-media-ui/coil-glide",
+        "lesson:04-ui-compose/graficos-media-ui/exoplayer-media3"
+      ],
+      "tags": [
+        "graficos-media-ui"
+      ]
+    },
+    {
+      "id": "lesson:04-ui-compose/graficos-media-ui/canvas-graphics",
+      "type": "Lesson",
+      "slug": "canvas-graphics",
+      "title": "Canvas, Path y gráficos vectoriales",
+      "path": "tracks/04-ui-compose/modules/graficos-media-ui/lessons/canvas-graphics.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/graficos-media-ui",
+      "tags": [
+        "canvas-graphics",
+        "graficos-media-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Canvas, Path y gráficos vectoriales.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__graficos-media-ui__canvas-graphics.json",
+      "example": "kotlin:canvas-graphics"
+    },
+    {
+      "id": "lesson:04-ui-compose/graficos-media-ui/coil-glide",
+      "type": "Lesson",
+      "slug": "coil-glide",
+      "title": "Coil/Glide: imágenes y caching",
+      "path": "tracks/04-ui-compose/modules/graficos-media-ui/lessons/coil-glide.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/graficos-media-ui",
+      "tags": [
+        "coil-glide",
+        "graficos-media-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Coil/Glide: imágenes y caching.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__graficos-media-ui__coil-glide.json",
+      "example": "kotlin:coil-glide"
+    },
+    {
+      "id": "lesson:04-ui-compose/graficos-media-ui/exoplayer-media3",
+      "type": "Lesson",
+      "slug": "exoplayer-media3",
+      "title": "Media3 ExoPlayer y UI de reproducción",
+      "path": "tracks/04-ui-compose/modules/graficos-media-ui/lessons/exoplayer-media3.html",
+      "level": 3,
+      "parent": "module:04-ui-compose/graficos-media-ui",
+      "tags": [
+        "exoplayer-media3",
+        "graficos-media-ui",
+        "04-ui-compose"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Media3 ExoPlayer y UI de reproducción.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/04-ui-compose__graficos-media-ui__exoplayer-media3.json",
+      "example": "kotlin:exoplayer-media3"
+    },
+    {
+      "id": "track:05-arquitectura",
+      "type": "Track",
+      "slug": "05-arquitectura",
+      "title": "Arquitectura, Navegación y Modularización",
+      "path": "tracks/05-arquitectura/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:05-arquitectura/mvvm-mvi",
+        "module:05-arquitectura/clean-arch",
+        "module:05-arquitectura/navigation2",
+        "module:05-arquitectura/di-hilt",
+        "module:05-arquitectura/offline-sync"
+      ],
+      "tags": [
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:05-arquitectura/mvvm-mvi",
+      "type": "Module",
+      "slug": "mvvm-mvi",
+      "title": "MVVM, MVI y presentación",
+      "path": "tracks/05-arquitectura/modules/mvvm-mvi/index.html",
+      "level": 2,
+      "parent": "track:05-arquitectura",
+      "children": [
+        "lesson:05-arquitectura/mvvm-mvi/viewmodel-state",
+        "lesson:05-arquitectura/mvvm-mvi/mvi-pattern",
+        "lesson:05-arquitectura/mvvm-mvi/usecases-domain"
+      ],
+      "tags": [
+        "mvvm-mvi"
+      ]
+    },
+    {
+      "id": "lesson:05-arquitectura/mvvm-mvi/viewmodel-state",
+      "type": "Lesson",
+      "slug": "viewmodel-state",
+      "title": "ViewModel, UI State y unidireccionalidad",
+      "path": "tracks/05-arquitectura/modules/mvvm-mvi/lessons/viewmodel-state.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/mvvm-mvi",
+      "tags": [
+        "viewmodel-state",
+        "mvvm-mvi",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ViewModel, UI State y unidireccionalidad.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__mvvm-mvi__viewmodel-state.json",
+      "example": "kotlin:viewmodel-state"
+    },
+    {
+      "id": "lesson:05-arquitectura/mvvm-mvi/mvi-pattern",
+      "type": "Lesson",
+      "slug": "mvi-pattern",
+      "title": "Patrón MVI: intent → reducer → state",
+      "path": "tracks/05-arquitectura/modules/mvvm-mvi/lessons/mvi-pattern.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/mvvm-mvi",
+      "tags": [
+        "mvi-pattern",
+        "mvvm-mvi",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Patrón MVI: intent → reducer → state.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__mvvm-mvi__mvi-pattern.json",
+      "example": "kotlin:mvi-pattern"
+    },
+    {
+      "id": "lesson:05-arquitectura/mvvm-mvi/usecases-domain",
+      "type": "Lesson",
+      "slug": "usecases-domain",
+      "title": "UseCases/Interactors y capa domain",
+      "path": "tracks/05-arquitectura/modules/mvvm-mvi/lessons/usecases-domain.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/mvvm-mvi",
+      "tags": [
+        "usecases-domain",
+        "mvvm-mvi",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de UseCases/Interactors y capa domain.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__mvvm-mvi__usecases-domain.json",
+      "example": "kotlin:usecases-domain"
+    },
+    {
+      "id": "module:05-arquitectura/clean-arch",
+      "type": "Module",
+      "slug": "clean-arch",
+      "title": "Clean Architecture y capas",
+      "path": "tracks/05-arquitectura/modules/clean-arch/index.html",
+      "level": 2,
+      "parent": "track:05-arquitectura",
+      "children": [
+        "lesson:05-arquitectura/clean-arch/capas-data-domain-ui",
+        "lesson:05-arquitectura/clean-arch/repository-pattern",
+        "lesson:05-arquitectura/clean-arch/modularizacion-escala"
+      ],
+      "tags": [
+        "clean-arch"
+      ]
+    },
+    {
+      "id": "lesson:05-arquitectura/clean-arch/capas-data-domain-ui",
+      "type": "Lesson",
+      "slug": "capas-data-domain-ui",
+      "title": "Capas data/domain/ui y dependencias",
+      "path": "tracks/05-arquitectura/modules/clean-arch/lessons/capas-data-domain-ui.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/clean-arch",
+      "tags": [
+        "capas-data-domain-ui",
+        "clean-arch",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Capas data/domain/ui y dependencias.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__clean-arch__capas-data-domain-ui.json",
+      "example": "kotlin:capas-data-domain-ui"
+    },
+    {
+      "id": "lesson:05-arquitectura/clean-arch/repository-pattern",
+      "type": "Lesson",
+      "slug": "repository-pattern",
+      "title": "Repository, DataSource y mappers",
+      "path": "tracks/05-arquitectura/modules/clean-arch/lessons/repository-pattern.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/clean-arch",
+      "tags": [
+        "repository-pattern",
+        "clean-arch",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Repository, DataSource y mappers.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__clean-arch__repository-pattern.json",
+      "example": "kotlin:repository-pattern"
+    },
+    {
+      "id": "lesson:05-arquitectura/clean-arch/modularizacion-escala",
+      "type": "Lesson",
+      "slug": "modularizacion-escala",
+      "title": "Modularización a escala y boundaries",
+      "path": "tracks/05-arquitectura/modules/clean-arch/lessons/modularizacion-escala.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/clean-arch",
+      "tags": [
+        "modularizacion-escala",
+        "clean-arch",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Modularización a escala y boundaries.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__clean-arch__modularizacion-escala.json",
+      "example": "kotlin:modularizacion-escala"
+    },
+    {
+      "id": "module:05-arquitectura/navigation2",
+      "type": "Module",
+      "slug": "navigation2",
+      "title": "Navigation Compose y Deep Links",
+      "path": "tracks/05-arquitectura/modules/navigation2/index.html",
+      "level": 2,
+      "parent": "track:05-arquitectura",
+      "children": [
+        "lesson:05-arquitectura/navigation2/nav-graph",
+        "lesson:05-arquitectura/navigation2/deeplinks-nav",
+        "lesson:05-arquitectura/navigation2/backstack-state"
+      ],
+      "tags": [
+        "navigation2"
+      ]
+    },
+    {
+      "id": "lesson:05-arquitectura/navigation2/nav-graph",
+      "type": "Lesson",
+      "slug": "nav-graph",
+      "title": "NavGraph, type-safety y argumentos",
+      "path": "tracks/05-arquitectura/modules/navigation2/lessons/nav-graph.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/navigation2",
+      "tags": [
+        "nav-graph",
+        "navigation2",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de NavGraph, type-safety y argumentos.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__navigation2__nav-graph.json",
+      "example": "kotlin:nav-graph"
+    },
+    {
+      "id": "lesson:05-arquitectura/navigation2/deeplinks-nav",
+      "type": "Lesson",
+      "slug": "deeplinks-nav",
+      "title": "Deep links y app links verificados",
+      "path": "tracks/05-arquitectura/modules/navigation2/lessons/deeplinks-nav.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/navigation2",
+      "tags": [
+        "deeplinks-nav",
+        "navigation2",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Deep links y app links verificados.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__navigation2__deeplinks-nav.json",
+      "example": "kotlin:deeplinks-nav"
+    },
+    {
+      "id": "lesson:05-arquitectura/navigation2/backstack-state",
+      "type": "Lesson",
+      "slug": "backstack-state",
+      "title": "Back stack, state restoration y predictive back",
+      "path": "tracks/05-arquitectura/modules/navigation2/lessons/backstack-state.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/navigation2",
+      "tags": [
+        "backstack-state",
+        "navigation2",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Back stack, state restoration y predictive back.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__navigation2__backstack-state.json",
+      "example": "kotlin:backstack-state"
+    },
+    {
+      "id": "module:05-arquitectura/di-hilt",
+      "type": "Module",
+      "slug": "di-hilt",
+      "title": "DI con Hilt/Koin y Scopes",
+      "path": "tracks/05-arquitectura/modules/di-hilt/index.html",
+      "level": 2,
+      "parent": "track:05-arquitectura",
+      "children": [
+        "lesson:05-arquitectura/di-hilt/hilt-modules",
+        "lesson:05-arquitectura/di-hilt/koin-alternativa",
+        "lesson:05-arquitectura/di-hilt/testing-di"
+      ],
+      "tags": [
+        "di-hilt"
+      ]
+    },
+    {
+      "id": "lesson:05-arquitectura/di-hilt/hilt-modules",
+      "type": "Lesson",
+      "slug": "hilt-modules",
+      "title": "Hilt: modules, components y scopes",
+      "path": "tracks/05-arquitectura/modules/di-hilt/lessons/hilt-modules.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/di-hilt",
+      "tags": [
+        "hilt-modules",
+        "di-hilt",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Hilt: modules, components y scopes.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__di-hilt__hilt-modules.json",
+      "example": "kotlin:hilt-modules"
+    },
+    {
+      "id": "lesson:05-arquitectura/di-hilt/koin-alternativa",
+      "type": "Lesson",
+      "slug": "koin-alternativa",
+      "title": "Koin como alternativa ligera",
+      "path": "tracks/05-arquitectura/modules/di-hilt/lessons/koin-alternativa.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/di-hilt",
+      "tags": [
+        "koin-alternativa",
+        "di-hilt",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Koin como alternativa ligera.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__di-hilt__koin-alternativa.json",
+      "example": "kotlin:koin-alternativa"
+    },
+    {
+      "id": "lesson:05-arquitectura/di-hilt/testing-di",
+      "type": "Lesson",
+      "slug": "testing-di",
+      "title": "Testing con DI y fakes",
+      "path": "tracks/05-arquitectura/modules/di-hilt/lessons/testing-di.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/di-hilt",
+      "tags": [
+        "testing-di",
+        "di-hilt",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Testing con DI y fakes.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__di-hilt__testing-di.json",
+      "example": "kotlin:testing-di"
+    },
+    {
+      "id": "module:05-arquitectura/offline-sync",
+      "type": "Module",
+      "slug": "offline-sync",
+      "title": "Offline-first y Sincronización",
+      "path": "tracks/05-arquitectura/modules/offline-sync/index.html",
+      "level": 2,
+      "parent": "track:05-arquitectura",
+      "children": [
+        "lesson:05-arquitectura/offline-sync/offline-cache",
+        "lesson:05-arquitectura/offline-sync/sync-workmanager",
+        "lesson:05-arquitectura/offline-sync/datastore-preferences"
+      ],
+      "tags": [
+        "offline-sync"
+      ]
+    },
+    {
+      "id": "lesson:05-arquitectura/offline-sync/offline-cache",
+      "type": "Lesson",
+      "slug": "offline-cache",
+      "title": "Estrategias offline y cache",
+      "path": "tracks/05-arquitectura/modules/offline-sync/lessons/offline-cache.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/offline-sync",
+      "tags": [
+        "offline-cache",
+        "offline-sync",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Estrategias offline y cache.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__offline-sync__offline-cache.json",
+      "example": "kotlin:offline-cache"
+    },
+    {
+      "id": "lesson:05-arquitectura/offline-sync/sync-workmanager",
+      "type": "Lesson",
+      "slug": "sync-workmanager",
+      "title": "Sincronización con WorkManager",
+      "path": "tracks/05-arquitectura/modules/offline-sync/lessons/sync-workmanager.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/offline-sync",
+      "tags": [
+        "sync-workmanager",
+        "offline-sync",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Sincronización con WorkManager.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__offline-sync__sync-workmanager.json",
+      "example": "kotlin:sync-workmanager"
+    },
+    {
+      "id": "lesson:05-arquitectura/offline-sync/datastore-preferences",
+      "type": "Lesson",
+      "slug": "datastore-preferences",
+      "title": "DataStore vs SharedPreferences",
+      "path": "tracks/05-arquitectura/modules/offline-sync/lessons/datastore-preferences.html",
+      "level": 3,
+      "parent": "module:05-arquitectura/offline-sync",
+      "tags": [
+        "datastore-preferences",
+        "offline-sync",
+        "05-arquitectura"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de DataStore vs SharedPreferences.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/05-arquitectura__offline-sync__datastore-preferences.json",
+      "example": "kotlin:datastore-preferences"
+    },
+    {
+      "id": "track:06-datos",
+      "type": "Track",
+      "slug": "06-datos",
+      "title": "Datos, Persistencia y Almacenamiento",
+      "path": "tracks/06-datos/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:06-datos/room-sqlite",
+        "module:06-datos/filesystem-storage",
+        "module:06-datos/contentprovider",
+        "module:06-datos/preferences-datastore",
+        "module:06-datos/backup-restore"
+      ],
+      "tags": [
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:06-datos/room-sqlite",
+      "type": "Module",
+      "slug": "room-sqlite",
+      "title": "Room y SQLite",
+      "path": "tracks/06-datos/modules/room-sqlite/index.html",
+      "level": 2,
+      "parent": "track:06-datos",
+      "children": [
+        "lesson:06-datos/room-sqlite/room-entities",
+        "lesson:06-datos/room-sqlite/room-migraciones",
+        "lesson:06-datos/room-sqlite/room-paging"
+      ],
+      "tags": [
+        "room-sqlite"
+      ]
+    },
+    {
+      "id": "lesson:06-datos/room-sqlite/room-entities",
+      "type": "Lesson",
+      "slug": "room-entities",
+      "title": "Entities, DAOs y relaciones",
+      "path": "tracks/06-datos/modules/room-sqlite/lessons/room-entities.html",
+      "level": 3,
+      "parent": "module:06-datos/room-sqlite",
+      "tags": [
+        "room-entities",
+        "room-sqlite",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "sql"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Entities, DAOs y relaciones.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__room-sqlite__room-entities.json",
+      "example": "kotlin:room-entities"
+    },
+    {
+      "id": "lesson:06-datos/room-sqlite/room-migraciones",
+      "type": "Lesson",
+      "slug": "room-migraciones",
+      "title": "Migraciones, AutoMigrations y testing",
+      "path": "tracks/06-datos/modules/room-sqlite/lessons/room-migraciones.html",
+      "level": 3,
+      "parent": "module:06-datos/room-sqlite",
+      "tags": [
+        "room-migraciones",
+        "room-sqlite",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "sql"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Migraciones, AutoMigrations y testing.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__room-sqlite__room-migraciones.json",
+      "example": "kotlin:room-migraciones"
+    },
+    {
+      "id": "lesson:06-datos/room-sqlite/room-paging",
+      "type": "Lesson",
+      "slug": "room-paging",
+      "title": "Room + Paging 3 y Flow",
+      "path": "tracks/06-datos/modules/room-sqlite/lessons/room-paging.html",
+      "level": 3,
+      "parent": "module:06-datos/room-sqlite",
+      "tags": [
+        "room-paging",
+        "room-sqlite",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "sql"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Room + Paging 3 y Flow.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__room-sqlite__room-paging.json",
+      "example": "kotlin:room-paging"
+    },
+    {
+      "id": "module:06-datos/filesystem-storage",
+      "type": "Module",
+      "slug": "filesystem-storage",
+      "title": "Filesystem y Scoped Storage",
+      "path": "tracks/06-datos/modules/filesystem-storage/index.html",
+      "level": 2,
+      "parent": "track:06-datos",
+      "children": [
+        "lesson:06-datos/filesystem-storage/scoped-storage",
+        "lesson:06-datos/filesystem-storage/saf-storage",
+        "lesson:06-datos/filesystem-storage/cache-files"
+      ],
+      "tags": [
+        "filesystem-storage"
+      ]
+    },
+    {
+      "id": "lesson:06-datos/filesystem-storage/scoped-storage",
+      "type": "Lesson",
+      "slug": "scoped-storage",
+      "title": "Scoped Storage y MediaStore",
+      "path": "tracks/06-datos/modules/filesystem-storage/lessons/scoped-storage.html",
+      "level": 3,
+      "parent": "module:06-datos/filesystem-storage",
+      "tags": [
+        "scoped-storage",
+        "filesystem-storage",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Scoped Storage y MediaStore.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__filesystem-storage__scoped-storage.json",
+      "example": "kotlin:scoped-storage"
+    },
+    {
+      "id": "lesson:06-datos/filesystem-storage/saf-storage",
+      "type": "Lesson",
+      "slug": "saf-storage",
+      "title": "Storage Access Framework (SAF)",
+      "path": "tracks/06-datos/modules/filesystem-storage/lessons/saf-storage.html",
+      "level": 3,
+      "parent": "module:06-datos/filesystem-storage",
+      "tags": [
+        "saf-storage",
+        "filesystem-storage",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Storage Access Framework (SAF).",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__filesystem-storage__saf-storage.json",
+      "example": "kotlin:saf-storage"
+    },
+    {
+      "id": "lesson:06-datos/filesystem-storage/cache-files",
+      "type": "Lesson",
+      "slug": "cache-files",
+      "title": "Cache, filesDir y backup rules",
+      "path": "tracks/06-datos/modules/filesystem-storage/lessons/cache-files.html",
+      "level": 3,
+      "parent": "module:06-datos/filesystem-storage",
+      "tags": [
+        "cache-files",
+        "filesystem-storage",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Cache, filesDir y backup rules.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__filesystem-storage__cache-files.json",
+      "example": "kotlin:cache-files"
+    },
+    {
+      "id": "module:06-datos/contentprovider",
+      "type": "Module",
+      "slug": "contentprovider",
+      "title": "ContentProviders y IPC",
+      "path": "tracks/06-datos/modules/contentprovider/index.html",
+      "level": 2,
+      "parent": "track:06-datos",
+      "children": [
+        "lesson:06-datos/contentprovider/provider-basics",
+        "lesson:06-datos/contentprovider/ipc-binder",
+        "lesson:06-datos/contentprovider/contacts-calendar"
+      ],
+      "tags": [
+        "contentprovider"
+      ]
+    },
+    {
+      "id": "lesson:06-datos/contentprovider/provider-basics",
+      "type": "Lesson",
+      "slug": "provider-basics",
+      "title": "ContentProvider básico y contracts",
+      "path": "tracks/06-datos/modules/contentprovider/lessons/provider-basics.html",
+      "level": 3,
+      "parent": "module:06-datos/contentprovider",
+      "tags": [
+        "provider-basics",
+        "contentprovider",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ContentProvider básico y contracts.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__contentprovider__provider-basics.json",
+      "example": "kotlin:provider-basics"
+    },
+    {
+      "id": "lesson:06-datos/contentprovider/ipc-binder",
+      "type": "Lesson",
+      "slug": "ipc-binder",
+      "title": "Binder, AIDL y comunicación inter-proceso",
+      "path": "tracks/06-datos/modules/contentprovider/lessons/ipc-binder.html",
+      "level": 3,
+      "parent": "module:06-datos/contentprovider",
+      "tags": [
+        "ipc-binder",
+        "contentprovider",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Binder, AIDL y comunicación inter-proceso.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__contentprovider__ipc-binder.json",
+      "example": "kotlin:ipc-binder"
+    },
+    {
+      "id": "lesson:06-datos/contentprovider/contacts-calendar",
+      "type": "Lesson",
+      "slug": "contacts-calendar",
+      "title": "Providers del sistema: Contacts/Calendar",
+      "path": "tracks/06-datos/modules/contentprovider/lessons/contacts-calendar.html",
+      "level": 3,
+      "parent": "module:06-datos/contentprovider",
+      "tags": [
+        "contacts-calendar",
+        "contentprovider",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Providers del sistema: Contacts/Calendar.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__contentprovider__contacts-calendar.json",
+      "example": "kotlin:contacts-calendar"
+    },
+    {
+      "id": "module:06-datos/preferences-datastore",
+      "type": "Module",
+      "slug": "preferences-datastore",
+      "title": "Preferencias y DataStore",
+      "path": "tracks/06-datos/modules/preferences-datastore/index.html",
+      "level": 2,
+      "parent": "track:06-datos",
+      "children": [
+        "lesson:06-datos/preferences-datastore/datastore-proto",
+        "lesson:06-datos/preferences-datastore/encrypted-prefs",
+        "lesson:06-datos/preferences-datastore/settings-ui"
+      ],
+      "tags": [
+        "preferences-datastore"
+      ]
+    },
+    {
+      "id": "lesson:06-datos/preferences-datastore/datastore-proto",
+      "type": "Lesson",
+      "slug": "datastore-proto",
+      "title": "Proto DataStore y Preferences",
+      "path": "tracks/06-datos/modules/preferences-datastore/lessons/datastore-proto.html",
+      "level": 3,
+      "parent": "module:06-datos/preferences-datastore",
+      "tags": [
+        "datastore-proto",
+        "preferences-datastore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Proto DataStore y Preferences.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__preferences-datastore__datastore-proto.json",
+      "example": "kotlin:datastore-proto"
+    },
+    {
+      "id": "lesson:06-datos/preferences-datastore/encrypted-prefs",
+      "type": "Lesson",
+      "slug": "encrypted-prefs",
+      "title": "EncryptedSharedPreferences y Security Crypto",
+      "path": "tracks/06-datos/modules/preferences-datastore/lessons/encrypted-prefs.html",
+      "level": 3,
+      "parent": "module:06-datos/preferences-datastore",
+      "tags": [
+        "encrypted-prefs",
+        "preferences-datastore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de EncryptedSharedPreferences y Security Crypto.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__preferences-datastore__encrypted-prefs.json",
+      "example": "kotlin:encrypted-prefs"
+    },
+    {
+      "id": "lesson:06-datos/preferences-datastore/settings-ui",
+      "type": "Lesson",
+      "slug": "settings-ui",
+      "title": "Preference UI con Compose",
+      "path": "tracks/06-datos/modules/preferences-datastore/lessons/settings-ui.html",
+      "level": 3,
+      "parent": "module:06-datos/preferences-datastore",
+      "tags": [
+        "settings-ui",
+        "preferences-datastore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Preference UI con Compose.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__preferences-datastore__settings-ui.json",
+      "example": "kotlin:settings-ui"
+    },
+    {
+      "id": "module:06-datos/backup-restore",
+      "type": "Module",
+      "slug": "backup-restore",
+      "title": "Backup, Restore y Export",
+      "path": "tracks/06-datos/modules/backup-restore/index.html",
+      "level": 2,
+      "parent": "track:06-datos",
+      "children": [
+        "lesson:06-datos/backup-restore/autobackup",
+        "lesson:06-datos/backup-restore/cloud-backup",
+        "lesson:06-datos/backup-restore/export-import"
+      ],
+      "tags": [
+        "backup-restore"
+      ]
+    },
+    {
+      "id": "lesson:06-datos/backup-restore/autobackup",
+      "type": "Lesson",
+      "slug": "autobackup",
+      "title": "Auto Backup y Key/Value Backup",
+      "path": "tracks/06-datos/modules/backup-restore/lessons/autobackup.html",
+      "level": 3,
+      "parent": "module:06-datos/backup-restore",
+      "tags": [
+        "autobackup",
+        "backup-restore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Auto Backup y Key/Value Backup.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__backup-restore__autobackup.json",
+      "example": "kotlin:autobackup"
+    },
+    {
+      "id": "lesson:06-datos/backup-restore/cloud-backup",
+      "type": "Lesson",
+      "slug": "cloud-backup",
+      "title": "Backup en la nube y restore testing",
+      "path": "tracks/06-datos/modules/backup-restore/lessons/cloud-backup.html",
+      "level": 3,
+      "parent": "module:06-datos/backup-restore",
+      "tags": [
+        "cloud-backup",
+        "backup-restore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Backup en la nube y restore testing.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__backup-restore__cloud-backup.json",
+      "example": "kotlin:cloud-backup"
+    },
+    {
+      "id": "lesson:06-datos/backup-restore/export-import",
+      "type": "Lesson",
+      "slug": "export-import",
+      "title": "Export/Import de datos del usuario",
+      "path": "tracks/06-datos/modules/backup-restore/lessons/export-import.html",
+      "level": 3,
+      "parent": "module:06-datos/backup-restore",
+      "tags": [
+        "export-import",
+        "backup-restore",
+        "06-datos"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Export/Import de datos del usuario.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/06-datos__backup-restore__export-import.json",
+      "example": "kotlin:export-import"
+    },
+    {
+      "id": "track:07-conectividad",
+      "type": "Track",
+      "slug": "07-conectividad",
+      "title": "Conectividad, Red y Protocolos",
+      "path": "tracks/07-conectividad/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:07-conectividad/http-retrofit",
+        "module:07-conectividad/graphql-websockets",
+        "module:07-conectividad/grpc-protobuf",
+        "module:07-conectividad/bluetooth-nfc",
+        "module:07-conectividad/iot-mqtt"
+      ],
+      "tags": [
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:07-conectividad/http-retrofit",
+      "type": "Module",
+      "slug": "http-retrofit",
+      "title": "HTTP/REST con Retrofit + OkHttp",
+      "path": "tracks/07-conectividad/modules/http-retrofit/index.html",
+      "level": 2,
+      "parent": "track:07-conectividad",
+      "children": [
+        "lesson:07-conectividad/http-retrofit/retrofit-okhttp",
+        "lesson:07-conectividad/http-retrofit/serializacion",
+        "lesson:07-conectividad/http-retrofit/errores-resiliencia"
+      ],
+      "tags": [
+        "http-retrofit"
+      ]
+    },
+    {
+      "id": "lesson:07-conectividad/http-retrofit/retrofit-okhttp",
+      "type": "Lesson",
+      "slug": "retrofit-okhttp",
+      "title": "Retrofit, OkHttp y interceptors",
+      "path": "tracks/07-conectividad/modules/http-retrofit/lessons/retrofit-okhttp.html",
+      "level": 3,
+      "parent": "module:07-conectividad/http-retrofit",
+      "tags": [
+        "retrofit-okhttp",
+        "http-retrofit",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Retrofit, OkHttp y interceptors.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__http-retrofit__retrofit-okhttp.json",
+      "example": "kotlin:retrofit-okhttp"
+    },
+    {
+      "id": "lesson:07-conectividad/http-retrofit/serializacion",
+      "type": "Lesson",
+      "slug": "serializacion",
+      "title": "Serialización: Moshi, kotlinx-serialization",
+      "path": "tracks/07-conectividad/modules/http-retrofit/lessons/serializacion.html",
+      "level": 3,
+      "parent": "module:07-conectividad/http-retrofit",
+      "tags": [
+        "serializacion",
+        "http-retrofit",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Serialización: Moshi, kotlinx-serialization.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__http-retrofit__serializacion.json",
+      "example": "kotlin:serializacion"
+    },
+    {
+      "id": "lesson:07-conectividad/http-retrofit/errores-resiliencia",
+      "type": "Lesson",
+      "slug": "errores-resiliencia",
+      "title": "Errores, retry y circuit breaker",
+      "path": "tracks/07-conectividad/modules/http-retrofit/lessons/errores-resiliencia.html",
+      "level": 3,
+      "parent": "module:07-conectividad/http-retrofit",
+      "tags": [
+        "errores-resiliencia",
+        "http-retrofit",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Errores, retry y circuit breaker.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__http-retrofit__errores-resiliencia.json",
+      "example": "kotlin:errores-resiliencia"
+    },
+    {
+      "id": "module:07-conectividad/graphql-websockets",
+      "type": "Module",
+      "slug": "graphql-websockets",
+      "title": "GraphQL y Tiempo Real",
+      "path": "tracks/07-conectividad/modules/graphql-websockets/index.html",
+      "level": 2,
+      "parent": "track:07-conectividad",
+      "children": [
+        "lesson:07-conectividad/graphql-websockets/graphql-apollo",
+        "lesson:07-conectividad/graphql-websockets/websockets-sse",
+        "lesson:07-conectividad/graphql-websockets/push-fcm"
+      ],
+      "tags": [
+        "graphql-websockets"
+      ]
+    },
+    {
+      "id": "lesson:07-conectividad/graphql-websockets/graphql-apollo",
+      "type": "Lesson",
+      "slug": "graphql-apollo",
+      "title": "GraphQL con Apollo Kotlin",
+      "path": "tracks/07-conectividad/modules/graphql-websockets/lessons/graphql-apollo.html",
+      "level": 3,
+      "parent": "module:07-conectividad/graphql-websockets",
+      "tags": [
+        "graphql-apollo",
+        "graphql-websockets",
+        "07-conectividad"
+      ],
+      "languages": [
+        "graphql",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de GraphQL con Apollo Kotlin.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__graphql-websockets__graphql-apollo.json",
+      "example": "kotlin:graphql-apollo"
+    },
+    {
+      "id": "lesson:07-conectividad/graphql-websockets/websockets-sse",
+      "type": "Lesson",
+      "slug": "websockets-sse",
+      "title": "WebSockets y SSE",
+      "path": "tracks/07-conectividad/modules/graphql-websockets/lessons/websockets-sse.html",
+      "level": 3,
+      "parent": "module:07-conectividad/graphql-websockets",
+      "tags": [
+        "websockets-sse",
+        "graphql-websockets",
+        "07-conectividad"
+      ],
+      "languages": [
+        "graphql",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de WebSockets y SSE.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__graphql-websockets__websockets-sse.json",
+      "example": "kotlin:websockets-sse"
+    },
+    {
+      "id": "lesson:07-conectividad/graphql-websockets/push-fcm",
+      "type": "Lesson",
+      "slug": "push-fcm",
+      "title": "Push con FCM y notificaciones",
+      "path": "tracks/07-conectividad/modules/graphql-websockets/lessons/push-fcm.html",
+      "level": 3,
+      "parent": "module:07-conectividad/graphql-websockets",
+      "tags": [
+        "push-fcm",
+        "graphql-websockets",
+        "07-conectividad"
+      ],
+      "languages": [
+        "graphql",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Push con FCM y notificaciones.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__graphql-websockets__push-fcm.json",
+      "example": "kotlin:push-fcm"
+    },
+    {
+      "id": "module:07-conectividad/grpc-protobuf",
+      "type": "Module",
+      "slug": "grpc-protobuf",
+      "title": "gRPC, Protobuf y streaming",
+      "path": "tracks/07-conectividad/modules/grpc-protobuf/index.html",
+      "level": 2,
+      "parent": "track:07-conectividad",
+      "children": [
+        "lesson:07-conectividad/grpc-protobuf/protobuf-contracts",
+        "lesson:07-conectividad/grpc-protobuf/grpc-android",
+        "lesson:07-conectividad/grpc-protobuf/perf-protobuf"
+      ],
+      "tags": [
+        "grpc-protobuf"
+      ]
+    },
+    {
+      "id": "lesson:07-conectividad/grpc-protobuf/protobuf-contracts",
+      "type": "Lesson",
+      "slug": "protobuf-contracts",
+      "title": "Protobuf como contrato",
+      "path": "tracks/07-conectividad/modules/grpc-protobuf/lessons/protobuf-contracts.html",
+      "level": 3,
+      "parent": "module:07-conectividad/grpc-protobuf",
+      "tags": [
+        "protobuf-contracts",
+        "grpc-protobuf",
+        "07-conectividad"
+      ],
+      "languages": [
+        "proto",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Protobuf como contrato.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__grpc-protobuf__protobuf-contracts.json",
+      "example": "kotlin:protobuf-contracts"
+    },
+    {
+      "id": "lesson:07-conectividad/grpc-protobuf/grpc-android",
+      "type": "Lesson",
+      "slug": "grpc-android",
+      "title": "gRPC en Android con OkHttp channel",
+      "path": "tracks/07-conectividad/modules/grpc-protobuf/lessons/grpc-android.html",
+      "level": 3,
+      "parent": "module:07-conectividad/grpc-protobuf",
+      "tags": [
+        "grpc-android",
+        "grpc-protobuf",
+        "07-conectividad"
+      ],
+      "languages": [
+        "proto",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de gRPC en Android con OkHttp channel.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__grpc-protobuf__grpc-android.json",
+      "example": "kotlin:grpc-android"
+    },
+    {
+      "id": "lesson:07-conectividad/grpc-protobuf/perf-protobuf",
+      "type": "Lesson",
+      "slug": "perf-protobuf",
+      "title": "Performance y tamaño vs JSON",
+      "path": "tracks/07-conectividad/modules/grpc-protobuf/lessons/perf-protobuf.html",
+      "level": 3,
+      "parent": "module:07-conectividad/grpc-protobuf",
+      "tags": [
+        "perf-protobuf",
+        "grpc-protobuf",
+        "07-conectividad"
+      ],
+      "languages": [
+        "proto",
+        "kotlin"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Performance y tamaño vs JSON.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__grpc-protobuf__perf-protobuf.json",
+      "example": "kotlin:perf-protobuf"
+    },
+    {
+      "id": "module:07-conectividad/bluetooth-nfc",
+      "type": "Module",
+      "slug": "bluetooth-nfc",
+      "title": "Bluetooth, NFC, UWB y Nearby",
+      "path": "tracks/07-conectividad/modules/bluetooth-nfc/index.html",
+      "level": 2,
+      "parent": "track:07-conectividad",
+      "children": [
+        "lesson:07-conectividad/bluetooth-nfc/ble-classic",
+        "lesson:07-conectividad/bluetooth-nfc/nfc-hce",
+        "lesson:07-conectividad/bluetooth-nfc/uwb-nearby"
+      ],
+      "tags": [
+        "bluetooth-nfc"
+      ]
+    },
+    {
+      "id": "lesson:07-conectividad/bluetooth-nfc/ble-classic",
+      "type": "Lesson",
+      "slug": "ble-classic",
+      "title": "BLE y Classic Bluetooth",
+      "path": "tracks/07-conectividad/modules/bluetooth-nfc/lessons/ble-classic.html",
+      "level": 3,
+      "parent": "module:07-conectividad/bluetooth-nfc",
+      "tags": [
+        "ble-classic",
+        "bluetooth-nfc",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de BLE y Classic Bluetooth.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__bluetooth-nfc__ble-classic.json",
+      "example": "kotlin:ble-classic"
+    },
+    {
+      "id": "lesson:07-conectividad/bluetooth-nfc/nfc-hce",
+      "type": "Lesson",
+      "slug": "nfc-hce",
+      "title": "NFC y Host Card Emulation",
+      "path": "tracks/07-conectividad/modules/bluetooth-nfc/lessons/nfc-hce.html",
+      "level": 3,
+      "parent": "module:07-conectividad/bluetooth-nfc",
+      "tags": [
+        "nfc-hce",
+        "bluetooth-nfc",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de NFC y Host Card Emulation.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__bluetooth-nfc__nfc-hce.json",
+      "example": "kotlin:nfc-hce"
+    },
+    {
+      "id": "lesson:07-conectividad/bluetooth-nfc/uwb-nearby",
+      "type": "Lesson",
+      "slug": "uwb-nearby",
+      "title": "UWB y Nearby Connections",
+      "path": "tracks/07-conectividad/modules/bluetooth-nfc/lessons/uwb-nearby.html",
+      "level": 3,
+      "parent": "module:07-conectividad/bluetooth-nfc",
+      "tags": [
+        "uwb-nearby",
+        "bluetooth-nfc",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de UWB y Nearby Connections.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__bluetooth-nfc__uwb-nearby.json",
+      "example": "kotlin:uwb-nearby"
+    },
+    {
+      "id": "module:07-conectividad/iot-mqtt",
+      "type": "Module",
+      "slug": "iot-mqtt",
+      "title": "IoT: MQTT, CoAP y conectividad",
+      "path": "tracks/07-conectividad/modules/iot-mqtt/index.html",
+      "level": 2,
+      "parent": "track:07-conectividad",
+      "children": [
+        "lesson:07-conectividad/iot-mqtt/mqtt-android",
+        "lesson:07-conectividad/iot-mqtt/coap-http2",
+        "lesson:07-conectividad/iot-mqtt/connectivity-manager"
+      ],
+      "tags": [
+        "iot-mqtt"
+      ]
+    },
+    {
+      "id": "lesson:07-conectividad/iot-mqtt/mqtt-android",
+      "type": "Lesson",
+      "slug": "mqtt-android",
+      "title": "MQTT en Android (Paho)",
+      "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/mqtt-android.html",
+      "level": 3,
+      "parent": "module:07-conectividad/iot-mqtt",
+      "tags": [
+        "mqtt-android",
+        "iot-mqtt",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de MQTT en Android (Paho).",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__iot-mqtt__mqtt-android.json",
+      "example": "kotlin:mqtt-android"
+    },
+    {
+      "id": "lesson:07-conectividad/iot-mqtt/coap-http2",
+      "type": "Lesson",
+      "slug": "coap-http2",
+      "title": "CoAP y HTTP/2 en dispositivos",
+      "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/coap-http2.html",
+      "level": 3,
+      "parent": "module:07-conectividad/iot-mqtt",
+      "tags": [
+        "coap-http2",
+        "iot-mqtt",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de CoAP y HTTP/2 en dispositivos.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__iot-mqtt__coap-http2.json",
+      "example": "kotlin:coap-http2"
+    },
+    {
+      "id": "lesson:07-conectividad/iot-mqtt/connectivity-manager",
+      "type": "Lesson",
+      "slug": "connectivity-manager",
+      "title": "ConnectivityManager y NetworkCapabilities",
+      "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/connectivity-manager.html",
+      "level": 3,
+      "parent": "module:07-conectividad/iot-mqtt",
+      "tags": [
+        "connectivity-manager",
+        "iot-mqtt",
+        "07-conectividad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "https",
+        "http2",
+        "tls1.3",
+        "grpc",
+        "websocket",
+        "mqtt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ConnectivityManager y NetworkCapabilities.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/07-conectividad__iot-mqtt__connectivity-manager.json",
+      "example": "kotlin:connectivity-manager"
+    },
+    {
+      "id": "track:08-sistema",
+      "type": "Track",
+      "slug": "08-sistema",
+      "title": "Sistema, Hardware y Multimedia",
+      "path": "tracks/08-sistema/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:08-sistema/background-work",
+        "module:08-sistema/sensors-hardware",
+        "module:08-sistema/camera-cameraX",
+        "module:08-sistema/media-audio",
+        "module:08-sistema/location-maps"
+      ],
+      "tags": [
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:08-sistema/background-work",
+      "type": "Module",
+      "slug": "background-work",
+      "title": "Background Work Moderno",
+      "path": "tracks/08-sistema/modules/background-work/index.html",
+      "level": 2,
+      "parent": "track:08-sistema",
+      "children": [
+        "lesson:08-sistema/background-work/workmanager",
+        "lesson:08-sistema/background-work/foreground-services",
+        "lesson:08-sistema/background-work/alarms-exact"
+      ],
+      "tags": [
+        "background-work"
+      ]
+    },
+    {
+      "id": "lesson:08-sistema/background-work/workmanager",
+      "type": "Lesson",
+      "slug": "workmanager",
+      "title": "WorkManager: workers y constraints",
+      "path": "tracks/08-sistema/modules/background-work/lessons/workmanager.html",
+      "level": 3,
+      "parent": "module:08-sistema/background-work",
+      "tags": [
+        "workmanager",
+        "background-work",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de WorkManager: workers y constraints.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__background-work__workmanager.json",
+      "example": "kotlin:workmanager"
+    },
+    {
+      "id": "lesson:08-sistema/background-work/foreground-services",
+      "type": "Lesson",
+      "slug": "foreground-services",
+      "title": "Foreground Services y tipos 14+",
+      "path": "tracks/08-sistema/modules/background-work/lessons/foreground-services.html",
+      "level": 3,
+      "parent": "module:08-sistema/background-work",
+      "tags": [
+        "foreground-services",
+        "background-work",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Foreground Services y tipos 14+.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__background-work__foreground-services.json",
+      "example": "kotlin:foreground-services"
+    },
+    {
+      "id": "lesson:08-sistema/background-work/alarms-exact",
+      "type": "Lesson",
+      "slug": "alarms-exact",
+      "title": "Alarms, exact alarms y Doze",
+      "path": "tracks/08-sistema/modules/background-work/lessons/alarms-exact.html",
+      "level": 3,
+      "parent": "module:08-sistema/background-work",
+      "tags": [
+        "alarms-exact",
+        "background-work",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Alarms, exact alarms y Doze.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__background-work__alarms-exact.json",
+      "example": "kotlin:alarms-exact"
+    },
+    {
+      "id": "module:08-sistema/sensors-hardware",
+      "type": "Module",
+      "slug": "sensors-hardware",
+      "title": "Sensores y Hardware",
+      "path": "tracks/08-sistema/modules/sensors-hardware/index.html",
+      "level": 2,
+      "parent": "track:08-sistema",
+      "children": [
+        "lesson:08-sistema/sensors-hardware/sensormanager",
+        "lesson:08-sistema/sensors-hardware/biometrics-haptics",
+        "lesson:08-sistema/sensors-hardware/usb-accessory"
+      ],
+      "tags": [
+        "sensors-hardware"
+      ]
+    },
+    {
+      "id": "lesson:08-sistema/sensors-hardware/sensormanager",
+      "type": "Lesson",
+      "slug": "sensormanager",
+      "title": "SensorManager: acelerómetro, gyro",
+      "path": "tracks/08-sistema/modules/sensors-hardware/lessons/sensormanager.html",
+      "level": 3,
+      "parent": "module:08-sistema/sensors-hardware",
+      "tags": [
+        "sensormanager",
+        "sensors-hardware",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de SensorManager: acelerómetro, gyro.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__sensors-hardware__sensormanager.json",
+      "example": "kotlin:sensormanager"
+    },
+    {
+      "id": "lesson:08-sistema/sensors-hardware/biometrics-haptics",
+      "type": "Lesson",
+      "slug": "biometrics-haptics",
+      "title": "Biometrics y haptics",
+      "path": "tracks/08-sistema/modules/sensors-hardware/lessons/biometrics-haptics.html",
+      "level": 3,
+      "parent": "module:08-sistema/sensors-hardware",
+      "tags": [
+        "biometrics-haptics",
+        "sensors-hardware",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Biometrics y haptics.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__sensors-hardware__biometrics-haptics.json",
+      "example": "kotlin:biometrics-haptics"
+    },
+    {
+      "id": "lesson:08-sistema/sensors-hardware/usb-accessory",
+      "type": "Lesson",
+      "slug": "usb-accessory",
+      "title": "USB Host/Accessory",
+      "path": "tracks/08-sistema/modules/sensors-hardware/lessons/usb-accessory.html",
+      "level": 3,
+      "parent": "module:08-sistema/sensors-hardware",
+      "tags": [
+        "usb-accessory",
+        "sensors-hardware",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de USB Host/Accessory.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__sensors-hardware__usb-accessory.json",
+      "example": "kotlin:usb-accessory"
+    },
+    {
+      "id": "module:08-sistema/camera-cameraX",
+      "type": "Module",
+      "slug": "camera-cameraX",
+      "title": "Cámara con CameraX",
+      "path": "tracks/08-sistema/modules/camera-cameraX/index.html",
+      "level": 2,
+      "parent": "track:08-sistema",
+      "children": [
+        "lesson:08-sistema/camera-cameraX/camerax-preview",
+        "lesson:08-sistema/camera-cameraX/mlkit-vision",
+        "lesson:08-sistema/camera-cameraX/video-capture"
+      ],
+      "tags": [
+        "camera-cameraX"
+      ]
+    },
+    {
+      "id": "lesson:08-sistema/camera-cameraX/camerax-preview",
+      "type": "Lesson",
+      "slug": "camerax-preview",
+      "title": "Preview, ImageCapture y análisis",
+      "path": "tracks/08-sistema/modules/camera-cameraX/lessons/camerax-preview.html",
+      "level": 3,
+      "parent": "module:08-sistema/camera-cameraX",
+      "tags": [
+        "camerax-preview",
+        "camera-cameraX",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Preview, ImageCapture y análisis.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__camera-cameraX__camerax-preview.json",
+      "example": "kotlin:camerax-preview"
+    },
+    {
+      "id": "lesson:08-sistema/camera-cameraX/mlkit-vision",
+      "type": "Lesson",
+      "slug": "mlkit-vision",
+      "title": "ML Kit Vision: barcode, face, text",
+      "path": "tracks/08-sistema/modules/camera-cameraX/lessons/mlkit-vision.html",
+      "level": 3,
+      "parent": "module:08-sistema/camera-cameraX",
+      "tags": [
+        "mlkit-vision",
+        "camera-cameraX",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de ML Kit Vision: barcode, face, text.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__camera-cameraX__mlkit-vision.json",
+      "example": "kotlin:mlkit-vision"
+    },
+    {
+      "id": "lesson:08-sistema/camera-cameraX/video-capture",
+      "type": "Lesson",
+      "slug": "video-capture",
+      "title": "Video capture y estabilización",
+      "path": "tracks/08-sistema/modules/camera-cameraX/lessons/video-capture.html",
+      "level": 3,
+      "parent": "module:08-sistema/camera-cameraX",
+      "tags": [
+        "video-capture",
+        "camera-cameraX",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Video capture y estabilización.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__camera-cameraX__video-capture.json",
+      "example": "kotlin:video-capture"
+    },
+    {
+      "id": "module:08-sistema/media-audio",
+      "type": "Module",
+      "slug": "media-audio",
+      "title": "Audio, Media3 y Playback",
+      "path": "tracks/08-sistema/modules/media-audio/index.html",
+      "level": 2,
+      "parent": "track:08-sistema",
+      "children": [
+        "lesson:08-sistema/media-audio/media3-audio",
+        "lesson:08-sistema/media-audio/audio-focus",
+        "lesson:08-sistema/media-audio/speech-tts"
+      ],
+      "tags": [
+        "media-audio"
+      ]
+    },
+    {
+      "id": "lesson:08-sistema/media-audio/media3-audio",
+      "type": "Lesson",
+      "slug": "media3-audio",
+      "title": "Media3: ExoPlayer y session",
+      "path": "tracks/08-sistema/modules/media-audio/lessons/media3-audio.html",
+      "level": 3,
+      "parent": "module:08-sistema/media-audio",
+      "tags": [
+        "media3-audio",
+        "media-audio",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Media3: ExoPlayer y session.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__media-audio__media3-audio.json",
+      "example": "kotlin:media3-audio"
+    },
+    {
+      "id": "lesson:08-sistema/media-audio/audio-focus",
+      "type": "Lesson",
+      "slug": "audio-focus",
+      "title": "Audio focus y routing",
+      "path": "tracks/08-sistema/modules/media-audio/lessons/audio-focus.html",
+      "level": 3,
+      "parent": "module:08-sistema/media-audio",
+      "tags": [
+        "audio-focus",
+        "media-audio",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Audio focus y routing.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__media-audio__audio-focus.json",
+      "example": "kotlin:audio-focus"
+    },
+    {
+      "id": "lesson:08-sistema/media-audio/speech-tts",
+      "type": "Lesson",
+      "slug": "speech-tts",
+      "title": "Speech-to-Text y TTS",
+      "path": "tracks/08-sistema/modules/media-audio/lessons/speech-tts.html",
+      "level": 3,
+      "parent": "module:08-sistema/media-audio",
+      "tags": [
+        "speech-tts",
+        "media-audio",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Speech-to-Text y TTS.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__media-audio__speech-tts.json",
+      "example": "kotlin:speech-tts"
+    },
+    {
+      "id": "module:08-sistema/location-maps",
+      "type": "Module",
+      "slug": "location-maps",
+      "title": "Location y Maps",
+      "path": "tracks/08-sistema/modules/location-maps/index.html",
+      "level": 2,
+      "parent": "track:08-sistema",
+      "children": [
+        "lesson:08-sistema/location-maps/fused-location",
+        "lesson:08-sistema/location-maps/maps-compose",
+        "lesson:08-sistema/location-maps/background-location"
+      ],
+      "tags": [
+        "location-maps"
+      ]
+    },
+    {
+      "id": "lesson:08-sistema/location-maps/fused-location",
+      "type": "Lesson",
+      "slug": "fused-location",
+      "title": "Fused Location Provider",
+      "path": "tracks/08-sistema/modules/location-maps/lessons/fused-location.html",
+      "level": 3,
+      "parent": "module:08-sistema/location-maps",
+      "tags": [
+        "fused-location",
+        "location-maps",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Fused Location Provider.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__location-maps__fused-location.json",
+      "example": "kotlin:fused-location"
+    },
+    {
+      "id": "lesson:08-sistema/location-maps/maps-compose",
+      "type": "Lesson",
+      "slug": "maps-compose",
+      "title": "Maps Compose y clustering",
+      "path": "tracks/08-sistema/modules/location-maps/lessons/maps-compose.html",
+      "level": 3,
+      "parent": "module:08-sistema/location-maps",
+      "tags": [
+        "maps-compose",
+        "location-maps",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Maps Compose y clustering.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__location-maps__maps-compose.json",
+      "example": "kotlin:maps-compose"
+    },
+    {
+      "id": "lesson:08-sistema/location-maps/background-location",
+      "type": "Lesson",
+      "slug": "background-location",
+      "title": "Background location y permisos 10+",
+      "path": "tracks/08-sistema/modules/location-maps/lessons/background-location.html",
+      "level": 3,
+      "parent": "module:08-sistema/location-maps",
+      "tags": [
+        "background-location",
+        "location-maps",
+        "08-sistema"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Background location y permisos 10+.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/08-sistema__location-maps__background-location.json",
+      "example": "kotlin:background-location"
+    },
+    {
+      "id": "track:09-seguridad",
+      "type": "Track",
+      "slug": "09-seguridad",
+      "title": "Seguridad, Rendimiento y Calidad",
+      "path": "tracks/09-seguridad/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:09-seguridad/crypto-keystore",
+        "module:09-seguridad/auth-biometric",
+        "module:09-seguridad/perf-baseline",
+        "module:09-seguridad/testing-calidad",
+        "module:09-seguridad/privacy-permisos"
+      ],
+      "tags": [
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:09-seguridad/crypto-keystore",
+      "type": "Module",
+      "slug": "crypto-keystore",
+      "title": "Criptografía y Android Keystore",
+      "path": "tracks/09-seguridad/modules/crypto-keystore/index.html",
+      "level": 2,
+      "parent": "track:09-seguridad",
+      "children": [
+        "lesson:09-seguridad/crypto-keystore/keystore-keys",
+        "lesson:09-seguridad/crypto-keystore/encrypt-tink",
+        "lesson:09-seguridad/crypto-keystore/network-security"
+      ],
+      "tags": [
+        "crypto-keystore"
+      ]
+    },
+    {
+      "id": "lesson:09-seguridad/crypto-keystore/keystore-keys",
+      "type": "Lesson",
+      "slug": "keystore-keys",
+      "title": "Keystore, StrongBox y claves",
+      "path": "tracks/09-seguridad/modules/crypto-keystore/lessons/keystore-keys.html",
+      "level": 3,
+      "parent": "module:09-seguridad/crypto-keystore",
+      "tags": [
+        "keystore-keys",
+        "crypto-keystore",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "keystore",
+        "strongbox",
+        "nsc"
+      ],
+      "definition": "Síntesis educativa de Keystore, StrongBox y claves.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__crypto-keystore__keystore-keys.json",
+      "example": "kotlin:keystore-keys"
+    },
+    {
+      "id": "lesson:09-seguridad/crypto-keystore/encrypt-tink",
+      "type": "Lesson",
+      "slug": "encrypt-tink",
+      "title": "Tink y Jetpack Security",
+      "path": "tracks/09-seguridad/modules/crypto-keystore/lessons/encrypt-tink.html",
+      "level": 3,
+      "parent": "module:09-seguridad/crypto-keystore",
+      "tags": [
+        "encrypt-tink",
+        "crypto-keystore",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "keystore",
+        "strongbox",
+        "nsc"
+      ],
+      "definition": "Síntesis educativa de Tink y Jetpack Security.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__crypto-keystore__encrypt-tink.json",
+      "example": "kotlin:encrypt-tink"
+    },
+    {
+      "id": "lesson:09-seguridad/crypto-keystore/network-security",
+      "type": "Lesson",
+      "slug": "network-security",
+      "title": "Network Security Config y pinning",
+      "path": "tracks/09-seguridad/modules/crypto-keystore/lessons/network-security.html",
+      "level": 3,
+      "parent": "module:09-seguridad/crypto-keystore",
+      "tags": [
+        "network-security",
+        "crypto-keystore",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "keystore",
+        "strongbox",
+        "nsc"
+      ],
+      "definition": "Síntesis educativa de Network Security Config y pinning.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__crypto-keystore__network-security.json",
+      "example": "kotlin:network-security"
+    },
+    {
+      "id": "module:09-seguridad/auth-biometric",
+      "type": "Module",
+      "slug": "auth-biometric",
+      "title": "Auth, Biometrics y SafetyNet",
+      "path": "tracks/09-seguridad/modules/auth-biometric/index.html",
+      "level": 2,
+      "parent": "track:09-seguridad",
+      "children": [
+        "lesson:09-seguridad/auth-biometric/biometric-prompt",
+        "lesson:09-seguridad/auth-biometric/passkeys-credentials",
+        "lesson:09-seguridad/auth-biometric/play-integrity"
+      ],
+      "tags": [
+        "auth-biometric"
+      ]
+    },
+    {
+      "id": "lesson:09-seguridad/auth-biometric/biometric-prompt",
+      "type": "Lesson",
+      "slug": "biometric-prompt",
+      "title": "BiometricPrompt y fallback",
+      "path": "tracks/09-seguridad/modules/auth-biometric/lessons/biometric-prompt.html",
+      "level": 3,
+      "parent": "module:09-seguridad/auth-biometric",
+      "tags": [
+        "biometric-prompt",
+        "auth-biometric",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de BiometricPrompt y fallback.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__auth-biometric__biometric-prompt.json",
+      "example": "kotlin:biometric-prompt"
+    },
+    {
+      "id": "lesson:09-seguridad/auth-biometric/passkeys-credentials",
+      "type": "Lesson",
+      "slug": "passkeys-credentials",
+      "title": "Passkeys y Credential Manager",
+      "path": "tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+      "level": 3,
+      "parent": "module:09-seguridad/auth-biometric",
+      "tags": [
+        "passkeys-credentials",
+        "auth-biometric",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Passkeys y Credential Manager.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__auth-biometric__passkeys-credentials.json",
+      "example": "kotlin:passkeys-credentials"
+    },
+    {
+      "id": "lesson:09-seguridad/auth-biometric/play-integrity",
+      "type": "Lesson",
+      "slug": "play-integrity",
+      "title": "Play Integrity API",
+      "path": "tracks/09-seguridad/modules/auth-biometric/lessons/play-integrity.html",
+      "level": 3,
+      "parent": "module:09-seguridad/auth-biometric",
+      "tags": [
+        "play-integrity",
+        "auth-biometric",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Play Integrity API.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__auth-biometric__play-integrity.json",
+      "example": "kotlin:play-integrity"
+    },
+    {
+      "id": "module:09-seguridad/perf-baseline",
+      "type": "Module",
+      "slug": "perf-baseline",
+      "title": "Performance y Baseline Profiles",
+      "path": "tracks/09-seguridad/modules/perf-baseline/index.html",
+      "level": 2,
+      "parent": "track:09-seguridad",
+      "children": [
+        "lesson:09-seguridad/perf-baseline/baseline-profiles",
+        "lesson:09-seguridad/perf-baseline/r8-proguard",
+        "lesson:09-seguridad/perf-baseline/perfetto-macro"
+      ],
+      "tags": [
+        "perf-baseline"
+      ]
+    },
+    {
+      "id": "lesson:09-seguridad/perf-baseline/baseline-profiles",
+      "type": "Lesson",
+      "slug": "baseline-profiles",
+      "title": "Baseline Profiles y startup",
+      "path": "tracks/09-seguridad/modules/perf-baseline/lessons/baseline-profiles.html",
+      "level": 3,
+      "parent": "module:09-seguridad/perf-baseline",
+      "tags": [
+        "baseline-profiles",
+        "perf-baseline",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "baseline-profiles",
+        "macrobenchmark"
+      ],
+      "definition": "Síntesis educativa de Baseline Profiles y startup.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__perf-baseline__baseline-profiles.json",
+      "example": "kotlin:baseline-profiles"
+    },
+    {
+      "id": "lesson:09-seguridad/perf-baseline/r8-proguard",
+      "type": "Lesson",
+      "slug": "r8-proguard",
+      "title": "R8/ProGuard y shrinking",
+      "path": "tracks/09-seguridad/modules/perf-baseline/lessons/r8-proguard.html",
+      "level": 3,
+      "parent": "module:09-seguridad/perf-baseline",
+      "tags": [
+        "r8-proguard",
+        "perf-baseline",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de R8/ProGuard y shrinking.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__perf-baseline__r8-proguard.json",
+      "example": "kotlin:r8-proguard"
+    },
+    {
+      "id": "lesson:09-seguridad/perf-baseline/perfetto-macro",
+      "type": "Lesson",
+      "slug": "perfetto-macro",
+      "title": "Perfetto, Macrobenchmark y Jank",
+      "path": "tracks/09-seguridad/modules/perf-baseline/lessons/perfetto-macro.html",
+      "level": 3,
+      "parent": "module:09-seguridad/perf-baseline",
+      "tags": [
+        "perfetto-macro",
+        "perf-baseline",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Perfetto, Macrobenchmark y Jank.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__perf-baseline__perfetto-macro.json",
+      "example": "kotlin:perfetto-macro"
+    },
+    {
+      "id": "module:09-seguridad/testing-calidad",
+      "type": "Module",
+      "slug": "testing-calidad",
+      "title": "Testing: Unit, UI y E2E",
+      "path": "tracks/09-seguridad/modules/testing-calidad/index.html",
+      "level": 2,
+      "parent": "track:09-seguridad",
+      "children": [
+        "lesson:09-seguridad/testing-calidad/unit-tests",
+        "lesson:09-seguridad/testing-calidad/compose-ui-tests",
+        "lesson:09-seguridad/testing-calidad/e2e-ci"
+      ],
+      "tags": [
+        "testing-calidad"
+      ]
+    },
+    {
+      "id": "lesson:09-seguridad/testing-calidad/unit-tests",
+      "type": "Lesson",
+      "slug": "unit-tests",
+      "title": "Unit tests: JUnit, MockK, Turbine",
+      "path": "tracks/09-seguridad/modules/testing-calidad/lessons/unit-tests.html",
+      "level": 3,
+      "parent": "module:09-seguridad/testing-calidad",
+      "tags": [
+        "unit-tests",
+        "testing-calidad",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Unit tests: JUnit, MockK, Turbine.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__testing-calidad__unit-tests.json",
+      "example": "kotlin:unit-tests"
+    },
+    {
+      "id": "lesson:09-seguridad/testing-calidad/compose-ui-tests",
+      "type": "Lesson",
+      "slug": "compose-ui-tests",
+      "title": "Compose UI tests y Espresso",
+      "path": "tracks/09-seguridad/modules/testing-calidad/lessons/compose-ui-tests.html",
+      "level": 3,
+      "parent": "module:09-seguridad/testing-calidad",
+      "tags": [
+        "compose-ui-tests",
+        "testing-calidad",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Compose UI tests y Espresso.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__testing-calidad__compose-ui-tests.json",
+      "example": "kotlin:compose-ui-tests"
+    },
+    {
+      "id": "lesson:09-seguridad/testing-calidad/e2e-ci",
+      "type": "Lesson",
+      "slug": "e2e-ci",
+      "title": "E2E, screenshot y CI sharding",
+      "path": "tracks/09-seguridad/modules/testing-calidad/lessons/e2e-ci.html",
+      "level": 3,
+      "parent": "module:09-seguridad/testing-calidad",
+      "tags": [
+        "e2e-ci",
+        "testing-calidad",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de E2E, screenshot y CI sharding.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__testing-calidad__e2e-ci.json",
+      "example": "kotlin:e2e-ci"
+    },
+    {
+      "id": "module:09-seguridad/privacy-permisos",
+      "type": "Module",
+      "slug": "privacy-permisos",
+      "title": "Privacidad y Permisos 13/14",
+      "path": "tracks/09-seguridad/modules/privacy-permisos/index.html",
+      "level": 2,
+      "parent": "track:09-seguridad",
+      "children": [
+        "lesson:09-seguridad/privacy-permisos/runtime-permissions",
+        "lesson:09-seguridad/privacy-permisos/photo-picker-perms",
+        "lesson:09-seguridad/privacy-permisos/privacy-sandbox"
+      ],
+      "tags": [
+        "privacy-permisos"
+      ]
+    },
+    {
+      "id": "lesson:09-seguridad/privacy-permisos/runtime-permissions",
+      "type": "Lesson",
+      "slug": "runtime-permissions",
+      "title": "Runtime permissions y rationale",
+      "path": "tracks/09-seguridad/modules/privacy-permisos/lessons/runtime-permissions.html",
+      "level": 3,
+      "parent": "module:09-seguridad/privacy-permisos",
+      "tags": [
+        "runtime-permissions",
+        "privacy-permisos",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "permission-runtime",
+        "privacy-sandbox"
+      ],
+      "definition": "Síntesis educativa de Runtime permissions y rationale.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__privacy-permisos__runtime-permissions.json",
+      "example": "kotlin:runtime-permissions"
+    },
+    {
+      "id": "lesson:09-seguridad/privacy-permisos/photo-picker-perms",
+      "type": "Lesson",
+      "slug": "photo-picker-perms",
+      "title": "Photo Picker y permisos granulares",
+      "path": "tracks/09-seguridad/modules/privacy-permisos/lessons/photo-picker-perms.html",
+      "level": 3,
+      "parent": "module:09-seguridad/privacy-permisos",
+      "tags": [
+        "photo-picker-perms",
+        "privacy-permisos",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Photo Picker y permisos granulares.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__privacy-permisos__photo-picker-perms.json",
+      "example": "kotlin:photo-picker-perms"
+    },
+    {
+      "id": "lesson:09-seguridad/privacy-permisos/privacy-sandbox",
+      "type": "Lesson",
+      "slug": "privacy-sandbox",
+      "title": "Privacy Sandbox y data safety",
+      "path": "tracks/09-seguridad/modules/privacy-permisos/lessons/privacy-sandbox.html",
+      "level": 3,
+      "parent": "module:09-seguridad/privacy-permisos",
+      "tags": [
+        "privacy-sandbox",
+        "privacy-permisos",
+        "09-seguridad"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "permission-runtime",
+        "privacy-sandbox"
+      ],
+      "definition": "Síntesis educativa de Privacy Sandbox y data safety.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/09-seguridad__privacy-permisos__privacy-sandbox.json",
+      "example": "kotlin:privacy-sandbox"
+    },
+    {
+      "id": "track:10-publicacion",
+      "type": "Track",
+      "slug": "10-publicacion",
+      "title": "Publicación, CI/CD y Ecosistema Expandido",
+      "path": "tracks/10-publicacion/index.html",
+      "level": 1,
+      "parent": "root",
+      "children": [
+        "module:10-publicacion/play-publish",
+        "module:10-publicacion/cicd-devops",
+        "module:10-publicacion/wear-tv-auto",
+        "module:10-publicacion/xr-foldables",
+        "module:10-publicacion/enterprise-distribucion"
+      ],
+      "tags": [
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "java"
+      ],
+      "protocols": [
+        "https"
+      ]
+    },
+    {
+      "id": "module:10-publicacion/play-publish",
+      "type": "Module",
+      "slug": "play-publish",
+      "title": "Google Play: firma y publicación",
+      "path": "tracks/10-publicacion/modules/play-publish/index.html",
+      "level": 2,
+      "parent": "track:10-publicacion",
+      "children": [
+        "lesson:10-publicacion/play-publish/app-bundle",
+        "lesson:10-publicacion/play-publish/play-tracks",
+        "lesson:10-publicacion/play-publish/inapp-billing"
+      ],
+      "tags": [
+        "play-publish"
+      ]
+    },
+    {
+      "id": "lesson:10-publicacion/play-publish/app-bundle",
+      "type": "Lesson",
+      "slug": "app-bundle",
+      "title": "Android App Bundle y Play Signing",
+      "path": "tracks/10-publicacion/modules/play-publish/lessons/app-bundle.html",
+      "level": 3,
+      "parent": "module:10-publicacion/play-publish",
+      "tags": [
+        "app-bundle",
+        "play-publish",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Android App Bundle y Play Signing.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__play-publish__app-bundle.json",
+      "example": "kotlin:app-bundle"
+    },
+    {
+      "id": "lesson:10-publicacion/play-publish/play-tracks",
+      "type": "Lesson",
+      "slug": "play-tracks",
+      "title": "Tracks: internal/closed/open/prod y staged rollout",
+      "path": "tracks/10-publicacion/modules/play-publish/lessons/play-tracks.html",
+      "level": 3,
+      "parent": "module:10-publicacion/play-publish",
+      "tags": [
+        "play-tracks",
+        "play-publish",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Tracks: internal/closed/open/prod y staged rollout.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__play-publish__play-tracks.json",
+      "example": "kotlin:play-tracks"
+    },
+    {
+      "id": "lesson:10-publicacion/play-publish/inapp-billing",
+      "type": "Lesson",
+      "slug": "inapp-billing",
+      "title": "In-App Billing y subscriptions",
+      "path": "tracks/10-publicacion/modules/play-publish/lessons/inapp-billing.html",
+      "level": 3,
+      "parent": "module:10-publicacion/play-publish",
+      "tags": [
+        "inapp-billing",
+        "play-publish",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de In-App Billing y subscriptions.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__play-publish__inapp-billing.json",
+      "example": "kotlin:inapp-billing"
+    },
+    {
+      "id": "module:10-publicacion/cicd-devops",
+      "type": "Module",
+      "slug": "cicd-devops",
+      "title": "CI/CD y DevOps",
+      "path": "tracks/10-publicacion/modules/cicd-devops/index.html",
+      "level": 2,
+      "parent": "track:10-publicacion",
+      "children": [
+        "lesson:10-publicacion/cicd-devops/github-actions",
+        "lesson:10-publicacion/cicd-devops/fastlane-ci",
+        "lesson:10-publicacion/cicd-devops/quality-gates"
+      ],
+      "tags": [
+        "cicd-devops"
+      ]
+    },
+    {
+      "id": "lesson:10-publicacion/cicd-devops/github-actions",
+      "type": "Lesson",
+      "slug": "github-actions",
+      "title": "GitHub Actions y Gradle cache",
+      "path": "tracks/10-publicacion/modules/cicd-devops/lessons/github-actions.html",
+      "level": 3,
+      "parent": "module:10-publicacion/cicd-devops",
+      "tags": [
+        "github-actions",
+        "cicd-devops",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de GitHub Actions y Gradle cache.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__cicd-devops__github-actions.json",
+      "example": "kotlin:github-actions"
+    },
+    {
+      "id": "lesson:10-publicacion/cicd-devops/fastlane-ci",
+      "type": "Lesson",
+      "slug": "fastlane-ci",
+      "title": "Fastlane, version bump y deploy",
+      "path": "tracks/10-publicacion/modules/cicd-devops/lessons/fastlane-ci.html",
+      "level": 3,
+      "parent": "module:10-publicacion/cicd-devops",
+      "tags": [
+        "fastlane-ci",
+        "cicd-devops",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Fastlane, version bump y deploy.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__cicd-devops__fastlane-ci.json",
+      "example": "kotlin:fastlane-ci"
+    },
+    {
+      "id": "lesson:10-publicacion/cicd-devops/quality-gates",
+      "type": "Lesson",
+      "slug": "quality-gates",
+      "title": "Quality gates: lint, detekt, coverage",
+      "path": "tracks/10-publicacion/modules/cicd-devops/lessons/quality-gates.html",
+      "level": 3,
+      "parent": "module:10-publicacion/cicd-devops",
+      "tags": [
+        "quality-gates",
+        "cicd-devops",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Quality gates: lint, detekt, coverage.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__cicd-devops__quality-gates.json",
+      "example": "kotlin:quality-gates"
+    },
+    {
+      "id": "module:10-publicacion/wear-tv-auto",
+      "type": "Module",
+      "slug": "wear-tv-auto",
+      "title": "Wear OS, TV y Auto",
+      "path": "tracks/10-publicacion/modules/wear-tv-auto/index.html",
+      "level": 2,
+      "parent": "track:10-publicacion",
+      "children": [
+        "lesson:10-publicacion/wear-tv-auto/wear-compose",
+        "lesson:10-publicacion/wear-tv-auto/tv-compose",
+        "lesson:10-publicacion/wear-tv-auto/auto-projected"
+      ],
+      "tags": [
+        "wear-tv-auto"
+      ]
+    },
+    {
+      "id": "lesson:10-publicacion/wear-tv-auto/wear-compose",
+      "type": "Lesson",
+      "slug": "wear-compose",
+      "title": "Wear Compose y Tiles",
+      "path": "tracks/10-publicacion/modules/wear-tv-auto/lessons/wear-compose.html",
+      "level": 3,
+      "parent": "module:10-publicacion/wear-tv-auto",
+      "tags": [
+        "wear-compose",
+        "wear-tv-auto",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Wear Compose y Tiles.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__wear-tv-auto__wear-compose.json",
+      "example": "kotlin:wear-compose"
+    },
+    {
+      "id": "lesson:10-publicacion/wear-tv-auto/tv-compose",
+      "type": "Lesson",
+      "slug": "tv-compose",
+      "title": "Android TV y Compose for TV",
+      "path": "tracks/10-publicacion/modules/wear-tv-auto/lessons/tv-compose.html",
+      "level": 3,
+      "parent": "module:10-publicacion/wear-tv-auto",
+      "tags": [
+        "tv-compose",
+        "wear-tv-auto",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Android TV y Compose for TV.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__wear-tv-auto__tv-compose.json",
+      "example": "kotlin:tv-compose"
+    },
+    {
+      "id": "lesson:10-publicacion/wear-tv-auto/auto-projected",
+      "type": "Lesson",
+      "slug": "auto-projected",
+      "title": "Android Auto y Automotive OS",
+      "path": "tracks/10-publicacion/modules/wear-tv-auto/lessons/auto-projected.html",
+      "level": 3,
+      "parent": "module:10-publicacion/wear-tv-auto",
+      "tags": [
+        "auto-projected",
+        "wear-tv-auto",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Android Auto y Automotive OS.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__wear-tv-auto__auto-projected.json",
+      "example": "kotlin:auto-projected"
+    },
+    {
+      "id": "module:10-publicacion/xr-foldables",
+      "type": "Module",
+      "slug": "xr-foldables",
+      "title": "Foldables, Tablets y XR",
+      "path": "tracks/10-publicacion/modules/xr-foldables/index.html",
+      "level": 2,
+      "parent": "track:10-publicacion",
+      "children": [
+        "lesson:10-publicacion/xr-foldables/foldables-adaptive",
+        "lesson:10-publicacion/xr-foldables/tablets-responsive",
+        "lesson:10-publicacion/xr-foldables/xr-jetpack"
+      ],
+      "tags": [
+        "xr-foldables"
+      ]
+    },
+    {
+      "id": "lesson:10-publicacion/xr-foldables/foldables-adaptive",
+      "type": "Lesson",
+      "slug": "foldables-adaptive",
+      "title": "Foldables y postures",
+      "path": "tracks/10-publicacion/modules/xr-foldables/lessons/foldables-adaptive.html",
+      "level": 3,
+      "parent": "module:10-publicacion/xr-foldables",
+      "tags": [
+        "foldables-adaptive",
+        "xr-foldables",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "ble",
+        "gatt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Foldables y postures.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__xr-foldables__foldables-adaptive.json",
+      "example": "kotlin:foldables-adaptive"
+    },
+    {
+      "id": "lesson:10-publicacion/xr-foldables/tablets-responsive",
+      "type": "Lesson",
+      "slug": "tablets-responsive",
+      "title": "Tablets y large screens",
+      "path": "tracks/10-publicacion/modules/xr-foldables/lessons/tablets-responsive.html",
+      "level": 3,
+      "parent": "module:10-publicacion/xr-foldables",
+      "tags": [
+        "tablets-responsive",
+        "xr-foldables",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [
+        "ble",
+        "gatt"
+      ],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Tablets y large screens.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__xr-foldables__tablets-responsive.json",
+      "example": "kotlin:tablets-responsive"
+    },
+    {
+      "id": "lesson:10-publicacion/xr-foldables/xr-jetpack",
+      "type": "Lesson",
+      "slug": "xr-jetpack",
+      "title": "Jetpack XR y ARCore",
+      "path": "tracks/10-publicacion/modules/xr-foldables/lessons/xr-jetpack.html",
+      "level": 3,
+      "parent": "module:10-publicacion/xr-foldables",
+      "tags": [
+        "xr-jetpack",
+        "xr-foldables",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Jetpack XR y ARCore.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__xr-foldables__xr-jetpack.json",
+      "example": "kotlin:xr-jetpack"
+    },
+    {
+      "id": "module:10-publicacion/enterprise-distribucion",
+      "type": "Module",
+      "slug": "enterprise-distribucion",
+      "title": "Enterprise y Distribución Avanzada",
+      "path": "tracks/10-publicacion/modules/enterprise-distribucion/index.html",
+      "level": 2,
+      "parent": "track:10-publicacion",
+      "children": [
+        "lesson:10-publicacion/enterprise-distribucion/managed-google-play",
+        "lesson:10-publicacion/enterprise-distribucion/device-policy",
+        "lesson:10-publicacion/enterprise-distribucion/agentes-skills"
+      ],
+      "tags": [
+        "enterprise-distribucion"
+      ]
+    },
+    {
+      "id": "lesson:10-publicacion/enterprise-distribucion/managed-google-play",
+      "type": "Lesson",
+      "slug": "managed-google-play",
+      "title": "Managed Google Play y EMM",
+      "path": "tracks/10-publicacion/modules/enterprise-distribucion/lessons/managed-google-play.html",
+      "level": 3,
+      "parent": "module:10-publicacion/enterprise-distribucion",
+      "tags": [
+        "managed-google-play",
+        "enterprise-distribucion",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Managed Google Play y EMM.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__enterprise-distribucion__managed-google-play.json",
+      "example": "kotlin:managed-google-play"
+    },
+    {
+      "id": "lesson:10-publicacion/enterprise-distribucion/device-policy",
+      "type": "Lesson",
+      "slug": "device-policy",
+      "title": "Device Policy y work profiles",
+      "path": "tracks/10-publicacion/modules/enterprise-distribucion/lessons/device-policy.html",
+      "level": 3,
+      "parent": "module:10-publicacion/enterprise-distribucion",
+      "tags": [
+        "device-policy",
+        "enterprise-distribucion",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Device Policy y work profiles.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__enterprise-distribucion__device-policy.json",
+      "example": "kotlin:device-policy"
+    },
+    {
+      "id": "lesson:10-publicacion/enterprise-distribucion/agentes-skills",
+      "type": "Lesson",
+      "slug": "agentes-skills",
+      "title": "Agentes IA con skills y orquestación",
+      "path": "tracks/10-publicacion/modules/enterprise-distribucion/lessons/agentes-skills.html",
+      "level": 3,
+      "parent": "module:10-publicacion/enterprise-distribucion",
+      "tags": [
+        "agentes-skills",
+        "enterprise-distribucion",
+        "10-publicacion"
+      ],
+      "languages": [
+        "kotlin",
+        "xml"
+      ],
+      "protocols": [],
+      "criteria": [
+        "api-level",
+        "cts"
+      ],
+      "definition": "Síntesis educativa de Agentes IA con skills y orquestación.",
+      "source_canonical": "https://developer.android.com",
+      "embeddings": "chunks/10-publicacion__enterprise-distribucion__agentes-skills.json",
+      "example": "kotlin:agentes-skills"
+    },
+    {
+      "id": "doc:estandares",
+      "type": "Doc",
+      "slug": "estandares",
+      "title": "Estándares HTML5, Protocolos y Criterios",
+      "path": "docs/estandares/index.html",
+      "level": 1,
+      "parent": "root",
+      "tags": [
+        "estandares"
+      ]
+    },
+    {
+      "id": "doc:glosario",
+      "type": "Doc",
+      "slug": "glosario",
+      "title": "Glosario Android — Definiciones de Plataforma",
+      "path": "docs/glosario/index.html",
+      "level": 1,
+      "parent": "root",
+      "tags": [
+        "glosario"
+      ]
+    },
+    {
+      "id": "doc:arquitectura-global",
+      "type": "Doc",
+      "slug": "arquitectura-global",
+      "title": "Arquitectura Global y Criterios de Consolidación",
+      "path": "docs/arquitectura-global/index.html",
+      "level": 1,
+      "parent": "root",
+      "tags": [
+        "arquitectura-global"
+      ]
+    },
+    {
+      "id": "doc:agentes",
+      "type": "Doc",
+      "slug": "agentes",
+      "title": "Agentes con Skills — Orquestación al estilo Coursera",
+      "path": "docs/agentes/index.html",
+      "level": 1,
+      "parent": "root",
+      "tags": [
+        "agentes"
+      ]
+    },
+    {
+      "id": "doc:sobre-mi",
+      "type": "Doc",
+      "slug": "sobre-mi",
+      "title": "Sobre este asistente — Prompt sobre mí mismo",
+      "path": "docs/sobre-mi/index.html",
+      "level": 1,
+      "parent": "root",
+      "tags": [
+        "sobre-mi"
+      ]
+    }
+  ]
+}

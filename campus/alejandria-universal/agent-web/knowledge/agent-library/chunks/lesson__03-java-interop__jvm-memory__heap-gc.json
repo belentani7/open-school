@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/jvm-memory/heap-gc",
+  "text": "Título: Heap, GC y referencias. Contexto: heap-gc, jvm-memory, 03-java-interop. Definición: Síntesis educativa de Heap, GC y referencias. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/jvm-memory/lessons/heap-gc.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "Heap, GC y referencias",
+    "path": "tracks/03-java-interop/modules/jvm-memory/lessons/heap-gc.html",
+    "tags": [
+      "heap-gc",
+      "jvm-memory",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Heap, GC y referencias. Usar para responder con cita a tracks/03-java-interop/modules/jvm-memory/lessons/heap-gc.html."
+}

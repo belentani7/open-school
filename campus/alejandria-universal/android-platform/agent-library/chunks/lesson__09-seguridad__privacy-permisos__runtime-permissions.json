@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/privacy-permisos/runtime-permissions",
+  "text": "Título: Runtime permissions y rationale. Contexto: runtime-permissions, privacy-permisos, 09-seguridad. Definición: Síntesis educativa de Runtime permissions y rationale. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/privacy-permisos/lessons/runtime-permissions.html. Criterios: permission-runtime, privacy-sandbox. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Runtime permissions y rationale",
+    "path": "tracks/09-seguridad/modules/privacy-permisos/lessons/runtime-permissions.html",
+    "tags": [
+      "runtime-permissions",
+      "privacy-permisos",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Runtime permissions y rationale. Usar para responder con cita a tracks/09-seguridad/modules/privacy-permisos/lessons/runtime-permissions.html."
+}

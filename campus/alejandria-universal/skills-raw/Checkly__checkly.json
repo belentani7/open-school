@@ -1,0 +1,11 @@
+{
+  "repo": "Checkly/checkly",
+  "stars": 20,
+  "desc": "Go SDK library for use with the Checkly API",
+  "topics": [
+    "checkly",
+    "go",
+    "golang",
+    "sdk"
+  ]
+}

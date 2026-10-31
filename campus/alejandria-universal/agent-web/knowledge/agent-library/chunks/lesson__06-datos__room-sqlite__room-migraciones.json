@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/room-sqlite/room-migraciones",
+  "text": "Título: Migraciones, AutoMigrations y testing. Contexto: room-migraciones, room-sqlite, 06-datos. Definición: Síntesis educativa de Migraciones, AutoMigrations y testing. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/room-sqlite/lessons/room-migraciones.html. Criterios: api-level, cts. Lenguajes: kotlin, sql. Protocolos: .",
+  "metadata": {
+    "title": "Migraciones, AutoMigrations y testing",
+    "path": "tracks/06-datos/modules/room-sqlite/lessons/room-migraciones.html",
+    "tags": [
+      "room-migraciones",
+      "room-sqlite",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Migraciones, AutoMigrations y testing. Usar para responder con cita a tracks/06-datos/modules/room-sqlite/lessons/room-migraciones.html."
+}

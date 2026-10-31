@@ -1,0 +1,28 @@
+{
+  "skills": [
+    "a11y-fix",
+    "api-mock",
+    "browser-automation",
+    "cron-orchestrator",
+    "db-migration",
+    "db-seed",
+    "e2e-heal",
+    "email-template",
+    "env-sync",
+    "i18n-extract",
+    "payment-test",
+    "perf-budget",
+    "release-notes",
+    "repo-map",
+    "sast-triage",
+    "sbom-gen",
+    "seo-audit",
+    "test-generation",
+    "visual-diff",
+    "webhook-replay"
+  ],
+  "count": 20,
+  "harvested_repos": 51,
+  "total_raw": 500,
+  "demo": 52
+}

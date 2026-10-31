@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/gradle-build/build-variants",
+  "text": "Título: Build Types, Flavors y BuildConfig. Contexto: build-variants, gradle-build, 01-fundamentos. Definición: Síntesis educativa de Build Types, Flavors y BuildConfig. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/gradle-build/lessons/build-variants.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Build Types, Flavors y BuildConfig",
+    "path": "tracks/01-fundamentos/modules/gradle-build/lessons/build-variants.html",
+    "tags": [
+      "build-variants",
+      "gradle-build",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Build Types, Flavors y BuildConfig. Usar para responder con cita a tracks/01-fundamentos/modules/gradle-build/lessons/build-variants.html."
+}

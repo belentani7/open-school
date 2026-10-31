@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/media-audio/speech-tts",
+  "text": "Título: Speech-to-Text y TTS. Contexto: speech-tts, media-audio, 08-sistema. Definición: Síntesis educativa de Speech-to-Text y TTS. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/media-audio/lessons/speech-tts.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Speech-to-Text y TTS",
+    "path": "tracks/08-sistema/modules/media-audio/lessons/speech-tts.html",
+    "tags": [
+      "speech-tts",
+      "media-audio",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Speech-to-Text y TTS. Usar para responder con cita a tracks/08-sistema/modules/media-audio/lessons/speech-tts.html."
+}

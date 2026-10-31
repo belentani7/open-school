@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/grpc-protobuf/protobuf-contracts",
+  "text": "Título: Protobuf como contrato. Contexto: protobuf-contracts, grpc-protobuf, 07-conectividad. Definición: Síntesis educativa de Protobuf como contrato. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/grpc-protobuf/lessons/protobuf-contracts.html. Criterios: api-level, cts. Lenguajes: proto, kotlin. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "Protobuf como contrato",
+    "path": "tracks/07-conectividad/modules/grpc-protobuf/lessons/protobuf-contracts.html",
+    "tags": [
+      "protobuf-contracts",
+      "grpc-protobuf",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Protobuf como contrato. Usar para responder con cita a tracks/07-conectividad/modules/grpc-protobuf/lessons/protobuf-contracts.html."
+}

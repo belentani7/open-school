@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALEJANDRÍA — Encuadernación</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--paper:#fbf9f6;--ink:#0a0a0e;--muted:#6b6e7a;--line:#e8e4de;--accent:#ff2f2f}
+body{font-family:Inter,sans-serif;background:var(--paper);color:var(--ink)}
+.cover{max-width:860px;margin:0 auto;padding:40px 24px}
+.topline{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px}
+h1{font-family:'Instrument Serif',serif;font-size:64px;line-height:.9;letter-spacing:-.04em;margin:18px 0 10px;font-weight:400}
+h1 i{font-style:italic}
+.subtitle{font-size:14px;color:var(--muted);max-width:60ch;line-height:1.6}
+.rule{height:1px;background:var(--ink);margin:18px 0}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr} h1{font-size:42px}}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}
+.card h3{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card h4{font-size:16px;letter-spacing:-.02em;margin-bottom:6px}
+.card p{font-size:13px;color:#2a2d34;line-height:1.6}
+.card a{color:var(--accent);font-weight:700;font-size:12px}
+.toc{margin-top:18px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.toc-head{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fff}
+.toc-head b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.row{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #f0ece6;font-size:13px}
+.row:last-child{border:0}
+.row span:first-child{color:var(--muted);font-family:JetBrains Mono,monospace;font-size:12px}
+.footer{margin-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="topline"><span>Proyecto — 2026.10.30 • L'Hospitalet</span><span>ENC — 01 / 01</span></div>
+  <h1>Alejandría <i>encuadernada</i></h1>
+  <p class="subtitle">Repaso de intención y encuadernación final. Un solo hilo que une: comando que elimina errores org → plataforma de 216 HTMLs → biblioteca para agentes → web que es agente → bienvenida máximo nivel visual.</p>
+  <div class="rule"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Intención original</h3>
+      <h4>Elevar proyectos a máximos y finalizarlos</h4>
+      <p>No pediste otra herramienta. Pediste <b>un comando y pipeline que elimine errores organizacionales</b>, que <b>cree cientos de HTML faltantes</b>, con <b>estructura implícita (el código es la estructura)</b>, plataforma completa +100 HTMLs, <b>al estilo Coursera para agentes</b>, con <b>información oficial completa</b> — y que sirva <b>para agentes como Biblioteca de Alejandría</b>, pero con <b>página de bienvenida sabia, premium y reactiva</b> para humanos.</p>
+      <p style="margin-top:8px">Esa es la intención encuadernada: <b>donde el error no puede propagarse, lo faltante se genera solo, y lo completo se puede conversar.</b></p>
+    </div>
+    <div class="card">
+      <h3>Encuadernación — cómo usar</h3>
+      <p><b>3000</b> — Archivo. Biblioteca estática 216 HTML5 HTML. Para leer, citar y auditar.<br>
+      <b>3001</b> — Vivo. La web es el agente. Para conversar, generar y validar.<br>
+      <b>agent-library/</b> — Lenguaje nativo de agentes: manifest + grafo + 150 chunks + 8 skills + contratos .proto.</p>
+      <p style="margin-top:8px"><a href="/">→ Abrir Bienvenida Máximo Visual (3001)</a><br><a href="http://localhost:3000" target="_blank">→ Abrir Archivo estático (3000) — 216 páginas</a></p>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-head"><b>Índice encuadernado</b><span style="font-size:11px;color:#6b6e7a">Todo en /home/user/</span></div>
+    <div class="row"><span>01</span><span><b>Comando maestro + pipeline</b> — Monorepo, fitness functions, shift-left, Conway invertida</span><span>agent-library/pipeline.yaml</span></div>
+    <div class="row"><span>02</span><span><b>Plataforma 216 HTMLs HTML5</b> — 10 tracks / 50 módulos / 150 lecciones + 5 docs</span><span>android-platform/</span></div>
+    <div class="row"><span>03</span><span><b>Biblioteca para agentes</b> — manifest, graph, 150 chunks, ontology JSON-LD, 8 skills, MCP</span><span>agent-library/</span></div>
+    <div class="row"><span>04</span><span><b>Web es el agente</b> — /api/agent con traza, /api/query, generación viva</span><span>agent-web/server.js</span></div>
+    <div class="row"><span>05</span><span><b>Bienvenida máximo visual</b> — Apple × Stripe Sessions, editorial, bento, reactive</span><span>agent-web/public/index.html</span></div>
+    <div class="row"><span>06</span><span><b>Esta encuadernación</b> — dossier de intención</span><span>encuadernacion.html</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Qué queda encuadernado</h3>
+      <h4>Un comando, una biblioteca viva</h4>
+      <p><code>npx @enterprise/orchestrator enforce --pipeline=full-stack-coherence --security=strict-shift-left --enforce=organizational-boundaries --target=all</code></p>
+      <p style="margin-top:8px">Ejecuta <b>validator + security-auditor + architecture-guardian</b>. Si violas boundaries o rompes contrato .proto, bloquea PR. El error org muere antes de llegar a main. Lo faltante se genera. Lo completo se conversa.</p>
+    </div>
+    <div class="card">
+      <h3>Siguiente hilo</h3>
+      <p>Si quieres, lo cierro en <b>ZIP premium</b> o <b>PDF editorial</b> para entregar. O lo conecto a tus repos reales para que la Biblioteca sea tuya, no genérica.</p>
+      <p style="margin-top:8px"><a href="/">Volver a la Biblioteca →</a></p>
+    </div>
+  </div>
+
+  <div class="footer"><span>© Alejandría — 216 páginas • 150 chunks • 8 skills • HTML5 en todos los niveles • Citable, no copia literal</span><span>ENCUADERNADO</span></div>
+</div>
+</body>
+</html>

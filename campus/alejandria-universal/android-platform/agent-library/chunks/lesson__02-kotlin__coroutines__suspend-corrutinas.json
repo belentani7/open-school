@@ -1,0 +1,16 @@
+{
+  "id": "lesson:02-kotlin/coroutines/suspend-corrutinas",
+  "text": "Título: suspend, launch, async y scopes. Contexto: suspend-corrutinas, coroutines, 02-kotlin. Definición: Síntesis educativa de suspend, launch, async y scopes. Fuente canónica: https://kotlinlang.org/docs/home.html. Path: tracks/02-kotlin/modules/coroutines/lessons/suspend-corrutinas.html. Criterios: api-level, cts. Lenguajes: kotlin, kotlin-coroutines, kotlin-flow. Protocolos: .",
+  "metadata": {
+    "title": "suspend, launch, async y scopes",
+    "path": "tracks/02-kotlin/modules/coroutines/lessons/suspend-corrutinas.html",
+    "tags": [
+      "suspend-corrutinas",
+      "coroutines",
+      "02-kotlin"
+    ],
+    "source": "https://kotlinlang.org/docs/home.html",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de suspend, launch, async y scopes. Usar para responder con cita a tracks/02-kotlin/modules/coroutines/lessons/suspend-corrutinas.html."
+}

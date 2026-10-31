@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/preferences-datastore/datastore-proto",
+  "text": "Título: Proto DataStore y Preferences. Contexto: datastore-proto, preferences-datastore, 06-datos. Definición: Síntesis educativa de Proto DataStore y Preferences. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/preferences-datastore/lessons/datastore-proto.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Proto DataStore y Preferences",
+    "path": "tracks/06-datos/modules/preferences-datastore/lessons/datastore-proto.html",
+    "tags": [
+      "datastore-proto",
+      "preferences-datastore",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Proto DataStore y Preferences. Usar para responder con cita a tracks/06-datos/modules/preferences-datastore/lessons/datastore-proto.html."
+}

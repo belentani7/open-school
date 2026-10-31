@@ -1,0 +1,27 @@
+{
+  "repo": "n8n-io/n8n",
+  "stars": 209144,
+  "desc": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+  "topics": [
+    "ai",
+    "apis",
+    "automation",
+    "cli",
+    "data-flow",
+    "development",
+    "integration-framework",
+    "integrations",
+    "ipaas",
+    "low-code",
+    "low-code-platform",
+    "mcp",
+    "mcp-client",
+    "mcp-server",
+    "n8n",
+    "no-code",
+    "self-hosted",
+    "typescript",
+    "workflow",
+    "workflow-automation"
+  ]
+}

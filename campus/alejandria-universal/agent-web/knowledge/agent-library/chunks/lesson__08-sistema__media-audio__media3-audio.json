@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/media-audio/media3-audio",
+  "text": "Título: Media3: ExoPlayer y session. Contexto: media3-audio, media-audio, 08-sistema. Definición: Síntesis educativa de Media3: ExoPlayer y session. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/media-audio/lessons/media3-audio.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Media3: ExoPlayer y session",
+    "path": "tracks/08-sistema/modules/media-audio/lessons/media3-audio.html",
+    "tags": [
+      "media3-audio",
+      "media-audio",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Media3: ExoPlayer y session. Usar para responder con cita a tracks/08-sistema/modules/media-audio/lessons/media3-audio.html."
+}

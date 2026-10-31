@@ -21,6 +21,11 @@ personas que se reciclan.
 | **Cruzando el Charco** | Acogida y arraigo | [Cruzando el Charco](https://belentani7.github.io/Cruzando-el-charco/) |
 | **secure-t** | Ciberseguridad e IA | [secure-t](https://belentani7.github.io/secure-t/) |
 
+> **Alejandría Universal** (integrada el 2026-10-31): 20 tracks de desarrollo de
+> producto, 10 tracks de Android y una biblioteca para agentes. Es contenido
+> local en [`campus/alejandria-universal/`](campus/alejandria-universal/README.md),
+> todavía **no publicado**. Cifras reales y procedencia en su `MANIFEST.json`.
+
 ---
 
 ## Material real, curso por curso

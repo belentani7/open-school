@@ -1,0 +1,24 @@
+{
+  "id": "i18n-extract",
+  "name": "i18n-extract",
+  "category": "global",
+  "description": "Extrae strings, genera JSONs de localización. De alibaba/lowcode-engine",
+  "source_repos": "alibaba/lowcode-engine",
+  "inputs": [
+    "manifest.json",
+    "**/*.{ts,js,md}"
+  ],
+  "outputs": [
+    "artifacts/i18n-extract/*"
+  ],
+  "tools": [
+    "i18n-extract",
+    "read_file",
+    "write_file",
+    "validate"
+  ],
+  "prompt": "Eres skill i18n-extract. Aplica patrón de Extrae strings, genera JSONs de localización.. Si fallas, bloquea PR.",
+  "version": "1.0.0",
+  "harvested_from": "anthropics/anthropic-cookbook, anthropics/claude-code",
+  "harvested_at": "2026-10-30T20:46:10.754Z"
+}

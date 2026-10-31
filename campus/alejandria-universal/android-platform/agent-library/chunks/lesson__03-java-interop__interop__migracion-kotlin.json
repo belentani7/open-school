@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/interop/migracion-kotlin",
+  "text": "Título: Estrategia de migración Java → Kotlin. Contexto: migracion-kotlin, interop, 03-java-interop. Definición: Síntesis educativa de Estrategia de migración Java → Kotlin. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/interop/lessons/migracion-kotlin.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "Estrategia de migración Java → Kotlin",
+    "path": "tracks/03-java-interop/modules/interop/lessons/migracion-kotlin.html",
+    "tags": [
+      "migracion-kotlin",
+      "interop",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Estrategia de migración Java → Kotlin. Usar para responder con cita a tracks/03-java-interop/modules/interop/lessons/migracion-kotlin.html."
+}

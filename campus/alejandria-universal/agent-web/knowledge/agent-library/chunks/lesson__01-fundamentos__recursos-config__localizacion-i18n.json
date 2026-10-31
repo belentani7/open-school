@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/recursos-config/localizacion-i18n",
+  "text": "Título: Internacionalización y plurales. Contexto: localizacion-i18n, recursos-config, 01-fundamentos. Definición: Síntesis educativa de Internacionalización y plurales. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/recursos-config/lessons/localizacion-i18n.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Internacionalización y plurales",
+    "path": "tracks/01-fundamentos/modules/recursos-config/lessons/localizacion-i18n.html",
+    "tags": [
+      "localizacion-i18n",
+      "recursos-config",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Internacionalización y plurales. Usar para responder con cita a tracks/01-fundamentos/modules/recursos-config/lessons/localizacion-i18n.html."
+}

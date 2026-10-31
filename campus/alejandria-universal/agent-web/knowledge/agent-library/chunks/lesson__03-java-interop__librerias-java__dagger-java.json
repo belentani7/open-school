@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/librerias-java/dagger-java",
+  "text": "Título: Dagger/Hilt y anotaciones. Contexto: dagger-java, librerias-java, 03-java-interop. Definición: Síntesis educativa de Dagger/Hilt y anotaciones. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/librerias-java/lessons/dagger-java.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "Dagger/Hilt y anotaciones",
+    "path": "tracks/03-java-interop/modules/librerias-java/lessons/dagger-java.html",
+    "tags": [
+      "dagger-java",
+      "librerias-java",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Dagger/Hilt y anotaciones. Usar para responder con cita a tracks/03-java-interop/modules/librerias-java/lessons/dagger-java.html."
+}

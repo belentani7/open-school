@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/testing-calidad/e2e-ci",
+  "text": "Título: E2E, screenshot y CI sharding. Contexto: e2e-ci, testing-calidad, 09-seguridad. Definición: Síntesis educativa de E2E, screenshot y CI sharding. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/testing-calidad/lessons/e2e-ci.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "E2E, screenshot y CI sharding",
+    "path": "tracks/09-seguridad/modules/testing-calidad/lessons/e2e-ci.html",
+    "tags": [
+      "e2e-ci",
+      "testing-calidad",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de E2E, screenshot y CI sharding. Usar para responder con cita a tracks/09-seguridad/modules/testing-calidad/lessons/e2e-ci.html."
+}

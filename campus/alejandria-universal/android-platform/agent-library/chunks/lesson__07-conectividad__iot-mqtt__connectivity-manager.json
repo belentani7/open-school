@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/iot-mqtt/connectivity-manager",
+  "text": "Título: ConnectivityManager y NetworkCapabilities. Contexto: connectivity-manager, iot-mqtt, 07-conectividad. Definición: Síntesis educativa de ConnectivityManager y NetworkCapabilities. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/iot-mqtt/lessons/connectivity-manager.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "ConnectivityManager y NetworkCapabilities",
+    "path": "tracks/07-conectividad/modules/iot-mqtt/lessons/connectivity-manager.html",
+    "tags": [
+      "connectivity-manager",
+      "iot-mqtt",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de ConnectivityManager y NetworkCapabilities. Usar para responder con cita a tracks/07-conectividad/modules/iot-mqtt/lessons/connectivity-manager.html."
+}

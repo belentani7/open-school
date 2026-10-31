@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/offline-sync/datastore-preferences",
+  "text": "Título: DataStore vs SharedPreferences. Contexto: datastore-preferences, offline-sync, 05-arquitectura. Definición: Síntesis educativa de DataStore vs SharedPreferences. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/offline-sync/lessons/datastore-preferences.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "DataStore vs SharedPreferences",
+    "path": "tracks/05-arquitectura/modules/offline-sync/lessons/datastore-preferences.html",
+    "tags": [
+      "datastore-preferences",
+      "offline-sync",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de DataStore vs SharedPreferences. Usar para responder con cita a tracks/05-arquitectura/modules/offline-sync/lessons/datastore-preferences.html."
+}

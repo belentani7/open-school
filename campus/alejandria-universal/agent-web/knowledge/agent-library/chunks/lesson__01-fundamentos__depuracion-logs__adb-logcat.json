@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/depuracion-logs/adb-logcat",
+  "text": "Título: ADB, Logcat y Device Explorer. Contexto: adb-logcat, depuracion-logs, 01-fundamentos. Definición: Síntesis educativa de ADB, Logcat y Device Explorer. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/depuracion-logs/lessons/adb-logcat.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "ADB, Logcat y Device Explorer",
+    "path": "tracks/01-fundamentos/modules/depuracion-logs/lessons/adb-logcat.html",
+    "tags": [
+      "adb-logcat",
+      "depuracion-logs",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de ADB, Logcat y Device Explorer. Usar para responder con cita a tracks/01-fundamentos/modules/depuracion-logs/lessons/adb-logcat.html."
+}

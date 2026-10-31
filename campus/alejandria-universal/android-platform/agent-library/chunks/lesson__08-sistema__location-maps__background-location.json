@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/location-maps/background-location",
+  "text": "Título: Background location y permisos 10+. Contexto: background-location, location-maps, 08-sistema. Definición: Síntesis educativa de Background location y permisos 10+. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/location-maps/lessons/background-location.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Background location y permisos 10+",
+    "path": "tracks/08-sistema/modules/location-maps/lessons/background-location.html",
+    "tags": [
+      "background-location",
+      "location-maps",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Background location y permisos 10+. Usar para responder con cita a tracks/08-sistema/modules/location-maps/lessons/background-location.html."
+}

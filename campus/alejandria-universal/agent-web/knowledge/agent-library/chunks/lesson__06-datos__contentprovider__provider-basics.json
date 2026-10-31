@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/contentprovider/provider-basics",
+  "text": "Título: ContentProvider básico y contracts. Contexto: provider-basics, contentprovider, 06-datos. Definición: Síntesis educativa de ContentProvider básico y contracts. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/contentprovider/lessons/provider-basics.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "ContentProvider básico y contracts",
+    "path": "tracks/06-datos/modules/contentprovider/lessons/provider-basics.html",
+    "tags": [
+      "provider-basics",
+      "contentprovider",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de ContentProvider básico y contracts. Usar para responder con cita a tracks/06-datos/modules/contentprovider/lessons/provider-basics.html."
+}

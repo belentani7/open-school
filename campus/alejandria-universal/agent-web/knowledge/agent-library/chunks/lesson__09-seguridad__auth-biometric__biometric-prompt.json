@@ -1,0 +1,16 @@
+{
+  "id": "lesson:09-seguridad/auth-biometric/biometric-prompt",
+  "text": "Título: BiometricPrompt y fallback. Contexto: biometric-prompt, auth-biometric, 09-seguridad. Definición: Síntesis educativa de BiometricPrompt y fallback. Fuente canónica: https://developer.android.com. Path: tracks/09-seguridad/modules/auth-biometric/lessons/biometric-prompt.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "BiometricPrompt y fallback",
+    "path": "tracks/09-seguridad/modules/auth-biometric/lessons/biometric-prompt.html",
+    "tags": [
+      "biometric-prompt",
+      "auth-biometric",
+      "09-seguridad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de BiometricPrompt y fallback. Usar para responder con cita a tracks/09-seguridad/modules/auth-biometric/lessons/biometric-prompt.html."
+}

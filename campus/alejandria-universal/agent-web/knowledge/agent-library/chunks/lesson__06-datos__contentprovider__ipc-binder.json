@@ -1,0 +1,16 @@
+{
+  "id": "lesson:06-datos/contentprovider/ipc-binder",
+  "text": "Título: Binder, AIDL y comunicación inter-proceso. Contexto: ipc-binder, contentprovider, 06-datos. Definición: Síntesis educativa de Binder, AIDL y comunicación inter-proceso. Fuente canónica: https://developer.android.com. Path: tracks/06-datos/modules/contentprovider/lessons/ipc-binder.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Binder, AIDL y comunicación inter-proceso",
+    "path": "tracks/06-datos/modules/contentprovider/lessons/ipc-binder.html",
+    "tags": [
+      "ipc-binder",
+      "contentprovider",
+      "06-datos"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Binder, AIDL y comunicación inter-proceso. Usar para responder con cita a tracks/06-datos/modules/contentprovider/lessons/ipc-binder.html."
+}

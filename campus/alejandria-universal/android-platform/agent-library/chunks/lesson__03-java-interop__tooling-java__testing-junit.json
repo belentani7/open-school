@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/tooling-java/testing-junit",
+  "text": "Título: JUnit 4/5, Mockito y AssertJ. Contexto: testing-junit, tooling-java, 03-java-interop. Definición: Síntesis educativa de JUnit 4/5, Mockito y AssertJ. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/tooling-java/lessons/testing-junit.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "JUnit 4/5, Mockito y AssertJ",
+    "path": "tracks/03-java-interop/modules/tooling-java/lessons/testing-junit.html",
+    "tags": [
+      "testing-junit",
+      "tooling-java",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de JUnit 4/5, Mockito y AssertJ. Usar para responder con cita a tracks/03-java-interop/modules/tooling-java/lessons/testing-junit.html."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/jvm-memory/jni-ndk",
+  "text": "Título: JNI y NDK en proyectos híbridos. Contexto: jni-ndk, jvm-memory, 03-java-interop. Definición: Síntesis educativa de JNI y NDK en proyectos híbridos. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/jvm-memory/lessons/jni-ndk.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "JNI y NDK en proyectos híbridos",
+    "path": "tracks/03-java-interop/modules/jvm-memory/lessons/jni-ndk.html",
+    "tags": [
+      "jni-ndk",
+      "jvm-memory",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de JNI y NDK en proyectos híbridos. Usar para responder con cita a tracks/03-java-interop/modules/jvm-memory/lessons/jni-ndk.html."
+}

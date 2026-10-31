@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/navigation2/deeplinks-nav",
+  "text": "Título: Deep links y app links verificados. Contexto: deeplinks-nav, navigation2, 05-arquitectura. Definición: Síntesis educativa de Deep links y app links verificados. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/navigation2/lessons/deeplinks-nav.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Deep links y app links verificados",
+    "path": "tracks/05-arquitectura/modules/navigation2/lessons/deeplinks-nav.html",
+    "tags": [
+      "deeplinks-nav",
+      "navigation2",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Deep links y app links verificados. Usar para responder con cita a tracks/05-arquitectura/modules/navigation2/lessons/deeplinks-nav.html."
+}

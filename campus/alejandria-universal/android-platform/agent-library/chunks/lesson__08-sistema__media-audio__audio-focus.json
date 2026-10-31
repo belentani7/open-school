@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/media-audio/audio-focus",
+  "text": "Título: Audio focus y routing. Contexto: audio-focus, media-audio, 08-sistema. Definición: Síntesis educativa de Audio focus y routing. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/media-audio/lessons/audio-focus.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Audio focus y routing",
+    "path": "tracks/08-sistema/modules/media-audio/lessons/audio-focus.html",
+    "tags": [
+      "audio-focus",
+      "media-audio",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Audio focus y routing. Usar para responder con cita a tracks/08-sistema/modules/media-audio/lessons/audio-focus.html."
+}

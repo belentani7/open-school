@@ -1,0 +1,18 @@
+{
+  "id": "validator",
+  "name": "validator",
+  "description": "Valida HTML5, enlaces internos rotos, a11y y coherencia de breadcrumbs.",
+  "inputs": [
+    "**/*.html"
+  ],
+  "outputs": [
+    "reports/validation.json"
+  ],
+  "capabilities": [
+    "html-validation",
+    "link-check",
+    "a11y-wcag",
+    "coherence"
+  ],
+  "block": "PR si <95% o enlaces rotos>0"
+}

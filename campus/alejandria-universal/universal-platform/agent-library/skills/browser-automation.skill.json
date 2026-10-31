@@ -1,0 +1,24 @@
+{
+  "id": "browser-automation",
+  "name": "browser-automation",
+  "category": "testing",
+  "description": "Playwright/Cypress agente que navega, rellena y afirma. Extraído de microsoft/playwright, cypress-io/cypress, Checkly/checkly",
+  "source_repos": "playwright-community/playwright, cypress-io/cypress",
+  "inputs": [
+    "manifest.json",
+    "**/*.{ts,js,md}"
+  ],
+  "outputs": [
+    "artifacts/browser-automation/*"
+  ],
+  "tools": [
+    "browser-automation",
+    "read_file",
+    "write_file",
+    "validate"
+  ],
+  "prompt": "Eres skill browser-automation. Aplica patrón de Playwright/Cypress agente que navega, rellena y afirma. Extraído de microsoft/playwright, cypress-io/cypress, Checkly/checkly. Si fallas, bloquea PR.",
+  "version": "1.0.0",
+  "harvested_from": "anthropics/anthropic-cookbook, anthropics/claude-code",
+  "harvested_at": "2026-10-30T20:46:10.751Z"
+}

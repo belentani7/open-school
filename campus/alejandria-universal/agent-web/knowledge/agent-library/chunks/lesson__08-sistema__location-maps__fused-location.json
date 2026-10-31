@@ -1,0 +1,16 @@
+{
+  "id": "lesson:08-sistema/location-maps/fused-location",
+  "text": "Título: Fused Location Provider. Contexto: fused-location, location-maps, 08-sistema. Definición: Síntesis educativa de Fused Location Provider. Fuente canónica: https://developer.android.com. Path: tracks/08-sistema/modules/location-maps/lessons/fused-location.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Fused Location Provider",
+    "path": "tracks/08-sistema/modules/location-maps/lessons/fused-location.html",
+    "tags": [
+      "fused-location",
+      "location-maps",
+      "08-sistema"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Fused Location Provider. Usar para responder con cita a tracks/08-sistema/modules/location-maps/lessons/fused-location.html."
+}

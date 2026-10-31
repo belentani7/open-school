@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/bluetooth-nfc/ble-classic",
+  "text": "Título: BLE y Classic Bluetooth. Contexto: ble-classic, bluetooth-nfc, 07-conectividad. Definición: Síntesis educativa de BLE y Classic Bluetooth. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/bluetooth-nfc/lessons/ble-classic.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "BLE y Classic Bluetooth",
+    "path": "tracks/07-conectividad/modules/bluetooth-nfc/lessons/ble-classic.html",
+    "tags": [
+      "ble-classic",
+      "bluetooth-nfc",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de BLE y Classic Bluetooth. Usar para responder con cita a tracks/07-conectividad/modules/bluetooth-nfc/lessons/ble-classic.html."
+}

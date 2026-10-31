@@ -1,0 +1,16 @@
+{
+  "id": "lesson:01-fundamentos/gradle-build/signing-versioning",
+  "text": "Título: Firma, versionCode y versioning semántico. Contexto: signing-versioning, gradle-build, 01-fundamentos. Definición: Síntesis educativa de Firma, versionCode y versioning semántico. Fuente canónica: https://source.android.com / https://developer.android.com/guide. Path: tracks/01-fundamentos/modules/gradle-build/lessons/signing-versioning.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Firma, versionCode y versioning semántico",
+    "path": "tracks/01-fundamentos/modules/gradle-build/lessons/signing-versioning.html",
+    "tags": [
+      "signing-versioning",
+      "gradle-build",
+      "01-fundamentos"
+    ],
+    "source": "https://source.android.com / https://developer.android.com/guide",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Firma, versionCode y versioning semántico. Usar para responder con cita a tracks/01-fundamentos/modules/gradle-build/lessons/signing-versioning.html."
+}

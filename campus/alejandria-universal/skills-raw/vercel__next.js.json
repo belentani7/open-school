@@ -1,0 +1,21 @@
+{
+  "repo": "vercel/next.js",
+  "stars": 143212,
+  "desc": "The React Framework",
+  "topics": [
+    "blog",
+    "browser",
+    "compiler",
+    "components",
+    "hybrid",
+    "nextjs",
+    "node",
+    "react",
+    "server-rendering",
+    "ssg",
+    "static",
+    "static-site-generator",
+    "universal",
+    "vercel"
+  ]
+}

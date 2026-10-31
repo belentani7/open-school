@@ -1,0 +1,16 @@
+{
+  "id": "lesson:07-conectividad/http-retrofit/retrofit-okhttp",
+  "text": "Título: Retrofit, OkHttp y interceptors. Contexto: retrofit-okhttp, http-retrofit, 07-conectividad. Definición: Síntesis educativa de Retrofit, OkHttp y interceptors. Fuente canónica: https://developer.android.com. Path: tracks/07-conectividad/modules/http-retrofit/lessons/retrofit-okhttp.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: https, http2, tls1.3, grpc, websocket, mqtt.",
+  "metadata": {
+    "title": "Retrofit, OkHttp y interceptors",
+    "path": "tracks/07-conectividad/modules/http-retrofit/lessons/retrofit-okhttp.html",
+    "tags": [
+      "retrofit-okhttp",
+      "http-retrofit",
+      "07-conectividad"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Retrofit, OkHttp y interceptors. Usar para responder con cita a tracks/07-conectividad/modules/http-retrofit/lessons/retrofit-okhttp.html."
+}

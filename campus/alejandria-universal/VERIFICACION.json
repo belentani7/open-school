@@ -1,0 +1,113 @@
+{
+ "generado": "2026-10-31T04:28:29+00:00",
+ "destino": "C:\\Users\\USER\\belentani-ecosystem\\educacion\\open-school\\campus\\alejandria-universal",
+ "manifiesto_ficheros": 1892,
+ "faltan": [],
+ "hash_o_tamano_distinto": [],
+ "por_raiz": {
+  "agent-web": {
+   "ficheros": 410,
+   "html": 213,
+   "bytes": 7659340
+  },
+  "android-platform": {
+   "ficheros": 391,
+   "html": 216,
+   "bytes": 2727477
+  },
+  "harvest-50.js": {
+   "ficheros": 1,
+   "html": 0,
+   "bytes": 8260
+  },
+  "skills-raw": {
+   "ficheros": 52,
+   "html": 0,
+   "bytes": 16979
+  },
+  "universal-platform": {
+   "ficheros": 1038,
+   "html": 1007,
+   "bytes": 4514282
+  }
+ },
+ "secretos_reales": [],
+ "falsos_positivos": [
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/index.html",
+   "line": 62,
+   "texto": "</a><a class=\"card\" href=\"lessons/passkeys-credentials.html\" data-search=\"passkeys y credential manager passwordless 14+.\" style=\"display:block\">"
+  },
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/index.html",
+   "line": 65,
+   "texto": "<p style=\"font-size:14px;color:var(--muted)\">Passwordless 14+.</p>"
+  },
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 6,
+   "texto": "<meta name=\"description\" content=\"Passwordless 14+.\">"
+  },
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 52,
+   "texto": "<p class=\"lead\">Passwordless 14+.</p>"
+  },
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 58,
+   "texto": "<li>Comprender <strong>Passkeys y Credential Manager</strong>: Passwordless 14+.</li>"
+  },
+  {
+   "path": "agent-web/knowledge/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 66,
+   "texto": "<p><strong>Passkeys y Credential Manager</strong> — Passwordless 14+. Esta síntesis educativa resume la guía oficial sin reproducir texto propietario literal. Para el texto normati"
+  },
+  {
+   "path": "android-platform/generate.js",
+   "line": 315,
+   "texto": "{slug:'passkeys-credentials', title:'Passkeys y Credential Manager', summary:'Passwordless 14+.'},"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/index.html",
+   "line": 62,
+   "texto": "</a><a class=\"card\" href=\"lessons/passkeys-credentials.html\" data-search=\"passkeys y credential manager passwordless 14+.\" style=\"display:block\">"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/index.html",
+   "line": 65,
+   "texto": "<p style=\"font-size:14px;color:var(--muted)\">Passwordless 14+.</p>"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 6,
+   "texto": "<meta name=\"description\" content=\"Passwordless 14+.\">"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 52,
+   "texto": "<p class=\"lead\">Passwordless 14+.</p>"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 58,
+   "texto": "<li>Comprender <strong>Passkeys y Credential Manager</strong>: Passwordless 14+.</li>"
+  },
+  {
+   "path": "android-platform/tracks/09-seguridad/modules/auth-biometric/lessons/passkeys-credentials.html",
+   "line": 66,
+   "texto": "<p><strong>Passkeys y Credential Manager</strong> — Passwordless 14+. Esta síntesis educativa resume la guía oficial sin reproducir texto propietario literal. Para el texto normati"
+  },
+  {
+   "path": "universal-platform/demo-app/agent-workflow.js",
+   "line": 66,
+   "texto": "const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);"
+  },
+  {
+   "path": "universal-platform/demo-app/app/checkout.js",
+   "line": 10,
+   "texto": "const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);"
+  }
+ ],
+ "ok": true
+}

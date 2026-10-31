@@ -1,0 +1,16 @@
+{
+  "id": "lesson:03-java-interop/interop/platform-types",
+  "text": "Título: Platform types y anotaciones de nulabilidad. Contexto: platform-types, interop, 03-java-interop. Definición: Síntesis educativa de Platform types y anotaciones de nulabilidad. Fuente canónica: https://developer.android.com. Path: tracks/03-java-interop/modules/interop/lessons/platform-types.html. Criterios: api-level, cts. Lenguajes: java, kotlin. Protocolos: .",
+  "metadata": {
+    "title": "Platform types y anotaciones de nulabilidad",
+    "path": "tracks/03-java-interop/modules/interop/lessons/platform-types.html",
+    "tags": [
+      "platform-types",
+      "interop",
+      "03-java-interop"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Platform types y anotaciones de nulabilidad. Usar para responder con cita a tracks/03-java-interop/modules/interop/lessons/platform-types.html."
+}

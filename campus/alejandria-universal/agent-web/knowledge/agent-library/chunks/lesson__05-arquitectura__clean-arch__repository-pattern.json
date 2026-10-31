@@ -1,0 +1,16 @@
+{
+  "id": "lesson:05-arquitectura/clean-arch/repository-pattern",
+  "text": "Título: Repository, DataSource y mappers. Contexto: repository-pattern, clean-arch, 05-arquitectura. Definición: Síntesis educativa de Repository, DataSource y mappers. Fuente canónica: https://developer.android.com. Path: tracks/05-arquitectura/modules/clean-arch/lessons/repository-pattern.html. Criterios: api-level, cts. Lenguajes: kotlin, xml. Protocolos: .",
+  "metadata": {
+    "title": "Repository, DataSource y mappers",
+    "path": "tracks/05-arquitectura/modules/clean-arch/lessons/repository-pattern.html",
+    "tags": [
+      "repository-pattern",
+      "clean-arch",
+      "05-arquitectura"
+    ],
+    "source": "https://developer.android.com",
+    "level": 3
+  },
+  "embedding_hint": "Chunk para RAG de Repository, DataSource y mappers. Usar para responder con cita a tracks/05-arquitectura/modules/clean-arch/lessons/repository-pattern.html."
+}
