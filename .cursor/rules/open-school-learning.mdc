@@ -1,0 +1,32 @@
+---
+description: Reglas persistentes para currículo publicado y exportación HTML segura de Open School.
+alwaysApply: true
+---
+
+# Open School: reglas de proyecto
+
+## Fuente y límites de producto
+- Trata `client/src/lib/introLesson.ts`, `client/src/lib/courseUnits.ts` y `client/src/lib/plazaContent.ts` como fuentes editoriales; no inventes unidades ni dupliques lecciones para inflar el catálogo.
+- La biblioteca se deriva de las 12 unidades evaluables y 20 lecciones de Plaza. Conserva el recuento verificable y el enlace a la experiencia interactiva.
+- No presentes módulos previstos como publicados, ni emitas certificados o diagnósticos que esta plataforma no ofrece.
+- Usa datos ficticios en ejercicios; el progreso es local. No introduzcas telemetría, cuentas o transmisión de mensajes del tutor sin consentimiento explícito.
+
+## HTML y seguridad
+- Escapa siempre el contenido editorial antes de insertarlo en HTML. Mantén rutas de salida dentro de la carpeta generada y no ejecutes contenido importado como JavaScript.
+- Mantén las páginas estáticas sin scripts: son copias navegables del contenido publicado, no una segunda lógica de producto.
+- No edites manualmente `client/public/learning-library/` ni `dist/client/learning-library/`; se generan desde el contenido fuente y se ignoran en Git.
+
+## Diseño y accesibilidad
+- Conserva tokens, contraste, foco visible, salto al contenido, jerarquía semántica, navegación por teclado, diseño móvil, movimiento reducido y hoja imprimible.
+- Prefiere HTML semántico; añade ARIA solo cuando el elemento nativo no expresa el propósito.
+- Comprueba con Tab, Shift+Tab y Enter los controles que cambies; no comuniques estados solo por color.
+
+## Validación de este repositorio
+- Antes de publicar, ejecuta `pnpm check`, `pnpm test` y `pnpm build`; después ejecuta los recorridos Playwright desktop/móvil configurados en CI.
+- Un cambio de contenido o rutas debe actualizar sus pruebas. No declares despliegue válido hasta comprobar el artefacto y la URL de producción.
+
+## Documentación de referencia
+- Cursor Project Rules: https://docs.cursor.com/context/rules-for-ai
+- GitHub Actions Secure Use: https://docs.github.com/en/actions/reference/security/secure-use
+- Microsoft Edge, diseño accesible: https://learn.microsoft.com/en-us/microsoft-edge/accessibility/design
+- Microsoft Edge, prueba de teclado: https://learn.microsoft.com/en-us/microsoft-edge/devtools/accessibility/test-tab-enter-keys
