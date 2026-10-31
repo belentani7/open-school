@@ -42,7 +42,12 @@ describe('biblioteca HTML de Open School', () => {
       expect(html.length).toBeGreaterThan(450);
 
       for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
-        if (href.startsWith('#') || href.startsWith('/') || /^https?:/i.test(href)) continue;
+        if (href.startsWith('#') || /^https?:/i.test(href)) continue;
+        if (href.startsWith('../../../../courses/') || href === '../../../../plaza') {
+          const appTarget = resolve(dirname(file), href);
+          expect(appTarget.startsWith(resolve(output, '..') + sep)).toBe(true);
+          continue;
+        }
         const target = resolve(dirname(file), href);
         expect(target.startsWith(output + sep)).toBe(true);
         expect(existsSync(target), href + ' from ' + file).toBe(true);
@@ -56,6 +61,17 @@ describe('biblioteca HTML de Open School', () => {
     expect(css).toContain(':focus-visible');
     expect(css).toContain('@media print');
     expect(css).toContain('prefers-reduced-motion');
+  });
+
+
+  it('mantiene sincronizada la biblioteca HTML versionada con el currículo fuente', () => {
+    output = mkdtempSync(join(tmpdir(), 'open-school-learning-library-parity-'));
+    const generated = generateLearningLibrary(output);
+    const committed = resolve(process.cwd(), 'client/public/learning-library');
+    expect(JSON.parse(readFileSync(join(committed, 'manifest.json'), 'utf8'))).toEqual(generated);
+    for (const file of generated.files) {
+      expect(readFileSync(join(committed, file), 'utf8')).toBe(readFileSync(join(output, file), 'utf8'));
+    }
   });
 
   it('escapa el contenido editorial antes de insertarlo en HTML', () => {

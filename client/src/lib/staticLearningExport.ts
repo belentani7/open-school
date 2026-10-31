@@ -145,16 +145,16 @@ function pageDocument({
     '<meta name="color-scheme" content="dark"><meta name="theme-color" content="#000000">',
     '<meta name="description" content="' + escapeLearningHtml(title + ' · ' + track) + '">',
     '<title>' + escapeLearningHtml(title + ' · ' + current.title + ' · Open School') + '</title>',
-    '<link rel="stylesheet" href="/learning-library/learning-library.css"></head>',
+    '<link rel="stylesheet" href="../../../learning-library.css"></head>',
     '<body><a class="skip" href="#main">Saltar al contenido</a>',
-    '<header class="topbar"><a class="brand" href="/learning-library/index.html">Open School<small>Biblioteca de aprendizaje</small></a>',
+    '<header class="topbar"><a class="brand" href="../../../index.html">Open School<small>Biblioteca de aprendizaje</small></a>',
     '<a href="' + escapeLearningHtml(appHref) + '">Abrir experiencia interactiva</a></header>',
     '<main id="main" class="layout"><p class="eyebrow">' + escapeLearningHtml(track) + ' · ' + escapeLearningHtml(unit) + '</p>',
     '<h1>' + escapeLearningHtml(title) + '</h1>',
     '<nav class="step-nav" aria-label="Pasos de la lección"><ol>' + nav + '</ol></nav>',
     '<article class="glass"><h2>' + escapeLearningHtml(current.title) + '</h2>' + current.body + '</article>',
     '<div class="actions"><a class="button primary" href="' + escapeLearningHtml(appHref) + '">Continuar en Open School</a>',
-    '<a class="button" href="/learning-library/index.html">Volver a la biblioteca</a></div></main>',
+    '<a class="button" href="../../../index.html">Volver a la biblioteca</a></div></main>',
     '<footer class="site-footer">Open School · Material educativo abierto · Progreso local</footer></body></html>',
   ].join('\n');
 }
@@ -211,7 +211,7 @@ export function generateLearningLibrary(outputDirectory: string) {
     units.forEach((unit, unitIndex) => {
       const unitDir = 'courses/' + routeId + '/unit-' + String(unitIndex + 1).padStart(2, '0');
       const pages = coursePages(unit);
-      const appHref = '/courses/' + routeId;
+      const appHref = '../../../../courses/' + routeId;
       courseEntries.push('<li><a href="' + escapeLearningHtml(unitDir + '/' + pages[0].file) + '">' +
         escapeLearningHtml(unit.title) + '</a><p>' + escapeLearningHtml(unit.objective) + '</p><span>' +
         escapeLearningHtml(unit.estimatedMinutes) + ' min · ' + routeId + '</span></li>');
@@ -230,7 +230,7 @@ export function generateLearningLibrary(outputDirectory: string) {
       const lessonId = safeSegment(lesson.id);
       const unitDir = 'plaza/' + trackId + '/' + lessonId;
       const pages = plazaPages(track.name, track.minutes, lesson);
-      const appHref = '/plaza';
+      const appHref = '../../../../plaza';
       plazaEntries.push('<li><a href="' + escapeLearningHtml(unitDir + '/' + pages[0].file) + '">' +
         escapeLearningHtml(lesson.title) + '</a><p>' + escapeLearningHtml(lesson.objective) + '</p><span>' +
         escapeLearningHtml(track.name) + ' · ' + escapeLearningHtml(track.level) + '</span></li>');
@@ -247,7 +247,7 @@ export function generateLearningLibrary(outputDirectory: string) {
   const index = [
     '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">',
     '<meta name="color-scheme" content="dark"><title>Biblioteca de aprendizaje · Open School</title>',
-    '<link rel="stylesheet" href="/learning-library/learning-library.css"></head><body>',
+    '<link rel="stylesheet" href="learning-library.css"></head><body>',
     '<a class="skip" href="#main">Saltar al contenido</a>',
     '<header class="topbar"><a class="brand" href="/">Open School<small>Aprender sin dar un solo dato</small></a></header>',
     '<main id="main" class="layout"><p class="eyebrow">Contenido original publicado</p><h1>Biblioteca de aprendizaje</h1>',

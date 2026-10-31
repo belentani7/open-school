@@ -5,7 +5,6 @@ bower_components/
 # Production
 build/
 dist/
-client/public/learning-library/
 
 docs/
 

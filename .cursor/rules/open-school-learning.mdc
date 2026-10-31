@@ -14,10 +14,12 @@ alwaysApply: true
 ## HTML y seguridad
 - Escapa siempre el contenido editorial antes de insertarlo en HTML. Mantén rutas de salida dentro de la carpeta generada y no ejecutes contenido importado como JavaScript.
 - Mantén las páginas estáticas sin scripts: son copias navegables del contenido publicado, no una segunda lógica de producto.
-- No edites manualmente `client/public/learning-library/` ni `dist/client/learning-library/`; se generan desde el contenido fuente y se ignoran en Git.
+- No edites manualmente `client/public/learning-library/` ni `dist/client/learning-library/`: son salidas generadas, pero la copia publicada en `client/public/learning-library/` se versiona y debe coincidir byte a byte con el currículo fuente.
+- Conserva 204 páginas de contenido verificables (84 de curso + 120 de Plaza), más catálogo, CSS y manifiesto; son páginas derivadas de 12 unidades y 20 lecciones, no 204 lecciones nuevas.
+- Toda actualización editorial debe regenerar la copia versionada y pasar la prueba de paridad de `staticLearningExport.test.ts`.
 
 ## Diseño y accesibilidad
-- Conserva tokens, contraste, foco visible, salto al contenido, jerarquía semántica, navegación por teclado, diseño móvil, movimiento reducido y hoja imprimible.
+- Conserva tokens, contraste, foco visible, salto al contenido, jerarquía semántica, navegación por teclado, diseño móvil, movimiento reducido y hoja imprimible. Usa enlaces relativos para servir la biblioteca bajo un subdirectorio de GitHub Pages y en la raíz de Vercel.
 - Prefiere HTML semántico; añade ARIA solo cuando el elemento nativo no expresa el propósito.
 - Comprueba con Tab, Shift+Tab y Enter los controles que cambies; no comuniques estados solo por color.
 
@@ -28,5 +30,6 @@ alwaysApply: true
 ## Documentación de referencia
 - Cursor Project Rules: https://docs.cursor.com/context/rules-for-ai
 - GitHub Actions Secure Use: https://docs.github.com/en/actions/reference/security/secure-use
-- Microsoft Edge, diseño accesible: https://learn.microsoft.com/en-us/microsoft-edge/accessibility/design
+- Microsoft Edge, desarrollo accesible: https://learn.microsoft.com/en-us/microsoft-edge/accessibility/build/
 - Microsoft Edge, prueba de teclado: https://learn.microsoft.com/en-us/microsoft-edge/devtools/accessibility/test-tab-enter-keys
+- Microsoft Edge, movimiento reducido: https://learn.microsoft.com/es-es/microsoft-edge/devtools/accessibility/test-reduced-ui-motion

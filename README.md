@@ -5,7 +5,7 @@
 Instituto digital abierto y gratuito. Formación para quien empieza de cero
 en un país nuevo: **sin matrícula, sin datos personales, sin publicidad.**
 
-> **Estado de esta rama:** 12 unidades interactivas integradas en el frontend React; el build y los tests de esta versión todavía requieren ejecución verificable. Backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
+> **Estado de esta rama:** 12 unidades interactivas integradas en React y una biblioteca estática reproducible de 204 páginas; CI ejecuta typecheck, tests, compilación y recorridos de navegador antes de considerar el build validado. Backend Python WSGI opcional, con rutas de Vercel para salud, catálogo y tutor. El catálogo del servidor sigue en memoria y el tutor requiere un Ollama configurado por la instalación; si no está disponible, la interfaz conserva su modo local.
 > Este README describe lo que hay en el repositorio hoy. Lo que está
 > planificado va aparte, en [Hoja de ruta](#hoja-de-ruta).
 > La especificación completa del producto está en [`SKILL.md`](SKILL.md).
@@ -29,10 +29,10 @@ Las unidades publicadas también se generan como páginas HTML estáticas, naveg
 - **84 páginas de curso:** 12 unidades evaluables × orientación, 3 pasos, práctica, evaluación y revisión.
 - **120 páginas de Plaza:** 20 lecciones × objetivo, concepto, caso, práctica, evaluación y revisión.
 - **Total previsto por el manifiesto de build: 204 páginas de contenido**, además del índice, CSS y manifiesto.
-- En desarrollo: `/learning-library/index.html`. En producción: `dist/client/learning-library/`.
+- En desarrollo: `/learning-library/index.html`. En producción: `dist/client/learning-library/`; la copia navegable también se versiona en [`client/public/learning-library/`](client/public/learning-library/) para que la ruta esté presente en cada checkout y despliegue.
 - Cada pantalla de curso y Plaza enlaza a su unidad independiente. Las páginas conservan el estilo Open School, navegación de pasos, foco visible, movimiento reducido, vista móvil y reglas de impresión.
 
-El generador se ejecuta al iniciar Vite en desarrollo y al construir para producción. `pnpm test` comprueba el recuento, la estructura HTML, el escape editorial, los enlaces internos y rasgos de accesibilidad. Las carpetas generadas se ignoran en Git; la fuente sigue siendo el currículo.
+El generador se ejecuta al iniciar Vite en desarrollo y al construir para producción. `pnpm test` comprueba el recuento, la estructura HTML, el escape editorial, los enlaces internos y rasgos de accesibilidad. La salida versionada se regenera desde el currículo. La prueba de paridad compara cada página, CSS, índice y manifiesto con una exportación limpia; un cambio editorial sin regenerar falla en CI.
 
 
 | Área | Estado |
