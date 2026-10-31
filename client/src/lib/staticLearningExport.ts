@@ -249,7 +249,7 @@ export function generateLearningLibrary(outputDirectory: string) {
     '<meta name="color-scheme" content="dark"><title>Biblioteca de aprendizaje · Open School</title>',
     '<link rel="stylesheet" href="learning-library.css"></head><body>',
     '<a class="skip" href="#main">Saltar al contenido</a>',
-    '<header class="topbar"><a class="brand" href="./index.html">Open School<small>Aprender sin dar un solo dato</small></a></header>',
+    '<header class="topbar"><a class="brand" href="../">Open School<small>Aprender sin dar un solo dato</small></a></header>',
     '<main id="main" class="layout"><p class="eyebrow">Contenido original publicado</p><h1>Biblioteca de aprendizaje</h1>',
     '<p class="summary">Accede a los materiales ya disponibles por páginas independientes: objetivo, estudio, práctica y evaluación. No incluyas datos personales en los ejercicios.</p>',
     '<section><h2>Unidades evaluables</h2><ol class="catalogue">' + courseEntries.join('') + '</ol></section>',

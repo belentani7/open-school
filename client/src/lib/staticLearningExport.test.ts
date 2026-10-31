@@ -43,6 +43,10 @@ describe('biblioteca HTML de Open School', () => {
 
       for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
         if (href.startsWith('#') || /^https?:/i.test(href)) continue;
+        if (href === '../') {
+          expect(resolve(dirname(file), href)).toBe(resolve(output, '..'));
+          continue;
+        }
         if (href.startsWith('../../../../courses/') || href === '../../../../plaza') {
           const appTarget = resolve(dirname(file), href);
           expect(appTarget.startsWith(resolve(output, '..') + sep)).toBe(true);
