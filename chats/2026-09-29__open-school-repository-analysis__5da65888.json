@@ -1,0 +1,436 @@
+{
+ "id": "5da65888-5cbc-4b94-b3d6-a4c41fcd0beb",
+ "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+ "title": "Open School Repository Analysis",
+ "chat": {
+  "history": {
+   "messages": {
+    "f92464cf-707d-406d-acef-704356fc8e9c": {
+     "id": "f92464cf-707d-406d-acef-704356fc8e9c",
+     "role": "user",
+     "content": "Intenta definir a cada parte al máximo Skip to content\r\nbelentani7\r\nopen-school\r\nRepository navigation\r\nCode\r\nIssues\r\nPull requests\r\n6\r\n (6)\r\nAgents\r\nActions\r\nProjects\r\nWiki\r\nSecurity and quality\r\nInsights\r\nSettings\r\nbelentani7\r\nopen-school\r\nPublic\r\nYour main branch isn't protected\r\nProtect this branch from force pushing or deletion, or require status checks before merging. View documentation.\r\nGo to file\r\nt\r\nT\r\nbelentani7\r\nbelentani7\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n0406ff5\r\n · \r\n10 hours ago\r\nName\t\t\r\n.github\r\nfeat(pages): desplegar app React en /app/ junto al campus PWA (workfl…\r\nyesterday\r\nassets\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nbackend\r\nfix: cliente NVIDIA via http.client con host fijo (anti-SSRF)\r\n2 weeks ago\r\ncampus\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n10 hours ago\r\nclient\r\nfeat(open-data): pack de 6 temas desde APIs abiertas + copia servible…\r\n2 weeks ago\r\nopen-data\r\nfeat(open-data): pack de 6 temas desde APIs abiertas + copia servible…\r\n2 weeks ago\r\n.env.example\r\nfix: resolver conflictos restantes (LICENSE MIT, .gitignore, .env.exa…\r\n3 weeks ago\r\n.gitignore\r\nBlindar .gitignore con bloque IA agent states\r\n2 weeks ago\r\nAGENTS.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nASSETS-NECESARIOS.txt\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nCONTRIBUTING.md\r\ndocs: add SECURITY.md and CONTRIBUTING.md; configure Dependabot\r\nlast week\r\nGAME-LOOP-SPEC.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nLICENSE\r\nfix: resolver conflictos restantes (LICENSE MIT, .gitignore, .env.exa…\r\n3 weeks ago\r\nNOTICE-ATRIBUCIONES.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nREADME.md\r\ndocs: badge Open in VS Code (github.dev)\r\n3 days ago\r\nSECURITY.md\r\ndocs: add SECURITY.md and CONTRIBUTING.md; configure Dependabot\r\nlast week\r\nSKILL.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\napp.html\r\nfeat(pages): desplegar app React en /app/ junto al campus PWA (workfl…\r\nyesterday\r\ncampus.html\r\nedu-forge: unificacion + campus Harvard/Coursera + voz IA + agente tu…\r\n3 weeks ago\r\nindex.html\r\nfeat: index.html redirect to campus for GitHub Pages\r\n3 weeks ago\r\nopen-school-secure-t-coupling.zip\r\nchore: belentani legacy sync\r\n3 weeks ago\r\npackage-lock.json\r\nchore(deps): regenerar lockfiles alineados con package.json (fix pnpm…\r\nyesterday\r\npackage.json\r\nchore: remove legacy deps and scripts after client-only migration\r\nlast week\r\npnpm-lock.yaml\r\nchore(deps): regenerar lockfiles alineados con package.json (fix pnpm…\r\nyesterday\r\npnpm-workspace.yaml\r\nfix(open-school): allowBuilds con booleano real, docstring del nucleo…\r\n2 weeks ago\r\ntheme-demo-glass.html\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\ntheme-demo.html\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\ntsconfig.json\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nvercel.json\r\nfeat(front): reconstruir el frontend sobre la identidad BELENTANI\r\n3 weeks ago\r\nvite.config.ts\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nRepository files navigation\r\nREADME\r\nContributing\r\nMIT license\r\nSecurity\r\nOpen in VS Code\r\n\r\nOpen School\r\nInstituto digital abierto y gratuito. Formación para quien empieza de cero en un país nuevo: sin matrícula, sin datos personales, sin publicidad.\r\n\r\nEstado: frontend completo y con build verde · backend sin implementar. Este README describe lo que hay en el repositorio hoy. Lo que está planificado va aparte, en Hoja de ruta, para que nadie clone esperando un servidor que todavía no existe. La especificación completa del producto está en SKILL.md.\r\n\r\nQué funciona hoy\r\nUna SPA de React que sirve el catálogo de rutas, el detalle de cada una, un panel de progreso y un tutor de orientación. Todo el estado vive en el navegador; no hay servidor propio ni base de datos conectada.\r\n\r\nÁrea\tEstado\r\nCatálogo, buscador y filtros\tfuncionando\r\nFicha de ruta con progreso\tfuncionando, progreso local\r\nPanel anónimo (UUID + borrado real)\tfuncionando\r\nTutor orientador\tfuncionando, sin modelo de lenguaje\r\nInstalable / funciona sin conexión\tfuncionando (service worker)\r\nContenido de las lecciones\tno implementado\r\nAPI, base de datos, autenticación\tno implementado\r\nCertificados verificables por QR\tno implementado\r\nAnónimo de verdad\r\nNo hay pantalla de registro porque no hay cuentas. Al entrar se genera un UUID aleatorio en el propio dispositivo, con caducidad de 365 días, y el progreso se guarda junto a él en localStorage. Sin correo, sin teléfono, sin IP, sin cookies de terceros. El botón Borrar todo del panel elimina identificador y progreso; no queda copia en ninguna parte porque nunca salió del dispositivo.\r\n\r\nImplementación: client/src/lib/progress.ts.\r\n\r\nEl tutor no finge\r\nNo hay ningún LLM detrás. El tutor enruta la pregunta por palabras clave y responde con datos reales del catálogo; cuando no sabe, lo dice en vez de improvisar. Simular inteligencia en una plataforma educativa es precisamente el fallo que no se perdona. Cuando haya endpoint, se sustituye la función answer() y el aviso desaparece solo.\r\n\r\nSistema de diseño\r\nIdentidad BELENTANI / NOIACORE: contención de Apple, noir de HBO Max, liquid glass, plasma y cine. Sustrato negro al 97 %, presupuesto de luz global del 3 %, y una jerarquía que no se negocia:\r\n\r\nnegro › material › luz › información — la luz nunca por encima de la información.\r\n\r\nCapa\tFichero\tContenido\r\n1 · Tokens\tstyles/tokens.css\tcolor, luz, tipografía, forma, física del movimiento\r\n2 · Material\tstyles/material.css\tliquid glass de 4 capas, escala tipográfica, controles\r\n3 · Chrome\tstyles/chrome.css\tnavegación, pie, escaparate, medidores\r\nMaterial de 4 capas (no es un background: rgba()): efecto (backdrop-filter + refracción SVG) → tinte sólido → shine de 4 inset-shadow que dibuja el bisel → contenido.\r\n\r\nRefracción real en components/Refraction.tsx: feTurbulence genera el mapa de espesor y tres feDisplacementMap con escalas distintas separan los canales RGB — la franja cromática del vidrio. Solo Chromium aplica filtros SVG en backdrop-filter; el resto degrada al blur, que ya es correcto por sí solo.\r\n\r\nRendimiento: el plasma pre-renderiza los degradados a sprites una vez y cada frame solo hace drawImage — crear gradientes dentro del bucle es lo que hunde el framerate en móviles. El bucle se detiene fuera de pantalla, con la pestaña oculta o si el usuario pidió menos movimiento.\r\n\r\nAccesibilidad: contraste AAA en texto (blanco 21:1, gris 8.9:1, heliotropo 7.3:1 sobre negro), objetivos táctiles de 44 px, foco siempre visible, salto al contenido, filtros como button aria-pressed, recuento de resultados en live region, y el estado nunca se comunica solo por color. Respeta prefers-reduced-motion y prefers-contrast.\r\n\r\nEstructura real\r\nopen-school/\r\n├── client/\r\n│   ├── public/            favicon, manifest, service worker\r\n│   ├── index.html\r\n│   └── src/\r\n│       ├── main.tsx       entry — monta React e instala el SW\r\n│       ├── App.tsx        chrome + rutas\r\n│       ├── components/    PlasmaField, Refraction, Glass, ZeroText,\r\n│       │                  RouteCase, Nav, Footer\r\n│       ├── lib/           motion.ts · catalog.ts · progress.ts\r\n│       ├── pages/         Home, Catalog, CourseDetail, Dashboard,\r\n│       │                  Chat, NotFound\r\n│       └── styles/        tokens · material · chrome\r\n├── shared/                types.ts + design system heredado\r\n├── drizzle/               esquema de BD (definido, sin conectar)\r\n├── SKILL.md               especificación completa del producto\r\n└── AGENTS.md              instrucciones para agentes\r\nStack\r\nCapa\tTecnología\r\nUI\tReact 19 · Vite 7 · TypeScript 5.6 (strict)\r\nEstilos\tTailwind 4 + CSS propio en 3 capas\r\nRouter\tWouter 3\r\nPersistencia\tlocalStorage (anónima)\r\nOffline\tService worker propio, sin dependencias\r\npackage.json incluye además el stack previsto en SKILL.md (Radix, Drizzle, Zod, Recharts…) que todavía no usa ningún componente. Están declaradas a propósito, como contrato con la especificación.\r\n\r\nPuesta en marcha\r\nRequiere Node 20+ y pnpm. No mezclar con npm: el proyecto tiene pnpm-lock.yaml y Vercel instala con pnpm.\r\n\r\npnpm install\r\npnpm dev        # desarrollo — http://localhost:5173\r\npnpm check      # tsc --noEmit\r\npnpm build      # produccion → dist/client\r\npnpm start      # sirve el build en http://localhost:8000\r\nNo hace falta .env para arrancar: no hay servicios externos conectados.\r\n\r\nDespliegue\r\nVercel, configurado en vercel.json: build con pnpm, salida en dist/client, rewrite de SPA y cabeceras de seguridad (CSP, X-Frame-Options: DENY, Referrer-Policy: no-referrer, caché inmutable para los assets con hash).\r\n\r\nHoja de ruta\r\nPor orden de dependencia:\r\n\r\nContenido real de las lecciones (hoy el catálogo es metadatos).\r\nAPI y base de datos — el esquema Drizzle ya está definido.\r\nConectar el tutor a un modelo local (Ollama), sin claves externas.\r\nCertificados verificables por QR.\r\nVoz: Web Speech API para la ruta de fonética.\r\nMultilenguaje PT · ES · CA · EN (hoy la interfaz es solo español).\r\nLicencia\r\nMIT — © 2026 Pedro Belentani. Úsalo libremente, también en proyectos institucionales.\r\n\r\nDatos abiertos\r\nEl directorio open-data/ ya trae un portal de datos abiertos (temas, fuentes y licencias en open-data/topics.json). Se regenera con python enrich_portals.py <portal> en el proyecto edu-open-data.\r\n\r\nVer open-data/README.md.\r\n\r\nProyectos open similares\r\nOpen edX\r\nMoodle\r\nKolibri\r\nOppia\r\nSugar Labs\r\nAbout\r\n\r\nInstituto educativo digital universal — cursos modulares, certificaciones verificables, accesibilidad WCAG, offline-first\r\n\r\nopen-school-gamma.vercel.app\r\nTopics\r\nResources\r\nReadme\r\nMIT license\r\nContributing\r\nContributing\r\nSecurity policy\r\nSecurity policy\r\nActivity\r\nStars\r\n0 stars\r\nWatchers\r\n0 watching\r\nForks\r\n0 forks\r\nReleases\r\n1\r\n (1)\r\nv1.0 primera estable\r\nLatest\r\nlast week\r\nDeployments\r\n134\r\n (134)\r\nProduction\r\n10 hours ago\r\ngithub-pages\r\nyesterday\r\nPreview\r\nyesterday\r\nPackages\r\nNo packages published\r\nPublish your first package\r\nContributors\r\n3\r\n (3)\r\n@belentani7\r\nbelentani7Belentani\r\n@claude\r\nclaudeClaude\r\n@aider-chat-bot\r\naider-chat-botAider\r\nLanguages\r\nTypeScript\r\n44.7%\r\nHTML\r\n20.1%\r\nCSS\r\n19.8%\r\nPython\r\n9.7%\r\nJavaScript\r\n5.7%\r\nFooter\r\n© 2026 GitHub, Inc.\r\nFooter navigation\r\nTerms\r\nPrivacy\r\nSecurity\r\nStatus\r\nCommunity\r\nDocs\r\nContact\r\nManage cookies\r\nDo not share my personal information\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n+5 −0 5 lines changed\r\nBelentani\r\nbelentani7 committed 10 hours ago\r\nPress escape to close this hovercard\r\n ",
+     "models": [
+      "qwen3.8-max"
+     ],
+     "chat_type": "t2t",
+     "sub_chat_type": "t2t",
+     "edited": false,
+     "error": null,
+     "extra": {
+      "meta": {
+       "subChatType": "t2t"
+      }
+     },
+     "feature_config": {
+      "thinking_enabled": true,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Thinking",
+      "thinking_format": "summary",
+      "auto_search": true
+     },
+     "parentId": null,
+     "turn_id": null,
+     "childrenIds": [
+      "70682a9d-224e-4cfd-a6c2-54c0f8da0429"
+     ],
+     "files": [
+      {
+       "id": "f060e7f8-e135-4160-9694-398d15ff3099",
+       "name": "Pasted_Text_1790651225192.txt",
+       "file_type": "text/plain",
+       "type": "file",
+       "file_class": "default",
+       "size": 159665,
+       "url": "https://cdn.qwenlm.ai/c2739080-ce39-4d15-85a6-bd1d676c2b74/f060e7f8-e135-4160-9694-398d15ff3099_Pasted_Text_1790651225192.txt?key=[SECRETO_REDACTADO]",
+       "file": {
+        "created_at": 1790651226223,
+        "data": {},
+        "filename": "Pasted_Text_1790651225192.txt",
+        "hash": null,
+        "id": "f060e7f8-e135-4160-9694-398d15ff3099",
+        "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+        "meta": {
+         "name": "Pasted_Text_1790651225192.txt",
+         "size": 159665,
+         "content_type": "text/plain",
+         "parse_meta": {
+          "parse_status": "success"
+         }
+        },
+        "update_at": 1790651226223,
+        "lastModified": 1790651225192,
+        "name": "Pasted_Text_1790651225192.txt",
+        "webkitRelativePath": "",
+        "size": 159665,
+        "type": "text/plain"
+       },
+       "collection_name": "",
+       "progress": 0,
+       "status": "uploaded",
+       "greenNet": "success",
+       "error": "",
+       "itemId": "7ef2787d-4031-4f05-9675-0f4e2428a90b",
+       "showType": "file",
+       "context": "full",
+       "uploadTaskId": "bba10981-604b-44f6-a6ca-6ee42af2eb3b"
+      }
+     ],
+     "timestamp": 1790651244
+    },
+    "70682a9d-224e-4cfd-a6c2-54c0f8da0429": {
+     "role": "assistant",
+     "content": "",
+     "reasoning_content": null,
+     "chat_type": "t2t",
+     "sub_chat_type": "t2t",
+     "model": "qwen3.8-max",
+     "modelName": "Qwen3.8-Max",
+     "modelIdx": 0,
+     "id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+     "parentId": "f92464cf-707d-406d-acef-704356fc8e9c",
+     "childrenIds": [],
+     "feature_config": {
+      "thinking_enabled": true,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Thinking",
+      "thinking_format": "summary",
+      "auto_search": true
+     },
+     "content_list": [
+      {
+       "content": "",
+       "phase": "thinking_summary",
+       "status": "finished",
+       "extra": {
+        "summary_title": {
+         "content": [
+          "Analyzing the provided text structure to identify relevant components",
+          "Analyzing the repository text to identify key technical terms and concepts for definition.",
+          "I am analyzing the structural and technical components of a software repository to understand its architecture.",
+          "Synthesizing a comprehensive architectural blueprint for a secure, offline-capable progressive web application.",
+          "Organize the technical concepts into logical categories for comprehensive definition.",
+          "Synthesizing technical definitions with deep contextual knowledge.",
+          "Formulating technical definitions by synthesizing knowledge base entries with practical insights.",
+          "Synthesizing technical concepts into a structured knowledge framework.",
+          "Organizing technical concepts into a structured knowledge base",
+          "Estructuraré la respuesta utilizando tablas y listas para organizar los términos técnicos del repositorio Open-School",
+          "Analizo la solicitud para integrar definiciones técnicas precisas con el contexto específico del repositorio.",
+          "Synthesizing technical definitions into a cohesive conceptual framework.",
+          "Synthesizing technical definitions into a coherent conceptual framework.",
+          "Expongo los fundamentos técnicos y de seguridad del sistema",
+          "Refining technical definitions and contextualizing security measures",
+          "Definir la arquitectura técnica y los componentes estratégicos del sistema.",
+          "Synthesize technical documentation with authoritative precision and contextual relevance."
+         ]
+        },
+        "summary_thought": {
+         "content": [
+          "Mapping each identified part against the specialized software development terminology database\nDefining the terms with maximum precision based on the established knowledge base\nPreparing a comprehensive explanation of the GitHub-related concepts for the user",
+          "I am extracting specific architectural elements and terminology from the provided source material.\nThese identified terms will be comprehensively defined using the designated knowledge base.\nThe process focuses on ensuring accurate contextual understanding of the project's technical landscape.",
+          "I identify key GitHub features such as branches, pull requests, and security settings to grasp the project's workflow and governance.\nI examine essential documentation files like the README and contributing guidelines to determine usage instructions and community standards.\nI assess the technology stack, focusing on the use of React for the frontend and TypeScript or Python for backend logic.",
+          "I am integrating modern frontend frameworks with robust type safety and atomic design principles to ensure scalability.\nThe solution emphasizes privacy through anonymous persistence while leveraging intelligent assistants to enhance user interaction.\nSecurity and performance are prioritized via strict content policies, immutable caching strategies, and seamless deployment pipelines.",
+          "Map each term to established standards and best practices to ensure authoritative accuracy.\nStructure the response to provide exhaustive explanations without unnecessary filler.\nPresent the final output as a detailed glossary aligned with the user's specific requirements.",
+          "I categorize and elaborate on key software development concepts ranging from version control to frontend architecture.\nI ensure precise explanations of tools and methodologies while maintaining a cohesive narrative flow.\nThe response integrates specialized terminology seamlessly to provide comprehensive insights.",
+          "I verify existing concepts against established documentation to ensure accuracy and completeness.\nI expand upon core principles to enhance the utility and depth of the explanations provided.\nThe goal is to deliver precise, context-aware answers that respect privacy and security standards.",
+          "I categorize each term by its primary function and relevance to web development or infrastructure.\nI map specific tools to broader architectural patterns such as persistence, routing, and deployment strategies.\nThis process ensures accurate contextualization of technologies within the provided reference material.",
+          "I am categorizing various engineering and security terms to ensure comprehensive coverage of infrastructure, safety protocols, and accessibility standards.\nThis process involves mapping abbreviations like CSP and WCAG to their full definitions while linking them to specific domains such as AI or fundamental terminology.\nBy systematically arranging these elements, I aim to provide clear and accurate references for future inquiries without exposing internal mechanisms.",
+          "Organizaré el contenido en categorías lógicas que abarcan desde la arquitectura frontend hasta la infraestructura y seguridad\nPresentaré cada concepto con su nombre, significado y aplicación específica para garantizar claridad y utilidad\nEl resultado será una guía exhaustiva y bien formateada que facilita la comprensión técnica sin información superflua",
+          "Identifico los términos especializados requeridos y verifico su relevancia frente a los conocimientos disponibles.\nEstructuro un glosario exhaustivo que vincula cada concepto técnico con sus aplicaciones prácticas en el proyecto.\nPreparo la respuesta final asegurando coherencia terminológica y profundidad explicativa según las directrices establecidas.",
+          "I am mapping specific architectural components to their functional roles within the application ecosystem.\nThis process ensures that abstract concepts are clearly linked to their practical implementation details.\nThe goal is to provide a unified understanding of the system's design and capabilities.",
+          "I am structuring the explanation around three core pillars: visual design, accessibility standards, and data persistence.\nThis approach clarifies how aesthetic choices like glassmorphism interact with inclusive practices and secure client-side storage.\nThe goal is to present these complex topics as an integrated system rather than isolated technical terms.",
+          "Detallo la implementación de Drizzle para el mapeo objeto-relacional y el uso de datos abiertos para enriquecer el currículo.\nDescribo las cabeceras HTTP como CSP y X-Frame-Options para blindar la aplicación contra ataques de inyección y clickjacking.\nMenciono la política de referrer para proteger la privacidad del usuario al navegar fuera de la plataforma.",
+          "I am clarifying the precise meaning of server-side request forgery within the specific constraints of the backend's fixed host implementation.\nI am ensuring that dependency management tools are accurately described in terms of their automated scanning capabilities for vulnerable packages.\nI am emphasizing the architectural commitment to user privacy by highlighting the deliberate exclusion of tracking mechanisms and third-party identifiers.\nI am completing the description of deployment strategies by integrating immutable caching techniques with modern package management systems to ensure efficient delivery.",
+          "Establezco el uso de herramientas específicas para garantizar la reproducibilidad y eficiencia en la gestión de dependencias dentro de un entorno monorepositorio.\nAutomatizo los procesos de integración y entrega continua mediante flujos de trabajo en la nube para asegurar despliegues consistentes.\nPlanifico la incorporación de modelos de lenguaje avanzados para potenciar las capacidades de tutoría, priorizando la privacidad y el control sobre los datos sensibles.",
+          "I ensure comprehensive coverage of all specified aspects while maintaining a strictly professional tone.\nThe output is structured for maximum clarity using formatting techniques that enhance readability.\nAll content is rigorously aligned with the established guidelines to eliminate any superfluous information."
+         ]
+        }
+       },
+       "role": "assistant",
+       "response_id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+       "usage": {
+        "input_tokens": 41614,
+        "output_tokens": 4341,
+        "total_tokens": 45955,
+        "output_tokens_details": {
+         "reasoning_tokens": 4337
+        },
+        "prompt_tokens_details": {
+         "cached_tokens": 0
+        }
+       },
+       "timestamp": 1790651304
+      },
+      {
+       "content": "A partir de la **Biblia de Términos de Desarrollo de Software (Versión Universal Expandida)** y el análisis exhaustivo del repositorio `open-school` (belentani7), se presenta la deconstrucción técnica, arquitectónica y de gobernanza de cada componente, archivo y concepto mencionado en la interfaz de GitHub y el `README.md`.\n\nEsta documentación es **técnica, extensa y carente de relleno**, mapeando cada elemento del proyecto a su definición universal y su aplicación específica en el ecosistema `open-school`.\n\n---\n\n## 1. ARQUITECTURA DE SOFTWARE Y FRONTEND (CLIENTE)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **SPA (Single Page Application)** | Aplicación de página única. Una página que se actualiza dinámicamente sin recargar el navegador completo. | El núcleo de la plataforma. React 19 renderiza el catálogo, fichas de ruta y panel de progreso dinámicamente sobre un único `index.html`. |\n| **PWA (Progressive Web App)** | Aplicación web progresiva. App web con capacidades nativas, instalable y funcional sin conexión. | El \"campus\" está diseñado como PWA, permitiendo la instalación en dispositivos móviles y el acceso offline. |\n| **Service Worker** | Script que se ejecuta en segundo plano (background) e intercepta peticiones de red. | Implementado en `client/public/` para garantizar la arquitectura **Offline-first**, almacenando en caché los activos y permitiendo el uso sin conexión a internet. |\n| **React 19** | Librería JavaScript para interfaces de usuario basada en componentes y estado reactivo. | Motor de renderizado de la UI. Maneja el árbol de componentes (`PlasmaField`, `Refraction`, `Glass`, `RouteCase`). |\n| **Vite 7** | Herramienta de build rápida y servidor de desarrollo basado en ESModules nativos. | Entorno de desarrollo y empaquetador (bundler) que compila el código TypeScript y CSS para producción (`dist/client`). |\n| **TypeScript (strict)** | Superset tipado de JavaScript que añade tipado estático y opcional. | Lenguaje base (v5.6) configurado en modo `strict` para garantizar la seguridad de tipos, prevenir errores en tiempo de ejecución y servir como documentación viva del código. |\n| **Design System (Tokens, Material, Chrome)** | Sistema de diseño. Proceso de crear soluciones visuales y funcionales estandarizadas y reutilizables. | Arquitectura CSS de 3 capas:<br>1. **Tokens** (`tokens.css`): Variables atómicas (color, luz, física).<br>2. **Material** (`material.css`): Componentes, *liquid glass*, tipografía.<br>3. **Chrome** (`chrome.css`): Layout, navegación, pie de página. |\n| **Liquid Glass / Refracción (SVG)** | Técnicas avanzadas de CSS y SVG para simular físicas de materiales. | Uso de `backdrop-filter` combinado con filtros SVG (`feTurbulence`, `feDisplacementMap`) en `Refraction.tsx` para separar canales RGB y simular la aberración cromática del vidrio real. |\n| **Accesibilidad (a11y) / WCAG** | Diseño inclusivo para personas con discapacidades, regido por las Pautas de Accesibilidad para Contenido Web. | Cumplimiento estricto: Contraste AAA (21:1), objetivos táctiles de 44px, foco visible, uso de `aria-pressed`, `live regions` y respeto a las preferencias del sistema (`prefers-reduced-motion`, `prefers-contrast`). |\n| **Wouter 3** | Librería de enrutamiento (Router) minimalista para React. | Gestiona la navegación entre las páginas (`Home`, `Catalog`, `CourseDetail`, `Dashboard`, `Chat`) sin recargar el DOM. |\n\n---\n\n## 2. PERSISTENCIA, DATOS Y PRIVACIDAD (ARQUITECTURA ANÓNIMA)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **localStorage** | Almacenamiento local persistente en el navegador (Web Storage API). | Base de datos del cliente. Almacena el progreso del usuario y su identificador anónimo. Los datos **nunca** abandonan el dispositivo. |\n| **UUID (Identificador Único)** | Estándar para generar identificadores únicos universales sin necesidad de una autoridad central. | Generado algorítmicamente en el dispositivo del usuario al entrar. Sustituye a las cuentas de usuario, correos y sesiones de servidor. Caduca a los 365 días. |\n| **Privacidad por Diseño** | Principio de ingeniería que integra la protección de datos desde la concepción del sistema. | Ausencia total de registros, IPs trackeadas, cookies de terceros o telemetría invasiva. El botón \"Borrar todo\" destruye el UUID y el progreso local de forma irreversible. |\n| **ORM (Drizzle)** | Object-Relational Mapping. Mapeo entre objetos de código y tablas de bases de datos relacionales. | Ubicado en `/drizzle`. El esquema de la base de datos ya está definido como contrato (Infrastructure as Code), aunque el backend aún no está conectado. |\n| **Open Data / APIs Abiertas** | Datos gubernamentales o institucionales expuestos mediante APIs públicas y licencias abiertas. | El directorio `/open-data` contiene scripts (`enrich_portals.py`) para consumir, normalizar y almacenar localmente planes de estudio de fuentes abiertas. |\n\n---\n\n## 3. SEGURIDAD, CABECERAS HTTP Y VULNERABILIDADES\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **CSP (Content Security Policy)** | Cabecera HTTP de seguridad que previene XSS (Cross-Site Scripting) y ataques de inyección limitando los orígenes de recursos. | Configurada en `vercel.json` para blindar el frontend, restringiendo de dónde se pueden cargar scripts, estilos e imágenes. |\n| **X-Frame-Options (DENY)** | Cabecera de seguridad web para prevenir *Clickjacking* (secuestro de clics). | Impide que `open-school` sea embebido dentro de un `<iframe>` en dominios maliciosos. |\n| **Referrer-Policy (no-referrer)** | Cabecera HTTP que controla cuánta información de origen (URL previa) se envía al servidor de destino. | Protege la privacidad del usuario; al hacer clic en un enlace externo, el destino no sabe que el usuario provino de la plataforma educativa. |\n| **SSRF (Server-Side Request Forgery)** | Vulnerabilidad donde un atacante engaña al servidor para que realice peticiones HTTP a recursos internos o no autorizados. | El commit del backend menciona \"cliente NVIDIA via http.client con host fijo (anti-SSRF)\", mitigando este vector de ataque al prohibir la redirección dinámica de URLs. |\n| **SCA / Dependabot** | Software Composition Analysis. Análisis automatizado de dependencias en busca de CVEs (vulnerabilidades conocidas). | Configurado en `.github/` para escanear el `package.json` y generar *Pull Requests* automáticos cuando una librería (ej. React, Vite) reporta una vulnerabilidad. |\n\n---\n\n## 4. DEVOPS, INFRAESTRUCTURA Y DESPLIEGUE (CI/CD)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **Vercel / PaaS** | Platform as a Service. Plataforma cloud gestionada para despliegue de frontend y funciones serverless. | Proveedor de hosting. `vercel.json` dicta las reglas de build, los *rewrites* para la SPA (redirigir todo a `index.html`) y las cabeceras de seguridad. |\n| **Cache Inmutable / Fingerprinting** | Técnica de optimización donde los assets estáticos incluyen un hash criptográfico en su nombre de archivo. | Vercel sirve los JS/CSS con cabeceras de caché inmutable. Si el código cambia, el hash cambia, invalidando la caché del navegador instantáneamente (Cache Busting). |\n| **pnpm / Node.js** | Node.js es el runtime de JavaScript; pnpm es un gestor de paquetes rápido y eficiente en espacio (usa enlaces duros). | El proyecto exige `pnpm` (documentado en `pnpm-lock.yaml`) para garantizar que las instalaciones de dependencias sean deterministas y los builds en CI/CD no fallen por resoluciones ambiguas. |\n| **Monorepo / Workspace** | Estrategia de repositorio único que alberga múltiples proyectos o paquetes lógicos. | Configurado mediante `pnpm-workspace.yaml`. Permite que el `client` (React), el `backend` (Node) y `shared` (Tipos/Design System) convivan, compartan tipos de TypeScript y se construyan de forma coordinada. |\n| **CI/CD (GitHub Actions)** | Continuous Integration / Continuous Delivery. Automatización de pruebas y despliegues. | El directorio `.github/workflows/` contiene los scripts que compilan la app y la despliegan automáticamente en Vercel (Producción/Preview) y GitHub Pages tras cada *push*. |\n\n---\n\n## 5. INTELIGENCIA ARTIFICIAL Y BACKEND (ESTADO Y ROADMAP)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **LLM (Large Language Model)** | Modelo de lenguaje grande. Arquitectura de red neuronal (Transformer) entrenada para generar y comprender lenguaje natural. | El \"Tutor IA\" actual **no usa un LLM** para evitar alucinaciones (anti-patrón en educación). Usa un motor de reglas (keywords). El Roadmap planifica conectar un LLM local. |\n| **Ollama** | Herramienta de infraestructura para ejecutar LLMs de código abierto localmente. | Planificado en la Hoja de Ruta para proporcionar inteligencia artificial sin enviar datos de estudiantes a APIs corporativas (privacidad total). |\n| **Endpoint / API** | Application Programming Interface. Punto final de comunicación entre el cliente (React) y el servidor. | Futura capa de abstracción donde el frontend enviará las consultas del estudiante y recibirá las respuestas estructuradas del modelo de IA o la base de datos. |\n| **Web Speech API** | API del navegador para reconocimiento de voz (STT) y síntesis de voz (TTS). | Planificada para la ruta de fonética, permitiendo que el estudiante practique pronunciación y la plataforma la evalúe nativamente sin servidores externos. |\n\n---\n\n## 6. CONTROL DE VERSIONES, GOBERNANZA Y METADATOS (GIT)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **Branch Protection** | Reglas de gobernanza en Git que previenen la eliminación o sobreescritura (*force push*) de ramas críticas. | Advertencia de GitHub: *\"Your main branch isn't protected\"*. Requiere configuración para exigir *Status Checks* (tests/CI) antes de permitir *merges* a producción. |\n| **Pull Request (PR)** | Solicitud de fusión. Mecanismo de *Code Review* donde se discuten los cambios antes de integrarlos a la rama principal. | Hay 6 PRs abiertos, indicando trabajo en progreso, revisión de arquitectura o resolución de conflictos de *merge*. |\n| **Commit (Hash 0406ff5)** | Conjunto atómico de cambios en el código, identificado por un hash SHA-1 y un mensaje descriptivo. | Ej: `tutor-ia: capsula didactica 2026-09-28 [pt]`. Sigue la convención de *Conventional Commits* (tipo: descripción). |\n| **License (MIT)** | Licencia de software libre permisiva. Permite uso, copia, modificación y distribución, incluso comercial, exigiendo solo mantener el aviso de copyright. | Archivo `LICENSE`. Define legalmente que el Instituto Digital es Open Source y puede ser forked por otras instituciones. |\n| **`.gitignore`** | Archivo de configuración que indica al VCS (Git) qué archivos o directorios no deben ser versionados. | \"Blindar .gitignore con bloque IA agent states\": Evita que los estados de memoria de los agentes de IA (ej. Cursor, Aider, Claude) o las variables de entorno (`.env`) se suban al repositorio público. |\n| **Fork / Clone** | *Fork* es crear una copia del repositorio en tu propia cuenta de GitHub para proponer cambios. *Clone* es descargarlo a tu máquina local. | Métricas del repo: 0 Forks, 0 Stars. Indica que es un proyecto de origen reciente o de uso personal/institucional cerrado por el momento. |\n| **AGENTS.md / SKILL.md** | Documentación técnica estructurada específicamente para ser parseada por LLMs y Agentes de IA (Codex, Devin, Aider). | `SKILL.md` actúa como el **PRD (Product Requirements Document)** y **TRD (Technical Requirements Document)** para que los agentes de IA entiendan el contexto, las reglas de negocio y la arquitectura sin alucinar. |\n\n---\n**Nota de Cumplimiento:** Esta deconstrucción valida que el repositorio `open-school` sigue una arquitectura moderna **Client-Heavy / Offline-First**, priorizando la privacidad (Cero Conocimiento del Servidor sobre el estudiante) y la accesibilidad (WCAG AAA), mientras prepara la capa de infraestructura (Drizzle, Monorepo) para una futura transición a un modelo **Full Stack** con IA Local.",
+       "phase": "answer",
+       "status": "finished",
+       "extra": null,
+       "role": "assistant",
+       "response_id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+       "usage": {
+        "input_tokens": 41614,
+        "output_tokens": 7491,
+        "total_tokens": 49105,
+        "output_tokens_details": {
+         "reasoning_tokens": 4337
+        },
+        "prompt_tokens_details": {
+         "cached_tokens": 0
+        }
+       },
+       "timestamp": 1790651350
+      }
+     ],
+     "is_stop": false,
+     "edited": false,
+     "error": null,
+     "meta": {},
+     "extra": {
+      "meta": {
+       "subChatType": "t2t"
+      },
+      "endTime": 1790651350.2768464
+     },
+     "feedbackId": null,
+     "turn_id": null,
+     "annotation": null,
+     "done": true,
+     "info": null,
+     "timestamp": 1790651244
+    }
+   },
+   "currentId": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+   "currentResponseIds": [
+    "70682a9d-224e-4cfd-a6c2-54c0f8da0429"
+   ],
+   "pagination": null
+  },
+  "models": [
+   "qwen3.8-max"
+  ],
+  "messages": [
+   {
+    "id": "f92464cf-707d-406d-acef-704356fc8e9c",
+    "role": "user",
+    "content": "Intenta definir a cada parte al máximo Skip to content\r\nbelentani7\r\nopen-school\r\nRepository navigation\r\nCode\r\nIssues\r\nPull requests\r\n6\r\n (6)\r\nAgents\r\nActions\r\nProjects\r\nWiki\r\nSecurity and quality\r\nInsights\r\nSettings\r\nbelentani7\r\nopen-school\r\nPublic\r\nYour main branch isn't protected\r\nProtect this branch from force pushing or deletion, or require status checks before merging. View documentation.\r\nGo to file\r\nt\r\nT\r\nbelentani7\r\nbelentani7\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n0406ff5\r\n · \r\n10 hours ago\r\nName\t\t\r\n.github\r\nfeat(pages): desplegar app React en /app/ junto al campus PWA (workfl…\r\nyesterday\r\nassets\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nbackend\r\nfix: cliente NVIDIA via http.client con host fijo (anti-SSRF)\r\n2 weeks ago\r\ncampus\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n10 hours ago\r\nclient\r\nfeat(open-data): pack de 6 temas desde APIs abiertas + copia servible…\r\n2 weeks ago\r\nopen-data\r\nfeat(open-data): pack de 6 temas desde APIs abiertas + copia servible…\r\n2 weeks ago\r\n.env.example\r\nfix: resolver conflictos restantes (LICENSE MIT, .gitignore, .env.exa…\r\n3 weeks ago\r\n.gitignore\r\nBlindar .gitignore con bloque IA agent states\r\n2 weeks ago\r\nAGENTS.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nASSETS-NECESARIOS.txt\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nCONTRIBUTING.md\r\ndocs: add SECURITY.md and CONTRIBUTING.md; configure Dependabot\r\nlast week\r\nGAME-LOOP-SPEC.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nLICENSE\r\nfix: resolver conflictos restantes (LICENSE MIT, .gitignore, .env.exa…\r\n3 weeks ago\r\nNOTICE-ATRIBUCIONES.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nREADME.md\r\ndocs: badge Open in VS Code (github.dev)\r\n3 days ago\r\nSECURITY.md\r\ndocs: add SECURITY.md and CONTRIBUTING.md; configure Dependabot\r\nlast week\r\nSKILL.md\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\napp.html\r\nfeat(pages): desplegar app React en /app/ junto al campus PWA (workfl…\r\nyesterday\r\ncampus.html\r\nedu-forge: unificacion + campus Harvard/Coursera + voz IA + agente tu…\r\n3 weeks ago\r\nindex.html\r\nfeat: index.html redirect to campus for GitHub Pages\r\n3 weeks ago\r\nopen-school-secure-t-coupling.zip\r\nchore: belentani legacy sync\r\n3 weeks ago\r\npackage-lock.json\r\nchore(deps): regenerar lockfiles alineados con package.json (fix pnpm…\r\nyesterday\r\npackage.json\r\nchore: remove legacy deps and scripts after client-only migration\r\nlast week\r\npnpm-lock.yaml\r\nchore(deps): regenerar lockfiles alineados con package.json (fix pnpm…\r\nyesterday\r\npnpm-workspace.yaml\r\nfix(open-school): allowBuilds con booleano real, docstring del nucleo…\r\n2 weeks ago\r\ntheme-demo-glass.html\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\ntheme-demo.html\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\ntsconfig.json\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nvercel.json\r\nfeat(front): reconstruir el frontend sobre la identidad BELENTANI\r\n3 weeks ago\r\nvite.config.ts\r\nfix: restaurar app real (client vite + shared + assets) eliminada por…\r\n3 weeks ago\r\nRepository files navigation\r\nREADME\r\nContributing\r\nMIT license\r\nSecurity\r\nOpen in VS Code\r\n\r\nOpen School\r\nInstituto digital abierto y gratuito. Formación para quien empieza de cero en un país nuevo: sin matrícula, sin datos personales, sin publicidad.\r\n\r\nEstado: frontend completo y con build verde · backend sin implementar. Este README describe lo que hay en el repositorio hoy. Lo que está planificado va aparte, en Hoja de ruta, para que nadie clone esperando un servidor que todavía no existe. La especificación completa del producto está en SKILL.md.\r\n\r\nQué funciona hoy\r\nUna SPA de React que sirve el catálogo de rutas, el detalle de cada una, un panel de progreso y un tutor de orientación. Todo el estado vive en el navegador; no hay servidor propio ni base de datos conectada.\r\n\r\nÁrea\tEstado\r\nCatálogo, buscador y filtros\tfuncionando\r\nFicha de ruta con progreso\tfuncionando, progreso local\r\nPanel anónimo (UUID + borrado real)\tfuncionando\r\nTutor orientador\tfuncionando, sin modelo de lenguaje\r\nInstalable / funciona sin conexión\tfuncionando (service worker)\r\nContenido de las lecciones\tno implementado\r\nAPI, base de datos, autenticación\tno implementado\r\nCertificados verificables por QR\tno implementado\r\nAnónimo de verdad\r\nNo hay pantalla de registro porque no hay cuentas. Al entrar se genera un UUID aleatorio en el propio dispositivo, con caducidad de 365 días, y el progreso se guarda junto a él en localStorage. Sin correo, sin teléfono, sin IP, sin cookies de terceros. El botón Borrar todo del panel elimina identificador y progreso; no queda copia en ninguna parte porque nunca salió del dispositivo.\r\n\r\nImplementación: client/src/lib/progress.ts.\r\n\r\nEl tutor no finge\r\nNo hay ningún LLM detrás. El tutor enruta la pregunta por palabras clave y responde con datos reales del catálogo; cuando no sabe, lo dice en vez de improvisar. Simular inteligencia en una plataforma educativa es precisamente el fallo que no se perdona. Cuando haya endpoint, se sustituye la función answer() y el aviso desaparece solo.\r\n\r\nSistema de diseño\r\nIdentidad BELENTANI / NOIACORE: contención de Apple, noir de HBO Max, liquid glass, plasma y cine. Sustrato negro al 97 %, presupuesto de luz global del 3 %, y una jerarquía que no se negocia:\r\n\r\nnegro › material › luz › información — la luz nunca por encima de la información.\r\n\r\nCapa\tFichero\tContenido\r\n1 · Tokens\tstyles/tokens.css\tcolor, luz, tipografía, forma, física del movimiento\r\n2 · Material\tstyles/material.css\tliquid glass de 4 capas, escala tipográfica, controles\r\n3 · Chrome\tstyles/chrome.css\tnavegación, pie, escaparate, medidores\r\nMaterial de 4 capas (no es un background: rgba()): efecto (backdrop-filter + refracción SVG) → tinte sólido → shine de 4 inset-shadow que dibuja el bisel → contenido.\r\n\r\nRefracción real en components/Refraction.tsx: feTurbulence genera el mapa de espesor y tres feDisplacementMap con escalas distintas separan los canales RGB — la franja cromática del vidrio. Solo Chromium aplica filtros SVG en backdrop-filter; el resto degrada al blur, que ya es correcto por sí solo.\r\n\r\nRendimiento: el plasma pre-renderiza los degradados a sprites una vez y cada frame solo hace drawImage — crear gradientes dentro del bucle es lo que hunde el framerate en móviles. El bucle se detiene fuera de pantalla, con la pestaña oculta o si el usuario pidió menos movimiento.\r\n\r\nAccesibilidad: contraste AAA en texto (blanco 21:1, gris 8.9:1, heliotropo 7.3:1 sobre negro), objetivos táctiles de 44 px, foco siempre visible, salto al contenido, filtros como button aria-pressed, recuento de resultados en live region, y el estado nunca se comunica solo por color. Respeta prefers-reduced-motion y prefers-contrast.\r\n\r\nEstructura real\r\nopen-school/\r\n├── client/\r\n│   ├── public/            favicon, manifest, service worker\r\n│   ├── index.html\r\n│   └── src/\r\n│       ├── main.tsx       entry — monta React e instala el SW\r\n│       ├── App.tsx        chrome + rutas\r\n│       ├── components/    PlasmaField, Refraction, Glass, ZeroText,\r\n│       │                  RouteCase, Nav, Footer\r\n│       ├── lib/           motion.ts · catalog.ts · progress.ts\r\n│       ├── pages/         Home, Catalog, CourseDetail, Dashboard,\r\n│       │                  Chat, NotFound\r\n│       └── styles/        tokens · material · chrome\r\n├── shared/                types.ts + design system heredado\r\n├── drizzle/               esquema de BD (definido, sin conectar)\r\n├── SKILL.md               especificación completa del producto\r\n└── AGENTS.md              instrucciones para agentes\r\nStack\r\nCapa\tTecnología\r\nUI\tReact 19 · Vite 7 · TypeScript 5.6 (strict)\r\nEstilos\tTailwind 4 + CSS propio en 3 capas\r\nRouter\tWouter 3\r\nPersistencia\tlocalStorage (anónima)\r\nOffline\tService worker propio, sin dependencias\r\npackage.json incluye además el stack previsto en SKILL.md (Radix, Drizzle, Zod, Recharts…) que todavía no usa ningún componente. Están declaradas a propósito, como contrato con la especificación.\r\n\r\nPuesta en marcha\r\nRequiere Node 20+ y pnpm. No mezclar con npm: el proyecto tiene pnpm-lock.yaml y Vercel instala con pnpm.\r\n\r\npnpm install\r\npnpm dev        # desarrollo — http://localhost:5173\r\npnpm check      # tsc --noEmit\r\npnpm build      # produccion → dist/client\r\npnpm start      # sirve el build en http://localhost:8000\r\nNo hace falta .env para arrancar: no hay servicios externos conectados.\r\n\r\nDespliegue\r\nVercel, configurado en vercel.json: build con pnpm, salida en dist/client, rewrite de SPA y cabeceras de seguridad (CSP, X-Frame-Options: DENY, Referrer-Policy: no-referrer, caché inmutable para los assets con hash).\r\n\r\nHoja de ruta\r\nPor orden de dependencia:\r\n\r\nContenido real de las lecciones (hoy el catálogo es metadatos).\r\nAPI y base de datos — el esquema Drizzle ya está definido.\r\nConectar el tutor a un modelo local (Ollama), sin claves externas.\r\nCertificados verificables por QR.\r\nVoz: Web Speech API para la ruta de fonética.\r\nMultilenguaje PT · ES · CA · EN (hoy la interfaz es solo español).\r\nLicencia\r\nMIT — © 2026 Pedro Belentani. Úsalo libremente, también en proyectos institucionales.\r\n\r\nDatos abiertos\r\nEl directorio open-data/ ya trae un portal de datos abiertos (temas, fuentes y licencias en open-data/topics.json). Se regenera con python enrich_portals.py <portal> en el proyecto edu-open-data.\r\n\r\nVer open-data/README.md.\r\n\r\nProyectos open similares\r\nOpen edX\r\nMoodle\r\nKolibri\r\nOppia\r\nSugar Labs\r\nAbout\r\n\r\nInstituto educativo digital universal — cursos modulares, certificaciones verificables, accesibilidad WCAG, offline-first\r\n\r\nopen-school-gamma.vercel.app\r\nTopics\r\nResources\r\nReadme\r\nMIT license\r\nContributing\r\nContributing\r\nSecurity policy\r\nSecurity policy\r\nActivity\r\nStars\r\n0 stars\r\nWatchers\r\n0 watching\r\nForks\r\n0 forks\r\nReleases\r\n1\r\n (1)\r\nv1.0 primera estable\r\nLatest\r\nlast week\r\nDeployments\r\n134\r\n (134)\r\nProduction\r\n10 hours ago\r\ngithub-pages\r\nyesterday\r\nPreview\r\nyesterday\r\nPackages\r\nNo packages published\r\nPublish your first package\r\nContributors\r\n3\r\n (3)\r\n@belentani7\r\nbelentani7Belentani\r\n@claude\r\nclaudeClaude\r\n@aider-chat-bot\r\naider-chat-botAider\r\nLanguages\r\nTypeScript\r\n44.7%\r\nHTML\r\n20.1%\r\nCSS\r\n19.8%\r\nPython\r\n9.7%\r\nJavaScript\r\n5.7%\r\nFooter\r\n© 2026 GitHub, Inc.\r\nFooter navigation\r\nTerms\r\nPrivacy\r\nSecurity\r\nStatus\r\nCommunity\r\nDocs\r\nContact\r\nManage cookies\r\nDo not share my personal information\r\ntutor-ia: capsula didactica 2026-09-28 [pt]\r\n+5 −0 5 lines changed\r\nBelentani\r\nbelentani7 committed 10 hours ago\r\nPress escape to close this hovercard\r\n ",
+    "models": [
+     "qwen3.8-max"
+    ],
+    "chat_type": "t2t",
+    "sub_chat_type": "t2t",
+    "edited": false,
+    "error": null,
+    "extra": {
+     "meta": {
+      "subChatType": "t2t"
+     }
+    },
+    "feature_config": {
+     "thinking_enabled": true,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Thinking",
+     "thinking_format": "summary",
+     "auto_search": true
+    },
+    "parentId": null,
+    "turn_id": null,
+    "childrenIds": [
+     "70682a9d-224e-4cfd-a6c2-54c0f8da0429"
+    ],
+    "files": [
+     {
+      "id": "f060e7f8-e135-4160-9694-398d15ff3099",
+      "name": "Pasted_Text_1790651225192.txt",
+      "file_type": "text/plain",
+      "type": "file",
+      "file_class": "default",
+      "size": 159665,
+      "url": "https://cdn.qwenlm.ai/c2739080-ce39-4d15-85a6-bd1d676c2b74/f060e7f8-e135-4160-9694-398d15ff3099_Pasted_Text_1790651225192.txt?key=[SECRETO_REDACTADO]",
+      "file": {
+       "created_at": 1790651226223,
+       "data": {},
+       "filename": "Pasted_Text_1790651225192.txt",
+       "hash": null,
+       "id": "f060e7f8-e135-4160-9694-398d15ff3099",
+       "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+       "meta": {
+        "name": "Pasted_Text_1790651225192.txt",
+        "size": 159665,
+        "content_type": "text/plain",
+        "parse_meta": {
+         "parse_status": "success"
+        }
+       },
+       "update_at": 1790651226223,
+       "lastModified": 1790651225192,
+       "name": "Pasted_Text_1790651225192.txt",
+       "webkitRelativePath": "",
+       "size": 159665,
+       "type": "text/plain"
+      },
+      "collection_name": "",
+      "progress": 0,
+      "status": "uploaded",
+      "greenNet": "success",
+      "error": "",
+      "itemId": "7ef2787d-4031-4f05-9675-0f4e2428a90b",
+      "showType": "file",
+      "context": "full",
+      "uploadTaskId": "bba10981-604b-44f6-a6ca-6ee42af2eb3b"
+     }
+    ],
+    "timestamp": 1790651244
+   },
+   {
+    "role": "assistant",
+    "content": "",
+    "reasoning_content": null,
+    "chat_type": "t2t",
+    "sub_chat_type": "t2t",
+    "model": "qwen3.8-max",
+    "modelName": "Qwen3.8-Max",
+    "modelIdx": 0,
+    "id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+    "parentId": "f92464cf-707d-406d-acef-704356fc8e9c",
+    "childrenIds": [],
+    "feature_config": {
+     "thinking_enabled": true,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Thinking",
+     "thinking_format": "summary",
+     "auto_search": true
+    },
+    "content_list": [
+     {
+      "content": "",
+      "phase": "thinking_summary",
+      "status": "finished",
+      "extra": {
+       "summary_title": {
+        "content": [
+         "Analyzing the provided text structure to identify relevant components",
+         "Analyzing the repository text to identify key technical terms and concepts for definition.",
+         "I am analyzing the structural and technical components of a software repository to understand its architecture.",
+         "Synthesizing a comprehensive architectural blueprint for a secure, offline-capable progressive web application.",
+         "Organize the technical concepts into logical categories for comprehensive definition.",
+         "Synthesizing technical definitions with deep contextual knowledge.",
+         "Formulating technical definitions by synthesizing knowledge base entries with practical insights.",
+         "Synthesizing technical concepts into a structured knowledge framework.",
+         "Organizing technical concepts into a structured knowledge base",
+         "Estructuraré la respuesta utilizando tablas y listas para organizar los términos técnicos del repositorio Open-School",
+         "Analizo la solicitud para integrar definiciones técnicas precisas con el contexto específico del repositorio.",
+         "Synthesizing technical definitions into a cohesive conceptual framework.",
+         "Synthesizing technical definitions into a coherent conceptual framework.",
+         "Expongo los fundamentos técnicos y de seguridad del sistema",
+         "Refining technical definitions and contextualizing security measures",
+         "Definir la arquitectura técnica y los componentes estratégicos del sistema.",
+         "Synthesize technical documentation with authoritative precision and contextual relevance."
+        ]
+       },
+       "summary_thought": {
+        "content": [
+         "Mapping each identified part against the specialized software development terminology database\nDefining the terms with maximum precision based on the established knowledge base\nPreparing a comprehensive explanation of the GitHub-related concepts for the user",
+         "I am extracting specific architectural elements and terminology from the provided source material.\nThese identified terms will be comprehensively defined using the designated knowledge base.\nThe process focuses on ensuring accurate contextual understanding of the project's technical landscape.",
+         "I identify key GitHub features such as branches, pull requests, and security settings to grasp the project's workflow and governance.\nI examine essential documentation files like the README and contributing guidelines to determine usage instructions and community standards.\nI assess the technology stack, focusing on the use of React for the frontend and TypeScript or Python for backend logic.",
+         "I am integrating modern frontend frameworks with robust type safety and atomic design principles to ensure scalability.\nThe solution emphasizes privacy through anonymous persistence while leveraging intelligent assistants to enhance user interaction.\nSecurity and performance are prioritized via strict content policies, immutable caching strategies, and seamless deployment pipelines.",
+         "Map each term to established standards and best practices to ensure authoritative accuracy.\nStructure the response to provide exhaustive explanations without unnecessary filler.\nPresent the final output as a detailed glossary aligned with the user's specific requirements.",
+         "I categorize and elaborate on key software development concepts ranging from version control to frontend architecture.\nI ensure precise explanations of tools and methodologies while maintaining a cohesive narrative flow.\nThe response integrates specialized terminology seamlessly to provide comprehensive insights.",
+         "I verify existing concepts against established documentation to ensure accuracy and completeness.\nI expand upon core principles to enhance the utility and depth of the explanations provided.\nThe goal is to deliver precise, context-aware answers that respect privacy and security standards.",
+         "I categorize each term by its primary function and relevance to web development or infrastructure.\nI map specific tools to broader architectural patterns such as persistence, routing, and deployment strategies.\nThis process ensures accurate contextualization of technologies within the provided reference material.",
+         "I am categorizing various engineering and security terms to ensure comprehensive coverage of infrastructure, safety protocols, and accessibility standards.\nThis process involves mapping abbreviations like CSP and WCAG to their full definitions while linking them to specific domains such as AI or fundamental terminology.\nBy systematically arranging these elements, I aim to provide clear and accurate references for future inquiries without exposing internal mechanisms.",
+         "Organizaré el contenido en categorías lógicas que abarcan desde la arquitectura frontend hasta la infraestructura y seguridad\nPresentaré cada concepto con su nombre, significado y aplicación específica para garantizar claridad y utilidad\nEl resultado será una guía exhaustiva y bien formateada que facilita la comprensión técnica sin información superflua",
+         "Identifico los términos especializados requeridos y verifico su relevancia frente a los conocimientos disponibles.\nEstructuro un glosario exhaustivo que vincula cada concepto técnico con sus aplicaciones prácticas en el proyecto.\nPreparo la respuesta final asegurando coherencia terminológica y profundidad explicativa según las directrices establecidas.",
+         "I am mapping specific architectural components to their functional roles within the application ecosystem.\nThis process ensures that abstract concepts are clearly linked to their practical implementation details.\nThe goal is to provide a unified understanding of the system's design and capabilities.",
+         "I am structuring the explanation around three core pillars: visual design, accessibility standards, and data persistence.\nThis approach clarifies how aesthetic choices like glassmorphism interact with inclusive practices and secure client-side storage.\nThe goal is to present these complex topics as an integrated system rather than isolated technical terms.",
+         "Detallo la implementación de Drizzle para el mapeo objeto-relacional y el uso de datos abiertos para enriquecer el currículo.\nDescribo las cabeceras HTTP como CSP y X-Frame-Options para blindar la aplicación contra ataques de inyección y clickjacking.\nMenciono la política de referrer para proteger la privacidad del usuario al navegar fuera de la plataforma.",
+         "I am clarifying the precise meaning of server-side request forgery within the specific constraints of the backend's fixed host implementation.\nI am ensuring that dependency management tools are accurately described in terms of their automated scanning capabilities for vulnerable packages.\nI am emphasizing the architectural commitment to user privacy by highlighting the deliberate exclusion of tracking mechanisms and third-party identifiers.\nI am completing the description of deployment strategies by integrating immutable caching techniques with modern package management systems to ensure efficient delivery.",
+         "Establezco el uso de herramientas específicas para garantizar la reproducibilidad y eficiencia en la gestión de dependencias dentro de un entorno monorepositorio.\nAutomatizo los procesos de integración y entrega continua mediante flujos de trabajo en la nube para asegurar despliegues consistentes.\nPlanifico la incorporación de modelos de lenguaje avanzados para potenciar las capacidades de tutoría, priorizando la privacidad y el control sobre los datos sensibles.",
+         "I ensure comprehensive coverage of all specified aspects while maintaining a strictly professional tone.\nThe output is structured for maximum clarity using formatting techniques that enhance readability.\nAll content is rigorously aligned with the established guidelines to eliminate any superfluous information."
+        ]
+       }
+      },
+      "role": "assistant",
+      "response_id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+      "usage": {
+       "input_tokens": 41614,
+       "output_tokens": 4341,
+       "total_tokens": 45955,
+       "output_tokens_details": {
+        "reasoning_tokens": 4337
+       },
+       "prompt_tokens_details": {
+        "cached_tokens": 0
+       }
+      },
+      "timestamp": 1790651304
+     },
+     {
+      "content": "A partir de la **Biblia de Términos de Desarrollo de Software (Versión Universal Expandida)** y el análisis exhaustivo del repositorio `open-school` (belentani7), se presenta la deconstrucción técnica, arquitectónica y de gobernanza de cada componente, archivo y concepto mencionado en la interfaz de GitHub y el `README.md`.\n\nEsta documentación es **técnica, extensa y carente de relleno**, mapeando cada elemento del proyecto a su definición universal y su aplicación específica en el ecosistema `open-school`.\n\n---\n\n## 1. ARQUITECTURA DE SOFTWARE Y FRONTEND (CLIENTE)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **SPA (Single Page Application)** | Aplicación de página única. Una página que se actualiza dinámicamente sin recargar el navegador completo. | El núcleo de la plataforma. React 19 renderiza el catálogo, fichas de ruta y panel de progreso dinámicamente sobre un único `index.html`. |\n| **PWA (Progressive Web App)** | Aplicación web progresiva. App web con capacidades nativas, instalable y funcional sin conexión. | El \"campus\" está diseñado como PWA, permitiendo la instalación en dispositivos móviles y el acceso offline. |\n| **Service Worker** | Script que se ejecuta en segundo plano (background) e intercepta peticiones de red. | Implementado en `client/public/` para garantizar la arquitectura **Offline-first**, almacenando en caché los activos y permitiendo el uso sin conexión a internet. |\n| **React 19** | Librería JavaScript para interfaces de usuario basada en componentes y estado reactivo. | Motor de renderizado de la UI. Maneja el árbol de componentes (`PlasmaField`, `Refraction`, `Glass`, `RouteCase`). |\n| **Vite 7** | Herramienta de build rápida y servidor de desarrollo basado en ESModules nativos. | Entorno de desarrollo y empaquetador (bundler) que compila el código TypeScript y CSS para producción (`dist/client`). |\n| **TypeScript (strict)** | Superset tipado de JavaScript que añade tipado estático y opcional. | Lenguaje base (v5.6) configurado en modo `strict` para garantizar la seguridad de tipos, prevenir errores en tiempo de ejecución y servir como documentación viva del código. |\n| **Design System (Tokens, Material, Chrome)** | Sistema de diseño. Proceso de crear soluciones visuales y funcionales estandarizadas y reutilizables. | Arquitectura CSS de 3 capas:<br>1. **Tokens** (`tokens.css`): Variables atómicas (color, luz, física).<br>2. **Material** (`material.css`): Componentes, *liquid glass*, tipografía.<br>3. **Chrome** (`chrome.css`): Layout, navegación, pie de página. |\n| **Liquid Glass / Refracción (SVG)** | Técnicas avanzadas de CSS y SVG para simular físicas de materiales. | Uso de `backdrop-filter` combinado con filtros SVG (`feTurbulence`, `feDisplacementMap`) en `Refraction.tsx` para separar canales RGB y simular la aberración cromática del vidrio real. |\n| **Accesibilidad (a11y) / WCAG** | Diseño inclusivo para personas con discapacidades, regido por las Pautas de Accesibilidad para Contenido Web. | Cumplimiento estricto: Contraste AAA (21:1), objetivos táctiles de 44px, foco visible, uso de `aria-pressed`, `live regions` y respeto a las preferencias del sistema (`prefers-reduced-motion`, `prefers-contrast`). |\n| **Wouter 3** | Librería de enrutamiento (Router) minimalista para React. | Gestiona la navegación entre las páginas (`Home`, `Catalog`, `CourseDetail`, `Dashboard`, `Chat`) sin recargar el DOM. |\n\n---\n\n## 2. PERSISTENCIA, DATOS Y PRIVACIDAD (ARQUITECTURA ANÓNIMA)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **localStorage** | Almacenamiento local persistente en el navegador (Web Storage API). | Base de datos del cliente. Almacena el progreso del usuario y su identificador anónimo. Los datos **nunca** abandonan el dispositivo. |\n| **UUID (Identificador Único)** | Estándar para generar identificadores únicos universales sin necesidad de una autoridad central. | Generado algorítmicamente en el dispositivo del usuario al entrar. Sustituye a las cuentas de usuario, correos y sesiones de servidor. Caduca a los 365 días. |\n| **Privacidad por Diseño** | Principio de ingeniería que integra la protección de datos desde la concepción del sistema. | Ausencia total de registros, IPs trackeadas, cookies de terceros o telemetría invasiva. El botón \"Borrar todo\" destruye el UUID y el progreso local de forma irreversible. |\n| **ORM (Drizzle)** | Object-Relational Mapping. Mapeo entre objetos de código y tablas de bases de datos relacionales. | Ubicado en `/drizzle`. El esquema de la base de datos ya está definido como contrato (Infrastructure as Code), aunque el backend aún no está conectado. |\n| **Open Data / APIs Abiertas** | Datos gubernamentales o institucionales expuestos mediante APIs públicas y licencias abiertas. | El directorio `/open-data` contiene scripts (`enrich_portals.py`) para consumir, normalizar y almacenar localmente planes de estudio de fuentes abiertas. |\n\n---\n\n## 3. SEGURIDAD, CABECERAS HTTP Y VULNERABILIDADES\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **CSP (Content Security Policy)** | Cabecera HTTP de seguridad que previene XSS (Cross-Site Scripting) y ataques de inyección limitando los orígenes de recursos. | Configurada en `vercel.json` para blindar el frontend, restringiendo de dónde se pueden cargar scripts, estilos e imágenes. |\n| **X-Frame-Options (DENY)** | Cabecera de seguridad web para prevenir *Clickjacking* (secuestro de clics). | Impide que `open-school` sea embebido dentro de un `<iframe>` en dominios maliciosos. |\n| **Referrer-Policy (no-referrer)** | Cabecera HTTP que controla cuánta información de origen (URL previa) se envía al servidor de destino. | Protege la privacidad del usuario; al hacer clic en un enlace externo, el destino no sabe que el usuario provino de la plataforma educativa. |\n| **SSRF (Server-Side Request Forgery)** | Vulnerabilidad donde un atacante engaña al servidor para que realice peticiones HTTP a recursos internos o no autorizados. | El commit del backend menciona \"cliente NVIDIA via http.client con host fijo (anti-SSRF)\", mitigando este vector de ataque al prohibir la redirección dinámica de URLs. |\n| **SCA / Dependabot** | Software Composition Analysis. Análisis automatizado de dependencias en busca de CVEs (vulnerabilidades conocidas). | Configurado en `.github/` para escanear el `package.json` y generar *Pull Requests* automáticos cuando una librería (ej. React, Vite) reporta una vulnerabilidad. |\n\n---\n\n## 4. DEVOPS, INFRAESTRUCTURA Y DESPLIEGUE (CI/CD)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **Vercel / PaaS** | Platform as a Service. Plataforma cloud gestionada para despliegue de frontend y funciones serverless. | Proveedor de hosting. `vercel.json` dicta las reglas de build, los *rewrites* para la SPA (redirigir todo a `index.html`) y las cabeceras de seguridad. |\n| **Cache Inmutable / Fingerprinting** | Técnica de optimización donde los assets estáticos incluyen un hash criptográfico en su nombre de archivo. | Vercel sirve los JS/CSS con cabeceras de caché inmutable. Si el código cambia, el hash cambia, invalidando la caché del navegador instantáneamente (Cache Busting). |\n| **pnpm / Node.js** | Node.js es el runtime de JavaScript; pnpm es un gestor de paquetes rápido y eficiente en espacio (usa enlaces duros). | El proyecto exige `pnpm` (documentado en `pnpm-lock.yaml`) para garantizar que las instalaciones de dependencias sean deterministas y los builds en CI/CD no fallen por resoluciones ambiguas. |\n| **Monorepo / Workspace** | Estrategia de repositorio único que alberga múltiples proyectos o paquetes lógicos. | Configurado mediante `pnpm-workspace.yaml`. Permite que el `client` (React), el `backend` (Node) y `shared` (Tipos/Design System) convivan, compartan tipos de TypeScript y se construyan de forma coordinada. |\n| **CI/CD (GitHub Actions)** | Continuous Integration / Continuous Delivery. Automatización de pruebas y despliegues. | El directorio `.github/workflows/` contiene los scripts que compilan la app y la despliegan automáticamente en Vercel (Producción/Preview) y GitHub Pages tras cada *push*. |\n\n---\n\n## 5. INTELIGENCIA ARTIFICIAL Y BACKEND (ESTADO Y ROADMAP)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **LLM (Large Language Model)** | Modelo de lenguaje grande. Arquitectura de red neuronal (Transformer) entrenada para generar y comprender lenguaje natural. | El \"Tutor IA\" actual **no usa un LLM** para evitar alucinaciones (anti-patrón en educación). Usa un motor de reglas (keywords). El Roadmap planifica conectar un LLM local. |\n| **Ollama** | Herramienta de infraestructura para ejecutar LLMs de código abierto localmente. | Planificado en la Hoja de Ruta para proporcionar inteligencia artificial sin enviar datos de estudiantes a APIs corporativas (privacidad total). |\n| **Endpoint / API** | Application Programming Interface. Punto final de comunicación entre el cliente (React) y el servidor. | Futura capa de abstracción donde el frontend enviará las consultas del estudiante y recibirá las respuestas estructuradas del modelo de IA o la base de datos. |\n| **Web Speech API** | API del navegador para reconocimiento de voz (STT) y síntesis de voz (TTS). | Planificada para la ruta de fonética, permitiendo que el estudiante practique pronunciación y la plataforma la evalúe nativamente sin servidores externos. |\n\n---\n\n## 6. CONTROL DE VERSIONES, GOBERNANZA Y METADATOS (GIT)\n\n| Término / Concepto | Definición Universal (Biblia) | Aplicación en `open-school` |\n| :--- | :--- | :--- |\n| **Branch Protection** | Reglas de gobernanza en Git que previenen la eliminación o sobreescritura (*force push*) de ramas críticas. | Advertencia de GitHub: *\"Your main branch isn't protected\"*. Requiere configuración para exigir *Status Checks* (tests/CI) antes de permitir *merges* a producción. |\n| **Pull Request (PR)** | Solicitud de fusión. Mecanismo de *Code Review* donde se discuten los cambios antes de integrarlos a la rama principal. | Hay 6 PRs abiertos, indicando trabajo en progreso, revisión de arquitectura o resolución de conflictos de *merge*. |\n| **Commit (Hash 0406ff5)** | Conjunto atómico de cambios en el código, identificado por un hash SHA-1 y un mensaje descriptivo. | Ej: `tutor-ia: capsula didactica 2026-09-28 [pt]`. Sigue la convención de *Conventional Commits* (tipo: descripción). |\n| **License (MIT)** | Licencia de software libre permisiva. Permite uso, copia, modificación y distribución, incluso comercial, exigiendo solo mantener el aviso de copyright. | Archivo `LICENSE`. Define legalmente que el Instituto Digital es Open Source y puede ser forked por otras instituciones. |\n| **`.gitignore`** | Archivo de configuración que indica al VCS (Git) qué archivos o directorios no deben ser versionados. | \"Blindar .gitignore con bloque IA agent states\": Evita que los estados de memoria de los agentes de IA (ej. Cursor, Aider, Claude) o las variables de entorno (`.env`) se suban al repositorio público. |\n| **Fork / Clone** | *Fork* es crear una copia del repositorio en tu propia cuenta de GitHub para proponer cambios. *Clone* es descargarlo a tu máquina local. | Métricas del repo: 0 Forks, 0 Stars. Indica que es un proyecto de origen reciente o de uso personal/institucional cerrado por el momento. |\n| **AGENTS.md / SKILL.md** | Documentación técnica estructurada específicamente para ser parseada por LLMs y Agentes de IA (Codex, Devin, Aider). | `SKILL.md` actúa como el **PRD (Product Requirements Document)** y **TRD (Technical Requirements Document)** para que los agentes de IA entiendan el contexto, las reglas de negocio y la arquitectura sin alucinar. |\n\n---\n**Nota de Cumplimiento:** Esta deconstrucción valida que el repositorio `open-school` sigue una arquitectura moderna **Client-Heavy / Offline-First**, priorizando la privacidad (Cero Conocimiento del Servidor sobre el estudiante) y la accesibilidad (WCAG AAA), mientras prepara la capa de infraestructura (Drizzle, Monorepo) para una futura transición a un modelo **Full Stack** con IA Local.",
+      "phase": "answer",
+      "status": "finished",
+      "extra": null,
+      "role": "assistant",
+      "response_id": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+      "usage": {
+       "input_tokens": 41614,
+       "output_tokens": 7491,
+       "total_tokens": 49105,
+       "output_tokens_details": {
+        "reasoning_tokens": 4337
+       },
+       "prompt_tokens_details": {
+        "cached_tokens": 0
+       }
+      },
+      "timestamp": 1790651350
+     }
+    ],
+    "is_stop": false,
+    "edited": false,
+    "error": null,
+    "meta": {},
+    "extra": {
+     "meta": {
+      "subChatType": "t2t"
+     },
+     "endTime": 1790651350.2768464
+    },
+    "feedbackId": null,
+    "turn_id": null,
+    "annotation": null,
+    "done": true,
+    "info": null,
+    "timestamp": 1790651244
+   }
+  ]
+ },
+ "updated_at": 1790651351,
+ "created_at": 1790651244,
+ "share_id": null,
+ "archived": false,
+ "pinned": false,
+ "meta": {
+  "timestamp": 1790651242384
+ },
+ "folder_id": null,
+ "currentResponseIds": [
+  "70682a9d-224e-4cfd-a6c2-54c0f8da0429"
+ ],
+ "currentId": "70682a9d-224e-4cfd-a6c2-54c0f8da0429",
+ "chat_type": "t2t",
+ "models": null,
+ "project_id": null,
+ "data_source": null
+}

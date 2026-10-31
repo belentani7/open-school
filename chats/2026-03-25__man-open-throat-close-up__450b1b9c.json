@@ -1,0 +1,663 @@
+{
+ "id": "450b1b9c-e0d6-411b-b6c8-6f8276e189a8",
+ "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+ "title": "Man Open Throat Close Up",
+ "chat": {
+  "history": {
+   "messages": {
+    "53cabd5f-c204-4664-b101-8155f64e8ec9": {
+     "role": "assistant",
+     "content": "",
+     "reasoning_content": null,
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "model": "qwen3.5-plus",
+     "modelName": "Qwen3.5-Plus",
+     "modelIdx": 0,
+     "id": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+     "parentId": "f10de01c-e305-43ea-a190-c917a47beae5",
+     "childrenIds": [
+      "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224"
+     ],
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "content_list": [
+      {
+       "content": "https://cdn.qwenlm.ai/output/c2739080-ce39-4d15-85a6-bd1d676c2b74/t2i/53cabd5f-c204-4664-b101-8155f64e8ec9/1774407144b5c7.png?key=[SECRETO_REDACTADO]",
+       "phase": "image_gen",
+       "status": "finished",
+       "extra": {
+        "output_image_hw": [
+         [
+          1536,
+          2688
+         ]
+        ]
+       },
+       "role": "assistant",
+       "response_id": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+       "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "characters": 0,
+        "width": 2688,
+        "image_count": 1,
+        "height": 1536
+       },
+       "timestamp": 1774407144
+      }
+     ],
+     "is_stop": false,
+     "edited": false,
+     "error": null,
+     "meta": {},
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      },
+      "endTime": 1774407145.4261658
+     },
+     "feedbackId": null,
+     "turn_id": null,
+     "annotation": null,
+     "done": true,
+     "info": null,
+     "timestamp": 1774407114
+    },
+    "f10de01c-e305-43ea-a190-c917a47beae5": {
+     "id": "f10de01c-e305-43ea-a190-c917a47beae5",
+     "role": "user",
+     "content": "Man close up open troath",
+     "models": [
+      "qwen3.5-plus"
+     ],
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "edited": false,
+     "error": null,
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      }
+     },
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "parentId": null,
+     "turn_id": null,
+     "childrenIds": [
+      "53cabd5f-c204-4664-b101-8155f64e8ec9"
+     ],
+     "files": [],
+     "timestamp": 1774407114
+    },
+    "de01e423-0843-4692-92d5-c685648b860e": {
+     "role": "assistant",
+     "content": "",
+     "reasoning_content": null,
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "model": "qwen3.5-plus",
+     "modelName": "Qwen3.5-Plus",
+     "modelIdx": 0,
+     "id": "de01e423-0843-4692-92d5-c685648b860e",
+     "parentId": "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224",
+     "childrenIds": [
+      "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4"
+     ],
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "content_list": [
+      {
+       "content": "https://cdn.qwenlm.ai/output/c2739080-ce39-4d15-85a6-bd1d676c2b74/t2i/de01e423-0843-4692-92d5-c685648b860e/17744071987144.png?key=[SECRETO_REDACTADO]",
+       "phase": "image_gen",
+       "status": "finished",
+       "extra": {
+        "output_image_hw": [
+         [
+          768,
+          1344
+         ]
+        ]
+       },
+       "role": "assistant",
+       "response_id": "de01e423-0843-4692-92d5-c685648b860e",
+       "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "characters": 0,
+        "width": 1344,
+        "image_count": 1,
+        "height": 768
+       },
+       "timestamp": 1774407199
+      }
+     ],
+     "is_stop": false,
+     "edited": false,
+     "error": null,
+     "meta": {},
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      },
+      "endTime": 1774407199.313015
+     },
+     "feedbackId": null,
+     "turn_id": null,
+     "annotation": null,
+     "done": true,
+     "info": null,
+     "timestamp": 1774407181
+    },
+    "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224": {
+     "id": "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224",
+     "role": "user",
+     "content": "Inside the mouth",
+     "models": [
+      "qwen3.5-plus"
+     ],
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "edited": false,
+     "error": null,
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      }
+     },
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "parentId": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+     "turn_id": null,
+     "childrenIds": [
+      "de01e423-0843-4692-92d5-c685648b860e"
+     ],
+     "files": [],
+     "timestamp": 1774407181
+    },
+    "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4": {
+     "id": "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4",
+     "role": "user",
+     "content": "That styke",
+     "models": [
+      "qwen3.5-plus"
+     ],
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "edited": false,
+     "error": {
+      "status_code": 400,
+      "detail": {
+       "modality": [
+        "text"
+       ],
+       "code": "data_inspection_failed",
+       "stage": "input",
+       "details": "Advertencia de seguridad del contenido: ¡los datos introducidos pueden contener contenido inapropiado!"
+      }
+     },
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      },
+      "endTime": 1774407256.2552893
+     },
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "parentId": "de01e423-0843-4692-92d5-c685648b860e",
+     "turn_id": null,
+     "childrenIds": [
+      "6d850978-2d6a-4a86-984f-78e709365124"
+     ],
+     "files": [
+      {
+       "id": "a468a75d-e624-4033-9a8e-a5bab6005000",
+       "name": "campanilla-inflamada.png",
+       "file_type": "image/png",
+       "type": "image",
+       "file_class": "vision",
+       "size": 189007,
+       "url": "https://cdn.qwenlm.ai/c2739080-ce39-4d15-85a6-bd1d676c2b74/a468a75d-e624-4033-9a8e-a5bab6005000_campanilla-inflamada.png?key=[SECRETO_REDACTADO]",
+       "file": {
+        "created_at": 1774407237209,
+        "data": {},
+        "filename": "campanilla-inflamada.png",
+        "hash": null,
+        "id": "a468a75d-e624-4033-9a8e-a5bab6005000",
+        "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+        "meta": {
+         "name": "campanilla-inflamada.png",
+         "size": 189007,
+         "content_type": "image/png"
+        },
+        "update_at": 1774407237209
+       },
+       "collection_name": "",
+       "progress": 0,
+       "status": "uploaded",
+       "greenNet": "success",
+       "error": "",
+       "itemId": "4950b44e-be09-4f9d-aa63-339ce5578dd8",
+       "showType": "image",
+       "uploadTaskId": "105e138a-1055-4032-856b-045595e3f2df"
+      }
+     ],
+     "timestamp": 1774407240
+    },
+    "6d850978-2d6a-4a86-984f-78e709365124": {
+     "role": "assistant",
+     "content": "",
+     "reasoning_content": null,
+     "chat_type": "t2i",
+     "sub_chat_type": "t2i",
+     "model": "qwen3.5-plus",
+     "modelName": "Qwen3.5-Plus",
+     "modelIdx": 0,
+     "id": "6d850978-2d6a-4a86-984f-78e709365124",
+     "parentId": "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4",
+     "childrenIds": [],
+     "feature_config": {
+      "thinking_enabled": false,
+      "output_schema": "phase",
+      "instructions": null,
+      "research_mode": "normal",
+      "auto_thinking": false,
+      "thinking_mode": "Fast",
+      "auto_search": true
+     },
+     "content_list": null,
+     "is_stop": false,
+     "edited": false,
+     "error": null,
+     "meta": {},
+     "extra": {
+      "meta": {
+       "subChatType": "t2i"
+      }
+     },
+     "feedbackId": null,
+     "turn_id": null,
+     "annotation": null,
+     "done": false,
+     "info": null,
+     "timestamp": 1774407240
+    }
+   },
+   "currentId": "6d850978-2d6a-4a86-984f-78e709365124",
+   "currentResponseIds": [
+    "6d850978-2d6a-4a86-984f-78e709365124"
+   ],
+   "pagination": null
+  },
+  "models": [
+   "qwen3.5-plus"
+  ],
+  "messages": [
+   {
+    "id": "f10de01c-e305-43ea-a190-c917a47beae5",
+    "role": "user",
+    "content": "Man close up open troath",
+    "models": [
+     "qwen3.5-plus"
+    ],
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "edited": false,
+    "error": null,
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     }
+    },
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "parentId": null,
+    "turn_id": null,
+    "childrenIds": [
+     "53cabd5f-c204-4664-b101-8155f64e8ec9"
+    ],
+    "files": [],
+    "timestamp": 1774407114
+   },
+   {
+    "role": "assistant",
+    "content": "",
+    "reasoning_content": null,
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "model": "qwen3.5-plus",
+    "modelName": "Qwen3.5-Plus",
+    "modelIdx": 0,
+    "id": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+    "parentId": "f10de01c-e305-43ea-a190-c917a47beae5",
+    "childrenIds": [
+     "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224"
+    ],
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "content_list": [
+     {
+      "content": "https://cdn.qwenlm.ai/output/c2739080-ce39-4d15-85a6-bd1d676c2b74/t2i/53cabd5f-c204-4664-b101-8155f64e8ec9/1774407144b5c7.png?key=[SECRETO_REDACTADO]",
+      "phase": "image_gen",
+      "status": "finished",
+      "extra": {
+       "output_image_hw": [
+        [
+         1536,
+         2688
+        ]
+       ]
+      },
+      "role": "assistant",
+      "response_id": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+      "usage": {
+       "input_tokens": 0,
+       "output_tokens": 0,
+       "characters": 0,
+       "width": 2688,
+       "image_count": 1,
+       "height": 1536
+      },
+      "timestamp": 1774407144
+     }
+    ],
+    "is_stop": false,
+    "edited": false,
+    "error": null,
+    "meta": {},
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     },
+     "endTime": 1774407145.4261658
+    },
+    "feedbackId": null,
+    "turn_id": null,
+    "annotation": null,
+    "done": true,
+    "info": null,
+    "timestamp": 1774407114
+   },
+   {
+    "id": "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224",
+    "role": "user",
+    "content": "Inside the mouth",
+    "models": [
+     "qwen3.5-plus"
+    ],
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "edited": false,
+    "error": null,
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     }
+    },
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "parentId": "53cabd5f-c204-4664-b101-8155f64e8ec9",
+    "turn_id": null,
+    "childrenIds": [
+     "de01e423-0843-4692-92d5-c685648b860e"
+    ],
+    "files": [],
+    "timestamp": 1774407181
+   },
+   {
+    "role": "assistant",
+    "content": "",
+    "reasoning_content": null,
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "model": "qwen3.5-plus",
+    "modelName": "Qwen3.5-Plus",
+    "modelIdx": 0,
+    "id": "de01e423-0843-4692-92d5-c685648b860e",
+    "parentId": "6dd689f0-ec1a-4d36-a4b7-dcedd21c4224",
+    "childrenIds": [
+     "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4"
+    ],
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "content_list": [
+     {
+      "content": "https://cdn.qwenlm.ai/output/c2739080-ce39-4d15-85a6-bd1d676c2b74/t2i/de01e423-0843-4692-92d5-c685648b860e/17744071987144.png?key=[SECRETO_REDACTADO]",
+      "phase": "image_gen",
+      "status": "finished",
+      "extra": {
+       "output_image_hw": [
+        [
+         768,
+         1344
+        ]
+       ]
+      },
+      "role": "assistant",
+      "response_id": "de01e423-0843-4692-92d5-c685648b860e",
+      "usage": {
+       "input_tokens": 0,
+       "output_tokens": 0,
+       "characters": 0,
+       "width": 1344,
+       "image_count": 1,
+       "height": 768
+      },
+      "timestamp": 1774407199
+     }
+    ],
+    "is_stop": false,
+    "edited": false,
+    "error": null,
+    "meta": {},
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     },
+     "endTime": 1774407199.313015
+    },
+    "feedbackId": null,
+    "turn_id": null,
+    "annotation": null,
+    "done": true,
+    "info": null,
+    "timestamp": 1774407181
+   },
+   {
+    "id": "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4",
+    "role": "user",
+    "content": "That styke",
+    "models": [
+     "qwen3.5-plus"
+    ],
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "edited": false,
+    "error": {
+     "status_code": 400,
+     "detail": {
+      "modality": [
+       "text"
+      ],
+      "code": "data_inspection_failed",
+      "stage": "input",
+      "details": "Advertencia de seguridad del contenido: ¡los datos introducidos pueden contener contenido inapropiado!"
+     }
+    },
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     },
+     "endTime": 1774407256.2552893
+    },
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "parentId": "de01e423-0843-4692-92d5-c685648b860e",
+    "turn_id": null,
+    "childrenIds": [
+     "6d850978-2d6a-4a86-984f-78e709365124"
+    ],
+    "files": [
+     {
+      "id": "a468a75d-e624-4033-9a8e-a5bab6005000",
+      "name": "campanilla-inflamada.png",
+      "file_type": "image/png",
+      "type": "image",
+      "file_class": "vision",
+      "size": 189007,
+      "url": "https://cdn.qwenlm.ai/c2739080-ce39-4d15-85a6-bd1d676c2b74/a468a75d-e624-4033-9a8e-a5bab6005000_campanilla-inflamada.png?key=[SECRETO_REDACTADO]",
+      "file": {
+       "created_at": 1774407237209,
+       "data": {},
+       "filename": "campanilla-inflamada.png",
+       "hash": null,
+       "id": "a468a75d-e624-4033-9a8e-a5bab6005000",
+       "user_id": "c2739080-ce39-4d15-85a6-bd1d676c2b74",
+       "meta": {
+        "name": "campanilla-inflamada.png",
+        "size": 189007,
+        "content_type": "image/png"
+       },
+       "update_at": 1774407237209
+      },
+      "collection_name": "",
+      "progress": 0,
+      "status": "uploaded",
+      "greenNet": "success",
+      "error": "",
+      "itemId": "4950b44e-be09-4f9d-aa63-339ce5578dd8",
+      "showType": "image",
+      "uploadTaskId": "105e138a-1055-4032-856b-045595e3f2df"
+     }
+    ],
+    "timestamp": 1774407240
+   },
+   {
+    "role": "assistant",
+    "content": "",
+    "reasoning_content": null,
+    "chat_type": "t2i",
+    "sub_chat_type": "t2i",
+    "model": "qwen3.5-plus",
+    "modelName": "Qwen3.5-Plus",
+    "modelIdx": 0,
+    "id": "6d850978-2d6a-4a86-984f-78e709365124",
+    "parentId": "848b5a76-b5a3-4b2c-bf94-0a38a6eb14e4",
+    "childrenIds": [],
+    "feature_config": {
+     "thinking_enabled": false,
+     "output_schema": "phase",
+     "instructions": null,
+     "research_mode": "normal",
+     "auto_thinking": false,
+     "thinking_mode": "Fast",
+     "auto_search": true
+    },
+    "content_list": null,
+    "is_stop": false,
+    "edited": false,
+    "error": null,
+    "meta": {},
+    "extra": {
+     "meta": {
+      "subChatType": "t2i"
+     }
+    },
+    "feedbackId": null,
+    "turn_id": null,
+    "annotation": null,
+    "done": false,
+    "info": null,
+    "timestamp": 1774407240
+   }
+  ]
+ },
+ "updated_at": 1774407240,
+ "created_at": 1774407113,
+ "share_id": null,
+ "archived": false,
+ "pinned": false,
+ "meta": {
+  "timestamp": 1774407112663,
+  "tags": []
+ },
+ "folder_id": null,
+ "currentResponseIds": [
+  "6d850978-2d6a-4a86-984f-78e709365124"
+ ],
+ "currentId": "6d850978-2d6a-4a86-984f-78e709365124",
+ "chat_type": "t2i",
+ "models": null,
+ "project_id": "",
+ "data_source": null
+}
