@@ -176,7 +176,7 @@ const CSS = [
   '@media print{body{background:#fff;color:#111}.topbar,.step-nav,.actions,.site-footer,.skip{display:none}.layout{width:100%;margin:0}.glass{border:0;padding:0;background:#fff;box-shadow:none}a{color:inherit}}',
 ].join('\n');
 
-function writeLearningPage(root: string, relativePath: string, body: string, pages: LearningPage[], page: LearningPage, appHref: string, title: string, track: string, unit: string) {
+function writeLearningPage(root: string, relativePath: string, pages: LearningPage[], page: LearningPage, appHref: string, title: string, track: string, unit: string) {
   const target = resolve(root, relativePath);
   assert.ok(target.startsWith(root + sep), 'Generated page escaped the output root');
   mkdirSync(dirname(target), { recursive: true });
@@ -211,12 +211,12 @@ export function generateLearningLibrary(outputDirectory: string) {
     units.forEach((unit, unitIndex) => {
       const unitDir = 'courses/' + routeId + '/unit-' + String(unitIndex + 1).padStart(2, '0');
       const pages = coursePages(unit);
-      const appHref = '/curso/' + routeId;
+      const appHref = '/courses/' + routeId;
       courseEntries.push('<li><a href="' + escapeLearningHtml(unitDir + '/' + pages[0].file) + '">' +
         escapeLearningHtml(unit.title) + '</a><p>' + escapeLearningHtml(unit.objective) + '</p><span>' +
         escapeLearningHtml(unit.estimatedMinutes) + ' min · ' + routeId + '</span></li>');
       pages.forEach((page) => {
-        generatedFiles.push(writeLearningPage(root, unitDir + '/' + page.file, page.body, pages, page, appHref, unit.title, routeId, 'Unidad ' + (unitIndex + 1)));
+        generatedFiles.push(writeLearningPage(root, unitDir + '/' + page.file, pages, page, appHref, unit.title, routeId, 'Unidad ' + (unitIndex + 1)));
         coursePageCount += 1;
       });
     });
@@ -235,7 +235,7 @@ export function generateLearningLibrary(outputDirectory: string) {
         escapeLearningHtml(lesson.title) + '</a><p>' + escapeLearningHtml(lesson.objective) + '</p><span>' +
         escapeLearningHtml(track.name) + ' · ' + escapeLearningHtml(track.level) + '</span></li>');
       pages.forEach((page) => {
-        generatedFiles.push(writeLearningPage(root, unitDir + '/' + page.file, page.body, pages, page, appHref, lesson.title, track.name, 'Unidad ' + lesson.id));
+        generatedFiles.push(writeLearningPage(root, unitDir + '/' + page.file, pages, page, appHref, lesson.title, track.name, 'Unidad ' + lesson.id));
         plazaPageCount += 1;
       });
     }
