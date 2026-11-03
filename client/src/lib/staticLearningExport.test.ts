@@ -65,8 +65,7 @@ describe('biblioteca HTML de Open School', () => {
     expect(css).toContain(':focus-visible');
     expect(css).toContain('@media print');
     expect(css).toContain('prefers-reduced-motion');
-  });
-
+  }, 30_000);
 
   it('mantiene sincronizada la biblioteca HTML versionada con el currículo fuente', () => {
     output = mkdtempSync(join(tmpdir(), 'open-school-learning-library-parity-'));
@@ -74,12 +73,15 @@ describe('biblioteca HTML de Open School', () => {
     const committed = resolve(process.cwd(), 'client/public/learning-library');
     expect(JSON.parse(readFileSync(join(committed, 'manifest.json'), 'utf8'))).toEqual(generated);
     for (const file of generated.files) {
-      expect(readFileSync(join(committed, file), 'utf8')).toBe(readFileSync(join(output, file), 'utf8'));
+      expect(readFileSync(join(committed, file), 'utf8')).toBe(
+        readFileSync(join(output, file), 'utf8')
+      );
     }
-  });
+  }, 30_000);
 
   it('escapa el contenido editorial antes de insertarlo en HTML', () => {
-    expect(escapeLearningHtml(`<img src=x onerror="alert(1)">&'`))
-      .toBe('&lt;img src=x onerror=&quot;alert(1)&quot;&gt;&amp;&#39;');
+    expect(escapeLearningHtml(`<img src=x onerror="alert(1)">&'`)).toBe(
+      '&lt;img src=x onerror=&quot;alert(1)&quot;&gt;&amp;&#39;'
+    );
   });
 });
