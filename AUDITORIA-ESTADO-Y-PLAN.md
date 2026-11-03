@@ -4,48 +4,41 @@ Generado 2026-11-03 por el pase de reglas del ecosistema (catálogo `_meta/regla
 Todo lo afirmado aquí sale de datos reales: base de consolidación, gate oficial y git.
 
 - **Categoría:** educacion · **Ruta:** `C:\Users\USER\belentani-ecosystem\educacion\open-school`
-- **Remoto:** https://github.com/belentani7/open-school.git · **Rama:** main · **HEAD:** 9cae2c1 (docs(auditoria): estado real del repo, comandos para arreglar/elevar y potencial)
-- **Lenguajes:** .md:71,.ts:34,.py:26,.json:25,.tsx:21,.html:20 · **Commits (git real):** 251 · **Tamaño worktree:** 17.8 MB
+- **Remoto:** https://github.com/belentani7/open-school.git · **Rama:** main · **HEAD:** dbb45a2 (fix(web-rules): titulos unicos/SEO-01, h1 visible y dedupe de bibliotecas (gate )
+- **Lenguajes:** .md:71,.ts:34,.py:26,.json:25,.tsx:21,.html:20 · **Commits (git real):** 253 · **Tamaño worktree:** 17.8 MB
 - **Visibilidad GitHub:** public · **Homepage:** https://open-school.vercel.app · **HTTP:** HTTP_404
 - **GitHub Pages:** no activo
 
 ## 1. Situación actual
 
 - **Consolidación:** familia `proyecto-openschool` · acción survivor (estable).
-- **Git:** 2 ficheros sin commitear · 4 commits sin push · 2 commits del pase de reglas (desde 2026-11-02).
-- **Reglas web (gate oficial):** 1661 HTML · **0 hallazgos** · 3 títulos duplicados.
-- **Gobernanza GitHub (protocolo MS):** 10/11 reglas aplicadas · pendientes: GH-09
+- **Git:** 3 ficheros sin commitear · 6 commits sin push · 4 commits del pase de reglas (desde 2026-11-02).
+- **Reglas web (gate oficial):** 1661 HTML · **0 hallazgos** · 0 títulos duplicados.
+- **Gobernanza GitHub (protocolo MS):** 11/11 reglas aplicadas · completo.
 - **Secretos (triaje):** sin hallazgos.
 
 ## 2. Comandos para arreglar y elevar (ejecutar en este orden)
 
-1. **Cumplir reglas web restantes:**
+1. **Reglas web: ya cumplidas (0 hallazgos).** Barrera continua:
    ```powershell
-   python C:\Users\USER\belentani-ecosystem\_meta\fix_web_rules.py --apply --repo open-school
-   python C:\Users\USER\belentani-ecosystem\_meta\repair_balance.py --apply --repo open-school
-   python C:\Users\USER\belentani-ecosystem\_meta\check_web_rules.py open-school   # esperar issues=0
+   python C:\Users\USER\belentani-ecosystem\_meta\check_web_rules.py open-school
    ```
-2. **Gobernanza GitHub pendiente (GH-09):** crear/verificar README, LICENSE, CODE_OF_CONDUCT, CONTRIBUTING, ISSUE_TEMPLATE, PR_TEMPLATE, CI verde, .gitignore, descripción+topics, sin secretos:
-   ```powershell
-   gh api -X PATCH repos/belentani7/open-school -f description="<descripcion real>" -f homepage="<url viva>"
-   gh repo edit belentani7/open-school --add-topic <topic1>,<topic2>,<topic3>   # topics reales del proyecto
-   ```
-3. **Enlace público roto (HTTP HTTP_404):** redesplegar o actualizar el homepage. Sin `VERCEL_TOKEN` local no se puede desplegar desde aquí:
+2. **Enlace público roto (HTTP HTTP_404):** redesplegar o actualizar el homepage. Sin `VERCEL_TOKEN` local no se puede desplegar desde aquí:
    ```powershell
    gh api -X PATCH repos/belentani7/open-school -f homepage=""    # mientras no haya deployment vivo
    # con token: vercel --prod  (o activar GitHub Pages si el repo es público)
    ```
-4. **Publicar en GitHub Pages** (repo público; la cuenta free solo publica repos públicos):
+3. **Publicar en GitHub Pages** (repo público; la cuenta free solo publica repos públicos):
    ```powershell
    gh api -X POST repos/belentani7/open-school/pages -f source[branch]=main -f source[path]=/
    gh api -X POST repos/belentani7/open-school/pages/builds/latest -X POST 2>$null   # o dejar que el workflow publique
    ```
-5. **Limpiar 2 ficheros sin commitear** (revisar antes; si son del pase de reglas, commitear):
+4. **Limpiar 3 ficheros sin commitear** (revisar antes; si son del pase de reglas, commitear):
    ```powershell
    git -C "C:\Users\USER\belentani-ecosystem\educacion\open-school" status --short
    git -C "C:\Users\USER\belentani-ecosystem\educacion\open-school" add -- <solo los ficheros del pase> ; git -C "C:\Users\USER\belentani-ecosystem\educacion\open-school" commit -m "fix(web-rules): ..."
    ```
-6. **Subir al remoto** (requiere tu confirmación explícita; hoy ningún repo tiene push):
+5. **Subir al remoto** (requiere tu confirmación explícita; hoy ningún repo tiene push):
    ```powershell
    git -C "C:\Users\USER\belentani-ecosystem\educacion\open-school" push origin main
    ```
