@@ -4,15 +4,15 @@ Generado 2026-11-03 por el pase de reglas del ecosistema (catálogo `_meta/regla
 Todo lo afirmado aquí sale de datos reales: base de consolidación, gate oficial y git.
 
 - **Categoría:** educacion · **Ruta:** `C:\Users\USER\belentani-ecosystem\educacion\open-school`
-- **Remoto:** https://github.com/belentani7/open-school.git · **Rama:** main · **HEAD:** dbb45a2 (fix(web-rules): titulos unicos/SEO-01, h1 visible y dedupe de bibliotecas (gate )
-- **Lenguajes:** .md:71,.ts:34,.py:26,.json:25,.tsx:21,.html:20 · **Commits (git real):** 253 · **Tamaño worktree:** 17.8 MB
+- **Remoto:** https://github.com/belentani7/open-school.git · **Rama:** main · **HEAD:** b628547 (docs(auditoria): gobernanza GH-01..10 verificada (GH-09/GH-10 OK) + estado y pla)
+- **Lenguajes:** .md:71,.ts:34,.py:26,.json:25,.tsx:21,.html:20 · **Commits (git real):** 254 · **Tamaño worktree:** 17.8 MB
 - **Visibilidad GitHub:** public · **Homepage:** https://open-school.vercel.app · **HTTP:** HTTP_404
 - **GitHub Pages:** no activo
 
 ## 1. Situación actual
 
 - **Consolidación:** familia `proyecto-openschool` · acción survivor (estable).
-- **Git:** 3 ficheros sin commitear · 6 commits sin push · 4 commits del pase de reglas (desde 2026-11-02).
+- **Git:** 3 ficheros sin commitear · 7 commits sin push · 5 commits del pase de reglas (desde 2026-11-02).
 - **Reglas web (gate oficial):** 1661 HTML · **0 hallazgos** · 0 títulos duplicados.
 - **Gobernanza GitHub (protocolo MS):** 11/11 reglas aplicadas · completo.
 - **Secretos (triaje):** sin hallazgos.
