@@ -28,9 +28,9 @@ Cada ano incluye teoria, practica y un proyecto de cierre.
 
 ## Recursos del ecosistema
 
-- [secure-t](https://belentani7.github.io/secure-t/) — universidad digital de ciberseguridad e IA
+- [secure-t](https://secure-t.vercel.app/) — universidad digital de ciberseguridad e IA
 - [Open School](https://open-school-gamma.vercel.app) — instituto digital, campus offline-first
-- [ManosAbiertas](https://belentani7.github.io/ManosAbiertas/) — formacion gratuita de base
+- [ManosAbiertas](https://myopenhands.vercel.app/) — formacion gratuita de base
 
 ## Licencia
 

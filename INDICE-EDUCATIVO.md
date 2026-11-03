@@ -13,13 +13,13 @@ personas que se reciclan.
 | Plataforma | Qué enseña | Enlace |
 |---|---|---|
 | **Open School** | Instituto digital universal | [open-school](https://open-school-gamma.vercel.app) |
-| **ManosAbiertas** | IA y ofimática para recién llegados | [ManosAbiertas](https://belentani7.github.io/ManosAbiertas/) |
+| **ManosAbiertas** | IA y ofimática para recién llegados | [ManosAbiertas](https://myopenhands.vercel.app/) |
 | **WILLIAMSCHOOL** | Escuela comunitaria (currículo Nepal) | [williamschool](https://williamschool.vercel.app) |
 | **UX Academy** | Diseño UX/Producto, trilingüe | [ux-academy](https://ux-academy-professional.vercel.app) |
 | **Aprende Brasil** | Educación para Brasil | [aprende-brasil](https://aprende-brasil.vercel.app/) |
-| **Lingua Aberta** | Idiomas, progresión CEFR | [lingua-aberta](https://belentani7.github.io/lingua-aberta-empresa/) |
-| **Cruzando el Charco** | Acogida y arraigo | [Cruzando el Charco](https://belentani7.github.io/Cruzando-el-charco/) |
-| **secure-t** | Ciberseguridad e IA | [secure-t](https://belentani7.github.io/secure-t/) |
+| **Lingua Aberta** | Idiomas, progresión CEFR | [lingua-aberta](https://lingua-aberta.vercel.app/) |
+| **Cruzando el Charco** | Acogida y arraigo | [Cruzando el Charco](https://cruzando-el-charco-web-20260812.vercel.app/) |
+| **secure-t** | Ciberseguridad e IA | [secure-t](https://secure-t.vercel.app/) |
 
 > **Alejandría Universal** (integrada el 2026-10-31): 20 tracks de desarrollo de
 > producto, 10 tracks de Android y una biblioteca para agentes. Es contenido

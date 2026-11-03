@@ -65,6 +65,8 @@ jobs:
         run: node scripts/verify-education-contract.mjs
       - name: Test GitHub Pages library adapter
         run: node --test scripts/prepare-pages-library.test.mjs
+      - name: Test verified ecosystem application links
+        run: node --test scripts/verify-ecosystem-links.test.mjs
 
   browser-journeys:
     name: Real student journeys (desktop and mobile Chromium)
