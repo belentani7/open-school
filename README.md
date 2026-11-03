@@ -156,7 +156,7 @@ Vite, TypeScript, Vitest y Tailwind 4 están en las dependencias de desarrollo.
 No hay una base de datos conectada ni dependencias declaradas para Drizzle,
 Radix, Zod o Recharts.
 
-## Puesta en marcha
+## Instalación y Uso
 
 Requiere Node 20+ y pnpm. **No mezclar con npm**: el proyecto tiene
 `pnpm-lock.yaml` y Vercel instala con pnpm.

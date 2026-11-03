@@ -877,7 +877,7 @@ Una vez dentro del dashboard:
 
 Verás algo como:
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ✅ **Toca el icono de copiar** 📋  
@@ -1175,7 +1175,7 @@ Busca un botón con:
 
 Verás algo como:
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ✅ **Toca el icono de copiar** (📋 o "复制")  
@@ -1332,7 +1332,7 @@ Dentro de esa sección, busca un botón que diga:
 
 Verás algo como:
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ✅ **Toca el icono de copiar** 📋  
@@ -1801,7 +1801,7 @@ Create API Key / Crear clave API
 
 Te dará una clave como esta:
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ✅ **Copia esa clave** (toca el ícono de copiar 📋)
@@ -3827,7 +3827,7 @@ Toca **"Create API Key"** o **"＋ Nueva Clave"**
 Copia la clave que aparece como:
 
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ⚠️ *La clave anterior `sk-2c72...` que usamos probablemente era un error o no corresponde a tu cuenta actual.*
@@ -4161,7 +4161,7 @@ O desde tu dashboard principal:
 Debería verse como:
 
 ```
-sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+sk-[REDACTED-KEY]
 ```
 
 *(Empieza con `sk-`)*
@@ -4763,7 +4763,7 @@ Create API Key / + Nueva Clave
 Copia la clave que aparece como:
 
 ```
-sk-a1b2c3d4e5f6g7h8i9j0...
+sk-[REDACTED-KEY]...
 ```
 
 ⚠️ **Importante:** Esta clave es secreta, anótala en un bloc de notas.
@@ -5344,7 +5344,7 @@ mkdir ~/qwen-chat && cd ~/qwen-chat
 cat > chat.py << 'EOF'
 import requests, json
 
-API_KEY = "sk-XXXXXXXXXXXXXXXXXXXX"
+API_KEY = "sk-[REDACTED-KEY]"
 URL = "https://dashscope.aliyun.com/api/v1/services/aigc/text-generation/generation"
 
 def ask(prompt):
