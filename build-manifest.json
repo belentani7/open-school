@@ -1,0 +1,32 @@
+{
+  "platform": "open-school",
+  "name": "Open School",
+  "generated_at": "2026-11-04T03:49:03+00:00",
+  "source_root": "C:\\Users\\USER\\belentani-ecosystem\\educacion\\open-school\\campus\\alejandria-universal",
+  "pages": 437,
+  "units": 413,
+  "dropped_duplicates": 0,
+  "sections": {
+    "rutas": "Rutas",
+    "modulos": "Módulos",
+    "lecciones": "Lecciones",
+    "universal-rutas": "Rutas universales",
+    "universal-modulos": "Módulos universales",
+    "universal-lecciones": "Lecciones universales",
+    "universal-docs": "Documentación"
+  },
+  "section_counts": {
+    "rutas": 10,
+    "modulos": 50,
+    "lecciones": 148,
+    "universal-rutas": 20,
+    "universal-modulos": 160,
+    "universal-docs": 25
+  },
+  "assets": {
+    "entry": "assets/index-CkYlgyHh.js",
+    "css": "assets/index-lSU0YY1M.css"
+  },
+  "base_url": "https://belentani7.github.io/open-school/",
+  "content_hash": "ad5ea9176b32bb78476f73b7311c9bd721150b7e2e1b859699ad1ddcb2dc5c55"
+}

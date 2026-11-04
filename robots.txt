@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://belentani7.github.io/open-school/sitemap.xml

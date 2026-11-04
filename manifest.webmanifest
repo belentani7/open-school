@@ -1,0 +1,9 @@
+{
+  "name": "Open School",
+  "short_name": "Open School",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05070c",
+  "theme_color": "#4ade80",
+  "lang": "es"
+}
