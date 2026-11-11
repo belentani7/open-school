@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Open School · Open School</title>
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:title" content="Open School · Open School">
+  <meta name="twitter:description" content="Currículo real de Alejandría Universal: la plataforma Android completa más las rutas universales de producto, ingeniería y negocio.">
+<meta name="description" content="Currículo real de Alejandría Universal: la plataforma Android completa más las rutas universales de producto, ingeniería y negocio.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Open School">
+<meta property="og:title" content="Open School">
+<meta property="og:description" content="Currículo real de Alejandría Universal: la plataforma Android completa más las rutas universales de producto, ingeniería y negocio.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#4ade80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070a0f'/%3E%3Cpath d='M14 44 32 16l18 28H38L32 32l-6 12z' fill='%2322d3ee'/%3E%3C/svg%3E">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="stylesheet" href="./assets/index-lSU0YY1M.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Open School", "description": "Currículo real de Alejandría Universal: la plataforma Android completa más las rutas universales de producto, ingeniería y negocio.", "inLanguage": "es", "isPartOf": {"@type": "WebSite", "name": "Open School", "url": "./"}}</script>
+
+<!-- elevacion de calidad: SEO-02, WEB-22 (generado por _audit/elevar_calidad.py) -->
+  <!-- ux-kit v1 :: mejora progresiva (GSAP+Lenis CDN con fallback; seguro offline) -->
+  <script>document.documentElement.classList.add('uxjs')</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="assets/ux/ux-enhance.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/gsap/dist/gsap.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.15.1/gsap/dist/gsap.min.js'"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/gsap/dist/ScrollTrigger.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/gsap@3.15.1/gsap/dist/ScrollTrigger.min.js'"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" onerror="this.onerror=null;this.src='https://unpkg.com/lenis@1.3.27/dist/lenis.min.js'"></script>
+  <script defer src="assets/ux/ux-kit.js"></script>
+<style>
+  .card.is-done { border-color: #22c55e; box-shadow: 0 0 0 1px #22c55e, 0 4px 12px rgba(34, 197, 94, 0.15); }
+  .card.is-done::after { content: ""; position: absolute; top: 0.5rem; right: 0.5rem; width: 18px; height: 18px; background: #22c55e; border-radius: 50%; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/contain no-repeat; }
+</style>
+</head>
+<body data-section="inicio" data-kind="home">
+<div data-ux-progress aria-hidden="true"></div>
+<div id="lang-selector" style="position:fixed;top:1rem;right:1rem;z-index:9999;">
+  <select id="lang-switch" aria-label="Idioma">
+    <option value="es">ES</option>
+    <option value="en">EN</option>
+    <option value="ca">CA</option>
+    <option value="fr">FR</option>
+    <option value="it">IT</option>
+    <option value="pt">PT</option>
+    <option value="de">DE</option>
+    <option value="nl">NL</option>
+    <option value="ja">JA</option>
+  </select>
+</div>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Open School — inicio">
+      <span class="brand-mark" aria-hidden="true">OP</span>
+      <span>Open School<small>Instituto digital abierto: rutas, módulos y le</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="rutas/index.html">Rutas</a><a href="modulos/index.html">Módulos</a><a href="lecciones/index.html">Lecciones</a><a href="universal-rutas/index.html">Rutas universales</a><a href="universal-modulos/index.html">Módulos universales</a><a href="universal-lecciones/index.html">Lecciones universales</a><a href="universal-docs/index.html">Documentación</a><a href="buscar.html">Buscar</a></nav>
+    <div class="header-tools">
+      <button class="icon-button" type="button" data-search-open aria-label="Buscar en la plataforma">
+        <span aria-hidden="true">⌕</span><span>Buscar</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Cambiar tema">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-badge">Plataforma coherente · HTML + React + shader</span>
+    <h1>Open School <span class="gradient">Instituto digital abierto: rutas, módulos y lecciones verificables</span></h1>
+    <p>Currículo real de Alejandría Universal: la plataforma Android completa más las rutas universales de producto, ingeniería y negocio.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="rutas/index.html">Explorar contenido</a>
+      <button class="button button-ghost" type="button" data-search-open>Buscar con Ctrl K</button>
+    </div>
+    <div class="hero-stats"><div class="stat"><strong>437</strong><span>Páginas</span></div><div class="stat"><strong>7</strong><span>Secciones</span></div><div class="stat"><strong>413</strong><span>Unidades</span></div><div class="stat"><strong>Repos reales</strong><span>Fuente</span></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Estructura</span>
+      <h2>Todo el contenido, organizado y verificable</h2>
+      <p>Cada sección enlaza a páginas generadas desde archivos reales del repositorio de origen.</p>
+    </div>
+    <div class="grid"><a class="card" href="rutas/index.html"><h3>Rutas</h3><p>10 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">10 páginas</span></span></a><a class="card" href="modulos/index.html"><h3>Módulos</h3><p>50 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">50 páginas</span></span></a><a class="card" href="lecciones/index.html"><h3>Lecciones</h3><p>148 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">148 páginas</span></span></a><a class="card" href="universal-rutas/index.html"><h3>Rutas universales</h3><p>20 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">20 páginas</span></span></a><a class="card" href="universal-modulos/index.html"><h3>Módulos universales</h3><p>160 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">160 páginas</span></span></a><a class="card" href="universal-lecciones/index.html"><h3>Lecciones universales</h3><p>0 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">0 páginas</span></span></a><a class="card" href="universal-docs/index.html"><h3>Documentación</h3><p>25 páginas con contenido real, navegables y verificadas.</p><span class="card-meta"><span class="chip">25 páginas</span></span></a></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Empieza aquí</span>
+      <h2>Contenido destacado</h2>
+      <p>Una muestra de las unidades disponibles. Usa la búsqueda para llegar a cualquiera de las 437 páginas.</p>
+    </div>
+    <div class="grid"><a class="card" href="rutas/fundamentos-de-la-plataforma-android-android-platform.html"><h3>Fundamentos de la Plataforma Android —... · Android platform</h3><p>Track • 5 módulos Fundamentos de la Plataforma Android Arquitectura del SO, ART, componentes y ciclo de vida. Base oficial AOSP y compatibilidad.…</p><span class="card-meta"><span class="chip">rutas</span></span></a><a class="card" href="modulos/arquitectura-aosp-y-capas-del-sistema-android-platform.html"><h3>Arquitectura AOSP y Capas del Sistema —... · Android platform</h3><p>Módulo • Fundamentos de la Plataforma Android Arquitectura AOSP y Capas del Sistema Módulo completo con 3 lecciones HTML5. 3 lecciones HTML5 completas…</p><span class="card-meta"><span class="chip">modulos</span></span></a><a class="card" href="lecciones/android-runtime-art-y-formato-dex-android-platform.html"><h3>Android Runtime (ART) y formato DEX —... · Android platform</h3><p>Lección • Arquitectura AOSP y Capas del Sistema • Fundamentos de la Plataforma Android Android Runtime (ART) y formato DEX Compilación AOT/JIT, DEX,…</p><span class="card-meta"><span class="chip">lecciones</span></span></a><a class="card" href="lecciones/capas-linux-kernel-hal-native-framework-android-platform.html"><h3>Capas: Linux Kernel, HAL, Native, Framework... · Android platform</h3><p>Lección • Arquitectura AOSP y Capas del Sistema • Fundamentos de la Plataforma Android Capas: Linux Kernel, HAL, Native, Framework y Apps Modelo en capas…</p><span class="card-meta"><span class="chip">lecciones</span></span></a><a class="card" href="lecciones/compatibilidad-cts-y-treble-mainline-android-platform.html"><h3>Compatibilidad, CTS y Treble/Mainline —... ·... · Android platform</h3><p>Lección • Arquitectura AOSP y Capas del Sistema • Fundamentos de la Plataforma Android Compatibilidad, CTS y Treble/Mainline CTS, GSI, Project Treble y…</p><span class="card-meta"><span class="chip">lecciones</span></span></a><a class="card" href="modulos/componentes-y-androidmanifest-xml-plataforma-android-platform.html"><h3>Componentes y AndroidManifest.xml — Plataforma... · Android platform</h3><p>Módulo • Fundamentos de la Plataforma Android Componentes y AndroidManifest.xml Módulo completo con 3 lecciones HTML5. 3 lecciones HTML5 completas con…</p><span class="card-meta"><span class="chip">modulos</span></span></a></div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Open School</strong> · Instituto digital abierto: rutas, módulos y lecciones verificables</p>
+    <nav aria-label="Navegación del pie">
+      <a href="sobre.html">Sobre</a>
+      <a href="accesibilidad.html">Accesibilidad</a>
+      <a href="legal.html">Legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="mapa-del-sitio.html">Mapa del sitio</a>
+    </nav>
+    <p>Generado desde contenido real · C:\Users\USER\belentani-ecosystem\educacion\open-school\campus\alejandria-universal</p>
+  </div>
+</footer>
+<div id="react-root"></div>
+<script>window.__PLATFORM__ = {"slug": "open-school", "name": "Open School", "tagline": "Instituto digital abierto: rutas, módulos y lecciones verificables", "base": "./", "shader": true, "shaderVariant": "liquid", "landing": true, "accent": "#4ade80", "accent2": "#22d3ee", "stats": [], "nav": [{"label": "rutas", "href": "Rutas"}, {"label": "modulos", "href": "Módulos"}, {"label": "lecciones", "href": "Lecciones"}, {"label": "universal-rutas", "href": "Rutas universales"}, {"label": "universal-modulos", "href": "Módulos universales"}, {"label": "universal-lecciones", "href": "Lecciones universales"}, {"label": "universal-docs", "href": "Documentación"}]};</script>
+<script type="module" src="./assets/index-CkYlgyHh.js"></script>
+<script>
+(function () {
+  'use strict';
+  var doneRaw = localStorage.getItem('ux-lessons-done');
+  var done = [];
+  try { done = doneRaw ? JSON.parse(doneRaw) : []; } catch (e) { done = []; }
+  var cards = document.querySelectorAll('a.card[href^="lecciones/"]');
+  var total = cards.length;
+  var count = 0;
+  cards.forEach(function (card) {
+    var href = card.getAttribute('href');
+    if (done.includes(href)) {
+      card.classList.add('is-done');
+      count++;
+    }
+  });
+  var bar = document.querySelector('[data-ux-progress]');
+  if (bar && total > 0) {
+    var pct = count / total;
+    bar.style.transform = 'scaleX(' + pct + ')';
+  }
+})();
+</script>
+</body>
+</html>
