@@ -27,3 +27,11 @@ venv/
 # Temporales
 *.log
 *.tmp
+
+# Local coding-assistant state and stray command-line option artifacts
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.*
+/--dark-mode
+/--no-attribute-author
+/--weak-model=gemini/
