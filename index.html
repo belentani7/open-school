@@ -77,6 +77,18 @@ section.active{display:block}
 .stat-num{font-size:2rem;font-weight:800;color:var(--gold)}
 .stat-label{font-size:.8rem;color:var(--text-muted);margin-top:4px}
 
+/* Search across actual courses, modules and lessons */
+.catalog-search{display:flex;flex-direction:column;gap:8px;max-width:720px;margin:0 auto 24px}
+.catalog-search label{font-size:.95rem;font-weight:650;color:var(--gold)}
+.catalog-search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid var(--navy-lighter);border-radius:var(--radius);background:var(--navy);color:var(--text);font:inherit}
+.catalog-search input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.catalog-search p{min-height:1.5em;color:var(--text-muted);font-size:.9rem}
+.course-search-item{padding:0}
+.course-search-item button{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:100%;height:100%;padding:18px;text-align:left;color:var(--text)}
+.course-search-item button:hover{background:var(--navy-light)}
+.course-search-item small{color:var(--gold)}
+.course-search-item strong{font-size:1rem}
+
 /* ===== COURSES GRID ===== */
 .section-header{padding:48px 0 24px;text-align:center}
 .section-header h2{font-size:1.75rem;font-weight:700;color:var(--text)}
@@ -289,6 +301,11 @@ section.active{display:block}
     <div class="section-header">
       <h2 data-i18n="catalog_title">Catalogo completo</h2>
       <p data-i18n="catalog_sub">Todos los cursos gratuitos disponibles</p>
+    </div>
+    <div class="catalog-search" role="search">
+      <label for="courseSearch" id="courseSearchLabel">Buscar cursos y lecciones</label>
+      <input id="courseSearch" type="search" autocomplete="off" oninput="searchLearning(this.value)" placeholder="Escribe un tema, módulo o lección" aria-describedby="courseSearchStatus">
+      <p id="courseSearchStatus" role="status" aria-live="polite"></p>
     </div>
     <div class="course-grid" id="catalogGrid" role="list"></div>
   </div>
@@ -546,6 +563,8 @@ function switchLang(lang){
     if(I18N[lang]&&I18N[lang][key])el.placeholder=I18N[lang][key];
   });
   document.getElementById('langSelect').value=lang;
+  if(document.getElementById('catalogGrid')&&document.getElementById('courseSearch'))searchLearning();
+  if(document.getElementById('courseGrid'))renderCourses();
 }
 
 /* ============================================================
@@ -757,7 +776,72 @@ function renderCourses(){
   grid.innerHTML='';catalog.innerHTML='';
   COURSES.slice(0,6).forEach((c,i)=>renderCourseCard(c,i,grid));
   COURSES.forEach((c,i)=>renderCourseCard(c,i,catalog));
+  searchLearning();
 }
+function normalizeLearningQuery(value){
+  return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+}
+function searchLearning(value){
+  const search=document.getElementById('courseSearch');
+  const grid=document.getElementById('catalogGrid');
+  const status=document.getElementById('courseSearchStatus');
+  if(!search||!grid||!status)return;
+  const q=normalizeLearningQuery(value===undefined?search.value:value);
+  const labels={
+    es:{input:'Buscar cursos y lecciones',placeholder:'Escribe un tema, módulo o lección',none:'No hay coincidencias',results:'resultados',lessons:'Lección'},
+    pt:{input:'Pesquisar cursos e aulas',placeholder:'Digite um assunto, módulo ou aula',none:'Nenhum resultado',results:'resultados',lessons:'Aula'},
+    en:{input:'Search courses and lessons',placeholder:'Enter a subject, module or lesson',none:'No matching lessons',results:'results',lessons:'Lesson'}
+  };
+  const lang=COURSES[0]?.title?.[currentLang]!==undefined?currentLang:'es';
+  const label=labels[lang];
+  document.getElementById('courseSearchLabel').textContent=label.input;
+  search.placeholder=label.placeholder;
+  if(!q){
+    grid.replaceChildren();
+    COURSES.forEach((course,ci)=>renderCourseCard(course,ci,grid));
+    status.textContent=COURSES.length+' '+label.results;
+    return;
+  }
+  grid.replaceChildren();
+  let matches=0;
+  const addLesson=(course,ci,mod,mi,lesson,li)=>{
+    const item=document.createElement('div');
+    item.className='course-card course-search-item';
+    item.setAttribute('role','listitem');
+    const button=document.createElement('button');
+    button.type='button';
+    const meta=document.createElement('small');
+    meta.textContent=course.title[lang]+' · '+mod.name[lang];
+    const title=document.createElement('strong');
+    title.textContent=lesson.title[lang]||lesson.title.es;
+    button.append(meta,title);
+    button.setAttribute('aria-label',label.lessons+': '+title.textContent+' — '+course.title[lang]);
+    button.addEventListener('click',()=>{
+      currentCourseIdx=ci;
+      currentModuleIdx=mi;
+      currentLessonIdx=li;
+      renderCourseViewer();
+      showSection('viewer');
+    });
+    item.appendChild(button);
+    grid.appendChild(item);
+    matches++;
+  };
+  COURSES.forEach((course,ci)=>{
+    if(normalizeLearningQuery([course.title[lang],course.desc[lang]].join(' ')).includes(q)){
+      renderCourseCard(course,ci,grid);
+      matches++;
+    }
+    course.modules.forEach((mod,mi)=>mod.lessons.forEach((lesson,li)=>{
+      const haystack=normalizeLearningQuery([
+        mod.name[lang],lesson.title[lang],lesson.content[lang]||lesson.content.es
+      ].join(' ').replace(/<[^>]*>/g,' '));
+      if(haystack.includes(q)&&matches<80)addLesson(course,ci,mod,mi,lesson,li);
+    }));
+  });
+  status.textContent=matches?matches+' '+label.results:label.none;
+}
+
 function populateCatalog(){
   const catalog=document.getElementById('catalogGrid');
   if(catalog.children.length===0)renderCourses();
