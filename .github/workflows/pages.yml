@@ -1,4 +1,4 @@
-﻿name: Validate public campus
+name: Validate public campus
 on:
   push:
     branches: [main]
@@ -7,11 +7,31 @@ on:
 permissions:
   contents: read
 jobs:
-  catalog:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/verify_catalog.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Catálogo (script histórico)
+        run: python scripts/verify_catalog.py
+      - name: Reparaciones idempotentes (dry-run)
+        run: |
+          python tools/repair_pages.py --check
+          python tools/repair_index.py --check
+      - name: Índice de la paleta al día
+        run: python tools/gen_search_index.py --check
+      - name: Auditoría integral
+        run: python tools/audit_site.py
+      - name: Tests Python (unit + integración)
+        run: python -m unittest discover -s tests -v
+      - name: Tests JS (núcleo + DOM con jsdom)
+        run: node --test tests/*.test.mjs
+      - name: E2E camino feliz (HTTP)
+        run: python tests/e2e_smoke.py

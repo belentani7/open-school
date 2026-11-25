@@ -10,3 +10,5 @@ __pycache__/
 *.pyo
 htmlcov/
 playwright-report/
+
+node_modules/
