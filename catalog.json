@@ -2476,5 +2476,95 @@
     "title": "UX/UI & Design System · Open School",
     "type": "universal-rutas",
     "url": "universal-rutas/ux-ui-design-system.html"
+  },
+  {
+    "id": "java-21-profesional",
+    "title": "Java 21 · Ruta profesional de programación y backend",
+    "type": "universal-rutas",
+    "url": "universal-rutas/java-21-profesional.html"
+  },
+  {
+    "id": "java-21-fundamentos",
+    "title": "Java 21 · 01 · Fundamentos de Java 21",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/fundamentos.html"
+  },
+  {
+    "id": "java-21-objetos",
+    "title": "Java 21 · 02 · Objetos, records e invariantes",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/objetos.html"
+  },
+  {
+    "id": "java-21-colecciones",
+    "title": "Java 21 · 03 · Colecciones, igualdad y complejidad",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/colecciones.html"
+  },
+  {
+    "id": "java-21-genericos",
+    "title": "Java 21 · 04 · Genéricos y contratos de tipos",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/genericos.html"
+  },
+  {
+    "id": "java-21-errores",
+    "title": "Java 21 · 05 · Excepciones, validación y recursos",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/errores.html"
+  },
+  {
+    "id": "java-21-streams",
+    "title": "Java 21 · 06 · Streams, funciones y procesamiento de datos",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/streams.html"
+  },
+  {
+    "id": "java-21-io",
+    "title": "Java 21 · 07 · Archivos, NIO y fronteras de confianza",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/io.html"
+  },
+  {
+    "id": "java-21-concurrencia",
+    "title": "Java 21 · 08 · Concurrencia y virtual threads",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/concurrencia.html"
+  },
+  {
+    "id": "java-21-tests",
+    "title": "Java 21 · 09 · Pruebas automatizadas y Maven",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/tests.html"
+  },
+  {
+    "id": "java-21-http",
+    "title": "Java 21 · 10 · HTTP, REST y Spring Boot",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/http.html"
+  },
+  {
+    "id": "java-21-persistencia",
+    "title": "Java 21 · 11 · SQL, JDBC y persistencia JPA",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/persistencia.html"
+  },
+  {
+    "id": "java-21-seguridad",
+    "title": "Java 21 · 12 · Seguridad defensiva y privacidad",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/seguridad.html"
+  },
+  {
+    "id": "java-21-despliegue",
+    "title": "Java 21 · 13 · Entrega, contenedores y observabilidad",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/despliegue.html"
+  },
+  {
+    "id": "java-21-proyecto-final",
+    "title": "Java 21 · 14 · Proyecto final: campus Java de extremo a extremo",
+    "type": "universal-modulos",
+    "url": "universal-modulos/java-21/proyecto-final.html"
   }
 ]

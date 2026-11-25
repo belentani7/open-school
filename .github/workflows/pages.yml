@@ -21,6 +21,9 @@ jobs:
       - run: npm ci
       - name: Catálogo (script histórico)
         run: python scripts/verify_catalog.py
+
+      - name: Currículo Java 21
+        run: python scripts/verify_java_curriculum.py
       - name: Reparaciones idempotentes (dry-run)
         run: |
           python tools/repair_pages.py --check
