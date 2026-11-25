@@ -15,3 +15,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/verify_catalog.py
+
+      - run: python scripts/verify_java_curriculum.py
