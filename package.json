@@ -1,0 +1,19 @@
+{
+  "name": "open-school-campus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Campus estático Open School — tests de la cáscara (shell.js) y del índice.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:jsdom": "node --test tests/shell.dom.test.mjs",
+    "audit": "python3 tools/audit_site.py",
+    "index:check": "python3 tools/repair_index.py --check",
+    "search-index": "python3 tools/gen_search_index.py",
+    "search-index:check": "python3 tools/gen_search_index.py --check",
+    "verify": "python3 scripts/verify_catalog.py && python3 tools/repair_pages.py --check && python3 tools/repair_index.py --check && python3 tools/gen_search_index.py --check && python3 tools/audit_site.py"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}
