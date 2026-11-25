@@ -1,0 +1,25 @@
+﻿{
+  "projectName": "Belentani Academy // " + "$name",
+  "bioSource": "README.md",
+  "sections": [
+    {
+      "id": "plan-estudios",
+      "title": "Plan de Estudios & Módulos",
+      "description": "Currículo académico avanzado: Fundamentos, IA Aplicada, Desarrollo Full-Stack y Prácticas Open Source.",
+      "buttons": [
+        { "label": "Ver Módulo 1: Fundamentos", "target": "#modulo1", "type": "anchor" },
+        { "label": "Ver Módulo 2: IA & Tutor", "target": "#tutor", "type": "anchor" },
+        { "label": "Descargar Guía PDF", "target": "docs/guia-estudio.pdf", "type": "download" }
+      ]
+    },
+    {
+      "id": "herramientas",
+      "title": "Herramientas Educativas Interactivos",
+      "description": "Laboratorios de código en vivo, simuladores de Java/JS y consola de prácticas.",
+      "buttons": [
+        { "label": "Abrir Terminal de Prácticas", "target": "#terminal", "type": "anchor" },
+        { "label": "Laboratorio de Voz", "target": "#lab", "type": "anchor" }
+      ]
+    }
+  ]
+}

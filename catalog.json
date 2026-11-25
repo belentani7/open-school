@@ -1,0 +1,2480 @@
+[
+  {
+    "id": "activities-intents-y-ciclo-de-vida-plataforma-android-platform",
+    "title": "Activities, Intents y ciclo de vida en Android",
+    "type": "lecciones",
+    "url": "lecciones/activities-intents-y-ciclo-de-vida-plataforma-android-platform.html"
+  },
+  {
+    "id": "adaptive-layouts-y-window-size-classes-android-platform",
+    "title": "Adaptive layouts y Window Size Classes",
+    "type": "lecciones",
+    "url": "lecciones/adaptive-layouts-y-window-size-classes-android-platform.html"
+  },
+  {
+    "id": "adb-logcat-y-device-explorer-plataforma-android-platform",
+    "title": "ADB, Logcat y Device Explorer",
+    "type": "lecciones",
+    "url": "lecciones/adb-logcat-y-device-explorer-plataforma-android-platform.html"
+  },
+  {
+    "id": "agentes-ia-con-skills-y-orquestacion-android-platform",
+    "title": "Agentes IA con skills y orquestación",
+    "type": "lecciones",
+    "url": "lecciones/agentes-ia-con-skills-y-orquestacion-android-platform.html"
+  },
+  {
+    "id": "alarms-exact-alarms-y-doze-plataforma-android-platform",
+    "title": "Alarms, exact alarms y Doze",
+    "type": "lecciones",
+    "url": "lecciones/alarms-exact-alarms-y-doze-plataforma-android-platform.html"
+  },
+  {
+    "id": "android-app-bundle-y-play-signing-android-platform",
+    "title": "Android App Bundle y Play Signing",
+    "type": "lecciones",
+    "url": "lecciones/android-app-bundle-y-play-signing-android-platform.html"
+  },
+  {
+    "id": "android-auto-y-automotive-os-plataforma-android-platform",
+    "title": "Android Auto y Automotive OS",
+    "type": "lecciones",
+    "url": "lecciones/android-auto-y-automotive-os-plataforma-android-platform.html"
+  },
+  {
+    "id": "android-runtime-art-y-formato-dex-android-platform",
+    "title": "Android Runtime (ART) y DEX",
+    "type": "lecciones",
+    "url": "lecciones/android-runtime-art-y-formato-dex-android-platform.html"
+  },
+  {
+    "id": "android-tv-y-compose-for-tv-plataforma-android-platform",
+    "title": "Android TV y Compose for TV — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/android-tv-y-compose-for-tv-plataforma-android-platform.html"
+  },
+  {
+    "id": "anr-crashes-y-reporting-plataforma-android-platform",
+    "title": "ANR, crashes y reporting — Plataforma... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/anr-crashes-y-reporting-plataforma-android-platform.html"
+  },
+  {
+    "id": "audio-focus-y-routing-plataforma-android-android-platform",
+    "title": "Audio focus y routing — Plataforma Android ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/audio-focus-y-routing-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "auto-backup-y-key-value-backup-plataforma-android-platform",
+    "title": "Auto Backup y Key/Value Backup — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/auto-backup-y-key-value-backup-plataforma-android-platform.html"
+  },
+  {
+    "id": "back-stack-state-restoration-y-predictive-android-platform",
+    "title": "Back stack, state restoration y predictive... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/back-stack-state-restoration-y-predictive-android-platform.html"
+  },
+  {
+    "id": "background-location-y-permisos-10-android-platform",
+    "title": "Background location y permisos 10+ —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/background-location-y-permisos-10-android-platform.html"
+  },
+  {
+    "id": "backup-en-la-nube-y-restore-testing-android-platform",
+    "title": "Backup en la nube y restore testing —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/backup-en-la-nube-y-restore-testing-android-platform.html"
+  },
+  {
+    "id": "baseline-profiles-y-startup-plataforma-android-platform",
+    "title": "Baseline Profiles y startup — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/baseline-profiles-y-startup-plataforma-android-platform.html"
+  },
+  {
+    "id": "binder-aidl-y-comunicacion-inter-proceso-android-platform",
+    "title": "Binder, AIDL y comunicación inter-proceso —... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/binder-aidl-y-comunicacion-inter-proceso-android-platform.html"
+  },
+  {
+    "id": "biometricprompt-y-fallback-plataforma-android-platform",
+    "title": "BiometricPrompt y fallback — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/biometricprompt-y-fallback-plataforma-android-platform.html"
+  },
+  {
+    "id": "biometrics-y-haptics-plataforma-android-android-platform",
+    "title": "Biometrics y haptics — Plataforma Android ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/biometrics-y-haptics-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "ble-y-classic-bluetooth-plataforma-android-android-platform",
+    "title": "BLE y Classic Bluetooth — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/ble-y-classic-bluetooth-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "build-types-flavors-y-buildconfig-build-android-platform",
+    "title": "Build Types, Flavors y BuildConfig —... · Build... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/build-types-flavors-y-buildconfig-build-android-platform.html"
+  },
+  {
+    "id": "cache-filesdir-y-backup-rules-plataforma-android-platform",
+    "title": "Cache, filesDir y backup rules — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/cache-filesdir-y-backup-rules-plataforma-android-platform.html"
+  },
+  {
+    "id": "cambios-de-configuracion-y-viewmodel-android-platform",
+    "title": "Cambios de configuración y ViewModel —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/cambios-de-configuracion-y-viewmodel-android-platform.html"
+  },
+  {
+    "id": "canvas-path-y-graficos-vectoriales-android-platform",
+    "title": "Canvas, Path y gráficos vectoriales —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/canvas-path-y-graficos-vectoriales-android-platform.html"
+  },
+  {
+    "id": "capas-data-domain-ui-y-dependencias-android-platform",
+    "title": "Capas data/domain/ui y dependencias —... ·... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/capas-data-domain-ui-y-dependencias-android-platform.html"
+  },
+  {
+    "id": "capas-linux-kernel-hal-native-framework-android-platform",
+    "title": "Capas: Linux Kernel, HAL, Native, Framework... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/capas-linux-kernel-hal-native-framework-android-platform.html"
+  },
+  {
+    "id": "coap-y-http-2-en-dispositivos-plataforma-android-platform",
+    "title": "CoAP y HTTP/2 en dispositivos — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/coap-y-http-2-en-dispositivos-plataforma-android-platform.html"
+  },
+  {
+    "id": "coil-glide-imagenes-y-caching-plataforma-android-platform",
+    "title": "Coil/Glide: imágenes y caching — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/coil-glide-imagenes-y-caching-plataforma-android-platform.html"
+  },
+  {
+    "id": "colecciones-lambdas-y-scope-functions-android-platform",
+    "title": "Colecciones, lambdas y scope functions... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/colecciones-lambdas-y-scope-functions-android-platform.html"
+  },
+  {
+    "id": "compatibilidad-cts-y-treble-mainline-android-platform",
+    "title": "Compatibilidad, CTS y Treble/Mainline —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/compatibilidad-cts-y-treble-mainline-android-platform.html"
+  },
+  {
+    "id": "compilador-k2-y-mejoras-de-performance-android-platform",
+    "title": "Compilador K2 y mejoras de performance —... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/compilador-k2-y-mejoras-de-performance-android-platform.html"
+  },
+  {
+    "id": "composable-recomposicion-y-state-android-platform",
+    "title": "@Composable, recomposición y State —... ·... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/composable-recomposicion-y-state-android-platform.html"
+  },
+  {
+    "id": "compose-ui-tests-y-espresso-plataforma-android-platform",
+    "title": "Compose UI tests y Espresso — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/compose-ui-tests-y-espresso-plataforma-android-platform.html"
+  },
+  {
+    "id": "connectivitymanager-y-networkcapabilities-android-platform",
+    "title": "ConnectivityManager y NetworkCapabilities —... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/connectivitymanager-y-networkcapabilities-android-platform.html"
+  },
+  {
+    "id": "contentprovider-basico-y-contracts-android-platform",
+    "title": "ContentProvider básico y contracts —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/contentprovider-basico-y-contracts-android-platform.html"
+  },
+  {
+    "id": "dagger-hilt-y-anotaciones-plataforma-android-android-platform",
+    "title": "Dagger/Hilt y anotaciones — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/dagger-hilt-y-anotaciones-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "data-sealed-value-y-object-plataforma-android-platform",
+    "title": "data, sealed, value y object — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/data-sealed-value-y-object-plataforma-android-platform.html"
+  },
+  {
+    "id": "datastore-vs-sharedpreferences-datastore-android-platform",
+    "title": "DataStore vs SharedPreferences —... · Datastore... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/datastore-vs-sharedpreferences-datastore-android-platform.html"
+  },
+  {
+    "id": "deep-links-y-app-links-verificados-android-platform",
+    "title": "Deep links y app links verificados —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/deep-links-y-app-links-verificados-android-platform.html"
+  },
+  {
+    "id": "delegated-properties-y-observables-android-platform",
+    "title": "Delegated properties y observables —... ·... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/delegated-properties-y-observables-android-platform.html"
+  },
+  {
+    "id": "device-policy-y-work-profiles-plataforma-android-platform",
+    "title": "Device Policy y work profiles — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/device-policy-y-work-profiles-plataforma-android-platform.html"
+  },
+  {
+    "id": "dispatchers-excepciones-y-supervision-android-platform",
+    "title": "Dispatchers, excepciones y supervision... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/dispatchers-excepciones-y-supervision-android-platform.html"
+  },
+  {
+    "id": "e2e-screenshot-y-ci-sharding-plataforma-android-platform",
+    "title": "E2E, screenshot y CI sharding — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/e2e-screenshot-y-ci-sharding-plataforma-android-platform.html"
+  },
+  {
+    "id": "encryptedsharedpreferences-y-security-crypto-android-platform",
+    "title": "EncryptedSharedPreferences y Security Crypto... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/encryptedsharedpreferences-y-security-crypto-android-platform.html"
+  },
+  {
+    "id": "entities-daos-y-relaciones-plataforma-android-platform",
+    "title": "Entities, DAOs y relaciones — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/entities-daos-y-relaciones-plataforma-android-platform.html"
+  },
+  {
+    "id": "errores-retry-y-circuit-breaker-errores-android-platform",
+    "title": "Errores, retry y circuit breaker —... · Errores... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/errores-retry-y-circuit-breaker-errores-android-platform.html"
+  },
+  {
+    "id": "estrategia-de-migracion-java-kotlin-android-platform",
+    "title": "Estrategia de migración Java → Kotlin —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/estrategia-de-migracion-java-kotlin-android-platform.html"
+  },
+  {
+    "id": "estrategias-offline-y-cache-plataforma-android-platform",
+    "title": "Estrategias offline y cache — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/estrategias-offline-y-cache-plataforma-android-platform.html"
+  },
+  {
+    "id": "export-import-de-datos-del-usuario-android-platform",
+    "title": "Export/Import de datos del usuario —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/export-import-de-datos-del-usuario-android-platform.html"
+  },
+  {
+    "id": "extensiones-infix-y-dsl-builders-android-platform",
+    "title": "Extensiones, infix y DSL builders —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/extensiones-infix-y-dsl-builders-android-platform.html"
+  },
+  {
+    "id": "fastlane-version-bump-y-deploy-plataforma-android-platform",
+    "title": "Fastlane, version bump y deploy — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/fastlane-version-bump-y-deploy-plataforma-android-platform.html"
+  },
+  {
+    "id": "firma-versioncode-y-versioning-semantico-android-platform",
+    "title": "Firma, versionCode y versioning semántico... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/firma-versioncode-y-versioning-semantico-android-platform.html"
+  },
+  {
+    "id": "flows-con-lifecycle-repeatonlifecycle-android-platform",
+    "title": "Flows con lifecycle: repeatOnLifecycle —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/flows-con-lifecycle-repeatonlifecycle-android-platform.html"
+  },
+  {
+    "id": "flows-frios-calientes-operators-android-platform",
+    "title": "Flows fríos/calientes, operators —... · Android platform · Open School",
+    "type": "lecciones",
+    "url": "lecciones/flows-frios-calientes-operators-android-platform.html"
+  },
+  {
+    "id": "foldables-y-postures-plataforma-android-android-platform",
+    "title": "Foldables y postures — Plataforma Android ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/foldables-y-postures-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "foreground-services-y-tipos-14-plataforma-android-platform",
+    "title": "Foreground Services y tipos 14+ — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/foreground-services-y-tipos-14-plataforma-android-platform.html"
+  },
+  {
+    "id": "formato-checkstyle-y-spotless-plataforma-android-platform",
+    "title": "Formato, Checkstyle y Spotless — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/formato-checkstyle-y-spotless-plataforma-android-platform.html"
+  },
+  {
+    "id": "fragments-modernos-y-navigation-android-platform",
+    "title": "Fragments modernos y Navigation —... ·... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/fragments-modernos-y-navigation-android-platform.html"
+  },
+  {
+    "id": "fused-location-provider-plataforma-android-android-platform",
+    "title": "Fused Location Provider — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/fused-location-provider-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "github-actions-y-gradle-cache-plataforma-android-platform",
+    "title": "GitHub Actions y Gradle cache — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/github-actions-y-gradle-cache-plataforma-android-platform.html"
+  },
+  {
+    "id": "gradle-kotlin-dsl-y-version-catalogs-android-platform",
+    "title": "Gradle Kotlin DSL y Version Catalogs —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/gradle-kotlin-dsl-y-version-catalogs-android-platform.html"
+  },
+  {
+    "id": "graphql-con-apollo-kotlin-plataforma-android-android-platform",
+    "title": "GraphQL con Apollo Kotlin — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/graphql-con-apollo-kotlin-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "grpc-en-android-con-okhttp-channel-android-platform",
+    "title": "gRPC en Android con OkHttp channel —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/grpc-en-android-con-okhttp-channel-android-platform.html"
+  },
+  {
+    "id": "guava-apache-commons-y-utilidades-android-platform",
+    "title": "Guava, Apache Commons y utilidades —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/guava-apache-commons-y-utilidades-android-platform.html"
+  },
+  {
+    "id": "heap-gc-y-referencias-plataforma-android-android-platform",
+    "title": "Heap, GC y referencias — Plataforma Android ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/heap-gc-y-referencias-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "in-app-billing-y-subscriptions-plataforma-android-platform",
+    "title": "In-App Billing y subscriptions — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/in-app-billing-y-subscriptions-plataforma-android-platform.html"
+  },
+  {
+    "id": "internacionalizacion-y-plurales-android-platform",
+    "title": "Internacionalización y plurales —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/internacionalizacion-y-plurales-android-platform.html"
+  },
+  {
+    "id": "interop-androidview-y-composeview-android-platform",
+    "title": "Interop: AndroidView y ComposeView —... ·... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/interop-androidview-y-composeview-android-platform.html"
+  },
+  {
+    "id": "java-time-con-desugaring-plataforma-android-android-platform",
+    "title": "java.time con desugaring — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/java-time-con-desugaring-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "jetpack-xr-y-arcore-plataforma-android-xr-android-platform",
+    "title": "Jetpack XR y ARCore — Plataforma Android · Xr... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/jetpack-xr-y-arcore-plataforma-android-xr-android-platform.html"
+  },
+  {
+    "id": "jni-y-ndk-en-proyectos-hibridos-plataforma-android-platform",
+    "title": "JNI y NDK en proyectos híbridos — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/jni-y-ndk-en-proyectos-hibridos-plataforma-android-platform.html"
+  },
+  {
+    "id": "junit-4-5-mockito-y-assertj-plataforma-android-platform",
+    "title": "JUnit 4/5, Mockito y AssertJ — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/junit-4-5-mockito-y-assertj-plataforma-android-platform.html"
+  },
+  {
+    "id": "keystore-strongbox-y-claves-plataforma-android-platform",
+    "title": "Keystore, StrongBox y claves — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/keystore-strongbox-y-claves-plataforma-android-platform.html"
+  },
+  {
+    "id": "koin-como-alternativa-ligera-plataforma-android-platform",
+    "title": "Koin como alternativa ligera — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/koin-como-alternativa-ligera-plataforma-android-platform.html"
+  },
+  {
+    "id": "kotlin-multiplatform-expect-actual-android-platform",
+    "title": "Kotlin Multiplatform expect/actual —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/kotlin-multiplatform-expect-actual-android-platform.html"
+  },
+  {
+    "id": "lambdas-streams-y-method-references-android-platform",
+    "title": "Lambdas, Streams y Method References —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/lambdas-streams-y-method-references-android-platform.html"
+  },
+  {
+    "id": "layout-inspector-profiler-y-app-inspection-android-platform",
+    "title": "Layout Inspector, Profiler y App Inspection... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/layout-inspector-profiler-y-app-inspection-android-platform.html"
+  },
+  {
+    "id": "layouts-modifiers-y-theming-plataforma-android-platform",
+    "title": "Layouts, Modifiers y theming — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/layouts-modifiers-y-theming-plataforma-android-platform.html"
+  },
+  {
+    "id": "lazycolumn-row-keys-y-performance-android-platform",
+    "title": "LazyColumn/Row, keys y performance —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/lazycolumn-row-keys-y-performance-android-platform.html"
+  },
+  {
+    "id": "lint-error-prone-y-nullaway-plataforma-android-platform",
+    "title": "Lint, Error Prone y NullAway — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/lint-error-prone-y-nullaway-plataforma-android-platform.html"
+  },
+  {
+    "id": "managed-google-play-y-emm-plataforma-android-platform",
+    "title": "Managed Google Play y EMM — Plataforma... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/managed-google-play-y-emm-plataforma-android-platform.html"
+  },
+  {
+    "id": "manifest-permisos-y-queries-plataforma-android-platform",
+    "title": "Manifest, permisos y queries — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/manifest-permisos-y-queries-plataforma-android-platform.html"
+  },
+  {
+    "id": "maps-compose-y-clustering-plataforma-android-android-platform",
+    "title": "Maps Compose y clustering — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/maps-compose-y-clustering-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "material-3-y-design-tokens-plataforma-android-android-platform",
+    "title": "Material 3 y Design Tokens — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/material-3-y-design-tokens-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "media3-exoplayer-y-session-plataforma-android-platform",
+    "title": "Media3: ExoPlayer y session — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/media3-exoplayer-y-session-plataforma-android-platform.html"
+  },
+  {
+    "id": "media3-exoplayer-y-ui-de-reproduccion-android-platform",
+    "title": "Media3 ExoPlayer y UI de reproducción —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/media3-exoplayer-y-ui-de-reproduccion-android-platform.html"
+  },
+  {
+    "id": "migraciones-automigrations-y-testing-android-platform",
+    "title": "Migraciones, AutoMigrations y testing —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/migraciones-automigrations-y-testing-android-platform.html"
+  },
+  {
+    "id": "ml-kit-vision-barcode-face-text-android-platform",
+    "title": "ML Kit Vision: barcode, face, text —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/ml-kit-vision-barcode-face-text-android-platform.html"
+  },
+  {
+    "id": "modularizacion-a-escala-y-boundaries-android-platform",
+    "title": "Modularización a escala y boundaries —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/modularizacion-a-escala-y-boundaries-android-platform.html"
+  },
+  {
+    "id": "motion-animatedvisibility-y-transitions-android-platform",
+    "title": "Motion: AnimatedVisibility y transitions —... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/motion-animatedvisibility-y-transitions-android-platform.html"
+  },
+  {
+    "id": "mqtt-en-android-paho-plataforma-android-android-platform",
+    "title": "MQTT en Android (Paho) — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/mqtt-en-android-paho-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "navgraph-type-safety-y-argumentos-android-platform",
+    "title": "NavGraph, type-safety y argumentos —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/navgraph-type-safety-y-argumentos-android-platform.html"
+  },
+  {
+    "id": "network-security-config-y-pinning-android-platform",
+    "title": "Network Security Config y pinning —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/network-security-config-y-pinning-android-platform.html"
+  },
+  {
+    "id": "nfc-y-host-card-emulation-plataforma-android-android-platform",
+    "title": "NFC y Host Card Emulation — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/nfc-y-host-card-emulation-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "null-safety-y-let-run-android-platform",
+    "title": "Null safety: ?, !!, ?: y let/run —... · Android platform · Open School",
+    "type": "lecciones",
+    "url": "lecciones/null-safety-y-let-run-android-platform.html"
+  },
+  {
+    "id": "optional-records-y-caracteristicas-modernas-android-platform",
+    "title": "Optional, Records y características modernas... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/optional-records-y-caracteristicas-modernas-android-platform.html"
+  },
+  {
+    "id": "passkeys-y-credential-manager-plataforma-android-platform",
+    "title": "Passkeys y Credential Manager — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/passkeys-y-credential-manager-plataforma-android-platform.html"
+  },
+  {
+    "id": "patron-mvi-intent-reducer-state-android-platform",
+    "title": "Patrón MVI: intent → reducer → state —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/patron-mvi-intent-reducer-state-android-platform.html"
+  },
+  {
+    "id": "perfetto-macrobenchmark-y-jank-plataforma-android-platform",
+    "title": "Perfetto, Macrobenchmark y Jank — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/perfetto-macrobenchmark-y-jank-plataforma-android-platform.html"
+  },
+  {
+    "id": "performance-y-tamano-vs-json-plataforma-android-platform",
+    "title": "Performance y tamaño vs JSON — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/performance-y-tamano-vs-json-plataforma-android-platform.html"
+  },
+  {
+    "id": "photo-picker-y-permisos-granulares-photo-android-platform",
+    "title": "Photo Picker y permisos granulares —... · Photo... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/photo-picker-y-permisos-granulares-photo-android-platform.html"
+  },
+  {
+    "id": "platform-types-y-anotaciones-de-nulabilidad-android-platform",
+    "title": "Platform types y anotaciones de nulabilidad... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/platform-types-y-anotaciones-de-nulabilidad-android-platform.html"
+  },
+  {
+    "id": "play-integrity-api-plataforma-android-play-android-platform",
+    "title": "Play Integrity API — Plataforma Android · Play... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/play-integrity-api-plataforma-android-play-android-platform.html"
+  },
+  {
+    "id": "preference-ui-con-compose-plataforma-android-android-platform",
+    "title": "Preference UI con Compose — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/preference-ui-con-compose-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "preview-imagecapture-y-analisis-android-platform",
+    "title": "Preview, ImageCapture y análisis —... · Android platform · Open School",
+    "type": "lecciones",
+    "url": "lecciones/preview-imagecapture-y-analisis-android-platform.html"
+  },
+  {
+    "id": "privacy-sandbox-y-data-safety-plataforma-android-platform",
+    "title": "Privacy Sandbox y data safety — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/privacy-sandbox-y-data-safety-plataforma-android-platform.html"
+  },
+  {
+    "id": "proto-datastore-y-preferences-plataforma-android-platform",
+    "title": "Proto DataStore y Preferences — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/proto-datastore-y-preferences-plataforma-android-platform.html"
+  },
+  {
+    "id": "protobuf-como-contrato-plataforma-android-android-platform",
+    "title": "Protobuf como contrato — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/protobuf-como-contrato-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "providers-del-sistema-contacts-calendar-android-platform",
+    "title": "Providers del sistema: Contacts/Calendar —... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/providers-del-sistema-contacts-calendar-android-platform.html"
+  },
+  {
+    "id": "push-con-fcm-y-notificaciones-plataforma-android-platform",
+    "title": "Push con FCM y notificaciones — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/push-con-fcm-y-notificaciones-plataforma-android-platform.html"
+  },
+  {
+    "id": "quality-gates-lint-detekt-coverage-android-platform",
+    "title": "Quality gates: lint, detekt, coverage —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/quality-gates-lint-detekt-coverage-android-platform.html"
+  },
+  {
+    "id": "r8-proguard-y-shrinking-plataforma-android-android-platform",
+    "title": "R8/ProGuard y shrinking — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/r8-proguard-y-shrinking-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "repository-datasource-y-mappers-android-platform",
+    "title": "Repository, DataSource y mappers —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/repository-datasource-y-mappers-android-platform.html"
+  },
+  {
+    "id": "resources-qualifiers-y-theming-android-platform",
+    "title": "Resources, qualifiers y theming —... ·... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/resources-qualifiers-y-theming-android-platform.html"
+  },
+  {
+    "id": "retrofit-okhttp-y-interceptors-plataforma-android-platform",
+    "title": "Retrofit, OkHttp y interceptors — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/retrofit-okhttp-y-interceptors-plataforma-android-platform.html"
+  },
+  {
+    "id": "room-paging-3-y-flow-plataforma-android-android-platform",
+    "title": "Room + Paging 3 y Flow — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/room-paging-3-y-flow-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "rtl-localizacion-y-fuentes-escalables-android-platform",
+    "title": "RTL, localización y fuentes escalables —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/rtl-localizacion-y-fuentes-escalables-android-platform.html"
+  },
+  {
+    "id": "runtime-permissions-y-rationale-plataforma-android-platform",
+    "title": "Runtime permissions y rationale — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/runtime-permissions-y-rationale-plataforma-android-platform.html"
+  },
+  {
+    "id": "rxjava-legacy-y-migracion-a-flow-android-platform",
+    "title": "RxJava legacy y migración a Flow —... · Android platform · Open School",
+    "type": "lecciones",
+    "url": "lecciones/rxjava-legacy-y-migracion-a-flow-android-platform.html"
+  },
+  {
+    "id": "scoped-storage-y-mediastore-plataforma-android-platform",
+    "title": "Scoped Storage y MediaStore — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/scoped-storage-y-mediastore-plataforma-android-platform.html"
+  },
+  {
+    "id": "semantics-talkback-y-roles-plataforma-android-platform",
+    "title": "Semantics, TalkBack y roles — Plataforma... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/semantics-talkback-y-roles-plataforma-android-platform.html"
+  },
+  {
+    "id": "sensormanager-acelerometro-gyro-android-platform",
+    "title": "SensorManager: acelerómetro, gyro —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/sensormanager-acelerometro-gyro-android-platform.html"
+  },
+  {
+    "id": "serializacion-moshi-kotlinx-serialization-android-platform",
+    "title": "Serialización: Moshi, kotlinx-serialization... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/serializacion-moshi-kotlinx-serialization-android-platform.html"
+  },
+  {
+    "id": "serialization-parcelize-y-interop-android-platform",
+    "title": "Serialization, Parcelize y interop —... ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/serialization-parcelize-y-interop-android-platform.html"
+  },
+  {
+    "id": "services-broadcastreceivers-y-services-broadcast-android",
+    "title": "Services, BroadcastReceivers y... · Services broadcast ·...",
+    "type": "lecciones",
+    "url": "lecciones/services-broadcastreceivers-y-services-broadcast-android.html"
+  },
+  {
+    "id": "sincronizacion-con-workmanager-plataforma-android-platform",
+    "title": "Sincronización con WorkManager — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/sincronizacion-con-workmanager-plataforma-android-platform.html"
+  },
+  {
+    "id": "speech-to-text-y-tts-plataforma-android-android-platform",
+    "title": "Speech-to-Text y TTS — Plataforma Android ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/speech-to-text-y-tts-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "stateflow-vs-sharedflow-en-ui-plataforma-android-platform",
+    "title": "StateFlow vs SharedFlow en UI — Plataforma... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/stateflow-vs-sharedflow-en-ui-plataforma-android-platform.html"
+  },
+  {
+    "id": "storage-access-framework-saf-plataforma-android-platform",
+    "title": "Storage Access Framework (SAF) — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/storage-access-framework-saf-plataforma-android-platform.html"
+  },
+  {
+    "id": "suspend-launch-async-y-scopes-suspend-android-platform",
+    "title": "suspend, launch, async y scopes —... · Suspend... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/suspend-launch-async-y-scopes-suspend-android-platform.html"
+  },
+  {
+    "id": "tablets-y-large-screens-plataforma-android-android-platform",
+    "title": "Tablets y large screens — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/tablets-y-large-screens-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "testing-con-di-y-fakes-plataforma-android-android-platform",
+    "title": "Testing con DI y fakes — Plataforma Android ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/testing-con-di-y-fakes-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "testing-de-accesibilidad-automatizado-android-platform",
+    "title": "Testing de accesibilidad automatizado —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/testing-de-accesibilidad-automatizado-android-platform.html"
+  },
+  {
+    "id": "testing-de-coroutines-con-turbine-android-platform",
+    "title": "Testing de coroutines con Turbine —... ·... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/testing-de-coroutines-con-turbine-android-platform.html"
+  },
+  {
+    "id": "threads-executors-y-concurrencia-clasica-android-platform",
+    "title": "Threads, Executors y concurrencia clásica... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/threads-executors-y-concurrencia-clasica-android-platform.html"
+  },
+  {
+    "id": "tink-y-jetpack-security-plataforma-android-android-platform",
+    "title": "Tink y Jetpack Security — Plataforma Android... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/tink-y-jetpack-security-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "tracks-internal-closed-open-prod-y-staged-android-platform",
+    "title": "Tracks: internal/closed/open/prod y staged... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/tracks-internal-closed-open-prod-y-staged-android-platform.html"
+  },
+  {
+    "id": "unit-tests-junit-mockk-turbine-android-platform",
+    "title": "Unit tests: JUnit, MockK, Turbine —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/unit-tests-junit-mockk-turbine-android-platform.html"
+  },
+  {
+    "id": "usb-host-accessory-plataforma-android-usb-android-platform",
+    "title": "USB Host/Accessory — Plataforma Android · Usb... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/usb-host-accessory-plataforma-android-usb-android-platform.html"
+  },
+  {
+    "id": "usecases-interactors-y-capa-domain-android-platform",
+    "title": "UseCases/Interactors y capa domain —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/usecases-interactors-y-capa-domain-android-platform.html"
+  },
+  {
+    "id": "uwb-y-nearby-connections-plataforma-android-android-platform",
+    "title": "UWB y Nearby Connections — Plataforma Android... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/uwb-y-nearby-connections-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "val-var-tipos-smart-casts-e-inferencia-android-platform",
+    "title": "val/var, tipos, smart casts e inferencia —... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/val-var-tipos-smart-casts-e-inferencia-android-platform.html"
+  },
+  {
+    "id": "video-capture-y-estabilizacion-plataforma-android-platform",
+    "title": "Video capture y estabilización — Plataforma... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/video-capture-y-estabilizacion-plataforma-android-platform.html"
+  },
+  {
+    "id": "view-system-viewgroup-y-custom-views-android-platform",
+    "title": "View System: ViewGroup y Custom Views —... ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/view-system-viewgroup-y-custom-views-android-platform.html"
+  },
+  {
+    "id": "viewmodel-ui-state-y-unidireccionalidad-android-platform",
+    "title": "ViewModel, UI State y unidireccionalidad —... ·... · Android...",
+    "type": "lecciones",
+    "url": "lecciones/viewmodel-ui-state-y-unidireccionalidad-android-platform.html"
+  },
+  {
+    "id": "wear-compose-y-tiles-plataforma-android-android-platform",
+    "title": "Wear Compose y Tiles — Plataforma Android ·... · Android platform...",
+    "type": "lecciones",
+    "url": "lecciones/wear-compose-y-tiles-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "websockets-y-sse-plataforma-android-android-platform",
+    "title": "WebSockets y SSE — Plataforma Android ·... · Android platform ·...",
+    "type": "lecciones",
+    "url": "lecciones/websockets-y-sse-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "workmanager-workers-y-constraints-android-platform",
+    "title": "WorkManager: workers y constraints —... · Android platform · Open...",
+    "type": "lecciones",
+    "url": "lecciones/workmanager-workers-y-constraints-android-platform.html"
+  },
+  {
+    "id": "accesibilidad-y-ux-inclusiva-plataforma-android-android",
+    "title": "Accesibilidad y UX Inclusiva — Plataforma Android ·... ·...",
+    "type": "modulos",
+    "url": "modulos/accesibilidad-y-ux-inclusiva-plataforma-android-android.html"
+  },
+  {
+    "id": "arquitectura-aosp-y-capas-del-sistema-android-platform",
+    "title": "Arquitectura AOSP y Capas del Sistema —... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/arquitectura-aosp-y-capas-del-sistema-android-platform.html"
+  },
+  {
+    "id": "audio-media3-y-playback-plataforma-android-android-platform",
+    "title": "Audio, Media3 y Playback — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/audio-media3-y-playback-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "auth-biometrics-y-safetynet-plataforma-android-platform",
+    "title": "Auth, Biometrics y SafetyNet — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/auth-biometrics-y-safetynet-plataforma-android-platform.html"
+  },
+  {
+    "id": "background-work-moderno-plataforma-android-android-platform",
+    "title": "Background Work Moderno — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/background-work-moderno-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "backup-restore-y-export-plataforma-android-android-platform",
+    "title": "Backup, Restore y Export — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/backup-restore-y-export-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "bluetooth-nfc-uwb-y-nearby-plataforma-android-platform",
+    "title": "Bluetooth, NFC, UWB y Nearby — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/bluetooth-nfc-uwb-y-nearby-plataforma-android-platform.html"
+  },
+  {
+    "id": "camara-con-camerax-plataforma-android-android-platform",
+    "title": "Cámara con CameraX — Plataforma Android ·... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/camara-con-camerax-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "ci-cd-y-devops-plataforma-android-cicd-android-platform",
+    "title": "CI/CD y DevOps — Plataforma Android · Cicd... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/ci-cd-y-devops-plataforma-android-cicd-android-platform.html"
+  },
+  {
+    "id": "clean-architecture-y-capas-plataforma-android-clean",
+    "title": "Clean Architecture y capas — Plataforma Android · Clean... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/clean-architecture-y-capas-plataforma-android-clean.html"
+  },
+  {
+    "id": "componentes-y-androidmanifest-xml-plataforma-android-platform",
+    "title": "Componentes y AndroidManifest.xml — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/componentes-y-androidmanifest-xml-plataforma-android-platform.html"
+  },
+  {
+    "id": "compose-fundamentos-composables-y-estado-plataforma",
+    "title": "Compose Fundamentos: Composables y Estado — Plataforma... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/compose-fundamentos-composables-y-estado-plataforma.html"
+  },
+  {
+    "id": "contentproviders-y-ipc-plataforma-android-android-platform",
+    "title": "ContentProviders y IPC — Plataforma Android... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/contentproviders-y-ipc-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "coroutines-y-concurrencia-estructurada-android-platform",
+    "title": "Coroutines y Concurrencia Estructurada —... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/coroutines-y-concurrencia-estructurada-android-platform.html"
+  },
+  {
+    "id": "criptografia-y-android-keystore-plataforma-android-platform",
+    "title": "Criptografía y Android Keystore — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/criptografia-y-android-keystore-plataforma-android-platform.html"
+  },
+  {
+    "id": "depuracion-logs-y-herramientas-plataforma-android-platform",
+    "title": "Depuración, Logs y Herramientas — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/depuracion-logs-y-herramientas-plataforma-android-platform.html"
+  },
+  {
+    "id": "di-con-hilt-koin-y-scopes-plataforma-android-android-platform",
+    "title": "DI con Hilt/Koin y Scopes — Plataforma Android... · Android...",
+    "type": "modulos",
+    "url": "modulos/di-con-hilt-koin-y-scopes-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "enterprise-y-distribucion-avanzada-plataforma-android-platform",
+    "title": "Enterprise y Distribución Avanzada — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/enterprise-y-distribucion-avanzada-plataforma-android-platform.html"
+  },
+  {
+    "id": "filesystem-y-scoped-storage-plataforma-android-platform",
+    "title": "Filesystem y Scoped Storage — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/filesystem-y-scoped-storage-plataforma-android-platform.html"
+  },
+  {
+    "id": "flow-stateflow-y-sharedflow-plataforma-android-platform",
+    "title": "Flow, StateFlow y SharedFlow — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/flow-stateflow-y-sharedflow-plataforma-android-platform.html"
+  },
+  {
+    "id": "foldables-tablets-y-xr-plataforma-android-android-platform",
+    "title": "Foldables, Tablets y XR — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/foldables-tablets-y-xr-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "google-play-firma-y-publicacion-plataforma-android-platform",
+    "title": "Google Play: firma y publicación — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/google-play-firma-y-publicacion-plataforma-android-platform.html"
+  },
+  {
+    "id": "gradle-build-variants-y-versionado-android-platform",
+    "title": "Gradle, Build Variants y Versionado —... · Android platform · Open...",
+    "type": "modulos",
+    "url": "modulos/gradle-build-variants-y-versionado-android-platform.html"
+  },
+  {
+    "id": "graficos-media-y-canvas-avanzado-plataforma-android-platform",
+    "title": "Gráficos, Media y Canvas Avanzado — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/graficos-media-y-canvas-avanzado-plataforma-android-platform.html"
+  },
+  {
+    "id": "graphql-y-tiempo-real-plataforma-android-android-platform",
+    "title": "GraphQL y Tiempo Real — Plataforma Android ·... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/graphql-y-tiempo-real-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "grpc-protobuf-y-streaming-plataforma-android-android-platform",
+    "title": "gRPC, Protobuf y streaming — Plataforma Android... · Android...",
+    "type": "modulos",
+    "url": "modulos/grpc-protobuf-y-streaming-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "http-rest-con-retrofit-okhttp-plataforma-android-platform",
+    "title": "HTTP/REST con Retrofit + OkHttp — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/http-rest-con-retrofit-okhttp-plataforma-android-platform.html"
+  },
+  {
+    "id": "interop-kotlin-java-plataforma-android-interop",
+    "title": "Interop Kotlin ↔ Java — Plataforma Android · Interop ·... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/interop-kotlin-java-plataforma-android-interop.html"
+  },
+  {
+    "id": "iot-mqtt-coap-y-conectividad-plataforma-android-platform",
+    "title": "IoT: MQTT, CoAP y conectividad — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/iot-mqtt-coap-y-conectividad-plataforma-android-platform.html"
+  },
+  {
+    "id": "java-8-y-desugaring-en-android-plataforma-android",
+    "title": "Java 8+ y Desugaring en Android — Plataforma Android ·... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/java-8-y-desugaring-en-android-plataforma-android.html"
+  },
+  {
+    "id": "jvm-memory-model-en-android-plataforma-android-jvm",
+    "title": "JVM Memory Model en Android — Plataforma Android · Jvm... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/jvm-memory-model-en-android-plataforma-android-jvm.html"
+  },
+  {
+    "id": "kotlin-2-0-kmp-y-multiplataforma-plataforma-android-platform",
+    "title": "Kotlin 2.0, KMP y Multiplataforma — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/kotlin-2-0-kmp-y-multiplataforma-plataforma-android-platform.html"
+  },
+  {
+    "id": "librerias-java-clave-en-android-plataforma-android",
+    "title": "Librerías Java clave en Android — Plataforma Android ·... ·... ·...",
+    "type": "modulos",
+    "url": "modulos/librerias-java-clave-en-android-plataforma-android.html"
+  },
+  {
+    "id": "location-y-maps-plataforma-android-location-android-platform",
+    "title": "Location y Maps — Plataforma Android · Location... · Android...",
+    "type": "modulos",
+    "url": "modulos/location-y-maps-plataforma-android-location-android-platform.html"
+  },
+  {
+    "id": "material-3-design-tokens-y-theming-android-platform",
+    "title": "Material 3, Design Tokens y Theming —... · Android platform · Open...",
+    "type": "modulos",
+    "url": "modulos/material-3-design-tokens-y-theming-android-platform.html"
+  },
+  {
+    "id": "mvvm-mvi-y-presentacion-plataforma-android-android-platform",
+    "title": "MVVM, MVI y presentación — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/mvvm-mvi-y-presentacion-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "navigation-compose-y-deep-links-plataforma-android-platform",
+    "title": "Navigation Compose y Deep Links — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/navigation-compose-y-deep-links-plataforma-android-platform.html"
+  },
+  {
+    "id": "offline-first-y-sincronizacion-plataforma-android-platform",
+    "title": "Offline-first y Sincronización — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/offline-first-y-sincronizacion-plataforma-android-platform.html"
+  },
+  {
+    "id": "oop-en-kotlin-clases-objetos-y-extensiones-android-platform",
+    "title": "OOP en Kotlin: clases, objetos y extensiones... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/oop-en-kotlin-clases-objetos-y-extensiones-android-platform.html"
+  },
+  {
+    "id": "performance-y-baseline-profiles-plataforma-android-platform",
+    "title": "Performance y Baseline Profiles — Plataforma... · Android platform...",
+    "type": "modulos",
+    "url": "modulos/performance-y-baseline-profiles-plataforma-android-platform.html"
+  },
+  {
+    "id": "preferencias-y-datastore-plataforma-android-android-platform",
+    "title": "Preferencias y DataStore — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/preferencias-y-datastore-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "privacidad-y-permisos-13-14-plataforma-android-platform",
+    "title": "Privacidad y Permisos 13/14 — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/privacidad-y-permisos-13-14-plataforma-android-platform.html"
+  },
+  {
+    "id": "recursos-configuracion-y-localizacion-android-platform",
+    "title": "Recursos, Configuración y Localización —... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/recursos-configuracion-y-localizacion-android-platform.html"
+  },
+  {
+    "id": "room-y-sqlite-plataforma-android-room-android-platform",
+    "title": "Room y SQLite — Plataforma Android · Room... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/room-y-sqlite-plataforma-android-room-android-platform.html"
+  },
+  {
+    "id": "sensores-y-hardware-plataforma-android-android-platform",
+    "title": "Sensores y Hardware — Plataforma Android ·... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/sensores-y-hardware-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "sintaxis-tipos-y-null-safety-plataforma-android-platform",
+    "title": "Sintaxis, Tipos y Null Safety — Plataforma... · Android platform ·...",
+    "type": "modulos",
+    "url": "modulos/sintaxis-tipos-y-null-safety-plataforma-android-platform.html"
+  },
+  {
+    "id": "testing-unit-ui-y-e2e-plataforma-android-android-platform",
+    "title": "Testing: Unit, UI y E2E — Plataforma Android ·... · Android...",
+    "type": "modulos",
+    "url": "modulos/testing-unit-ui-y-e2e-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "tooling-java-lint-errorprone-nullaway-plataforma-android",
+    "title": "Tooling Java: Lint, ErrorProne, NullAway — Plataforma... ·...",
+    "type": "modulos",
+    "url": "modulos/tooling-java-lint-errorprone-nullaway-plataforma-android.html"
+  },
+  {
+    "id": "views-clasicas-e-interoperabilidad-plataforma-android-platform",
+    "title": "Views Clásicas e Interoperabilidad — Plataforma... · Android...",
+    "type": "modulos",
+    "url": "modulos/views-clasicas-e-interoperabilidad-plataforma-android-platform.html"
+  },
+  {
+    "id": "wear-os-tv-y-auto-plataforma-android-wear-android-platform",
+    "title": "Wear OS, TV y Auto — Plataforma Android · Wear... · Android...",
+    "type": "modulos",
+    "url": "modulos/wear-os-tv-y-auto-plataforma-android-wear-android-platform.html"
+  },
+  {
+    "id": "arquitectura-navegacion-y-modularizacion-plataforma",
+    "title": "Arquitectura, Navegación y Modularización — Plataforma... ·... ·...",
+    "type": "rutas",
+    "url": "rutas/arquitectura-navegacion-y-modularizacion-plataforma.html"
+  },
+  {
+    "id": "conectividad-red-y-protocolos-plataforma-android-platform",
+    "title": "Conectividad, Red y Protocolos — Plataforma... · Android platform...",
+    "type": "rutas",
+    "url": "rutas/conectividad-red-y-protocolos-plataforma-android-platform.html"
+  },
+  {
+    "id": "datos-persistencia-y-almacenamiento-android-platform",
+    "title": "Datos, Persistencia y Almacenamiento —... · Android platform ·...",
+    "type": "rutas",
+    "url": "rutas/datos-persistencia-y-almacenamiento-android-platform.html"
+  },
+  {
+    "id": "fundamentos-de-la-plataforma-android-android-platform",
+    "title": "Fundamentos de la Plataforma Android —... · Android platform ·...",
+    "type": "rutas",
+    "url": "rutas/fundamentos-de-la-plataforma-android-android-platform.html"
+  },
+  {
+    "id": "java-moderno-e-interoperabilidad-plataforma-android-platform",
+    "title": "Java Moderno e Interoperabilidad — Plataforma... · Android...",
+    "type": "rutas",
+    "url": "rutas/java-moderno-e-interoperabilidad-plataforma-android-platform.html"
+  },
+  {
+    "id": "kotlin-para-android-lenguaje-oficial-android-platform",
+    "title": "Kotlin para Android - Lenguaje Oficial —... · Android platform ·...",
+    "type": "rutas",
+    "url": "rutas/kotlin-para-android-lenguaje-oficial-android-platform.html"
+  },
+  {
+    "id": "publicacion-ci-cd-y-ecosistema-expandido-android-platform",
+    "title": "Publicación, CI/CD y Ecosistema Expandido —... · Android platform...",
+    "type": "rutas",
+    "url": "rutas/publicacion-ci-cd-y-ecosistema-expandido-android-platform.html"
+  },
+  {
+    "id": "seguridad-rendimiento-y-calidad-plataforma-android-platform",
+    "title": "Seguridad, Rendimiento y Calidad — Plataforma... · Android...",
+    "type": "rutas",
+    "url": "rutas/seguridad-rendimiento-y-calidad-plataforma-android-platform.html"
+  },
+  {
+    "id": "sistema-hardware-y-multimedia-plataforma-android-platform",
+    "title": "Sistema, Hardware y Multimedia — Plataforma... · Android platform...",
+    "type": "rutas",
+    "url": "rutas/sistema-hardware-y-multimedia-plataforma-android-platform.html"
+  },
+  {
+    "id": "ui-moderna-con-jetpack-compose-y-views-android-platform",
+    "title": "UI Moderna con Jetpack Compose y Views —... · Android platform ·...",
+    "type": "rutas",
+    "url": "rutas/ui-moderna-con-jetpack-compose-y-views-android-platform.html"
+  },
+  {
+    "id": "doc-1-universal",
+    "title": "Doc 1 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-1-universal.html"
+  },
+  {
+    "id": "doc-10-universal",
+    "title": "Doc 10 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-10-universal.html"
+  },
+  {
+    "id": "doc-11-universal",
+    "title": "Doc 11 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-11-universal.html"
+  },
+  {
+    "id": "doc-12-universal",
+    "title": "Doc 12 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-12-universal.html"
+  },
+  {
+    "id": "doc-13-universal",
+    "title": "Doc 13 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-13-universal.html"
+  },
+  {
+    "id": "doc-14-universal",
+    "title": "Doc 14 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-14-universal.html"
+  },
+  {
+    "id": "doc-15-universal",
+    "title": "Doc 15 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-15-universal.html"
+  },
+  {
+    "id": "doc-16-universal",
+    "title": "Doc 16 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-16-universal.html"
+  },
+  {
+    "id": "doc-17-universal",
+    "title": "Doc 17 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-17-universal.html"
+  },
+  {
+    "id": "doc-18-universal",
+    "title": "Doc 18 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-18-universal.html"
+  },
+  {
+    "id": "doc-19-universal",
+    "title": "Doc 19 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-19-universal.html"
+  },
+  {
+    "id": "doc-2-universal",
+    "title": "Doc 2 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-2-universal.html"
+  },
+  {
+    "id": "doc-20-universal",
+    "title": "Doc 20 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-20-universal.html"
+  },
+  {
+    "id": "doc-21-universal",
+    "title": "Doc 21 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-21-universal.html"
+  },
+  {
+    "id": "doc-22-universal",
+    "title": "Doc 22 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-22-universal.html"
+  },
+  {
+    "id": "doc-23-universal",
+    "title": "Doc 23 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-23-universal.html"
+  },
+  {
+    "id": "doc-24-universal",
+    "title": "Doc 24 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-24-universal.html"
+  },
+  {
+    "id": "doc-25-universal",
+    "title": "Doc 25 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-25-universal.html"
+  },
+  {
+    "id": "doc-3-universal",
+    "title": "Doc 3 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-3-universal.html"
+  },
+  {
+    "id": "doc-4-universal",
+    "title": "Doc 4 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-4-universal.html"
+  },
+  {
+    "id": "doc-5-universal",
+    "title": "Doc 5 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-5-universal.html"
+  },
+  {
+    "id": "doc-6-universal",
+    "title": "Doc 6 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-6-universal.html"
+  },
+  {
+    "id": "doc-7-universal",
+    "title": "Doc 7 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-7-universal.html"
+  },
+  {
+    "id": "doc-8-universal",
+    "title": "Doc 8 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-8-universal.html"
+  },
+  {
+    "id": "doc-9-universal",
+    "title": "Doc 9 — Universal · Open School",
+    "type": "universal-docs",
+    "url": "universal-docs/doc-9-universal.html"
+  },
+  {
+    "id": "3ds-y-sca",
+    "title": "3DS y SCA · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/3ds-y-sca.html"
+  },
+  {
+    "id": "a-b-y-feature-flags",
+    "title": "A/B y feature flags · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/a-b-y-feature-flags.html"
+  },
+  {
+    "id": "accesibilidad-a11y",
+    "title": "Accesibilidad a11y · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/accesibilidad-a11y.html"
+  },
+  {
+    "id": "accesibilidad-ux",
+    "title": "Accesibilidad UX · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/accesibilidad-ux.html"
+  },
+  {
+    "id": "accesibilidad-wcag",
+    "title": "Accesibilidad WCAG · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/accesibilidad-wcag.html"
+  },
+  {
+    "id": "agentes-con-tools",
+    "title": "Agentes con tools · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/agentes-con-tools.html"
+  },
+  {
+    "id": "ai-ux-y-confianza",
+    "title": "AI UX y confianza · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/ai-ux-y-confianza.html"
+  },
+  {
+    "id": "app-store-y-play",
+    "title": "App Store y Play · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/app-store-y-play.html"
+  },
+  {
+    "id": "attribution",
+    "title": "Attribution · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/attribution.html"
+  },
+  {
+    "id": "auth-jwt-oauth",
+    "title": "Auth JWT/OAuth · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/auth-jwt-oauth.html"
+  },
+  {
+    "id": "auth-y-sesiones",
+    "title": "Auth y sesiones · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/auth-y-sesiones.html"
+  },
+  {
+    "id": "automatizacion-soporte",
+    "title": "Automatización soporte · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/automatizacion-soporte.html"
+  },
+  {
+    "id": "bff-y-aggregation",
+    "title": "BFF y aggregation · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/bff-y-aggregation.html"
+  },
+  {
+    "id": "billing-y-suscripciones",
+    "title": "Billing y suscripciones · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/billing-y-suscripciones.html"
+  },
+  {
+    "id": "carrito-y-checkout",
+    "title": "Carrito y checkout · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/carrito-y-checkout.html"
+  },
+  {
+    "id": "catalogo-pim",
+    "title": "Catálogo PIM · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/catalogo-pim.html"
+  },
+  {
+    "id": "chat-y-colaboracion",
+    "title": "Chat y colaboración · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/chat-y-colaboracion.html"
+  },
+  {
+    "id": "chatops-y-bot",
+    "title": "Chatops y bot · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/chatops-y-bot.html"
+  },
+  {
+    "id": "ci-cd-y-pipelines",
+    "title": "CI/CD y pipelines · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/ci-cd-y-pipelines.html"
+  },
+  {
+    "id": "compliance-producto",
+    "title": "Compliance producto · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/compliance-producto.html"
+  },
+  {
+    "id": "contratos-vendor",
+    "title": "Contratos vendor · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/contratos-vendor.html"
+  },
+  {
+    "id": "conway-invertida",
+    "title": "Conway invertida · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/conway-invertida.html"
+  },
+  {
+    "id": "cookies-y-consent",
+    "title": "Cookies y consent · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/cookies-y-consent.html"
+  },
+  {
+    "id": "core-web-vitals",
+    "title": "Core Web Vitals · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/core-web-vitals.html"
+  },
+  {
+    "id": "coste-y-finops",
+    "title": "Coste y FinOps · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/coste-y-finops.html"
+  },
+  {
+    "id": "coste-y-latency-llm",
+    "title": "Coste y latency LLM · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/coste-y-latency-llm.html"
+  },
+  {
+    "id": "css-moderno-y-layout",
+    "title": "CSS moderno y layout · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/css-moderno-y-layout.html"
+  },
+  {
+    "id": "cultura-y-rituales",
+    "title": "Cultura y rituales · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/cultura-y-rituales.html"
+  },
+  {
+    "id": "data-contracts",
+    "title": "Data contracts · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/data-contracts.html"
+  },
+  {
+    "id": "deep-links-universales",
+    "title": "Deep links universales · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/deep-links-universales.html"
+  },
+  {
+    "id": "design-system",
+    "title": "Design system · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/design-system.html"
+  },
+  {
+    "id": "design-tokens",
+    "title": "Design tokens · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/design-tokens.html"
+  },
+  {
+    "id": "disaster-recovery",
+    "title": "Disaster recovery · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/disaster-recovery.html"
+  },
+  {
+    "id": "discovery-jtbd",
+    "title": "Discovery JTBD · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/discovery-jtbd.html"
+  },
+  {
+    "id": "disputas-marketplace",
+    "title": "Disputas marketplace · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/disputas-marketplace.html"
+  },
+  {
+    "id": "docker-y-compose",
+    "title": "Docker y compose · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/docker-y-compose.html"
+  },
+  {
+    "id": "email-transaccional",
+    "title": "Email transaccional · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/email-transaccional.html"
+  },
+  {
+    "id": "entregabilidad",
+    "title": "Entregabilidad · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/entregabilidad.html"
+  },
+  {
+    "id": "escalado-y-autoscale",
+    "title": "Escalado y autoscale · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/escalado-y-autoscale.html"
+  },
+  {
+    "id": "especificacion-y-prds",
+    "title": "Especificación y PRDs · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/especificacion-y-prds.html"
+  },
+  {
+    "id": "etl-y-pipelines",
+    "title": "ETL y pipelines · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/etl-y-pipelines.html"
+  },
+  {
+    "id": "evals-y-guardrails",
+    "title": "Evals y guardrails · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/evals-y-guardrails.html"
+  },
+  {
+    "id": "event-tracking",
+    "title": "Event tracking · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/event-tracking.html"
+  },
+  {
+    "id": "eventos-y-colas",
+    "title": "Eventos y colas · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/eventos-y-colas.html"
+  },
+  {
+    "id": "expansion-y-rollout",
+    "title": "Expansión y rollout · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/expansion-y-rollout.html"
+  },
+  {
+    "id": "facturacion-y-vat",
+    "title": "Facturación y VAT · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/facturacion-y-vat.html"
+  },
+  {
+    "id": "feeds-y-marketplaces",
+    "title": "Feeds y marketplaces · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/feeds-y-marketplaces.html"
+  },
+  {
+    "id": "fitness-functions",
+    "title": "Fitness functions · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/fitness-functions.html"
+  },
+  {
+    "id": "flutter-y-dart",
+    "title": "Flutter y Dart · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/flutter-y-dart.html"
+  },
+  {
+    "id": "fraude-internacional",
+    "title": "Fraude internacional · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/fraude-internacional.html"
+  },
+  {
+    "id": "fraude-y-riesgo",
+    "title": "Fraude y riesgo · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/fraude-y-riesgo.html"
+  },
+  {
+    "id": "funnels-y-cohortes",
+    "title": "Funnels y cohortes · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/funnels-y-cohortes.html"
+  },
+  {
+    "id": "gdpr-y-ccpa",
+    "title": "GDPR y CCPA · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/gdpr-y-ccpa.html"
+  },
+  {
+    "id": "graphql-federado",
+    "title": "GraphQL federado · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/graphql-federado.html"
+  },
+  {
+    "id": "grpc-protobuf",
+    "title": "gRPC/Protobuf · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/grpc-protobuf.html"
+  },
+  {
+    "id": "handoff-a-codigo",
+    "title": "Handoff a código · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/handoff-a-codigo.html"
+  },
+  {
+    "id": "hardening-headers",
+    "title": "Hardening headers · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/hardening-headers.html"
+  },
+  {
+    "id": "headless-cms",
+    "title": "Headless CMS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/headless-cms.html"
+  },
+  {
+    "id": "headless-commerce",
+    "title": "Headless commerce · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/headless-commerce.html"
+  },
+  {
+    "id": "helpdesk-y-ticketing",
+    "title": "Helpdesk y ticketing · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/helpdesk-y-ticketing.html"
+  },
+  {
+    "id": "html5-semantico-y-a11y",
+    "title": "HTML5 semántico y A11y · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/html5-semantico-y-a11y.html"
+  },
+  {
+    "id": "i18n-y-l10n",
+    "title": "i18n y l10n · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/i18n-y-l10n.html"
+  },
+  {
+    "id": "impuestos-globales",
+    "title": "Impuestos globales · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/impuestos-globales.html"
+  },
+  {
+    "id": "inbox-y-notifs",
+    "title": "Inbox y notifs · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/inbox-y-notifs.html"
+  },
+  {
+    "id": "incidentes-y-breach",
+    "title": "Incidentes y breach · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/incidentes-y-breach.html"
+  },
+  {
+    "id": "incidentes-y-postmortem",
+    "title": "Incidentes y postmortem · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/incidentes-y-postmortem.html"
+  },
+  {
+    "id": "integracion-llm",
+    "title": "Integración LLM · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/integracion-llm.html"
+  },
+  {
+    "id": "integracion-stripe-psp",
+    "title": "Integración Stripe/PSP · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/integracion-stripe-psp.html"
+  },
+  {
+    "id": "internacional-seo",
+    "title": "Internacional SEO · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/internacional-seo.html"
+  },
+  {
+    "id": "internacionalizacion",
+    "title": "Internacionalización · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/internacionalizacion.html"
+  },
+  {
+    "id": "inventario-oms",
+    "title": "Inventario OMS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/inventario-oms.html"
+  },
+  {
+    "id": "javascript-moderno",
+    "title": "JavaScript moderno · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/javascript-moderno.html"
+  },
+  {
+    "id": "kb-y-self-serve",
+    "title": "KB y self-serve · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/kb-y-self-serve.html"
+  },
+  {
+    "id": "kubernetes",
+    "title": "Kubernetes · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/kubernetes.html"
+  },
+  {
+    "id": "lifecycle-email-sms",
+    "title": "Lifecycle email/SMS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/lifecycle-email-sms.html"
+  },
+  {
+    "id": "logistica-global",
+    "title": "Logística global · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/logistica-global.html"
+  },
+  {
+    "id": "logistica-multi-vendor",
+    "title": "Logística multi-vendor · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/logistica-multi-vendor.html"
+  },
+  {
+    "id": "matching-oferta-demanda",
+    "title": "Matching oferta-demanda · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/matching-oferta-demanda.html"
+  },
+  {
+    "id": "media-y-dam",
+    "title": "Media y DAM · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/media-y-dam.html"
+  },
+  {
+    "id": "metricas-de-producto",
+    "title": "Métricas de producto · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/metricas-de-producto.html"
+  },
+  {
+    "id": "metricas-de-soporte",
+    "title": "Métricas de soporte · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/metricas-de-soporte.html"
+  },
+  {
+    "id": "metricas-org",
+    "title": "Métricas org · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/metricas-org.html"
+  },
+  {
+    "id": "metricas-ux",
+    "title": "Métricas UX · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/metricas-ux.html"
+  },
+  {
+    "id": "migracion-cms",
+    "title": "Migración CMS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/migracion-cms.html"
+  },
+  {
+    "id": "migraciones-seo",
+    "title": "Migraciones SEO · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/migraciones-seo.html"
+  },
+  {
+    "id": "migraciones-y-seed",
+    "title": "Migraciones y seed · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/migraciones-y-seed.html"
+  },
+  {
+    "id": "modelado-de-contenido",
+    "title": "Modelado de contenido · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/modelado-de-contenido.html"
+  },
+  {
+    "id": "modelado-relacional",
+    "title": "Modelado relacional · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/modelado-relacional.html"
+  },
+  {
+    "id": "moderacion",
+    "title": "Moderación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/moderacion.html"
+  },
+  {
+    "id": "motion-y-micro-tica",
+    "title": "Motion y micro-tica · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/motion-y-micro-tica.html"
+  },
+  {
+    "id": "north-star-y-retencion",
+    "title": "North star y retención · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/north-star-y-retencion.html"
+  },
+  {
+    "id": "nosql-y-newsql",
+    "title": "NoSQL y NewSQL · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/nosql-y-newsql.html"
+  },
+  {
+    "id": "observabilidad-de-datos",
+    "title": "Observabilidad de datos · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/observabilidad-de-datos.html"
+  },
+  {
+    "id": "observabilidad",
+    "title": "Observabilidad · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/observabilidad.html"
+  },
+  {
+    "id": "offline-first-movil",
+    "title": "Offline-first móvil · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/offline-first-movil.html"
+  },
+  {
+    "id": "onboarding-vendors",
+    "title": "Onboarding vendors · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/onboarding-vendors.html"
+  },
+  {
+    "id": "onboarding-y-activacion",
+    "title": "Onboarding y activación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/onboarding-y-activacion.html"
+  },
+  {
+    "id": "owasp-top-10",
+    "title": "OWASP Top 10 · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/owasp-top-10.html"
+  },
+  {
+    "id": "pagos-cross-border",
+    "title": "Pagos cross-border · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pagos-cross-border.html"
+  },
+  {
+    "id": "payouts-y-comisiones",
+    "title": "Payouts y comisiones · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/payouts-y-comisiones.html"
+  },
+  {
+    "id": "pci-dss",
+    "title": "PCI DSS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pci-dss.html"
+  },
+  {
+    "id": "pdp-plp-y-search",
+    "title": "PDP/PLP y search · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pdp-plp-y-search.html"
+  },
+  {
+    "id": "pentest-y-sast",
+    "title": "Pentest y SAST · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pentest-y-sast.html"
+  },
+  {
+    "id": "performance-e-commerce",
+    "title": "Performance e-commerce · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/performance-e-commerce.html"
+  },
+  {
+    "id": "performance-movil",
+    "title": "Performance móvil · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/performance-movil.html"
+  },
+  {
+    "id": "performance-web",
+    "title": "Performance web · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/performance-web.html"
+  },
+  {
+    "id": "personalizacion-ai",
+    "title": "Personalización AI · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/personalizacion-ai.html"
+  },
+  {
+    "id": "plantillas-y-mjml",
+    "title": "Plantillas y MJML · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/plantillas-y-mjml.html"
+  },
+  {
+    "id": "platform-engineering",
+    "title": "Platform engineering · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/platform-engineering.html"
+  },
+  {
+    "id": "precios-por-mercado",
+    "title": "Precios por mercado · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/precios-por-mercado.html"
+  },
+  {
+    "id": "preview-y-releases",
+    "title": "Preview y releases · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/preview-y-releases.html"
+  },
+  {
+    "id": "pricing-dinamico",
+    "title": "Pricing dinámico · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pricing-dinamico.html"
+  },
+  {
+    "id": "pricing-y-planes",
+    "title": "Pricing y planes · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pricing-y-planes.html"
+  },
+  {
+    "id": "priorizacion-rice-moscow",
+    "title": "Priorización RICE/MoSCoW · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/priorizacion-rice-moscow.html"
+  },
+  {
+    "id": "promos-y-cupones",
+    "title": "Promos y cupones · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/promos-y-cupones.html"
+  },
+  {
+    "id": "prototipo-y-test",
+    "title": "Prototipo y test · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/prototipo-y-test.html"
+  },
+  {
+    "id": "push-web-movil",
+    "title": "Push web/móvil · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/push-web-movil.html"
+  },
+  {
+    "id": "push-y-notifs",
+    "title": "Push y notifs · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/push-y-notifs.html"
+  },
+  {
+    "id": "pwa-instalable",
+    "title": "PWA instalable · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/pwa-instalable.html"
+  },
+  {
+    "id": "rag-y-vector-db",
+    "title": "RAG y vector DB · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/rag-y-vector-db.html"
+  },
+  {
+    "id": "rate-limit-y-paginacion",
+    "title": "Rate limit y paginación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/rate-limit-y-paginacion.html"
+  },
+  {
+    "id": "react-native",
+    "title": "React Native · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/react-native.html"
+  },
+  {
+    "id": "react-y-ecosistema",
+    "title": "React y ecosistema · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/react-y-ecosistema.html"
+  },
+  {
+    "id": "redis-y-cache",
+    "title": "Redis y cache · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/redis-y-cache.html"
+  },
+  {
+    "id": "reembolsos-y-disputas",
+    "title": "Reembolsos y disputas · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/reembolsos-y-disputas.html"
+  },
+  {
+    "id": "referral-y-loop",
+    "title": "Referral y loop · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/referral-y-loop.html"
+  },
+  {
+    "id": "research-y-jtbd",
+    "title": "Research y JTBD · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/research-y-jtbd.html"
+  },
+  {
+    "id": "rest-y-openapi",
+    "title": "REST y OpenAPI · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/rest-y-openapi.html"
+  },
+  {
+    "id": "returns-y-post-compra",
+    "title": "Returns y post-compra · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/returns-y-post-compra.html"
+  },
+  {
+    "id": "reviews-y-reputacion",
+    "title": "Reviews y reputación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/reviews-y-reputacion.html"
+  },
+  {
+    "id": "rich-results",
+    "title": "Rich results · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/rich-results.html"
+  },
+  {
+    "id": "riesgo-legal",
+    "title": "Riesgo legal · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/riesgo-legal.html"
+  },
+  {
+    "id": "roadmap-a-backlog",
+    "title": "Roadmap a backlog · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/roadmap-a-backlog.html"
+  },
+  {
+    "id": "roadmaps-okrs",
+    "title": "Roadmaps OKRs · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/roadmaps-okrs.html"
+  },
+  {
+    "id": "roadmaps-y-portfolio",
+    "title": "Roadmaps y portfolio · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/roadmaps-y-portfolio.html"
+  },
+  {
+    "id": "runbooks",
+    "title": "Runbooks · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/runbooks.html"
+  },
+  {
+    "id": "secretos-y-vault",
+    "title": "Secretos y Vault · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/secretos-y-vault.html"
+  },
+  {
+    "id": "sem-y-shopping",
+    "title": "SEM y Shopping · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/sem-y-shopping.html"
+  },
+  {
+    "id": "seo-tecnico-cms",
+    "title": "SEO técnico CMS · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/seo-tecnico-cms.html"
+  },
+  {
+    "id": "seo-tecnico",
+    "title": "SEO técnico · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/seo-tecnico.html"
+  },
+  {
+    "id": "sitemaps-y-crawl",
+    "title": "Sitemaps y crawl · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/sitemaps-y-crawl.html"
+  },
+  {
+    "id": "sla-y-escalado",
+    "title": "SLA y escalado · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/sla-y-escalado.html"
+  },
+  {
+    "id": "soporte-multi-idioma",
+    "title": "Soporte multi-idioma · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/soporte-multi-idioma.html"
+  },
+  {
+    "id": "stakeholders-y-rituales",
+    "title": "Stakeholders y rituales · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/stakeholders-y-rituales.html"
+  },
+  {
+    "id": "state-y-data-fetching",
+    "title": "State y data fetching · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/state-y-data-fetching.html"
+  },
+  {
+    "id": "supply-chain-sbom",
+    "title": "Supply chain (SBOM) · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/supply-chain-sbom.html"
+  },
+  {
+    "id": "tax-y-aduana",
+    "title": "Tax y aduana · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/tax-y-aduana.html"
+  },
+  {
+    "id": "team-topologies",
+    "title": "Team topologies · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/team-topologies.html"
+  },
+  {
+    "id": "terminos-y-privacidad",
+    "title": "Términos y privacidad · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/terminos-y-privacidad.html"
+  },
+  {
+    "id": "terraform-iac",
+    "title": "Terraform IaC · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/terraform-iac.html"
+  },
+  {
+    "id": "testing-de-apis",
+    "title": "Testing de APIs · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/testing-de-apis.html"
+  },
+  {
+    "id": "trust-safety",
+    "title": "Trust & safety · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/trust-safety.html"
+  },
+  {
+    "id": "validacion-continua",
+    "title": "Validación continua · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/validacion-continua.html"
+  },
+  {
+    "id": "versionado-y-deprecacion",
+    "title": "Versionado y deprecación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/versionado-y-deprecacion.html"
+  },
+  {
+    "id": "vue-svelte-solid",
+    "title": "Vue/Svelte/Solid · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/vue-svelte-solid.html"
+  },
+  {
+    "id": "warehouse-y-lakehouse",
+    "title": "Warehouse y Lakehouse · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/warehouse-y-lakehouse.html"
+  },
+  {
+    "id": "webhook-y-reconciliacion",
+    "title": "Webhook y reconciliación · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/webhook-y-reconciliacion.html"
+  },
+  {
+    "id": "webrtc-llamada-video",
+    "title": "WebRTC llamada/video · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/webrtc-llamada-video.html"
+  },
+  {
+    "id": "websocket-sse",
+    "title": "WebSocket/SSE · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/websocket-sse.html"
+  },
+  {
+    "id": "workflow-editorial",
+    "title": "Workflow editorial · Open School",
+    "type": "universal-modulos",
+    "url": "universal-modulos/workflow-editorial.html"
+  },
+  {
+    "id": "ai-en-producto-llm-a-agentes",
+    "title": "AI en Producto — LLM a Agentes · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/ai-en-producto-llm-a-agentes.html"
+  },
+  {
+    "id": "backend-apis-node-go-java",
+    "title": "Backend & APIs — Node, Go, Java · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/backend-apis-node-go-java.html"
+  },
+  {
+    "id": "buscadores-discoverability",
+    "title": "Buscadores & Discoverability · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/buscadores-discoverability.html"
+  },
+  {
+    "id": "cms-contenido-headless",
+    "title": "CMS & Contenido — Headless · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/cms-contenido-headless.html"
+  },
+  {
+    "id": "comunicaciones-tiempo-real",
+    "title": "Comunicaciones Tiempo Real · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/comunicaciones-tiempo-real.html"
+  },
+  {
+    "id": "datos-sql-nosql-a-warehouse",
+    "title": "Datos — SQL/NoSQL a Warehouse · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/datos-sql-nosql-a-warehouse.html"
+  },
+  {
+    "id": "e-commerce-headless-a-checkout",
+    "title": "E-commerce — Headless a Checkout · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/e-commerce-headless-a-checkout.html"
+  },
+  {
+    "id": "escalado-organizacion",
+    "title": "Escalado & Organización · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/escalado-organizacion.html"
+  },
+  {
+    "id": "frontend-web-html-a-frameworks",
+    "title": "Frontend Web — HTML a Frameworks · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/frontend-web-html-a-frameworks.html"
+  },
+  {
+    "id": "growth-analitica",
+    "title": "Growth & Analítica · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/growth-analitica.html"
+  },
+  {
+    "id": "infra-devops-docker-a-k8s",
+    "title": "Infra & DevOps — Docker a K8s · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/infra-devops-docker-a-k8s.html"
+  },
+  {
+    "id": "internacional-pagos-tax-logistica",
+    "title": "Internacional — Pagos, Tax, Logística · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/internacional-pagos-tax-logistica.html"
+  },
+  {
+    "id": "legal-compliance",
+    "title": "Legal & Compliance · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/legal-compliance.html"
+  },
+  {
+    "id": "marketplace-multi-vendor",
+    "title": "Marketplace Multi-vendor · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/marketplace-multi-vendor.html"
+  },
+  {
+    "id": "movil-pwa-native-a-store",
+    "title": "Móvil & PWA — Native a Store · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/movil-pwa-native-a-store.html"
+  },
+  {
+    "id": "pagos-monetizacion",
+    "title": "Pagos & Monetización · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/pagos-monetizacion.html"
+  },
+  {
+    "id": "producto-digital-discovery-a-roadmap",
+    "title": "Producto Digital — Discovery a Roadmap · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/producto-digital-discovery-a-roadmap.html"
+  },
+  {
+    "id": "seguridad-privacidad-owasp-a-gdpr",
+    "title": "Seguridad & Privacidad — OWASP a GDPR · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/seguridad-privacidad-owasp-a-gdpr.html"
+  },
+  {
+    "id": "soporte-operaciones",
+    "title": "Soporte & Operaciones · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/soporte-operaciones.html"
+  },
+  {
+    "id": "ux-ui-design-system",
+    "title": "UX/UI & Design System · Open School",
+    "type": "universal-rutas",
+    "url": "universal-rutas/ux-ui-design-system.html"
+  }
+]

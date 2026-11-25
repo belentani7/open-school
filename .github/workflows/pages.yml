@@ -1,43 +1,17 @@
-name: Deploy open-school to GitHub Pages
-
-# The site itself lives on recovery/drive-web-first-20261123 while PR #3 is in
-# review; main only carries the workflow. GitHub Pages refuses to deploy from a
-# non-default branch, so the default branch does the publishing and checks the
-# recovered branch out. When PR #3 is merged, drop the `ref:` line and this
-# workflow keeps working unchanged.
-
+﻿name: Validate public campus
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
-
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
+  catalog:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          ref: recovery/drive-web-first-20261123
-
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          python-version: '3.12'
+      - run: python scripts/verify_catalog.py
