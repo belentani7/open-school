@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Instituto Universal Gratuito para Jovenes - Educacion gratuita en IA, ofimatica y empleabilidad para jovenes vulnerables">
+<meta name="theme-color" content="#0a1628">
+<title>Instituto Universal Gratuito para Jovenes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--navy-deep:#0a1628;--navy:#0f1d35;--navy-light:#162544;--navy-lighter:#1e3158;
+--gold:#d4a843;--gold-light:#e8c96a;--gold-dim:#a07e2e;
+--text:#e8e6e3;--text-muted:#9aa5b4;--text-dim:#6b7a8d;
+--success:#34d399;--danger:#f87171;--info:#60a5fa;
+--radius:8px;--radius-lg:12px;
+--font:'Segoe UI',system-ui,-apple-system,sans-serif;
+--font-mono:'Cascadia Code','Fira Code',monospace;
+--shadow:0 4px 24px rgba(0,0,0,.4);
+--transition:all .25s ease;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--navy-deep);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none;transition:var(--transition)}
+a:hover{color:var(--gold-light)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+outline:3px solid var(--gold);outline-offset:2px;border-radius:2px
+}
+button{cursor:pointer;font-family:inherit;border:none;background:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100%;left:16px;z-index:10000;background:var(--gold);color:var(--navy-deep);padding:12px 24px;font-weight:700;border-radius:0 0 var(--radius) var(--radius);transition:top .2s}
+.skip-link:focus{top:0}
+[aria-live]{position:relative}
+
+/* ===== HEADER ===== */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(10,22,40,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,168,67,.15);padding:0 24px}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.1rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.logo svg{width:32px;height:32px;flex-shrink:0}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{padding:8px 14px;border-radius:var(--radius);font-size:.875rem;font-weight:500;color:var(--text-muted);white-space:nowrap;transition:var(--transition)}
+.nav-link:hover,.nav-link.active{color:var(--gold);background:rgba(212,168,67,.1)}
+.header-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.offline-badge{display:none;align-items:center;gap:4px;padding:4px 10px;background:rgba(248,113,113,.15);color:var(--danger);font-size:.75rem;font-weight:600;border-radius:20px}
+.offline-badge.visible{display:flex}
+.offline-dot{width:8px;height:8px;background:var(--danger);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.lang-select{background:var(--navy-light);color:var(--text);border:1px solid var(--navy-lighter);padding:6px 10px;border-radius:var(--radius);font-size:.8rem;cursor:pointer}
+.menu-toggle{display:none;padding:8px;color:var(--text)}
+
+/* ===== MAIN CONTAINER ===== */
+main{min-height:calc(100vh - 64px)}
+section{display:none}
+section.active{display:block}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* ===== HERO ===== */
+.hero{padding:80px 24px 60px;text-align:center;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--navy) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 50%,rgba(212,168,67,.06) 0%,transparent 60%);pointer-events:none}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;color:var(--text);margin-bottom:16px;position:relative}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text-muted);max-width:640px;margin:0 auto 32px;position:relative}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-lg);font-size:1rem;font-weight:600;transition:var(--transition);text-align:center}
+.btn-primary{background:var(--gold);color:var(--navy-deep)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--gold);border:2px solid var(--gold)}
+.btn-secondary:hover{background:rgba(212,168,67,.1)}
+.btn-sm{padding:10px 18px;font-size:.875rem}
+.btn-icon{width:40px;height:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%}
+
+/* ===== STATS BAR ===== */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;padding:40px 24px;background:var(--navy)}
+.stat-item{text-align:center}
+.stat-num{font-size:2rem;font-weight:800;color:var(--gold)}
+.stat-label{font-size:.8rem;color:var(--text-muted);margin-top:4px}
+
+/* Search across actual courses, modules and lessons */
+.catalog-search{display:flex;flex-direction:column;gap:8px;max-width:720px;margin:0 auto 24px}
+.catalog-search label{font-size:.95rem;font-weight:650;color:var(--gold)}
+.catalog-search input{width:100%;min-height:48px;padding:12px 16px;border:1px solid var(--navy-lighter);border-radius:var(--radius);background:var(--navy);color:var(--text);font:inherit}
+.catalog-search input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.catalog-search p{min-height:1.5em;color:var(--text-muted);font-size:.9rem}
+.course-search-item{padding:0}
+.course-search-item button{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:100%;height:100%;padding:18px;text-align:left;color:var(--text)}
+.course-search-item button:hover{background:var(--navy-light)}
+.course-search-item small{color:var(--gold)}
+.course-search-item strong{font-size:1rem}
+
+/* ===== COURSES GRID ===== */
+.section-header{padding:48px 0 24px;text-align:center}
+.section-header h2{font-size:1.75rem;font-weight:700;color:var(--text)}
+.section-header p{color:var(--text-muted);margin-top:8px}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;padding-bottom:48px}
+.course-card{background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);overflow:hidden;transition:var(--transition);cursor:pointer}
+.course-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);box-shadow:var(--shadow)}
+.course-card:focus-within{border-color:var(--gold)}
+.course-thumb{height:160px;background:var(--navy-light);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.course-thumb .badge{position:absolute;top:12px;right:12px;padding:4px 10px;border-radius:20px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.badge-free{background:rgba(52,211,153,.2);color:var(--success)}
+.badge-new{background:rgba(96,165,250,.2);color:var(--info)}
+.badge-popular{background:rgba(212,168,67,.2);color:var(--gold)}
+.course-body{padding:16px}
+.course-body h3{font-size:1rem;font-weight:600;margin-bottom:6px}
+.course-body p{font-size:.85rem;color:var(--text-muted);line-height:1.5}
+.course-meta{display:flex;gap:12px;margin-top:12px;font-size:.75rem;color:var(--text-dim)}
+.course-meta span{display:flex;align-items:center;gap:4px}
+
+/* ===== DASHBOARD ===== */
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:32px 0}
+.dash-card{background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);padding:24px}
+.dash-card h3{font-size:1.1rem;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.progress-ring{display:flex;align-items:center;gap:20px}
+.progress-circle{width:100px;height:100px;position:relative}
+.progress-circle svg{transform:rotate(-90deg)}
+.progress-circle .track{fill:none;stroke:var(--navy-lighter);stroke-width:8}
+.progress-circle .fill{fill:none;stroke:var(--gold);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
+.progress-text{font-size:1.5rem;font-weight:700;color:var(--gold);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.progress-info{flex:1}
+.progress-info h4{margin-bottom:4px}
+.progress-info p{font-size:.85rem;color:var(--text-muted)}
+.lesson-list{list-style:none}
+.lesson-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--navy-lighter)}
+.lesson-item:last-child{border-bottom:none}
+.lesson-check{width:24px;height:24px;border-radius:50%;border:2px solid var(--navy-lighter);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem}
+.lesson-check.done{background:var(--success);border-color:var(--success);color:var(--navy-deep)}
+.lesson-info{flex:1}
+.lesson-title{font-size:.9rem;font-weight:500}
+.lesson-dur{font-size:.75rem;color:var(--text-dim)}
+.streak-display{text-align:center;padding:20px}
+.streak-num{font-size:3rem;font-weight:800;color:var(--gold)}
+.streak-label{color:var(--text-muted);font-size:.9rem}
+.badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.badge-item{text-align:center;padding:12px 8px;background:var(--navy-light);border-radius:var(--radius);font-size:.7rem;color:var(--text-muted)}
+.badge-icon{font-size:1.5rem;margin-bottom:4px;display:block}
+.badge-item.earned{border:1px solid var(--gold-dim);color:var(--gold)}
+
+/* ===== AI CHAT ===== */
+.chat-container{max-width:800px;margin:0 auto;padding:32px 24px}
+.chat-header{text-align:center;margin-bottom:24px}
+.chat-messages{height:400px;overflow-y:auto;padding:16px;background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);margin-bottom:16px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:80%;padding:12px 16px;border-radius:var(--radius-lg);font-size:.9rem;line-height:1.5;animation:fadeIn .3s}
+.msg.user{align-self:flex-end;background:var(--gold);color:var(--navy-deep);border-bottom-right-radius:4px}
+.msg.bot{align-self:flex-start;background:var(--navy-light);border:1px solid var(--navy-lighter);border-bottom-left-radius:4px}
+.msg-time{font-size:.65rem;color:var(--text-dim);margin-top:4px;display:block}
+.typing-indicator{align-self:flex-start;padding:12px 16px;background:var(--navy-light);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);display:none}
+.typing-indicator.visible{display:flex;gap:4px;align-items:center}
+.typing-dot{width:6px;height:6px;background:var(--text-dim);border-radius:50%;animation:typingBounce .6s infinite alternate}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes typingBounce{to{opacity:.3;transform:translateY(-4px)}}
+.chat-input-wrap{display:flex;gap:8px}
+.chat-input{flex:1;padding:14px 16px;background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);color:var(--text);font-size:.9rem;resize:none;font-family:inherit}
+.chat-input:focus{border-color:var(--gold)}
+.chat-send{padding:14px 20px;background:var(--gold);color:var(--navy-deep);border-radius:var(--radius-lg);font-weight:600;transition:var(--transition)}
+.chat-send:hover{background:var(--gold-light)}
+.chat-quick{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.quick-btn{padding:8px 14px;background:var(--navy-light);border:1px solid var(--navy-lighter);border-radius:20px;font-size:.8rem;color:var(--text-muted);transition:var(--transition)}
+.quick-btn:hover{border-color:var(--gold);color:var(--gold)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== COURSE VIEWER ===== */
+.course-viewer{padding:32px 24px}
+.course-viewer-header{margin-bottom:32px}
+.course-viewer-header h2{font-size:1.5rem;margin-bottom:8px}
+.breadcrumb{display:flex;gap:8px;font-size:.85rem;color:var(--text-dim);margin-bottom:16px;flex-wrap:wrap}
+.breadcrumb a{color:var(--text-muted)}
+.lesson-content{background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius-lg);padding:32px;max-width:800px}
+.lesson-content h3{font-size:1.25rem;margin-bottom:16px;color:var(--gold)}
+.lesson-content p{margin-bottom:16px;color:var(--text-muted);line-height:1.8}
+.lesson-content ul,.lesson-content ol{margin:16px 0 16px 24px;color:var(--text-muted)}
+.lesson-content li{margin-bottom:8px;line-height:1.7}
+.lesson-content code{background:var(--navy-light);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:.85em;color:var(--gold-light)}
+.lesson-nav{display:flex;justify-content:space-between;margin-top:32px;padding-top:24px;border-top:1px solid var(--navy-lighter)}
+.lesson-nav-btn{padding:12px 24px;border-radius:var(--radius);font-weight:600;transition:var(--transition)}
+.lesson-nav-btn.prev{color:var(--text-muted)}
+.lesson-nav-btn.prev:hover{color:var(--text)}
+.lesson-nav-btn.next{background:var(--gold);color:var(--navy-deep)}
+.lesson-nav-btn.next:hover{background:var(--gold-light)}
+.lesson-sidebar{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.sidebar-lesson{padding:12px 16px;background:var(--navy);border:1px solid var(--navy-lighter);border-radius:var(--radius);cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:10px;font-size:.9rem}
+.sidebar-lesson:hover,.sidebar-lesson.active{border-color:var(--gold);background:var(--navy-light)}
+.sidebar-lesson .num{width:28px;height:28px;background:var(--navy-lighter);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.sidebar-lesson.active .num{background:var(--gold);color:var(--navy-deep)}
+.sidebar-lesson.completed .num{background:var(--success);color:var(--navy-deep)}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--navy);border-top:1px solid var(--navy-lighter);padding:40px 24px 24px;margin-top:60px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.footer-col h4{color:var(--gold);font-size:.9rem;margin-bottom:12px}
+.footer-col a{display:block;padding:4px 0;color:var(--text-muted);font-size:.85rem}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{text-align:center;padding-top:24px;margin-top:24px;border-top:1px solid var(--navy-lighter);color:var(--text-dim);font-size:.8rem;max-width:1280px;margin-left:auto;margin-right:auto}
+.footer-bottom a{color:var(--gold-dim)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:16px;border-bottom:1px solid var(--navy-lighter);z-index:999}
+  .nav-links.open{display:flex}
+  .menu-toggle{display:block}
+  .dash-grid{grid-template-columns:1fr}
+  .hero{padding:48px 16px 40px}
+  .chat-messages{height:300px}
+  .course-viewer{padding:16px}
+  .lesson-content{padding:20px}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .header-inner{padding:0}
+  .hero h1{font-size:1.5rem}
+  .course-grid{grid-template-columns:1fr}
+  .badge-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-inner{grid-template-columns:1fr}
+  .chat-quick{display:none}
+}
+
+/* ===== HIGH CONTRAST ===== */
+@media(forced-colors:active){
+  .btn-primary{border:2px solid ButtonText}
+  .course-card{border:2px solid ButtonText}
+  .chat-input{border:2px solid ButtonText}
+}
+
+/* ===== REDUCED MOTION ===== */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link" id="skipNav">Saltar al contenido principal</a>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+<div class="header-inner">
+  <a href="#" class="logo" aria-label="Inicio - Instituto Universal" onclick="showSection('home');return false">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="2"/><path d="M10 22V14l6-4 6 4v8l-6 4-6-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
+    <span data-i18n="logo_text">IUGJ</span>
+  </a>
+  <nav aria-label="Navegacion principal">
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
+    <div class="nav-links" id="navLinks" role="menubar">
+      <a href="#" class="nav-link active" role="menuitem" data-section="home" data-i18n="nav_home" onclick="showSection('home');return false">Inicio</a>
+      <a href="#" class="nav-link" role="menuitem" data-section="courses" data-i18n="nav_courses" onclick="showSection('courses');return false">Cursos</a>
+      <a href="#" class="nav-link" role="menuitem" data-section="dashboard" data-i18n="nav_dashboard" onclick="showSection('dashboard');return false">Mi Panel</a>
+      <a href="#" class="nav-link" role="menuitem" data-section="chat" data-i18n="nav_chat" onclick="showSection('chat');return false">Tutor IA</a>
+    </div>
+  </nav>
+  <div class="header-actions">
+    <div class="offline-badge" id="offlineBadge" role="status" aria-live="polite">
+      <span class="offline-dot" aria-hidden="true"></span>
+      <span data-i18n="offline">Sin conexion</span>
+    </div>
+    <select class="lang-select" id="langSelect" aria-label="Seleccionar idioma" onchange="switchLang(this.value)">
+      <option value="es">ES</option>
+      <option value="pt">PT</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+</div>
+</header>
+
+<!-- MAIN -->
+<main id="main-content" role="main">
+
+<!-- ========== HOME / LANDING ========== -->
+<section id="sec-home" class="active" aria-label="Pagina de inicio">
+  <div class="hero">
+    <h1 data-i18n="hero_title">Educacion <span>gratuita</span> para cambiar tu futuro</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Aprende Inteligencia Artificial, crea tu curriculum vitae y domina herramientas digitales. Sin costo, sin barreras, en tu idioma.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="showSection('courses')" data-i18n="hero_cta">Empezar ahora</button>
+      <button class="btn btn-secondary" onclick="showSection('chat')" data-i18n="hero_cta2">Hablar con Tutor IA</button>
+    </div>
+  </div>
+
+  <div class="stats-bar" role="region" aria-label="Estadisticas">
+    <div class="stat-item"><div class="stat-num">12</div><div class="stat-label" data-i18n="stat_courses">Cursos disponibles</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label" data-i18n="stat_langs">Idiomas</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label" data-i18n="stat_free">Gratis</div></div>
+    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label" data-i18n="stat_access">Acceso siempre</div></div>
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="courses_title">Cursos disponibles</h2>
+      <p data-i18n="courses_sub">Elige tu camino de aprendizaje</p>
+    </div>
+    <div class="course-grid" id="courseGrid" role="list">
+      <!-- JS renders courses here -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== COURSES CATALOG ========== -->
+<section id="sec-courses" aria-label="Catalogo de cursos">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="catalog_title">Catalogo completo</h2>
+      <p data-i18n="catalog_sub">Todos los cursos gratuitos disponibles</p>
+    </div>
+    <div class="catalog-search" role="search">
+      <label for="courseSearch" id="courseSearchLabel">Buscar cursos y lecciones</label>
+      <input id="courseSearch" type="search" autocomplete="off" oninput="searchLearning(this.value)" placeholder="Escribe un tema, módulo o lección" aria-describedby="courseSearchStatus">
+      <p id="courseSearchStatus" role="status" aria-live="polite"></p>
+    </div>
+    <div class="course-grid" id="catalogGrid" role="list"></div>
+  </div>
+</section>
+
+<!-- ========== STUDENT DASHBOARD ========== -->
+<section id="sec-dashboard" aria-label="Panel del estudiante">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="dash_title">Mi Panel de Aprendizaje</h2>
+      <p data-i18n="dash_sub">Continua donde lo dejaste</p>
+    </div>
+    <div class="dash-grid">
+      <!-- Progress Card -->
+      <div class="dash-card" role="region" aria-label="Progreso general">
+        <h3 data-i18n="dash_progress">Mi Progreso</h3>
+        <div class="progress-ring">
+          <div class="progress-circle" role="img" aria-label="42% completado">
+            <svg width="100" height="100"><circle class="track" cx="50" cy="50" r="42"/><circle class="fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="153"/></svg>
+            <span class="progress-text">42%</span>
+          </div>
+          <div class="progress-info">
+            <h4 data-i18n="dash_ongoing">En curso</h4>
+            <p>Introduccion a la IA - Leccion 5 de 12</p>
+            <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="openCourse(0)" data-i18n="dash_continue">Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Streak Card -->
+      <div class="dash-card" role="region" aria-label="Racha de estudio">
+        <h3 data-i18n="dash_streak">Racha</h3>
+        <div class="streak-display">
+          <div class="streak-num" aria-label="7 dias seguidos">7</div>
+          <div class="streak-label" data-i18n="dash_streak_label">dias seguidos aprendiendo</div>
+        </div>
+        <div class="badge-grid" role="list" aria-label="Insignias">
+          <div class="badge-item earned" role="listitem"><span class="badge-icon" aria-hidden="true">🌟</span>Primer paso</div>
+          <div class="badge-item earned" role="listitem"><span class="badge-icon" aria-hidden="true">🔥</span>7 dias</div>
+          <div class="badge-item" role="listitem"><span class="badge-icon" aria-hidden="true">📚</span>5 cursos</div>
+          <div class="badge-item" role="listitem"><span class="badge-icon" aria-hidden="true">🏆</span>Maestro</div>
+        </div>
+      </div>
+
+      <!-- Recent Lessons -->
+      <div class="dash-card" role="region" aria-label="Lecciones recientes">
+        <h3 data-i18n="dash_recent">Lecciones recientes</h3>
+        <ul class="lesson-list" id="recentLessons">
+          <!-- JS fills -->
+        </ul>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="dash-card" role="region" aria-label="Recomendaciones">
+        <h3 data-i18n="dash_recommended">Recomendado para ti</h3>
+        <ul class="lesson-list" id="recommendations">
+          <!-- JS fills -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== AI TUTOR CHAT ========== -->
+<section id="sec-chat" aria-label="Tutor IA">
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2 data-i18n="chat_title">Tu Tutor IA</h2>
+      <p data-i18n="chat_sub">Pregunta lo que quieras. Estoy aqui para ayudarte.</p>
+    </div>
+    <div class="chat-quick" role="group" aria-label="Preguntas sugeridas">
+      <button class="quick-btn" onclick="sendQuick(this.textContent)" data-i18n="q1">Como creo mi curriculum?</button>
+      <button class="quick-btn" onclick="sendQuick(this.textContent)" data-i18n="q2">Que es la IA?</button>
+      <button class="quick-btn" onclick="sendQuick(this.textContent)" data-i18n="q3">Como uso Word?</button>
+      <button class="quick-btn" onclick="sendQuick(this.textContent)" data-i18n="q4">Derechos de inmigrantes</button>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Mensajes del chat">
+      <div class="msg bot">
+        <span data-i18n="chat_welcome">Hola! Soy tu tutor virtual. Puedo ayudarte a aprender sobre inteligencia artificial, crear tu curriculum, usar herramientas de oficina o conocere tus derechos. Que te gustaria aprender hoy?</span>
+        <span class="msg-time">10:00</span>
+      </div>
+    </div>
+    <div class="typing-indicator" id="typingIndicator" aria-label="Escribiendo">
+      <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+    </div>
+    <p role="note" style="padding:.6rem 1rem;color:var(--text-muted);font-size:.9rem">Tutor de demostración: utiliza respuestas educativas predefinidas. No está conectado a un modelo de inteligencia artificial.</p>
+    <form class="chat-input-wrap" id="chatForm" onsubmit="sendMessage(event)">
+      <label for="chatInput" class="sr-only" data-i18n="chat_label">Escribe tu pregunta</label>
+      <textarea class="chat-input" id="chatInput" rows="1" placeholder="Escribe tu pregunta..." data-i18n-placeholder="chat_placeholder" aria-describedby="chatHint" onkeydown="autoResize(this)"></textarea>
+      <span id="chatHint" class="sr-only" data-i18n="chat_hint">Presiona Enter para enviar, Shift+Enter para nueva linea</span>
+      <button type="submit" class="chat-send" aria-label="Enviar mensaje" data-i18n="chat_send">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== COURSE VIEWER ========== -->
+<section id="sec-viewer" aria-label="Visor de curso">
+  <div class="course-viewer container">
+    <div class="breadcrumb" id="breadcrumb" aria-label="Ruta de navegacion">
+      <a href="#" onclick="showSection('courses');return false" data-i18n="nav_courses">Cursos</a>
+      <span aria-hidden="true">/</span>
+      <span id="breadcrumbCourse">Introduccion a la IA</span>
+    </div>
+    <div class="course-viewer-header">
+      <h2 id="viewerTitle">Introduccion a la IA</h2>
+      <p id="viewerDesc" style="color:var(--text-muted)"></p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 280px;gap:24px">
+      <div>
+        <div class="lesson-content" id="lessonContent" role="article">
+          <!-- JS fills lesson content -->
+        </div>
+        <div class="lesson-nav" id="lessonNav">
+          <button class="lesson-nav-btn prev" onclick="prevLesson()" data-i18n="lesson_prev">← Anterior</button>
+          <button class="lesson-nav-btn next" onclick="nextLesson()" data-i18n="lesson_next">Siguiente →</button>
+        </div>
+      </div>
+      <div class="lesson-sidebar" id="lessonSidebar" role="navigation" aria-label="Lecciones del curso">
+        <!-- JS fills sidebar -->
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+<div class="footer-inner">
+  <div class="footer-col">
+    <h4 data-i18n="footer_about">Instituto Universal</h4>
+    <p style="font-size:.85rem;color:var(--text-muted);line-height:1.6" data-i18n="footer_desc">Educacion gratuita y accesible para jovenes vulnerables. Aprende IA, tecnologia y habilidades para el empleo.</p>
+  </div>
+  <div class="footer-col">
+    <h4 data-i18n="footer_courses">Cursos</h4>
+    <a href="#" onclick="showSection('courses');return false" data-i18n="course_ai">Introduccion a la IA</a>
+    <a href="#" onclick="showSection('courses');return false" data-i18n="course_cv">Crear tu CV</a>
+    <a href="#" onclick="showSection('courses');return false" data-i18n="course_office">Pack Office</a>
+    <a href="#" onclick="showSection('courses');return false" data-i18n="course_rights">Derechos y Recursos</a>
+  </div>
+  <div class="footer-col">
+    <h4 data-i18n="footer_resources">Recursos</h4>
+    <a href="#" data-i18n="res_github">GitHub - Repositorios</a>
+    <a href="#" data-i18n="res_tools">Herramientas IA</a>
+    <a href="#" data-i18n="res_community">Comunidad</a>
+  </div>
+  <div class="footer-col">
+    <h4 data-i18n="footer_contact">Contacto</h4>
+    <a href="#">belentani7@github.com</a>
+    <a href="#">noiacore.com</a>
+  </div>
+</div>
+<div class="footer-bottom">
+  <p>&copy; 2026 Instituto Universal Gratuito para Jovenes. <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
+  <p style="margin-top:8px"><span data-i18n="footer_made">Hecho con proposito</span> &mdash; belentani7 / <a href="https://github.com/belentani7" target="_blank" rel="noopener">github.com/belentani7</a></p>
+</div>
+</footer>
+
+<script>
+/* ============================================================
+   I18N - Translations
+   ============================================================ */
+const I18N={
+es:{
+logo_text:"IUGJ",nav_home:"Inicio",nav_courses:"Cursos",nav_dashboard:"Mi Panel",nav_chat:"Tutor IA",
+offline:"Sin conexion",
+hero_title:'Educacion <span>gratuita</span> para cambiar tu futuro',
+hero_sub:"Aprende Inteligencia Artificial, crea tu curriculum vitae y domina herramientas digitales. Sin costo, sin barreras, en tu idioma.",
+hero_cta:"Empezar ahora",hero_cta2:"Hablar con Tutor IA",
+stat_courses:"Cursos disponibles",stat_langs:"Idiomas",stat_free:"Gratis",stat_access:"Acceso siempre",
+courses_title:"Cursos disponibles",courses_sub:"Elige tu camino de aprendizaje",
+catalog_title:"Catalogo completo",catalog_sub:"Todos los cursos gratuitos disponibles",
+dash_title:"Mi Panel de Aprendizaje",dash_sub:"Continua donde lo dejaste",
+dash_progress:"Mi Progreso",dash_ongoing:"En curso",dash_continue:"Continuar",
+dash_streak:"Racha",dash_streak_label:"dias seguidos aprendiendo",
+dash_recent:"Lecciones recientes",dash_recommended:"Recomendado para ti",
+chat_title:"Tu Tutor IA",chat_sub:"Pregunta lo que quieras. Estoy aqui para ayudarte.",
+chat_welcome:"Hola! Soy tu tutor virtual. Puedo ayudarte a aprender sobre inteligencia artificial, crear tu curriculum, usar herramientas de oficina o conocere tus derechos. Que te gustaria aprender hoy?",
+chat_label:"Escribe tu pregunta",chat_placeholder:"Escribe tu pregunta...",chat_hint:"Presiona Enter para enviar, Shift+Enter para nueva linea",chat_send:"Enviar",
+q1:"Como creo mi curriculum?",q2:"Que es la IA?",q3:"Como uso Word?",q4:"Derechos de inmigrantes",
+lesson_prev:"← Anterior",lesson_next:"Siguiente →",
+footer_about:"Instituto Universal",footer_desc:"Educacion gratuita y accesible para jovenes vulnerables. Aprende IA, tecnologia y habilidades para el empleo.",
+footer_courses:"Cursos",footer_resources:"Recursos",footer_contact:"Contacto",
+course_ai:"Introduccion a la IA",course_cv:"Crear tu CV",course_office:"Pack Office",course_rights:"Derechos y Recursos",
+res_github:"GitHub - Repositorios",res_tools:"Herramientas IA",res_community:"Comunidad",
+footer_rights:"Todos los derechos reservados.",footer_made:"Hecho con proposito",
+badge_free:"GRATIS",badge_new:"NUEVO",badge_popular:"POPULAR",
+module:"Modulo",lesson:"Leccion",minutes:"min"
+},
+pt:{
+logo_text:"IUGJ",nav_home:"Inicio",nav_courses:"Cursos",nav_dashboard:"Meu Painel",nav_chat:"Tutor IA",
+offline:"Sem conexao",
+hero_title:'Educacao <span>gratuita</span> para mudar seu futuro',
+hero_sub:"Aprenda Inteligencia Artificial, crie seu curriculo e domine ferramentas digitais. Sem custo, sem barreiras, no seu idioma.",
+hero_cta:"Comecar agora",hero_cta2:"Falar com Tutor IA",
+stat_courses:"Cursos disponiveis",stat_langs:"Idiomas",stat_free:"Gratis",stat_access:"Acesso sempre",
+courses_title:"Cursos disponiveis",courses_sub:"Escolha seu caminho de aprendizagem",
+catalog_title:"Catalogo completo",catalog_sub:"Todos os cursos gratuitos disponiveis",
+dash_title:"Meu Painel de Aprendizagem",dash_sub:"Continue de onde parou",
+dash_progress:"Meu Progresso",dash_ongoing:"Em curso",dash_continue:"Continuar",
+dash_streak:"Sequencia",dash_streak_label:"dias seguidos aprendendo",
+dash_recent:"Aulas recentes",dash_recommended:"Recomendado para voce",
+chat_title:"Seu Tutor IA",chat_sub:"Pergunte o que quiser. Estou aqui para ajudar.",
+chat_welcome:"Ola! Sou seu tutor virtual. Posso ajudar a aprender sobre inteligencia artificial, criar seu curriculo, usar ferramentas de escritorio ou conhecer seus direitos. O que voce gostaria de aprender hoje?",
+chat_label:"Digite sua pergunta",chat_placeholder:"Digite sua pergunta...",chat_hint:"Pressione Enter para enviar, Shift+Enter para nova linha",chat_send:"Enviar",
+q1:"Como crio meu curriculo?",q2:"O que e IA?",q3:"Como uso Word?",q4:"Direitos de imigrantes",
+lesson_prev:"← Anterior",lesson_next:"Proximo →",
+footer_about:"Instituto Universal",footer_desc:"Educacao gratuita e acessivel para jovens vulneraveis. Aprenda IA, tecnologia e habilidades para o emprego.",
+footer_courses:"Cursos",footer_resources:"Recursos",footer_contact:"Contato",
+course_ai:"Introducao a IA",course_cv:"Criar seu CV",course_office:"Pack Office",course_rights:"Direitos e Recursos",
+res_github:"GitHub - Repositorios",res_tools:"Ferramentas IA",res_community:"Comunidade",
+footer_rights:"Todos os direitos reservados.",footer_made:"Feito com proposito",
+badge_free:"GRATIS",badge_new:"NOVO",badge_popular:"POPULAR",
+module:"Modulo",lesson:"Aula",minutes:"min"
+},
+en:{
+logo_text:"IUGJ",nav_home:"Home",nav_courses:"Courses",nav_dashboard:"My Panel",nav_chat:"AI Tutor",
+offline:"Offline",
+hero_title:'<span>Free</span> education to change your future',
+hero_sub:"Learn Artificial Intelligence, create your resume and master digital tools. No cost, no barriers, in your language.",
+hero_cta:"Start now",hero_cta2:"Talk to AI Tutor",
+stat_courses:"Available courses",stat_langs:"Languages",stat_free:"Free",stat_access:"Access 24/7",
+courses_title:"Available courses",courses_sub:"Choose your learning path",
+catalog_title:"Full catalog",catalog_sub:"All free courses available",
+dash_title:"My Learning Panel",dash_sub:"Continue where you left off",
+dash_progress:"My Progress",dash_ongoing:"In progress",dash_continue:"Continue",
+dash_streak:"Streak",dash_streak_label:"days learning in a row",
+dash_recent:"Recent lessons",dash_recommended:"Recommended for you",
+chat_title:"Your AI Tutor",chat_sub:"Ask anything. I'm here to help.",
+chat_welcome:"Hello! I'm your virtual tutor. I can help you learn about artificial intelligence, create your resume, use office tools or know your rights. What would you like to learn today?",
+chat_label:"Type your question",chat_placeholder:"Type your question...",chat_hint:"Press Enter to send, Shift+Enter for new line",chat_send:"Send",
+q1:"How do I create my resume?",q2:"What is AI?",q3:"How do I use Word?",q4:"Immigrant rights",
+lesson_prev:"← Previous",lesson_next:"Next →",
+footer_about:"Universal Institute",footer_desc:"Free and accessible education for vulnerable youth. Learn AI, technology and employability skills.",
+footer_courses:"Courses",footer_resources:"Resources",footer_contact:"Contact",
+course_ai:"Intro to AI",course_cv:"Create your CV",course_office:"Office Pack",course_rights:"Rights & Resources",
+res_github:"GitHub - Repos",res_tools:"AI Tools",res_community:"Community",
+footer_rights:"All rights reserved.",footer_made:"Made with purpose",
+badge_free:"FREE",badge_new:"NEW",badge_popular:"POPULAR",
+module:"Module",lesson:"Lesson",minutes:"min"
+}
+};
+
+let currentLang=localStorage.getItem('iugj_lang')||'es';
+function switchLang(lang){
+  currentLang=lang;
+  localStorage.setItem('iugj_lang',lang);
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(I18N[lang]&&I18N[lang][key])el.innerHTML=I18N[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key=el.getAttribute('data-i18n-placeholder');
+    if(I18N[lang]&&I18N[lang][key])el.placeholder=I18N[lang][key];
+  });
+  document.getElementById('langSelect').value=lang;
+  if(document.getElementById('catalogGrid')&&document.getElementById('courseSearch'))searchLearning();
+  if(document.getElementById('courseGrid'))renderCourses();
+}
+
+/* ============================================================
+   COURSE DATA
+   ============================================================ */
+const COURSES=[
+{
+  id:'ai-intro',icon:'🤖',badge:'popular',
+  title:{es:'Introduccion a la Inteligencia Artificial',pt:'Inteligencia Artificial',en:'Introduction to AI'},
+  desc:{es:'Aprende que es la IA, como funciona y como usarla en tu vida diaria y laboral.',pt:'Aprenda o que e IA, como funciona e como usa-la na sua vida diaria.',en:'Learn what AI is, how it works and how to use it daily.'},
+  lessons:12,duration:'6h',
+  modules:[
+    {name:{es:'Modulo 1: Que es la IA',pt:'Modulo 1: O que e IA',en:'Module 1: What is AI'},lessons:[
+      {title:{es:'Definicion y conceptos basicos',pt:'Definicao e conceitos basicos',en:'Definition and basic concepts'},content:{es:'<h3>Definicion y conceptos basicos</h3><p>La <strong>Inteligencia Artificial (IA)</strong> es la capacidad de las maquinas para realizar tareas que normalmente requieren inteligencia humana: aprender, razonar, percibir y tomar decisiones.</p><p>Existen dos tipos principales:</p><ul><li><strong>IA Estrecha (Narrow AI):</strong> Disenada para una tarea especifica, como asistentes de voz (Siri, Alexa) o recomendaciones de Netflix.</li><li><strong>IA General (AGI):</strong> IA que podria realizar cualquier tarea intelectual humana. Aun es teorica.</li></ul><p><strong>Ejemplos en tu vida diaria:</strong></p><ul><li>Traductor automatico de Google</li><li> filtros de spam en tu correo</li><li>Reconocimiento facial en tu telefono</li><li>Asistentes como ChatGPT</li></ul>',pt:'<h3>Definicao e conceitos basicos</h3><p>A <strong>Inteligencia Artificial (IA)</strong> e a capacidade das maquinas de realizar tarefas que normalmente exigem inteligencia humana: aprender, raciocinar, perceber e tomar decisoes.</p><p>Existem dois tipos principais:</p><ul><li><strong>IA Restrita (Narrow AI):</strong> Projetada para uma tarefa especifica.</li><li><strong>IA Geral (AGI):</strong> IA que poderia realizar qualquer tarefa intelectual humana. Ainda e teorica.</li></ul><p><strong>Exemplos no dia a dia:</strong></p><ul><li>Tradutor automatico do Google</li><li>Filtros de spam</li><li>Reconhecimento facial</li><li>Assistentes como ChatGPT</li></ul>',en:'<h3>Definition and Basic Concepts</h3><p><strong>Artificial Intelligence (AI)</strong> is the ability of machines to perform tasks that normally require human intelligence: learning, reasoning, perceiving and making decisions.</p><p>Two main types:</p><ul><li><strong>Narrow AI:</strong> Designed for a specific task, like voice assistants or Netflix recommendations.</li><li><strong>General AI (AGI):</strong> AI that could perform any human intellectual task. Still theoretical.</li></ul><p><strong>Everyday examples:</strong></p><ul><li>Google automatic translator</li><li>Spam filters</li><li>Face recognition</li><li>Assistants like ChatGPT</li></ul>'}},
+      {title:{es:'Historia de la IA',pt:'Historia da IA',en:'History of AI'},content:{es:'<h3>Historia de la IA</h3><p>Los inicios de la IA se remontan a los anos 1950, cuando Alan Tuning planteo su famosa pregunta: "Pensaran las maquinas?"</p><p><strong>Cronologia:</strong></p><ul><li><strong>1950:</strong> Alan Tuning publica "Computing Machinery and Intelligence"</li><li><strong>1956:</strong> Se acuna el termino "Inteligencia Artificial" en la Conferencia de Dartmouth</li><li><strong>1997:</strong> Deep Blue de IBM vence al campeon del mundo de ajedrez</li><li><strong>2012:</strong> Redes neuronales profundas revolucionan el reconocimiento de imagenes</li><li><strong>2022:</strong> ChatGPT llega al publico general</li><li><strong>2024-2026:</strong> IA multimodal y agentes autonomos</li></ul>',pt:'<h3>Historia da IA</h3><p>Os primeiros passos da IA voltam aos anos de 1950.</p><p><strong>Cronologia:</strong></p><ul><li><strong>1950:</strong> Alan Tuning publica seu artigo famoso</li><li><strong>1956:</strong> O termo "Inteligencia Artificial" e cunhado</li><li><strong>1997:</strong> Deep Blue vence campeao de xadrez</li><li><strong>2022:</strong> ChatGPT chega ao publico geral</li></ul>',en:'<h3>History of AI</h3><p>AI origins trace back to the 1950s, when Alan Turing asked: "Can machines think?"</p><p><strong>Timeline:</strong></p><ul><li><strong>1950:</strong> Alan Turing publishes his famous paper</li><li><strong>1956:</strong> The term "Artificial Intelligence" coined at Dartmouth</li><li><strong>1997:</strong> IBM Deep Blue defeats chess champion</li><li><strong>2022:</strong> ChatGPT reaches the general public</li></ul>'}},
+      {title:{es:'Herramientas IA actuales',pt:'Ferramentas IA atuais',en:'Current AI Tools'},content:{es:'<h3>Herramientas IA actuales</h3><p> Hoy puedes usar IA gratis para aprender, trabajar y crear:</p><ul><li><strong>ChatGPT:</strong> Conversa, genera texto, resuelve dudas</li><li><strong>Google Gemini:</strong> Busqueda inteligente, resumenes, analisis</li><li><strong>Microsoft Copilot:</strong> Integra IA en Word, Excel, PowerPoint</li><li><strong>DeepSeek:</strong> Modelo open-source potente y gratuito</li><li><strong>Qwen:</strong> Modelo de Alibaba, excelente para multiples idiomas</li></ul><p><strong>Consejo:</strong> Todas estas herramientas son gratuitas o tienen versiones gratuitas. No necesitas ser experto para empezar.</p>',pt:'<h3>Ferramentas IA atuais</h3><p>Hoje voce pode usar IA gratis:</p><ul><li><strong>ChatGPT:</strong> Conversa, gera texto, resolve duvidas</li><li><strong>Google Gemini:</strong> Busca inteligente, resumos</li><li><strong>Microsoft Copilot:</strong> IA integrada no Word, Excel</li><li><strong>DeepSeek:</strong> Modelo open-source gratuito</li></ul>',en:'<h3>Current AI Tools</h3><p>Today you can use AI for free to learn, work and create:</p><ul><li><strong>ChatGPT:</strong> Chat, text generation, Q&A</li><li><strong>Google Gemini:</strong> Smart search, summaries</li><li><strong>Microsoft Copilot:</strong> AI in Word, Excel, PowerPoint</li><li><strong>DeepSeek:</strong> Powerful open-source model</li></ul>'}}
+    ]},
+    {name:{es:'Modulo 2: IA en la practica',pt:'Modulo 2: IA na pratica',en:'Module 2: AI in Practice'},lessons:[
+      {title:{es:'Usar ChatGPT paso a paso',pt:'Usar ChatGPT passo a passo',en:'Using ChatGPT step by step'},content:{es:'<h3>Usar ChatGPT paso a paso</h3><p><strong>Paso 1:</strong> Ve a chat.openai.com (o usa la app)</p><p><strong>Paso 2:</strong> Crea una cuenta gratuita</p><p><strong>Paso 3:</strong> Escribe tu pregunta en el cuadro de texto</p><p><strong>Consejos para mejores resultados:</strong></p><ul><li>Sé especifico: en vez de "enseñame ingles", di "enséñame 10 frases para una entrevista de trabajo"</li><li>Pide formato: "dame una lista", "haz una tabla", "resume en 3 puntos"</li><li>Sigue conversando: puedes pedir que explique mejor o ponga ejemplos</li></ul>',pt:'<h3>Usar ChatGPT passo a passo</h3><p><strong>Passo 1:</strong> Acesse chat.openai.com</p><p><strong>Passo 2:</strong> Crie uma conta gratuita</p><p><strong>Passo 3:</strong> Digite sua pergunta</p><p><strong>Dicas:</strong></p><ul><li>Seja especifico</li><li>Peca formato: lista, tabela, resumo</li><li>Continue conversando</li></ul>',en:'<h3>Using ChatGPT step by step</h3><p><strong>Step 1:</strong> Go to chat.openai.com</p><p><strong>Step 2:</strong> Create a free account</p><p><strong>Step 3:</strong> Type your question</p><p><strong>Tips:</strong></p><ul><li>Be specific</li><li>Ask for format: list, table, summary</li><li>Keep the conversation going</li></ul>'}},
+      {title:{es:'Prompt engineering basico',pt:'Prompt engineering basico',en:'Basic prompt engineering'},content:{es:'<h3>Prompt Engineering basico</h3><p>Un <strong>prompt</strong> es la instruccion que le das a la IA. Mejor prompt = mejor resultado.</p><p><strong>Plantilla basica:</strong></p><ul><li><strong>Rol:</strong> "Eres un experto en..."</li><li><strong>Tarea:</strong> "Necesito que..."</li><li><strong>Formato:</strong> "En formato de lista/paso a paso/tabla"</li><li><strong>Contexto:</strong> "Soy de España y busco empleo en..."</li></ul><p><strong>Ejemplo:</strong> "Eres un experto en empleabilidad. Escribeme 5 consejos para una entrevista de trabajo en España. En formato de lista con explicacion corta."</p>',pt:'<h3>Prompt Engineering basico</h3><p>Um <strong>prompt</strong> e a instrucao que voce da a IA.</p><p><strong>Modelo basico:</strong></p><ul><li><strong>Papel:</strong> "Voce e um especialista em..."</li><li><strong>Tarefa:</strong> "Preciso que..."</li><li><strong>Formato:</strong> "Em formato de lista/etapas/tabela"</li></ul><p><strong>Exemplo:</strong> "Voce e um especialista em empregabilidade. Escreva 5 dicas para uma entrevista de trabalho."</p>',en:'<h3>Basic Prompt Engineering</h3><p>A <strong>prompt</strong> is the instruction you give AI. Better prompt = better result.</p><p><strong>Basic template:</strong></p><ul><li><strong>Role:</strong> "You are an expert in..."</li><li><strong>Task:</strong> "I need you to..."</li><li><strong>Format:</strong> "In list/step-by-step/table format"</li></ul><p><strong>Example:</strong> "You are an employment expert. Write 5 tips for a job interview in Spain. In bullet list format with short explanation."</p>'}},
+      {title:{es:'IA para buscar empleo',pt:'IA para buscar emprego',en:'AI for job hunting'},content:{es:'<h3>IA para buscar empleo</h3><p>La IA puede ayudarte enormemente en tu busqueda de empleo:</p><ul><li><strong>Optimizar tu CV:</strong> Pide a ChatGPT que revise y mejore tu curriculum</li><li><strong>Cartas de presentacion:</strong> Genera cartas personalizadas para cada empresa</li><li><strong>Preparar entrevistas:</strong> Simula preguntas de entrevista y practica tus respuestas</li><li><strong>Buscar ofertas:</strong> Usa IA para filtrar y encontrar ofertas relevantes</li></ul><p><strong>Ejemplo de prompt:</strong> "Revisa mi curriculum y sugiereme 5 mejoras para un puesto de administrativo en España. Incluye palabras clave que los sistemas ATS buscan."</p>',pt:'<h3>IA para buscar emprego</h3><p>A IA pode ajudar muito na sua busca por emprego:</p><ul><li>Otimizar seu curriculo</li><li>Cartas de apresentacao personalizadas</li><li>Preparar entrevistas simuladas</li></ul>',en:'<h3>AI for Job Hunting</h3><p>AI can greatly help your job search:</p><ul><li>Optimize your resume</li><li>Personalized cover letters</li><li>Mock interviews and practice</li></ul>'}}
+    ]}
+  ]
+},
+{
+  id:'cv-builder',icon:'📄',badge:'popular',
+  title:{es:'Crear tu Curriculum Vitae',pt:'Criar seu Curriculo',en:'Create Your Resume'},
+  desc:{es:'Aprende a crear un curriculum profesional que destaque tus habilidades y experiencia.',pt:'Aprenda a criar um curriculo profissional.',en:'Learn to create a professional resume.'},
+  lessons:8,duration:'4h',
+  modules:[
+    {name:{es:'Estructura del CV',pt:'Estrutura do CV',en:'Resume Structure'},lessons:[
+      {title:{es:'Partes esenciales de un CV',pt:'Partes essenciais de um CV',en:'Essential resume parts'},content:{es:'<h3>Partes esenciales de un CV</h3><p>Todo CV profesional debe incluir:</p><ol><li><strong>Datos de contacto:</strong> Nombre, telefono, email, ciudad</li><li><strong>Perfil profesional:</strong> 2-3 lineas sobre ti y tu objetivo</li><li><strong>Experiencia laboral:</strong> Trabajos anteriores, empresa, fechas, logros</li><li><strong>Educacion:</strong> Titulos, institucion, fechas</li><li><strong>Habilidades:</strong> Idiomas, software, competencias</li><li><strong>Opcional:</strong> Cursos, certificaciones, voluntariado</li></ol><p><strong>Importante:</strong> Adapta tu CV para cada oferta de trabajo. Usa palabras clave de la descripcion del puesto.</p>',pt:'<h3>Partes essenciais de um CV</h3><p>Todo CV deve incluir:</p><ol><li>Dados de contato</li><li>Perfil profissional</li><li>Experiencia de trabalho</li><li>Educacao</li><li>Habilidades</li></ol>',en:'<h3>Essential Resume Parts</h3><p>Every resume must include:</p><ol><li>Contact information</li><li>Professional summary</li><li>Work experience</li><li>Education</li><li>Skills</li></ol>'}},
+      {title:{es:'Errores comunes en el CV',pt:'Erros comuns no CV',en:'Common resume mistakes'},content:{es:'<h3>Errores comunes que debes evitar</h3><ul><li><strong>Errores de ortografia:</strong> Pide a la IA que revise la ortografia</li><li><strong>CV generico:</strong> Personaliza para cada oferta</li><li><strong>Datos incorrectos:</strong> Verifica telefono y email</li><li><strong>Demasiado largo:</strong> Maximo 2 paginas</li><li><strong>Diseño desordenado:</strong> Usa formato limpio y claro</li><li><strong>Fotos no profesionales:</strong> En España no es obligatoria la foto</li></ul><p><strong>Consejo:</strong> Pide a ChatGPT: "Revisa este CV y encuentra errores". Luego: "Adaptalo para un puesto de [nombre del puesto]".</p>',pt:'<h3>Erros comuns</h3><ul><li>Erros de ortografia</li><li>CV generico</li><li>Dados incorretos</li><li>Muito longo</li></ul>',en:'<h3>Common mistakes</h3><ul><li>Spelling errors</li><li>Generic resume</li><li>Incorrect data</li><li>Too long</li></ul>'}}
+    ]}
+  ]
+},
+{
+  id:'office-pack',icon:'📊',badge:'new',
+  title:{es:'Pack Office Completo',pt:'Pack Office Completo',en:'Complete Office Pack'},
+  desc:{es:'Domina Word, Excel y PowerPoint para el mundo laboral.',pt:'Domine Word, Excel e PowerPoint.',en:'Master Word, Excel and PowerPoint.'},
+  lessons:15,duration:'8h',
+  modules:[
+    {name:{es:'Microsoft Word',pt:'Microsoft Word',en:'Microsoft Word'},lessons:[
+      {title:{es:'Documentos basicos en Word',pt:'Documentos basicos no Word',en:'Basic Word documents'},content:{es:'<h3>Documentos basicos en Word</h3><p>Microsoft Word es la herramienta mas usada en oficinas. Aprende lo esencial:</p><ul><li><strong>Crear un documento:</strong> Archivo &gt; Nuevo</li><li><strong>Formato de texto:</strong> Negrita (Ctrl+N), Cursiva (Ctrl+K), Subrayado (Ctrl+S)</li><li><strong>Margar y orientacion:</strong> Disposicion &gt; Margenes / Orientacion</li><li><strong>Insertar imagenes:</strong> Insertar &gt; Imagenes</li><li><strong>Guardar:</strong> Ctrl+G (Guardar como PDF para enviar)</li></ul><p><strong>Alternativa gratuita:</strong> OnlyOffice o Google Docs funcionan igual y son gratis.</p>',pt:'<h3>Documentos basicos no Word</h3><p>Aprenda o basico do Word:</p><ul><li>Formato de texto: Negrito, Itálico</li><li>Salvar como PDF</li><li>Alternativa: OnlyOffice ou Google Docs</li></ul>',en:'<h3>Basic Word Documents</h3><p>Word is the most used office tool. Learn the basics:</p><ul><li>Text formatting: Bold, Italic</li><li>Save as PDF</li><li>Free alternative: OnlyOffice or Google Docs</li></ul>'}}
+    ]},
+    {name:{es:'Microsoft Excel',pt:'Microsoft Excel',en:'Microsoft Excel'},lessons:[
+      {title:{es:'Hojas de calculo basicas',pt:'Planilhas basicas',en:'Basic spreadsheets'},content:{es:'<h3>Hojas de calculo basicas</h3><p>Excel organiza datos en filas y columnas:</p><ul><li><strong>Celdas:</strong> Donde escribes datos (A1, B2...)</li><li><strong>Formulas:</strong> Empiezan con = (ej: =SUMA(A1:A10))</li><li><strong>Funciones comunes:</strong> SUMA, PROMEDIO, CONTAR, BUSCARV</li><li><strong>Graficos:</strong> Selecciona datos &gt; Insertar &gt; Grafico</li><li><strong>Filtros:</strong> Datos &gt; Filtro para buscar informacion</li></ul><p><strong>Practica:</strong> Crea un presupuesto mensual con ingresos y gastos. Usa SUMA para el total.</p>',pt:'<h3>Planilhas basicas</h3><p>Excel organiza dados em linhas e colunas:</p><ul><li>Formulas comecam com =</li><li>Funcoes comuns: SOMA, MEDIA, CONTAR</li></ul>',en:'<h3>Basic Spreadsheets</h3><p>Excel organizes data in rows and columns:</p><ul><li>Formulas start with =</li><li>Common functions: SUM, AVERAGE, COUNT</li></ul>'}}
+    ]},
+    {name:{es:'Microsoft PowerPoint',pt:'Microsoft PowerPoint',en:'Microsoft PowerPoint'},lessons:[
+      {title:{es:'Presentaciones efectivas',pt:'Apresentacoes eficazes',en:'Effective presentations'},content:{es:'<h3>Presentaciones efectivas</h3><p>PowerPoint crea presentaciones visuales:</p><ul><li><strong>Plantillas:</strong> Usa una plantilla base para ahorrar tiempo</li><li><strong>Regla 6x6:</strong> Maximo 6 puntos por diapositiva, 6 palabras por punto</li><li><strong>Imagene:</strong> Una imagen vale mas que mil palabras</li><li><strong>Colores:</strong> Usa 2-3 colores maximo. Alto contraste para legibilidad</li><li><strong>Presentador:</strong> Usa la vista de presentador para ver tus notas</li></ul><p><strong>Consejo IA:</strong> Pide a ChatGPT: "Crea una presentacion de 10 diapositivas sobre [tema]. Incluye contenido para cada diapositiva."</p>',pt:'<h3>Apresentacoes eficazes</h3><p>PowerPoint cria apresentacoes visuais:</p><ul><li>Use modelos prontos</li><li>Regra 6x6: maximo 6 pontos, 6 palavras</li><li>Use imagens</li></ul>',en:'<h3>Effective Presentations</h3><p>PowerPoint creates visual presentations:</p><ul><li>Use templates</li><li>6x6 rule: max 6 bullets, 6 words each</li><li>Use images</li></ul>'}}
+    ]}
+  ]
+},
+{
+  id:'rights',icon:'⚖️',badge:'free',
+  title:{es:'Derechos y Recursos',pt:'Direitos e Recursos',en:'Rights & Resources'},
+  desc:{es:'Conoce tus derechos como persona en España y los recursos disponibles para ti.',pt:'Conheca seus direitos na Espanha.',en:'Know your rights in Spain.'},
+  lessons:10,duration:'5h',
+  modules:[
+    {name:{es:'Derechos basicos',pt:'Direitos basicos',en:'Basic rights'},lessons:[
+      {title:{es:'Derechos en España',pt:'Direitos na Espanha',en:'Rights in Spain'},content:{es:'<h3>Tus derechos en España</h3><p>Independientemente de tu situacion administrativa, tienes derechos fundamentales:</p><ul><li><strong>Derecho a la asistencia sanitaria:</strong> Puedes acudir al medico</li><li><strong>Derecho a la educacion:</strong> Los menores tienen derecho a escolarizarse</li><li><strong>Derecho a la asistencia social:</strong> Servicios sociales pueden ayudarte</li><li><strong>Derecho a denunciar:</strong> Puedes denunciar situaciones de abuso</li><li><strong>Derecho a la asistencia juridica gratuita:</strong> Si no tienes recursos</li></ul><p><strong>Contactos importantes:</strong></p><ul><li>Emergencias: 112</li><li>Policia Nacional: 091</li><li>Servicios Sociales: acude a tu ayuntamiento</li></ul>',pt:'<h3>Seus direitos na Espanha</h3><p>Voce tem direitos fundamentais:</p><ul><li>Direito a saude</li><li>Direito a educacao</li><li>Direito a assistencia social</li><li>Direito a denunciar abusos</li></ul><p><strong>Contatos importantes:</strong></p><ul><li>Emergencias: 112</li><li>Seguranca Social: 900 106 425</li></ul>',en:'<h3>Your Rights in Spain</h3><p>Regardless of your status, you have fundamental rights:</p><ul><li>Healthcare access</li><li>Education</li><li>Social assistance</li><li>Right to report abuse</li></ul><p><strong>Important contacts:</strong></p><ul><li>Emergencies: 112</li><li>Social Services: local town hall</li></ul>'}}
+    ]},
+    {name:{es:'Recursos y ayuda',pt:'Recursos e ajuda',en:'Resources and help'},lessons:[
+      {title:{es:'Donde encontrar ayuda',pt:'Onde encontrar ajuda',en:'Where to find help'},content:{es:'<h3>Donde encontrar ayuda</h3><ul><li><strong>Cruz Roja:</strong> Asistencia humanitaria</li><li><strong>CARITAS:</strong> Ayuda social y formacion</li><li><strong>ONGs locales:</strong> Busca en tu ciudad "ayuda inmigrantes [ciudad]"</li><li><strong>Servicios sociales municipales:</strong> Tu ayuntamiento tiene asistencia gratuita</li><li><strong>Servicio de empleo SEPE:</strong> Cursos gratuitos y busqueda de empleo</li></ul><p><strong>Recursos digitales gratuitos:</strong></p><ul><li>Gobierno de España: information.gob.es</li><li>Red Cross: cruzroja.es</li><li>InfoJobs: Busqueda de empleo</li><li>LinkedIn: Perfil profesional gratuito</li></ul>',pt:'<h3>Onde encontrar ajuda</h3><ul><li>Cruz Vermelha</li><li>CARITAS</li><li>ONGs locais</li><li>Servicos sociais municipais</li></ul>',en:'<h3>Where to find help</h3><ul><li>Red Cross</li><li>Local NGOs</li><li>Municipal social services</li><li>Free employment service (SEPE)</li></ul>'}}
+    ]}
+  ]
+},
+{
+  id:'chatgpt-master',icon:'💬',badge:'popular',
+  title:{es:'Dominar ChatGPT y Copilot',pt:'Dominar ChatGPT e Copilot',en:'Master ChatGPT and Copilot'},
+  desc:{es:'Curso practico de las herramientas IA mas populares del mundo.',pt:'Curso pratico das ferramentas IA mais populares.',en:'Practical course on the most popular AI tools.'},
+  lessons:10,duration:'5h',
+  modules:[{name:{es:'Herramientas IA',pt:'Ferramentas IA',en:'AI Tools'},lessons:[
+    {title:{es:'ChatGPT para principiantes',pt:'ChatGPT para iniciantes',en:'ChatGPT for beginners'},content:{es:'<h3>ChatGPT para principiantes</h3><p>ChatGPT es como tener un profesor particular disponible 24/7.</p><p><strong>Usos praticos:</strong></p><ul><li>Explicar conceptos de cualquier tema</li><li>Ayudarte a redactar cartas, emails, CVs</li><li>Traducir textos con contexto</li><li>Resolver dudas de matematicas paso a paso</li><li>Generar ideas para proyectos</li></ul><p><strong>Ejercicio:</strong> Abre chat.openai.com y pregunta "Explicame que es un curriculum vitae y porque es importante para encontrar empleo". Lee la respuesta y luego pregunta "Ayudame a escribir uno basico para mi".</p>',pt:'<h3>ChatGPT para iniciantes</h3><p>ChatGPT e como ter um professor particular 24/7.</p><p><strong>Usos praticos:</strong></p><ul><li>Explicar conceitos</li><li>Ajudar a redigir textos</li><li>Traduzir textos</li></ul>',en:'<h3>ChatGPT for Beginners</h3><p>ChatGPT is like having a personal tutor available 24/7.</p><p><strong>Practical uses:</strong></p><ul><li>Explain any topic</li><li>Help write letters, emails, CVs</li><li>Translate texts with context</li><li>Solve math problems step by step</li></ul>'}},
+    {title:{es:'Microsoft Copilot en Office',pt:'Microsoft Copilot no Office',en:'Microsoft Copilot in Office'},content:{es:'<h3>Microsoft Copilot en Office</h3><p>Copilot integra IA directamente en Word, Excel y PowerPoint.</p><ul><li><strong>En Word:</strong> "Escribe un resumen de este documento"</li><li><strong>En Excel:</strong> "Crea un grafico de estos datos"</li><li><strong>En PowerPoint:</strong> "Genera una presentacion sobre este tema"</li><li><strong>En Outlook:</strong> "Redacta un email formal para..."</li></ul><p><strong>Como acceder:</strong> Si tienes Microsoft 365, Copilot esta disponible como complemento de pago. Para empezar gratis, usa la version web de Microsoft 365 que incluye funciones basicas de IA.</p>',pt:'<h3>Microsoft Copilot no Office</h3><p>Copilot integra IA no Word, Excel e PowerPoint.</p><ul><li>No Word: "Escreva um resumo"</li><li>No Excel: "Crie um grafico"</li></ul>',en:'<h3>Microsoft Copilot in Office</h3><p>Copilot integrates AI directly into Word, Excel and PowerPoint.</p><ul><li>In Word: "Write a summary"</li><li>In Excel: "Create a chart"</li><li>In PowerPoint: "Generate a presentation"</li></ul>'}}
+  ]}]
+},
+{
+  id:'excel-advanced',icon:'📈',badge:'new',
+  title:{es:'Excel para el empleo',pt:'Excel para o emprego',en:'Excel for Employment'},
+  desc:{es:'Funciones de Excel que las empresas buscan en sus candidatos.',pt:'Funcoes de Excel que as empresas procuram.',en:'Excel functions employers look for.'},
+  lessons:8,duration:'4h',
+  modules:[{name:{es:'Funciones esenciales',pt:'Funcoes essenciais',en:'Essential functions'},lessons:[
+    {title:{es:'Funciones BUSCARV y tablas dinamicas',pt:'Funcoes PROCURV e tabelas dinamicas',en:'VLOOKUP and pivot tables'},content:{es:'<h3>Funciones BUSCARV y tablas dinamicas</h3><p><strong>BUSCARV (VLOOKUP):</strong> Busca un valor en una tabla.</p><p>=BUSCARV(valor; rango; columna; FALSO)</p><p><strong>Ejemplo:</strong> Si tienes una lista de empleados y quieres buscar el salario del empleado con ID 5: =BUSCARV(5; A2:D100; 4; FALSO)</p><p><strong>Tablas dinamicas:</strong> Resumen automatico de grandes cantidades de datos.</p><ul><li>Selecciona tus datos</li><li>Insertar &gt; Tabla dinamica</li><li>Arrastra campos a filas, columnas y valores</li></ul><p><strong>Consejo IA:</strong> Pega tus datos en ChatGPT y pregunta "Crea una tabla dinamica que muestre [lo que necesitas]"</p>',pt:'<h3>Funcoes PROCURV e tabelas dinamicas</h3><p>Funcoes essenciais para emprego:</p><ul><li>PROCURV: busca valores em tabelas</li><li>Tabelas dinamicas: resumo automatico</li></ul>',en:'<h3>VLOOKUP and Pivot Tables</h3><p>Essential functions for employment:</p><ul><li>VLOOKUP: search values in tables</li><li>Pivot tables: automatic summaries</li></ul>'}}
+  ]}]
+},
+{
+  id:'deepseek',icon:'🔍',badge:'new',
+  title:{es:'DeepSeek y Modelos Open Source',pt:'DeepSeek e Modelos Open Source',en:'DeepSeek and Open Source Models'},
+  desc:{es:'Descubre modelos de IA gratuitos y como usarlos sin depender de empresas privadas.',pt:'Descubra modelos de IA gratuitos.',en:'Discover free AI models.'},
+  lessons:6,duration:'3h',
+  modules:[{name:{es:'IA open source',pt:'IA open source',en:'Open Source AI'},lessons:[
+    {title:{es:'DeepSeek: IA gratuita potente',pt:'DeepSeek: IA gratuita potente',en:'DeepSeek: Powerful Free AI'},content:{es:'<h3>DeepSeek: IA gratuita potente</h3><p>DeepSeek es un modelo de IA chino open-source que rivaliza con los mejores modelos comerciales.</p><ul><li><strong>Sitio web:</strong> chat.deepseek.com (gratis)</li><li><strong>Ventajas:</strong> Sin costo, razonamiento avanzado, multiples idiomas</li><li><strong>Usos:</strong> Programacion, analisis, escritura, traduccion</li><li><strong>Como empezar:</strong> Ve a chat.deepseek.com, crea una cuenta gratis y empieza a preguntar</li></ul><p><strong>Otros modelos open source:</strong></p><ul><li><strong>Qwen:</strong> De Alibaba, excelente para multiples idiomas</li><li><strong>Llama:</strong> De Meta, muy versatil</li><li><strong>Mistral:</strong> Europeo, rapido y eficiente</li></ul>',pt:'<h3>DeepSeek: IA gratuita</h3><p>DeepSeek e um modelo de IA open-source gratuito.</p><ul><li>chat.deepseek.com (gratis)</li><li>Sem custo, raciocinio avancado</li></ul>',en:'<h3>DeepSeek: Free AI</h3><p>DeepSeek is a free open-source AI model.</p><ul><li>chat.deepseek.com (free)</li><li>No cost, advanced reasoning</li></ul>'}}
+  ]}]
+},
+{
+  id:'digital-rights',icon:'🔒',badge:'free',
+  title:{es:'Seguridad Digital y Privacidad',pt:'Seguranca Digital e Privacidade',en:'Digital Security & Privacy'},
+  desc:{es:'Protege tus datos personales y navega seguro en internet.',pt:'Proteja seus dados e navegue com seguranca.',en:'Protect your data and browse safely.'},
+  lessons:6,duration:'3h',
+  modules:[{name:{es:'Proteccion online',pt:'Protecao online',en:'Online protection'},lessons:[
+    {title:{es:'Claves seguras y privacidad',pt:'Senhas seguras e privacidade',en:'Secure passwords and privacy'},content:{es:'<h3>Claves seguras y privacidad</h3><p><strong>Contrasenas seguras:</strong></p><ul><li>Minimo 12 caracteres</li><li>Mezcla mayusculas, minusculas, numeros y simbolos</li><li>Nunca uses la misma contrasena en dos sitios</li><li>Usa un gestor de contrasenas gratuito como Bitwarden</li></ul><p><strong>Privacidad online:</strong></p><ul><li>No compartas datos personales en redes sociales</li><li>Usa verificacion en dos pasos siempre que puedas</li><li>Cuidado con emails sospechosos (phishing)</li><li>Cierra sesion en dispositivos compartidos</li></ul>',pt:'<h3>Senhas seguras</h3><p><strong>Dicas:</strong></p><ul><li>Minimo 12 caracteres</li><li>Misture letras, numeros e simbolos</li><li>Use um gerenciador de senhas como Bitwarden</li></ul>',en:'<h3>Secure Passwords</h3><p><strong>Tips:</strong></p><ul><li>Minimum 12 characters</li><li>Mix letters, numbers and symbols</li><li>Use a password manager like Bitwarden</li></ul>'}}
+  ]}]
+},
+{
+  id:'internet-basics',icon:'🌐',badge:'free',
+  title:{es:'Internet y Herramientas Basicas',pt:'Internet e Ferramentas Basicas',en:'Internet & Basic Tools'},
+  desc:{es:'Navega internet con seguridad, usa email, busqueda avanzada y mas.',pt:'Navegue na internet com seguranca.',en:'Browse the internet safely.'},
+  lessons:8,duration:'4h',
+  modules:[{name:{es:'Navegacion web',pt:'Navegacao web',en:'Web browsing'},lessons:[
+    {title:{es:'Email, busqueda y seguridad',pt:'Email, busca e seguranca',en:'Email, search and security'},content:{es:'<h3>Email, busqueda y seguridad</h3><p><strong>Email gratuito:</strong></p><ul><li>Gmail (gmail.com) - El mas usado</li><li>Outlook (outlook.com) - Microsoft</li><li>Crea una cuenta profesional: nombre.apellido@gmail.com</li></ul><p><strong>Busqueda avanzada en Google:</strong></p><ul><li>"frase exacta" - busca esa frase exacta</li><li>site:gov.es - solo resultados de paginas gubernamentales</li><li>filetype:pdf - busca solo archivos PDF</li><li>empleado -palabra - excluye esa palabra</li></ul>',pt:'<h3>Email e busca</h3><p><strong>Email gratuito:</strong></p><ul><li>Gmail, Outlook</li><li>Crie uma conta profissional</li></ul>',en:'<h3>Email and Search</h3><ul><li>Gmail, Outlook</li><li>Create a professional email</li><li>Advanced Google search operators</li></ul>'}}
+  ]}]
+},
+{
+  id:'qwen-course',icon:'🧠',badge:'new',
+  title:{es:'Qwen y Modelos Chinos',pt:'Qwen e Modelos Chineses',en:'Qwen and Chinese Models'},
+  desc:{es:'Aprende a usar Qwen, el modelo de Alibaba, ideal para multiples idiomas.',pt:'Aprenda a usar Qwen, da Alibaba.',en:'Learn to use Qwen from Alibaba.'},
+  lessons:5,duration:'2.5h',
+  modules:[{name:{es:'Qwen AI',pt:'Qwen AI',en:'Qwen AI'},lessons:[
+    {title:{es:'Qwen: tu asistente multilingue',pt:'Qwen: seu assistente multilingue',en:'Qwen: your multilingual assistant'},content:{es:'<h3>Qwen: tu asistente multilingue</h3><p>Qwen es un modelo de IA de Alibaba especialmente bueno con multiples idiomas.</p><ul><li><strong>Acceso:</strong> tongyi.aliyun.com (Qwen Chat)</li><li><strong>Ventajas:</strong> Excelente con chino, espanol, ingles, portugues, arabo</li><li><strong>Usos:</strong> Traduccion, redaccion, analisis de documentos, programacion</li><li><strong>API gratuita:</strong> Para desarrolladores, tiene un tier gratuito generoso</li></ul><p><strong>Ejercicio:</strong> Ve a tongyi.aliyun.com y pidele que traduzca un texto de espanol a 3 idiomas diferentes.</p>',pt:'<h3>Qwen: assistente multilingue</h3><p>Qwen e um modelo da Alibaba especialmente bom com multiplos idiomas.</p><ul><li>tongyi.aliyun.com</li><li>Excelente com multiplos idiomas</li></ul>',en:'<h3>Qwen: Multilingual Assistant</h3><p>Qwen is Alibaba\'s model especially good with multiple languages.</p><ul><li>tongyi.aliyun.com</li><li>Excellent with multiple languages</li></ul>'}}
+  ]}]
+},
+{
+  id:'freelance',icon:'💼',badge:'popular',
+  title:{es:'Trabajo Freelance y Emprendimiento',pt:'Trabalho Freelance e Empreendedorismo',en:'Freelancing & Entrepreneurship'},
+  desc:{es:'Como encontrar trabajo independiente y empezar tu propio negocio online.',pt:'Como encontrar trabalho independente.',en:'How to find independent work.'},
+  lessons:8,duration:'4h',
+  modules:[{name:{es:'Freelancing',pt:'Freelancing',en:'Freelancing'},lessons:[
+    {title:{es:'Plataformas de trabajo freelance',pt:'Plataformas de trabalho freelance',en:'Freelance work platforms'},content:{es:'<h3>Plataformas de trabajo freelance</h3><p>Puedes ganar dinero trabajando desde casa:</p><ul><li><strong>Fiverr:</strong> Vende servicios (traduccion, diseno, redaccion)</li><li><strong>Upwork:</strong> Proyectos para empresas</li><li><strong>Freelancer:</strong> Concursos de proyectos</li><li><strong>Workana:</strong> En espanol, para Latinoamerica y España</li></ul><p><strong>Como empezar sin experiencia:</strong></p><ol><li>Crea un perfil profesional (usa tu CV mejorado con IA)</li><li>Empieza con precios bajos para conseguir reseñas</li><li>Ofrece servicios que ya sabes hacer</li><li>Usa IA para mejorar tu calidad de trabajo</li></ol>',pt:'<h3>Plataformas freelance</h3><p>Voce pode ganhar dinheiro trabalhando de casa:</p><ul><li>Fiverr, Upwork, Workana</li></ul>',en:'<h3>Freelance Platforms</h3><p>You can earn money working from home:</p><ul><li>Fiverr, Upwork, Workana</li></ul>'}}
+  ]}]
+},
+{
+  id:'community',icon:'🤝',badge:'free',
+  title:{es:'Comunidad y Redes de Apoyo',pt:'Comunidade e Redes de Apoio',en:'Community & Support Networks'},
+  desc:{es:'Conecta con organizaciones, grupos y personas que pueden ayudarte.',pt:'Conecte-se com organizacoes e pessoas.',en:'Connect with organizations and people.'},
+  lessons:4,duration:'2h',
+  modules:[{name:{es:'Redes de apoyo',pt:'Redes de apoio',en:'Support networks'},lessons:[
+    {title:{es:'Organizaciones que ayudan',pt:'Organizacoes que ajudam',en:'Organizations that help'},content:{es:'<h3>Organizaciones que ayudan</h3><ul><li><strong>Cruz Roja:</strong> Asistencia humanitaria, formacion, empleo</li><li><strong>CARITAS:</strong> Ayuda social, cursos, accompagnement</li><li><strong>Save the Children:</strong> Para menores y familias</li><li><strong>CERIMI:</strong> Red de entidades para la integracion de inmigrantes</li><li><strong>Red Acogida:</strong> Atencion juridica y social</li></ul><p><strong>Como encontrar ayuda en tu ciudad:</strong></p><ol><li>Busca "ayuda inmigrantes [tu ciudad]" en Google</li><li>Ve a los Servicios Sociales de tu ayuntamiento</li><li>Pregunta en centros de salud o escuelas</li></ol>',pt:'<h3>Organizacoes que ajudam</h3><ul><li>Cruz Vermelha</li><li>CARITAS</li><li>Rede Acogida</li></ul>',en:'<h3>Organizations that help</h3><ul><li>Red Cross</li><li>CARITAS</li><li>Local support networks</li></ul>'}}
+  ]}]
+}
+];
+
+/* ============================================================
+   APP STATE
+   ============================================================ */
+let currentSection='home';
+let currentCourseIdx=0;
+let currentModuleIdx=0;
+let currentLessonIdx=0;
+let chatHistory=[];
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+function showSection(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  const sec=document.getElementById('sec-'+id);
+  if(sec)sec.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(n=>{
+    n.classList.toggle('active',n.dataset.section===id);
+  });
+  currentSection=id;
+  window.scrollTo({top:0,behavior:'smooth'});
+  const skipNav=document.getElementById('skipNav');
+  if(skipNav)skipNav.focus();
+  if(id==='dashboard')populateDashboard();
+  if(id==='courses')populateCatalog();
+  document.getElementById('navLinks').classList.remove('open');
+}
+function toggleMobileNav(){
+  const nav=document.getElementById('navLinks');
+  const btn=document.querySelector('.menu-toggle');
+  const open=nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+
+/* ============================================================
+   RENDER COURSES
+   ============================================================ */
+function renderCourseCard(course,idx,container){
+  const lang=currentLang;
+  const card=document.createElement('div');
+  card.className='course-card';
+  card.setAttribute('role','listitem');
+  card.tabIndex=0;
+  card.setAttribute('aria-label',course.title[lang]);
+  const badgeClass=course.badge==='free'?'badge-free':course.badge==='new'?'badge-new':'badge-popular';
+  const badgeText=I18N[currentLang]['badge_'+course.badge]||course.badge.toUpperCase();
+  card.innerHTML=`
+    <div class="course-thumb" aria-hidden="true">
+      <span style="font-size:3rem">${course.icon}</span>
+      <span class="badge ${badgeClass}">${badgeText}</span>
+    </div>
+    <div class="course-body">
+      <h3>${course.title[lang]}</h3>
+      <p>${course.desc[lang]}</p>
+      <div class="course-meta">
+        <span>📖 ${course.lessons} ${I18N[lang].lesson}s</span>
+        <span>⏱ ${course.duration}</span>
+      </div>
+    </div>`;
+  card.onclick=()=>openCourse(idx);
+  card.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCourse(idx)}};
+  container.appendChild(card);
+}
+function renderCourses(){
+  const grid=document.getElementById('courseGrid');
+  const catalog=document.getElementById('catalogGrid');
+  grid.innerHTML='';catalog.innerHTML='';
+  COURSES.slice(0,6).forEach((c,i)=>renderCourseCard(c,i,grid));
+  COURSES.forEach((c,i)=>renderCourseCard(c,i,catalog));
+  searchLearning();
+}
+function normalizeLearningQuery(value){
+  return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+}
+function searchLearning(value){
+  const search=document.getElementById('courseSearch');
+  const grid=document.getElementById('catalogGrid');
+  const status=document.getElementById('courseSearchStatus');
+  if(!search||!grid||!status)return;
+  const q=normalizeLearningQuery(value===undefined?search.value:value);
+  const labels={
+    es:{input:'Buscar cursos y lecciones',placeholder:'Escribe un tema, módulo o lección',none:'No hay coincidencias',results:'resultados',lessons:'Lección'},
+    pt:{input:'Pesquisar cursos e aulas',placeholder:'Digite um assunto, módulo ou aula',none:'Nenhum resultado',results:'resultados',lessons:'Aula'},
+    en:{input:'Search courses and lessons',placeholder:'Enter a subject, module or lesson',none:'No matching lessons',results:'results',lessons:'Lesson'}
+  };
+  const lang=COURSES[0]?.title?.[currentLang]!==undefined?currentLang:'es';
+  const label=labels[lang];
+  document.getElementById('courseSearchLabel').textContent=label.input;
+  search.placeholder=label.placeholder;
+  if(!q){
+    grid.replaceChildren();
+    COURSES.forEach((course,ci)=>renderCourseCard(course,ci,grid));
+    status.textContent=COURSES.length+' '+label.results;
+    return;
+  }
+  grid.replaceChildren();
+  let matches=0;
+  const addLesson=(course,ci,mod,mi,lesson,li)=>{
+    const item=document.createElement('div');
+    item.className='course-card course-search-item';
+    item.setAttribute('role','listitem');
+    const button=document.createElement('button');
+    button.type='button';
+    const meta=document.createElement('small');
+    meta.textContent=course.title[lang]+' · '+mod.name[lang];
+    const title=document.createElement('strong');
+    title.textContent=lesson.title[lang]||lesson.title.es;
+    button.append(meta,title);
+    button.setAttribute('aria-label',label.lessons+': '+title.textContent+' — '+course.title[lang]);
+    button.addEventListener('click',()=>{
+      currentCourseIdx=ci;
+      currentModuleIdx=mi;
+      currentLessonIdx=li;
+      renderCourseViewer();
+      showSection('viewer');
+    });
+    item.appendChild(button);
+    grid.appendChild(item);
+    matches++;
+  };
+  COURSES.forEach((course,ci)=>{
+    if(normalizeLearningQuery([course.title[lang],course.desc[lang]].join(' ')).includes(q)){
+      renderCourseCard(course,ci,grid);
+      matches++;
+    }
+    course.modules.forEach((mod,mi)=>mod.lessons.forEach((lesson,li)=>{
+      const haystack=normalizeLearningQuery([
+        mod.name[lang],lesson.title[lang],lesson.content[lang]||lesson.content.es
+      ].join(' ').replace(/<[^>]*>/g,' '));
+      if(haystack.includes(q)&&matches<80)addLesson(course,ci,mod,mi,lesson,li);
+    }));
+  });
+  status.textContent=matches?matches+' '+label.results:label.none;
+}
+
+function populateCatalog(){
+  const catalog=document.getElementById('catalogGrid');
+  if(catalog.children.length===0)renderCourses();
+}
+
+/* ============================================================
+   COURSE VIEWER
+   ============================================================ */
+function openCourse(idx){
+  currentCourseIdx=idx;
+  currentModuleIdx=0;
+  currentLessonIdx=0;
+  renderCourseViewer();
+  showSection('viewer');
+}
+function renderCourseViewer(){
+  const course=COURSES[currentCourseIdx];
+  const lang=currentLang;
+  document.getElementById('viewerTitle').textContent=course.title[lang];
+  document.getElementById('breadcrumbCourse').textContent=course.title[lang];
+  renderLessonSidebar();
+  renderLessonContent();
+}
+function renderLessonSidebar(){
+  const course=COURSES[currentCourseIdx];
+  const lang=currentLang;
+  const sidebar=document.getElementById('lessonSidebar');
+  sidebar.innerHTML='';
+  let globalIdx=0;
+  course.modules.forEach((mod,mi)=>{
+    const modTitle=document.createElement('div');
+    modTitle.style.cssText='font-size:.75rem;color:var(--gold);padding:8px 16px;font-weight:700;text-transform:uppercase;letter-spacing:.5px';
+    modTitle.textContent=mod.name[lang];
+    sidebar.appendChild(modTitle);
+    mod.lessons.forEach((les,li)=>{
+      const isActive=mi===currentModuleIdx&&li===currentLessonIdx;
+      const isCompleted=mi<currentModuleIdx||(mi===currentModuleIdx&&li<currentLessonIdx);
+      const item=document.createElement('div');
+      item.className='sidebar-lesson'+(isActive?' active':'')+(isCompleted?' completed':'');
+      item.setAttribute('role','button');
+      item.tabIndex=0;
+      item.setAttribute('aria-current',isActive?'step':'false');
+      item.innerHTML=`<span class="num">${isCompleted?'✓':globalIdx+1}</span><span>${les.title[lang]}</span>`;
+      const gIdx=globalIdx;
+      item.onclick=()=>{currentModuleIdx=mi;currentLessonIdx=li;renderLessonContent();renderLessonSidebar()};
+      item.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click()}};
+      sidebar.appendChild(item);
+      globalIdx++;
+    });
+  });
+}
+function renderLessonContent(){
+  const course=COURSES[currentCourseIdx];
+  const lang=currentLang;
+  const lesson=course.modules[currentModuleIdx].lessons[currentLessonIdx];
+  const content=document.getElementById('lessonContent');
+  content.innerHTML=lesson.content[lang]||lesson.content.es;
+}
+function nextLesson(){
+  const course=COURSES[currentCourseIdx];
+  const mod=course.modules[currentModuleIdx];
+  if(currentLessonIdx<mod.lessons.length-1){
+    currentLessonIdx++;
+  }else if(currentModuleIdx<course.modules.length-1){
+    currentModuleIdx++;
+    currentLessonIdx=0;
+  }else{
+    return;
+  }
+  renderLessonContent();
+  renderLessonSidebar();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function prevLesson(){
+  if(currentLessonIdx>0){
+    currentLessonIdx--;
+  }else if(currentModuleIdx>0){
+    currentModuleIdx--;
+    currentLessonIdx=COURSES[currentCourseIdx].modules[currentModuleIdx].lessons.length-1;
+  }else{
+    return;
+  }
+  renderLessonContent();
+  renderLessonSidebar();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function populateDashboard(){
+  const lang=currentLang;
+  const recent=document.getElementById('recentLessons');
+  const reco=document.getElementById('recommendations');
+  if(recent.children.length>0)return;
+  const recentData=[
+    {title:'Definicion y conceptos basicos',course:'Introduccion a la IA',done:true,dur:'25 min'},
+    {title:'Historia de la IA',course:'Introduccion a la IA',done:true,dur:'20 min'},
+    {title:'Herramientas IA actuales',course:'Introduccion a la IA',done:false,dur:'30 min'},
+    {title:'Partes esenciales de un CV',course:'Crear tu CV',done:true,dur:'15 min'},
+    {title:'Documentos basicos en Word',course:'Pack Office',done:false,dur:'35 min'},
+  ];
+  recentData.forEach(d=>{
+    const li=document.createElement('li');
+    li.className='lesson-item';
+    li.innerHTML=`<span class="lesson-check ${d.done?'done':''}" aria-label="${d.done?'Completada':'Pendiente'}">${d.done?'✓':''}</span><div class="lesson-info"><div class="lesson-title">${d.title}</div><div class="lesson-dur">${d.course} · ${d.dur}</div></div>`;
+    recent.appendChild(li);
+  });
+  const recoData=[
+    {title:'Prompt Engineering basico',icon:'💡',course:'Introduccion a la IA'},
+    {title:'Excel para el empleo',icon:'📈',course:'Excel para el empleo'},
+    {title:'Dominar ChatGPT y Copilot',icon:'💬',course:'Dominar ChatGPT'},
+  ];
+  recoData.forEach(d=>{
+    const li=document.createElement('li');
+    li.className='lesson-item';
+    li.innerHTML=`<span class="lesson-check" aria-hidden="true" style="font-size:1.2rem">${d.icon}</span><div class="lesson-info"><div class="lesson-title">${d.title}</div><div class="lesson-dur">${d.course}</div></div>`;
+    reco.appendChild(li);
+  });
+}
+
+/* ============================================================
+   AI CHAT (SIMULATED)
+   ============================================================ */
+const AI_RESPONSES={
+  curriculum:[
+    "Para crear un buen curriculum vitae, sigue estos pasos:\n\n1. **Datos de contacto:** Nombre, telefono, email\n2. **Perfil profesional:** 2-3 lineas sobre ti\n3. **Experiencia:** Trabajos anteriores con logros\n4. **Educacion:** Titulos y formacion\n5. **Habilidades:** Idiomas y competencias\n\nTe ayudo a escribir uno? Dime tu nombre y que empleo buscas.",
+    "Un buen CV en España debe ser limpio, maximo 2 paginas, y adaptarse a cada oferta. Usa verbos de accion: 'gestione', 'coordine', 'desarrolle'. Evita 'responsable de'."
+  ],
+  ia:[
+    "La Inteligencia Artificial (IA) es la capacidad de las maquinas para realizar tareas inteligentes como aprender, razonar y tomar decisiones.\n\nEn tu vida diaria ya usas IA cuando:\n- Google traduce automaticamente\n- Netflix te recomienda series\n- Tu telefono reconoce tu cara\n\nQuieres aprender a usar ChatGPT o alguna otra herramienta especifica?",
+    "IA no es algo lejano o complicado. Es una herramienta que ya esta en tu telefono. Puedes usarla gratis para aprender, encontrar empleo o mejorar tu vida diaria."
+  ],
+  word:[
+    "Microsoft Word es el procesador de textos mas usado. Lo basico:\n\n- **Crear documento:** Archivo > Nuevo\n- **Negrita:** Ctrl+N\n- **Cursiva:** Ctrl+K  \n- **Guardar como PDF:** Archivo > Guardar como > PDF\n\nSi no tienes Word, puedes usar **OnlyOffice** o **Google Docs** gratis.\n\nQue tipo de documento necesitas crear?",
+    "Consejo: siempre guarda tu CV en PDF para enviarlo. Los PDF se ven igual en todos los dispositivos."
+  ],
+  derechos:[
+    "En España, tienes derechos fundamentales sin importar tu situacion:\n\n1. **Asistencia sanitaria** - Puedes ir al medico\n2. **Educacion** - Derecho a estudiar\n3. **Servicios sociales** - Puedes pedir ayuda\n4. **Asistencia juridica gratuita** - Si no tienes recursos\n\n**Emergencias:** 112\n**Policia Nacional:** 091\n**Seguridad Social:** 900 106 425\n\nNecesitas informacion sobre algo especifico?",
+    "Organizaciones que pueden ayudarte:\n- Cruz Roja\n- CARITAS\n- Servicios Sociales de tu ayuntamiento\n- ONGs locales de integracion"
+  ],
+  default:[
+    "Entiendo tu pregunta. Puedo ayudarte con:\n\n1. **Crear tu curriculum** - Paso a paso\n2. **Herramientas IA** - ChatGPT, Copilot, DeepSeek\n3. **Pack Office** - Word, Excel, PowerPoint\n4. **Derechos** - Tus derechos en España\n5. **Empleo** - Busqueda de trabajo y freelance\n\nQue tema te interesa mas?",
+    "Estoy aqui para ayudarte a aprender. No hay preguntas tontas. Preguntame lo que necesites y te explicare paso a paso.",
+    "Puedo ensenarte sobre cualquier tema de la plataforma. Solo dime que necesitas y te doy la mejor respuesta posible."
+  ]
+};
+function detectTopic(msg){
+  const m=msg.toLowerCase();
+  if(m.includes('curriculum')||m.includes('cv')||m.includes('resume')||m.includes('curriculo'))return 'curriculum';
+  if(m.includes('ia')||m.includes('inteligencia')||m.includes('artificial')||m.includes('ai'))return 'ia';
+  if(m.includes('word')||m.includes('documento')||m.includes('office'))return 'word';
+  if(m.includes('derecho')||m.includes('inmigrant')||m.includes('ayuda')||m.includes('seguridad')||m.includes('social'))return 'derechos';
+  return 'default';
+}
+function getAIResponse(msg){
+  const topic=detectTopic(msg);
+  const pool=AI_RESPONSES[topic];
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+function sendMessage(e){
+  e.preventDefault();
+  const input=document.getElementById('chatInput');
+  const msg=input.value.trim();
+  if(!msg)return;
+  addMessage(msg,'user');
+  input.value='';
+  input.style.height='auto';
+  showTyping();
+  setTimeout(()=>{
+    hideTyping();
+    const response=getAIResponse(msg);
+    addMessage(response,'bot');
+  },800+Math.random()*1200);
+}
+function sendQuick(text){
+  document.getElementById('chatInput').value=text;
+  document.getElementById('chatForm').dispatchEvent(new Event('submit'));
+}
+function addMessage(text,type){
+  const container=document.getElementById('chatMessages');
+  const div=document.createElement('div');
+  div.className='msg '+type;
+  const now=new Date();
+  const time=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  div.textContent=String(text);
+  div.style.whiteSpace='pre-wrap';
+  const stamp=document.createElement('span');
+  stamp.className='msg-time';
+  stamp.textContent=time;
+  div.appendChild(stamp);
+  container.appendChild(div);
+  container.scrollTop=container.scrollHeight;
+}
+function showTyping(){document.getElementById('typingIndicator').classList.add('visible')}
+function hideTyping(){document.getElementById('typingIndicator').classList.remove('visible')}
+function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
+
+/* ============================================================
+   OFFLINE DETECTION
+   ============================================================ */
+function updateOnlineStatus(){
+  const badge=document.getElementById('offlineBadge');
+  if(!navigator.onLine){
+    badge.classList.add('visible');
+    badge.setAttribute('aria-label','Sin conexion a internet');
+  }else{
+    badge.classList.remove('visible');
+    badge.setAttribute('aria-label','Conectado a internet');
+  }
+}
+window.addEventListener('online',updateOnlineStatus);
+window.addEventListener('offline',updateOnlineStatus);
+updateOnlineStatus();
+
+/* Site is web-first. No offline caching or service worker is registered. */
+
+/* ============================================================
+   KEYBOARD NAVIGATION
+   ============================================================ */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const nav=document.getElementById('navLinks');
+    if(nav.classList.contains('open')){
+      nav.classList.remove('open');
+      document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');
+      document.querySelector('.menu-toggle').focus();
+    }
+  }
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded',()=>{
+  switchLang(currentLang);
+  renderCourses();
+});
+</script>
+</body>
+</html>
