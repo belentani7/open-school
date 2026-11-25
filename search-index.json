@@ -2520,6 +2520,96 @@
 "href": "universal-rutas/ux-ui-design-system.html"
 },
 {
+"title": "Java 21 · Ruta profesional · Open School",
+"description": "Java 21 · Ruta profesional. Formación abierta de Java 21.",
+"section": "Rutas universales",
+"href": "universal-rutas/java-21-profesional.html"
+},
+{
+"title": "Fundamentos de Java 21 · Open School",
+"description": "Fundamentos de Java 21. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/fundamentos.html"
+},
+{
+"title": "Objetos, records e invariantes · Open School",
+"description": "Objetos, records e invariantes. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/objetos.html"
+},
+{
+"title": "Colecciones, igualdad y complejidad · Open School",
+"description": "Colecciones, igualdad y complejidad. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/colecciones.html"
+},
+{
+"title": "Genéricos y contratos de tipos · Open School",
+"description": "Genéricos y contratos de tipos. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/genericos.html"
+},
+{
+"title": "Excepciones, validación y recursos · Open School",
+"description": "Excepciones, validación y recursos. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/errores.html"
+},
+{
+"title": "Streams, funciones y procesamiento de datos · Open School",
+"description": "Streams, funciones y procesamiento de datos. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/streams.html"
+},
+{
+"title": "Archivos, NIO y fronteras de confianza · Open School",
+"description": "Archivos, NIO y fronteras de confianza. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/io.html"
+},
+{
+"title": "Concurrencia y virtual threads · Open School",
+"description": "Concurrencia y virtual threads. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/concurrencia.html"
+},
+{
+"title": "Pruebas automatizadas y Maven · Open School",
+"description": "Pruebas automatizadas y Maven. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/tests.html"
+},
+{
+"title": "HTTP, REST y Spring Boot · Open School",
+"description": "HTTP, REST y Spring Boot. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/http.html"
+},
+{
+"title": "SQL, JDBC y persistencia JPA · Open School",
+"description": "SQL, JDBC y persistencia JPA. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/persistencia.html"
+},
+{
+"title": "Seguridad defensiva y privacidad · Open School",
+"description": "Seguridad defensiva y privacidad. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/seguridad.html"
+},
+{
+"title": "Entrega, contenedores y observabilidad · Open School",
+"description": "Entrega, contenedores y observabilidad. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/despliegue.html"
+},
+{
+"title": "Proyecto final: campus Java de extremo a extremo · Open School",
+"description": "Proyecto final: campus Java de extremo a extremo. Formación abierta de Java 21.",
+"section": "Módulos universales",
+"href": "universal-modulos/java-21/proyecto-final.html"
+},
+{
 "title": "Accesibilidad · Open School",
 "description": "Declaración de accesibilidad de Open School.",
 "section": "Campus",
@@ -2551,7 +2641,7 @@
 },
 {
 "title": "Biblioteca de aprendizaje · Open School",
-"description": "Biblioteca abierta de 413 materiales educativos.",
+"description": "Biblioteca abierta de 428 materiales educativos.",
 "section": "Campus",
 "href": "cursos.html"
 },
